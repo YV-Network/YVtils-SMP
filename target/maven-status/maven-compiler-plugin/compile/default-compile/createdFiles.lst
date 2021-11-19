@@ -1,0 +1,11 @@
+de\yvtils\ba\utils\UpdateChecker.class
+de\yvtils\ba\commands\KickMessageDesigner.class
+de\yvtils\ba\Placeholder\MessagePlaceholder.class
+de\yvtils\ba\commands\ReloadConfig.class
+de\yvtils\ba\Main.class
+de\yvtils\ba\listeners\QuitListener.class
+de\yvtils\ba\listeners\SpawnBoostListener.class
+de\yvtils\ba\listeners\JoinListener.class
+de\yvtils\ba\commands\StartCommand.class
+de\yvtils\ba\utils\ConfigVersionUpdateChecker.class
+de\yvtils\ba\listeners\MotdListener.class

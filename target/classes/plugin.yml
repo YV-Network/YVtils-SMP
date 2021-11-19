@@ -1,0 +1,31 @@
+name: YVtils-BA
+version: 4.2
+main: de.yvtils.ba.Main
+api-version: 1.16
+authors: [ WolfiiYV ]
+description: Plugin for YV-SMP
+website: wolfiiyv.de
+
+commands:
+  start:
+    permission: yvtils.ba.command.start
+  testkick:
+    permission: yvtils.ba.command.testkick
+  configreload:
+    permission: yvtils.ba.command.reloadconfig
+permissions:
+  yvtils.ba.play:
+    description: Let Player Plays
+  yvtils.ba.*:
+    description: Allows everything
+  yvtils.ba.advancedcrafting.betterprot:
+    description: Craft Better Prot
+  yvtils.ba.advancedcrafting.fastertools:
+    description: Craft Faster Tools
+  yvtils.ba.advancedcrafting.light:
+    description: Craft Light Blocks
+  yvtils.ba.advancedcrafting.debugstick:
+    description: Craft DebugStick
+  yvtils.ba.advancedcrafting.*:
+    description: Craft Everything Advanced
+

@@ -1,0 +1,102 @@
+#For Colorcodes you can look here: https://minecraft.fandom.com/wiki/Formatting_codes
+#For color gradients look here: https://rgb.birdflop.com
+
+#Join/Quit Message
+#Use player for the Player Name
+#If there is no indication, there is a mistake in the console and the default message comes
+JoinMessage:
+  - §a» §7player
+QuitMessage:
+  - §c« §7player
+
+#Spawn Elytra
+spawnradius: 50
+multiplyValue: 5
+
+#Start Command Actions
+worldborderafterstart: 5000000
+worldbordergrowtime: 50
+StartBroadcastMessage: §dViel Spaß bei §x§5§7§3§0§b§1§oB§x§6§b§2§c§9§c§oA§x§7§f§2§8§8§6§o#§x§9§4§2§4§7§1§o4 §d/ §x§4§c§3§2§b§d§oY§x§5§5§3§0§b§3§oV§x§5§e§2§e§a§a§o-§x§6§7§2§c§a§0§oS§x§7§0§2§b§9§7§oM§x§7§9§2§9§8§d§oP §x§8§b§2§5§7§a§o#§x§9§4§2§3§7§0§o4
+StartTitle:
+  Oben: §x§4§c§3§2§b§d§oY§x§5§5§3§0§b§3§oV§x§5§e§2§e§a§a§o-§x§6§7§2§c§a§0§oS§x§7§0§2§b§9§7§oM§x§7§9§2§9§8§d§oP §x§8§b§2§5§7§a§o#§x§9§4§2§3§7§0§o4
+  Unten: §x§8§e§2§5§7§7§oS§x§8§8§2§6§7§d§ot§x§8§2§2§7§8§3§oa§x§7§c§2§8§8§9§or§x§7§7§2§9§8§f§ot§x§7§1§2§a§9§5§oe§x§6§b§2§c§9§c§ot §x§5§f§2§e§a§8§og§x§5§a§2§f§a§e§ol§x§5§4§3§0§b§4§oe§x§4§e§3§1§b§a§oi§x§4§8§3§2§c§0§oc§x§4§3§3§4§c§6§oh
+NotAllowedtoPlayMessage: Du hast nicht die Berechtigung bei BA / YV-SMP mitzuspielen.
+  \n Whiteliste dich erst auf dem Discord!
+  \n Wenn du dich bereits auf die Whitelist eingetragen hast eröffne ein Support Ticket.
+  \n
+  \n
+  - BA / YV-SMP Verwaltung -
+#\n for a new Line
+WhitelistafterStart: true
+
+#MOTD
+FakePlayerAllowedToJoinCounter: 0
+
+Players:
+  - WolfiiYV
+  - Crash1HD
+  - black_Kittys
+  - VirtualPortal
+  - JojoMi09
+  - daniel1mag5essen
+  - floriantechnik
+  - Big_Rom06
+  - Drachengamer08
+  - Capri_Sun_Xd
+  - NotHenryXD
+  - Monster_alarm
+  - RWG_Buddha
+
+MOTD'sText:
+  #'player1' For one Player Name and 'player2' for another Player Name
+  Top:
+    - §x§4§c§3§2§b§dY§x§5§5§3§0§b§3V§x§5§e§2§e§a§a-§x§6§7§2§c§a§0S§x§7§0§2§b§9§7M§x§7§9§2§9§8§dP §x§8§b§2§5§7§a#§x§9§4§2§3§7§04
+    - §x§4§8§3§2§c§0B§x§4§e§3§1§b§au§x§5§4§3§0§b§4i§x§5§a§2§f§a§el§x§5§f§2§e§a§8d§x§6§5§2§d§a§2A§x§6§b§2§c§9§ct§x§7§1§2§a§9§5t§x§7§7§2§9§8§fa§x§7§c§2§8§8§9c§x§8§2§2§7§8§3k §x§8§e§2§5§7§7#§x§9§3§2§4§7§14
+  Bottom:
+  - §bplayer1 sagt Hallo zu player2
+  - §eplayer1 geht zu MC Donalds
+  - §6player1 geht zu Burger King
+  - §3player1 mag player2
+  - §5player1 spielt lieber auf Hypixel
+  - §dplayer1 mag Züge
+  - §aplayer1 wurde von player2 getötet
+  - §7player1 fragt nach dem Map Seed
+  - §8player1 würde gerne Fame werden
+  - §bSponsored by YV-Network
+  - §9Whitelist on!
+  - §fNot CraftAttack!
+  - §csince 2020
+  - §2©©©
+  - §e1.18
+  - §aStarted at the ??.??.????
+  - §dServer online
+  - §4Can't connect to Server
+  - §1Caves and Cliffs Inside this Server
+
+
+
+#Placeholder
+Placeholder:
+  PREFIX: §9[YVtils]
+  PREFIXBA: §9[YVtils-BA]
+  PREFIXLOBBY: §9[YVtils-LY]
+  PREFIXKICK: §9[YVtils-K]
+  PREFIXCONNECT: §9[YVtils-CO]
+  PREFIXDISCONNECT: §9[YVtils-DCO]
+  PREFIXENABLE: §9[YVtils-ON]
+  PREFIXDISABLE: §9[YVtils-OFF]
+  PREFIXERROR: §4[YVtils-ERROR]
+  PREFIXERELOAD: §9[YVtils-RL]
+  PREFIXUPDATE: §c[YVtils-UPDATE]
+  PREFIXNOUPDATE: §7[YVtils-UPDATE]
+
+#Other Stuff
+CustomRecipes: true
+
+#Do not edit!
+ConfigVersion: 3
+
+
+#Not in Use at the moment
+#Started: false
+#AlreadyStartedMessage: §dBA wurde bereits gestartet!
