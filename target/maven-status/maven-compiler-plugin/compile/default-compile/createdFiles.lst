@@ -6,6 +6,7 @@ de\yvtils\ba\Main.class
 de\yvtils\ba\listeners\QuitListener.class
 de\yvtils\ba\listeners\SpawnBoostListener.class
 de\yvtils\ba\listeners\JoinListener.class
+de\yvtils\ba\listeners\RestartListener.class
 de\yvtils\ba\commands\StartCommand.class
 de\yvtils\ba\utils\ConfigVersionUpdateChecker.class
 de\yvtils\ba\listeners\MotdListener.class
