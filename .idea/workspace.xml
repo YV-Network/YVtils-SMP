@@ -4,30 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="...">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/replacecommands/seedcommand.java" afterDir="false" />
+    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Placeholder/MessagePlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Placeholder/MessagePlaceholder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/KickMessageDesigner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/ReloadConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/StartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/StartCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/utils/ConfigVersionUpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/utils/ConfigVersionUpdateChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Placeholder/MessagePlaceholder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Placeholder/MessagePlaceholder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/commands/KickMessageDesigner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/commands/ReloadConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/commands/StartCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/commands/StartCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/listeners/SpawnBoostListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/listeners/SpawnBoostListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/utils/ConfigVersionUpdateChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/utils/ConfigVersionUpdateChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/replacecommands/seedcommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/replacecommands/seedcommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,8 +145,16 @@
       <workItem from="1637484548877" duration="5818000" />
       <workItem from="1637524822923" duration="600000" />
       <workItem from="1637863817576" duration="4594000" />
+      <workItem from="1637868427176" duration="1061000" />
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version.">
+      <created>1637869169288</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1637869169288</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +174,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version." />
+    <option name="LAST_COMMIT_MESSAGE" value="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

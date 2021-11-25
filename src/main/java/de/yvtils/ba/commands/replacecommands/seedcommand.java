@@ -47,6 +47,7 @@ public class seedcommand implements Listener {
             } else if (args.length == 2) {
                 switch (args[1].toLowerCase()) {
                     case "showyouonlyformebecauseineedtoknowtheseed", "show" -> {
+                        if (player.hasPermission("yvtils.ba.command.notreplace.seed")) {
 
                         TextComponent c = new TextComponent(MessagePlaceholder.PREFIXSEED);
                         TextComponent click = new TextComponent(" §7[" + "§a" + Bukkit.getWorld("world").getSeed() + "§7]");
@@ -56,4 +57,6 @@ public class seedcommand implements Listener {
 
                         c.addExtra(click);
                         player.spigot().sendMessage(c);
-                    }}}}}}
+                    }else {
+                            player.sendMessage(Main.getInstance().getConfig().getString("NotPermissionforSeedMessage") + ": yvtils.ba.command.notreplace.seed");
+                        }}}}}}}
