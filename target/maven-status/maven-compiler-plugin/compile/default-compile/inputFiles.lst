@@ -1,12 +1,10 @@
 F:\YVtils-BA\src\main\java\de\yvtils\ba\listeners\JoinListener.java
-F:\YVtils-BA\src\main\java\de\yvtils\ba\listeners\RestartListener.java
+F:\YVtils-BA\src\main\java\de\yvtils\ba\commands\replacecommands\seedcommand.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\commands\StartCommand.java
-F:\YVtils-BA\src\main\java\de\yvtils\ba\commands\KickMessageDesigner.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\utils\UpdateChecker.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\listeners\MotdListener.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\listeners\SpawnBoostListener.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\Main.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\utils\ConfigVersionUpdateChecker.java
-F:\YVtils-BA\src\main\java\de\yvtils\ba\commands\ReloadConfig.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\listeners\QuitListener.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\Placeholder\MessagePlaceholder.java

@@ -5,12 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="...">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/replacecommands/seedcommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/YVtils-BA-4.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Placeholder/MessagePlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Placeholder/MessagePlaceholder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/KickMessageDesigner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/ReloadConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/StartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/StartCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/utils/ConfigVersionUpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/utils/ConfigVersionUpdateChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Placeholder/MessagePlaceholder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Placeholder/MessagePlaceholder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/commands/KickMessageDesigner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/commands/ReloadConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/commands/StartCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/commands/StartCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/listeners/SpawnBoostListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/listeners/SpawnBoostListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/utils/ConfigVersionUpdateChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/utils/ConfigVersionUpdateChecker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/compile/inputFiles.lst" afterDir="false" />
@@ -33,7 +45,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/KickMessageDesigner.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/config.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/de/yvtils/ba/listeners/SpawnBoostListener.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/plugin.yml" root0="FORCE_HIGHLIGHTING" />
@@ -42,11 +53,18 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/de/yvtils/ba/listeners/JoinListener.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/de/yvtils/ba/Main.java" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="ProjectId" id="21DnUGA8C2DhSbIFn2yTkEl4LZY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -55,24 +73,13 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MC Plugin Coding with Intenet" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="YVtils-BA" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="YVtils-BA" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="YVtils-BA [clean,package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -100,6 +107,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SshConsoleOptionsProvider">
     <option name="myEncoding" value="UTF-8" />
     <option name="myConnectionType" value="NONE" />
@@ -141,8 +149,28 @@
       <option name="project" value="LOCAL" />
       <updated>1637329806972</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="...">
+      <created>1637425982743</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1637425982743</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="..." />
+      <created>1637484546309</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637484546309</updated>
+      <workItem from="1637484548877" duration="5818000" />
+      <workItem from="1637524822923" duration="600000" />
+      <workItem from="1637863817576" duration="4594000" />
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

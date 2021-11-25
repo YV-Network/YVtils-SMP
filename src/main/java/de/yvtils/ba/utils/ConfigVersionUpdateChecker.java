@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class ConfigVersionUpdateChecker implements Listener {
 
-    int i = 3;
+    int i = 4;
 
     public ConfigVersionUpdateChecker() {
         if (Main.getInstance().getConfig().getInt("ConfigVersion") != i) {

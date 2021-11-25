@@ -15,5 +15,7 @@ public class MessagePlaceholder{
     public static String PREFIXERELOAD = Main.getInstance().getConfig().getString("Placeholder.PREFIXERELOAD");
     public static String PREFIXUPDATE = Main.getInstance().getConfig().getString("Placeholder.PREFIXUPDATE");
     public static String PREFIXNOUPDATE = Main.getInstance().getConfig().getString("Placeholder.PREFIXNOUPDATE");
+    public static String PREFIXSTART = Main.getInstance().getConfig().getString("Placeholder.PREFIXSTART");
+    public static String PREFIXSEED = Main.getInstance().getConfig().getString("Placeholder.PREFIXSEED");
 
 }

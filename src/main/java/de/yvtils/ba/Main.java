@@ -1,9 +1,8 @@
 package de.yvtils.ba;
 
 import de.yvtils.ba.Placeholder.MessagePlaceholder;
-import de.yvtils.ba.commands.KickMessageDesigner;
-import de.yvtils.ba.commands.ReloadConfig;
 import de.yvtils.ba.commands.StartCommand;
+import de.yvtils.ba.commands.replacecommands.seedcommand;
 import de.yvtils.ba.listeners.JoinListener;
 import de.yvtils.ba.listeners.MotdListener;
 import de.yvtils.ba.listeners.QuitListener;
@@ -61,8 +60,6 @@ public final class Main extends JavaPlugin {
 
     private void registerCommands() {
         getCommand("start").setExecutor(new StartCommand());
-        getCommand("testkick").setExecutor(new KickMessageDesigner());
-        getCommand("configreload").setExecutor(new ReloadConfig());
     }
 
     private void registerListener() {
@@ -72,6 +69,9 @@ public final class Main extends JavaPlugin {
         manager.registerEvents(new MotdListener(), this);
         manager.registerEvents(new SpawnBoostListener(this), this);
         manager.registerEvents(new ConfigVersionUpdateChecker(), this);
+        if (getConfig().getBoolean("SeedHider")) {
+            manager.registerEvents(new seedcommand(), this);
+        }
     }
 
 

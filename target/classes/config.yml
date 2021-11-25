@@ -1,13 +1,21 @@
 #For Colorcodes you can look here: https://minecraft.fandom.com/wiki/Formatting_codes
 #For color gradients look here: https://rgb.birdflop.com
+#Only Use Color Codes from the Websites! Other Color Codes don't work.
 
 #Join/Quit Message
 #Use player for the Player Name
-#If there is no indication, there is a mistake in the console and the default message comes
+#If there is no indication, there is an error message in the console and the default join message comes
 JoinMessage:
   - §a» §7player
 QuitMessage:
   - §c« §7player
+
+#Seed Hider
+NotPermissionforSeedMessage: §eYou don't have the Permission to execute this Command. §cRequired permission
+#With this example Message, the Message will look so: "You don't have the Permission to execute this Command.
+#                                                       Required permission: yvtils.ba.command.notreplace.seed"
+SeedHider: true
+SeedColor: §a
 
 #Spawn Elytra
 spawnradius: 50
@@ -73,8 +81,6 @@ MOTD'sText:
   - §4Can't connect to Server
   - §1Caves and Cliffs Inside this Server
 
-
-
 #Placeholder
 Placeholder:
   PREFIX: §9[YVtils]
@@ -89,13 +95,14 @@ Placeholder:
   PREFIXERELOAD: §9[YVtils-RL]
   PREFIXUPDATE: §c[YVtils-UPDATE]
   PREFIXNOUPDATE: §7[YVtils-UPDATE]
+  PREFIXSTART: §9[YVtils-START]
+  PREFIXSEED: §9[YVtils-SEED]
 
 #Other Stuff
 CustomRecipes: true
 
 #Do not edit!
-ConfigVersion: 3
-
+ConfigVersion: 4
 
 #Not in Use at the moment
 #Started: false

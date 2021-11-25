@@ -9,10 +9,6 @@ website: wolfiiyv.de
 commands:
   start:
     permission: yvtils.ba.command.start
-  testkick:
-    permission: yvtils.ba.command.testkick
-  configreload:
-    permission: yvtils.ba.command.reloadconfig
 permissions:
   yvtils.ba.play:
     description: Let Player Plays
