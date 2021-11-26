@@ -6,7 +6,7 @@
 
     <groupId>de.yvtils.ba</groupId>
     <artifactId>YVtils-BA</artifactId>
-    <version>4.3</version>
+    <version>4.2.2</version>
     <packaging>jar</packaging>
 
     <name>YVtils-BA</name>

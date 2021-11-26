@@ -1,6 +1,7 @@
 package de.yvtils.ba.utils;
 
 import de.yvtils.ba.Main;
+import de.yvtils.ba.Placeholder.AnnouncementPlaceholder;
 import de.yvtils.ba.Placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -11,7 +12,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class ConfigVersionUpdateChecker implements Listener {
 
-    int i = 4;
+    int i = Integer.parseInt(AnnouncementPlaceholder.CONFIGVERSION);
 
     public ConfigVersionUpdateChecker() {
         if (Main.getInstance().getConfig().getInt("ConfigVersion") != i) {

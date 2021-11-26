@@ -1,5 +1,6 @@
 package de.yvtils.ba;
 
+import de.yvtils.ba.Placeholder.AnnouncementPlaceholder;
 import de.yvtils.ba.Placeholder.MessagePlaceholder;
 import de.yvtils.ba.commands.StartCommand;
 import de.yvtils.ba.commands.replacecommands.seedcommand;
@@ -38,6 +39,9 @@ public final class Main extends JavaPlugin {
         registerListener();
         registerCommands();
         saveDefaultConfig();
+        if (getConfig().getBoolean("StartupAnnouncement")) {
+            Bukkit.getConsoleSender().sendMessage(AnnouncementPlaceholder.STARTUPANNOUNCE);
+        }
         if (getConfig().getBoolean("CustomRecipes")) {
             registerCustomRecipes();
         }

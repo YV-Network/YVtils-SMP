@@ -24,4 +24,7 @@ permissions:
     description: Craft DebugStick
   yvtils.ba.advancedcrafting.*:
     description: Craft Everything Advanced
+  yvtils.ba.command.notreplace.seed:
+    description: Do not replace the /seed Command
+
 
