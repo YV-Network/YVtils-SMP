@@ -2,6 +2,9 @@
 #For color gradients look here: https://rgb.birdflop.com
 #Only Use Color Codes from the Websites! Other Color Codes don't work.
 
+#Server Start Messages
+StartupAnnouncement: true
+
 #Join/Quit Message
 #Use player for the Player Name
 #If there is no indication, there is an error message in the console and the default join message comes
@@ -102,7 +105,7 @@ Placeholder:
 CustomRecipes: true
 
 #Do not edit!
-ConfigVersion: 4
+ConfigVersion: 5
 
 #Not in Use at the moment
 #Started: false

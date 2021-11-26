@@ -4,6 +4,7 @@ F:\YVtils-BA\src\main\java\de\yvtils\ba\commands\StartCommand.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\utils\UpdateChecker.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\listeners\MotdListener.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\listeners\SpawnBoostListener.java
+F:\YVtils-BA\src\main\java\de\yvtils\ba\Placeholder\AnnouncementPlaceholder.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\Main.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\utils\ConfigVersionUpdateChecker.java
 F:\YVtils-BA\src\main\java\de\yvtils\ba\listeners\QuitListener.java
