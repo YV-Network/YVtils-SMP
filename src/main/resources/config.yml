@@ -100,12 +100,13 @@ Placeholder:
   PREFIXNOUPDATE: §7[YVtils-UPDATE]
   PREFIXSTART: §9[YVtils-START]
   PREFIXSEED: §9[YVtils-SEED]
+  PREFIXANNOUNCEMENT: §4[YVtils-ANNOUNCEMENT]
 
 #Other Stuff
 CustomRecipes: true
 
 #Do not edit!
-ConfigVersion: 5
+ConfigVersion: 6
 
 #Not in Use at the moment
 #Started: false

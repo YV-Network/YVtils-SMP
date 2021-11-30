@@ -6,7 +6,7 @@
 
     <groupId>de.yvtils.ba</groupId>
     <artifactId>YVtils-BA</artifactId>
-    <version>4.2.2</version>
+    <version>4.3</version>
     <packaging>jar</packaging>
 
     <name>YVtils-BA</name>
@@ -91,7 +91,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
-            <version>1.17.1-R0.1-SNAPSHOT</version>
+            <version>1.18-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

@@ -1,6 +1,6 @@
 package de.yvtils.ba.Placeholder;
 
 public class AnnouncementPlaceholder {
-    public static String CONFIGVERSION = "5";
-    public static String STARTUPANNOUNCE = MessagePlaceholder.PREFIXERROR + " §eThis is the last 1.17 Version of this Plugin! New Versions are only tested for 1.18";
+    public static String CONFIGVERSION = "6";
+    public static String STARTUPANNOUNCE = MessagePlaceholder.PREFIXANNOUNCEMENT + " §eThe Project for what the Plugin is started now. That means that not come so much Updates now for the Time the Project running";
 }
