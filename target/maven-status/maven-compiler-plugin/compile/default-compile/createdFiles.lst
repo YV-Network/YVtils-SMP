@@ -1,5 +1,6 @@
 de\yvtils\ba\utils\UpdateChecker.class
 de\yvtils\ba\Placeholder\MessagePlaceholder.class
+de\yvtils\ba\utils\LicenseCode.class
 de\yvtils\ba\Main.class
 de\yvtils\ba\commands\replacecommands\seedcommand.class
 de\yvtils\ba\listeners\QuitListener.class

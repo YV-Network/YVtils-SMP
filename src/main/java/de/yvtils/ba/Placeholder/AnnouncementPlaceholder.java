@@ -1,6 +1,8 @@
 package de.yvtils.ba.Placeholder;
 
+import de.yvtils.ba.utils.LicenseCode;
+
 public class AnnouncementPlaceholder {
-    public static String CONFIGVERSION = "6";
-    public static String STARTUPANNOUNCE = MessagePlaceholder.PREFIXANNOUNCEMENT + " §eThe Project for what the Plugin is started now. That means that not come so much Updates now for the Time the Project running";
+    public static String CONFIGVERSION = "7";
+    public static String STARTUPANNOUNCE = MessagePlaceholder.PREFIXANNOUNCEMENT + " §eFREE PREMIUM KEY: §8" + LicenseCode.EVENTPREMIUM;
 }

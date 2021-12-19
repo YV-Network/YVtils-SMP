@@ -4,6 +4,7 @@
 
 #Server Start Messages
 StartupAnnouncement: true
+EventJoinTitle: true
 
 #Join/Quit Message
 #Use player for the Player Name
@@ -52,11 +53,19 @@ Players:
   - daniel1mag5essen
   - floriantechnik
   - Big_Rom06
-  - Drachengamer08
-  - Capri_Sun_Xd
+  - Doner_mann
+  - Capri_Sun_XD
   - NotHenryXD
   - Monster_alarm
   - RWG_Buddha
+  - wunden
+  - lukasbinhier
+  - desTanktroy
+  - PHMasteeeeer
+  - Heidelbaer
+  - Gewuerzkrone
+  - Firemelon123989
+  - Tyson_2504
 
 MOTD'sText:
   #'player1' For one Player Name and 'player2' for another Player Name
@@ -101,12 +110,15 @@ Placeholder:
   PREFIXSTART: §9[YVtils-START]
   PREFIXSEED: §9[YVtils-SEED]
   PREFIXANNOUNCEMENT: §4[YVtils-ANNOUNCEMENT]
+  PREFIXHELP: §9[YVtils-HELP]
 
 #Other Stuff
 CustomRecipes: true
 
 #Do not edit!
-ConfigVersion: 6
+ConfigVersion: 7
+
+License: y33Yu79v4wXe43wA6c9PJ7qsuhXNj6_NORMALKEY
 
 #Not in Use at the moment
 #Started: false

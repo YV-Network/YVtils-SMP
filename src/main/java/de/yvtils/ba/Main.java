@@ -9,6 +9,7 @@ import de.yvtils.ba.listeners.MotdListener;
 import de.yvtils.ba.listeners.QuitListener;
 import de.yvtils.ba.listeners.SpawnBoostListener;
 import de.yvtils.ba.utils.ConfigVersionUpdateChecker;
+import de.yvtils.ba.utils.LicenseCode;
 import de.yvtils.ba.utils.UpdateChecker;
 import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
@@ -20,6 +21,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public final class Main extends JavaPlugin {
 
@@ -33,6 +35,17 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXENABLE + ChatColor.GREEN + " Plugin is now starting!");
+        if (Objects.equals(getConfig().getString("License"), LicenseCode.CODING)) {
+            onEnableCoderFeatures();
+            onEnablePremiumFeatures();
+            Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXERROR + ChatColor.RED + " Please don't use the Development Version (Activated with Coding Key) when you don't develope at this Plugin! In this Version can be experimental Features which can bring your Server to crash.\n Premium Key Version: " + LicenseCode.PREMIUM + " - Normal Key Version:" + LicenseCode.NORMAL);
+        }
+        if (Objects.equals(getConfig().getString("License"), LicenseCode.PREMIUM) || Objects.equals(getConfig().getString("License"), LicenseCode.EVENTPREMIUM) || Objects.equals(getConfig().getString("License"), LicenseCode.YVSMP)) {
+            onEnablePremiumFeatures();
+            if (Objects.equals(getConfig().getString("License"), LicenseCode.PREMIUM) || Objects.equals(getConfig().getString("License"), LicenseCode.EVENTPREMIUM)) {
+                Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXTHANKS + ChatColor.DARK_GRAY + " You are using a Premium Key. With this Key, you can use more Features than without it. If you do not have permission to use the premium version please change the license point in the config to " + LicenseCode.NORMAL + "!");
+            }
+        }
         registerListener();
         registerCommands();
         saveDefaultConfig();
@@ -57,6 +70,15 @@ public final class Main extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage( MessagePlaceholder.PREFIXDISABLE + ChatColor.RED + " Plugin started to disable!");
         Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXDISABLE + ChatColor.DARK_RED + " Plugin is now disabled!");
         Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXDISABLE + ChatColor.YELLOW + " Plugin from WolfiiYV");
+    }
+
+    private void onEnablePremiumFeatures() {
+        //Auto Restart
+        //Setup Command
+    }
+
+    private void onEnableCoderFeatures() {
+
     }
 
     private void registerCommands() {
