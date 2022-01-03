@@ -4,38 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="At this Time this Version is available, you all can have the EVENT-PREMIUM-KEY&#10;without me giving it to you.&#10;&#10;At the Moment no Premium Features are available, but soon there will come some.&#10;&#10;The Download for this Version is available until 01.01.2022 or I forgot to upload a new version then it's no longer aviable.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/ChatMuteCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/DamageKickCommand.java" afterDir="false" />
+    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="New Features:&#10;&#10;GlobalMute -&gt; With /globalmute; /chatmute or /mutechat you can disable the chat for everyone that don't have the Permission &quot;yvtils.ba.bypass.mutechat&quot;.&#10;&#10;AFKDamageKick -&gt; With /afkdamage you can toggle the automatic kick when you get Damage, but you don't allowed to move to much otherwise you will get kicked and the Setting will disabled. When you get Damage you will get kicked and the Setting get disabled. -&gt; Required Permission: &quot;yvtils.ba.command.afkdamage&quot;&#10;&#10;Config has new Options. -&gt; Version 8">
       <change afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/utils/LicenseCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_R0_1_SNAPSHOT.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YVtils-BA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/YVtils-BA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Placeholder/AnnouncementPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Placeholder/AnnouncementPlaceholder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Placeholder/MessagePlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Placeholder/MessagePlaceholder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/StartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/StartCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/replacecommands/seedcommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/replacecommands/seedcommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/listeners/JoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/listeners/JoinListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/listeners/QuitListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/listeners/QuitListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/utils/ConfigVersionUpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/utils/ConfigVersionUpdateChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Placeholder/AnnouncementPlaceholder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Placeholder/AnnouncementPlaceholder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Placeholder/MessagePlaceholder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/Placeholder/MessagePlaceholder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/commands/replacecommands/seedcommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/commands/replacecommands/seedcommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/listeners/JoinListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/listeners/JoinListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/listeners/QuitListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/listeners/QuitListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/yvtils/ba/utils/ConfigVersionUpdateChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/yvtils/ba/utils/ConfigVersionUpdateChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +178,7 @@
       <workItem from="1641044813466" duration="9942000" />
       <workItem from="1641136268226" duration="2415000" />
       <workItem from="1641140053830" duration="12820000" />
-      <workItem from="1641203220949" duration="17140000" />
+      <workItem from="1641203220949" duration="18454000" />
     </task>
     <task id="LOCAL-00007" summary="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version.">
       <created>1637869169288</created>
@@ -272,7 +243,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639989272056</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="New Features:&#10;&#10;GlobalMute -&gt; With /globalmute; /chatmute or /mutechat you can disable the chat for everyone that don't have the Permission &quot;yvtils.ba.bypass.mutechat&quot;.&#10;&#10;AFKDamageKick -&gt; With /afkdamage you can toggle the automatic kick when you get Damage, but you don't allowed to move to much otherwise you will get kicked and the Setting will disabled. When you get Damage you will get kicked and the Setting get disabled. -&gt; Required Permission: &quot;yvtils.ba.command.afkdamage&quot;&#10;&#10;Config has new Options. -&gt; Version 8">
+      <created>1641222003006</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1641222003006</updated>
+    </task>
+    <task id="LOCAL-00017" summary="New Features:&#10;&#10;GlobalMute -&gt; With /globalmute; /chatmute or /mutechat you can disable the chat for everyone that don't have the Permission &quot;yvtils.ba.bypass.mutechat&quot;.&#10;&#10;AFKDamageKick -&gt; With /afkdamage you can toggle the automatic kick when you get Damage, but you don't allowed to move to much otherwise you will get kicked and the Setting will disabled. When you get Damage you will get kicked and the Setting get disabled. -&gt; Required Permission: &quot;yvtils.ba.command.afkdamage&quot;&#10;&#10;Config has new Options. -&gt; Version 8">
+      <created>1641222285612</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1641222285612</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +281,8 @@
     <MESSAGE value="Deutsch:&#10;Kleine Änderung für den Config Versions Update Announcer&#10;Server Start Announce Nachricht für wichtige Infos vom Coder&#10;&#10;Neue Config Version&#10;&#10;English:&#10;Little Changes for the Config Version Update Announcer&#10;Server Start Announce Message for important Message from the Coder&#10;&#10;New Config Version" />
     <MESSAGE value="Deutsch:&#10;Plugin Update auf die Minecraft Version 1.18&#10;&#10;English:&#10;Updated the Plugin for the Minecraft Version 1.18" />
     <MESSAGE value="At this Time this Version is available, you all can have the EVENT-PREMIUM-KEY&#10;without me giving it to you.&#10;&#10;At the Moment no Premium Features are available, but soon there will come some.&#10;&#10;The Download for this Version is available until 01.01.2022 or I forgot to upload a new version then it's no longer aviable." />
-    <option name="LAST_COMMIT_MESSAGE" value="At this Time this Version is available, you all can have the EVENT-PREMIUM-KEY&#10;without me giving it to you.&#10;&#10;At the Moment no Premium Features are available, but soon there will come some.&#10;&#10;The Download for this Version is available until 01.01.2022 or I forgot to upload a new version then it's no longer aviable." />
+    <MESSAGE value="New Features:&#10;&#10;GlobalMute -&gt; With /globalmute; /chatmute or /mutechat you can disable the chat for everyone that don't have the Permission &quot;yvtils.ba.bypass.mutechat&quot;.&#10;&#10;AFKDamageKick -&gt; With /afkdamage you can toggle the automatic kick when you get Damage, but you don't allowed to move to much otherwise you will get kicked and the Setting will disabled. When you get Damage you will get kicked and the Setting get disabled. -&gt; Required Permission: &quot;yvtils.ba.command.afkdamage&quot;&#10;&#10;Config has new Options. -&gt; Version 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Features:&#10;&#10;GlobalMute -&gt; With /globalmute; /chatmute or /mutechat you can disable the chat for everyone that don't have the Permission &quot;yvtils.ba.bypass.mutechat&quot;.&#10;&#10;AFKDamageKick -&gt; With /afkdamage you can toggle the automatic kick when you get Damage, but you don't allowed to move to much otherwise you will get kicked and the Setting will disabled. When you get Damage you will get kicked and the Setting get disabled. -&gt; Required Permission: &quot;yvtils.ba.command.afkdamage&quot;&#10;&#10;Config has new Options. -&gt; Version 8" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
