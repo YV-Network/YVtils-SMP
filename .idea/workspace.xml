@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="New Features:&#10;&#10;GlobalMute -&gt; With /globalmute; /chatmute or /mutechat you can disable the chat for everyone that don't have the Permission &quot;yvtils.ba.bypass.mutechat&quot;.&#10;&#10;AFKDamageKick -&gt; With /afkdamage you can toggle the automatic kick when you get Damage, but you don't allowed to move to much otherwise you will get kicked and the Setting will disabled. When you get Damage you will get kicked and the Setting get disabled. -&gt; Required Permission: &quot;yvtils.ba.command.afkdamage&quot;&#10;&#10;Config has new Options. -&gt; Version 8">
       <change afterPath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/utils/LicenseCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +177,7 @@
       <workItem from="1641044813466" duration="9942000" />
       <workItem from="1641136268226" duration="2415000" />
       <workItem from="1641140053830" duration="12820000" />
-      <workItem from="1641203220949" duration="18454000" />
+      <workItem from="1641203220949" duration="18811000" />
     </task>
     <task id="LOCAL-00007" summary="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version.">
       <created>1637869169288</created>
@@ -257,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641222285612</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="New Features:&#10;&#10;GlobalMute -&gt; With /globalmute; /chatmute or /mutechat you can disable the chat for everyone that don't have the Permission &quot;yvtils.ba.bypass.mutechat&quot;.&#10;&#10;AFKDamageKick -&gt; With /afkdamage you can toggle the automatic kick when you get Damage, but you don't allowed to move to much otherwise you will get kicked and the Setting will disabled. When you get Damage you will get kicked and the Setting get disabled. -&gt; Required Permission: &quot;yvtils.ba.command.afkdamage&quot;&#10;&#10;Config has new Options. -&gt; Version 8">
+      <created>1641223500359</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1641223500359</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
