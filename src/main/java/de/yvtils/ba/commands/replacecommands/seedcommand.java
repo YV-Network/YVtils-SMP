@@ -24,7 +24,7 @@ public class seedcommand implements Listener {
         if (cmd.startsWith("/seed")) {
             event.setCancelled(true);
             if (args.length == 1) {
-                if (player.hasPermission("yvtils.ba.command.notreplace.seed")) {
+                if (player.hasPermission("yvtils.ba.command.bypass.seed")) {
                     TextComponent c = new TextComponent("§7Please use\n");
                     TextComponent click = new TextComponent("§e/seed showyouonlyformebecauseineedtoknowtheseed");
                     TextComponent click1 = new TextComponent("\n§7or");
@@ -42,12 +42,12 @@ public class seedcommand implements Listener {
                     player.spigot().sendMessage(c);
 
                 } else {
-                    player.sendMessage(Main.getInstance().getConfig().getString("NotPermissionforSeedMessage") + ": yvtils.ba.command.notreplace.seed");
+                    player.sendMessage(Main.getInstance().getConfig().getString("NotPermissionforSeedMessage") + ": yvtils.ba.command.bypass.seed");
                 }
             } else if (args.length == 2) {
                 switch (args[1].toLowerCase()) {
                     case "showyouonlyformebecauseineedtoknowtheseed", "show" -> {
-                        if (player.hasPermission("yvtils.ba.command.notreplace.seed")) {
+                        if (player.hasPermission("yvtils.ba.command.bypass.seed")) {
 
                         TextComponent c = new TextComponent(MessagePlaceholder.PREFIXSEED);
                         TextComponent click = new TextComponent(" §7[" + "§a" + Bukkit.getWorld("world").getSeed() + "§7]");
@@ -58,5 +58,5 @@ public class seedcommand implements Listener {
                         c.addExtra(click);
                         player.spigot().sendMessage(c);
                     }else {
-                            player.sendMessage(Main.getInstance().getConfig().getString("NotPermissionforSeedMessage") + ": yvtils.ba.command.notreplace.seed");
+                            player.sendMessage(Main.getInstance().getConfig().getString("NotPermissionforSeedMessage") + ": yvtils.ba.command.bypass.seed");
                         }}}}}}}

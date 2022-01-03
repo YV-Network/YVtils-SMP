@@ -19,5 +19,7 @@ public class MessagePlaceholder{
     public static String PREFIXSEED = Main.getInstance().getConfig().getString("Placeholder.PREFIXSEED");
     public static String PREFIXANNOUNCEMENT = Main.getInstance().getConfig().getString("Placeholder.PREFIXANNOUNCEMENT");
     public static String PREFIXHELP = Main.getInstance().getConfig().getString("Placeholder.PREFIXHELP");
+    public static String PREFIXFEEDBACK = Main.getInstance().getConfig().getString("Placeholder.PREFIXFEEDBACK");
+    public static String PREFIXGLOBALMUTE = Main.getInstance().getConfig().getString("Placeholder.PREFIXGLOBALMUTE");
     public static String PREFIXTHANKS = "§9[YVtils-THANKS]";
 }

@@ -26,9 +26,9 @@ public class ConfigVersionUpdateChecker implements Listener {
     }
 
     @EventHandler
-    public void Test(PlayerJoinEvent event) {
-        Player player = event.getPlayer();
+    public void PlayerAnnounce(PlayerJoinEvent event) {
         if (Main.getInstance().getConfig().getInt("ConfigVersion") != i) {
+            Player player = event.getPlayer();
             if (player.hasPermission("yvtils.ba.updateannounce") || player.isOp()) {
             player.sendMessage(MessagePlaceholder.PREFIXUPDATE + ChatColor.YELLOW + " A new Config Update is Available! For more Informations look in the Console!");
             }

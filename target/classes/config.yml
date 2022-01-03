@@ -9,6 +9,8 @@ EventJoinTitle: true
 #Join/Quit Message
 #Use player for the Player Name
 #If there is no indication, there is an error message in the console and the default join message comes
+SendJoinMessage: true #This only disable/enable the custom Join Messages from this Plugin and don't deactivate completly the Join Messages!
+SendQuitMessage: true #This only disable/enable the custom Quit Messages from this Plugin and don't deactivate completly the Quit Messages!
 JoinMessage:
   - §a» §7player
 QuitMessage:
@@ -20,6 +22,11 @@ NotPermissionforSeedMessage: §eYou don't have the Permission to execute this Co
 #                                                       Required permission: yvtils.ba.command.notreplace.seed"
 SeedHider: true
 SeedColor: §a
+
+#ChatMute
+Globalmute:
+  Enable: The Chat got disabled! #Disable the Chat
+  Diasable: The Chat got enabled! #Enable the Chat
 
 #Spawn Elytra
 spawnradius: 50
@@ -111,12 +118,14 @@ Placeholder:
   PREFIXSEED: §9[YVtils-SEED]
   PREFIXANNOUNCEMENT: §4[YVtils-ANNOUNCEMENT]
   PREFIXHELP: §9[YVtils-HELP]
+  PREFIXFEEDBACK: §9[YVtils-FEEDBACK]
+  PREFIXGLOBALMUTE: §a[YVtils-CM]
 
 #Other Stuff
 CustomRecipes: true
 
 #Do not edit!
-ConfigVersion: 7
+ConfigVersion: 8
 
 License: y33Yu79v4wXe43wA6c9PJ7qsuhXNj6_NORMALKEY
 

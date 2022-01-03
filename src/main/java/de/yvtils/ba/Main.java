@@ -2,6 +2,8 @@ package de.yvtils.ba;
 
 import de.yvtils.ba.Placeholder.AnnouncementPlaceholder;
 import de.yvtils.ba.Placeholder.MessagePlaceholder;
+import de.yvtils.ba.commands.ChatMuteCommand;
+import de.yvtils.ba.commands.DamageKickCommand;
 import de.yvtils.ba.commands.StartCommand;
 import de.yvtils.ba.commands.replacecommands.seedcommand;
 import de.yvtils.ba.listeners.JoinListener;
@@ -11,7 +13,10 @@ import de.yvtils.ba.listeners.SpawnBoostListener;
 import de.yvtils.ba.utils.ConfigVersionUpdateChecker;
 import de.yvtils.ba.utils.LicenseCode;
 import de.yvtils.ba.utils.UpdateChecker;
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
@@ -34,7 +39,7 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXENABLE + ChatColor.GREEN + " Plugin is now starting!");
+        //API.StartUpMessage();
         if (Objects.equals(getConfig().getString("License"), LicenseCode.CODING)) {
             onEnableCoderFeatures();
             onEnablePremiumFeatures();
@@ -67,18 +72,24 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage( MessagePlaceholder.PREFIXDISABLE + ChatColor.RED + " Plugin started to disable!");
-        Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXDISABLE + ChatColor.DARK_RED + " Plugin is now disabled!");
-        Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXDISABLE + ChatColor.YELLOW + " Plugin from WolfiiYV");
+        //API.StopMessage();
     }
 
     private void onEnablePremiumFeatures() {
+        PluginManager manager = Bukkit.getPluginManager();
         //Auto Restart
         //Setup Command
+
+        DamageKickCommand damageKickCommand = new DamageKickCommand();
+        getCommand("afkdamage").setExecutor(damageKickCommand);
+        manager.registerEvents(damageKickCommand, this);
+
+        ChatMuteCommand chatMuteCommand = new ChatMuteCommand();
+        getCommand("chatmute").setExecutor(chatMuteCommand);
+        manager.registerEvents(chatMuteCommand, this);
     }
 
     private void onEnableCoderFeatures() {
-
     }
 
     private void registerCommands() {
@@ -87,8 +98,12 @@ public final class Main extends JavaPlugin {
 
     private void registerListener() {
         PluginManager manager = Bukkit.getPluginManager();
-        manager.registerEvents(new JoinListener(), this);
-        manager.registerEvents(new QuitListener(), this);
+        if (getConfig().getBoolean("SendJoinMessage")) {
+            manager.registerEvents(new JoinListener(), this);
+        }
+        if (getConfig().getBoolean("SendQuitMessage")) {
+            manager.registerEvents(new QuitListener(), this);
+        }
         manager.registerEvents(new MotdListener(), this);
         manager.registerEvents(new SpawnBoostListener(this), this);
         manager.registerEvents(new ConfigVersionUpdateChecker(), this);
