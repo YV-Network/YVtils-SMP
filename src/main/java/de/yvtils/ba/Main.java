@@ -31,6 +31,8 @@ import java.util.Objects;
 public final class Main extends JavaPlugin {
 
     private static Main instance;
+    DamageKickCommand damageKickCommand = new DamageKickCommand();
+    ChatMuteCommand chatMuteCommand = new ChatMuteCommand();
 
     @Override
     public void onLoad() {
@@ -77,27 +79,22 @@ public final class Main extends JavaPlugin {
 
     private void onEnablePremiumFeatures() {
         PluginManager manager = Bukkit.getPluginManager();
-        //Auto Restart
         //Setup Command
-
-        DamageKickCommand damageKickCommand = new DamageKickCommand();
-        getCommand("afkdamage").setExecutor(damageKickCommand);
-        manager.registerEvents(damageKickCommand, this);
-
-        ChatMuteCommand chatMuteCommand = new ChatMuteCommand();
-        getCommand("chatmute").setExecutor(chatMuteCommand);
-        manager.registerEvents(chatMuteCommand, this);
     }
 
     private void onEnableCoderFeatures() {
     }
 
     private void registerCommands() {
+        getCommand("chatmute").setExecutor(chatMuteCommand);
+        getCommand("afkdamage").setExecutor(damageKickCommand);
         getCommand("start").setExecutor(new StartCommand());
     }
 
     private void registerListener() {
         PluginManager manager = Bukkit.getPluginManager();
+        manager.registerEvents(chatMuteCommand, this);
+        manager.registerEvents(damageKickCommand, this);
         if (getConfig().getBoolean("SendJoinMessage")) {
             manager.registerEvents(new JoinListener(), this);
         }
