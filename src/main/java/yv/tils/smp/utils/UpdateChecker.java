@@ -1,6 +1,6 @@
-package de.yvtils.ba.utils;
+package yv.tils.smp.utils;
 
-import de.yvtils.ba.Main;
+import yv.tils.smp.Main;
 import org.bukkit.Bukkit;
 
 import java.io.IOException;

@@ -1,12 +1,11 @@
-package de.yvtils.ba.commands.replacecommands;
+package yv.tils.smp.commands.replacecommands;
 
-import de.yvtils.ba.Main;
-import de.yvtils.ba.Placeholder.MessagePlaceholder;
+import yv.tils.smp.Main;
+import yv.tils.smp.Placeholder.MessagePlaceholder;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

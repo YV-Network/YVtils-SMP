@@ -52,58 +52,37 @@ WhitelistafterStart: true
 FakePlayerAllowedToJoinCounter: 0
 
 Players:
-  - WolfiiYV
-  - Crash1HD
-  - black_Kittys
-  - VirtualPortal
-  - JojoMi09
-  - daniel1mag5essen
-  - floriantechnik
-  - Big_Rom06
-  - Doner_mann
-  - Capri_Sun_XD
-  - NotHenryXD
-  - Monster_alarm
-  - RWG_Buddha
-  - wunden
-  - lukasbinhier
-  - desTanktroy
-  - PHMasteeeeer
-  - Heidelbaer
-  - Gewuerzkrone
-  - Firemelon123989
-  - Tyson_2504
+  - PlayerName1
+  - PlayerName2
+  - PlayerName3
+  - PlayerName4
 
 MOTD'sText:
-  #'player1' For one Player Name and 'player2' for another Player Name
+  #'player1' For one Player Name and 'player2' for another Player Name. The names will get from the "Players" Config Above.
   Top:
-    - §x§4§c§3§2§b§dY§x§5§5§3§0§b§3V§x§5§e§2§e§a§a-§x§6§7§2§c§a§0S§x§7§0§2§b§9§7M§x§7§9§2§9§8§dP §x§8§b§2§5§7§a#§x§9§4§2§3§7§04
-    - §x§4§8§3§2§c§0B§x§4§e§3§1§b§au§x§5§4§3§0§b§4i§x§5§a§2§f§a§el§x§5§f§2§e§a§8d§x§6§5§2§d§a§2A§x§6§b§2§c§9§ct§x§7§1§2§a§9§5t§x§7§7§2§9§8§fa§x§7§c§2§8§8§9c§x§8§2§2§7§8§3k §x§8§e§2§5§7§7#§x§9§3§2§4§7§14
+    - MOTD Text 1
+    - §aMinecraft §eSMP §cProject
   Bottom:
-  - §bplayer1 sagt Hallo zu player2
-  - §eplayer1 geht zu MC Donalds
-  - §6player1 geht zu Burger King
-  - §3player1 mag player2
-  - §5player1 spielt lieber auf Hypixel
-  - §dplayer1 mag Züge
-  - §aplayer1 wurde von player2 getötet
-  - §7player1 fragt nach dem Map Seed
-  - §8player1 würde gerne Fame werden
-  - §bSponsored by YV-Network
-  - §9Whitelist on!
-  - §fNot CraftAttack!
-  - §csince 2020
-  - §2©©©
-  - §e1.18
+  - §bplayer1 says hello to player2
+  - §eplayer1 goes to MC Donalds
+  - §6player1 goes to Burger King
+  - §3player1 like player2
+  - §5player1 plays on Hypixel
+  - §dplayer1 like trains
+  - §aplayer1 get killed from player2
+  - §7player1 asks for the Map Seed
+  - §8player1 wants to get Fame
+  - §bSponsored by ...
+  - §9Whitelist activated!
+  - §csince ...
   - §aStarted at the ??.??.????
-  - §dServer online
+  - §dServer is online
   - §4Can't connect to Server
-  - §1Caves and Cliffs Inside this Server
 
 #Placeholder
 Placeholder:
   PREFIX: §9[YVtils]
-  PREFIXBA: §9[YVtils-BA]
+  PREFIXSMP: §9[YVtils-SMP]
   PREFIXLOBBY: §9[YVtils-LY]
   PREFIXKICK: §9[YVtils-K]
   PREFIXCONNECT: §9[YVtils-CO]

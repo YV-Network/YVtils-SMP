@@ -1,8 +1,7 @@
-package de.yvtils.ba.listeners;
+package yv.tils.smp.listeners;
 
-import de.yvtils.ba.Main;
-import de.yvtils.ba.Placeholder.MessagePlaceholder;
-import de.yvtils.ba.commands.DamageKickCommand;
+import yv.tils.smp.Main;
+import yv.tils.smp.Placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

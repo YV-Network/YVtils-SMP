@@ -1,4 +1,4 @@
-package de.yvtils.ba.listeners;
+package yv.tils.smp.listeners;
 
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.ComponentBuilder;

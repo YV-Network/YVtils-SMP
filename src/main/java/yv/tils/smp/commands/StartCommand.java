@@ -1,7 +1,7 @@
-package de.yvtils.ba.commands;
+package yv.tils.smp.commands;
 
-import de.yvtils.ba.Main;
-import de.yvtils.ba.Placeholder.MessagePlaceholder;
+import yv.tils.smp.Main;
+import yv.tils.smp.Placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.World;

@@ -1,13 +1,11 @@
-package de.yvtils.ba.commands;
+package yv.tils.smp.commands;
 
-import de.yvtils.ba.Main;
-import de.yvtils.ba.Placeholder.MessagePlaceholder;
-import de.yvtils.ba.utils.LicenseCode;
+import yv.tils.smp.Main;
+import yv.tils.smp.utils.LicenseCode;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

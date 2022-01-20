@@ -1,8 +1,8 @@
-package de.yvtils.ba.utils;
+package yv.tils.smp.utils;
 
-import de.yvtils.ba.Main;
-import de.yvtils.ba.Placeholder.AnnouncementPlaceholder;
-import de.yvtils.ba.Placeholder.MessagePlaceholder;
+import yv.tils.smp.Main;
+import yv.tils.smp.Placeholder.AnnouncementPlaceholder;
+import yv.tils.smp.Placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

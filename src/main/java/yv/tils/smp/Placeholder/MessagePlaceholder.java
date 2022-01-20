@@ -1,10 +1,10 @@
-package de.yvtils.ba.Placeholder;
+package yv.tils.smp.Placeholder;
 
-import de.yvtils.ba.Main;
+import yv.tils.smp.Main;
 
 public class MessagePlaceholder{
     public static String PREFIX = Main.getInstance().getConfig().getString("Placeholder.PREFIX");
-    public static String PREFIXBA = Main.getInstance().getConfig().getString("Placeholder.PREFIXBA");
+    public static String PREFIXSMP = Main.getInstance().getConfig().getString("Placeholder.PREFIXBA");
     public static String PREFIXLOBBY = Main.getInstance().getConfig().getString("Placeholder.PREFIXLOBBY");
     public static String PREFIXKICK = Main.getInstance().getConfig().getString("Placeholder.PREFIXKICK");
     public static String PREFIXCONNECT = Main.getInstance().getConfig().getString("Placeholder.PREFIXCONNECT");

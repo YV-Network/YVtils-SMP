@@ -1,6 +1,6 @@
-package de.yvtils.ba.listeners;
+package yv.tils.smp.listeners;
 
-import de.yvtils.ba.Main;
+import yv.tils.smp.Main;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.server.ServerListPingEvent;

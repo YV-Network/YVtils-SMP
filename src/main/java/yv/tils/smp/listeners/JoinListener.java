@@ -1,8 +1,7 @@
-package de.yvtils.ba.listeners;
+package yv.tils.smp.listeners;
 
-import de.yvtils.ba.Main;
-import de.yvtils.ba.Placeholder.MessagePlaceholder;
-import de.yvtils.ba.utils.LicenseCode;
+import yv.tils.smp.Main;
+import yv.tils.smp.Placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -12,7 +11,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 public class JoinListener implements Listener {
 
