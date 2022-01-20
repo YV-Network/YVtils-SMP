@@ -1,39 +1,39 @@
-name: YVtils-BA
+name: YVtils-SMP
 version: 4.4
-main: de.yvtils.ba.Main
+main: yv.tils.smp.Main
 api-version: 1.16
 authors: [ WolfiiYV ]
-description: Plugin for YV-SMP
+description: Plugin for SMP Server
 website: wolfiiyv.de
 
 commands:
   start:
-    permission: yvtils.ba.command.start
+    permission: yvtils.smp.command.start
   afkdamage:
-    permission: yvtils.ba.command.afkdamage
+    permission: yvtils.smp.command.afkdamage
   mutechat:
     aliases:
       - globalmute
       - chatmute
-    permission: yvtils.ba.command.mutechat
+    permission: yvtils.smp.command.mutechat
 permissions:
-  yvtils.ba.play:
+  yvtils.smp.play:
     description: Let Player Plays
-  yvtils.ba.*:
+  yvtils.smp.*:
     description: Allows everything
-  yvtils.ba.bypass.mutechat:
+  yvtils.smp.bypass.mutechat:
     description: Let you write while Chat is muted
-  yvtils.ba.advancedcrafting.betterprot:
+  yvtils.smp.advancedcrafting.betterprot:
     description: Craft Better Prot
-  yvtils.ba.advancedcrafting.fastertools:
+  yvtils.smp.advancedcrafting.fastertools:
     description: Craft Faster Tools
-  yvtils.ba.advancedcrafting.light:
+  yvtils.smp.advancedcrafting.light:
     description: Craft Light Blocks
-  yvtils.ba.advancedcrafting.debugstick:
+  yvtils.smp.advancedcrafting.debugstick:
     description: Craft DebugStick
-  yvtils.ba.advancedcrafting.*:
+  yvtils.smp.advancedcrafting.*:
     description: Craft Everything Advanced
-  yvtils.ba.command.bypass.seed:
+  yvtils.smp.command.bypass.seed:
     description: Do not replace the /seed Command
 
 
