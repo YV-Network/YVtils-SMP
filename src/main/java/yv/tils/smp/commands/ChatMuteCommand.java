@@ -1,6 +1,6 @@
 package yv.tils.smp.commands;
 
-import yv.tils.smp.Main;
+import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.Placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -11,21 +11,21 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 public class ChatMuteCommand implements CommandExecutor, Listener {
-    public boolean enabled = true;
+    public boolean enabled = false;
 
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender.hasPermission("yvtils.ba.command.mutechat")) {
+        if (sender.hasPermission("yvtils.smp.command.mutechat")) {
             if (!enabled) {
                 this.enabled = true;
                 sender.sendMessage(MessagePlaceholder.PREFIXFEEDBACK + " You disabled the Chat");
-                Bukkit.broadcastMessage(MessagePlaceholder.PREFIXGLOBALMUTE + " " +  Main.getInstance().getConfig().getString("Globalmute.Enable"));
+                Bukkit.broadcastMessage(MessagePlaceholder.PREFIXGLOBALMUTE + " " +  SMPPlugin.getInstance().getConfig().getString("Globalmute.Enable"));
 
             }else {
                 this.enabled = false;
                 sender.sendMessage(MessagePlaceholder.PREFIXFEEDBACK + " You enabled the Chat");
-                Bukkit.broadcastMessage(MessagePlaceholder.PREFIXGLOBALMUTE + " " + Main.getInstance().getConfig().getString("Globalmute.Diasable"));
+                Bukkit.broadcastMessage(MessagePlaceholder.PREFIXGLOBALMUTE + " " + SMPPlugin.getInstance().getConfig().getString("Globalmute.Diasable"));
             }
         }
         return enabled;
@@ -34,7 +34,7 @@ public class ChatMuteCommand implements CommandExecutor, Listener {
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e) {
         if (this.enabled) {
-            if (!e.getPlayer().hasPermission("yvtils.ba.bypass.mutechat")) {
+            if (!e.getPlayer().hasPermission("yvtils.smp.bypass.mutechat")) {
                 e.setCancelled(true);
                 e.getPlayer().sendMessage(MessagePlaceholder.PREFIXGLOBALMUTE + " Globalmute is activated!");
             }

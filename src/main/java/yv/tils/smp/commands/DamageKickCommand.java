@@ -1,6 +1,6 @@
 package yv.tils.smp.commands;
 
-import yv.tils.smp.Main;
+import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.utils.LicenseCode;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -29,11 +29,11 @@ public class DamageKickCommand implements CommandExecutor, Listener {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             UUID uuid = player.getUniqueId();
-    if (sender.hasPermission("yvtils.ba.command.afkdamage")) {
+    if (sender.hasPermission("yvtils.smp.command.afkdamage")) {
         if (!kick.contains(uuid)) {
             kick.add(uuid);
             sender.sendMessage("Now you get kicked when you get Damage!");
-            if (Objects.equals(LicenseCode.YVSMP, Main.getInstance().getConfig().getString("License"))) {
+            if (Objects.equals(LicenseCode.YVSMP, SMPPlugin.getInstance().getConfig().getString("License"))) {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + sender.getName() + " parent set afk");
             }
         } else {

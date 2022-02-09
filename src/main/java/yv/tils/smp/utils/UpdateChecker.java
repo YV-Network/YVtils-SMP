@@ -1,6 +1,6 @@
 package yv.tils.smp.utils;
 
-import yv.tils.smp.Main;
+import yv.tils.smp.SMPPlugin;
 import org.bukkit.Bukkit;
 
 import java.io.IOException;
@@ -11,10 +11,10 @@ import java.util.function.Consumer;
 
 public class UpdateChecker {
 
-    private Main plugin;
+    private SMPPlugin plugin;
     private int resourceId;
 
-    public UpdateChecker(Main plugin, int resourceId) {
+    public UpdateChecker(SMPPlugin plugin, int resourceId) {
         this.plugin  = plugin;
         this.resourceId = resourceId;
     }

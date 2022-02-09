@@ -2,6 +2,8 @@
 #For color gradients look here: https://rgb.birdflop.com
 #Only Use Color Codes from the Websites! Other Color Codes don't work.
 
+Language: en #Aviable Languages are 'en' = English and 'de' = Deutsch --> After selecting your Language delete the 'language.yml' file and restart the Server
+
 #Server Start Messages
 StartupAnnouncement: true
 EventJoinTitle: true
@@ -17,11 +19,15 @@ QuitMessage:
   - §c« §7player
 
 #Seed Hider
-NotPermissionforSeedMessage: §eYou don't have the Permission to execute this Command. §cRequired permission
-#With this example Message, the Message will look so: "You don't have the Permission to execute this Command.
-#                                                       Required permission: yvtils.ba.command.notreplace.seed"
-SeedHider: true
+#Deactivate it under 'CommandBlock -> /seed' in this Config.
 SeedColor: §a
+
+CommandBlock: #All Commands have a new Command! A Message with the new Command comes, when the old Command got used and the Player has the Permission for the new Command.
+  /seed: true
+  /msg: true
+  /kick: true
+  /pardon: true
+  /ban: true
 
 #ChatMute
 Globalmute:
@@ -79,6 +85,12 @@ MOTD'sText:
   - §dServer is online
   - §4Can't connect to Server
 
+
+# How the Direct Message System should be configured
+DirectMessage:
+  Design: #Design of who sent you the Message. More than one Design is possible! Use 'sender' for Name of the sender and 'receiver' for the Name of the Person who will receive it.
+    - §e[§csender §e-> §creceiver§e]§f
+
 #Placeholder
 Placeholder:
   PREFIX: §9[YVtils]
@@ -99,15 +111,12 @@ Placeholder:
   PREFIXHELP: §9[YVtils-HELP]
   PREFIXFEEDBACK: §9[YVtils-FEEDBACK]
   PREFIXGLOBALMUTE: §a[YVtils-CM]
+  PREFIXMODERATION: §c[YVtils-MOD]
 
 #Other Stuff
 CustomRecipes: true
 
 #Do not edit!
-ConfigVersion: 8
+ConfigVersion: 9
 
 License: y33Yu79v4wXe43wA6c9PJ7qsuhXNj6_NORMALKEY
-
-#Not in Use at the moment
-#Started: false
-#AlreadyStartedMessage: §dBA wurde bereits gestartet!

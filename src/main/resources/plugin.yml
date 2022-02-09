@@ -1,7 +1,7 @@
 name: YVtils-SMP
 version: ${project.version}
-main: yv.tils.smp.Main
-api-version: 1.16
+main: yv.tils.smp.SMPPlugin
+api-version: 1.18
 authors: [ WolfiiYV ]
 description: Plugin for SMP Server
 website: wolfiiyv.de
@@ -16,6 +16,35 @@ commands:
       - globalmute
       - chatmute
     permission: yvtils.smp.command.mutechat
+  fly:
+    permission: yvtils.smp.command.fly
+  flywalkspeed:
+    permission: yvtils.smp.command.flyspeed
+  moderation:
+    permission: yvtils.smp.command.moderation
+    aliases:
+      - mod
+      - admin
+  gm:
+    permission: yvtils.smp.command.gm
+  vanish:
+    permission: yvtils.smp.command.vanish
+    aliases:
+      - v
+  directmessage:
+    permission: yvtils.smp.command.directmessage
+    aliases:
+      - dm
+  reply:
+    permission: yvtils.smp.command.reply
+    aliases:
+      - r
+  god:
+    permission: yvtils.smp.command.god
+    aliases:
+      - godmode
+  heal:
+    permission: yvtils.smp.command.heal
 permissions:
   yvtils.smp.play:
     description: Let Player Plays
@@ -35,5 +64,22 @@ permissions:
     description: Craft Everything Advanced
   yvtils.smp.command.bypass.seed:
     description: Do not replace the /seed Command
+  yvtils.smp.command.moderation.ban.getannounced:
+    description: Announcement in Chat when someone get banned
+  yvtils.smp.command.moderation.temp.ban.getannounced:
+    description: Announcement in Chat when someone get temp banned
+  yvtils.smp.command.moderation.kick.getannounced:
+    description: Announcement in Chat when someone get kicked
+  yvtils.smp.command.moderation.unban.getannounced:
+    description: Announcement in Chat when someone get unbanned
+  yvtils.smp.command.moderation.ban:
+    description: Allow users to ban other Players
+  yvtils.smp.command.moderation.temp.ban:
+    description: Allow users to tempban other Players
+  yvtils.smp.command.moderation.kick:
+    description: Allow users to kick other Players
+  yvtils.smp.command.moderation.unban:
+    description: Allow users to unban other Players
+
 
 

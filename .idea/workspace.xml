@@ -4,31 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="New Features:&#10;&#10;GlobalMute -&gt; With /globalmute; /chatmute or /mutechat you can disable the chat for everyone that don't have the Permission &quot;yvtils.ba.bypass.mutechat&quot;.&#10;&#10;AFKDamageKick -&gt; With /afkdamage you can toggle the automatic kick when you get Damage, but you don't allowed to move to much otherwise you will get kicked and the Setting will disabled. When you get Damage you will get kicked and the Setting get disabled. -&gt; Required Permission: &quot;yvtils.ba.command.afkdamage&quot;&#10;&#10;Config has new Options. -&gt; Version 8">
+    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="Plugin got renamed. All files got edited, when you find somewhere in the Plugin the &quot;YVtils-BA&quot; name, please report this to me.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/SMPPlugin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyWalkSpeed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GodCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/HealCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MessageCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ModerationCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ReplyCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/VanishCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/autocompleter/FlySpeedAutoCompleter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/autocompleter/GamemodeAutoCompleter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/autocompleter/ModerationAutoCompleter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/autocompleter/VanishAutoCompleter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/BanCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/KickCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/msgCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/pardonCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/otherfiles/CustomCraftingRecipes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ConfigModeration.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/LicenseCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YVtils-BA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/YVtils-SMP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Placeholder/AnnouncementPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/Placeholder/MessagePlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/ChatMuteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ChatMuteCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/DamageKickCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/DamageKickCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/StartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/StartCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/commands/replacecommands/seedcommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/listeners/JoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/JoinListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/listeners/MotdListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/MotdListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/listeners/QuitListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/QuitListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/listeners/SpawnBoostListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/SpawnBoostListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/utils/ConfigVersionUpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ConfigVersionUpdateChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/yvtils/ba/utils/UpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/UpdateChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ChatMuteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ChatMuteCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/DamageKickCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/DamageKickCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/StartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/StartCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/JoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/JoinListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/MotdListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/MotdListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/QuitListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/QuitListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/SpawnBoostListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/SpawnBoostListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ConfigVersionUpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ConfigVersionUpdateChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/UpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/UpdateChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,15 +78,30 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="742d04c2-3889-4f30-a066-ead95df18632" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/resources/plugin.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/config.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/plugin.yml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="21DnUGA8C2DhSbIFn2yTkEl4LZY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -66,6 +113,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -75,15 +123,16 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MC Plugin Coding with Intenet" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../YVtilsAPI/target/YVtils-API-1.2.jar" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="YVtils-SMP [clean,package]" type="MavenRunConfiguration" factoryName="Maven">
@@ -201,7 +250,27 @@
       <workItem from="1641140053830" duration="12820000" />
       <workItem from="1641203220949" duration="19447000" />
       <workItem from="1642699569447" duration="1418000" />
-      <workItem from="1642701059271" duration="2239000" />
+      <workItem from="1642701059271" duration="3675000" />
+      <workItem from="1642877313442" duration="1555000" />
+      <workItem from="1643127097245" duration="2490000" />
+      <workItem from="1643139290896" duration="1554000" />
+      <workItem from="1643228645918" duration="2590000" />
+      <workItem from="1643399600496" duration="687000" />
+      <workItem from="1644004889663" duration="18771000" />
+      <workItem from="1644071891332" duration="9510000" />
+      <workItem from="1644085824307" duration="6949000" />
+      <workItem from="1644092930776" duration="26206000" />
+      <workItem from="1644248940226" duration="8923000" />
+      <workItem from="1644258933598" duration="1926000" />
+      <workItem from="1644260878509" duration="56000" />
+      <workItem from="1644260970463" duration="5719000" />
+      <workItem from="1644305356899" duration="4980000" />
+      <workItem from="1644310362201" duration="69000" />
+      <workItem from="1644310445948" duration="1532000" />
+      <workItem from="1644312003543" duration="7278000" />
+      <workItem from="1644319394389" duration="8763000" />
+      <workItem from="1644328644106" duration="870000" />
+      <workItem from="1644439316506" duration="1248000" />
     </task>
     <task id="LOCAL-00007" summary="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version.">
       <created>1637869169288</created>
@@ -308,7 +377,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642699814453</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Plugin got renamed. All files got edited, when you find somewhere in the Plugin the &quot;YVtils-BA&quot; name, please report this to me.">
+      <created>1642703424363</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1642703424363</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Plugin got renamed. All files got edited, when you find somewhere in the Plugin the &quot;YVtils-BA&quot; name, please report this to me.">
+      <created>1642703474608</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1642703474608</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +416,8 @@
     <MESSAGE value="Deutsch:&#10;Plugin Update auf die Minecraft Version 1.18&#10;&#10;English:&#10;Updated the Plugin for the Minecraft Version 1.18" />
     <MESSAGE value="At this Time this Version is available, you all can have the EVENT-PREMIUM-KEY&#10;without me giving it to you.&#10;&#10;At the Moment no Premium Features are available, but soon there will come some.&#10;&#10;The Download for this Version is available until 01.01.2022 or I forgot to upload a new version then it's no longer aviable." />
     <MESSAGE value="New Features:&#10;&#10;GlobalMute -&gt; With /globalmute; /chatmute or /mutechat you can disable the chat for everyone that don't have the Permission &quot;yvtils.ba.bypass.mutechat&quot;.&#10;&#10;AFKDamageKick -&gt; With /afkdamage you can toggle the automatic kick when you get Damage, but you don't allowed to move to much otherwise you will get kicked and the Setting will disabled. When you get Damage you will get kicked and the Setting get disabled. -&gt; Required Permission: &quot;yvtils.ba.command.afkdamage&quot;&#10;&#10;Config has new Options. -&gt; Version 8" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Features:&#10;&#10;GlobalMute -&gt; With /globalmute; /chatmute or /mutechat you can disable the chat for everyone that don't have the Permission &quot;yvtils.ba.bypass.mutechat&quot;.&#10;&#10;AFKDamageKick -&gt; With /afkdamage you can toggle the automatic kick when you get Damage, but you don't allowed to move to much otherwise you will get kicked and the Setting will disabled. When you get Damage you will get kicked and the Setting get disabled. -&gt; Required Permission: &quot;yvtils.ba.command.afkdamage&quot;&#10;&#10;Config has new Options. -&gt; Version 8" />
+    <MESSAGE value="Plugin got renamed. All files got edited, when you find somewhere in the Plugin the &quot;YVtils-BA&quot; name, please report this to me." />
+    <option name="LAST_COMMIT_MESSAGE" value="Plugin got renamed. All files got edited, when you find somewhere in the Plugin the &quot;YVtils-BA&quot; name, please report this to me." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

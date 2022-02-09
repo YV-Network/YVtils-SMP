@@ -15,6 +15,7 @@ import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.plugin.Plugin;
+import yv.tils.smp.SMPPlugin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,44 +32,43 @@ public class SpawnBoostListener implements Listener {
         this.spawnRadius = plugin.getConfig().getInt("spawnradius");
         this.multiplyValue = plugin.getConfig().getInt("multiplyValue");
 
-
         Bukkit.getScheduler().runTaskTimer(plugin, () -> {
             Bukkit.getWorld("world").getPlayers().forEach(player -> {
+                if (SMPPlugin.getInstance().fly.contains(player.getUniqueId()) || SMPPlugin.getInstance().godmode.contains(player.getUniqueId())) return;
                 if (player.getGameMode() != GameMode.SURVIVAL) return;
                 player.setAllowFlight(isInSpawnRadius(player));
-                if (flying.contains(player) && !player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
-                    player.setAllowFlight(false);
-                    player.setFlying(false);
-                    player.setGliding(false);
-                    boosted.remove(player);
-                    Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                        flying.remove(player);
-                    }, 5);
+                if (flying.contains(player)) {
+                    if (!player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
+                        player.setAllowFlight(false);
+                        player.setFlying(false);
+                        player.setGliding(false);
+                        boosted.remove(player);
+                        Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                            flying.remove(player);
+                        }, 5);
+                    }
                 }
             });
         }, 0, 3);
-
-
     }
 
 
     @EventHandler
     public void onDoubleJump(PlayerToggleFlightEvent event) {
+        if (SMPPlugin.getInstance().fly.contains(event.getPlayer().getUniqueId()) || SMPPlugin.getInstance().godmode.contains(event.getPlayer().getUniqueId())) return;
         if (event.getPlayer().getGameMode() != GameMode.SURVIVAL) return;
         if (!isInSpawnRadius(event.getPlayer())) return;
-        event.setCancelled(true);
-        event.getPlayer().setGliding(true);
-        event.getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder("Drücke ").append(new KeybindComponent("key.swapOffhand")).append(" um dich zu boosten").create());
-        flying.add(event.getPlayer());
-    }
+            event.setCancelled(true);
+            event.getPlayer().setGliding(true);
+            event.getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder("Drücke ").append(new KeybindComponent("key.swapOffhand")).append(" um dich zu boosten").create());
+            flying.add(event.getPlayer());
+        }
 
     @EventHandler
     public void onLandDamage(EntityDamageEvent event) {
-
         if (event.getEntityType() == EntityType.PLAYER
         && (event.getCause() == EntityDamageEvent.DamageCause.FALL || event.getCause() == EntityDamageEvent.DamageCause.FLY_INTO_WALL)
         && flying.contains(event.getEntity())) event.setCancelled(true);
-
     }
 
     @EventHandler

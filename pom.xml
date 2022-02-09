@@ -6,7 +6,7 @@
 
     <groupId>yv.tils.smp</groupId>
     <artifactId>YVtils-SMP</artifactId>
-    <version>4.4</version>
+    <version>4.6</version>
     <packaging>jar</packaging>
 
     <name>YVtils-SMP</name>
