@@ -1,5 +1,6 @@
 package yv.tils.smp.commands.replacecommands;
 
+import yv.tils.smp.Placeholder.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.Placeholder.MessagePlaceholder;
 import net.md_5.bungee.api.chat.ClickEvent;
@@ -24,9 +25,9 @@ public class seedcommand implements Listener {
             event.setCancelled(true);
             if (args.length == 1) {
                 if (player.hasPermission("yv.tils.smp.command.bypass.seed")) {
-                    TextComponent c = new TextComponent("§7Please use\n");
+                    TextComponent c = new TextComponent(LanguagePlaceholder.Replace1());
                     TextComponent click = new TextComponent("§e/seed showyouonlyformebecauseineedtoknowtheseed");
-                    TextComponent click1 = new TextComponent("\n§7or");
+                    TextComponent click1 = new TextComponent(LanguagePlaceholder.Replace2());
                     TextComponent click2 = new TextComponent("\n§e/seed show");
 
                     click2.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "/seed show"));

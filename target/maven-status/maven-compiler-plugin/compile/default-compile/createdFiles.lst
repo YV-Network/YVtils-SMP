@@ -1,7 +1,9 @@
 yv\tils\smp\commands\ModerationCommand.class
 yv\tils\smp\listeners\MotdListener.class
 yv\tils\smp\listeners\JoinListener.class
+yv\tils\smp\DiscordMinecraftBridge.class
 yv\tils\smp\commands\FlyWalkSpeed.class
+yv\tils\smp\Placeholder\LanguagePlaceholder.class
 yv\tils\smp\Placeholder\MessagePlaceholder.class
 yv\tils\smp\utils\ConfigModeration.class
 yv\tils\smp\Placeholder\AnnouncementPlaceholder.class

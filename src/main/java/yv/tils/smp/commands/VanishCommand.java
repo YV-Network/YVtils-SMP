@@ -9,8 +9,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import yv.tils.smp.Placeholder.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.Placeholder.MessagePlaceholder;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -49,7 +49,7 @@ public class VanishCommand implements CommandExecutor, Listener {
                     }
                     player.setSleepingIgnored(false);
                     player.setCanPickupItems(true);
-                    sender.sendMessage(MessagePlaceholder.PREFIXSMP + " §7Vanish is now deactivated!");
+                    sender.sendMessage(LanguagePlaceholder.VanishOff());
                     Bukkit.broadcastMessage(joinm);
                 } else {
                     SMPPlugin.getInstance().vanished.add(uuid);
@@ -58,29 +58,29 @@ public class VanishCommand implements CommandExecutor, Listener {
                     }
                     player.setSleepingIgnored(true);
                     player.setCanPickupItems(false);
-                    sender.sendMessage(MessagePlaceholder.PREFIXSMP + " §7Vanish is now activated!");
+                    sender.sendMessage(LanguagePlaceholder.VanishOn());
                     Bukkit.broadcastMessage(Quitm);
                 }
             } else {
                 switch (args[0].toLowerCase()) {
                     case "itempickup":
                         if (!SMPPlugin.getInstance().vanished.contains(uuid)) {
-                            sender.sendMessage("You are not vanished! Please use /vanish before using /v itempickup!");
+                            sender.sendMessage(LanguagePlaceholder.VanishTiPu());
                             return true;
                         }
                         if (pickup.contains(uuid)) {
                             pickup.remove(uuid);
                             player.setCanPickupItems(false);
-                            sender.sendMessage(MessagePlaceholder.PREFIXSMP + " §7Item Pick Up is now deactivated!");
+                            sender.sendMessage(LanguagePlaceholder.VanishTiPuOff());
                         } else {
                             pickup.add(uuid);
                             player.setCanPickupItems(true);
-                            sender.sendMessage(MessagePlaceholder.PREFIXSMP + " §7Item Pick Up is now activated!");
+                            sender.sendMessage(LanguagePlaceholder.VanishTiPuOn());
                         }
                         break;
                     case "on":
                         if (SMPPlugin.getInstance().vanished.contains(uuid)) {
-                            sender.sendMessage("You are alredy vanished!");
+                            sender.sendMessage(LanguagePlaceholder.VanishAllreadyOn());
                             return true;
                         }
 
@@ -90,12 +90,12 @@ public class VanishCommand implements CommandExecutor, Listener {
                         }
                         player.setSleepingIgnored(true);
                         player.setCanPickupItems(false);
-                        sender.sendMessage(MessagePlaceholder.PREFIXSMP + " §7Vanish is now activated!");
+                        sender.sendMessage(LanguagePlaceholder.VanishOn());
                         Bukkit.broadcastMessage(Quitm);
                         break;
                     case "off":
                         if (!SMPPlugin.getInstance().vanished.contains(uuid)) {
-                            sender.sendMessage("You are not vanished!");
+                            sender.sendMessage(LanguagePlaceholder.VanishAlreadyOff());
                             return false;
                         }
 
@@ -105,7 +105,7 @@ public class VanishCommand implements CommandExecutor, Listener {
                         }
                         player.setSleepingIgnored(false);
                         player.setCanPickupItems(true);
-                        sender.sendMessage(MessagePlaceholder.PREFIXSMP + " §7Vanish is now deactivated!");
+                        sender.sendMessage(LanguagePlaceholder.VanishOff());
                         Bukkit.broadcastMessage(joinm);
                         break;
                     case "help":
@@ -122,7 +122,7 @@ public class VanishCommand implements CommandExecutor, Listener {
     }
 
     private void sendUsage(CommandSender sender) {
-        sender.sendMessage(ChatColor.GRAY + "Usage" + ChatColor.DARK_GRAY + ": " + ChatColor.BLUE + "/v [itempickup, on, off, help]");
+        sender.sendMessage(LanguagePlaceholder.CommandUsage() + ChatColor.BLUE + "/v [itempickup, on, off, help]");
     }
 
     @EventHandler

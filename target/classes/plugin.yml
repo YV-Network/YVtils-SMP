@@ -1,5 +1,5 @@
 name: YVtils-SMP
-version: 4.5
+version: 4.6
 main: yv.tils.smp.SMPPlugin
 api-version: 1.18
 authors: [ WolfiiYV ]

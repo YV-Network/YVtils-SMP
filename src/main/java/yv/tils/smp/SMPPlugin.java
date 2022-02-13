@@ -1,11 +1,10 @@
 package yv.tils.smp;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import yv.tils.smp.Placeholder.AnnouncementPlaceholder;
-import yv.tils.smp.Placeholder.MessagePlaceholder;
+import yv.tils.smp.Placeholder.LanguagePlaceholder;
 import yv.tils.smp.commands.*;
 import yv.tils.smp.commands.autocompleter.FlySpeedAutoCompleter;
 import yv.tils.smp.commands.autocompleter.GamemodeAutoCompleter;
@@ -19,10 +18,12 @@ import yv.tils.smp.listeners.SpawnBoostListener;
 import yv.tils.smp.otherfiles.CustomCraftingRecipes;
 import yv.tils.smp.utils.ConfigModeration;
 import yv.tils.smp.utils.ConfigVersionUpdateChecker;
-import yv.tils.smp.utils.LicenseCode;
 import yv.tils.smp.utils.UpdateChecker;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
 
 public final class SMPPlugin extends JavaPlugin {
 
@@ -45,46 +46,39 @@ public final class SMPPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXENABLE + ChatColor.GREEN + " Plugin is starting!");
-        if (Objects.equals(getConfig().getString("License"), LicenseCode.CODING)) {
-            Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXERROR + ChatColor.RED + " Please don't use the Development Version (Activated with Coding Key) when you don't develop at this Plugin! In this Version can be experimental Features which can bring your Server to crash.\n Premium Key Version: " + LicenseCode.PREMIUM + " - Normal Key Version:" + LicenseCode.NORMAL);
-        }
-        if (Objects.equals(getConfig().getString("License"), LicenseCode.PREMIUM) || Objects.equals(getConfig().getString("License"), LicenseCode.EVENTPREMIUM) || Objects.equals(getConfig().getString("License"), LicenseCode.YVSMP)) {
-            if (Objects.equals(getConfig().getString("License"), LicenseCode.PREMIUM) || Objects.equals(getConfig().getString("License"), LicenseCode.EVENTPREMIUM)) {
-                Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXTHANKS + ChatColor.DARK_GRAY + " You are using a Premium Key. With this Key, you can use more Features than without it. If you do not have permission to use the premium version please change the license point in the config to " + LicenseCode.NORMAL + "!");
-            }
-        }
+        Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.StartMessage());
         saveDefaultConfig();
-        new ConfigModeration().onNameGenerate();
-        new ConfigModeration().onEntranceGeneration();
+        ConfigModeration configModeration = new ConfigModeration();
+        configModeration.onNameGenerate();
+        configModeration.onEntranceGeneration();
         registerListener();
         registerCommands();
         registerTabCompleter();
         registerCommandReplace();
         recentMessages = new HashMap<>();
         if (getConfig().getBoolean("StartupAnnouncement")) {
-            Bukkit.getConsoleSender().sendMessage(AnnouncementPlaceholder.STARTUPANNOUNCE);
+            Bukkit.getConsoleSender().sendMessage(AnnouncementPlaceholder.STARTUPANNOUNCE());
         }
         if (getConfig().getBoolean("CustomRecipes")) {
             new CustomCraftingRecipes().addToCraftingManager();
         }
         new UpdateChecker(this, 97642).getLatestVersion(version -> {
             if(this.getDescription().getVersion().equalsIgnoreCase(version)) {
-                Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXNOUPDATE + ChatColor.WHITE + " Plugin is up to date.");
+                Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.UpToDate());
             } else {
-                Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXUPDATE + ChatColor.YELLOW + " The Plugin has a new Version available. Load it here: " + ChatColor.GRAY + "https://www.spigotmc.org/resources/yvtils-ba.97642/");
+                Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.UpdateAviaible());
             }
         });
-        Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXENABLE + ChatColor.DARK_GREEN + " Plugin start is completed!");
+        Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.StartCompletedMessage());
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXDISABLE + ChatColor.RED + " Plugin is stopping!");
+        Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.StopMessage());
 
+        new ConfigModeration().onSave();
 
-
-        Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXDISABLE + ChatColor.DARK_RED + " Plugin stop is completed!");
+        Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.StopCompletedMessage());
     }
 
     private void registerCommands() {

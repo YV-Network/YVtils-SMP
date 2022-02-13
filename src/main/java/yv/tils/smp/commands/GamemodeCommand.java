@@ -7,6 +7,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import yv.tils.smp.Placeholder.LanguagePlaceholder;
 
 public class GamemodeCommand implements CommandExecutor {
     @Override
@@ -60,7 +61,7 @@ public class GamemodeCommand implements CommandExecutor {
     }
 
     private void sendUsage(CommandSender sender) {
-        sender.sendMessage(ChatColor.GRAY + "Verwendung" + ChatColor.DARK_GRAY + ": " + ChatColor.BLUE +
+        sender.sendMessage(LanguagePlaceholder.CommandUsage() + ChatColor.BLUE +
                 "/gm <0,1,2,3 / survival, creative, adventure, spectator / su, c, a, sp>");
     }
 }

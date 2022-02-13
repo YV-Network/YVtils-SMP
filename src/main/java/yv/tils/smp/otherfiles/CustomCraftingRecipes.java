@@ -9,6 +9,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
+import yv.tils.smp.Placeholder.LanguagePlaceholder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,21 +29,18 @@ public class CustomCraftingRecipes implements CraftRecipe {
     }
 
     private void Effi10Tools() {
-
-
-
         ItemStack pick = new ItemStack(Material.NETHERITE_PICKAXE);
         ItemMeta meta1 = pick.getItemMeta();
 
         meta1.setDisplayName(ChatColor.AQUA + "NETHERITE PICKAXE");
         List<String> lore1 = new ArrayList<>();
-        lore1.add(ChatColor.RED + "This is a legal Tool!");
-        lore1.add(ChatColor.GREEN.toString() + ChatColor.BOLD + "Efficiency 10 Tool");
+        lore1.add(LanguagePlaceholder.LegalTool());
+        lore1.add(LanguagePlaceholder.Effi10Tool());
         meta1.setLore(lore1);
         meta1.addEnchant(Enchantment.DIG_SPEED, 10, true);
         pick.setItemMeta(meta1);
 
-        ShapedRecipe epick = new ShapedRecipe(NamespacedKey.minecraft("10pick"), new ItemStack(pick));
+        ShapedRecipe epick = new ShapedRecipe(NamespacedKey.minecraft("effipick"), new ItemStack(pick));
         epick.shape(" T ", " B ", "DDD");
 
         epick.setIngredient('T', Material.NETHERITE_PICKAXE);
@@ -57,13 +55,13 @@ public class CustomCraftingRecipes implements CraftRecipe {
 
         meta2.setDisplayName(ChatColor.AQUA + "NETHERITE AXE");
         List<String> lore2 = new ArrayList<>();
-        lore2.add(ChatColor.RED + "This is a legal Tool!");
-        lore2.add(ChatColor.GREEN.toString() + ChatColor.BOLD + "Efficiency 10 Tool");
+        lore2.add(LanguagePlaceholder.LegalTool());
+        lore2.add(LanguagePlaceholder.Effi10Tool());
         meta2.setLore(lore2);
         meta2.addEnchant(Enchantment.DIG_SPEED, 10, true);
         axe.setItemMeta(meta2);
 
-        ShapedRecipe eaxe = new ShapedRecipe(NamespacedKey.minecraft("10axe"), new ItemStack(axe));
+        ShapedRecipe eaxe = new ShapedRecipe(NamespacedKey.minecraft("effiaxe"), new ItemStack(axe));
         eaxe.shape(" T ", " B ", "DDD");
 
         eaxe.setIngredient('T', Material.NETHERITE_AXE);
@@ -78,13 +76,13 @@ public class CustomCraftingRecipes implements CraftRecipe {
 
         meta3.setDisplayName(ChatColor.AQUA + "NETHERITE SHOVEL");
         List<String> lore3 = new ArrayList<>();
-        lore3.add(ChatColor.RED + "This is a legal Tool!");
-        lore3.add(ChatColor.DARK_GREEN.toString() + ChatColor.BOLD + "Efficiency 10 Tool");
+        lore3.add(LanguagePlaceholder.LegalTool());
+        lore3.add(LanguagePlaceholder.Effi10Tool());
         meta3.setLore(lore3);
         meta3.addEnchant(Enchantment.DIG_SPEED, 10, true);
         shovel.setItemMeta(meta3);
 
-        ShapedRecipe eshovel = new ShapedRecipe(NamespacedKey.minecraft("10shovel"), new ItemStack(shovel));
+        ShapedRecipe eshovel = new ShapedRecipe(NamespacedKey.minecraft("effishovel"), new ItemStack(shovel));
         eshovel.shape(" T ", " B ", "DDD");
 
         eshovel.setIngredient('T', Material.NETHERITE_SHOVEL);
@@ -99,13 +97,13 @@ public class CustomCraftingRecipes implements CraftRecipe {
 
         meta4.setDisplayName(ChatColor.AQUA + "NETHERITE HOE");
         List<String> lore4 = new ArrayList<>();
-        lore4.add(ChatColor.RED + "This is a legal Tool!");
-        lore4.add(ChatColor.GREEN.toString() + ChatColor.BOLD + "Efficiency 10 Tool");
+        lore4.add(LanguagePlaceholder.LegalTool());
+        lore4.add(LanguagePlaceholder.Effi10Tool());
         meta4.setLore(lore4);
         meta4.addEnchant(Enchantment.DIG_SPEED, 10, true);
         hoe.setItemMeta(meta4);
 
-        ShapedRecipe ehoe = new ShapedRecipe(NamespacedKey.minecraft("10hoe"), new ItemStack(hoe));
+        ShapedRecipe ehoe = new ShapedRecipe(NamespacedKey.minecraft("effihoe"), new ItemStack(hoe));
         ehoe.shape(" T ", " B ", "DDD");
 
         ehoe.setIngredient('T', Material.NETHERITE_HOE);
@@ -120,13 +118,13 @@ public class CustomCraftingRecipes implements CraftRecipe {
 
         meta5.setDisplayName(ChatColor.BLUE + "SHEARS");
         List<String> lore5 = new ArrayList<>();
-        lore5.add(ChatColor.RED + "This is a legal Tool!");
-        lore5.add(ChatColor.GREEN.toString() + ChatColor.BOLD + "Efficiency 10 Tool");
+        lore5.add(LanguagePlaceholder.LegalTool());
+        lore5.add(LanguagePlaceholder.Effi10Tool());
         meta5.setLore(lore5);
         meta5.addEnchant(Enchantment.DIG_SPEED, 10, true);
         shear.setItemMeta(meta5);
 
-        ShapedRecipe eshear = new ShapedRecipe(NamespacedKey.minecraft("10shear"), new ItemStack(shear));
+        ShapedRecipe eshear = new ShapedRecipe(NamespacedKey.minecraft("effishear"), new ItemStack(shear));
         eshear.shape(" T ", " B ", "DDD");
 
         eshear.setIngredient('T', Material.SHEARS);
@@ -141,8 +139,8 @@ public class CustomCraftingRecipes implements CraftRecipe {
 
         meta.setDisplayName(ChatColor.BLUE + "LIGHT");
         List<String> lore = new ArrayList<>();
-        lore.add(ChatColor.RED + "This is a legal Item!");
-        lore.add(ChatColor.GREEN.toString() + ChatColor.BOLD + "This gives a invisible Light Source");
+        lore.add(LanguagePlaceholder.LegalTool());
+        lore.add(LanguagePlaceholder.LightBlock());
         meta.setLore(lore);
         lighto.setItemMeta(meta);
 
@@ -160,8 +158,8 @@ public class CustomCraftingRecipes implements CraftRecipe {
 
         meta1.setDisplayName(ChatColor.BLUE + "LIGHT");
         List<String> lore1 = new ArrayList<>();
-        lore1.add(ChatColor.RED + "This is a legal Item!");
-        lore1.add(ChatColor.GREEN.toString() + ChatColor.BOLD + "This give a invisible Light Source (Light Level 15)");
+        lore1.add(LanguagePlaceholder.LegalTool());
+        lore1.add(LanguagePlaceholder.LightBlock());
         meta1.setLore(lore1);
         lightb.setItemMeta(meta1);
 
@@ -180,12 +178,12 @@ public class CustomCraftingRecipes implements CraftRecipe {
 
         meta1.setDisplayName(ChatColor.BLUE + "DEBUG STICK");
         List<String> lore1 = new ArrayList<>();
-        lore1.add(ChatColor.RED + "This is a legal Item!");
-        lore1.add(ChatColor.GREEN.toString() + ChatColor.BOLD + "Let you edit Blocks");
+        lore1.add(LanguagePlaceholder.LegalTool());
+        lore1.add(LanguagePlaceholder.DebugStick());
         meta1.setLore(lore1);
         debug.setItemMeta(meta1);
 
-        ShapedRecipe debug1 = new ShapedRecipe(NamespacedKey.minecraft("debug"), new ItemStack(debug));
+        ShapedRecipe debug1 = new ShapedRecipe(NamespacedKey.minecraft("debugs"), new ItemStack(debug));
         debug1.shape("EBE", "ESE", "ENE");
 
         debug1.setIngredient('E', Material.EXPERIENCE_BOTTLE);
@@ -201,8 +199,8 @@ public class CustomCraftingRecipes implements CraftRecipe {
 
         meta5.setDisplayName(ChatColor.BLUE + "Chestplate of Protection");
         List<String> lore5 = new ArrayList<>();
-        lore5.add(ChatColor.RED + "This is a legal Item!");
-        lore5.add(ChatColor.GREEN.toString() + ChatColor.BOLD + "Better Proter");
+        lore5.add(LanguagePlaceholder.LegalTool());
+        lore5.add(LanguagePlaceholder.BetterProt());
         meta5.setLore(lore5);
         meta5.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 10, true);
         meta5.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 10, true);
@@ -210,7 +208,7 @@ public class CustomCraftingRecipes implements CraftRecipe {
         meta5.addEnchant(Enchantment.PROTECTION_PROJECTILE, 10, true);
         brust.setItemMeta(meta5);
 
-        ShapedRecipe ebrust = new ShapedRecipe(NamespacedKey.minecraft("10brust"), new ItemStack(brust));
+        ShapedRecipe ebrust = new ShapedRecipe(NamespacedKey.minecraft("protchestplate"), new ItemStack(brust));
         ebrust.shape("N N", "NNN", "NNN");
 
         ebrust.setIngredient('N', Material.NETHERITE_SCRAP);
@@ -223,8 +221,8 @@ public class CustomCraftingRecipes implements CraftRecipe {
 
         meta1.setDisplayName(ChatColor.BLUE + "Leggins of Protection");
         List<String> lore2 = new ArrayList<>();
-        lore2.add(ChatColor.RED + "This is a legal Item!");
-        lore2.add(ChatColor.GREEN.toString() + ChatColor.BOLD + "Better Proter");
+        lore2.add(LanguagePlaceholder.LegalTool());
+        lore2.add(LanguagePlaceholder.BetterProt());
         meta1.setLore(lore2);
         meta1.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 10, true);
         meta1.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 10, true);
@@ -232,7 +230,7 @@ public class CustomCraftingRecipes implements CraftRecipe {
         meta1.addEnchant(Enchantment.PROTECTION_PROJECTILE, 10, true);
         hose.setItemMeta(meta1);
 
-        ShapedRecipe ehose = new ShapedRecipe(NamespacedKey.minecraft("10hose"), new ItemStack(hose));
+        ShapedRecipe ehose = new ShapedRecipe(NamespacedKey.minecraft("protleggins"), new ItemStack(hose));
         ehose.shape("NNN", "N N", "N N");
 
         ehose.setIngredient('N', Material.NETHERITE_SCRAP);
@@ -245,8 +243,8 @@ public class CustomCraftingRecipes implements CraftRecipe {
 
         meta2.setDisplayName(ChatColor.BLUE + "Boots of Protection");
         List<String> lore3 = new ArrayList<>();
-        lore3.add(ChatColor.RED + "This is a legal Item!");
-        lore3.add(ChatColor.GREEN.toString() + ChatColor.BOLD + "Better Proter");
+        lore3.add(LanguagePlaceholder.LegalTool());
+        lore3.add(LanguagePlaceholder.BetterProt());
         meta2.setLore(lore3);
         meta2.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 10, true);
         meta2.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 10, true);
@@ -254,7 +252,7 @@ public class CustomCraftingRecipes implements CraftRecipe {
         meta2.addEnchant(Enchantment.PROTECTION_PROJECTILE, 10, true);
         schuhe.setItemMeta(meta2);
 
-        ShapedRecipe eschuhe = new ShapedRecipe(NamespacedKey.minecraft("10schuhe"), new ItemStack(schuhe));
+        ShapedRecipe eschuhe = new ShapedRecipe(NamespacedKey.minecraft("protboots"), new ItemStack(schuhe));
         eschuhe.shape("   ", "N N", "N N");
 
         eschuhe.setIngredient('N', Material.NETHERITE_SCRAP);
@@ -267,8 +265,8 @@ public class CustomCraftingRecipes implements CraftRecipe {
 
         meta3.setDisplayName(ChatColor.BLUE + "Helmet of Protection");
         List<String> lore4 = new ArrayList<>();
-        lore4.add(ChatColor.RED + "This is a legal Item!");
-        lore4.add(ChatColor.GREEN.toString() + ChatColor.BOLD + "Better Proter");
+        lore4.add(LanguagePlaceholder.LegalTool());
+        lore4.add(LanguagePlaceholder.BetterProt());
         meta3.setLore(lore4);
         meta3.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 10, true);
         meta3.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 10, true);
@@ -276,7 +274,7 @@ public class CustomCraftingRecipes implements CraftRecipe {
         meta3.addEnchant(Enchantment.PROTECTION_PROJECTILE, 10, true);
         helm.setItemMeta(meta3);
 
-        ShapedRecipe ehelm = new ShapedRecipe(NamespacedKey.minecraft("10helm"), new ItemStack(helm));
+        ShapedRecipe ehelm = new ShapedRecipe(NamespacedKey.minecraft("prothelmet"), new ItemStack(helm));
         ehelm.shape("NNN", "N N", "   ");
 
         ehelm.setIngredient('N', Material.NETHERITE_SCRAP);

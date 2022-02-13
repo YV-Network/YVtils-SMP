@@ -6,6 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
+import yv.tils.smp.Placeholder.LanguagePlaceholder;
 
 public class FlyWalkSpeed implements CommandExecutor, Listener {
     @Override
@@ -240,7 +241,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
     }
 
     private void sendUsage(CommandSender sender) {
-        sender.sendMessage(ChatColor.GRAY + "Usage" + ChatColor.DARK_GRAY + ": " + ChatColor.BLUE +
+        sender.sendMessage(LanguagePlaceholder.CommandUsage() + ChatColor.BLUE +
                 "/flywalkspeed <-10 - 10> or <-1.0, -0.9 - 0.9, 1.0>, /flywalkspeed reset");
     }
 }

@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+import yv.tils.smp.Placeholder.LanguagePlaceholder;
 import yv.tils.smp.Placeholder.MessagePlaceholder;
 
 public class BanCommand implements Listener {
@@ -21,9 +22,9 @@ public class BanCommand implements Listener {
         if (cmd.equals("/ban")) {
             event.setCancelled(true);
                 if (player.hasPermission("yv.tils.smp.command.moderation.ban")) {
-                    TextComponent c = new TextComponent("§7Please use\n");
+                    TextComponent c = new TextComponent(LanguagePlaceholder.Replace1());
                     TextComponent click = new TextComponent("§e/mod ban");
-                    TextComponent click1 = new TextComponent("\n§7or");
+                    TextComponent click1 = new TextComponent(LanguagePlaceholder.Replace2());
                     TextComponent click2 = new TextComponent("\n§e/mod tempban");
 
                     click2.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "/mod tempban"));

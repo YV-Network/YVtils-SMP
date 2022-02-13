@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+import yv.tils.smp.Placeholder.LanguagePlaceholder;
 import yv.tils.smp.Placeholder.MessagePlaceholder;
 
 public class pardonCommand implements Listener {
@@ -21,7 +22,7 @@ public class pardonCommand implements Listener {
         if (cmd.startsWith("/pardon")) {
             event.setCancelled(true);
                 if (player.hasPermission("yv.tils.smp.command.moderation.unban")) {
-                    TextComponent c = new TextComponent("§7Please use\n");
+                    TextComponent c = new TextComponent(LanguagePlaceholder.Replace1());
                     TextComponent click = new TextComponent("§e/mod unban");
 
 

@@ -2,6 +2,7 @@ package yv.tils.smp.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
+import yv.tils.smp.Placeholder.LanguagePlaceholder;
 import yv.tils.smp.Placeholder.MessagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 
@@ -20,29 +21,34 @@ public class ConfigModeration {
 
     public void onEntranceGeneration() {
 
+        System.out.println(SMPPlugin.getInstance().getDataFolder());
+
         //Language.yml
         if (Objects.equals(SMPPlugin.getInstance().getConfig().getString("Language"), "en")) {
             //English
-            modifyFile.addDefault("Command", "Use & for Color Codes.");
+            modifyFile.addDefault("#", "Use & for Color Codes.");
             modifyFile.addDefault("Already_Started_Message", "&d<Project Name> already started!");
         }else if (Objects.equals(SMPPlugin.getInstance().getConfig().getString("Language"), "de")) {
             //Deutsch
-            modifyFile.addDefault("Command", "Benutze & für Color Codes.");
+            modifyFile.addDefault("#", "Benutze & für Color Codes.");
             modifyFile.addDefault("Already_Started_Message", "&d<Projekt Name> wurde bereits gestartet!");
         }else {
             modifyFile2.set("MissingLanguage", true);
             onSave();
-            modifyFile.addDefault("Bug" , "This language is not available in the Moment! Help to translate: " + "https://discord.com/invite/y6uJYzdHc5");
-            Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXERROR + " §7This language is not available in the Moment! Help to translate: " + "https://discord.com/invite/y6uJYzdHc5");
+            modifyFile.addDefault("Bug" , LanguagePlaceholder.ConfigCreateMissingLanguage());
+            Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXERROR + " " + LanguagePlaceholder.ConfigCreateMissingLanguage());
         }
+        modifyFile.options().copyDefaults(true);
 
         //MinecraftDiscordBridge.yml
         modifyFile1.addDefault("Active", true);
-        modifyFile1.addDefault("BotToken", "YOUR TOKEN HERE");
+        modifyFile1.addDefault("BotToken", LanguagePlaceholder.ConfigCreateBotToken());
+        modifyFile1.options().copyDefaults(true);
 
         //DoNotEdit.yml
         modifyFile2.addDefault("Started", false);
         modifyFile2.addDefault("MissingLanguage", false);
+        modifyFile2.options().copyDefaults(true);
 
         onSave();
     }
@@ -50,12 +56,24 @@ public class ConfigModeration {
     public void onSave() {
         try {
             modifyFile.save(file);
+        } catch (IOException e) {
+            System.out.println("---1---");
+            Bukkit.getConsoleSender().sendMessage("Error 1");
+            System.out.println("---1---");
+        }
+        try {
             modifyFile1.save(file1);
+        } catch (IOException e) {
+            System.out.println("---2---");
+            Bukkit.getConsoleSender().sendMessage("Error 2");
+            System.out.println("---2---");
+        }
+        try {
             modifyFile2.save(file2);
         } catch (IOException e) {
-            System.out.println("-------");
-            e.printStackTrace();
-            System.out.println("-------");
+            System.out.println("---3---");
+            Bukkit.getConsoleSender().sendMessage("Error 3");
+            System.out.println("---3---");
         }
     }
 

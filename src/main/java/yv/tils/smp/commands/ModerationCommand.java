@@ -1,6 +1,5 @@
 package yv.tils.smp.commands;
 
-import net.minecraft.commands.arguments.selector.options.PlayerSelector;
 import org.bukkit.BanList;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -9,6 +8,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import yv.tils.smp.Placeholder.LanguagePlaceholder;
 import yv.tils.smp.Placeholder.MessagePlaceholder;
 
 import java.util.Calendar;
@@ -22,6 +22,7 @@ public class ModerationCommand implements CommandExecutor {
 
             Player player = (Player) sender;
             String parentpermission = "yvtils.smp.command.moderation";
+
 
             if (args.length >= 2) {
                 if (Bukkit.getOfflinePlayer(args[1]) != null) {
@@ -103,18 +104,24 @@ public class ModerationCommand implements CommandExecutor {
                         case "kick":
                             if (sender.hasPermission("yvtils.smp.command.moderation.kick")) {
                                 if (onlinetarget != null) {
-                                    onlinetarget.kickPlayer(String.valueOf(reason));
+                                    onlinetarget.kickPlayer(reason);
+                                    Bukkit.broadcast(MessagePlaceholder.PREFIXMODERATION + " §7" + target.getName() + " got kicked from " + sender.getName() + "! Reason: " + reason, "yvtils.smp.command.moderation.kick.getannounced");
+                                }else {
+                                    sender.sendMessage(LanguagePlaceholder.PlayerNotOnline());
                                 }
-                                Bukkit.broadcast(MessagePlaceholder.PREFIXMODERATION + " §7" + target.getName() + " got kicked from " + sender.getName() + "! Reason: " + reason, "yvtils.smp.command.moderation.kick.getannounced");
                             } else {
                                 player.sendMessage(MessagePlaceholder.PERMISSIONERROR + parentpermission + ".kick");
                             }
                             break;
                         case "ban":
                             if (sender.hasPermission("yvtils.smp.command.moderation.ban")) {
+                                if (Bukkit.getBanList(BanList.Type.NAME).isBanned(target.getName())) {
+                                    sender.sendMessage(LanguagePlaceholder.AlreadyBanned());
+                                    return false;
+                                }
                                 Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), reason, null, String.valueOf(sender));
                                 if (onlinetarget != null) {
-                                    onlinetarget.kickPlayer(String.valueOf(reason));
+                                    onlinetarget.kickPlayer(reason);
                                 }
                                 Bukkit.broadcast(MessagePlaceholder.PREFIXMODERATION + " §7" + target.getName() + " got banned from " + sender.getName() + "! Reason: " + reason, "yvtils.smp.command.moderation.ban.getannounced");
                             } else {
@@ -124,6 +131,7 @@ public class ModerationCommand implements CommandExecutor {
                         case "tempban":
 
                             Calendar cal = Calendar.getInstance();
+                            int intValue;
 
                             if (args[3].toLowerCase().contains("seconds")) {
                                 cal.add(Calendar.SECOND, Integer.parseInt(args[2]));
@@ -133,14 +141,20 @@ public class ModerationCommand implements CommandExecutor {
                                 cal.add(Calendar.HOUR, Integer.parseInt(args[2]));
                             } else if (args[3].toLowerCase().contains("days")) {
                                 cal.add(Calendar.DAY_OF_WEEK, Integer.parseInt(args[2]));
+                            }else {
+                                sender.sendMessage(LanguagePlaceholder.UnknownTimeFormat());
                             }
 
                             if (sender.hasPermission("yvtils.smp.command.moderation.temp.ban")) {
+                                if (Bukkit.getBanList(BanList.Type.NAME).isBanned(target.getName())) {
+                                    sender.sendMessage(LanguagePlaceholder.AlreadyBanned());
+                                    return false;
+                                }
                                         Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), reason1, cal.getTime(), String.valueOf(sender));
                                         if (onlinetarget != null) {
-                                            onlinetarget.kickPlayer(String.valueOf(reason1));
+                                            onlinetarget.kickPlayer(reason);
                                         }
-                                        Bukkit.broadcast(MessagePlaceholder.PREFIXMODERATION + " §7" + target.getName() + " got temp banned from " + sender.getName() + "! Reason: " + reason1, "yvtils.smp.command.moderation.temp.ban.getannounced");
+                                        Bukkit.broadcast(MessagePlaceholder.PREFIXMODERATION + " §8" + target.getName() + " §7got temp banned from §8" + sender.getName() + "§7! Reason: §8" + reason1 + "§7, Duration: §8" + args[2] + " " + args[3], "yvtils.smp.command.moderation.temp.ban.getannounced");
                             } else{
                                 player.sendMessage(MessagePlaceholder.PERMISSIONERROR + parentpermission + ".temp.ban");
                             }
@@ -171,7 +185,7 @@ public class ModerationCommand implements CommandExecutor {
         return true;
     }
                 private void sendUsage(CommandSender sender){
-                    sender.sendMessage(ChatColor.GRAY + "Usage" + ChatColor.DARK_GRAY + ": " + ChatColor.BLUE +
+                    sender.sendMessage(LanguagePlaceholder.CommandUsage() + ChatColor.BLUE +
                     "/modearation <kick, ban> <Player Name> [Reason (\\n for new Line, Color Codes are working when using '&')] \n" +
                     "/modearation tempban <Player Name> <duration> <Time Format (Seconds, Minutes, Hours, Days)> [Reason (\\n for new Line, Color Codes are working when using '&')] \n" +
                             "/modearation unban <Player Name>");

@@ -12,6 +12,7 @@ F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\replacecommands\KickCommand.jav
 F:\YVtils-SMP\src\main\java\yv\tils\smp\utils\ConfigModeration.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\autocompleter\GamemodeAutoCompleter.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\HealCommand.java
+F:\YVtils-SMP\src\main\java\yv\tils\smp\DiscordMinecraftBridge.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\listeners\QuitListener.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\ReplyCommand.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\replacecommands\BanCommand.java
@@ -27,6 +28,7 @@ F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\MessageCommand.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\GodCommand.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\SMPPlugin.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\utils\LicenseCode.java
+F:\YVtils-SMP\src\main\java\yv\tils\smp\Placeholder\LanguagePlaceholder.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\autocompleter\VanishAutoCompleter.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\GamemodeCommand.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\replacecommands\pardonCommand.java

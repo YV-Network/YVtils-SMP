@@ -15,6 +15,7 @@ import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.plugin.Plugin;
+import yv.tils.smp.Placeholder.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 
 import java.util.ArrayList;
@@ -60,7 +61,7 @@ public class SpawnBoostListener implements Listener {
         if (!isInSpawnRadius(event.getPlayer())) return;
             event.setCancelled(true);
             event.getPlayer().setGliding(true);
-            event.getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder("Drücke ").append(new KeybindComponent("key.swapOffhand")).append(" um dich zu boosten").create());
+            event.getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder(LanguagePlaceholder.Boost1()).append(new KeybindComponent("key.swapOffhand")).append(LanguagePlaceholder.Boost2()).create());
             flying.add(event.getPlayer());
         }
 
