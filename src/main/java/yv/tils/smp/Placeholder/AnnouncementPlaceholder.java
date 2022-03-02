@@ -1,7 +1,5 @@
 package yv.tils.smp.Placeholder;
 
-import yv.tils.smp.SMPPlugin;
-
 public class AnnouncementPlaceholder {
     public static String CONFIGVERSION = "9";
     public static String STARTUPANNOUNCE() {

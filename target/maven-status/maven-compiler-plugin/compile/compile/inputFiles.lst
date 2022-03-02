@@ -1,4 +1,5 @@
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\DamageKickCommand.java
+F:\YVtils-SMP\src\main\java\yv\tils\smp\listeners\ChatListener.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\FlyCommand.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\ModerationCommand.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\VanishCommand.java
@@ -8,11 +9,14 @@ F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\replacecommands\seedcommand.jav
 F:\YVtils-SMP\src\main\java\yv\tils\smp\utils\UpdateChecker.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\listeners\MotdListener.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\Placeholder\AnnouncementPlaceholder.java
+F:\YVtils-SMP\src\main\java\yv\tils\smp\discord\BotStartStop.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\replacecommands\KickCommand.java
+F:\YVtils-SMP\src\main\java\yv\tils\smp\discord\WhitelistMessageGetter.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\utils\ConfigModeration.java
+F:\YVtils-SMP\src\main\java\yv\tils\smp\utils\ServerStart_StopEvent.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\autocompleter\GamemodeAutoCompleter.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\HealCommand.java
-F:\YVtils-SMP\src\main\java\yv\tils\smp\DiscordMinecraftBridge.java
+F:\YVtils-SMP\src\main\java\yv\tils\smp\discord\BuildEmbeds.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\listeners\QuitListener.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\ReplyCommand.java
 F:\YVtils-SMP\src\main\java\yv\tils\smp\commands\replacecommands\BanCommand.java

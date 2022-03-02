@@ -22,6 +22,7 @@ public class MessagePlaceholder{
     public static String PREFIXFEEDBACK = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXFEEDBACK");
     public static String PREFIXGLOBALMUTE = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXGLOBALMUTE");
     public static String PREFIXMODERATION = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXMODERATION");
+    public static String PREFIXDC = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXDC");
     public static String PREFIXTHANKS = "§9[YVtils-THANKS]";
     public static String PERMISSIONERROR = LanguagePlaceholder.PermissionError();
 }

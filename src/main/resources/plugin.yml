@@ -4,7 +4,7 @@ main: yv.tils.smp.SMPPlugin
 api-version: 1.18
 authors: [ WolfiiYV ]
 description: Plugin for SMP Server
-website: wolfiiyv.de
+website: yvnetwork.de
 
 commands:
   start:

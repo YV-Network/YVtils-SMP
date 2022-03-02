@@ -1,9 +1,9 @@
 yv\tils\smp\commands\ModerationCommand.class
 yv\tils\smp\listeners\MotdListener.class
 yv\tils\smp\listeners\JoinListener.class
-yv\tils\smp\DiscordMinecraftBridge.class
 yv\tils\smp\commands\FlyWalkSpeed.class
 yv\tils\smp\Placeholder\LanguagePlaceholder.class
+yv\tils\smp\discord\BotStartStop.class
 yv\tils\smp\Placeholder\MessagePlaceholder.class
 yv\tils\smp\utils\ConfigModeration.class
 yv\tils\smp\Placeholder\AnnouncementPlaceholder.class
@@ -17,6 +17,8 @@ yv\tils\smp\commands\replacecommands\msgCommand.class
 yv\tils\smp\listeners\QuitListener.class
 yv\tils\smp\commands\ReplyCommand.class
 yv\tils\smp\otherfiles\CustomCraftingRecipes.class
+yv\tils\smp\utils\ServerStart_StopEvent.class
+yv\tils\smp\discord\BuildEmbeds.class
 yv\tils\smp\utils\UpdateChecker.class
 yv\tils\smp\commands\GamemodeCommand.class
 yv\tils\smp\commands\autocompleter\VanishAutoCompleter.class
@@ -26,10 +28,12 @@ yv\tils\smp\commands\replacecommands\seedcommand.class
 yv\tils\smp\commands\StartCommand.class
 yv\tils\smp\commands\replacecommands\BanCommand.class
 yv\tils\smp\commands\replacecommands\pardonCommand.class
+yv\tils\smp\discord\WhitelistMessageGetter.class
 yv\tils\smp\commands\autocompleter\GamemodeAutoCompleter.class
 yv\tils\smp\utils\LicenseCode.class
 yv\tils\smp\utils\ConfigVersionUpdateChecker.class
 yv\tils\smp\commands\FlyCommand.class
 yv\tils\smp\commands\ChatMuteCommand.class
 yv\tils\smp\commands\HealCommand.class
+yv\tils\smp\listeners\ChatListener.class
 yv\tils\smp\listeners\SpawnBoostListener.class

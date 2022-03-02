@@ -112,6 +112,7 @@ Placeholder:
   PREFIXFEEDBACK: §9[YVtils-FEEDBACK]
   PREFIXGLOBALMUTE: §a[YVtils-CM]
   PREFIXMODERATION: §c[YVtils-MOD]
+  PREFIXDC: §9[YVtils-DC]
 
 #Other Stuff
 CustomRecipes: true

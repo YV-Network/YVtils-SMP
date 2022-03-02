@@ -420,4 +420,177 @@ public class LanguagePlaceholder {
         }
         return s;
     }
+
+    public static String NoBotTokenGiven() {
+        String s;
+        String en = "No Bot Token was given! Deactivate the Discord Bot or insert a valid Token!";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Kein Bot Token wurde erkannt! Deaktiviere den Bot oder trage einen Token ein.";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String BotStartupFailed() {
+        String s;
+        String en = "Bot Startup Failed! Please check your Config of the Bot";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Bot Start ist fehlgeschlagen! Bitte überprüfe deine Konfigurationen";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String BotStartupFinished() {
+        String s;
+        String en = "Bot Startup Finished! Bot should be Online now!";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Bot Start war erfolgreich! Der Bot sollte nun Online sein!";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String BotActivity() {
+        //Activity -> Streaming; Watching; Playing; Competing; None;
+        String s;
+        String en = "You can use Streaming; Watching; Playing; Competing; None";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Du kannst Streaming; Watching; Playing; Competing; None benutzen";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String BotActivityStreamingUrl() {
+        String s;
+        String en = "You only need a Url, when you use the Activity Streaming! Otherwise you don't need one";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Du brauchst nur eine Url, wenn du die Aktivität Streaming ausgewählt hast! Ansonsten benötigst du keine";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String BotStatus() {
+        //Status -> Online; Idle; DND; Offline; Invisible; Unknown
+        String s;
+        String en = "You can use Online; Idle; DND; Offline; Invisible";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Du kannst Online; Idle; DND; Offline; Invisible benutzen";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String ChannelID() {
+        //Status -> Online; Idle; DND; Offline; Invisible; Unknown
+        String s;
+        String en = "Here you can set the Channel for the whitelist Feature! Players can write their MC Name in there and they will get whitelisted! Copy the Channel ID and paste it here";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Hier kannst du einen Kannal für das Whitelist Modul auswählen! Spieler können dann ihren MC Namen dort hineninschreiben und werden automatisch gewhitelistet! Kopiere die Kannal ID und füge sie hier ein";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String ConfigCreateChannelID() {
+        //Status -> Online; Idle; DND; Offline; Invisible; Unknown
+        String s;
+        String en = "CHANNEL ID HERE";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "KANAL ID HIER";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String DCConsoleLog_NameChangeEvent(String oldname, String newname, String discorduser) {
+        String s;
+        String en = "Discord User '" + discorduser + "' changed their whitelisted Minecraft Account from '" + oldname + "' to '" + newname + "'";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Discord User '" + discorduser + "' hat seinen gewhitelisteten Account von '" + oldname + "' zu '" + newname + "' geändert";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String DCConsoleLog_NameAddEvent(String name, String discorduser) {
+        String s;
+        String en = "Discord User '" + discorduser + "' has whitelisted their Minecraft Account '" + name + "'";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Discord User '" + discorduser + "' hat seinen Minecraft Account '" + name + "' gewhitelistet";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String DCConsoleLog_NameWrongEvent(String name, String discorduser) {
+        String s;
+        String en = "Discord User '" + discorduser + "' has tried to whitelisted their Minecraft Account '" + name + "', but it failed! -> Account doesn't exist";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Discord User '" + discorduser + "' hat versucht seinen Minecraft Account '" + name + "' zu whitelisten, aber es ist fehlgeschlagen! -> Account existiert nicht";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String DCConsoleLog_NameCheckServerError(String name, String discorduser) {
+        String s;
+        String en = "Discord User '" + discorduser + "' has tried to whitelisted their Minecraft Account '" + name + "', but it failed! -> Server for checking Names isn't available";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Discord User '" + discorduser + "' hat versucht seinen Minecraft Account '" + name + "' zu whitelisten, aber es ist fehlgeschlagen! -> Server fürs checken der Namen ist nicht erreichbar";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String DCEmbedAuthorIcon() {
+        String s;
+        String en = "You can insert here a URL (https://cdn.discordapp.com/attachments/887398222555930664/892066785766019112/buildattack.jpg) for a Icon in the Embeds!";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Hier kannst du eine URL (https://cdn.discordapp.com/attachments/887398222555930664/892066785766019112/buildattack.jpg) einfügen, damit die Embeds ein Bild haben!";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
 }

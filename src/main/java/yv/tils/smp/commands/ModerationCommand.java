@@ -10,6 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import yv.tils.smp.Placeholder.LanguagePlaceholder;
 import yv.tils.smp.Placeholder.MessagePlaceholder;
+import yv.tils.smp.SMPPlugin;
 
 import java.util.Calendar;
 
@@ -133,16 +134,12 @@ public class ModerationCommand implements CommandExecutor {
                             Calendar cal = Calendar.getInstance();
                             int intValue;
 
-                            if (args[3].toLowerCase().contains("seconds")) {
-                                cal.add(Calendar.SECOND, Integer.parseInt(args[2]));
-                            } else if (args[3].toLowerCase().contains("minutes")) {
-                                cal.add(Calendar.MINUTE, Integer.parseInt((args[2])));
-                            } else if (args[3].toLowerCase().contains("hours")) {
-                                cal.add(Calendar.HOUR, Integer.parseInt(args[2]));
-                            } else if (args[3].toLowerCase().contains("days")) {
-                                cal.add(Calendar.DAY_OF_WEEK, Integer.parseInt(args[2]));
-                            }else {
-                                sender.sendMessage(LanguagePlaceholder.UnknownTimeFormat());
+                            switch (args[3].toLowerCase()) {
+                                case "seconds" -> cal.add(Calendar.SECOND, Integer.parseInt(args[2]));
+                                case "minutes" -> cal.add(Calendar.MINUTE, Integer.parseInt((args[2])));
+                                case "hours" -> cal.add(Calendar.HOUR, Integer.parseInt(args[2]));
+                                case "days" -> cal.add(Calendar.DAY_OF_WEEK, Integer.parseInt(args[2]));
+                                default -> sender.sendMessage(LanguagePlaceholder.UnknownTimeFormat());
                             }
 
                             if (sender.hasPermission("yvtils.smp.command.moderation.temp.ban")) {
