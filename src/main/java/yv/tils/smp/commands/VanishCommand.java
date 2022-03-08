@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
-import yv.tils.smp.Placeholder.LanguagePlaceholder;
+import yv.tils.smp.placeholder.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 
 import java.util.ArrayList;

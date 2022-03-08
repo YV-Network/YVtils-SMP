@@ -31,8 +31,8 @@ CommandBlock: #All Commands have a new Command! A Message with the new Command c
 
 #ChatMute
 Globalmute:
-  Enable: The Chat got disabled! #Disable the Chat
-  Diasable: The Chat got enabled! #Enable the Chat
+  Enable: The Globalmute got enabled! #Disable the Chat
+  Diasable:  #Enable the Chat
 
 #Spawn Elytra
 spawnradius: 50
@@ -119,5 +119,3 @@ CustomRecipes: true
 
 #Do not edit!
 ConfigVersion: 9
-
-License: y33Yu79v4wXe43wA6c9PJ7qsuhXNj6_NORMALKEY

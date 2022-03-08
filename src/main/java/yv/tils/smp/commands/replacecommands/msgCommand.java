@@ -7,8 +7,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import yv.tils.smp.Placeholder.LanguagePlaceholder;
-import yv.tils.smp.Placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.placeholder.MessagePlaceholder;
 
 public class msgCommand implements Listener {
 

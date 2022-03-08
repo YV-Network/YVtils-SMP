@@ -1,7 +1,7 @@
 package yv.tils.smp.commands;
 
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.Placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

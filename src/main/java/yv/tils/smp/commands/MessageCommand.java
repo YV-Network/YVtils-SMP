@@ -6,9 +6,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import yv.tils.smp.Placeholder.LanguagePlaceholder;
+import yv.tils.smp.placeholder.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.Placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.MessagePlaceholder;
 
 import java.util.Collections;
 import java.util.List;

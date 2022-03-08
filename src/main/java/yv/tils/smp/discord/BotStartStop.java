@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
-import yv.tils.smp.Placeholder.LanguagePlaceholder;
+import yv.tils.smp.placeholder.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 
 import javax.security.auth.login.LoginException;

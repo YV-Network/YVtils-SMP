@@ -3,8 +3,8 @@ package yv.tils.smp.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.PluginManager;
-import yv.tils.smp.Placeholder.AnnouncementPlaceholder;
-import yv.tils.smp.Placeholder.LanguagePlaceholder;
+import yv.tils.smp.placeholder.AnnouncementPlaceholder;
+import yv.tils.smp.placeholder.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.commands.*;
 import yv.tils.smp.commands.autocompleter.FlySpeedAutoCompleter;
@@ -58,7 +58,7 @@ public class ServerStart_StopEvent {
             if(main.getDescription().getVersion().equalsIgnoreCase(version)) {
                 Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.UpToDate());
             } else {
-                Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.UpdateAviaible());
+                Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.UpdateAvailable());
             }
         });
     }

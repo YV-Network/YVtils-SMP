@@ -5,7 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import yv.tils.smp.Placeholder.LanguagePlaceholder;
+import yv.tils.smp.placeholder.LanguagePlaceholder;
 
 import java.util.ArrayList;
 import java.util.List;

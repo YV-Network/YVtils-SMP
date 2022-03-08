@@ -3,7 +3,7 @@ package yv.tils.smp;
 import net.dv8tion.jda.api.JDA;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import yv.tils.smp.Placeholder.LanguagePlaceholder;
+import yv.tils.smp.placeholder.LanguagePlaceholder;
 import yv.tils.smp.utils.ServerStart_StopEvent;
 
 import java.util.ArrayList;

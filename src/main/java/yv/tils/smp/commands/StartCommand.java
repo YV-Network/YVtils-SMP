@@ -2,7 +2,7 @@ package yv.tils.smp.commands;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.Placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.World;

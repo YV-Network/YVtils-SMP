@@ -2,8 +2,8 @@ package yv.tils.smp.utils;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.Placeholder.AnnouncementPlaceholder;
-import yv.tils.smp.Placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.AnnouncementPlaceholder;
+import yv.tils.smp.placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

@@ -2,13 +2,12 @@ package yv.tils.smp.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
-import yv.tils.smp.Placeholder.LanguagePlaceholder;
-import yv.tils.smp.Placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class ConfigModeration {
