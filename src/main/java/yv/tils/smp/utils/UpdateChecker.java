@@ -1,7 +1,7 @@
 package yv.tils.smp.utils;
 
-import yv.tils.smp.SMPPlugin;
 import org.bukkit.Bukkit;
+import yv.tils.smp.SMPPlugin;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -2,6 +2,7 @@ package yv.tils.smp.commands;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.placeholder.ColorCode;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -28,33 +29,8 @@ public class StartCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (modifyFile.getBoolean("Started")) {
-            String string = modifyFile1.getString("Already_Started_Message");
-                String colorcode = string.replace("&0", "§0");
-                String colorcode1 = colorcode.replace("&1", "§1");
-                String colorcode2 = colorcode1.replace("&2", "§2");
-                String colorcode3 = colorcode2.replace("&3", "§3");
-                String colorcode4 = colorcode3.replace("&4", "§4");
-                String colorcode5 = colorcode4.replace("&5", "§5");
-                String colorcode6 = colorcode5.replace("&6", "§6");
-                String colorcode7 = colorcode6.replace("&7", "§7");
-                String colorcode8 = colorcode7.replace("&8", "§8");
-                String colorcode9 = colorcode8.replace("&9", "§9");
-                String colorcode10 = colorcode9.replace("&a", "§a");
-                String colorcode11 = colorcode10.replace("&b", "§b");
-                String colorcode12 = colorcode11.replace("&c", "§c");
-                String colorcode13 = colorcode12.replace("&d", "§d");
-                String colorcode14 = colorcode13.replace("&e", "§e");
-                String colorcode15 = colorcode14.replace("&f", "§f");
-                String colorcode16 = colorcode15.replace("&k", "§k");
-                String colorcode17 = colorcode16.replace("&l", "§l");
-                String colorcode18 = colorcode17.replace("&m", "§m");
-                String colorcode19 = colorcode18.replace("&n", "§n");
-                String colorcode20 = colorcode19.replace("&o", "§o");
-                String colorcode21 = colorcode20.replace("&r", "§r");
-                string = colorcode21;
-
-
-                sender.sendMessage(string);
+            String s = new ColorCode().ColorCodes(modifyFile1.getString("Already_Started_Message"));
+            sender.sendMessage(s);
         }else {
             modifyFile.set("Started", true);
             try {

@@ -1,9 +1,35 @@
 package yv.tils.smp.placeholder;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import yv.tils.smp.SMPPlugin;
 
 public class LanguagePlaceholder {
+
+    public static String Example(String en, String de) {
+        String s;
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = de;
+        }else {
+            s = en;
+            Bukkit.getConsoleSender().sendMessage("This Language is not available in the Moment! Help to translate!");
+        }
+        return s;
+    }
+
+    public static String DirectFormatter(String en, String de) {
+        String s;
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = de;
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
 
     public static String StartMessage() {
         String s;
@@ -70,13 +96,13 @@ public class LanguagePlaceholder {
         return s;
     }
 
-    public static String UpdateAviaible() {
+    public static String UpdateAvailable() {
         String s;
-        String en = MessagePlaceholder.PREFIXUPDATE + ChatColor.YELLOW + " The Plugin has a new Version available. Load it here: " + ChatColor.GRAY + "https://www.spigotmc.org/resources/yvtils-ba.97642/";
+        String en = MessagePlaceholder.PREFIXUPDATE + ChatColor.YELLOW + " The Plugin has a new Version available. Load it here: " + ChatColor.GRAY + "https://www.spigotmc.org/resources/yvtils-smp.97642/";
         if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
             s = en;
         }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
-            s = MessagePlaceholder.PREFIXUPDATE + ChatColor.YELLOW + " Plugin hat eine neue Version zum Download verfügbar. Lade es hier herunter: " + ChatColor.GRAY + "https://www.spigotmc.org/resources/yvtils-ba.97642/";
+            s = MessagePlaceholder.PREFIXUPDATE + ChatColor.YELLOW + " Plugin hat eine neue Version zum Download verfügbar. Lade es hier herunter: " + ChatColor.GRAY + "https://www.spigotmc.org/resources/yvtils-smp.97642/";
         }else {
             s = "Language is not available! English Message -> " + en;
         }
@@ -588,6 +614,45 @@ public class LanguagePlaceholder {
             s = en;
         }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
             s = "Hier kannst du eine URL (https://cdn.discordapp.com/attachments/887398222555930664/892066785766019112/buildattack.jpg) einfügen, damit die Embeds ein Bild haben!";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String MainteanceActivate() {
+        String s;
+        String en = "You can insert here a URL (https://cdn.discordapp.com/attachments/887398222555930664/892066785766019112/buildattack.jpg) for a Icon in the Embeds!";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Hier kannst du eine URL (https://cdn.discordapp.com/attachments/887398222555930664/892066785766019112/buildattack.jpg) einfügen, damit die Embeds ein Bild haben!";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String MainteanceDeactivate() {
+        String s;
+        String en = "You can insert here a URL (https://cdn.discordapp.com/attachments/887398222555930664/892066785766019112/buildattack.jpg) for a Icon in the Embeds!";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Hier kannst du eine URL (https://cdn.discordapp.com/attachments/887398222555930664/892066785766019112/buildattack.jpg) einfügen, damit die Embeds ein Bild haben!";
+        }else {
+            s = "Language is not available! English Message -> " + en;
+        }
+        return s;
+    }
+
+    public static String MainteanceNotAllowedToJoin() {
+        String s;
+        String en = "On this Server are Mainteance Works! Come later back and play or ask for the Permission yvtils.smp.mainteance.join";
+        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+            s = en;
+        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+            s = "Auf diesem Server sind Wartungs Arbeiten! Komme später wieder um zu spielen oder frage für die Berechtigung yvtils.smp.mainteance.join";
         }else {
             s = "Language is not available! English Message -> " + en;
         }

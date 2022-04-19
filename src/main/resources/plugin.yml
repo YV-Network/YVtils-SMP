@@ -45,6 +45,8 @@ commands:
       - godmode
   heal:
     permission: yvtils.smp.command.heal
+  mainteance:
+    permission: yvtils.smp.command.mainteance
 permissions:
   yvtils.smp.play:
     description: Let Player Plays
@@ -80,6 +82,10 @@ permissions:
     description: Allow users to kick other Players
   yvtils.smp.command.moderation.unban:
     description: Allow users to unban other Players
+  yvtils.smp.collercodes.chat:
+    description: With this Permission Players can use Color Codes in Chat
+  yvtils.smp.mainteance.join:
+    description: Players with this Permission can Join, when the Mainteance Mode is activated!
 
 
 

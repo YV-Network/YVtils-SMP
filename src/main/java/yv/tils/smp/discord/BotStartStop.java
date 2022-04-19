@@ -29,7 +29,6 @@ public class BotStartStop {
         if (token.equals(LanguagePlaceholder.ConfigCreateBotToken())) {
             Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.NoBotTokenGiven());
             Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.BotStartupFailed());
-            return;
         }else {
             BotSettings();
         }

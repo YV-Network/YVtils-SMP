@@ -38,8 +38,8 @@ public class SpawnBoostListener implements Listener {
                 if (SMPPlugin.getInstance().fly.contains(player.getUniqueId()) || SMPPlugin.getInstance().godmode.contains(player.getUniqueId())) return;
                 if (player.getGameMode() != GameMode.SURVIVAL) return;
                 player.setAllowFlight(isInSpawnRadius(player));
-                if (flying.contains(player)) {
-                    if (!player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
+                    if (flying.contains(player) && !player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
+                        player.sendMessage("aewdadawdawgfawgwa");
                         player.setAllowFlight(false);
                         player.setFlying(false);
                         player.setGliding(false);
@@ -48,7 +48,6 @@ public class SpawnBoostListener implements Listener {
                             flying.remove(player);
                         }, 5);
                     }
-                }
             });
         }, 0, 3);
     }

@@ -12,6 +12,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
 public class seedcommand implements Listener {
 
     @EventHandler
@@ -21,7 +25,9 @@ public class seedcommand implements Listener {
         final String cmd = event.getMessage();
         final String[] args = cmd.split(" ");
 
-        if (cmd.startsWith("/seed")) {
+        String cmdlowercase = cmd.toLowerCase();
+
+        if (cmdlowercase.startsWith("/seed")) {
             event.setCancelled(true);
             if (args.length == 1) {
                 if (player.hasPermission("yv.tils.smp.command.bypass.seed")) {

@@ -31,7 +31,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(-1.0f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(-1.0f);
                         }
@@ -40,7 +40,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(-0.9f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(-0.9f);
                         }
@@ -49,7 +49,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(-0.8f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(-0.8f);
                         }
@@ -58,7 +58,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(-0.7f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(-0.7f);
                         }
@@ -67,7 +67,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(-0.6f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(-0.6f);
                         }
@@ -76,7 +76,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(-0.5f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(-0.5f);
                         }
@@ -85,7 +85,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(-0.4f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(-0.4f);
                         }
@@ -94,7 +94,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(-0.3f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(-0.3f);
                         }
@@ -103,7 +103,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(-0.2f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(-0.2f);
                         }
@@ -112,7 +112,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(-0.1f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(-0.1f);
                         }
@@ -121,7 +121,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(0.0f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(0.0f);
                         }
@@ -130,7 +130,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(0.1f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(0.1f);
                         }
@@ -139,7 +139,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(0.2f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(0.2f);
                         }
@@ -148,7 +148,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(0.3f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(0.3f);
                         }
@@ -157,7 +157,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(0.4f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(0.4f);
                         }
@@ -166,7 +166,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(0.5f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(0.5f);
                         }
@@ -175,7 +175,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(0.6f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(0.6f);
                         }
@@ -184,7 +184,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(0.7f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(0.7f);
                         }
@@ -193,7 +193,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(0.8f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(0.8f);
                         }
@@ -202,7 +202,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(0.9f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(0.9f);
                         }
@@ -211,28 +211,48 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(1.0f);
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(1.0f);
                         }
                         break;
-                    case "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0":
+                    case "0.1":
+                    case "0.2":
+                    case "0.3":
+                    case "0.4":
+                    case "0.5":
+                    case "0.6":
+                    case "0.7":
+                    case "0.8":
+                    case "0.9":
+                    case "1.0":
                         if (player.isFlying()) {
                             sender.sendMessage("You changed your Fly Speed to " + args[0]);
                             player.setFlySpeed(Float.parseFloat(args[0]));
-                        }else {
+                        } else {
                             sender.sendMessage("You changed your Walk Speed to " + args[0]);
                             player.setWalkSpeed(Float.parseFloat(args[0]));
                         }
                         break;
-                    case "-0.1", "-0.2", "-0.3", "-0.4", "-0.5", "-0.6", "-0.7", "-0.8", "-0.9", "-1.0":
+                    case "-0.1":
+                    case "-0.2":
+                    case "-0.3":
+                    case "-0.4":
+                    case "-0.5":
+                    case "-0.6":
+                    case "-0.7":
+                    case "-0.8":
+                    case "-0.9":
+                    case "-1.0":
                         if (player.isFlying()) {
                             player.setFlySpeed(Float.parseFloat(args[0]));
-                        }else {
+                        } else {
                             player.setWalkSpeed(Float.parseFloat(args[0]));
                         }
                         break;
-                    default: sendUsage(sender);
+                    default:
+                        sendUsage(sender);
+                        break;
                 }
 
             }

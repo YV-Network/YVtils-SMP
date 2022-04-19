@@ -2,9 +2,9 @@ package yv.tils.smp.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
+import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.placeholder.LanguagePlaceholder;
 import yv.tils.smp.placeholder.MessagePlaceholder;
-import yv.tils.smp.SMPPlugin;
 
 import java.io.File;
 import java.io.IOException;
@@ -38,6 +38,7 @@ public class ConfigModeration {
             modifyFile.addDefault("Bug" , LanguagePlaceholder.ConfigCreateMissingLanguage());
             Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXERROR + " " + LanguagePlaceholder.ConfigCreateMissingLanguage());
         }
+        modifyFile.addDefault("MainteanceKickMessage", LanguagePlaceholder.MainteanceNotAllowedToJoin());
         modifyFile.options().copyDefaults(true);
 
         //MinecraftDiscordBridge.yml
@@ -59,10 +60,11 @@ public class ConfigModeration {
         //DoNotEdit.yml
         modifyFile2.addDefault("Started", false);
         modifyFile2.addDefault("MissingLanguage", false);
+        modifyFile2.addDefault("MainteanceMode", false);
         modifyFile2.options().copyDefaults(true);
 
         //WhitelistedDiscordPlayers.yml
-        modifyFile3.addDefault("DiscordName+Tag", "Minecraft Username");
+        modifyFile3.addDefault("DiscordName+Tag", "Minecraft Username + UUID");
         modifyFile3.options().copyDefaults(true);
 
         onSave();

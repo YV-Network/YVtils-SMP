@@ -3,18 +3,15 @@ package yv.tils.smp.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.PluginManager;
-import yv.tils.smp.placeholder.AnnouncementPlaceholder;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.commands.*;
-import yv.tils.smp.commands.autocompleter.FlySpeedAutoCompleter;
-import yv.tils.smp.commands.autocompleter.GamemodeAutoCompleter;
-import yv.tils.smp.commands.autocompleter.ModerationAutoCompleter;
-import yv.tils.smp.commands.autocompleter.VanishAutoCompleter;
+import yv.tils.smp.commands.autocompleter.*;
 import yv.tils.smp.commands.replacecommands.*;
 import yv.tils.smp.discord.BotStartStop;
 import yv.tils.smp.listeners.*;
-import yv.tils.smp.otherfiles.CustomCraftingRecipes;
+import yv.tils.smp.placeholder.AnnouncementPlaceholder;
+import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.versionfiles.CustomCraftingRecipes;
 
 import java.io.File;
 
@@ -76,6 +73,7 @@ public class ServerStart_StopEvent {
         main.getCommand("reply").setExecutor(new ReplyCommand());
         main.getCommand("god").setExecutor(godCommand);
         main.getCommand("heal").setExecutor(new HealCommand());
+        main.getCommand("mainteance").setExecutor(new MainteanceCommand());
     }
 
     private void registerTabCompleter() {
@@ -83,6 +81,7 @@ public class ServerStart_StopEvent {
         main.getCommand("flywalkspeed").setTabCompleter(new FlySpeedAutoCompleter());
         main.getCommand("gm").setTabCompleter(new GamemodeAutoCompleter());
         main.getCommand("vanish").setTabCompleter(new VanishAutoCompleter());
+        main.getCommand("mainteance").setTabCompleter(new MainteanceAutoCompleter());
     }
 
     private void registerCommandReplace() {

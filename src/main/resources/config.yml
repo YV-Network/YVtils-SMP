@@ -1,8 +1,14 @@
-#For Colorcodes you can look here: https://minecraft.fandom.com/wiki/Formatting_codes
+#For Color Codes you can look here: https://minecraft.fandom.com/wiki/Formatting_codes
 #For color gradients look here: https://rgb.birdflop.com
 #Only Use Color Codes from the Websites! Other Color Codes don't work.
 
 Language: en #Aviable Languages are 'en' = English and 'de' = Deutsch --> After selecting your Language delete the 'language.yml' file and restart the Server
+
+#Variables <- Not used yet!
+ServerName: A Minecraft Server
+DiscordInvite: null #Set to null when you don't have a Discord
+ServerIP: null #Maybe for coming Features for the Discord Bot, like an IP Command, or a switching Activity with the IP in it.
+
 
 #Server Start Messages
 StartupAnnouncement: true
@@ -84,6 +90,8 @@ MOTD'sText:
   - §aStarted at the ??.??.????
   - §dServer is online
   - §4Can't connect to Server
+  Mainteance:
+    - §cServer is in Mainteance Mode
 
 
 # How the Direct Message System should be configured
@@ -118,4 +126,5 @@ Placeholder:
 CustomRecipes: true
 
 #Do not edit!
+Debug: false #Only set to true when you know what you're doing, or you need Help and the Support say so!
 ConfigVersion: 9
