@@ -1,5 +1,9 @@
 package yv.tils.smp.placeholder;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class ColorCode {
     public String ColorCodes(String args) {
         String colorcodes = args;
