@@ -1,6 +1,5 @@
 **YVtils-SMP**
 
-![image](https://badges.crowdin.net/yvtils-smp/localized.svg)
 [![Crowdin](https://badges.crowdin.net/yvtils-smp/localized.svg)](https://crowdin.com/project/yvtils-smp)
 
 Custom Crafting Recipes:
