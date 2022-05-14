@@ -1,7 +1,12 @@
 package yv.tils.smp.placeholder;
 
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class MessagePlaceholder{
     public static String PREFIX = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIX");
     public static String PREFIXSMP = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXSMP");

@@ -7,6 +7,10 @@ import org.bukkit.command.TabCompleter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class MainteanceAutoCompleter implements TabCompleter {
 
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {

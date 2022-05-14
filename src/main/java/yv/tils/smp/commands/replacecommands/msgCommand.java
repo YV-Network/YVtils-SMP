@@ -7,9 +7,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class msgCommand implements Listener {
 
     @EventHandler
@@ -19,7 +23,9 @@ public class msgCommand implements Listener {
         final String cmd = event.getMessage();
         final String[] args = cmd.split(" ");
 
-        if (cmd.startsWith("/msg") || cmd.equals("/w") || cmd.equals("/tell")) {
+        String cmdlowercase = args[0].toLowerCase();
+
+        if (cmdlowercase.equals("/msg") || cmdlowercase.equals("/w") || cmdlowercase.equals("/tell")) {
             event.setCancelled(true);
                 if (player.hasPermission("yv.tils.smp.command.directmessage")) {
                     TextComponent c = new TextComponent(LanguagePlaceholder.Replace1());

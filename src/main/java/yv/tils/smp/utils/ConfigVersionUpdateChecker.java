@@ -13,6 +13,10 @@ import yv.tils.smp.placeholder.MessagePlaceholder;
 
 import java.io.File;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class ConfigVersionUpdateChecker implements Listener {
 
     int i = Integer.parseInt(AnnouncementPlaceholder.CONFIGVERSION);

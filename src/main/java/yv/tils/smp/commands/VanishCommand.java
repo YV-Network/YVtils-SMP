@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 
 import java.util.ArrayList;
@@ -17,8 +17,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class VanishCommand implements CommandExecutor, Listener {
-    private List<UUID> pickup = new ArrayList();
+    private final List<UUID> pickup = new ArrayList();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -29,15 +33,11 @@ public class VanishCommand implements CommandExecutor, Listener {
             List<String> list2 = SMPPlugin.getInstance().getConfig().getStringList("JoinMessage");
             List<String> list3 = SMPPlugin.getInstance().getConfig().getStringList("QuitMessage");
 
-            for (int i = 0; i < list2.size(); i++) {
-                list2.set(i, list2.get(i).replace("player", playerName));
-            }
+            list2.replaceAll(s -> s.replace("player", playerName));
             Collections.shuffle(list2);
             String joinm = list2.get(0);
 
-            for (int i = 0; i < list3.size(); i++) {
-                list3.set(i, list3.get(i).replace("player", playerName));
-            }
+            list3.replaceAll(s -> s.replace("player", playerName));
             Collections.shuffle(list3);
             String Quitm = list3.get(0);
 
@@ -127,8 +127,7 @@ public class VanishCommand implements CommandExecutor, Listener {
 
     @EventHandler
     public void onDamage(EntityDamageEvent event) {
-            if (event.getEntity() instanceof Player) {
-                Player player = (Player) event.getEntity();
+            if (event.getEntity() instanceof Player player) {
                 if (SMPPlugin.getInstance().vanished.contains(player.getUniqueId())) {
                     event.setCancelled(true);
             }

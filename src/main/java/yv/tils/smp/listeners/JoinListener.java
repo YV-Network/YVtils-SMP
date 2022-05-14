@@ -1,6 +1,7 @@
 package yv.tils.smp.listeners;
 
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.event.player.PlayerLoginEvent;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
@@ -14,6 +15,10 @@ import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class JoinListener implements Listener {
 
     @EventHandler
@@ -24,19 +29,18 @@ public class JoinListener implements Listener {
 
         File file2 = new File(SMPPlugin.getInstance().getDataFolder(), "DoNotEdit.yml");
         YamlConfiguration dontedit = YamlConfiguration.loadConfiguration(file2);
-        File file1 = new File(SMPPlugin.getInstance().getDataFolder(), "Language.yml");
-        YamlConfiguration language = YamlConfiguration.loadConfiguration(file1);
 
-        for (int i = 0; i < list2.size(); i++) {
-            list2.set(i, list2.get(i).replace("player", playerName));
-        }
+        list2.replaceAll(s -> s.replace("player", playerName));
 
 
         Collections.shuffle(list2);
         String joinm = list2.get(0);
-        if (dontedit.getBoolean("MainteanceMode")) {
-            if (event.getPlayer().hasPermission("yvtils.smp.mainteance.join")) return;
-            event.getPlayer().kickPlayer(language.getString("MainteanceNotAllowedToJoin"));
+        if (SMPPlugin.getInstance().maintenances) {
+            if (event.getPlayer().hasPermission("yvtils.smp.maintenance.join")) {
+                return;
+            }else {
+                event.getPlayer().kickPlayer("language.getString(MaintenanceNotAllowedToJoin)");
+            }
         }
 
         if (SMPPlugin.getInstance().vanished.contains(player.getUniqueId())) {

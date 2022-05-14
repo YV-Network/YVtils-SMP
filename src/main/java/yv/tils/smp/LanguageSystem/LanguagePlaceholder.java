@@ -1,23 +1,14 @@
-package yv.tils.smp.placeholder;
+package yv.tils.smp.LanguageSystem;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.placeholder.MessagePlaceholder;
 
+/**
+ * @deprecated
+ * @BecomingRework
+ */
 public class LanguagePlaceholder {
-
-    public static String Example(String en, String de) {
-        String s;
-        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
-            s = en;
-        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
-            s = de;
-        }else {
-            s = en;
-            Bukkit.getConsoleSender().sendMessage("This Language is not available in the Moment! Help to translate!");
-        }
-        return s;
-    }
 
     public static String DirectFormatter(String en, String de) {
         String s;
@@ -26,7 +17,7 @@ public class LanguagePlaceholder {
         }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
             s = de;
         }else {
-            s = "Language is not available! English Message -> " + en;
+            s = en;
         }
         return s;
     }

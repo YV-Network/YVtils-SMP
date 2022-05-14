@@ -6,12 +6,12 @@
 
     <groupId>yv.tils.smp</groupId>
     <artifactId>YVtils-SMP</artifactId>
-    <version>4.6.5.1-BETA</version>
+    <version>4.6.6</version>
     <packaging>jar</packaging>
 
     <name>YVtils-SMP</name>
 
-    <description>Plugin for SMP Server</description>
+    <description>A Plugin for SMP Servers</description>
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,7 +42,7 @@
                 <version>3.2.0</version>
                 <configuration>
                     <finalName>YVtils-SMP v${project.version}</finalName>
-                    <outputDirectory>C:\Users\Wolfii\Desktop\Minecraft\MC Server\SelfCodedPluginTest\plugins</outputDirectory>
+                    <outputDirectory>B:\Desktop\Minecraft\MC Server\SelfCodedPluginTest\plugins</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -120,7 +120,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- jda dependencies (required to relocate them) -->
         <dependency>
             <groupId>com.neovisionaries</groupId>
             <artifactId>nv-websocket-client</artifactId>

@@ -1,4 +1,4 @@
-package yv.tils.smp.discord;
+package yv.tils.smp.modules.discord;
 
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -7,7 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 
@@ -17,6 +17,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class WhitelistMessageGetter extends ListenerAdapter {
 
     //DiscordName+Tag: Minecraft Username -> Example: WolfiiYV#3204: WolfiiYV

@@ -16,20 +16,20 @@ import org.bukkit.entity.Player;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class StartCommand implements CommandExecutor {
-
 
     File file = new File(SMPPlugin.getInstance().getDataFolder(), "DoNotEdit.yml");
     YamlConfiguration modifyFile = YamlConfiguration.loadConfiguration(file);
-
-    File file1 = new File(SMPPlugin.getInstance().getDataFolder(), "Language.yml");
-    YamlConfiguration modifyFile1 = YamlConfiguration.loadConfiguration(file1);
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (modifyFile.getBoolean("Started")) {
-            String s = new ColorCode().ColorCodes(modifyFile1.getString("Already_Started_Message"));
+            String s = new ColorCode().ColorCodes("language.getString(AlreadyStarted)");
             sender.sendMessage(s);
         }else {
             modifyFile.set("Started", true);

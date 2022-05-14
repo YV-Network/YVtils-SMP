@@ -1,6 +1,6 @@
 package yv.tils.smp.commands.replacecommands;
 
-import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import net.md_5.bungee.api.chat.ClickEvent;
@@ -12,10 +12,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
-
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class seedcommand implements Listener {
 
     @EventHandler

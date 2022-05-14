@@ -3,110 +3,157 @@ package yv.tils.smp.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
-
+/**
+ Creates the Config Files for the Plugin, and give them Input with Config Options
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class ConfigModeration {
 
-    File file = new File(SMPPlugin.getInstance().getDataFolder(), "Language.yml");
-    YamlConfiguration modifyFile = YamlConfiguration.loadConfiguration(file);
-    File file1 = new File(SMPPlugin.getInstance().getDataFolder(), "MinecraftDiscordBridge.yml");
-    YamlConfiguration modifyFile1 = YamlConfiguration.loadConfiguration(file1);
-    File file2 = new File(SMPPlugin.getInstance().getDataFolder(), "DoNotEdit.yml");
-    YamlConfiguration modifyFile2 = YamlConfiguration.loadConfiguration(file2);
-    File file3 = new File(SMPPlugin.getInstance().getDataFolder(), "WhitelistedDiscordPlayers.yml");
-    YamlConfiguration modifyFile3 = YamlConfiguration.loadConfiguration(file3);
+    /**
+     Use all Config Methods!
+     You can use as Config 'Langauge; MinecraftDiscordBridge; DoNotEdit; WhitelistedDiscordPlayers; StatusModule; StatusSave
+     @since  4.6.6
+     */
+    public YamlConfiguration ConfigRequest(String config) {
+        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), config + ".yml");
+        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
+        try {
+            configuration.save(configfile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return configuration;
+    }
+
+    /**
+     Add values to the Config!
+     You can use as Config 'Langauge; MinecraftDiscordBridge; DoNotEdit; WhitelistedDiscordPlayers; StatusModule; StatusSave
+     @since  4.6.6
+     */
+    public YamlConfiguration ConfigContentAdd(String config, String path, String value) {
+        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), config + ".yml");
+        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
+        configuration.set(path, value);
+        try {
+            configuration.save(configfile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return configuration;
+    }
+
+    /**
+     Add values to the Config!
+     You can use as Config 'Langauge; MinecraftDiscordBridge; DoNotEdit; WhitelistedDiscordPlayers; StatusModule; StatusSave
+     @since  4.6.6
+     */
+    public YamlConfiguration ConfigContentGet(String config, String path) {
+        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), config + ".yml");
+        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
+        configuration.get(path);
+        return configuration;
+    }
+
+    /**
+     Remove values from the Config!
+     You can use as Config 'Langauge; MinecraftDiscordBridge; DoNotEdit; WhitelistedDiscordPlayers; StatusModule; StatusSave
+     @since  4.6.6
+     */
+    public YamlConfiguration ConfigContentRemove(String config, String path) {
+        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), config + ".yml");
+        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
+        configuration.set(path, null);
+        try {
+            configuration.save(configfile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return configuration;
+    }
+
+    File mcdcbridgefile = new File(SMPPlugin.getInstance().getDataFolder(), "MinecraftDiscordBridge.yml");
+    YamlConfiguration mcdcbridge = YamlConfiguration.loadConfiguration(mcdcbridgefile);
+    File donoteditfile = new File(SMPPlugin.getInstance().getDataFolder(), "DoNotEdit.yml");
+    YamlConfiguration donotedit = YamlConfiguration.loadConfiguration(donoteditfile);
+    File whitelisteddcplayersfile = new File(SMPPlugin.getInstance().getDataFolder(), "WhitelistedDiscordPlayers.yml");
+    YamlConfiguration whitelisteddcplayers = YamlConfiguration.loadConfiguration(whitelisteddcplayersfile);
+    File statusmodulefile = new File(SMPPlugin.getInstance().getDataFolder(), "StatusModule.yml");
+    YamlConfiguration statusmodule = YamlConfiguration.loadConfiguration(statusmodulefile);
+    File statussavefile = new File(SMPPlugin.getInstance().getDataFolder(), "StatusSave.yml");
+    YamlConfiguration statussave = YamlConfiguration.loadConfiguration(statussavefile);
 
     public void onEntranceGeneration() {
 
-        //Language.yml
-        if (Objects.equals(SMPPlugin.getInstance().getConfig().getString("Language"), "en")) {
-            //English
-            modifyFile.addDefault("#", "Use & for Color Codes.");
-            modifyFile.addDefault("Already_Started_Message", "&d<Project Name> already started!");
-        }else if (Objects.equals(SMPPlugin.getInstance().getConfig().getString("Language"), "de")) {
-            //Deutsch
-            modifyFile.addDefault("#", "Benutze & für Color Codes.");
-            modifyFile.addDefault("Already_Started_Message", "&d<Projekt Name> wurde bereits gestartet!");
-        }else {
-            modifyFile2.set("MissingLanguage", true);
-            onSave();
-            modifyFile.addDefault("Bug" , LanguagePlaceholder.ConfigCreateMissingLanguage());
-            Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXERROR + " " + LanguagePlaceholder.ConfigCreateMissingLanguage());
-        }
-        modifyFile.addDefault("MainteanceKickMessage", LanguagePlaceholder.MainteanceNotAllowedToJoin());
-        modifyFile.options().copyDefaults(true);
-
         //MinecraftDiscordBridge.yml
-        modifyFile1.addDefault("Active", true);
-        modifyFile1.addDefault("BotToken", LanguagePlaceholder.ConfigCreateBotToken());
-        modifyFile1.addDefault("0#",  LanguagePlaceholder.DCEmbedAuthorIcon());
-        modifyFile1.addDefault("EmbedAuthorIcon", "");
-        modifyFile1.addDefault("1#", LanguagePlaceholder.BotActivity());
-        modifyFile1.addDefault("Activity", "none");
-        modifyFile1.addDefault("ActivityMessage", "Minecraft");
-        modifyFile1.addDefault("2#", LanguagePlaceholder.BotActivityStreamingUrl());
-        modifyFile1.addDefault("ActivityStreamingUrl", "");
-        modifyFile1.addDefault("3#", LanguagePlaceholder.BotStatus());
-        modifyFile1.addDefault("OnlineStatus", "online");
-        modifyFile1.addDefault("4#", LanguagePlaceholder.ChannelID());
-        modifyFile1.addDefault("WhitelistChannelID", LanguagePlaceholder.ConfigCreateChannelID());
-        modifyFile1.options().copyDefaults(true);
+        mcdcbridge.addDefault("Active", true);
+        mcdcbridge.addDefault("BotToken", LanguagePlaceholder.ConfigCreateBotToken());
+        mcdcbridge.addDefault("0#",  LanguagePlaceholder.DCEmbedAuthorIcon());
+        mcdcbridge.addDefault("EmbedAuthorIcon", "");
+        mcdcbridge.addDefault("1#", LanguagePlaceholder.BotActivity());
+        mcdcbridge.addDefault("Activity", "none");
+        mcdcbridge.addDefault("ActivityMessage", "Minecraft");
+        mcdcbridge.addDefault("2#", LanguagePlaceholder.BotActivityStreamingUrl());
+        mcdcbridge.addDefault("ActivityStreamingUrl", "");
+        mcdcbridge.addDefault("3#", LanguagePlaceholder.BotStatus());
+        mcdcbridge.addDefault("OnlineStatus", "online");
+        mcdcbridge.addDefault("4#", LanguagePlaceholder.ChannelID());
+        mcdcbridge.addDefault("WhitelistChannelID", LanguagePlaceholder.ConfigCreateChannelID());
+        mcdcbridge.options().copyDefaults(true);
 
         //DoNotEdit.yml
-        modifyFile2.addDefault("Started", false);
-        modifyFile2.addDefault("MissingLanguage", false);
-        modifyFile2.addDefault("MainteanceMode", false);
-        modifyFile2.options().copyDefaults(true);
+        donotedit.addDefault("Started", false);
+        donotedit.addDefault("MissingLanguage", false);
+        donotedit.addDefault("MaintenanceMode", "false");
+        donotedit.options().copyDefaults(true);
 
         //WhitelistedDiscordPlayers.yml
-        modifyFile3.addDefault("DiscordName+Tag", "Minecraft Username + UUID");
-        modifyFile3.options().copyDefaults(true);
+        whitelisteddcplayers.addDefault("DiscordName+Tag", "Minecraft Username + UUID");
+        whitelisteddcplayers.options().copyDefaults(true);
+
+        //StatusModule.yml
+        statusmodule.addDefault("Active", true);
+        statusmodule.addDefault("MaxStatusLength", 20);
+        statusmodule.addDefault("0#",  LanguagePlaceholder.DirectFormatter("Here you can set the Default Status, which the Players can select with '/status default <status>'! Please use for Color Codes \"&\" and not \"§\"", "Hier kannst du die Voreingestellten Status einstellen, welche die Spieler mit '/status default <status>' auswählen können! Bitte benutze \"&\" und nicht \"§\" für Color Codes!"));
+        statusmodule.addDefault("Default-Status", defaultstatuslist());
+        statusmodule.options().copyDefaults(true);
+
+        //StatusSave.yml
+        statussave.addDefault("UUID", "STATUS");
+        statussave.options().copyDefaults(true);
 
         onSave();
     }
 
     public void onSave() {
         try {
-            modifyFile.save(file);
+            mcdcbridge.save(mcdcbridgefile);
+            donotedit.save(donoteditfile);
+            whitelisteddcplayers.save(whitelisteddcplayersfile);
+            statusmodule.save(statusmodulefile);
+            statussave.save(statussavefile);
         } catch (IOException e) {
-            System.out.println("---1---");
-            Bukkit.getConsoleSender().sendMessage("Error 1");
-            System.out.println("---1---");
-        }
-        try {
-            modifyFile1.save(file1);
-        } catch (IOException e) {
-            System.out.println("---2---");
-            Bukkit.getConsoleSender().sendMessage("Error 2");
-            System.out.println("---2---");
-        }
-        try {
-            modifyFile2.save(file2);
-        } catch (IOException e) {
-            System.out.println("---3---");
-            Bukkit.getConsoleSender().sendMessage("Error 3");
-            System.out.println("---3---");
-        }
-        try {
-            modifyFile3.save(file3);
-        } catch (IOException e) {
-            System.out.println("---4---");
-            Bukkit.getConsoleSender().sendMessage("Error 4");
-            System.out.println("---4---");
+            System.out.println("-------");
+            Bukkit.getConsoleSender().sendMessage("File creation Error! Please get Support on the YVtils Support Discord");
+            System.out.println("-------");
         }
     }
 
     public void onNameGenerate() {
         try {
-            onGenerate("Language.yml");
             onGenerate("MinecraftDiscordBridge.yml");
             onGenerate("DoNotEdit.yml");
             onGenerate("WhitelistedDiscordPlayers.yml");
+            onGenerate("StatusModule.yml");
+            onGenerate("StatusSave.yml");
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -116,4 +163,14 @@ public class ConfigModeration {
         File file = new File(SMPPlugin.getInstance().getDataFolder(), name);
         if (!file.exists()) {
                 file.createNewFile();
-        }}}
+        }}
+
+    public List<String> defaultstatuslist() {
+        List<String> list = new ArrayList<>();
+
+        list.add("&7Status&e");
+        list.add("&eStatus1&b");
+        list.add("&5Status2&8");
+        return list;
+    }
+}

@@ -1,0 +1,3 @@
+#Language File EN
+plugin_load: Plugin is starting!
+plugin_unload: Plugin is stopping!

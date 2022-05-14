@@ -7,9 +7,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class pardonCommand implements Listener {
 
     @EventHandler
@@ -19,7 +23,9 @@ public class pardonCommand implements Listener {
         final String cmd = event.getMessage();
         final String[] args = cmd.split(" ");
 
-        if (cmd.startsWith("/pardon")) {
+        String cmdlowercase = cmd.toLowerCase();
+
+        if (cmdlowercase.startsWith("/pardon")) {
             event.setCancelled(true);
                 if (player.hasPermission("yv.tils.smp.command.moderation.unban")) {
                     TextComponent c = new TextComponent(LanguagePlaceholder.Replace1());

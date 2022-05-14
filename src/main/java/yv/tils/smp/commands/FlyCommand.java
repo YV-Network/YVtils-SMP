@@ -13,12 +13,15 @@ import yv.tils.smp.SMPPlugin;
 
 import java.util.UUID;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class FlyCommand implements CommandExecutor, Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player) {
-            Player player = (Player) sender;
+        if (sender instanceof Player player) {
             UUID uuid = player.getUniqueId();
             if (sender.hasPermission("yvtils.smp.command.fly")) {
                 if (!SMPPlugin.getInstance().fly.contains(uuid)) {

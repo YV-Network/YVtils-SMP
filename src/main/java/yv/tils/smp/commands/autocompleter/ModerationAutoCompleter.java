@@ -5,11 +5,15 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class ModerationAutoCompleter implements TabCompleter {
 
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {

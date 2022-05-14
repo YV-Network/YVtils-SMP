@@ -15,11 +15,19 @@ import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.plugin.Plugin;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * This Code is inspired by this Tutorial '<a href="https://www.youtube.com/watch?v=S9f_mFiYT50&t=1s">https://www.youtube.com/watch?v=S9f_mFiYT50&t=1s</a>' from Coole Pizza
+ *
+ * @since 4.6.6
+ * @version 4.6.6
+ *
+ */
 
 public class SpawnBoostListener implements Listener {
 
@@ -33,23 +41,20 @@ public class SpawnBoostListener implements Listener {
         this.spawnRadius = plugin.getConfig().getInt("spawnradius");
         this.multiplyValue = plugin.getConfig().getInt("multiplyValue");
 
-        Bukkit.getScheduler().runTaskTimer(plugin, () -> {
-            Bukkit.getWorld("world").getPlayers().forEach(player -> {
-                if (SMPPlugin.getInstance().fly.contains(player.getUniqueId()) || SMPPlugin.getInstance().godmode.contains(player.getUniqueId())) return;
-                if (player.getGameMode() != GameMode.SURVIVAL) return;
-                player.setAllowFlight(isInSpawnRadius(player));
-                    if (flying.contains(player) && !player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
-                        player.sendMessage("aewdadawdawgfawgwa");
-                        player.setAllowFlight(false);
-                        player.setFlying(false);
-                        player.setGliding(false);
-                        boosted.remove(player);
-                        Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                            flying.remove(player);
-                        }, 5);
-                    }
-            });
-        }, 0, 3);
+        Bukkit.getScheduler().runTaskTimer(plugin, () -> Bukkit.getWorld("world").getPlayers().forEach(player -> {
+            if (SMPPlugin.getInstance().fly.contains(player.getUniqueId()) || SMPPlugin.getInstance().godmode.contains(player.getUniqueId())) return;
+            if (player.getGameMode() != GameMode.SURVIVAL) return;
+            player.setAllowFlight(isInSpawnRadius(player));
+                if (flying.contains(player) && !player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
+                    player.setAllowFlight(false);
+                    player.setFlying(false);
+                    player.setGliding(false);
+                    boosted.remove(player);
+                    Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                        flying.remove(player);
+                    }, 5);
+                }
+        }), 0, 3);
     }
 
 

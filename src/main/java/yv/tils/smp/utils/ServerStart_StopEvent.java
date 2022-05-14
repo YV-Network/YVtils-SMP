@@ -3,18 +3,23 @@ package yv.tils.smp.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.PluginManager;
-import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.*;
+import yv.tils.smp.LanguageSystem.*;
 import yv.tils.smp.commands.*;
 import yv.tils.smp.commands.autocompleter.*;
 import yv.tils.smp.commands.replacecommands.*;
-import yv.tils.smp.discord.BotStartStop;
 import yv.tils.smp.listeners.*;
-import yv.tils.smp.placeholder.AnnouncementPlaceholder;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
-import yv.tils.smp.versionfiles.CustomCraftingRecipes;
+import yv.tils.smp.modules.ccr.*;
+import yv.tils.smp.modules.discord.*;
+import yv.tils.smp.modules.status.*;
+import yv.tils.smp.placeholder.*;
 
 import java.io.File;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class ServerStart_StopEvent {
 
     SMPPlugin main = SMPPlugin.getInstance();
@@ -38,6 +43,9 @@ public class ServerStart_StopEvent {
         if (modifyFile1.getBoolean("Active")) {
             registerDiscord();
         }
+        if (new ConfigModeration().ConfigRequest("StatusModule").getBoolean("Active")) {
+            registerStatusModule();
+        }
     }
 
     private void RegisterOther() {
@@ -51,13 +59,21 @@ public class ServerStart_StopEvent {
         if (main.getConfig().getBoolean("CustomRecipes")) {
             new CustomCraftingRecipes().addToCraftingManager();
         }
-        new UpdateChecker(main, 97642).getLatestVersion(version -> {
+        new UpdateChecker(main,97642).getLatestVersion(version -> {
             if(main.getDescription().getVersion().equalsIgnoreCase(version)) {
                 Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.UpToDate());
             } else {
                 Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.UpdateAvailable());
             }
         });
+
+        main.saveResource("Language/" + "en.yml", false);
+        main.saveResource("Language/" + "de.yml", false);
+        LanguageFile.LanguageFileGet();
+
+        if (new ConfigModeration().ConfigRequest("DoNotEdit").getString("MaintenanceMode").equals("true")) {
+            main.maintenances = true;
+        }
     }
 
     private void registerCommands() {
@@ -73,7 +89,7 @@ public class ServerStart_StopEvent {
         main.getCommand("reply").setExecutor(new ReplyCommand());
         main.getCommand("god").setExecutor(godCommand);
         main.getCommand("heal").setExecutor(new HealCommand());
-        main.getCommand("mainteance").setExecutor(new MainteanceCommand());
+        main.getCommand("maintenance").setExecutor(new MaintenanceCommand());
     }
 
     private void registerTabCompleter() {
@@ -81,7 +97,7 @@ public class ServerStart_StopEvent {
         main.getCommand("flywalkspeed").setTabCompleter(new FlySpeedAutoCompleter());
         main.getCommand("gm").setTabCompleter(new GamemodeAutoCompleter());
         main.getCommand("vanish").setTabCompleter(new VanishAutoCompleter());
-        main.getCommand("mainteance").setTabCompleter(new MainteanceAutoCompleter());
+        main.getCommand("maintenance").setTabCompleter(new MainteanceAutoCompleter());
     }
 
     private void registerCommandReplace() {
@@ -120,6 +136,14 @@ public class ServerStart_StopEvent {
 
     private void registerDiscord() {
         botStartStop.TokenCheck();
+    }
+
+    private void registerStatusModule() {
+        PluginManager manager = Bukkit.getPluginManager();
+
+        main.getCommand("status").setTabCompleter(new StatusCommandCompleter());
+        manager.registerEvents(new JoinQuitStatus(), main);
+        main.getCommand("status").setExecutor(new StatusCommand());
     }
 
     //

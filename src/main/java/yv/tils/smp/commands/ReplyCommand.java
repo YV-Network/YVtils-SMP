@@ -6,7 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 
@@ -14,11 +14,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class ReplyCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player) {
-            Player player = (Player) sender;
+        if (sender instanceof Player player) {
             if (args.length >= 1) {
 
                     if (SMPPlugin.getInstance().getRecentMessages().containsKey(player.getUniqueId())) {
@@ -26,8 +29,8 @@ public class ReplyCommand implements CommandExecutor {
                         if (Bukkit.getPlayer(uuid) != null) {
                             Player target = Bukkit.getPlayer(uuid);
                             StringBuilder builder = new StringBuilder();
-                            for (int x = 0; x < args.length; x++) {
-                                builder.append(args[x]).append(" ");
+                            for (String arg : args) {
+                                builder.append(arg).append(" ");
                             }
                             String colorcodereplace = builder.toString();
 

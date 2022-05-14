@@ -10,6 +10,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class ChatMuteCommand implements CommandExecutor, Listener {
     public boolean enabled = false;
 

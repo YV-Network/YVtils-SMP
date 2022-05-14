@@ -1,5 +1,5 @@
 name: YVtils-SMP
-version: 4.6.5.1-BETA
+version: 4.6.6
 main: yv.tils.smp.SMPPlugin
 api-version: 1.18
 authors: [ WolfiiYV ]
@@ -20,6 +20,9 @@ commands:
     permission: yvtils.smp.command.fly
   flywalkspeed:
     permission: yvtils.smp.command.flyspeed
+    aliases:
+      - flyspeed
+      - walkspeed
   moderation:
     permission: yvtils.smp.command.moderation
     aliases:
@@ -45,8 +48,13 @@ commands:
       - godmode
   heal:
     permission: yvtils.smp.command.heal
-  mainteance:
-    permission: yvtils.smp.command.mainteance
+  maintenance:
+    permission: yvtils.smp.command.maintenance
+  status:
+    permission: yvtils.smp.command.status
+    aliases:
+      - prefix
+      - role
 permissions:
   yvtils.smp.play:
     description: Let Player Plays
@@ -54,16 +62,6 @@ permissions:
     description: Allows everything
   yvtils.smp.bypass.mutechat:
     description: Let you write while Chat is muted
-  yvtils.smp.advancedcrafting.betterprot:
-    description: Craft Better Prot
-  yvtils.smp.advancedcrafting.fastertools:
-    description: Craft Faster Tools
-  yvtils.smp.advancedcrafting.light:
-    description: Craft Light Blocks
-  yvtils.smp.advancedcrafting.debugstick:
-    description: Craft DebugStick
-  yvtils.smp.advancedcrafting.*:
-    description: Craft Everything Advanced
   yvtils.smp.command.bypass.seed:
     description: Do not replace the /seed Command
   yvtils.smp.command.moderation.ban.getannounced:
@@ -84,8 +82,9 @@ permissions:
     description: Allow users to unban other Players
   yvtils.smp.collercodes.chat:
     description: With this Permission Players can use Color Codes in Chat
-  yvtils.smp.mainteance.join:
-    description: Players with this Permission can Join, when the Mainteance Mode is activated!
-
-
-
+  yvtils.smp.maintenance.join:
+    description: Players with this Permission can Join, when the Maintenance Mode is activated!
+  yvtils.smp.command.status.clear.other:
+    description: Players with this Permission can clear the Status of other Players
+  yvtils.smp.command.status.set:
+    description: Players with this Status can set a custom Status

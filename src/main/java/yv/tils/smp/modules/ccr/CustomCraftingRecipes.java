@@ -1,19 +1,22 @@
-package yv.tils.smp.versionfiles;
+package yv.tils.smp.modules.ccr;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.event.inventory.*;
 import org.bukkit.inventory.*;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.jetbrains.annotations.NotNull;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Need to get Updated soon as possible! (Maybe remove in next Version and add again after changes)
+ * @deprecated
+ * @Outdated
+ */
 public class CustomCraftingRecipes {
 
     public void addToCraftingManager() {

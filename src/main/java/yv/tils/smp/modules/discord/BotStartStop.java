@@ -1,16 +1,20 @@
-package yv.tils.smp.discord;
+package yv.tils.smp.modules.discord;
 
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.SMPPlugin;
 
 import javax.security.auth.login.LoginException;
 import java.io.File;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class BotStartStop {
 
 

@@ -13,12 +13,15 @@ import yv.tils.smp.SMPPlugin;
 
 import java.util.UUID;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class GodCommand implements CommandExecutor, Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player) {
-            Player player = (Player) sender;
+        if (sender instanceof Player player) {
             UUID uuid = player.getUniqueId();
             if (sender.hasPermission("yvtils.smp.command.god")) {
                 if (!SMPPlugin.getInstance().godmode.contains(uuid)) {
@@ -45,9 +48,8 @@ public class GodCommand implements CommandExecutor, Listener {
 
     @EventHandler
     public void onDamage(EntityDamageEvent event) {
-        if (event.getEntity() instanceof Player) {
-        Player player = (Player) event.getEntity();
-        if (SMPPlugin.getInstance().godmode.contains(player.getUniqueId())){
+        if (event.getEntity() instanceof Player player) {
+            if (SMPPlugin.getInstance().godmode.contains(player.getUniqueId())){
             event.setCancelled(true);
         }
         if (event.getEntityType() == EntityType.PLAYER

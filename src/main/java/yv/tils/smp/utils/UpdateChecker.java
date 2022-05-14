@@ -9,10 +9,14 @@ import java.net.URL;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class UpdateChecker {
 
-    private SMPPlugin plugin;
-    private int resourceId;
+    private final SMPPlugin plugin;
+    private final int resourceId;
 
     public UpdateChecker(SMPPlugin plugin, int resourceId) {
         this.plugin  = plugin;
@@ -27,7 +31,7 @@ public class UpdateChecker {
                     consumer.accept(scanner.next());
                 }
             } catch (IOException exception) {
-                plugin.getLogger().info("Update checker is broken, can't find an update!" + exception.getMessage());
+                plugin.getLogger().info("Update checker is broken, can't find an update! " + exception.getMessage());
             }
         });
     }

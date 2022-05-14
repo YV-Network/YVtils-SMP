@@ -1,4 +1,4 @@
-package yv.tils.smp.discord;
+package yv.tils.smp.modules.discord;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
@@ -9,6 +9,10 @@ import java.awt.*;
 import java.io.File;
 import java.util.Objects;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class BuildEmbeds {
     EmbedBuilder builder = new net.dv8tion.jda.api.EmbedBuilder();
 

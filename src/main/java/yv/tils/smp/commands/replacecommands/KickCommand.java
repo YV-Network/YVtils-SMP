@@ -7,9 +7,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import yv.tils.smp.placeholder.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class KickCommand implements Listener {
 
     @EventHandler
@@ -19,7 +23,9 @@ public class KickCommand implements Listener {
         final String cmd = event.getMessage();
         final String[] args = cmd.split(" ");
 
-        if (cmd.startsWith("/kick")) {
+        String cmdlowercase = cmd.toLowerCase();
+
+        if (cmdlowercase.startsWith("/kick")) {
             event.setCancelled(true);
                 if (player.hasPermission("yv.tils.smp.command.moderation.kick")) {
                     TextComponent c = new TextComponent(LanguagePlaceholder.Replace1());

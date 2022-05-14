@@ -7,8 +7,12 @@ import org.bukkit.command.TabCompleter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class VanishAutoCompleter implements TabCompleter{
-    List<String> arguments = new ArrayList<String>();
+    List<String> arguments = new ArrayList<>();
 
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
 
@@ -19,7 +23,7 @@ public class VanishAutoCompleter implements TabCompleter{
             arguments.add("help");
         }
 
-        List<String> result = new ArrayList<String>();
+        List<String> result = new ArrayList<>();
         if (args.length == 1) {
             for (String a : arguments) {
                 if (a.toLowerCase().startsWith(args[0].toLowerCase())) {

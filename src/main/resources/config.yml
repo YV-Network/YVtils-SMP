@@ -9,7 +9,6 @@ ServerName: A Minecraft Server
 DiscordInvite: null #Set to null when you don't have a Discord
 ServerIP: null #Maybe for coming Features for the Discord Bot, like an IP Command, or a switching Activity with the IP in it.
 
-
 #Server Start Messages
 StartupAnnouncement: true
 EventJoinTitle: true
@@ -17,8 +16,8 @@ EventJoinTitle: true
 #Join/Quit Message
 #Use player for the Player Name
 #If there is no indication, there is an error message in the console and the default join message comes
-SendJoinMessage: true #This only disable/enable the custom Join Messages from this Plugin and don't deactivate completly the Join Messages!
-SendQuitMessage: true #This only disable/enable the custom Quit Messages from this Plugin and don't deactivate completly the Quit Messages!
+SendJoinMessage: true #This only disable/enable the custom Join Messages from this Plugin and don't deactivate completely the Join Messages!
+SendQuitMessage: true #This only disable/enable the custom Quit Messages from this Plugin and don't deactivate completely the Quit Messages!
 JoinMessage:
   - §a» §7player
 QuitMessage:
@@ -53,7 +52,7 @@ StartTitle:
   Unten: §x§8§e§2§5§7§7§oS§x§8§8§2§6§7§d§ot§x§8§2§2§7§8§3§oa§x§7§c§2§8§8§9§or§x§7§7§2§9§8§f§ot§x§7§1§2§a§9§5§oe§x§6§b§2§c§9§c§ot §x§5§f§2§e§a§8§og§x§5§a§2§f§a§e§ol§x§5§4§3§0§b§4§oe§x§4§e§3§1§b§a§oi§x§4§8§3§2§c§0§oc§x§4§3§3§4§c§6§oh
 NotAllowedtoPlayMessage: Du hast nicht die Berechtigung bei BA / YV-SMP mitzuspielen.
   \n Whiteliste dich erst auf dem Discord!
-  \n Wenn du dich bereits auf die Whitelist eingetragen hast eröffne ein Support Ticket.
+  \n Wenn du dich bereits auf der Whitelist eingetragen hast schreibe dem Support.
   \n
   \n
   - BA / YV-SMP Verwaltung -
@@ -93,7 +92,6 @@ MOTD'sText:
   Mainteance:
     - §cServer is in Mainteance Mode
 
-
 # How the Direct Message System should be configured
 DirectMessage:
   Design: #Design of who sent you the Message. More than one Design is possible! Use 'sender' for Name of the sender and 'receiver' for the Name of the Person who will receive it.
@@ -127,4 +125,4 @@ CustomRecipes: true
 
 #Do not edit!
 Debug: false #Only set to true when you know what you're doing, or you need Help and the Support say so!
-ConfigVersion: 9
+ConfigVersion: 10

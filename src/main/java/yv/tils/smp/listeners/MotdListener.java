@@ -11,7 +11,10 @@ import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
-
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class MotdListener implements Listener {
 
     File file2 = new File(SMPPlugin.getInstance().getDataFolder(), "DoNotEdit.yml");
@@ -20,10 +23,10 @@ public class MotdListener implements Listener {
     @EventHandler
     public void onPing(ServerListPingEvent e) {
 
-        new ConsoleLog().ConsoleLog(dontedit.getBoolean("MainteanceMode") + "");
+        new ConsoleLog(dontedit.getString("MaintenanceMode") + "");
 
-        if (dontedit.getBoolean("MainteanceMode")) {
-            e.setMotd("§cServer is in Mainteance Mode" + "\n" + "");
+        if (SMPPlugin.getInstance().maintenances) {
+            e.setMotd("§cServer is in Maintenance Mode" + "\n" + "");
             e.setMaxPlayers(0);
         }else {
             List<String> list = SMPPlugin.getInstance().getConfig().getStringList("Players");
@@ -37,9 +40,7 @@ public class MotdListener implements Listener {
             String player1 = list.get(0);
             String player2 = list.get(1);
 
-            for (int i = 0; i < list2.size(); i++) {
-                list2.set(i, list2.get(i).replace("player1", player1).replace("player2", player2));
-            }
+            list2.replaceAll(s -> s.replace("player1", player1).replace("player2", player2));
 
             Collections.shuffle(list2);
             String bottom = list2.get(0);

@@ -12,6 +12,10 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @since 4.6.6
+ * @version 4.6.6
+ */
 public class QuitListener implements Listener {
 
     @EventHandler
@@ -20,9 +24,7 @@ public class QuitListener implements Listener {
         String playerName = player.getName();
         List<String> list2 = SMPPlugin.getInstance().getConfig().getStringList("QuitMessage");
 
-        for (int i = 0; i < list2.size(); i++) {
-            list2.set(i, list2.get(i).replace("player", playerName));
-        }
+        list2.replaceAll(s -> s.replace("player", playerName));
 
         Collections.shuffle(list2);
         String Quitm = list2.get(0);
