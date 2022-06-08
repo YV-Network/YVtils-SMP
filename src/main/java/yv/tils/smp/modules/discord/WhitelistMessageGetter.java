@@ -7,14 +7,18 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
-import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.StringReplacer;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -32,7 +36,6 @@ public class WhitelistMessageGetter extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent e) {
-
         TextChannel channel = e.getTextChannel();
 
         if (e.getAuthor().isBot()) {
@@ -62,11 +65,29 @@ public class WhitelistMessageGetter extends ListenerAdapter {
                         String[] liststring = configname_remove.split(" ");
                         OfflinePlayer playerwhitelistremove = Bukkit.getOfflinePlayer(liststring[0]);
                         playerwhitelistremove.setWhitelisted(false);
-                        Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXDC + " §f" + LanguagePlaceholder.DCConsoleLog_NameChangeEvent(liststring[0], e.getMessage().getContentRaw(),e.getMember().getUser().getAsTag()));
-                        channel.sendMessageEmbeds(new BuildEmbeds().namechanged(liststring[0], e.getMessage().getContentRaw(),e.getGuild()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
+
+                        List<String> list1 = new ArrayList();
+                        List<String> list2 = new ArrayList();
+                        list1.add("DISCORDUSER");
+                        list2.add(e.getMember().getUser().getAsTag());
+                        list1.add("OLDNAME");
+                        list2.add(liststring[0]);
+                        list1.add("NEWNAME");
+                        list2.add(e.getMessage().getContentRaw());
+
+                        Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_CHANGE), list1, list2));
+                        channel.sendMessageEmbeds(new BuildEmbeds().namechanged(liststring[0], e.getMessage().getContentRaw(), e.getGuild()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
                     }else {
-                        Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXDC + " §f" + LanguagePlaceholder.DCConsoleLog_NameAddEvent(e.getMessage().getContentRaw(),e.getMember().getUser().getAsTag()));
-                        channel.sendMessageEmbeds(new BuildEmbeds().namewhitelisted(e.getMessage().getContentRaw(),e.getGuild()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
+
+                        List<String> list1 = new ArrayList();
+                        List<String> list2 = new ArrayList();
+                        list1.add("DISCORDUSER");
+                        list2.add(e.getMember().getUser().getAsTag());
+                        list1.add("NAME");
+                        list2.add(e.getMessage().getContentRaw());
+
+                        Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_ADD), list1, list2));
+                        channel.sendMessageEmbeds(new BuildEmbeds().namewhitelisted(e.getMessage().getContentRaw(), e.getGuild()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
                     }
                     channel.deleteMessageById(MessageId).queue();
                     player1.setWhitelisted(true);
@@ -80,16 +101,27 @@ public class WhitelistMessageGetter extends ListenerAdapter {
                         System.out.println("---4---");
                     }
                 }else if (statusCode == 204) {
+
+                    List<String> list1 = new ArrayList();
+                    List<String> list2 = new ArrayList();
+                    list1.add("DISCORDUSER");
+                    list2.add(e.getMember().getUser().getAsTag());
+                    list1.add("NAME");
+                    list2.add(e.getMessage().getContentRaw());
+
                     channel.deleteMessageById(MessageId).queue();
-                    Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXDC + " §f" + LanguagePlaceholder.DCConsoleLog_NameWrongEvent(e.getMessage().getContentRaw(),e.getMember().getUser().getAsTag()));
+                    Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_WRONG), list1, list2));
                     channel.sendMessageEmbeds(new BuildEmbeds().namenotexisting(e.getMessage().getContentRaw(),e.getGuild()).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
                 }else {
+
+                    List<String> list1 = new ArrayList();
+                    List<String> list2 = new ArrayList();
+                    list1.add("DISCORDUSER");
+                    list2.add(e.getMember().getUser().getAsTag());
+                    list1.add("NAME");
+                    list2.add(e.getMessage().getContentRaw());
+
                     channel.deleteMessageById(MessageId).queue();
-                    Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXDC + " §f" + LanguagePlaceholder.DCConsoleLog_NameCheckServerError(e.getMessage().getContentRaw(),e.getMember().getUser().getAsTag()));
+                    Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_SERVERERROR_CHECK_INPUT), list1, list2));
                     channel.sendMessageEmbeds(new BuildEmbeds().namecheckservererror(e.getMessage().getContentRaw(),e.getGuild()).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
-                }
-            } catch (IOException ignored) {
-            }
-        }
-    }
-}
+                }} catch (IOException ignored) {}}}}

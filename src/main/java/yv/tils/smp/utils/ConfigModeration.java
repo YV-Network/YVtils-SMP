@@ -2,15 +2,13 @@ package yv.tils.smp.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
+import yv.tils.smp.LanguageSystem.LanguageFile;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
-import yv.tils.smp.placeholder.MessagePlaceholder;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 /**
  Creates the Config Files for the Plugin, and give them Input with Config Options
  * @since 4.6.6
@@ -95,18 +93,18 @@ public class ConfigModeration {
 
         //MinecraftDiscordBridge.yml
         mcdcbridge.addDefault("Active", true);
-        mcdcbridge.addDefault("BotToken", LanguagePlaceholder.ConfigCreateBotToken());
-        mcdcbridge.addDefault("0#",  LanguagePlaceholder.DCEmbedAuthorIcon());
+        mcdcbridge.addDefault("BotToken", LanguageFile.DirectFormatter("YOUR TOKEN HERE","DEINEN BOT TOKEN"));
+        mcdcbridge.addDefault("0#",  LanguageFile.DirectFormatter("You can insert here a URL (https://cdn.discordapp.com/attachments/887398222555930664/892066785766019112/buildattack.jpg) for a Icon in the Embeds!","Hier kannst du eine URL (https://cdn.discordapp.com/attachments/887398222555930664/892066785766019112/buildattack.jpg) einfügen, damit die Embeds ein Bild haben!"));
         mcdcbridge.addDefault("EmbedAuthorIcon", "");
-        mcdcbridge.addDefault("1#", LanguagePlaceholder.BotActivity());
+        mcdcbridge.addDefault("1#", LanguageFile.DirectFormatter("You can use Streaming; Watching; Playing; Competing; None", "Du kannst Streaming; Watching; Playing; Competing; None benutzen"));
         mcdcbridge.addDefault("Activity", "none");
         mcdcbridge.addDefault("ActivityMessage", "Minecraft");
-        mcdcbridge.addDefault("2#", LanguagePlaceholder.BotActivityStreamingUrl());
+        mcdcbridge.addDefault("2#", LanguageFile.DirectFormatter("You only need a Url, when you use the Activity Streaming! Otherwise you don't need one","Du brauchst nur eine Url, wenn du die Aktivität Streaming ausgewählt hast! Ansonsten benötigst du keine"));
         mcdcbridge.addDefault("ActivityStreamingUrl", "");
-        mcdcbridge.addDefault("3#", LanguagePlaceholder.BotStatus());
+        mcdcbridge.addDefault("3#", LanguageFile.DirectFormatter("You can use Online; Idle; DND; Offline; Invisible","Du kannst Online; Idle; DND; Offline; Invisible benutzen"));
         mcdcbridge.addDefault("OnlineStatus", "online");
-        mcdcbridge.addDefault("4#", LanguagePlaceholder.ChannelID());
-        mcdcbridge.addDefault("WhitelistChannelID", LanguagePlaceholder.ConfigCreateChannelID());
+        mcdcbridge.addDefault("4#", LanguageFile.DirectFormatter("Here you can set the Channel for the whitelist Feature! Players can write their MC Name in there and they will get whitelisted! Copy the Channel ID and paste it here", "Hier kannst du einen Kannal für das Whitelist Modul auswählen! Spieler können dann ihren MC Namen dort hineninschreiben und werden automatisch gewhitelistet! Kopiere die Kannal ID und füge sie hier ein"));
+        mcdcbridge.addDefault("WhitelistChannelID", LanguageFile.DirectFormatter("CHANNEL ID HERE","KANAL ID HIER"));
         mcdcbridge.options().copyDefaults(true);
 
         //DoNotEdit.yml
@@ -122,7 +120,7 @@ public class ConfigModeration {
         //StatusModule.yml
         statusmodule.addDefault("Active", true);
         statusmodule.addDefault("MaxStatusLength", 20);
-        statusmodule.addDefault("0#",  LanguagePlaceholder.DirectFormatter("Here you can set the Default Status, which the Players can select with '/status default <status>'! Please use for Color Codes \"&\" and not \"§\"", "Hier kannst du die Voreingestellten Status einstellen, welche die Spieler mit '/status default <status>' auswählen können! Bitte benutze \"&\" und nicht \"§\" für Color Codes!"));
+        statusmodule.addDefault("0#",  LanguageFile.DirectFormatter("Here you can set the Default Status, which the Players can select with '/status default <status>'! Please use for Color Codes \"&\" and not \"§\"", "Hier kannst du die Voreingestellten Status einstellen, welche die Spieler mit '/status default <status>' auswählen können! Bitte benutze \"&\" und nicht \"§\" für Color Codes!"));
         statusmodule.addDefault("Default-Status", defaultstatuslist());
         statusmodule.options().copyDefaults(true);
 

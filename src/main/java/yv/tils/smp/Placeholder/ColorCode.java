@@ -7,9 +7,6 @@ package yv.tils.smp.placeholder;
 public class ColorCode {
     public String ColorCodes(String args) {
         String colorcodes = args;
-
-        //&$§%\
-
         String Colorcode = colorcodes.replace("&0", "§0");
         String Colorcode1 = Colorcode.replace("&1", "§1");
         String Colorcode2 = Colorcode1.replace("&2", "§2");

@@ -26,29 +26,24 @@ public class MotdListener implements Listener {
         new ConsoleLog(dontedit.getString("MaintenanceMode") + "");
 
         if (SMPPlugin.getInstance().maintenances) {
-            e.setMotd("§cServer is in Maintenance Mode" + "\n" + "");
+            e.setMotd(SMPPlugin.getInstance().getConfig().getString("Mainteance"));
             e.setMaxPlayers(0);
         }else {
             List<String> list = SMPPlugin.getInstance().getConfig().getStringList("Players");
             List<String> list1 = SMPPlugin.getInstance().getConfig().getStringList("MOTD'sText.Top");
             List<String> list2 = SMPPlugin.getInstance().getConfig().getStringList("MOTD'sText.Bottom");
-
             Collections.shuffle(list1);
             String top = list1.get(0);
-
             Collections.shuffle(list);
             String player1 = list.get(0);
             String player2 = list.get(1);
 
+            list1.replaceAll(s -> s.replace("player1", player1).replace("player2", player2));
             list2.replaceAll(s -> s.replace("player1", player1).replace("player2", player2));
 
             Collections.shuffle(list2);
             String bottom = list2.get(0);
 
             e.setMotd(top + "\n" + bottom);
-
             e.setMaxPlayers(SMPPlugin.getInstance().getConfig().getInt("FakePlayerAllowedToJoinCounter"));
-        }
-    }
-
-    }
+        }}}

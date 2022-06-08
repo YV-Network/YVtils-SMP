@@ -35,7 +35,7 @@ public class LanguageFile {
     }
 
     /**
-     * Set Messages in German/English without Config File
+     * Set Messages in German/English without the Language Config File
      * @When_to_use? This Method can be used, when a Message shouldn't be configurable over the language File!
      * @since 4.6.6
      * @version 4.6.6

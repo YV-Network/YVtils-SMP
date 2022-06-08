@@ -3,16 +3,19 @@ package yv.tils.smp.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.PluginManager;
-import yv.tils.smp.*;
-import yv.tils.smp.LanguageSystem.*;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
+import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.commands.*;
 import yv.tils.smp.commands.autocompleter.*;
 import yv.tils.smp.commands.replacecommands.*;
 import yv.tils.smp.listeners.*;
-import yv.tils.smp.modules.ccr.*;
-import yv.tils.smp.modules.discord.*;
-import yv.tils.smp.modules.status.*;
-import yv.tils.smp.placeholder.*;
+import yv.tils.smp.modules.ccr.CustomCraftingRecipes;
+import yv.tils.smp.modules.discord.BotStartStop;
+import yv.tils.smp.modules.status.JoinQuitStatus;
+import yv.tils.smp.modules.status.StatusCommand;
+import yv.tils.smp.modules.status.StatusCommandCompleter;
+import yv.tils.smp.placeholder.AnnouncementPlaceholder;
 
 import java.io.File;
 
@@ -61,9 +64,9 @@ public class ServerStart_StopEvent {
         }
         new UpdateChecker(main,97642).getLatestVersion(version -> {
             if(main.getDescription().getVersion().equalsIgnoreCase(version)) {
-                Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.UpToDate());
+                Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.PLUGIN_UP_TO_DATE));
             } else {
-                Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.UpdateAvailable());
+                Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.PLUGIN_UPDATE_AVAILABLE));
             }
         });
 

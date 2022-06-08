@@ -9,8 +9,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
-import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.StringReplacer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,16 +33,22 @@ public class VanishCommand implements CommandExecutor, Listener {
             Player player = (Player) sender;
             UUID uuid = player.getUniqueId();
             String playerName = player.getName();
-            List<String> list2 = SMPPlugin.getInstance().getConfig().getStringList("JoinMessage");
-            List<String> list3 = SMPPlugin.getInstance().getConfig().getStringList("QuitMessage");
+            List<String> list1 = SMPPlugin.getInstance().getConfig().getStringList("JoinMessage");
+            List<String> list2 = SMPPlugin.getInstance().getConfig().getStringList("QuitMessage");
+
+            list1.replaceAll(s -> s.replace("player", playerName));
+            Collections.shuffle(list1);
+            String joinm = list1.get(0);
 
             list2.replaceAll(s -> s.replace("player", playerName));
             Collections.shuffle(list2);
-            String joinm = list2.get(0);
+            String Quitm = list2.get(0);
 
-            list3.replaceAll(s -> s.replace("player", playerName));
-            Collections.shuffle(list3);
-            String Quitm = list3.get(0);
+            List<String> list3 = new ArrayList();
+            List<String> list4 = new ArrayList();
+            list1.add("PREFIX");
+            list2.add(MessagePlaceholder.PREFIX);
+
 
             if (args.length == 0) {
                 if (SMPPlugin.getInstance().vanished.contains(uuid)) {
@@ -49,7 +58,7 @@ public class VanishCommand implements CommandExecutor, Listener {
                     }
                     player.setSleepingIgnored(false);
                     player.setCanPickupItems(true);
-                    sender.sendMessage(LanguagePlaceholder.VanishOff());
+                    sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_DEACTIVATE), list3, list4));
                     Bukkit.broadcastMessage(joinm);
                 } else {
                     SMPPlugin.getInstance().vanished.add(uuid);
@@ -58,29 +67,28 @@ public class VanishCommand implements CommandExecutor, Listener {
                     }
                     player.setSleepingIgnored(true);
                     player.setCanPickupItems(false);
-                    sender.sendMessage(LanguagePlaceholder.VanishOn());
+                    sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_ACTIVATE), list3, list4));
                     Bukkit.broadcastMessage(Quitm);
-                }
-            } else {
+                }} else {
                 switch (args[0].toLowerCase()) {
                     case "itempickup":
                         if (!SMPPlugin.getInstance().vanished.contains(uuid)) {
-                            sender.sendMessage(LanguagePlaceholder.VanishTiPu());
+                            sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_ITEM_PICKUP_NOT_IN_VANISH), list3, list4));
                             return true;
                         }
                         if (pickup.contains(uuid)) {
                             pickup.remove(uuid);
                             player.setCanPickupItems(false);
-                            sender.sendMessage(LanguagePlaceholder.VanishTiPuOff());
+                            sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_ITEM_PICKUP_DEACTIVATE), list3, list4));
                         } else {
                             pickup.add(uuid);
                             player.setCanPickupItems(true);
-                            sender.sendMessage(LanguagePlaceholder.VanishTiPuOn());
+                            sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_ITEM_PICKUP_ACTIVATE), list3, list4));
                         }
                         break;
                     case "on":
                         if (SMPPlugin.getInstance().vanished.contains(uuid)) {
-                            sender.sendMessage(LanguagePlaceholder.VanishAllreadyOn());
+                            sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_ALREADY_ACTIVATED), list3, list4));
                             return true;
                         }
 
@@ -90,12 +98,12 @@ public class VanishCommand implements CommandExecutor, Listener {
                         }
                         player.setSleepingIgnored(true);
                         player.setCanPickupItems(false);
-                        sender.sendMessage(LanguagePlaceholder.VanishOn());
+                        sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_ACTIVATE), list3, list4));
                         Bukkit.broadcastMessage(Quitm);
                         break;
                     case "off":
                         if (!SMPPlugin.getInstance().vanished.contains(uuid)) {
-                            sender.sendMessage(LanguagePlaceholder.VanishAlreadyOff());
+                            sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_ALREADY_DEACTIVATED), list3, list4));
                             return false;
                         }
 
@@ -105,24 +113,17 @@ public class VanishCommand implements CommandExecutor, Listener {
                         }
                         player.setSleepingIgnored(false);
                         player.setCanPickupItems(true);
-                        sender.sendMessage(LanguagePlaceholder.VanishOff());
+                        sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_DEACTIVATE), list3, list4));
                         Bukkit.broadcastMessage(joinm);
-                        break;
-                    case "help":
-                        sendUsage(sender);
                         break;
                     default:
                         sendUsage(sender);
-                }
-            }
-        }
-
-       // }
+                }}}
         return false;
     }
 
     private void sendUsage(CommandSender sender) {
-        sender.sendMessage(LanguagePlaceholder.CommandUsage() + ChatColor.BLUE + "/v [itempickup, on, off, help]");
+        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE + "/v [itempickup, on, off, help]");
     }
 
     @EventHandler
@@ -130,8 +131,4 @@ public class VanishCommand implements CommandExecutor, Listener {
             if (event.getEntity() instanceof Player player) {
                 if (SMPPlugin.getInstance().vanished.contains(player.getUniqueId())) {
                     event.setCancelled(true);
-            }
-        }
-    }
-
-}
+            }}}}

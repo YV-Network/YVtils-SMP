@@ -1,7 +1,5 @@
 package yv.tils.smp.commands;
 
-import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,6 +7,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.placeholder.MessagePlaceholder;
 
 /**
  * @since 4.6.6

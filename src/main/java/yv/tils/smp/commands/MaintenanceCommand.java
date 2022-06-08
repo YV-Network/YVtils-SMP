@@ -8,7 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 
 import java.io.File;
 import java.io.IOException;
@@ -62,9 +61,7 @@ public class MaintenanceCommand implements CommandExecutor {
                         e.printStackTrace();
                     }
                     for (Player player1 : Bukkit.getOnlinePlayers()) {
-                        if (player.hasPermission("yvtils.smp.maintenance.join")) {
-
-                        }else {
+                        if (player.hasPermission("yvtils.smp.maintenance.join")) {}else {
                             player1.kickPlayer("Yeah");
                         }
                     }
@@ -93,9 +90,7 @@ public class MaintenanceCommand implements CommandExecutor {
                         e.printStackTrace();
                     }
                     for (Player player1 : Bukkit.getOnlinePlayers()) {
-                        if (player.hasPermission("yvtils.smp.maintenance.join")) {
-
-                        }else {
+                        if (player.hasPermission("yvtils.smp.maintenance.join")) {}else {
                             player1.kickPlayer("Yeah");
                         }
                     }

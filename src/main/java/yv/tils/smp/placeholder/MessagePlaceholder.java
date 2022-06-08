@@ -1,6 +1,7 @@
 package yv.tils.smp.placeholder;
 
-import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
 
 /**
@@ -10,7 +11,6 @@ import yv.tils.smp.SMPPlugin;
 public class MessagePlaceholder{
     public static String PREFIX = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIX");
     public static String PREFIXSMP = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXSMP");
-    public static String PREFIXLOBBY = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXLOBBY");
     public static String PREFIXKICK = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXKICK");
     public static String PREFIXCONNECT = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXCONNECT");
     public static String PREFIXDISCONNECT = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXDISCONNECT");
@@ -28,6 +28,5 @@ public class MessagePlaceholder{
     public static String PREFIXGLOBALMUTE = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXGLOBALMUTE");
     public static String PREFIXMODERATION = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXMODERATION");
     public static String PREFIXDC = SMPPlugin.getInstance().getConfig().getString("Placeholder.PREFIXDC");
-    public static String PREFIXTHANKS = "§9[YVtils-THANKS]";
-    public static String PERMISSIONERROR = LanguagePlaceholder.PermissionError();
+    public static String PERMISSIONERROR = LanguageFile.getMessage(LanguageMessage.MISSING_PERMISSION);
 }

@@ -5,7 +5,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import yv.tils.smp.LanguageSystem.LanguageFile;
 import yv.tils.smp.LanguageSystem.LanguageMessage;
-import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.logger.ConsoleLog;
 import yv.tils.smp.utils.ServerStart_StopEvent;
 
@@ -36,20 +35,18 @@ public final class SMPPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        new ConsoleLog(LanguageFile.DirectFormatter("YVtils-SMP begin loading!", "YVtils-SMP beginnt laden!"));
+        new ConsoleLog(LanguageFile.DirectFormatter("YVtils-SMP begun loading!", "YVtils-SMP beginnt zu laden!"));
         new ServerStart_StopEvent().RegisterAll();
-        //Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.StartMessage());
-        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.PLUGIN_LOAD));
+        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.START_MESSAGE));
         recentMessages = new HashMap<>();
-        Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.StartCompletedMessage());
+        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.START_COMPLETED_MESSAGE));
     }
 
     @Override
     public void onDisable() {
-        //Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.StopMessage());
-        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.PLUGIN_UNLOAD));
+        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.STOP_MESSAGE));
         new ServerStart_StopEvent().UnregisterAll();
-        Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.StopCompletedMessage());
+        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.STOP_COMPLETED_MESSAGE));
     }
 
     public static SMPPlugin getInstance() {

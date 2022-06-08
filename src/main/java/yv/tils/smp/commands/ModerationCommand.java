@@ -8,11 +8,15 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.placeholder.ColorCode;
-import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.StringReplacer;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * @since 4.6.6
@@ -46,28 +50,36 @@ public class ModerationCommand implements CommandExecutor {
                     String reasonreplaceplsarg4 = builder1.toString();
 
                     String reason = new ColorCode().ColorCodes(reasonreplaceplsarg2);
-                    String reason1 = new ColorCode().ColorCodes(reasonreplaceplsarg2);
-
-
-
+                    String reason1 = new ColorCode().ColorCodes(reasonreplaceplsarg4);
 
                     if (reason1.length() == 0) {
-                        reason1 = "No Reason was given";
+                        reason1 = LanguageFile.getMessage(LanguageMessage.MOD_NO_REASON);
                     }
 
                     if (reason.length() == 0) {
-                        reason = "No Reason was given";
+                        reason = LanguageFile.getMessage(LanguageMessage.MOD_NO_REASON);
                     }
-
 
                     switch (args[0].toLowerCase()) {
                         case "kick":
                             if (sender.hasPermission("yvtils.smp.command.moderation.kick")) {
                                 if (onlinetarget != null) {
                                     onlinetarget.kickPlayer(reason);
-                                    Bukkit.broadcast(MessagePlaceholder.PREFIXMODERATION + " §7" + target.getName() + " got kicked from " + sender.getName() + "! Reason: " + reason, "yvtils.smp.command.moderation.kick.getannounced");
+
+                                    List<String> list1 = new ArrayList();
+                                    List<String> list2 = new ArrayList();
+                                    list1.add("PREFIXMODERATION");
+                                    list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                    list1.add("PLAYER");
+                                    list2.add(target.getName());
+                                    list1.add("MOD");
+                                    list2.add(sender.getName());
+                                    list1.add("REASON");
+                                    list2.add(reason);
+
+                                    Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_KICK), list1, list2), "yvtils.smp.command.moderation.kick.getannounced");
                                 }else {
-                                    sender.sendMessage(LanguagePlaceholder.PlayerNotOnline());
+                                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_NOT_ONLINE));
                                 }
                             } else {
                                 player.sendMessage(MessagePlaceholder.PERMISSIONERROR + parentpermission + ".kick");
@@ -76,14 +88,26 @@ public class ModerationCommand implements CommandExecutor {
                         case "ban":
                             if (sender.hasPermission("yvtils.smp.command.moderation.ban")) {
                                 if (Bukkit.getBanList(BanList.Type.NAME).isBanned(target.getName())) {
-                                    sender.sendMessage(LanguagePlaceholder.AlreadyBanned());
+                                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_ALREADY_BANNED));
                                     return false;
                                 }
                                 Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), reason, null, String.valueOf(sender));
                                 if (onlinetarget != null) {
                                     onlinetarget.kickPlayer(reason);
                                 }
-                                Bukkit.broadcast(MessagePlaceholder.PREFIXMODERATION + " §7" + target.getName() + " got banned from " + sender.getName() + "! Reason: " + reason, "yvtils.smp.command.moderation.ban.getannounced");
+
+                                List<String> list1 = new ArrayList();
+                                List<String> list2 = new ArrayList();
+                                list1.add("PREFIXMODERATION");
+                                list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                list1.add("PLAYER");
+                                list2.add(target.getName());
+                                list1.add("MOD");
+                                list2.add(sender.getName());
+                                list1.add("REASON");
+                                list2.add(reason);
+
+                                Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_BAN), list1, list2), "yvtils.smp.command.moderation.ban.getannounced");
                             } else {
                                 player.sendMessage(MessagePlaceholder.PERMISSIONERROR + parentpermission + ".ban");
                             }
@@ -91,26 +115,39 @@ public class ModerationCommand implements CommandExecutor {
                         case "tempban":
 
                             Calendar cal = Calendar.getInstance();
-                            int intValue;
 
                             switch (args[3].toLowerCase()) {
-                                case "seconds" -> cal.add(Calendar.SECOND, Integer.parseInt(args[2]));
-                                case "minutes" -> cal.add(Calendar.MINUTE, Integer.parseInt((args[2])));
-                                case "hours" -> cal.add(Calendar.HOUR, Integer.parseInt(args[2]));
-                                case "days" -> cal.add(Calendar.DAY_OF_WEEK, Integer.parseInt(args[2]));
-                                default -> sender.sendMessage(LanguagePlaceholder.UnknownTimeFormat());
+                                case "seconds", "s" -> cal.add(Calendar.SECOND, Integer.parseInt(args[2]));
+                                case "minutes", "m" -> cal.add(Calendar.MINUTE, Integer.parseInt((args[2])));
+                                case "hours", "h" -> cal.add(Calendar.HOUR, Integer.parseInt(args[2]));
+                                case "days", "d" -> cal.add(Calendar.DAY_OF_WEEK, Integer.parseInt(args[2]));
+                                default -> sender.sendMessage(LanguageFile.getMessage(LanguageMessage.UNKNOWN_TIME_FORMAT));
                             }
 
                             if (sender.hasPermission("yvtils.smp.command.moderation.temp.ban")) {
                                 if (Bukkit.getBanList(BanList.Type.NAME).isBanned(target.getName())) {
-                                    sender.sendMessage(LanguagePlaceholder.AlreadyBanned());
+                                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_ALREADY_BANNED));
                                     return false;
                                 }
-                                        Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), reason1, cal.getTime(), String.valueOf(sender));
-                                        if (onlinetarget != null) {
-                                            onlinetarget.kickPlayer(reason);
-                                        }
-                                        Bukkit.broadcast(MessagePlaceholder.PREFIXMODERATION + " §8" + target.getName() + " §7got temp banned from §8" + sender.getName() + "§7! Reason: §8" + reason1 + "§7, Duration: §8" + args[2] + " " + args[3], "yvtils.smp.command.moderation.temp.ban.getannounced");
+                                Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), reason1, cal.getTime(), String.valueOf(sender));
+                                if (onlinetarget != null) {
+                                    onlinetarget.kickPlayer(reason);
+                                }
+
+                                List<String> list1 = new ArrayList();
+                                List<String> list2 = new ArrayList();
+                                list1.add("PREFIXMODERATION");
+                                list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                list1.add("PLAYER");
+                                list2.add(target.getName());
+                                list1.add("MOD");
+                                list2.add(sender.getName());
+                                list1.add("REASON");
+                                list2.add(reason1);
+                                list1.add("DURATION");
+                                list2.add(args[2] + " " + args[3]);
+
+                                Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_TEMPBAN), list1, list2), "yvtils.smp.command.moderation.temp.ban.getannounced");
                             } else{
                                 player.sendMessage(MessagePlaceholder.PERMISSIONERROR + parentpermission + ".temp.ban");
                             }
@@ -120,30 +157,42 @@ public class ModerationCommand implements CommandExecutor {
                                 if (Bukkit.getBanList(BanList.Type.NAME).isBanned(target.getName())) {
                                     Bukkit.getBanList(BanList.Type.NAME).pardon(target.getName());
 
-                                    Bukkit.broadcast(MessagePlaceholder.PREFIXMODERATION + " §7" + target.getName() + " got unbanned from " + sender.getName() + "!", "yvtils.smp.command.moderation.unban.getannounced");
+                                    List<String> list1 = new ArrayList();
+                                    List<String> list2 = new ArrayList();
+                                    list1.add("PREFIXMODERATION");
+                                    list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                    list1.add("PLAYER");
+                                    list2.add(target.getName());
+                                    list1.add("MOD");
+                                    list2.add(sender.getName());
+
+                                    Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_UNBAN), list1, list2), "yvtils.smp.command.moderation.unban.getannounced");
                                 }else {
-                                    sender.sendMessage(MessagePlaceholder.PREFIXMODERATION + " " + target.getName() + " is not banned!");
-                                }
-                            } else {
-                                player.sendMessage(MessagePlaceholder.PERMISSIONERROR + parentpermission + ".unban");
+
+                                    List<String> list1 = new ArrayList();
+                                    List<String> list2 = new ArrayList();
+                                    list1.add("PREFIXMODERATION");
+                                    list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                    list1.add("PLAYER");
+                                    list2.add(target.getName());
+
+                                    sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_PLAYER_NOT_BANNED), list1, list2));
+                                }} else {
+                                    player.sendMessage(MessagePlaceholder.PERMISSIONERROR + parentpermission + ".unban");
                             }
                             break;
                         default:
                             sendUsage(sender);
-                    }
-                } else {
-                    player.sendMessage(MessagePlaceholder.PREFIXMODERATION + " §4Unknown Player");
-                }
-            } else {
+                    }} else {
+                        player.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_UNKNOWN));
+                }} else {
                 sendUsage(sender);
-            }
-        }
+            }}
         return true;
     }
                 private void sendUsage(CommandSender sender){
-                    sender.sendMessage(LanguagePlaceholder.CommandUsage() + ChatColor.BLUE +
+                    sender.sendMessage( LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE)+ " " + ChatColor.BLUE +
                     "/moderation <kick, ban> <Player Name> [Reason (\\n for new Line, Color Codes are working when using '&')] \n" +
                     "/moderation tempban <Player Name> <duration> <Time Format (Seconds, Minutes, Hours, Days)> [Reason (\\n for new Line, Color Codes are working when using '&')] \n" +
                             "/moderation unban <Player Name>");
-    }
-}
+    }}

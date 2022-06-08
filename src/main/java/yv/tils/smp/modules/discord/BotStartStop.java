@@ -5,7 +5,8 @@ import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
-import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
 
 import javax.security.auth.login.LoginException;
@@ -30,9 +31,9 @@ public class BotStartStop {
 
 
     public void TokenCheck() {
-        if (token.equals(LanguagePlaceholder.ConfigCreateBotToken())) {
-            Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.NoBotTokenGiven());
-            Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.BotStartupFailed());
+        if (token.equals(LanguageFile.DirectFormatter("YOUR TOKEN HERE","DEINEN BOT TOKEN"))) {
+            Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_NO_BOT_TOKEN_GIVEN));
+            Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FAILED));
         }else {
             BotSettings();
         }
@@ -69,7 +70,7 @@ public class BotStartStop {
 
         try {
             SMPPlugin.getInstance().jda = builder.build();
-            Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.BotStartupFinished());
+            Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FINISHED));
         } catch (LoginException e) {
             e.printStackTrace();
         }

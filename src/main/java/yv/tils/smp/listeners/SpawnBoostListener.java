@@ -15,8 +15,10 @@ import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.plugin.Plugin;
-import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.placeholder.StringReplacer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +67,13 @@ public class SpawnBoostListener implements Listener {
         if (!isInSpawnRadius(event.getPlayer())) return;
             event.setCancelled(true);
             event.getPlayer().setGliding(true);
-            event.getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder(LanguagePlaceholder.Boost1()).append(new KeybindComponent("key.swapOffhand")).append(LanguagePlaceholder.Boost2()).create());
+
+            List<String> list1 = new ArrayList();
+            List<String> list2 = new ArrayList();
+            list1.add("KEY");
+            list2.add(String.valueOf(new KeybindComponent("key.swapOffhand")));
+
+            event.getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.SPAWN_ELYTRA_BOOST), list1, list2)).create());
             flying.add(event.getPlayer());
         }
 

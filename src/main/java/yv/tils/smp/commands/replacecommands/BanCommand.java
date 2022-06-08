@@ -7,7 +7,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 
 /**

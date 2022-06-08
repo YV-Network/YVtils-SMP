@@ -28,11 +28,8 @@ public class VanishAutoCompleter implements TabCompleter{
             for (String a : arguments) {
                 if (a.toLowerCase().startsWith(args[0].toLowerCase())) {
                     result.add(a);
-                }
-
-            }
+                }}
             return result;
         }
         return arguments;
-    }
-}
+    }}

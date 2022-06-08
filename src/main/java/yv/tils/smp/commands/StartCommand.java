@@ -1,9 +1,5 @@
 package yv.tils.smp.commands;
 
-import org.bukkit.configuration.file.YamlConfiguration;
-import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.placeholder.ColorCode;
-import yv.tils.smp.placeholder.MessagePlaceholder;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.World;
@@ -11,10 +7,19 @@ import org.bukkit.WorldBorder;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
+import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.placeholder.ColorCode;
+import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.StringReplacer;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @since 4.6.6
@@ -29,7 +34,7 @@ public class StartCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (modifyFile.getBoolean("Started")) {
-            String s = new ColorCode().ColorCodes("language.getString(AlreadyStarted)");
+            String s = new ColorCode().ColorCodes(LanguageFile.getMessage(LanguageMessage.SMP_ALREADY_STARTED));
             sender.sendMessage(s);
         }else {
             modifyFile.set("Started", true);
@@ -59,12 +64,18 @@ public class StartCommand implements CommandExecutor {
                     worldBorder.setDamageAmount(2);
                     worldBorder.setDamageBuffer(5);
                     player.setGameMode(GameMode.SURVIVAL);
-                    player.sendTitle(SMPPlugin.getInstance().getConfig().getString("StartTitle.Oben"), SMPPlugin.getInstance().getConfig().getString("StartTitle.Unten"), 20, 50, 20);
+                    player.sendTitle(SMPPlugin.getInstance().getConfig().getString("StartTitle.Tob"), SMPPlugin.getInstance().getConfig().getString("StartTitle.Bottom"), 20, 50, 20);
                     worldBorder.setSize(SMPPlugin.getInstance().getConfig().getInt("worldborderafterstart"), SMPPlugin.getInstance().getConfig().getInt("worldbordergrowtime"));
-                    player.sendMessage(MessagePlaceholder.PREFIXSTART + " " + SMPPlugin.getInstance().getConfig().getString("StartBroadcastMessage"));
-                    Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXSTART + " " + SMPPlugin.getInstance().getConfig().getString("StartBroadcastMessage"));
-                } else {
-                    player.kickPlayer(SMPPlugin.getInstance().getConfig().getString("NotAllowedtoPlayMessage"));
+
+                    List<String> list1 = new ArrayList();
+                    List<String> list2 = new ArrayList();
+                    list1.add("PREFIXSTART");
+                    list2.add(MessagePlaceholder.PREFIXSTART);
+
+                    player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.SMP_START_MESSAGE), list1, list2));
+                    Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.SMP_START_MESSAGE), list1, list2));
+                }else {
+                    player.kickPlayer("");
                 }
             }
         }

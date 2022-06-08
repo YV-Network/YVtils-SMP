@@ -6,10 +6,13 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.ColorCode;
+import yv.tils.smp.placeholder.StringReplacer;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -30,31 +33,7 @@ public class MessageCommand implements CommandExecutor {
                     for (int x = 1; x < args.length; x++) {
                         builder.append(args[x]).append(" ");
                     }
-                    String colorcodereplace = builder.toString();
-
-                    String colorcode = colorcodereplace.replace("&0", "§0");
-                    String colorcode1 = colorcode.replace("&1", "§1");
-                    String colorcode2 = colorcode1.replace("&2", "§2");
-                    String colorcode3 = colorcode2.replace("&3", "§3");
-                    String colorcode4 = colorcode3.replace("&4", "§4");
-                    String colorcode5 = colorcode4.replace("&5", "§5");
-                    String colorcode6 = colorcode5.replace("&6", "§6");
-                    String colorcode7 = colorcode6.replace("&7", "§7");
-                    String colorcode8 = colorcode7.replace("&8", "§8");
-                    String colorcode9 = colorcode8.replace("&9", "§9");
-                    String colorcode10 = colorcode9.replace("&a", "§a");
-                    String colorcode11 = colorcode10.replace("&b", "§b");
-                    String colorcode12 = colorcode11.replace("&c", "§c");
-                    String colorcode13 = colorcode12.replace("&d", "§d");
-                    String colorcode14 = colorcode13.replace("&e", "§e");
-                    String colorcode15 = colorcode14.replace("&f", "§f");
-                    String colorcode16 = colorcode15.replace("&k", "§k");
-                    String colorcode17 = colorcode16.replace("&l", "§l");
-                    String colorcode18 = colorcode17.replace("&m", "§m");
-                    String colorcode19 = colorcode18.replace("&n", "§n");
-                    String colorcode20 = colorcode19.replace("&o", "§o");
-                    String colorcode21 = colorcode20.replace("&r", "§r");
-                    colorcodereplace = colorcode21;
+                    String colorcodereplace = new ColorCode().ColorCodes(builder.toString());
 
                     List<String> list2 = SMPPlugin.getInstance().getConfig().getStringList("DirectMessage.Design");
 
@@ -66,10 +45,13 @@ public class MessageCommand implements CommandExecutor {
                     Collections.shuffle(list2);
                     String senderreciverdesign = list2.get(0);
 
-
-
                     if (player.getUniqueId() == target.getUniqueId()) {
-                        player.sendMessage("§e[§cNote§e] §f" + colorcodereplace);
+                        List<String> list4 = new ArrayList();
+                        List<String> list3 = new ArrayList();
+                        list3.add("MESSAGE");
+                        list4.add(colorcodereplace);
+
+                        player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MSG_NOTE), list3, list4));
                     }else {
                         player.sendMessage(senderreciverdesign + " " + colorcodereplace);
                         target.sendMessage(senderreciverdesign + " " + colorcodereplace);
@@ -77,7 +59,7 @@ public class MessageCommand implements CommandExecutor {
                         SMPPlugin.getInstance().getRecentMessages().put(player.getUniqueId(), target.getUniqueId());
                     }
                 }else {
-                    player.sendMessage(MessagePlaceholder.PREFIX + " §4Unknown Player");
+                    player.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_UNKNOWN));
                 }
             }else {
                 sendUsage(sender);
@@ -86,6 +68,6 @@ public class MessageCommand implements CommandExecutor {
     }
 
     private void sendUsage(CommandSender sender){
-        sender.sendMessage(LanguagePlaceholder.CommandUsage() + ChatColor.BLUE +
+        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE +
                 "/dm <player> <message> <- Color Codes accepted! Use them with '&'!");
     }}

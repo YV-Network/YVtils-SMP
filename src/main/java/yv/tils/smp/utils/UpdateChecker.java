@@ -1,6 +1,7 @@
 package yv.tils.smp.utils;
 
 import org.bukkit.Bukkit;
+import yv.tils.smp.LanguageSystem.LanguageFile;
 import yv.tils.smp.SMPPlugin;
 
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class UpdateChecker {
                     consumer.accept(scanner.next());
                 }
             } catch (IOException exception) {
-                plugin.getLogger().info("Update checker is broken, can't find an update! " + exception.getMessage());
+                plugin.getLogger().info(LanguageFile.DirectFormatter("Update checker is broken, can't find an update! ", "Update checker funktioniert nicht, es konnte kein Update gefunden werden! ") + exception.getMessage());
             }
         });
     }

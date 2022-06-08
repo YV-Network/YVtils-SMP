@@ -5,7 +5,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import yv.tils.smp.LanguageSystem.LanguagePlaceholder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +39,10 @@ public class ModerationAutoCompleter implements TabCompleter {
                 results.add("Minutes");
                 results.add("Hours");
                 results.add("Days");
+                results.add("s");
+                results.add("m");
+                results.add("h");
+                results.add("d");
             }
         }else if (args.length == 5) {
             if (args[0].equals("tempban")) {

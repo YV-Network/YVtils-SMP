@@ -29,18 +29,18 @@ public class ConfigVersionUpdateChecker implements Listener {
 
         if (player.isOp()) {
             if (modifyFile2.getBoolean("MissingLanguage")) {
-                player.sendMessage(MessagePlaceholder.PREFIXERROR + " This language is not available in the Moment! Help to translate: " + "https://discord.com/invite/y6uJYzdHc5");
+                player.sendMessage(MessagePlaceholder.PREFIXERROR + " This language isn't available in the Moment! Help to translate: https://crowdin.com/project/yvtils-smp");
                 modifyFile2.set("MissingLanguage" , false);
             }
             if (SMPPlugin.getInstance().getConfig().getInt("ConfigVersion") != i) {
-                if (player.hasPermission("yvtils.ba.updateannounce") || player.isOp()) {
-                    player.sendMessage(MessagePlaceholder.PREFIXUPDATE + ChatColor.YELLOW + " A new Config Update is Available! For more Informations look in the Console!");
+                if (player.hasPermission("yvtils.smp.updateannounce") || player.isOp()) {
+                    player.sendMessage(MessagePlaceholder.PREFIXUPDATE + ChatColor.YELLOW + " A new Config Update is Available! For more Information's look in the Console!");
                     if (modifyFile2.getBoolean("MissingLanguage")) {
-                        player.sendMessage(MessagePlaceholder.PREFIXERROR + " This language is not aviable in the Moment! Help to translate: ");
+                        player.sendMessage(MessagePlaceholder.PREFIXERROR + " This language is not available in the Moment! Help to translate: https://crowdin.com/project/yvtils-smp");
                     }}}}}
 
     public ConfigVersionUpdateChecker() {
         if (SMPPlugin.getInstance().getConfig().getInt("ConfigVersion") != i) {
             Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXUPDATE + ChatColor.YELLOW + " A new Config Update is Available! ");
-            Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXUPDATE + ChatColor.YELLOW + " Save your edits and then delete the YVtils-SMP Folder and restart the Server. After the restart, you can now transfer the Changes!");
+            Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXUPDATE + ChatColor.YELLOW + " Save your edits and then delete the config.yml File in the YVtils-SMP Folder and restart the Server. After the restart, you can now transfer the Changes!");
         }}}
