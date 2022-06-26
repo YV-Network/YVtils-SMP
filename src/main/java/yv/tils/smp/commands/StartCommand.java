@@ -43,11 +43,6 @@ public class StartCommand implements CommandExecutor {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            try {
-                modifyFile.save(file);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
             for (Player player : Bukkit.getOnlinePlayers()) {
                 if (player.hasPermission("yvtils.smp.play")) {
                     World world = Bukkit.getWorld("world");

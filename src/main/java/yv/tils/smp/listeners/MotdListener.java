@@ -26,7 +26,7 @@ public class MotdListener implements Listener {
         new ConsoleLog(dontedit.getString("MaintenanceMode") + "");
 
         if (SMPPlugin.getInstance().maintenances) {
-            e.setMotd(SMPPlugin.getInstance().getConfig().getString("Mainteance"));
+            e.setMotd(SMPPlugin.getInstance().getConfig().getString("MOTD'sText.Mainteance"));
             e.setMaxPlayers(0);
         }else {
             List<String> list = SMPPlugin.getInstance().getConfig().getStringList("Players");

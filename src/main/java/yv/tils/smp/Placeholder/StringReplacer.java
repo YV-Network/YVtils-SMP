@@ -1,6 +1,8 @@
 package yv.tils.smp.placeholder;
 
-import java.util.ArrayList;
+import net.md_5.bungee.api.chat.KeybindComponent;
+import yv.tils.smp.logger.ConsoleLog;
+
 import java.util.List;
 
 /**
@@ -16,12 +18,23 @@ import java.util.List;
 
 public class StringReplacer {
     public String ListReplacer(String InPut, List<String> ToReplace, List<String> Insert) {
-        List<String> list = new ArrayList();
-        list.add(InPut);
-        for (int i = 0; i < list.size(); i++){
-            int finalI = i;
-            list.replaceAll(s -> s.replace(ToReplace.get(finalI), Insert.get(finalI)));
+        new ConsoleLog(InPut);
+        new ConsoleLog("StringReplacer2");
+        for (int i = 0; i < ToReplace.size(); i++) {
+            InPut = InPut.replaceAll(ToReplace.get(i), Insert.get(i));
         }
+        new ConsoleLog("StringReplacer3");
+        new ConsoleLog(InPut);
         return InPut;
     }
-}
+
+    public String KeybindReplacer(String InPut, List<String> ToReplace, List<KeybindComponent> Insert) {
+        new ConsoleLog(InPut);
+        new ConsoleLog("StringReplacer2");
+        for (int i = 0; i < ToReplace.size(); i++) {
+            InPut = InPut.replaceAll(ToReplace.get(i), String.valueOf(Insert.get(i)));
+        }
+        new ConsoleLog("StringReplacer3");
+        new ConsoleLog(InPut);
+        return InPut;
+    }}

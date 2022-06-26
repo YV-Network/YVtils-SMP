@@ -13,7 +13,6 @@ import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -39,7 +38,7 @@ public class JoinListener implements Listener {
             if (event.getPlayer().hasPermission("yvtils.smp.maintenance.join")) {
                 return;
             }else {
-                event.getPlayer().kickPlayer(LanguageFile.getMessage(LanguageMessage.MAINTEANCE_PLAYER_NOT_ALLOWED_TO_JOIN_KICK_MESSAGE));
+                event.getPlayer().kickPlayer(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_PLAYER_NOT_ALLOWED_TO_JOIN_KICK_MESSAGE));
             }}
 
         if (SMPPlugin.getInstance().vanished.contains(player.getUniqueId())) {

@@ -34,7 +34,7 @@ public class ConfigModeration {
 
     /**
      Add values to the Config!
-     You can use as Config 'Langauge; MinecraftDiscordBridge; DoNotEdit; WhitelistedDiscordPlayers; StatusModule; StatusSave
+     You can use as Config 'Language; MinecraftDiscordBridge; DoNotEdit; WhitelistedDiscordPlayers; StatusModule; StatusSave
      @since  4.6.6
      */
     public YamlConfiguration ConfigContentAdd(String config, String path, String value) {
@@ -50,15 +50,15 @@ public class ConfigModeration {
     }
 
     /**
-     Add values to the Config!
+     Get values out of the Config!
      You can use as Config 'Langauge; MinecraftDiscordBridge; DoNotEdit; WhitelistedDiscordPlayers; StatusModule; StatusSave
      @since  4.6.6
      */
-    public YamlConfiguration ConfigContentGet(String config, String path) {
+    public Object ConfigContentGet(String config, String path) {
         File configfile = new File(SMPPlugin.getInstance().getDataFolder(), config + ".yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
-        configuration.get(path);
-        return configuration;
+
+        return configuration.get(path);
     }
 
     /**

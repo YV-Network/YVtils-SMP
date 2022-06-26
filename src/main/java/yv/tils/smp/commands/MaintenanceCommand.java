@@ -7,6 +7,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
 
 import java.io.File;
@@ -33,8 +35,8 @@ public class MaintenanceCommand implements CommandExecutor {
         switch (args[0].toLowerCase()) {
             case "false", "off" -> {
                 if (dontedit.getString("MaintenanceMode").equals("true")) {
-                    sender.sendMessage(LanguagePlaceholder.DirectFormatter("§7The Mainteance Mode is now §adeactivated§7!", "§7Der Mainteance Modus ist nun §adeaktiviert§7!"));
-                    Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.DirectFormatter("§7The Mainteance Mode is now §adeactivated§7!", "§7Der Mainteance Modus ist nun §adeaktiviert§7!"));
+                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
+                    Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
                     SMPPlugin.getInstance().maintenances = false;
                     dontedit.set("MaintenanceMode", "false");
                     try {
@@ -43,16 +45,16 @@ public class MaintenanceCommand implements CommandExecutor {
                         e.printStackTrace();
                     }
                 }else if (dontedit.getString("MaintenanceMode").equals("false")) {
-                    sender.sendMessage(LanguagePlaceholder.DirectFormatter("§7The Maintenance Mode is already §adeactivated§7!", "§7Der Maintenance Modus ist bereits §adeaktiviert§7!"));
+                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ALREADY_DEACTIVATED));
                 }else {
-                    sender.sendMessage(LanguagePlaceholder.DirectFormatter("This Config Value is not allowed!", "Dieser Config Wert ist nicht zulässig!"));
+                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
                 }}
             case "true", "on" -> {
                 if (dontedit.getString("MaintenanceMode").equals("true")) {
-                    sender.sendMessage(LanguagePlaceholder.DirectFormatter("§7The Maintenance Mode is already §aactivated§7!", "§7Der Maintenance Modus ist bereits §aaktiviert§7!"));
+                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ALREADY_ACTIVATED));
                 }else if (dontedit.getString("MaintenanceMode").equals("false")) {
-                    sender.sendMessage(LanguagePlaceholder.DirectFormatter("§7The Maintenance Mode is now §aactivated§7!", "§7Der Maintenance Modus ist nun §aaktiviert§7!"));
-                    Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.DirectFormatter("§7The Maintenance Mode is now §aactivated§7!", "§7Der Maintenance Modus ist nun §aaktiviert§7!"));
+                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
+                    Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     SMPPlugin.getInstance().maintenances = true;
                     dontedit.set("MaintenanceMode", "true");
                     try {
@@ -62,16 +64,16 @@ public class MaintenanceCommand implements CommandExecutor {
                     }
                     for (Player player1 : Bukkit.getOnlinePlayers()) {
                         if (player.hasPermission("yvtils.smp.maintenance.join")) {}else {
-                            player1.kickPlayer("Yeah");
+                            player1.kickPlayer(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_PLAYER_NOT_ALLOWED_TO_JOIN_KICK_MESSAGE));
                         }
                     }
                 }else {
-                    sender.sendMessage(LanguagePlaceholder.DirectFormatter("This Config Value is not allowed!", "Dieser Config Wert ist nicht zulässig!"));
+                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
                 }}
             case "toggle" -> {
                 if (dontedit.getString("MaintenanceMode").equals("true")) {
-                    sender.sendMessage(LanguagePlaceholder.DirectFormatter("§7The Maintenance Mode is now §adeactivated§7!", "§7Der Maintenance Modus ist nun §adeaktiviert§7!"));
-                    Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.DirectFormatter("§7The Maintenance Mode is now §adeactivated§7!", "§7Der Maintenance Modus ist nun §adeaktiviert§7!"));
+                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
+                    Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
                     SMPPlugin.getInstance().maintenances = false;
                     dontedit.set("MaintenanceMode", "false");
                     try {
@@ -80,8 +82,8 @@ public class MaintenanceCommand implements CommandExecutor {
                         e.printStackTrace();
                     }
                 }else if (dontedit.getString("MaintenanceMode").equals("false")) {
-                    sender.sendMessage(LanguagePlaceholder.DirectFormatter("§7The Maintenance Mode is now §aactivated§7!", "§7Der Maintenance Modus ist nun §aaktiviert§7!"));
-                    Bukkit.getConsoleSender().sendMessage(LanguagePlaceholder.DirectFormatter("§7The Maintenance Mode is now §aactivated§7!", "§7Der Maintenance Modus ist nun §aaktiviert§7!"));
+                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
+                    Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     SMPPlugin.getInstance().maintenances = true;
                     dontedit.set("MaintenanceMode", "true");
                     try {
@@ -91,20 +93,20 @@ public class MaintenanceCommand implements CommandExecutor {
                     }
                     for (Player player1 : Bukkit.getOnlinePlayers()) {
                         if (player.hasPermission("yvtils.smp.maintenance.join")) {}else {
-                            player1.kickPlayer("Yeah");
+                            player1.kickPlayer(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_PLAYER_NOT_ALLOWED_TO_JOIN_KICK_MESSAGE));
                         }
                     }
                 }else {
-                    sender.sendMessage(LanguagePlaceholder.DirectFormatter("This Config Value is not allowed!", "Dieser Config Wert ist nicht zulässig!"));
+                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
                 }}
             case "status" -> {
                 if (dontedit.get("MaintenanceMode") != null) {
                     if (dontedit.getString("MaintenanceMode").equals("true")) {
-                        sender.sendMessage(LanguagePlaceholder.DirectFormatter("§7The Maintenance Mode is §aactivated§7!", "§7Der Maintenance Modus ist §aaktiviert§7!"));
+                        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_STATUS_ENABLED));
                     }else if (dontedit.getString("MaintenanceMode").equals("false")) {
-                        sender.sendMessage(LanguagePlaceholder.DirectFormatter("§7The Maintenance Mode is §adeactivated§7!", "§7Der Maintenance Modus ist §adeaktiviert§7!"));
+                        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_STATUS_DISABLED));
                     }else {
-                        sender.sendMessage(LanguagePlaceholder.DirectFormatter("This Config Value is not allowed!", "Dieser Config Wert ist nicht zulässig!"));
+                        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
                     }}}
             default -> sendUsage(sender);
         }
@@ -112,6 +114,6 @@ public class MaintenanceCommand implements CommandExecutor {
     }
 
     private void sendUsage(CommandSender sender) {
-        sender.sendMessage(LanguagePlaceholder.CommandUsage() + ChatColor.BLUE +
+        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE +
                 "/mainteance [true, false, toggle, status]");
     }}

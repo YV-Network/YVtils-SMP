@@ -6,6 +6,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import yv.tils.smp.LanguageSystem.LanguageFile;
 import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.logger.ConsoleLog;
+import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.StringReplacer;
 import yv.tils.smp.utils.ServerStart_StopEvent;
 
 import java.util.ArrayList;
@@ -28,6 +30,7 @@ public final class SMPPlugin extends JavaPlugin {
     private HashMap<UUID, UUID> recentMessages;
     public JDA jda;
     public boolean maintenances;
+    public boolean globalmute;
 
     public void onLoad() {
         instance = this;
@@ -37,16 +40,29 @@ public final class SMPPlugin extends JavaPlugin {
     public void onEnable() {
         new ConsoleLog(LanguageFile.DirectFormatter("YVtils-SMP begun loading!", "YVtils-SMP beginnt zu laden!"));
         new ServerStart_StopEvent().RegisterAll();
-        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.START_MESSAGE));
+
+        List<String> list1 = new ArrayList();
+        List<String> list2 = new ArrayList();
+        list1.add("PREFIXENABLE");
+        list2.add(MessagePlaceholder.PREFIXENABLE);
+
+        new ConsoleLog("ServerStartStopEvent - Loaded -- (Recent)Messages - Loading");
+        Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.START_MESSAGE), list1, list2));
         recentMessages = new HashMap<>();
-        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.START_COMPLETED_MESSAGE));
+        Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.START_COMPLETED_MESSAGE), list1, list2));
+        new ConsoleLog("Everything- Loaded");
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.STOP_MESSAGE));
+        List<String> list1 = new ArrayList();
+        List<String> list2 = new ArrayList();
+        list1.add("PREFIXDISABLE");
+        list2.add(MessagePlaceholder.PREFIXDISABLE);
+
+        Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.STOP_MESSAGE), list1, list2));
         new ServerStart_StopEvent().UnregisterAll();
-        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.STOP_COMPLETED_MESSAGE));
+        Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.STOP_COMPLETED_MESSAGE), list1, list2));
     }
 
     public static SMPPlugin getInstance() {

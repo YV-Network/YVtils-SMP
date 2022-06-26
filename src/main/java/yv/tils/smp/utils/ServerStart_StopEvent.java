@@ -10,14 +10,18 @@ import yv.tils.smp.commands.*;
 import yv.tils.smp.commands.autocompleter.*;
 import yv.tils.smp.commands.replacecommands.*;
 import yv.tils.smp.listeners.*;
-import yv.tils.smp.modules.ccr.CustomCraftingRecipes;
+import yv.tils.smp.logger.ConsoleLog;
 import yv.tils.smp.modules.discord.BotStartStop;
 import yv.tils.smp.modules.status.JoinQuitStatus;
 import yv.tils.smp.modules.status.StatusCommand;
 import yv.tils.smp.modules.status.StatusCommandCompleter;
 import yv.tils.smp.placeholder.AnnouncementPlaceholder;
+import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.StringReplacer;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @since 4.6.6
@@ -30,25 +34,28 @@ public class ServerStart_StopEvent {
     File file1 = new File(SMPPlugin.getInstance().getDataFolder(), "MinecraftDiscordBridge.yml");
     YamlConfiguration modifyFile1 = YamlConfiguration.loadConfiguration(file1);
 
-    DamageKickCommand damageKickCommand = new DamageKickCommand();
-    ChatMuteCommand chatMuteCommand = new ChatMuteCommand();
+    GlobalMuteCommand globalMuteCommand = new GlobalMuteCommand();
     FlyCommand flyCommand = new FlyCommand();
     VanishCommand vanishCommand = new VanishCommand();
     GodCommand godCommand = new GodCommand();
     BotStartStop botStartStop = new BotStartStop();
 
     public void RegisterAll() {
+        new ConsoleLog("OtherThings - Loading");
         RegisterOther();
+        new ConsoleLog("OtherThings - Loaded -- Commands - Loading");
         registerCommands();
+        new ConsoleLog("Commands - Loaded -- Listener - Loading");
         registerListener();
+        new ConsoleLog("Listener - Loaded -- TabCompleter - Loading");
         registerTabCompleter();
+        new ConsoleLog("TabCompleter - Loaded -- CommandReplace - Loading");
         registerCommandReplace();
-        if (modifyFile1.getBoolean("Active")) {
-            registerDiscord();
-        }
-        if (new ConfigModeration().ConfigRequest("StatusModule").getBoolean("Active")) {
-            registerStatusModule();
-        }
+        new ConsoleLog("CommandReplace - Loaded -- DiscordModule - Loading");
+        if (modifyFile1.getBoolean("Active")) registerDiscord();
+        new ConsoleLog("DiscordModule - Loaded -- StatusModule - Loading");
+        if (new ConfigModeration().ConfigRequest("StatusModule").getBoolean("Active")) registerStatusModule();
+        new ConsoleLog("StatusModule - Loaded");
     }
 
     private void RegisterOther() {
@@ -56,17 +63,31 @@ public class ServerStart_StopEvent {
         ConfigModeration configModeration = new ConfigModeration();
         configModeration.onNameGenerate();
         configModeration.onEntranceGeneration();
-        if (main.getConfig().getBoolean("StartupAnnouncement")) {
+        if (main.getConfig().getBoolean("StartupAnnouncement") && AnnouncementPlaceholder.STARTUPANNOUNCE() != null) {
             Bukkit.getConsoleSender().sendMessage(AnnouncementPlaceholder.STARTUPANNOUNCE());
         }
         if (main.getConfig().getBoolean("CustomRecipes")) {
-            new CustomCraftingRecipes().addToCraftingManager();
+            //new CustomCraftingRecipes().addToCraftingManager();
         }
         new UpdateChecker(main,97642).getLatestVersion(version -> {
             if(main.getDescription().getVersion().equalsIgnoreCase(version)) {
-                Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.PLUGIN_UP_TO_DATE));
+
+                List<String> list1 = new ArrayList();
+                List<String> list2 = new ArrayList();
+                list1.add("PREFIXNOUPDATE");
+                list2.add(MessagePlaceholder.PREFIXNOUPDATE);
+
+                Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.PLUGIN_UP_TO_DATE), list1, list2));
             } else {
-                Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.PLUGIN_UPDATE_AVAILABLE));
+
+                List<String> list1 = new ArrayList();
+                List<String> list2 = new ArrayList();
+                list1.add("PREFIXUPDATE");
+                list2.add(MessagePlaceholder.PREFIXUPDATE);
+                list1.add("LINK");
+                list2.add("https://www.spigotmc.org/resources/yvtils-smp.97642/history");
+
+                Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.PLUGIN_UPDATE_AVAILABLE), list1, list2));
             }
         });
 
@@ -80,8 +101,7 @@ public class ServerStart_StopEvent {
     }
 
     private void registerCommands() {
-        main.getCommand("chatmute").setExecutor(chatMuteCommand);
-        main.getCommand("afkdamage").setExecutor(damageKickCommand);
+        main.getCommand("chatmute").setExecutor(globalMuteCommand);
         main.getCommand("fly").setExecutor(flyCommand);
         main.getCommand("vanish").setExecutor(vanishCommand);
         main.getCommand("flywalkspeed").setExecutor(new FlyWalkSpeed());
@@ -124,8 +144,7 @@ public class ServerStart_StopEvent {
 
     private void registerListener() {
         PluginManager manager = Bukkit.getPluginManager();
-        manager.registerEvents(chatMuteCommand, main);
-        manager.registerEvents(damageKickCommand, main);
+        manager.registerEvents(globalMuteCommand, main);
         manager.registerEvents(flyCommand, main);
         manager.registerEvents(vanishCommand, main);
         manager.registerEvents(godCommand, main);

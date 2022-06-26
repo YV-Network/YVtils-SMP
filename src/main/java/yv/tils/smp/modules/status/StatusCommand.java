@@ -10,8 +10,10 @@ import org.bukkit.entity.Player;
 import yv.tils.smp.LanguageSystem.LanguageFile;
 import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.placeholder.ColorCode;
+import yv.tils.smp.placeholder.StringReplacer;
 import yv.tils.smp.utils.ConfigModeration;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,7 +27,7 @@ public class StatusCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String labels, String[] args) {
 
-        if (args.length < 2) {
+        if (args.length < 1) {
             sendUsage(sender);
             return true;
         }
@@ -38,29 +40,37 @@ public class StatusCommand implements CommandExecutor {
                     OfflinePlayer player1 = Bukkit.getOfflinePlayer(args[1]);
                     Player player2 = Bukkit.getPlayer(args[1]);
                     if (sender.hasPermission("yvtils.smp.command.status.clear.other")) {
-                        if (new ConfigModeration().ConfigContentGet("StatusSave", String.valueOf(player.getUniqueId())) != null) {
-                                player2.setDisplayName(player2.getName());
-                                player2.setPlayerListName(player2.getName());
-                                new NametagManager().removePlayer(player2);
-                                clearStatus(null, player1);
-                            } else {
-                                sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_OTHER_PLAYER_HAS_NO_STATUS));
-                            }
+                        if (new ConfigModeration().ConfigContentGet("StatusSave", String.valueOf(player1.getUniqueId())) != null) {
+
+                            List<String> list1 = new ArrayList();
+                            List<String> list2 = new ArrayList();
+                            list1.add("PLAYER");
+                            list2.add(player1.getName());
+
+                            player2.setDisplayName(player2.getName());
+                            player2.setPlayerListName(player2.getName());
+                            new NametagManager().removePlayer(player2);
+                            clearStatus(null, player1);
+                            player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_CLEAR_OTHER_CLEARED), list1, list2));
+                        } else {
+                            sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_OTHER_PLAYER_HAS_NO_STATUS));
+                        }
                     }else {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_CLEAR_OTHER_UNALLOWED));
                     }}else {
-                    if (new ConfigModeration().ConfigContentGet("StatusSave", String.valueOf(player.getUniqueId())) != null) {
-                        player.setDisplayName(player.getName());
-                        player.setPlayerListName(player.getName());
-                        new NametagManager().removePlayer(player);
-                        clearStatus(player, null);
-                    }else {
-                        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_PLAYER_HAS_NO_STATUS));
-                    }}}
+                        if (new ConfigModeration().ConfigContentGet("StatusSave", String.valueOf(player.getUniqueId())) != null) {
+                            player.setDisplayName(player.getName());
+                            player.setPlayerListName(player.getName());
+                            new NametagManager().removePlayer(player);
+                            clearStatus(player, null);
+                        }else {
+                            sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_PLAYER_HAS_NO_STATUS));
+                        }}}
             case "set" -> {
                 if (args.length == 2) {
                     if (args[1].length() > new ConfigModeration().ConfigRequest("StatusModule").getInt("MaxStatusLength")) {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_CUSTOM_STATUS_TOO_LONG));
+                        return true;
                     }
                     if (sender.hasPermission("yvtils.smp.command.status.set")) {
                         player.setDisplayName(new ColorCode().ColorCodes(args[1]) + " " + player.getName());
@@ -85,7 +95,9 @@ public class StatusCommand implements CommandExecutor {
                         new NametagManager().addPlayer(player, new ColorCode().ColorCodes(s) + " ");
                         saveStatus(player, s);
                     }}}
-            default -> sendUsage(sender);
+            default -> {
+                sendUsage(sender);
+            }
 
         }
         return false;

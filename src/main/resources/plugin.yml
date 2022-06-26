@@ -5,12 +5,11 @@ api-version: 1.18
 authors: [ WolfiiYV ]
 description: Plugin for SMP Server
 website: yvnetwork.de
+prefix: YVtils-SMP
 
 commands:
   start:
     permission: yvtils.smp.command.start
-  afkdamage:
-    permission: yvtils.smp.command.afkdamage
   mutechat:
     aliases:
       - globalmute

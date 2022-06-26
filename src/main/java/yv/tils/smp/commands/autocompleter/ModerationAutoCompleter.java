@@ -5,6 +5,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,9 +31,9 @@ public class ModerationAutoCompleter implements TabCompleter {
             }
         }else if (args.length == 3) {
             if (args[0].equals("tempban")) {
-                results.add(LanguagePlaceholder.TabCompleterModCommandDuration());
+                results.add(LanguageFile.getMessage(LanguageMessage.TAB_COMPLETER_MOD_COMMAND_DURATION));
             }else {
-                results.add(LanguagePlaceholder.TabCompleterModCommandReason());
+                results.add(LanguageFile.getMessage(LanguageMessage.TAB_COMPLETER_MOD_COMMAND_REASON));
             }
         }else if (args.length == 4) {
             if (args[0].equals("tempban")) {
@@ -46,7 +48,7 @@ public class ModerationAutoCompleter implements TabCompleter {
             }
         }else if (args.length == 5) {
             if (args[0].equals("tempban")) {
-                results.add(LanguagePlaceholder.TabCompleterModCommandReason());
+                results.add(LanguageFile.getMessage(LanguageMessage.TAB_COMPLETER_MOD_COMMAND_REASON));
             }
         }
         return results;

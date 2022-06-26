@@ -2,7 +2,7 @@
 #For color gradients look here: https://rgb.birdflop.com
 #Only Use Color Codes from the Websites! Other Color Codes don't work.
 
-Language: en #Aviable Languages are 'en' = English and 'de' = Deutsch --> After selecting your Language delete the 'language.yml' file and restart the Server
+Language: en #Available Languages are 'en' = English and 'de' = Deutsch
 
 #Variables <- Not used yet!
 ServerName: A Minecraft Server
@@ -33,11 +33,6 @@ CommandBlock: #All Commands have a new Command! A Message with the new Command c
   /kick: true
   /pardon: true
   /ban: true
-
-#ChatMute
-Globalmute:
-  Enable: The Globalmute got enabled! #Disable the Chat
-  Diasable:  #Enable the Chat
 
 #Spawn Elytra
 spawnradius: 50
@@ -107,7 +102,7 @@ Placeholder:
   PREFIXANNOUNCEMENT: §4[YVtils-ANNOUNCEMENT]
   PREFIXHELP: §9[YVtils-HELP]
   PREFIXFEEDBACK: §9[YVtils-FEEDBACK]
-  PREFIXGLOBALMUTE: §a[YVtils-CM]
+  PREFIXGLOBALMUTE: §a[YVtils-MUTE]
   PREFIXMODERATION: §c[YVtils-MOD]
   PREFIXDC: §9[YVtils-DC]
 

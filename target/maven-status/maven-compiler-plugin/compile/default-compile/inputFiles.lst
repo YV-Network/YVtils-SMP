@@ -1,6 +1,7 @@
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\listeners\SpawnBoostListener.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\MessageCommand.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\modules\ccr\CustomCraftingRecipes.java
+B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\GlobalMuteCommand.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\placeholder\StringReplacer.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\GodCommand.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\LanguageSystem\LanguageMessage.java
@@ -17,7 +18,6 @@ B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\modules\status\StatusCommand.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\SMPPlugin.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\ModerationCommand.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\modules\discord\BuildEmbeds.java
-B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\ChatMuteCommand.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\replacecommands\pardonCommand.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\utils\ConfigVersionUpdateChecker.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\placeholder\AnnouncementPlaceholder.java
@@ -39,7 +39,6 @@ B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\ReplyCommand.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\FlyWalkSpeed.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\replacecommands\msgCommand.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\utils\UpdateChecker.java
-B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\DamageKickCommand.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\GamemodeCommand.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\HealCommand.java
 B:\Coding\YVtils-SMP\src\main\java\yv\tils\smp\commands\MaintenanceCommand.java

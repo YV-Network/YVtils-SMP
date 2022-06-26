@@ -69,11 +69,11 @@ public class SpawnBoostListener implements Listener {
             event.getPlayer().setGliding(true);
 
             List<String> list1 = new ArrayList();
-            List<String> list2 = new ArrayList();
+            List<KeybindComponent> list2 = new ArrayList();
             list1.add("KEY");
-            list2.add(String.valueOf(new KeybindComponent("key.swapOffhand")));
+            list2.add(new KeybindComponent("key.swapOffhand"));
 
-            event.getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.SPAWN_ELYTRA_BOOST), list1, list2)).create());
+            event.getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder(new StringReplacer().KeybindReplacer(LanguageFile.getMessage(LanguageMessage.SPAWN_ELYTRA_BOOST), list1, list2)).create());
             flying.add(event.getPlayer());
         }
 

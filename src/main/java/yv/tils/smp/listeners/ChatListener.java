@@ -6,6 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.commands.GlobalMuteCommand;
 import yv.tils.smp.logger.ConsoleLog;
 import yv.tils.smp.placeholder.ColorCode;
 import yv.tils.smp.utils.ConfigModeration;
@@ -19,7 +20,6 @@ import java.io.File;
 public class ChatListener implements Listener {
 
     File statussavefile = new File(SMPPlugin.getInstance().getDataFolder(), "StatusSave.yml");
-    YamlConfiguration statussave = YamlConfiguration.loadConfiguration(statussavefile);
 
     @EventHandler
     public void onChatEvent(AsyncPlayerChatEvent e) {
@@ -46,27 +46,26 @@ public class ChatListener implements Listener {
         Boolean so = e.getMessage().contains("&o");
         Boolean sr = e.getMessage().contains("&r");
 
-        if (e.getPlayer().hasPermission("yvtils.smp.collercodes.chat"))
-        if (s0 || s1 || s2 || s3 || s4 || s5 || s6 || s7 || s8 || s9 || sa || sb || sc || sd || se || sf || sk || sl || sm || sn || so || sr) {
+        if (e.getPlayer().hasPermission("yvtils.smp.collercodes.chat")) {
+            if (s0 || s1 || s2 || s3 || s4 || s5 || s6 || s7 || s8 || s9 || sa || sb || sc || sd || se || sf || sk || sl || sm || sn || so || sr) {
             e.setMessage(new ColorCode().ColorCodes(e.getMessage()));
-        }
+        }}
 
         String name = e.getPlayer().getName();
         String message = e.getMessage();
 
         new ConsoleLog(String.valueOf(e.getPlayer().getUniqueId()));
 
-        if (statussave.get(String.valueOf(e.getPlayer().getUniqueId())) != null) {
+        if (!SMPPlugin.getInstance().globalmute) {
+            YamlConfiguration statussave = YamlConfiguration.loadConfiguration(statussavefile);
+            if (statussave.get(String.valueOf(e.getPlayer().getUniqueId())) != null) {
+                new ConsoleLog("StatusModuleDebug - OnChat - With Check - With Prefix");
+                String prefix = new ColorCode().ColorCodes(new ColorCode().ColorCodes(new ConfigModeration().ConfigRequest("StatusSave").getString(String.valueOf(e.getPlayer().getUniqueId())))) + " ";
 
-            new ConsoleLog("StatusModuleDebug - OnChat - With Check");
-
-            String prefix = new ColorCode().ColorCodes(new ColorCode().ColorCodes(new ConfigModeration().ConfigRequest("StatusSave").getString(String.valueOf(e.getPlayer().getUniqueId())))) + " ";
-            e.setCancelled(true);
-            Bukkit.broadcastMessage(prefix + name + "§8: §f" + message);
-        }else {
-            e.setCancelled(true);
-            Bukkit.broadcastMessage(name + "§8: §f" + message);
-        }
-
-    }
-}
+                e.setCancelled(true);
+                Bukkit.broadcastMessage(prefix + name + "§8: §f" + message);
+            }else {
+                new ConsoleLog("StatusModuleDebug - OnChat - With Check - No Prefix");
+                e.setCancelled(true);
+                Bukkit.broadcastMessage(name + "§8: §f" + message);
+            }}}}

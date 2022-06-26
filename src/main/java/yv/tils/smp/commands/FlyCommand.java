@@ -1,5 +1,6 @@
 package yv.tils.smp.commands;
 
+import org.apache.commons.codec.language.bm.Lang;
 import org.bukkit.block.BlockFace;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,6 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
 
 import java.util.UUID;
@@ -28,21 +31,18 @@ public class FlyCommand implements CommandExecutor, Listener {
                     SMPPlugin.getInstance().fly.add(uuid);
                     player.setAllowFlight(true);
                     player.setFlying(true);
-                    sender.sendMessage("Fly is now enabled!");
+                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.FLY_COMMAND_ENABLE));
                 } else {
                     if (player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
                         SMPPlugin.getInstance().fly1.add(uuid);
                         SMPPlugin.getInstance().fly.remove(uuid);
                         player.setAllowFlight(false);
-                        sender.sendMessage("Fly is disabled!");
+                        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.FLY_COMMAND_DISABLE));
                     }else {
                         SMPPlugin.getInstance().fly.remove(uuid);
                         player.setAllowFlight(false);
-                        sender.sendMessage("Fly is disabled!");
-                    }
-                }
-            }
-        }
+                        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.FLY_COMMAND_DISABLE));
+                    }}}}
         return true;
     }
 
@@ -54,6 +54,4 @@ public class FlyCommand implements CommandExecutor, Listener {
             event.setCancelled(true);
             UUID uuid = event.getEntity().getUniqueId();
             SMPPlugin.getInstance().fly1.remove(uuid);
-        }
-    }
-}
+        }}}

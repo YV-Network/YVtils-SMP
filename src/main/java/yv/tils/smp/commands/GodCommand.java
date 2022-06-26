@@ -9,6 +9,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
 
 import java.util.UUID;
@@ -28,17 +30,17 @@ public class GodCommand implements CommandExecutor, Listener {
                     SMPPlugin.getInstance().godmode.add(uuid);
                     player.setAllowFlight(true);
                     player.setFlying(true);
-                    sender.sendMessage("God Mode is now enabled!");
+                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_ENABLE));
                 } else {
                     if (player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
                         SMPPlugin.getInstance().godmode1.add(uuid);
                         SMPPlugin.getInstance().godmode.remove(uuid);
                         player.setAllowFlight(false);
-                        sender.sendMessage("God Mode is now disabled!");
+                        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE));
                     }else {
                         SMPPlugin.getInstance().godmode.remove(uuid);
                         player.setAllowFlight(false);
-                        sender.sendMessage("God Mode is now disabled!");
+                        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE));
                     }
                 }
             }

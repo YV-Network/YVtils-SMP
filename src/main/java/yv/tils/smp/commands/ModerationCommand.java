@@ -131,7 +131,7 @@ public class ModerationCommand implements CommandExecutor {
                                 }
                                 Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), reason1, cal.getTime(), String.valueOf(sender));
                                 if (onlinetarget != null) {
-                                    onlinetarget.kickPlayer(reason);
+                                    onlinetarget.kickPlayer(reason1);
                                 }
 
                                 List<String> list1 = new ArrayList();
@@ -145,7 +145,7 @@ public class ModerationCommand implements CommandExecutor {
                                 list1.add("REASON");
                                 list2.add(reason1);
                                 list1.add("DURATION");
-                                list2.add(args[2] + " " + args[3]);
+                                list2.add(String.valueOf(cal.getTime()));
 
                                 Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_TEMPBAN), list1, list2), "yvtils.smp.command.moderation.temp.ban.getannounced");
                             } else{

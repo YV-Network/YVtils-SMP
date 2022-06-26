@@ -31,7 +31,7 @@ public class LanguageFile {
      * @Use: getMessage(LangaugeMessage.message);
      */
     public static String getMessage(LanguageMessage message) {
-        return yamlConfiguration.getString(message.name().toLowerCase());
+        return yamlConfiguration.getString(message.name().toUpperCase());
     }
 
     /**

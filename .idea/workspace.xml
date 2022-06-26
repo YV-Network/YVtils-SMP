@@ -9,97 +9,53 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="Version 4.6.6&#10;&#10;Status Module:&#10;Set your own Status or select one of the default, you can customize the Default Status in the Config System.&#10;&#10;Language System:&#10;The Language System is now on the Way, I want to have good translations, so you can help to translate on a website. (Link will come with full release)&#10;&#10;Mainteance Feature:&#10;This Feature is now finished and work now how I want that it work.&#10;&#10;From now on every new Feature become a Version Tag and since when it is in the Plugin.">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_authlib_3_5_41.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_76_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_76_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_76_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_76_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_76_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_76_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_classes_epoll_4_1_76_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_aarch_64_4_1_76_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_76_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_76_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_1_19_R0_1_SNAPSHOT.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/StringReplacer.java" afterDir="false" />
+    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="Version 4.6.6&#10;&#10;Language System 68% finished - Process continues the latest on 18.06.2022">
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GlobalMuteCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_19_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_authlib_3_3_39.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_datafixerupper_4_1_27.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_datafixerupper_5_0_28.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_68_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_27.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_29.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_dv8tion_JDA_5_0_0_alpha_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_dv8tion_JDA_5_0_0_alpha_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_15.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_3_8_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_3_8_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_builder_support_3_8_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_builder_support_3_8_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_3_8_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_3_8_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_builder_3_8_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_builder_3_8_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_repository_metadata_3_8_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_repository_metadata_3_8_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_resolver_provider_3_8_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_resolver_provider_3_8_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_connector_basic_1_7_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_connector_basic_1_8_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_transport_http_1_7_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_transport_http_1_8_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_36.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_1_18_2_R0_1_SNAPSHOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_18_2_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_19_R0_1_SNAPSHOT.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_19_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_19_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/spigot_1_18_1_R0_1_SNAPSHOT.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YVtils-SMP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/YVtils-SMP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/LanguageSystem/LanguageFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/LanguageSystem/LanguageFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/LanguageSystem/LanguageMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/LanguageSystem/LanguageMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/LanguageSystem/LanguagePlaceholder.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/ColorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/ColorCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/StringReplacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/StringReplacer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/SMPPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/SMPPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ChatMuteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ChatMuteCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ChatMuteCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/DamageKickCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyWalkSpeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyWalkSpeed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GodCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GodCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/HealCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/HealCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MessageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MessageCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ModerationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ModerationCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ReplyCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ReplyCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/StartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/StartCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/VanishCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/VanishCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/autocompleter/ModerationAutoCompleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/autocompleter/ModerationAutoCompleter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/autocompleter/VanishAutoCompleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/autocompleter/VanishAutoCompleter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/BanCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/BanCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/KickCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/KickCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/msgCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/msgCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/pardonCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/pardonCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/ChatListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/ChatListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/JoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/JoinListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/MotdListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/MotdListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/QuitListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/QuitListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/SpawnBoostListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/SpawnBoostListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/CustomCraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/CustomCraftingRecipes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BotStartStop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BotStartStop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BuildEmbeds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BuildEmbeds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/WhitelistMessageGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/WhitelistMessageGetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/status/JoinQuitStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/status/JoinQuitStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/status/StatusCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/status/StatusCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ConfigModeration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ConfigModeration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ConfigVersionUpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ConfigVersionUpdateChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ServerStart_StopEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ServerStart_StopEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/UpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/UpdateChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Language/de.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Language/de.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Language/en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Language/en.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/compile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/testCompile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,9 +93,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="742d04c2-3889-4f30-a066-ead95df18632" />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -164,24 +117,12 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;B:/Coding/DCBot&quot;,
+    &quot;last_opened_file_path&quot;: &quot;B:/Downloads/MUtils_source_from_Procyon&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;PLAIN_TEXT&quot;
-    ]
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -245,6 +186,9 @@
     <option name="myEncoding" value="UTF-8" />
     <option name="myConnectionType" value="NONE" />
     <option name="myConnectionId" value="" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\paulp\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="...">
@@ -379,7 +323,13 @@
       <workItem from="1652894220515" duration="10062000" />
       <workItem from="1653401963842" duration="8263000" />
       <workItem from="1654096511853" duration="16973000" />
-      <workItem from="1654447468719" duration="23669000" />
+      <workItem from="1654447468719" duration="24857000" />
+      <workItem from="1654874361046" duration="7314000" />
+      <workItem from="1655200410155" duration="5260000" />
+      <workItem from="1655222732263" duration="14785000" />
+      <workItem from="1655303824805" duration="20687000" />
+      <workItem from="1655488879292" duration="11377000" />
+      <workItem from="1656241793079" duration="15426000" />
     </task>
     <task id="LOCAL-00007" summary="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version.">
       <created>1637869169288</created>
@@ -549,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652546341557</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Version 4.6.6&#10;&#10;Language System 68% finished - Process continues the latest on 18.06.2022">
+      <created>1654720225471</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1654720225471</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,380 +543,41 @@
     <MESSAGE value="4.6.5.1-BETA Version Push - Code optimization; Bug Fixes; Debug function and much more!" />
     <MESSAGE value="Version 4.6.6&#10;&#10;Status Module:" />
     <MESSAGE value="Version 4.6.6&#10;&#10;Status Module:&#10;Set your own Status or select one of the default, you can customize the Default Status in the Config System.&#10;&#10;Language System:&#10;The Language System is now on the Way, I want to have good translations, so you can help to translate on a website. (Link will come with full release)&#10;&#10;Mainteance Feature:&#10;This Feature is now finished and work now how I want that it work.&#10;&#10;From now on every new Feature become a Version Tag and since when it is in the Plugin." />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 4.6.6&#10;&#10;Status Module:&#10;Set your own Status or select one of the default, you can customize the Default Status in the Config System.&#10;&#10;Language System:&#10;The Language System is now on the Way, I want to have good translations, so you can help to translate on a website. (Link will come with full release)&#10;&#10;Mainteance Feature:&#10;This Feature is now finished and work now how I want that it work.&#10;&#10;From now on every new Feature become a Version Tag and since when it is in the Plugin." />
+    <MESSAGE value="Version 4.6.6&#10;&#10;Language System 68% finished - Process continues the latest on 18.06.2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 4.6.6&#10;&#10;Language System 68% finished - Process continues the latest on 18.06.2022" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MessageCommand.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MessageCommand.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>102</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>106</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>114</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/HealCommand.java</url>
-          <line>18</line>
+          <line>20</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GodCommand.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GodCommand.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GodCommand.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
           <line>67</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyWalkSpeed.java</url>
-          <line>269</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyWalkSpeed.java</url>
-          <line>270</line>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyWalkSpeed.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyWalkSpeed.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyCommand.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyCommand.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyCommand.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/DamageKickCommand.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/DamageKickCommand.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/DamageKickCommand.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/DamageKickCommand.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/DamageKickCommand.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ChatMuteCommand.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ChatMuteCommand.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ChatMuteCommand.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ChatMuteCommand.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ChatMuteCommand.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="111" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="112" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="114" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>71</line>
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>69</line>
+          <line>65</line>
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>75</line>
+          <line>71</line>
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>78</line>
+          <line>74</line>
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>86</line>
+          <line>82</line>
           <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/pardonCommand.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/pardonCommand.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/msgCommand.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="124" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/msgCommand.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="125" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/KickCommand.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="126" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/KickCommand.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/KickCommand.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/BanCommand.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="129" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/BanCommand.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="130" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/BanCommand.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="131" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

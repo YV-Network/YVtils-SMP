@@ -7,7 +7,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.StringReplacer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @since 4.6.6
@@ -24,25 +30,20 @@ public class BanCommand implements Listener {
 
         String cmdlowercase = args[0].toLowerCase();
 
+        List<String> list1 = new ArrayList();
+        List<String> list2 = new ArrayList();
+        list1.add("COMMAND");
+        list2.add("§e/mod ban");
+
         if (cmdlowercase.equals("/ban")) {
             event.setCancelled(true);
                 if (player.hasPermission("yv.tils.smp.command.moderation.ban")) {
-                    TextComponent c = new TextComponent(LanguagePlaceholder.Replace1());
-                    TextComponent click = new TextComponent("§e/mod ban");
-                    TextComponent click1 = new TextComponent(LanguagePlaceholder.Replace2());
-                    TextComponent click2 = new TextComponent("\n§e/mod tempban");
 
-                    click2.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "/mod tempban"));
-                    click2.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Click to copy to Clipboard")));
-
-                    click.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "/mod ban"));
-                    click.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Click to copy to Clipboard")));
-
-                    c.addExtra(click);
-                    c.addExtra(click1);
-                    c.addExtra(click2);
+                    TextComponent c = new TextComponent(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.COMMAND_REPLACE_NEW_COMMAND_INFO), list1, list2));
+                    c.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "/mod ban"));
+                    c.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText(LanguageFile.getMessage(LanguageMessage.COMMAND_REPLACE_COPY_COMMAND_TO_CLIPBOARD))));
                     player.spigot().sendMessage(c);
 
                 } else {
-                    player.sendMessage(MessagePlaceholder.PERMISSIONERROR + ": yv.tils.smp.command.moderation.ban");
+                    player.sendMessage(MessagePlaceholder.PERMISSIONERROR + " yvtils.smp.command.moderation.ban");
                 }}}}

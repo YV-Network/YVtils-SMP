@@ -73,8 +73,7 @@ public class BotStartStop {
             Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FINISHED));
         } catch (LoginException e) {
             e.printStackTrace();
-        }
-    }
+        }}
 
     public void onStop() {
         if (SMPPlugin.getInstance().jda != null) {
@@ -86,10 +85,4 @@ public class BotStartStop {
                 System.out.println("------------------------");
                 e.getCause();
                 System.out.println("------------------------");
-            }
-        }
-    }
-
-
-
-}
+            }}}}
