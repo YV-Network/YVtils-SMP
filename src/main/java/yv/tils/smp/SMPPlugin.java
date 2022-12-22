@@ -3,8 +3,9 @@ package yv.tils.smp;
 import net.dv8tion.jda.api.JDA;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import yv.tils.smp.LanguageSystem.LanguageFile;
-import yv.tils.smp.LanguageSystem.LanguageMessage;
+import yv.tils.smp.modules.fun.sit.SitManager;
+import yv.tils.smp.utils.language.LanguageFile;
+import yv.tils.smp.utils.language.LanguageMessage;
 import yv.tils.smp.logger.ConsoleLog;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.placeholder.StringReplacer;
@@ -27,6 +28,7 @@ public final class SMPPlugin extends JavaPlugin {
     public List<UUID> vanished = new ArrayList();
     public List<UUID> godmode = new ArrayList();
     public List<UUID> godmode1 = new ArrayList();
+    public List<UUID> InvClose = new ArrayList<>();
     private HashMap<UUID, UUID> recentMessages;
     public JDA jda;
     public boolean maintenances;
@@ -71,4 +73,5 @@ public final class SMPPlugin extends JavaPlugin {
     public HashMap<UUID, UUID> getRecentMessages() {
         return recentMessages;
     }
+
 }

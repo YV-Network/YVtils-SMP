@@ -1,7 +1,7 @@
 package yv.tils.smp.placeholder;
 
-import yv.tils.smp.LanguageSystem.LanguageFile;
-import yv.tils.smp.LanguageSystem.LanguageMessage;
+import yv.tils.smp.utils.language.LanguageFile;
+import yv.tils.smp.utils.language.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
 
 /**

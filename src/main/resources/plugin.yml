@@ -54,6 +54,16 @@ commands:
     aliases:
       - prefix
       - role
+  ccr:
+    permission: yvtils.smp.command.ccr
+    aliases:
+      - customcraftingrecipes
+      - optools
+  sit:
+    permission: yvtils.smp.command.sit
+    aliases:
+      - sitdown
+      - chill
 permissions:
   yvtils.smp.play:
     description: Let Player Plays
@@ -87,5 +97,9 @@ permissions:
     description: Players with this Permission can clear the Status of other Players
   yvtils.smp.command.status.set:
     description: Players with this Status can set a custom Status
-  yvtils.smp.updateannounce:
-    description: Send a Message to Players with this Permission, when a Config Update is available or the Language is not available
+  yvtils.smp.module.fun.timber:
+    description: Players with this Permission can use the Timber Module when it is activated!
+  yvtils.smp.module.fun.veinmine:
+    description: Players with this Permission can use the VeineMiner Module when it is activated!
+  yvtils.smp.update.getannounced:
+    description: Announcement (on Join) in Chat when a Plugin Update is available!

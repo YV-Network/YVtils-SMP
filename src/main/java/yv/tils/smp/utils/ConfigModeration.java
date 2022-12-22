@@ -2,7 +2,7 @@ package yv.tils.smp.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
-import yv.tils.smp.LanguageSystem.LanguageFile;
+import yv.tils.smp.utils.language.LanguageFile;
 import yv.tils.smp.SMPPlugin;
 
 import java.io.File;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  Creates the Config Files for the Plugin, and give them Input with Config Options
  * @since 4.6.6
- * @version 4.6.6
+ * @version 4.6.7
  */
 public class ConfigModeration {
 
@@ -88,6 +88,8 @@ public class ConfigModeration {
     YamlConfiguration statusmodule = YamlConfiguration.loadConfiguration(statusmodulefile);
     File statussavefile = new File(SMPPlugin.getInstance().getDataFolder(), "StatusSave.yml");
     YamlConfiguration statussave = YamlConfiguration.loadConfiguration(statussavefile);
+    File funmodulefile = new File(SMPPlugin.getInstance().getDataFolder(), "FunModule.yml");
+    YamlConfiguration funmodule = YamlConfiguration.loadConfiguration(funmodulefile);
 
     public void onEntranceGeneration() {
 
@@ -128,6 +130,10 @@ public class ConfigModeration {
         statussave.addDefault("UUID", "STATUS");
         statussave.options().copyDefaults(true);
 
+        //FunModule
+        funmodule.addDefault("Active", true);
+        funmodule.options().copyDefaults(true);
+
         onSave();
     }
 
@@ -138,6 +144,7 @@ public class ConfigModeration {
             whitelisteddcplayers.save(whitelisteddcplayersfile);
             statusmodule.save(statusmodulefile);
             statussave.save(statussavefile);
+            funmodule.save(funmodulefile);
         } catch (IOException e) {
             System.out.println("-------");
             Bukkit.getConsoleSender().sendMessage("File creation Error! Please get Support on the YVtils Support Discord");
@@ -152,6 +159,9 @@ public class ConfigModeration {
             onGenerate("WhitelistedDiscordPlayers.yml");
             onGenerate("StatusModule.yml");
             onGenerate("StatusSave.yml");
+            onGenerate("FunModule.yml");
+            onGenerate("Language_de.yml");
+            onGenerate("Language_en.yml");
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -160,7 +170,7 @@ public class ConfigModeration {
     public void onGenerate(String name) throws Exception {
         File file = new File(SMPPlugin.getInstance().getDataFolder(), name);
         if (!file.exists()) {
-                file.createNewFile();
+            file.createNewFile();
         }}
 
     public List<String> defaultstatuslist() {

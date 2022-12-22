@@ -6,8 +6,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.scoreboard.Team;
-import yv.tils.smp.LanguageSystem.LanguageFile;
-import yv.tils.smp.LanguageSystem.LanguageMessage;
+import yv.tils.smp.utils.language.LanguageFile;
+import yv.tils.smp.utils.language.LanguageMessage;
 import yv.tils.smp.logger.ConsoleLog;
 import yv.tils.smp.placeholder.ColorCode;
 import yv.tils.smp.placeholder.StringReplacer;
@@ -48,9 +48,13 @@ public class JoinQuitStatus implements Listener {
 
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
-        Player player = e.getPlayer();
+        PlayerStatusSave(e.getPlayer());
+    }
+
+    public void PlayerStatusSave(Player player) {
         Team team = player.getScoreboard().getTeam(player.getName());
 
         if (team != null) {
             new NametagManager().removePlayer(player);
-        }}}
+        }
+    }}

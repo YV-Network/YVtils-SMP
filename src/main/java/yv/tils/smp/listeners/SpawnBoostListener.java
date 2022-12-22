@@ -1,8 +1,8 @@
 package yv.tils.smp.listeners;
 
+import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.ComponentBuilder;
-import net.md_5.bungee.api.chat.KeybindComponent;
+import net.md_5.bungee.api.chat.*;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.block.BlockFace;
@@ -15,16 +15,15 @@ import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.plugin.Plugin;
-import yv.tils.smp.LanguageSystem.LanguageFile;
-import yv.tils.smp.LanguageSystem.LanguageMessage;
+import yv.tils.smp.utils.language.LanguageFile;
+import yv.tils.smp.utils.language.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.placeholder.StringReplacer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This Code is inspired by this Tutorial '<a href="https://www.youtube.com/watch?v=S9f_mFiYT50&t=1s">https://www.youtube.com/watch?v=S9f_mFiYT50&t=1s</a>' from Coole Pizza
+ * This Code is inspired by this Tutorial '<a href="https://www.youtube.com/watch?v=S9f_mFiYT50">https://www.youtube.com/watch?v=S9f_mFiYT50</a>' from Coole Pizza
  *
  * @since 4.6.6
  * @version 4.6.6
@@ -59,23 +58,17 @@ public class SpawnBoostListener implements Listener {
         }), 0, 3);
     }
 
-
     @EventHandler
     public void onDoubleJump(PlayerToggleFlightEvent event) {
         if (SMPPlugin.getInstance().fly.contains(event.getPlayer().getUniqueId()) || SMPPlugin.getInstance().godmode.contains(event.getPlayer().getUniqueId())) return;
         if (event.getPlayer().getGameMode() != GameMode.SURVIVAL) return;
         if (!isInSpawnRadius(event.getPlayer())) return;
-            event.setCancelled(true);
-            event.getPlayer().setGliding(true);
-
-            List<String> list1 = new ArrayList();
-            List<KeybindComponent> list2 = new ArrayList();
-            list1.add("KEY");
-            list2.add(new KeybindComponent("key.swapOffhand"));
-
-            event.getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder(new StringReplacer().KeybindReplacer(LanguageFile.getMessage(LanguageMessage.SPAWN_ELYTRA_BOOST), list1, list2)).create());
-            flying.add(event.getPlayer());
-        }
+        BaseComponent keytopress = new KeybindComponent("key.swapOffhand");
+        event.setCancelled(true);
+        event.getPlayer().setGliding(true);
+        event.getPlayer().spigot().sendMessage(ChatMessageType.ACTION_BAR, (new ComponentBuilder(LanguageFile.getMessage(LanguageMessage.SPAWN_ELYTRA_BOOST) + " ")).append(keytopress).color(ChatColor.DARK_GRAY).create());
+        flying.add(event.getPlayer());
+    }
 
     @EventHandler
     public void onLandDamage(EntityDamageEvent event) {
@@ -92,8 +85,7 @@ public class SpawnBoostListener implements Listener {
         boosted.add(event.getPlayer());
 
         event.getPlayer().setVelocity(event.getPlayer().getLocation().getDirection().multiply(multiplyValue));
-    }
-    }
+    }}
 
     @EventHandler
     public void onToggleGlide(EntityToggleGlideEvent event) {
@@ -103,5 +95,4 @@ public class SpawnBoostListener implements Listener {
     private boolean isInSpawnRadius(Player player) {
         if (!player.getWorld().getName().equals("world")) return false;
         return player.getWorld().getSpawnLocation().distance(player.getLocation()) <= spawnRadius;
-    }
-}
+    }}

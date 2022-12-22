@@ -4,8 +4,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import yv.tils.smp.LanguageSystem.LanguageFile;
-import yv.tils.smp.LanguageSystem.LanguageMessage;
+import yv.tils.smp.utils.language.LanguageFile;
+import yv.tils.smp.utils.language.LanguageMessage;
 
 /**
  * @since 4.6.6

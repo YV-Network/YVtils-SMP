@@ -9,53 +9,106 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="Version 4.6.6&#10;&#10;Language System 68% finished - Process continues the latest on 18.06.2022">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GlobalMuteCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_19_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_19_R0_1_SNAPSHOT.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/spigot_1_18_1_R0_1_SNAPSHOT.xml" beforeDir="false" />
+    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="Full Changelog Version 4.6.6:&#10;&#10;Updated for Version 1.19&#10;&#10;Status Module → Set your own Status or selected of one of the default Status which can be set by the Server Owner.&#10;&#10;Maintenance System is now fixed and finished and should work.&#10;&#10;Plugin has now an own Language System with the Languages German and English, with your help there will come more.&#10;Customize 99% of the Plugin Messages&#10;&#10;&#10;Removed the AFKKickOnDamage and Custom Crafting Recipes (CCR)&#10;CCR will come back in the Version 4.6.7 with a better Version and an own GUI&#10;&#10;Commands like Heal or GM (Gamemode) will also be usable on other Players when Version 4.6.7 comes out.">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_authlib_3_11_49.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mariadb_jdbc_mariadb_java_client_3_0_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/spigot_1_18_1_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Variables.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/eventlogger/BlockInteract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/eventlogger/ChatEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/eventlogger/ChestInteract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/eventlogger/EntityKillEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/eventlogger/ExplosionEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/eventlogger/ItemInteract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/VeineMiner/OreListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/CCRCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/InvListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/InvFrameRecipe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/LightBlockRecipe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/TestRecipe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/sit/DismountListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/sit/SitCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/sit/SitManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/sit/StairClickListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/timber/TimberListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/updateutils/JoinAnnouncer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/updateutils/database/ConnectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/updateutils/database/VersionChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/language/CreateFile_de.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/language/CreateFile_en.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_14_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_14_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_14_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_authlib_3_5_41.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_76_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_77_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_76_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_77_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_76_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_77_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_76_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_77_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_76_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_77_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_76_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_77_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_classes_epoll_4_1_76_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_classes_epoll_4_1_77_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_aarch_64_4_1_76_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_aarch_64_4_1_77_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_76_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_77_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_76_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_77_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_dv8tion_JDA_5_0_0_alpha_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_dv8tion_JDA_5_0_0_beta_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_connector_basic_1_8_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_connector_basic_1_7_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_transport_http_1_8_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_transport_http_1_7_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_23_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_36.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_32.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_1_19_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_1_19_2_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_19_R0_1_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_19_2_R0_1_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_33.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YVtils-SMP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/YVtils-SMP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/LanguageSystem/LanguageFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/LanguageSystem/LanguageFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/LanguageSystem/LanguageMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/LanguageSystem/LanguageMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/LanguageSystem/LanguageFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/language/LanguageFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/LanguageSystem/LanguageMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/language/LanguageMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/ColorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/ColorCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/StringReplacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/StringReplacer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/SMPPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/SMPPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ChatMuteCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/DamageKickCommand.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyWalkSpeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyWalkSpeed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GlobalMuteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GlobalMuteCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GodCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GodCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/HealCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/HealCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MessageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MessageCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ModerationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ModerationCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ReplyCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ReplyCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/StartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/StartCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/VanishCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/VanishCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/autocompleter/ModerationAutoCompleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/autocompleter/ModerationAutoCompleter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/BanCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/BanCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/KickCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/KickCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/msgCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/msgCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/pardonCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/pardonCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/ChatListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/ChatListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/JoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/JoinListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/MotdListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/MotdListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/SpawnBoostListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/SpawnBoostListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/CustomCraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/CustomCraftingRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/logger/ConsoleLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/logger/ConsoleLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/CustomCraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/OldCCR.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BotStartStop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BotStartStop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BuildEmbeds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BuildEmbeds.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/WhitelistMessageGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/WhitelistMessageGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/status/JoinQuitStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/status/JoinQuitStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/status/StatusCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/status/StatusCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ConfigModeration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ConfigModeration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ServerStart_StopEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ServerStart_StopEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Language/de.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Language/de.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Language/en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Language/en.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/UpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/updateutils/UpdateChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Language/de.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Language/en.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +124,7 @@
         <option value="Interface" />
         <option value="AnnotationType" />
         <option value="Enum" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -104,7 +158,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="21DnUGA8C2DhSbIFn2yTkEl4LZY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -117,12 +171,23 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;B:/Downloads/MUtils_source_from_Procyon&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;B:/Coding/MC Plugin Coding with Intenet&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -134,20 +199,20 @@
       <recent name="B:\Coding\YVtils-SMP\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="yv.tils.smp.modules.fun.ccr.recipes" />
       <recent name="yv.tils.smp.versionfiles" />
       <recent name="yv.tils.smp.otherfiles" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.YVtils-SMP [clean,package]">
-    <configuration name="CompileWithServer" type="JarApplication">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/server/paper-1.18.1.jar" />
+  <component name="RunManager" selected="JAR Application.CompileWithServer_1.19">
+    <configuration name="CompileWithServer_1.19" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/../../Desktop/Minecraft/MC Server/SelfCodedPluginTest/paper-1.19.jar" />
+      <option name="VM_PARAMETERS" value="-Xmx4G -DIReallyKnowWhatIAmDoingISwear" />
       <option name="PROGRAM_PARAMETERS" value="nogui" />
-      <option name="WORKING_DIRECTORY" value="B:\Coding\YVtils-SMP\server" />
+      <option name="WORKING_DIRECTORY" value="B:\Desktop\Minecraft\MC Server\SelfCodedPluginTest" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="YVtils-SMP" />
-        </option>
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean package" />
       </method>
     </configuration>
     <configuration name="YVtils-SMP [clean,package]" type="MavenRunConfiguration" factoryName="Maven">
@@ -177,7 +242,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JAR Application.CompileWithServer" />
+      <item itemvalue="JAR Application.CompileWithServer_1.19" />
       <item itemvalue="Maven.YVtils-SMP [clean,package]" />
     </list>
   </component>
@@ -329,7 +394,56 @@
       <workItem from="1655222732263" duration="14785000" />
       <workItem from="1655303824805" duration="20687000" />
       <workItem from="1655488879292" duration="11377000" />
-      <workItem from="1656241793079" duration="15426000" />
+      <workItem from="1656241793079" duration="18604000" />
+      <workItem from="1656355191238" duration="102000" />
+      <workItem from="1656355761568" duration="3597000" />
+      <workItem from="1656443891449" duration="3820000" />
+      <workItem from="1656603866700" duration="6162000" />
+      <workItem from="1656766792779" duration="4487000" />
+      <workItem from="1657372492976" duration="14262000" />
+      <workItem from="1657456243682" duration="15076000" />
+      <workItem from="1657896568887" duration="3224000" />
+      <workItem from="1657901243360" duration="3433000" />
+      <workItem from="1658246955465" duration="6484000" />
+      <workItem from="1658258921455" duration="5574000" />
+      <workItem from="1658321943345" duration="11896000" />
+      <workItem from="1658411515528" duration="6669000" />
+      <workItem from="1659002356832" duration="102000" />
+      <workItem from="1659190564667" duration="1758000" />
+      <workItem from="1659618990497" duration="5524000" />
+      <workItem from="1660068171657" duration="2417000" />
+      <workItem from="1661178339495" duration="847000" />
+      <workItem from="1661181677813" duration="4552000" />
+      <workItem from="1661857221081" duration="2430000" />
+      <workItem from="1661872488610" duration="4273000" />
+      <workItem from="1662203594139" duration="13000000" />
+      <workItem from="1662738710262" duration="10000" />
+      <workItem from="1662746987779" duration="26000" />
+      <workItem from="1662747025154" duration="1976000" />
+      <workItem from="1662914259978" duration="114000" />
+      <workItem from="1662917125403" duration="1896000" />
+      <workItem from="1663692096775" duration="45000" />
+      <workItem from="1664036858539" duration="29000" />
+      <workItem from="1664974775773" duration="1922000" />
+      <workItem from="1665152362833" duration="616000" />
+      <workItem from="1665579323820" duration="596000" />
+      <workItem from="1665776581759" duration="3477000" />
+      <workItem from="1666006889849" duration="143000" />
+      <workItem from="1666185037505" duration="27514000" />
+      <workItem from="1667567370891" duration="98000" />
+      <workItem from="1667567601927" duration="2755000" />
+      <workItem from="1668111618088" duration="786000" />
+      <workItem from="1671292248324" duration="8478000" />
+      <workItem from="1671483590469" duration="28000" />
+      <workItem from="1671483634982" duration="25000" />
+      <workItem from="1671483902604" duration="95000" />
+      <workItem from="1671484621581" duration="120000" />
+      <workItem from="1671484820130" duration="27000" />
+      <workItem from="1671485135360" duration="86000" />
+      <workItem from="1671485231799" duration="2120000" />
+      <workItem from="1671488180300" duration="1995000" />
+      <workItem from="1671651033531" duration="9074000" />
+      <workItem from="1671663535235" duration="4445000" />
     </task>
     <task id="LOCAL-00007" summary="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version.">
       <created>1637869169288</created>
@@ -506,7 +620,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654720225471</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Full Changelog Version 4.6.6:&#10;&#10;Updated for Version 1.19&#10;&#10;Status Module → Set your own Status or selected of one of the default Status which can be set by the Server Owner.&#10;&#10;Maintenance System is now fixed and finished and should work.&#10;&#10;Plugin has now an own Language System with the Languages German and English, with your help there will come more.&#10;Customize 99% of the Plugin Messages&#10;&#10;&#10;Removed the AFKKickOnDamage and Custom Crafting Recipes (CCR)&#10;CCR will come back in the Version 4.6.7 with a better Version and an own GUI&#10;&#10;Commands like Heal or GM (Gamemode) will also be usable on other Players when Version 4.6.7 comes out.">
+      <created>1656272546628</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1656272546628</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +665,8 @@
     <MESSAGE value="Version 4.6.6&#10;&#10;Status Module:" />
     <MESSAGE value="Version 4.6.6&#10;&#10;Status Module:&#10;Set your own Status or select one of the default, you can customize the Default Status in the Config System.&#10;&#10;Language System:&#10;The Language System is now on the Way, I want to have good translations, so you can help to translate on a website. (Link will come with full release)&#10;&#10;Mainteance Feature:&#10;This Feature is now finished and work now how I want that it work.&#10;&#10;From now on every new Feature become a Version Tag and since when it is in the Plugin." />
     <MESSAGE value="Version 4.6.6&#10;&#10;Language System 68% finished - Process continues the latest on 18.06.2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 4.6.6&#10;&#10;Language System 68% finished - Process continues the latest on 18.06.2022" />
+    <MESSAGE value="Full Changelog Version 4.6.6:&#10;&#10;Updated for Version 1.19&#10;&#10;Status Module → Set your own Status or selected of one of the default Status which can be set by the Server Owner.&#10;&#10;Maintenance System is now fixed and finished and should work.&#10;&#10;Plugin has now an own Language System with the Languages German and English, with your help there will come more.&#10;Customize 99% of the Plugin Messages&#10;&#10;&#10;Removed the AFKKickOnDamage and Custom Crafting Recipes (CCR)&#10;CCR will come back in the Version 4.6.7 with a better Version and an own GUI&#10;&#10;Commands like Heal or GM (Gamemode) will also be usable on other Players when Version 4.6.7 comes out." />
+    <option name="LAST_COMMIT_MESSAGE" value="Full Changelog Version 4.6.6:&#10;&#10;Updated for Version 1.19&#10;&#10;Status Module → Set your own Status or selected of one of the default Status which can be set by the Server Owner.&#10;&#10;Maintenance System is now fixed and finished and should work.&#10;&#10;Plugin has now an own Language System with the Languages German and English, with your help there will come more.&#10;Customize 99% of the Plugin Messages&#10;&#10;&#10;Removed the AFKKickOnDamage and Custom Crafting Recipes (CCR)&#10;CCR will come back in the Version 4.6.7 with a better Version and an own GUI&#10;&#10;Commands like Heal or GM (Gamemode) will also be usable on other Players when Version 4.6.7 comes out." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -578,6 +700,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
           <line>82</line>
           <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/CCRCommand.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/updateutils/JoinAnnouncer.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="123" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

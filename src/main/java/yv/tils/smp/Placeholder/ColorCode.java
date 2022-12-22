@@ -1,5 +1,7 @@
 package yv.tils.smp.placeholder;
 
+import org.bukkit.Color;
+
 /**
  * @since 4.6.6
  * @version 4.6.6

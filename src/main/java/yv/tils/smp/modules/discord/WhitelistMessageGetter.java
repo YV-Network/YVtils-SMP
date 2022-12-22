@@ -1,14 +1,14 @@
 package yv.tils.smp.modules.discord;
 
-import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import yv.tils.smp.LanguageSystem.LanguageFile;
-import yv.tils.smp.LanguageSystem.LanguageMessage;
+import yv.tils.smp.utils.language.LanguageFile;
+import yv.tils.smp.utils.language.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.placeholder.StringReplacer;
@@ -36,7 +36,7 @@ public class WhitelistMessageGetter extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent e) {
-        TextChannel channel = e.getTextChannel();
+        TextChannel channel = e.getChannel().asTextChannel();
 
         if (e.getAuthor().isBot()) {
             return;
@@ -51,6 +51,12 @@ public class WhitelistMessageGetter extends ListenerAdapter {
             if (!name.matches("[a-zA-Z0-9_]+")) {
                 channel.deleteMessageById(MessageId).queue();
                 channel.sendMessageEmbeds(new BuildEmbeds().namehasunallowedcharacters(e.getMessage().getContentRaw(),e.getGuild()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
+                return;
+            }
+
+            if (player1.isWhitelisted()) {
+                channel.deleteMessageById(MessageId).queue();
+                channel.sendMessageEmbeds(new BuildEmbeds().accountalreadywhitelisted(e.getMessage().getContentRaw(),e.getGuild()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
                 return;
             }
 

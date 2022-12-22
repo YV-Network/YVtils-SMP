@@ -5,11 +5,10 @@ import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
-import yv.tils.smp.LanguageSystem.LanguageFile;
-import yv.tils.smp.LanguageSystem.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.utils.language.LanguageFile;
+import yv.tils.smp.utils.language.LanguageMessage;
 
-import javax.security.auth.login.LoginException;
 import java.io.File;
 
 /**
@@ -68,12 +67,9 @@ public class BotStartStop {
 
         builder.addEventListeners(new WhitelistMessageGetter());
 
-        try {
-            SMPPlugin.getInstance().jda = builder.build();
-            Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FINISHED));
-        } catch (LoginException e) {
-            e.printStackTrace();
-        }}
+        SMPPlugin.getInstance().jda = builder.build();
+        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FINISHED));
+    }
 
     public void onStop() {
         if (SMPPlugin.getInstance().jda != null) {

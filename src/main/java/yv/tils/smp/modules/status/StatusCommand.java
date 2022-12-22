@@ -7,8 +7,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import yv.tils.smp.LanguageSystem.LanguageFile;
-import yv.tils.smp.LanguageSystem.LanguageMessage;
+import yv.tils.smp.utils.language.LanguageFile;
+import yv.tils.smp.utils.language.LanguageMessage;
 import yv.tils.smp.placeholder.ColorCode;
 import yv.tils.smp.placeholder.StringReplacer;
 import yv.tils.smp.utils.ConfigModeration;
@@ -47,9 +47,13 @@ public class StatusCommand implements CommandExecutor {
                             list1.add("PLAYER");
                             list2.add(player1.getName());
 
-                            player2.setDisplayName(player2.getName());
-                            player2.setPlayerListName(player2.getName());
-                            new NametagManager().removePlayer(player2);
+                            if (player2 != null) {
+                                if (player2.isOnline()) {
+                                    player2.setDisplayName(player2.getName());
+                                    player2.setPlayerListName(player2.getName());
+                                    new NametagManager().removePlayer(player2);
+                            }}
+
                             clearStatus(null, player1);
                             player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_CLEAR_OTHER_CLEARED), list1, list2));
                         } else {

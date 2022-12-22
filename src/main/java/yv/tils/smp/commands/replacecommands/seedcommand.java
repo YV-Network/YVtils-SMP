@@ -8,8 +8,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import yv.tils.smp.LanguageSystem.LanguageFile;
-import yv.tils.smp.LanguageSystem.LanguageMessage;
+import yv.tils.smp.utils.language.LanguageFile;
+import yv.tils.smp.utils.language.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.placeholder.StringReplacer;
@@ -82,7 +82,7 @@ public class seedcommand implements Listener {
                             player.spigot().sendMessage(c);
 
                         } else {
-                            player.sendMessage(SMPPlugin.getInstance().getConfig().getString("NotPermissionforSeedMessage") + ": yv.tils.smp.command.bypass.seed");
+                            player.sendMessage(SMPPlugin.getInstance().getConfig().getString("NotPermissionforSeedMessage") + ": yvtils.smp.command.bypass.seed");
                         }
                     }
                 }}}}}

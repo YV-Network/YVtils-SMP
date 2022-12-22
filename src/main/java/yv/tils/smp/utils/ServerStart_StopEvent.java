@@ -2,22 +2,30 @@ package yv.tils.smp.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
-import yv.tils.smp.LanguageSystem.LanguageFile;
-import yv.tils.smp.LanguageSystem.LanguageMessage;
-import yv.tils.smp.SMPPlugin;
+
+import yv.tils.smp.*;
 import yv.tils.smp.commands.*;
 import yv.tils.smp.commands.autocompleter.*;
 import yv.tils.smp.commands.replacecommands.*;
+import yv.tils.smp.eventlogger.ItemInteract;
 import yv.tils.smp.listeners.*;
-import yv.tils.smp.logger.ConsoleLog;
-import yv.tils.smp.modules.discord.BotStartStop;
-import yv.tils.smp.modules.status.JoinQuitStatus;
-import yv.tils.smp.modules.status.StatusCommand;
-import yv.tils.smp.modules.status.StatusCommandCompleter;
-import yv.tils.smp.placeholder.AnnouncementPlaceholder;
-import yv.tils.smp.placeholder.MessagePlaceholder;
-import yv.tils.smp.placeholder.StringReplacer;
+import yv.tils.smp.logger.*;
+import yv.tils.smp.modules.discord.*;
+import yv.tils.smp.modules.fun.ccr.*;
+import yv.tils.smp.modules.fun.sit.DismountListener;
+import yv.tils.smp.modules.fun.sit.SitCommand;
+import yv.tils.smp.modules.fun.sit.SitManager;
+import yv.tils.smp.modules.fun.sit.StairClickListener;
+import yv.tils.smp.modules.status.*;
+import yv.tils.smp.placeholder.*;
+import yv.tils.smp.updateutils.*;
+import yv.tils.smp.updateutils.database.*;
+import yv.tils.smp.utils.language.CreateFile_de;
+import yv.tils.smp.utils.language.CreateFile_en;
+import yv.tils.smp.utils.language.LanguageFile;
+import yv.tils.smp.utils.language.LanguageMessage;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -31,6 +39,8 @@ public class ServerStart_StopEvent {
 
     SMPPlugin main = SMPPlugin.getInstance();
 
+    public static final SitManager sitManager = new SitManager();
+
     File file1 = new File(SMPPlugin.getInstance().getDataFolder(), "MinecraftDiscordBridge.yml");
     YamlConfiguration modifyFile1 = YamlConfiguration.loadConfiguration(file1);
 
@@ -41,7 +51,9 @@ public class ServerStart_StopEvent {
     BotStartStop botStartStop = new BotStartStop();
 
     public void RegisterAll() {
-        new ConsoleLog("OtherThings - Loading");
+        new ConsoleLog("Configs - Loading");
+        registerConfigs();
+        new ConsoleLog("Configs - Loaded -- OtherThings - Loading");
         RegisterOther();
         new ConsoleLog("OtherThings - Loaded -- Commands - Loading");
         registerCommands();
@@ -52,52 +64,20 @@ public class ServerStart_StopEvent {
         new ConsoleLog("TabCompleter - Loaded -- CommandReplace - Loading");
         registerCommandReplace();
         new ConsoleLog("CommandReplace - Loaded -- DiscordModule - Loading");
-        if (modifyFile1.getBoolean("Active")) registerDiscord();
+        if (modifyFile1.getBoolean("Active")) registerDiscordModule();
         new ConsoleLog("DiscordModule - Loaded -- StatusModule - Loading");
         if (new ConfigModeration().ConfigRequest("StatusModule").getBoolean("Active")) registerStatusModule();
-        new ConsoleLog("StatusModule - Loaded");
+        new ConsoleLog("StatusModule - Loaded -- FunModule - Loading");
+        if (new ConfigModeration().ConfigRequest("FunModule").getBoolean("Active")) registerFunModule();
+        new ConsoleLog("FunModule - Loaded -- UpdateChecker - Loading");
+        registerUpdateChecker();
+        new ConsoleLog("UpdateChecker - Loaded -- / Logger - Loading");
+        registerLogger();
+        new ConsoleLog("Logger - Loaded -- / x - Loading");
     }
 
     private void RegisterOther() {
-        main.saveDefaultConfig();
-        ConfigModeration configModeration = new ConfigModeration();
-        configModeration.onNameGenerate();
-        configModeration.onEntranceGeneration();
-        if (main.getConfig().getBoolean("StartupAnnouncement") && AnnouncementPlaceholder.STARTUPANNOUNCE() != null) {
-            Bukkit.getConsoleSender().sendMessage(AnnouncementPlaceholder.STARTUPANNOUNCE());
-        }
-        if (main.getConfig().getBoolean("CustomRecipes")) {
-            //new CustomCraftingRecipes().addToCraftingManager();
-        }
-        new UpdateChecker(main,97642).getLatestVersion(version -> {
-            if(main.getDescription().getVersion().equalsIgnoreCase(version)) {
 
-                List<String> list1 = new ArrayList();
-                List<String> list2 = new ArrayList();
-                list1.add("PREFIXNOUPDATE");
-                list2.add(MessagePlaceholder.PREFIXNOUPDATE);
-
-                Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.PLUGIN_UP_TO_DATE), list1, list2));
-            } else {
-
-                List<String> list1 = new ArrayList();
-                List<String> list2 = new ArrayList();
-                list1.add("PREFIXUPDATE");
-                list2.add(MessagePlaceholder.PREFIXUPDATE);
-                list1.add("LINK");
-                list2.add("https://www.spigotmc.org/resources/yvtils-smp.97642/history");
-
-                Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.PLUGIN_UPDATE_AVAILABLE), list1, list2));
-            }
-        });
-
-        main.saveResource("Language/" + "en.yml", false);
-        main.saveResource("Language/" + "de.yml", false);
-        LanguageFile.LanguageFileGet();
-
-        if (new ConfigModeration().ConfigRequest("DoNotEdit").getString("MaintenanceMode").equals("true")) {
-            main.maintenances = true;
-        }
     }
 
     private void registerCommands() {
@@ -156,7 +136,7 @@ public class ServerStart_StopEvent {
         manager.registerEvents(new ChatListener(), main);
     }
 
-    private void registerDiscord() {
+    private void registerDiscordModule() {
         botStartStop.TokenCheck();
     }
 
@@ -168,17 +148,94 @@ public class ServerStart_StopEvent {
         main.getCommand("status").setExecutor(new StatusCommand());
     }
 
+    private void registerFunModule() {
+        PluginManager manager = Bukkit.getPluginManager();
+
+        //CustomCraftingRecipes (CCR)
+        main.getCommand("ccr").setExecutor(new CCRCommand());
+        manager.registerEvents(new InvListener(), main);
+
+        //Sit
+        main.getCommand("sit").setExecutor(new SitCommand());
+        manager.registerEvents(new DismountListener(), main);
+        manager.registerEvents(new StairClickListener(), main);
+
+        //Timber
+        //manager.registerEvents(new TimberListener(), main); - Durability Bug
+        //VeinMiner
+        //manager.registerEvents(new OreListener(), main); - Durability Bug
+    }
+
+    private void registerLogger() {
+        PluginManager manager = Bukkit.getPluginManager();
+        manager.registerEvents(new ItemInteract(), main);
+    }
+
+    private void registerConfigs() {
+        main.saveDefaultConfig();
+        ConfigModeration configModeration = new ConfigModeration();
+        configModeration.onNameGenerate();
+        configModeration.onEntranceGeneration();
+        if (main.getConfig().getBoolean("StartupAnnouncement") && AnnouncementPlaceholder.STARTUPANNOUNCE() != null) {
+            Bukkit.getConsoleSender().sendMessage(AnnouncementPlaceholder.STARTUPANNOUNCE());
+        }
+
+        CreateFile_de createFile_de = new CreateFile_de();
+        createFile_de.StringInput();
+        CreateFile_en createFile_en = new CreateFile_en();
+        createFile_en.StringInput();
+
+        //main.saveResource("Language/" + "en.yml", false);
+        //main.saveResource("Language/" + "de.yml", false);
+        LanguageFile.LanguageFileGet();
+
+        if (new ConfigModeration().ConfigRequest("DoNotEdit").getString("MaintenanceMode").equals("true")) {
+            main.maintenances = true;
+        }
+    }
+
+    private void registerUpdateChecker() {
+        PluginManager manager = Bukkit.getPluginManager();
+        manager.registerEvents(new JoinAnnouncer(), main);
+        if (new VersionChecker().VersionChecker_FullRelease(new Variables().PluginVersion).equals("UA")) {
+            List<String> list1 = new ArrayList();
+            List<String> list2 = new ArrayList();
+            list1.add("PREFIXUPDATE");
+            list2.add(MessagePlaceholder.PREFIXUPDATE);
+            list1.add("NEWVERSION");
+            list2.add(new VersionChecker().NewestVersion());
+            list1.add("OLDVERSION");
+            list2.add(new Variables().PluginVersion);
+            list1.add("LINK");
+            list2.add("https://modrinth.com/plugin/yvtils_smp");
+
+            Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.PLUGIN_UPDATE_AVAILABLE), list1, list2));
+        }else {
+            List<String> list1 = new ArrayList();
+            List<String> list2 = new ArrayList();
+            list1.add("PREFIXNOUPDATE");
+            list2.add(MessagePlaceholder.PREFIXNOUPDATE);
+
+            Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.PLUGIN_UP_TO_DATE), list1, list2));
+        }
+    }
+
     //
 
     public void UnregisterAll() {
         unregisterOther();
         if (modifyFile1.getBoolean("Active")) {
             unregisterDiscord();
-        }
-    }
+        }}
 
     private void unregisterOther() {
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            new JoinQuitStatus().PlayerStatusSave(player);
+        }
+
         new ConfigModeration().onSave();
+        new CreateFile_de().fileSave();
+        new CreateFile_en().fileSave();
     }
 
     private void unregisterDiscord() {
