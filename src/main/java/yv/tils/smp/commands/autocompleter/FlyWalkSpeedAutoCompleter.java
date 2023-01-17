@@ -1,8 +1,10 @@
 package yv.tils.smp.commands.autocompleter;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +13,7 @@ import java.util.List;
  * @since 4.6.6
  * @version 4.6.6
  */
-public class FlySpeedAutoCompleter implements TabCompleter {
+public class FlyWalkSpeedAutoCompleter implements TabCompleter {
 
     List<String> arguments = new ArrayList<>();
 
@@ -31,6 +33,8 @@ public class FlySpeedAutoCompleter implements TabCompleter {
 
             }
             return result;
+        }else if (args.length == 2) {
+            return null;
         }
 
         return arguments;

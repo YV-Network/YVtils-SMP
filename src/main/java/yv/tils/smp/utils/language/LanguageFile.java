@@ -16,7 +16,7 @@ public class LanguageFile {
     private static YamlConfiguration yamlConfiguration;
 
     public static void LanguageFileGet() {
-        File file = new File(SMPPlugin.getInstance().getDataFolder(),"Language_" + SMPPlugin.getInstance().getConfig().getString("Language") + ".yml");
+        File file = new File(SMPPlugin.getInstance().getDataFolder() + "/Language",SMPPlugin.getInstance().getConfig().getString("Language") + ".yml");
         if (file.exists()) {
             yamlConfiguration = YamlConfiguration.loadConfiguration(file);
         }else {

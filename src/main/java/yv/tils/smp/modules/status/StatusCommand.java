@@ -114,6 +114,14 @@ public class StatusCommand implements CommandExecutor {
     }
 
     private void saveStatus(Player player, String status) {
+
+        List<String> list1 = new ArrayList();
+        List<String> list2 = new ArrayList();
+        list1.add("STATUS");
+        list2.add(status);
+
+        player.sendMessage(new ColorCode().ColorCodes(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_SET), list1, list2)));
+        Bukkit.getConsoleSender().sendMessage(player.getName() + ": " + new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_SET), list1, list2));
         new ConfigModeration().ConfigContentAdd("StatusSave", String.valueOf(player.getUniqueId()), status);
     }
 
@@ -121,5 +129,6 @@ public class StatusCommand implements CommandExecutor {
         if (player == null) {
             new ConfigModeration().ConfigContentRemove("StatusSave", String.valueOf(player1.getUniqueId()));
         } else {
+            player.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_CLEAR_CLEARED));
             new ConfigModeration().ConfigContentRemove("StatusSave", String.valueOf(player.getUniqueId()));
         }}}

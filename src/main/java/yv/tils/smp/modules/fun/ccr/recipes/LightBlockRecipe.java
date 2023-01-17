@@ -20,11 +20,10 @@ import java.util.Objects;
  * @version 4.6.7
  */
 public class LightBlockRecipe {
+    ItemStack InPut = new ItemStack(Material.LANTERN);
+    ItemStack Upgrade1 = new ItemStack(Material.GLASS_PANE);
+    ItemStack Upgrade2 = new ItemStack(Material.IRON_NUGGET);
     public boolean on_Input_NL(Inventory inv) {
-        ItemStack InPut = new ItemStack(Material.LANTERN);
-        ItemStack Upgrade1 = new ItemStack(Material.GLASS_PANE);
-        ItemStack Upgrade2 = new ItemStack(Material.IRON_NUGGET);
-
         if (inv.getItem(20) != null) {
             InPut.setItemMeta(inv.getItem(20).getItemMeta());
 
@@ -37,10 +36,6 @@ public class LightBlockRecipe {
         return false;
     }
     public boolean on_Input_SL(Inventory inv) {
-        ItemStack InPut = new ItemStack(Material.SOUL_LANTERN);
-        ItemStack Upgrade1 = new ItemStack(Material.GLASS_PANE);
-        ItemStack Upgrade2 = new ItemStack(Material.IRON_NUGGET);
-
         if (inv.getItem(20) != null) {
             InPut.setItemMeta(inv.getItem(20).getItemMeta());
 
@@ -54,8 +49,6 @@ public class LightBlockRecipe {
     }
     
     public ItemStack on_Output_create(Inventory inv) {
-        ItemStack InPut = inv.getItem(20);
-
         if (InPut.getEnchantments() != null) {
             InPut.getEnchantments();
         }

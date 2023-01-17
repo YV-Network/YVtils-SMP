@@ -12,6 +12,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityToggleGlideEvent;
+import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.plugin.Plugin;
@@ -39,6 +40,8 @@ public class SpawnBoostListener implements Listener {
 
     public SpawnBoostListener(Plugin plugin) {
 
+        System.out.println(9);
+
         this.spawnRadius = plugin.getConfig().getInt("spawnradius");
         this.multiplyValue = plugin.getConfig().getInt("multiplyValue");
 
@@ -46,23 +49,40 @@ public class SpawnBoostListener implements Listener {
             if (SMPPlugin.getInstance().fly.contains(player.getUniqueId()) || SMPPlugin.getInstance().godmode.contains(player.getUniqueId())) return;
             if (player.getGameMode() != GameMode.SURVIVAL) return;
             player.setAllowFlight(isInSpawnRadius(player));
-                if (flying.contains(player) && !player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
-                    player.setAllowFlight(false);
-                    player.setFlying(false);
-                    player.setGliding(false);
-                    boosted.remove(player);
-                    Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                        flying.remove(player);
-                    }, 5);
-                }
+            if (flying.contains(player) && !player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
+                player.setAllowFlight(false);
+                player.setFlying(false);
+                player.setGliding(false);
+                boosted.remove(player);
+                Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                    flying.remove(player);
+                }, 5);
+            }
         }), 0, 3);
+    }
+
+    @EventHandler
+    public void onTest(PlayerChangedWorldEvent event) {
+        Player player = event.getPlayer();
+
+        if (SMPPlugin.getInstance().fly.contains(event.getPlayer().getUniqueId()) || SMPPlugin.getInstance().godmode.contains(event.getPlayer().getUniqueId())) return;
+        player.setAllowFlight(false);
+        player.setFlying(false);
+        player.setGliding(false);
+        boosted.remove(player);
+        flying.remove(player);
     }
 
     @EventHandler
     public void onDoubleJump(PlayerToggleFlightEvent event) {
         if (SMPPlugin.getInstance().fly.contains(event.getPlayer().getUniqueId()) || SMPPlugin.getInstance().godmode.contains(event.getPlayer().getUniqueId())) return;
         if (event.getPlayer().getGameMode() != GameMode.SURVIVAL) return;
-        if (!isInSpawnRadius(event.getPlayer())) return;
+        if (!isInSpawnRadius(event.getPlayer())) {
+            if (!event.getPlayer().getWorld().equals("world")) {
+                event.getPlayer().setAllowFlight(false);
+            }
+            return;
+        }
         BaseComponent keytopress = new KeybindComponent("key.swapOffhand");
         event.setCancelled(true);
         event.getPlayer().setGliding(true);

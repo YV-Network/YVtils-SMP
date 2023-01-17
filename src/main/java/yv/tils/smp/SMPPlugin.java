@@ -18,7 +18,7 @@ import java.util.UUID;
 
 /**
  * @since 1.0
- * @version 4.6.6
+ * @version 4.6.7
  */
 public final class SMPPlugin extends JavaPlugin {
 

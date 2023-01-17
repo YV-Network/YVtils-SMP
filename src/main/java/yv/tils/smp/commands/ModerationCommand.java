@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * @since 4.6.6
- * @version 4.6.6
+ * @version 4.6.7
  */
 public class ModerationCommand implements CommandExecutor {
     @Override
@@ -70,10 +70,10 @@ public class ModerationCommand implements CommandExecutor {
                                     List<String> list2 = new ArrayList();
                                     list1.add("PREFIXMODERATION");
                                     list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                    list1.add("MODERATOR");
+                                    list2.add(sender.getName());
                                     list1.add("PLAYER");
                                     list2.add(target.getName());
-                                    list1.add("MOD");
-                                    list2.add(sender.getName());
                                     list1.add("REASON");
                                     list2.add(reason);
 
@@ -91,7 +91,7 @@ public class ModerationCommand implements CommandExecutor {
                                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_ALREADY_BANNED));
                                     return false;
                                 }
-                                Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), reason, null, String.valueOf(sender));
+                                Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), reason, null, sender.getName());
                                 if (onlinetarget != null) {
                                     onlinetarget.kickPlayer(reason);
                                 }
@@ -100,10 +100,10 @@ public class ModerationCommand implements CommandExecutor {
                                 List<String> list2 = new ArrayList();
                                 list1.add("PREFIXMODERATION");
                                 list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                list1.add("MODERATOR");
+                                list2.add(sender.getName());
                                 list1.add("PLAYER");
                                 list2.add(target.getName());
-                                list1.add("MOD");
-                                list2.add(sender.getName());
                                 list1.add("REASON");
                                 list2.add(reason);
 
@@ -129,7 +129,7 @@ public class ModerationCommand implements CommandExecutor {
                                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_ALREADY_BANNED));
                                     return false;
                                 }
-                                Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), reason1, cal.getTime(), String.valueOf(sender));
+                                Bukkit.getBanList(BanList.Type.NAME).addBan(target.getName(), reason1, cal.getTime(), sender.getName());
                                 if (onlinetarget != null) {
                                     onlinetarget.kickPlayer(reason1);
                                 }
@@ -138,10 +138,10 @@ public class ModerationCommand implements CommandExecutor {
                                 List<String> list2 = new ArrayList();
                                 list1.add("PREFIXMODERATION");
                                 list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                list1.add("MODERATOR");
+                                list2.add(sender.getName());
                                 list1.add("PLAYER");
                                 list2.add(target.getName());
-                                list1.add("MOD");
-                                list2.add(sender.getName());
                                 list1.add("REASON");
                                 list2.add(reason1);
                                 list1.add("DURATION");
@@ -161,10 +161,10 @@ public class ModerationCommand implements CommandExecutor {
                                     List<String> list2 = new ArrayList();
                                     list1.add("PREFIXMODERATION");
                                     list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                    list1.add("MODERATOR");
+                                    list2.add(sender.getName());
                                     list1.add("PLAYER");
                                     list2.add(target.getName());
-                                    list1.add("MOD");
-                                    list2.add(sender.getName());
 
                                     Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_UNBAN), list1, list2), "yvtils.smp.command.moderation.unban.getannounced");
                                 }else {

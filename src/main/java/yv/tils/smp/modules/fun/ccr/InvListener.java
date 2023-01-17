@@ -12,6 +12,7 @@ import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.modules.fun.ccr.recipes.InvFrameRecipe;
 import yv.tils.smp.modules.fun.ccr.recipes.LightBlockRecipe;
 import yv.tils.smp.modules.fun.ccr.recipes.TestRecipe;
+import yv.tils.smp.utils.ConfigModeration;
 
 /**
  * @since 4.6.7
@@ -50,11 +51,9 @@ public class InvListener implements Listener {
                     }}
                 case 20,13,31 -> {
                     Bukkit.getScheduler().runTaskLater(SMPPlugin.getInstance(), () -> {
-                        if (new TestRecipe().on_Input(e.getInventory())) {
-                            e.getInventory().setItem(24, new TestRecipe().on_Output_create(e.getInventory()));
-                        }else if (new LightBlockRecipe().on_Input_NL(e.getInventory()) || new LightBlockRecipe().on_Input_SL(e.getInventory())) {
+                        if (new LightBlockRecipe().on_Input_NL(e.getInventory()) || new LightBlockRecipe().on_Input_SL(e.getInventory()) && new ConfigModeration().ConfigRequest("FunModule").getBoolean("CCR.LightBlock")) {
                             e.getInventory().setItem(24, new LightBlockRecipe().on_Output_create(e.getInventory()));
-                        }else if (new InvFrameRecipe().on_Input_NF(e.getInventory()) || new InvFrameRecipe().on_Input_GF(e.getInventory())) {
+                        }else if (new InvFrameRecipe().on_Input_NF(e.getInventory()) || new InvFrameRecipe().on_Input_GF(e.getInventory()) && new ConfigModeration().ConfigRequest("FunModule").getBoolean("CCR.InvisibleItemFrame")) {
                             e.getInventory().setItem(24, new InvFrameRecipe().on_Output_create(e.getInventory()));
                         }else {
                             ItemStack recipe_check = new ItemStack(Material.RED_WOOL);
@@ -73,10 +72,8 @@ public class InvListener implements Listener {
 
                             e.getInventory().setItem(24, pane);
                         }
-                        return;
                     }, 1L);}
                 case 45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80 -> {
-                    return;
                 }
                 default -> e.setCancelled(true);
             }}}}

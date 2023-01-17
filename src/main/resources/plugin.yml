@@ -22,6 +22,7 @@ commands:
     aliases:
       - flyspeed
       - walkspeed
+      - speed
   moderation:
     permission: yvtils.smp.command.moderation
     aliases:

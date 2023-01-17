@@ -1,21 +1,21 @@
 package yv.tils.smp.modules.fun.ccr.recipes;
 
+import com.google.common.collect.ImmutableMap;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.util.io.BukkitObjectInputStream;
 import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.logger.ConsoleLog;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.io.*;
+import java.util.*;
 
 
 /**
@@ -23,11 +23,12 @@ import java.util.Objects;
  * @version 4.6.7
  */
 public class InvFrameRecipe {
-    public boolean on_Input_NF(Inventory inv) {
-        ItemStack InPut = new ItemStack(Material.ITEM_FRAME);
-        ItemStack Upgrade1 = new ItemStack(Material.GLASS_PANE);
-        ItemStack Upgrade2 = new ItemStack(Material.IRON_NUGGET);
 
+    ItemStack InPut = new ItemStack(Material.ITEM_FRAME);
+    ItemStack Upgrade1 = new ItemStack(Material.GLASS_PANE);
+    ItemStack Upgrade2 = new ItemStack(Material.IRON_NUGGET);
+
+    public boolean on_Input_NF(Inventory inv) {
         if (inv.getItem(20) != null) {
             InPut.setItemMeta(inv.getItem(20).getItemMeta());
 
@@ -40,10 +41,6 @@ public class InvFrameRecipe {
         return false;
     }
     public boolean on_Input_GF(Inventory inv) {
-        ItemStack InPut = new ItemStack(Material.GLOW_ITEM_FRAME);
-        ItemStack Upgrade1 = new ItemStack(Material.GLASS_PANE);
-        ItemStack Upgrade2 = new ItemStack(Material.IRON_NUGGET);
-
         if (inv.getItem(20) != null) {
             InPut.setItemMeta(inv.getItem(20).getItemMeta());
 
@@ -57,8 +54,6 @@ public class InvFrameRecipe {
     }
     
     public ItemStack on_Output_create(Inventory inv) {
-        ItemStack InPut = inv.getItem(20);
-
         if (InPut.getEnchantments() != null) {
             InPut.getEnchantments();
         }
@@ -71,7 +66,7 @@ public class InvFrameRecipe {
             String invismeta ="rO0ABXcEAAAAG3NyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABHQAAj09dAABdnQABHR5cGV0AARtZXRhdXEAfgAGAAAABHQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAwwdAAKSVRFTV9GUkFNRXNxAH4AAHNxAH4AA3VxAH4ABgAAAANxAH4ACHQACW1ldGEtdHlwZXQACGludGVybmFsdXEAfgAGAAAAA3QACEl0ZW1NZXRhdAAKRU5USVRZX1RBR3QAREg0c0lBQUFBQUFBQS8rTmlZT0JpNEhUTks4a3NxUXhKVEdkazRQVE1LOHNzemt6S1NXVmtZQUFBd3RIM3BoNEFBQUE9cHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHA=";
             ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(invismeta));
             BukkitObjectInputStream dataInput = new BukkitObjectInputStream(inputStream);
-            dataInput.readInt();
+
             invis = (ItemStack) dataInput.readObject();
             dataInput.close();
         } catch (IOException | ClassNotFoundException e) {
@@ -79,7 +74,6 @@ public class InvFrameRecipe {
         }
 
         ItemMeta meta = invis.getItemMeta();
-
 
         if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
             meta.setDisplayName("§eInvisible Item Frame");

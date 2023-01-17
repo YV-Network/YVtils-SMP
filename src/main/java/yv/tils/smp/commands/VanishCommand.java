@@ -44,8 +44,8 @@ public class VanishCommand implements CommandExecutor, Listener {
             Collections.shuffle(list2);
             String Quitm = list2.get(0);
 
-            List<String> list3 = new ArrayList();
-            List<String> list4 = new ArrayList();
+            List<String> list3 = new ArrayList<>();
+            List<String> list4 = new ArrayList<>();
             list1.add("PREFIX");
             list2.add(MessagePlaceholder.PREFIX);
 

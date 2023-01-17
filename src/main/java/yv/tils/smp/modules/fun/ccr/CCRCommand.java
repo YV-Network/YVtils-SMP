@@ -9,6 +9,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import yv.tils.smp.utils.language.LanguageFile;
+import yv.tils.smp.utils.language.LanguageMessage;
 
 /**
  * @since 4.6.7
@@ -37,7 +39,7 @@ public class CCRCommand implements CommandExecutor {
             //Accept Crafting
             ItemStack crafting_accept = new ItemStack(Material.GREEN_STAINED_GLASS_PANE);
             ItemMeta meta_crafting_accept = crafting_accept.getItemMeta();
-            meta_crafting_accept.setDisplayName("§aACCEPT CRAFTING RECIPE");
+            meta_crafting_accept.setDisplayName(LanguageFile.getMessage(LanguageMessage.MODULE_CCR_ACCEPT_RECIPE));
             crafting_accept.setItemMeta(meta_crafting_accept);
 
             for (int i : new int[]{36,37,38,39,40,41,42,43,44}) {

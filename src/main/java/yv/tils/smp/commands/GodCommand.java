@@ -1,5 +1,6 @@
 package yv.tils.smp.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.block.BlockFace;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,42 +10,78 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import yv.tils.smp.placeholder.StringReplacer;
 import yv.tils.smp.utils.language.LanguageFile;
 import yv.tils.smp.utils.language.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
  * @since 4.6.6
- * @version 4.6.6
+ * @version 4.6.7
  */
 public class GodCommand implements CommandExecutor, Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player player) {
-            UUID uuid = player.getUniqueId();
-            if (sender.hasPermission("yvtils.smp.command.god")) {
-                if (!SMPPlugin.getInstance().godmode.contains(uuid)) {
-                    SMPPlugin.getInstance().godmode.add(uuid);
-                    player.setAllowFlight(true);
-                    player.setFlying(true);
-                    sender.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_ENABLE));
-                } else {
-                    if (player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
-                        SMPPlugin.getInstance().godmode1.add(uuid);
-                        SMPPlugin.getInstance().godmode.remove(uuid);
-                        player.setAllowFlight(false);
-                        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE));
-                    }else {
-                        SMPPlugin.getInstance().godmode.remove(uuid);
-                        player.setAllowFlight(false);
-                        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE));
+        if (sender instanceof Player) {
+            if (args.length == 0) {
+                Player player = (Player) sender;
+                UUID uuid = player.getUniqueId();
+                if (sender.hasPermission("yvtils.smp.command.god")) {
+                    if (!SMPPlugin.getInstance().godmode.contains(uuid)) {
+                        SMPPlugin.getInstance().godmode.add(uuid);
+                        player.setAllowFlight(true);
+                        player.setFlying(true);
+                        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_ENABLE));
+                    } else {
+                        if (player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
+                            SMPPlugin.getInstance().godmode1.add(uuid);
+                            SMPPlugin.getInstance().godmode.remove(uuid);
+                            player.setAllowFlight(false);
+                            sender.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE));
+                        }else {
+                            SMPPlugin.getInstance().godmode.remove(uuid);
+                            player.setAllowFlight(false);
+                            sender.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE));
+                        }
                     }
                 }
-            }
-        }
+            }else if (args.length == 1) {
+                Player player = Bukkit.getPlayer(args[0]);
+                UUID uuid = player.getUniqueId();
+
+                List<String> list1 = new ArrayList();
+                List<String> list2 = new ArrayList();
+                list1.add("PLAYER");
+                list2.add(player.getName());
+
+                if (sender.hasPermission("yvtils.smp.command.god")) {
+                    if (!SMPPlugin.getInstance().godmode.contains(uuid)) {
+                        SMPPlugin.getInstance().godmode.add(uuid);
+                        player.setAllowFlight(true);
+                        player.setFlying(true);
+                        sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_ENABLE_OTHER), list1, list2));
+                        player.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_ENABLE));
+                    } else {
+                        if (player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
+                            SMPPlugin.getInstance().godmode1.add(uuid);
+                            SMPPlugin.getInstance().godmode.remove(uuid);
+                            player.setAllowFlight(false);
+                            sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE_OTHER), list1, list2));
+                            player.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE));
+                        }else {
+                            SMPPlugin.getInstance().godmode.remove(uuid);
+                            player.setAllowFlight(false);
+                            sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE_OTHER), list1, list2));
+                            player.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE));
+                        }}}
+            } else {
+                sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " /heal [player]");
+            }}
         return true;
     }
 

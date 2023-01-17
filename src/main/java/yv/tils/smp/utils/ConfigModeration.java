@@ -132,6 +132,10 @@ public class ConfigModeration {
 
         //FunModule
         funmodule.addDefault("Active", true);
+        funmodule.addDefault("CCR.General", true);
+        funmodule.addDefault("CCR.InvisibleItemFrame", true);
+        funmodule.addDefault("CCR.LightBlock", true);
+        funmodule.addDefault("Sit.General", true);
         funmodule.options().copyDefaults(true);
 
         onSave();
@@ -154,20 +158,29 @@ public class ConfigModeration {
 
     public void onNameGenerate() {
         try {
-            onGenerate("MinecraftDiscordBridge.yml");
-            onGenerate("DoNotEdit.yml");
-            onGenerate("WhitelistedDiscordPlayers.yml");
-            onGenerate("StatusModule.yml");
-            onGenerate("StatusSave.yml");
-            onGenerate("FunModule.yml");
-            onGenerate("Language_de.yml");
-            onGenerate("Language_en.yml");
+            onFolderGenerate("Language");
+            onGenerate("MinecraftDiscordBridge.yml", true);
+            onGenerate("DoNotEdit.yml", false);
+            onGenerate("WhitelistedDiscordPlayers.yml", true);
+            onGenerate("StatusModule.yml", true);
+            onGenerate("StatusSave.yml", true);
+            onGenerate("FunModule.yml", true);
+            onGenerate("Language/de.yml", true);
+            onGenerate("Language/en.yml", true);
         }catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void onGenerate(String name) throws Exception {
+    public void onFolderGenerate(String folder) {
+        File dataFolder = new File(SMPPlugin.getInstance().getDataFolder() + "/" + folder);
+        if(!dataFolder.exists())
+        {
+            dataFolder.mkdir();
+        }
+    }
+
+    public void onGenerate(String name, boolean editable) throws Exception {
         File file = new File(SMPPlugin.getInstance().getDataFolder(), name);
         if (!file.exists()) {
             file.createNewFile();

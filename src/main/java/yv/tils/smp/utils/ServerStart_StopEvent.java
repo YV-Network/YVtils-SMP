@@ -9,7 +9,7 @@ import yv.tils.smp.*;
 import yv.tils.smp.commands.*;
 import yv.tils.smp.commands.autocompleter.*;
 import yv.tils.smp.commands.replacecommands.*;
-import yv.tils.smp.eventlogger.ItemInteract;
+import yv.tils.smp.eventlogger.logger.*;
 import yv.tils.smp.listeners.*;
 import yv.tils.smp.logger.*;
 import yv.tils.smp.modules.discord.*;
@@ -33,7 +33,7 @@ import java.util.List;
 
 /**
  * @since 4.6.6
- * @version 4.6.6
+ * @version 4.6.7
  */
 public class ServerStart_StopEvent {
 
@@ -72,7 +72,7 @@ public class ServerStart_StopEvent {
         new ConsoleLog("FunModule - Loaded -- UpdateChecker - Loading");
         registerUpdateChecker();
         new ConsoleLog("UpdateChecker - Loaded -- / Logger - Loading");
-        registerLogger();
+        //registerLogger();
         new ConsoleLog("Logger - Loaded -- / x - Loading");
     }
 
@@ -97,7 +97,7 @@ public class ServerStart_StopEvent {
 
     private void registerTabCompleter() {
         main.getCommand("moderation").setTabCompleter(new ModerationAutoCompleter());
-        main.getCommand("flywalkspeed").setTabCompleter(new FlySpeedAutoCompleter());
+        main.getCommand("flywalkspeed").setTabCompleter(new FlyWalkSpeedAutoCompleter());
         main.getCommand("gm").setTabCompleter(new GamemodeAutoCompleter());
         main.getCommand("vanish").setTabCompleter(new VanishAutoCompleter());
         main.getCommand("maintenance").setTabCompleter(new MainteanceAutoCompleter());
@@ -152,13 +152,17 @@ public class ServerStart_StopEvent {
         PluginManager manager = Bukkit.getPluginManager();
 
         //CustomCraftingRecipes (CCR)
-        main.getCommand("ccr").setExecutor(new CCRCommand());
-        manager.registerEvents(new InvListener(), main);
+        if (new ConfigModeration().ConfigRequest("FunModule").getBoolean("CCR.General")) {
+            main.getCommand("ccr").setExecutor(new CCRCommand());
+            manager.registerEvents(new InvListener(), main);
+        }
 
         //Sit
-        main.getCommand("sit").setExecutor(new SitCommand());
-        manager.registerEvents(new DismountListener(), main);
-        manager.registerEvents(new StairClickListener(), main);
+        if (new ConfigModeration().ConfigRequest("FunModule").getBoolean("Sit.General")) {
+            main.getCommand("sit").setExecutor(new SitCommand());
+            manager.registerEvents(new DismountListener(), main);
+            manager.registerEvents(new StairClickListener(), main);
+        }
 
         //Timber
         //manager.registerEvents(new TimberListener(), main); - Durability Bug
@@ -168,6 +172,11 @@ public class ServerStart_StopEvent {
 
     private void registerLogger() {
         PluginManager manager = Bukkit.getPluginManager();
+        manager.registerEvents(new BlockInteract(), main);
+        manager.registerEvents(new PlayerServerEvent(), main);
+        manager.registerEvents(new ChatEvent(), main);
+        manager.registerEvents(new ChestInteract(), main);
+        manager.registerEvents(new EntityKillEvent(), main);
         manager.registerEvents(new ItemInteract(), main);
     }
 
@@ -184,9 +193,6 @@ public class ServerStart_StopEvent {
         createFile_de.StringInput();
         CreateFile_en createFile_en = new CreateFile_en();
         createFile_en.StringInput();
-
-        //main.saveResource("Language/" + "en.yml", false);
-        //main.saveResource("Language/" + "de.yml", false);
         LanguageFile.LanguageFileGet();
 
         if (new ConfigModeration().ConfigRequest("DoNotEdit").getString("MaintenanceMode").equals("true")) {

@@ -1,5 +1,6 @@
 package yv.tils.smp.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -20,262 +21,303 @@ import java.util.List;
 public class FlyWalkSpeed implements CommandExecutor, Listener {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (sender instanceof Player) {
+            if (args.length == 0) {
+                sendUsage(sender);
+                return true;
+            }
 
-        if(args.length == 0) {
-            sendUsage(sender);
-            return true;
-        }
+            String flyspeedchangeother = null;
+            String walkspeedchangeother = null;
 
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
-        list1.add("SPEED");
-        list2.add(args[0]);
+            if (args.length == 2) {
+                List<String> list3 = new ArrayList();
+                List<String> list4 = new ArrayList();
+                list3.add("PLAYER");
+                list4.add(args[1]);
+                list3.add("SPEED");
+                list4.add(args[0]);
 
-        String flyspeedchange = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.FLYSPEED_CHANGE), list1, list2);
-        String walkspeedchange = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.WALKSPEED_CHANGE), list1, list2);
+                flyspeedchangeother = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.FLYSPEED_CHANGE_OTHER), list3, list4);
+                walkspeedchangeother = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.WALKSPEED_CHANGE_OTHER), list3, list4);
+            }
 
-        Player player = (Player) sender;
+            List<String> list1 = new ArrayList();
+            List<String> list2 = new ArrayList();
+            list1.add("SPEED");
+            list2.add(args[0]);
 
-        switch (args[0].toLowerCase()) {
-            case "reset" -> {
+
+            String flyspeedchange = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.FLYSPEED_CHANGE), list1, list2);
+            String walkspeedchange = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.WALKSPEED_CHANGE), list1, list2);
+
+            Player player = null;
+
+            if (args.length == 1) {
+                player = (Player) sender;
+            }else if (args.length == 2) {
+                player = Bukkit.getPlayer(args[1]);
+            }else {
+                sendUsage(sender);
+            }
+
+            if (args[0].equalsIgnoreCase("reset")) {
                 player.setWalkSpeed(0.2f);
                 player.setFlySpeed(0.1f);
-            }
-            default -> {
+                sender.sendMessage(flyspeedchangeother);
+                player.sendMessage(flyspeedchange);
+            } else {
                 switch (args[0]) {
-                    case "-10":
+                    case "-10" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(-1.0f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-1.0f);
                         }
-                        break;
-                    case "-9":
+                    }
+                    case "-9" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(-0.9f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.9f);
                         }
-                        break;
-                    case "-8":
+                    }
+                    case "-8" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(-0.8f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.8f);
                         }
-                        break;
-                    case "-7":
+                    }
+                    case "-7" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(-0.7f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.7f);
                         }
-                        break;
-                    case "-6":
+                    }
+                    case "-6" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(-0.6f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.6f);
                         }
-                        break;
-                    case "-5":
+                    }
+                    case "-5" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(-0.5f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.5f);
                         }
-                        break;
-                    case "-4":
+                    }
+                    case "-4" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(-0.4f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.4f);
                         }
-                        break;
-                    case "-3":
+                    }
+                    case "-3" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(-0.3f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.3f);
                         }
-                        break;
-                    case "-2":
+                    }
+                    case "-2" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(-0.2f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.2f);
                         }
-                        break;
-                    case "-1":
+                    }
+                    case "-1" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(-0.1f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.1f);
                         }
-                        break;
-                    case "0":
+                    }
+                    case "0" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(0.0f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.0f);
                         }
-                        break;
-                    case "1":
+                    }
+                    case "1" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(0.1f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.1f);
                         }
-                        break;
-                    case "2":
+                    }
+                    case "2" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(0.2f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.2f);
                         }
-                        break;
-                    case "3":
+                    }
+                    case "3" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(0.3f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.3f);
                         }
-                        break;
-                    case "4":
+                    }
+                    case "4" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(0.4f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.4f);
                         }
-                        break;
-                    case "5":
+                    }
+                    case "5" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(0.5f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.5f);
                         }
-                        break;
-                    case "6":
+                    }
+                    case "6" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(0.6f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.6f);
                         }
-                        break;
-                    case "7":
+                    }
+                    case "7" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(0.7f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.7f);
                         }
-                        break;
-                    case "8":
+                    }
+                    case "8" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(0.8f);
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.8f);
                         }
-                        break;
-                    case "9":
+                    }
+                    case "9" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(0.9f);
-                        }else {
+                        } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.9f);
                         }
-                        break;
-                    case "10":
-                        if (player.isFlying()) {
-                        sender.sendMessage(flyspeedchange);
-                        player.setFlySpeed(1.0f);
-                    } else {
-                        sender.sendMessage(walkspeedchange);
-                        player.setWalkSpeed(1.0f);
                     }
-                    break;
-                    case "0.1":
-                    case "0.2":
-                    case "0.3":
-                    case "0.4":
-                    case "0.5":
-                    case "0.6":
-                    case "0.7":
-                    case "0.8":
-                    case "0.9":
-                    case "1.0":
+                    case "10" -> {
                         if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
+                            player.setFlySpeed(1.0f);
+                        } else {
+                            sender.sendMessage(walkspeedchangeother);
+                            sender.sendMessage(walkspeedchange);
+                            player.setWalkSpeed(1.0f);
+                        }
+                    }
+                    case "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "-0.1", "-0.2", "-0.3", "-0.4", "-0.5", "-0.6", "-0.7", "-0.8", "-0.9", "-1.0" -> {
+                        if (player.isFlying()) {
+                            sender.sendMessage(flyspeedchangeother);
+                            player.sendMessage(flyspeedchange);
                             player.setFlySpeed(Float.parseFloat(args[0]));
                         } else {
+                            sender.sendMessage(walkspeedchangeother);
                             sender.sendMessage(walkspeedchange);
                             player.setWalkSpeed(Float.parseFloat(args[0]));
                         }
-                        break;
-                    case "-0.1":
-                    case "-0.2":
-                    case "-0.3":
-                    case "-0.4":
-                    case "-0.5":
-                    case "-0.6":
-                    case "-0.7":
-                    case "-0.8":
-                    case "-0.9":
-                    case "-1.0":
-                        if (player.isFlying()) {
-                            sender.sendMessage(flyspeedchange);
-                            player.setFlySpeed(Float.parseFloat(args[0]));
-                        } else {
-                            sender.sendMessage(walkspeedchange);
-                            player.setWalkSpeed(Float.parseFloat(args[0]));
-                        }
-                        break;
-                    default:
-                        sendUsage(sender);
-                        break;
-                }}}
+                    }
+                    default -> sendUsage(sender);
+                }
+            }
+        }
         return false;
     }
 
     private void sendUsage(CommandSender sender) {
         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE +
-                "/flywalkspeed <-10 - 10> or <-1.0, -0.9 - 0.9, 1.0>, /flywalkspeed reset");
+                "/flywalkspeed <-10 - 10> or <-1.0, -0.9 - 0.9, 1.0> [player], /flywalkspeed reset [player]");
     }}

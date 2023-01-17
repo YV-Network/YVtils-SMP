@@ -12,7 +12,7 @@ import java.io.IOException;
  * @version 4.6.7
  */
 public class CreateFile_en {
-    File file = new File(SMPPlugin.getInstance().getDataFolder(), "Language_en.yml");
+    File file = new File(SMPPlugin.getInstance().getDataFolder() + "/Language", "en.yml");
     YamlConfiguration ymlfile = YamlConfiguration.loadConfiguration(file);
 
     public void StringInput() {
@@ -37,33 +37,45 @@ public class CreateFile_en {
         ymlfile.addDefault("CHATMUTE_ENABLE_FEEDBACK","PREFIXFEEDBACK §7You disabled the Chat!");
         ymlfile.addDefault("CHATMUTE_DISABLE_FEEDBACK","PREFIXFEEDBACK §7You enabled the Chat!");
         ymlfile.addDefault("CHATMUTE_TRY_TO_WRITE","PREFIXGLOBALMUTE §7The Globalmute is activated!");
-        ymlfile.addDefault("FLY_COMMAND_ENABLE","§7Fly is now enabled!");
-        ymlfile.addDefault("FLY_COMMAND_DISABLE","§7Fly is now disabled!");
+        ymlfile.addDefault("FLY_COMMAND_ENABLE","§7Fly is now §8enabled§7!");
+        ymlfile.addDefault("FLY_COMMAND_DISABLE","§7Fly is now §8disabled§7!");
+        ymlfile.addDefault("FLY_COMMAND_ENABLE_OTHER","§7Fly is now §8enabled§7 for PLAYER!");
+        ymlfile.addDefault("FLY_COMMAND_DISABLE_OTHER","§7Fly is now §8disabled§7 for PLAYER!");
         ymlfile.addDefault("FLYSPEED_CHANGE","§7You changed your Fly Speed to §8SPEED§7!");
         ymlfile.addDefault("WALKSPEED_CHANGE","§7You changed your Walk Speed to §8SPEED§7!");
-        ymlfile.addDefault("HEAL_PLAYER_HEALED","§7You got §8§lHealed!");
+        ymlfile.addDefault("FLYSPEED_CHANGE_OTHER","§7You changed the Fly Speed from §ePLAYER §7to §8SPEED§7!");
+        ymlfile.addDefault("WALKSPEED_CHANGE_OTHER","§7You changed the Walk Speed from §ePLAYER §7to §8SPEED§7!");
+        ymlfile.addDefault("HEAL_PLAYER_HEALED","§7You got §8§lhealed!");
+        ymlfile.addDefault("HEAL_OTHER_PLAYER_HEALED","§7PLAYER got §8§lhealed!");
         ymlfile.addDefault("GODMODE_COMMAND_ENABLE","§7God Mode is now §8enabled§7!");
         ymlfile.addDefault("GODMODE_COMMAND_DISABLE","§7God Mode is now §8disabled§7!");
+        ymlfile.addDefault("GODMODE_COMMAND_ENABLE_OTHER","§7God Mode is now §8enabled§7 for PLAYER!");
+        ymlfile.addDefault("GODMODE_COMMAND_DISABLE_OTHER","§7God Mode is now §8disabled§7 for PLAYER!");
         ymlfile.addDefault("GAMEMODE_SWITCH_SURVIVAL","§7Your Gamemode has been changed to §aSurvival§7!");
         ymlfile.addDefault("GAMEMODE_SWITCH_CREATIVE","§7Your Gamemode has been changed to §aCreative§7!");
         ymlfile.addDefault("GAMEMODE_SWITCH_ADVENTURE","§7Your Gamemode has been changed to §aAdventure§7!");
         ymlfile.addDefault("GAMEMODE_SWITCH_SPECTATOR","§7Your Gamemode has been changed to §aSpectator§7!");
         ymlfile.addDefault("GAMEMODE_SWITCH_ALREADY_IN_THIS_GAMEMODE","§cYou are already in this Gamemode!");
+        ymlfile.addDefault("GAMEMODE_SWITCH_SURVIVAL_OTHER","§7The Gamemode from PLAYER has been changed to §aSurvival§7!");
+        ymlfile.addDefault("GAMEMODE_SWITCH_CREATIVE_OTHER","§7The Gamemode from PLAYER has been changed to §aCreative§7!");
+        ymlfile.addDefault("GAMEMODE_SWITCH_ADVENTURE_OTHER","§7The Gamemode from PLAYER has been changed to §aAdventure§7!");
+        ymlfile.addDefault("GAMEMODE_SWITCH_SPECTATOR_OTHER","§7The Gamemode from PLAYER has been changed to §aSpectator§7!");
+        ymlfile.addDefault("GAMEMODE_SWITCH_ALREADY_IN_THIS_GAMEMODE_OTHER","§cPLAYER is already in this Gamemode!");
         ymlfile.addDefault("MSG_NOTE","§e[§cNote§e]§f MESSAGE");
         ymlfile.addDefault("MSG_PLAYER_WENT_OFFLINE","PREFIX §4The Person you had messaged has gone offline!");
         ymlfile.addDefault("MSG_HAVENT_MESSAGED_A_PLAYER","PREFIX §4You haven't messaged anyone yet!");
         ymlfile.addDefault("MOD_NO_REASON","No Reason was given!");
         ymlfile.addDefault("MOD_PLAYER_NOT_BANNED","PREFIXMODERATION §8PLAYER §7isn't banned!");
-        ymlfile.addDefault("MOD_ANNOUNCEMENT_KICK","PREFIXMODERATION §8PLAYER §7got kicked from §8MOD§7! Reason: §8REASON");
-        ymlfile.addDefault("MOD_ANNOUNCEMENT_BAN","PREFIXMODERATION §8PLAYER §7got banned from §8MOD§7! Reason: §8REASON");
-        ymlfile.addDefault("MOD_ANNOUNCEMENT_TEMPBAN","PREFIXMODERATION §8PLAYER §7got temp banned from §8MOD§7! Reason: §8REASON§7, Duration: §8DURATION");
-        ymlfile.addDefault("MOD_ANNOUNCEMENT_UNBAN","PREFIXMODERATION §8PLAYER §7got unbanned from §8MOD!");
+        ymlfile.addDefault("MOD_ANNOUNCEMENT_KICK","PREFIXMODERATION §8PLAYER §7got kicked from §8MODERATOR§7! Reason: §8REASON");
+        ymlfile.addDefault("MOD_ANNOUNCEMENT_BAN","PREFIXMODERATION §8PLAYER §7got banned from §8MODERATOR§7! Reason: §8REASON");
+        ymlfile.addDefault("MOD_ANNOUNCEMENT_TEMPBAN","PREFIXMODERATION §8PLAYER §7got temp banned from §8MODERATOR§7! Reason: §8REASON§7, Duration: §8DURATION");
+        ymlfile.addDefault("MOD_ANNOUNCEMENT_UNBAN","PREFIXMODERATION §8PLAYER §7got unbanned from §8MODERATOR!");
         ymlfile.addDefault("VANISH_DEACTIVATE","PREFIX §7Vanish is now deactivated!");
         ymlfile.addDefault("VANISH_ACTIVATE","PREFIX §7Vanish is now activated!");
         ymlfile.addDefault("VANISH_ITEM_PICKUP_NOT_IN_VANISH","You are not vanished! Please use /vanish before using /v itempickup!");
         ymlfile.addDefault("VANISH_ITEM_PICKUP_DEACTIVATE","PREFIX §7Item Pick Up is now deactivated!");
         ymlfile.addDefault("VANISH_ITEM_PICKUP_ACTIVATE","PREFIX §7Item Pick Up is now activated!");
-        ymlfile.addDefault("VANISH_ALREADY_ACTIVATED","You are alredy vanished!");
+        ymlfile.addDefault("VANISH_ALREADY_ACTIVATED","You are already vanished!");
         ymlfile.addDefault("VANISH_ALREADY_DEACTIVATED","You are not vanished!");
         ymlfile.addDefault("MAINTENANCE_PLAYER_NOT_ALLOWED_TO_JOIN_KICK_MESSAGE","You aren't allowed to Join the Server, because of Mainteance works!");
         ymlfile.addDefault("MAINTENANCE_COMMAND_DEACTIVATE","§7The Mainteance Mode is now §adeactivated§7!");
@@ -98,13 +110,16 @@ public class CreateFile_en {
         ymlfile.addDefault("EMBED_BUILDER_TITLE_ACCOUNT_ALREADY_WHITELISTED","Account already whitelisted!");
         ymlfile.addDefault("EMBED_BUILDER_DESCRIPTION_ACCOUNT_ALREADY_WHITELISTED","Account Name: ACCOUNTNAME • This Account is already whitelisted!");
         ymlfile.addDefault("MODULE_STATUS_OTHER_PLAYER_HAS_NO_STATUS","This Player hasn't a Status!");
-        ymlfile.addDefault("MODULE_STATUS_CLEAR_OTHER_UNALLOWED","You can't clear the Status of a other Player!");
-        ymlfile.addDefault("MODULE_STATUS_CLEAR_OTHER_CLEARED","§7You have sucessfully cleared the Status of §ePLAYER§7!");
-        ymlfile.addDefault("MODULE_STATUS_PLAYER_HAS_NO_STATUS","You don't have a Status!");
-        ymlfile.addDefault("MODULE_STATUS_CUSTOM_STATUS_TOO_LONG","This Custom Status is too long!");
-        ymlfile.addDefault("MODULE_STATUS_NOT_ALLOWED_TO_SET_CUSTOM_STATUS","You aren't allowed to set a custom Status!");
-        ymlfile.addDefault("MODULE_STATUS_NO_DEFAULT_STATUS","This isn't a default Status!");
-        ymlfile.addDefault("MODULE_STATUS_SELECTED_STATUS_JOIN_ANNOUNCEMENT","You have the Status STATUS §fselected!");
+        ymlfile.addDefault("MODULE_STATUS_CLEAR_OTHER_UNALLOWED","§cYou can't clear the Status of a other Player!");
+        ymlfile.addDefault("MODULE_STATUS_CLEAR_OTHER_CLEARED","§7You have successfully cleared the Status of §ePLAYER§7!");
+        ymlfile.addDefault("MODULE_STATUS_CLEAR_CLEARED","§7You have successfully cleared your Status");
+        ymlfile.addDefault("MODULE_STATUS_PLAYER_HAS_NO_STATUS","§7You don't have a Status!");
+        ymlfile.addDefault("MODULE_STATUS_CUSTOM_STATUS_TOO_LONG","§cThis Custom Status is too long!");
+        ymlfile.addDefault("MODULE_STATUS_NOT_ALLOWED_TO_SET_CUSTOM_STATUS","§7You aren't allowed to set a custom Status!");
+        ymlfile.addDefault("MODULE_STATUS_NO_DEFAULT_STATUS","§7This isn't a default Status!");
+        ymlfile.addDefault("MODULE_STATUS_SET","§7You have set your Status to STATUS§7!");
+        ymlfile.addDefault("MODULE_STATUS_SELECTED_STATUS_JOIN_ANNOUNCEMENT","§7You have the Status 'STATUS§7' selected!");
+        ymlfile.addDefault("MODULE_CCR_ACCEPT_RECIPE","§aAccept Crafting Recipe");
         ymlfile.options().copyDefaults(true);
         fileSave();
     }
