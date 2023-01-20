@@ -1,5 +1,6 @@
 package yv.tils.smp.updateutils.database;
 
+import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.logger.ConsoleLog;
 
 import java.sql.ResultSet;
@@ -27,6 +28,9 @@ public class VersionChecker {
     }
 
     public String VersionChecker_FullRelease(String ServerPluginVersion) {
+        if (!SMPPlugin.getInstance().database_connection) {
+            return "ERROR";
+        }
         ConnectionManager.openConnection();
 
         ResultSet resultSet;
@@ -34,17 +38,16 @@ public class VersionChecker {
         try {
             resultSet = ConnectionManager.getInformation("SELECT * FROM `yvtils_smp` WHERE `state` = 'newest'");
 
+            resultSet.next();
+            new ConsoleLog("Full Release: " + resultSet.getString(2));
 
-        resultSet.next();
-        new ConsoleLog("Full Release: " + resultSet.getString(2));
+            if (!Objects.equals(ServerPluginVersion, resultSet.getString(2))) {
+                ConnectionManager.closeConnection();
+                return "UA";
+            }
 
-        if (!Objects.equals(ServerPluginVersion, resultSet.getString(2))) {
             ConnectionManager.closeConnection();
-            return "UA";
-        }
-
-        ConnectionManager.closeConnection();
-        return "UTD";
+            return "UTD";
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -216,6 +216,8 @@ public class ServerStart_StopEvent {
             list2.add("https://modrinth.com/plugin/yvtils_smp");
 
             Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.PLUGIN_UPDATE_AVAILABLE), list1, list2));
+        }else if (new VersionChecker().VersionChecker_FullRelease(new Variables().PluginVersion).equals("ERROR")) {
+            Bukkit.getConsoleSender().sendMessage(LanguageFile.DirectFormatter("The Update Checker has an error! Please contact the Support, if you want to fix this.", "Beim checken nach einem Update ist ein Fehler aufgetreten! Bitte kontaktiere den Support!"));
         }else {
             List<String> list1 = new ArrayList();
             List<String> list2 = new ArrayList();

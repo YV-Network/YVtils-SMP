@@ -33,6 +33,7 @@ public final class SMPPlugin extends JavaPlugin {
     public JDA jda;
     public boolean maintenances;
     public boolean globalmute;
+    public boolean database_connection;
 
     public void onLoad() {
         instance = this;

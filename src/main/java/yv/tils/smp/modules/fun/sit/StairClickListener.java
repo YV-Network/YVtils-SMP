@@ -18,7 +18,7 @@ public class StairClickListener implements Listener {
         Block clickedBlock = e.getClickedBlock();
         Action action = e.getAction();
 
-        if(e.getHand() != EquipmentSlot.HAND || action != Action.RIGHT_CLICK_BLOCK) return;
+        if(e.getHand() != EquipmentSlot.HAND || action != Action.RIGHT_CLICK_BLOCK || e.getPlayer().isSneaking() || e.getPlayer().isFlying()) return;
 
         if (Tag.STAIRS.isTagged(clickedBlock.getType())) {
             if (sitManager.isSitting(player)) {

@@ -25,6 +25,7 @@ import java.util.*;
 public class InvFrameRecipe {
 
     ItemStack InPut = new ItemStack(Material.ITEM_FRAME);
+    ItemStack InPut2 = new ItemStack(Material.GLOW_ITEM_FRAME);
     ItemStack Upgrade1 = new ItemStack(Material.GLASS_PANE);
     ItemStack Upgrade2 = new ItemStack(Material.IRON_NUGGET);
 
@@ -42,12 +43,12 @@ public class InvFrameRecipe {
     }
     public boolean on_Input_GF(Inventory inv) {
         if (inv.getItem(20) != null) {
-            InPut.setItemMeta(inv.getItem(20).getItemMeta());
+            InPut2.setItemMeta(inv.getItem(20).getItemMeta());
 
-            new ConsoleLog(inv.getItem(20).getItemMeta() + " " + InPut.getItemMeta());
+            new ConsoleLog(inv.getItem(20).getItemMeta() + " " + InPut2.getItemMeta());
         }
 
-        if (Objects.equals(inv.getItem(20), InPut) && Objects.equals(inv.getItem(13), Upgrade1) && Objects.equals(inv.getItem(31), Upgrade2)) {
+        if (Objects.equals(inv.getItem(20), InPut2) && Objects.equals(inv.getItem(13), Upgrade1) && Objects.equals(inv.getItem(31), Upgrade2)) {
             return true;
         }
         return false;

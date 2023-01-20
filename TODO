@@ -1,10 +1,12 @@
 TODO
 General:
     Some Commands with Player Arguments doesn't check if player is online
+    Make Update Checker work on PloudOS, etc
 
 CCR:
     Items bei Server Stop nicht löschen
     Eigene Rezepte unterstützen und speichern
+    Multiple Crafting
 
 Fly:
     General:

@@ -20,9 +20,12 @@ import java.util.Objects;
  * @version 4.6.7
  */
 public class LightBlockRecipe {
+
     ItemStack InPut = new ItemStack(Material.LANTERN);
+    ItemStack InPut2 = new ItemStack(Material.SOUL_LANTERN);
     ItemStack Upgrade1 = new ItemStack(Material.GLASS_PANE);
     ItemStack Upgrade2 = new ItemStack(Material.IRON_NUGGET);
+
     public boolean on_Input_NL(Inventory inv) {
         if (inv.getItem(20) != null) {
             InPut.setItemMeta(inv.getItem(20).getItemMeta());
@@ -37,12 +40,12 @@ public class LightBlockRecipe {
     }
     public boolean on_Input_SL(Inventory inv) {
         if (inv.getItem(20) != null) {
-            InPut.setItemMeta(inv.getItem(20).getItemMeta());
+            InPut2.setItemMeta(inv.getItem(20).getItemMeta());
 
-            new ConsoleLog(inv.getItem(20).getItemMeta() + " " + InPut.getItemMeta());
+            new ConsoleLog(inv.getItem(20).getItemMeta() + " " + InPut2.getItemMeta());
         }
 
-        if (Objects.equals(inv.getItem(20), InPut) && Objects.equals(inv.getItem(13), Upgrade1) && Objects.equals(inv.getItem(31), Upgrade2)) {
+        if (Objects.equals(inv.getItem(20), InPut2) && Objects.equals(inv.getItem(13), Upgrade1) && Objects.equals(inv.getItem(31), Upgrade2)) {
             return true;
         }
         return false;

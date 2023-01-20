@@ -75,7 +75,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(-1.0f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-1.0f);
                         }
                     }
@@ -86,7 +86,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(-0.9f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.9f);
                         }
                     }
@@ -97,7 +97,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(-0.8f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.8f);
                         }
                     }
@@ -108,7 +108,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(-0.7f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.7f);
                         }
                     }
@@ -119,7 +119,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(-0.6f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.6f);
                         }
                     }
@@ -130,7 +130,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(-0.5f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.5f);
                         }
                     }
@@ -141,7 +141,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(-0.4f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.4f);
                         }
                     }
@@ -152,7 +152,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(-0.3f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.3f);
                         }
                     }
@@ -163,7 +163,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(-0.2f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.2f);
                         }
                     }
@@ -174,7 +174,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(-0.1f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(-0.1f);
                         }
                     }
@@ -185,7 +185,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(0.0f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.0f);
                         }
                     }
@@ -196,7 +196,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(0.1f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.1f);
                         }
                     }
@@ -207,7 +207,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(0.2f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.2f);
                         }
                     }
@@ -218,7 +218,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(0.3f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.3f);
                         }
                     }
@@ -229,7 +229,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(0.4f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.4f);
                         }
                     }
@@ -240,7 +240,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(0.5f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.5f);
                         }
                     }
@@ -251,7 +251,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(0.6f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.6f);
                         }
                     }
@@ -262,7 +262,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(0.7f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.7f);
                         }
                     }
@@ -273,7 +273,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(0.8f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.8f);
                         }
                     }
@@ -284,7 +284,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(0.9f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(0.9f);
                         }
                     }
@@ -295,7 +295,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(1.0f);
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(1.0f);
                         }
                     }
@@ -306,7 +306,7 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                             player.setFlySpeed(Float.parseFloat(args[0]));
                         } else {
                             sender.sendMessage(walkspeedchangeother);
-                            sender.sendMessage(walkspeedchange);
+                            player.sendMessage(walkspeedchange);
                             player.setWalkSpeed(Float.parseFloat(args[0]));
                         }
                     }
