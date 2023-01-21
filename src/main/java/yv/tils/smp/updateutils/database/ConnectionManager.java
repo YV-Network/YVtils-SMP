@@ -21,17 +21,17 @@ public class ConnectionManager {
     static String pw = "Z1pmp974@";
 
     public static void openConnection() {
-        SMPPlugin.getInstance().database_connection = false;
         connection = null;
         try {
             Class.forName("org.mariadb.jdbc.Driver");
             connection = DriverManager.getConnection(link, user, pw);
             statement = connection.createStatement();
             SMPPlugin.getInstance().database_connection = true;
-            new ConsoleLog("DB Connection ✔");
+            new ConsoleLog("DB Connection ✓");
         }catch (SQLException | ClassNotFoundException exception) {
             SMPPlugin.getInstance().database_connection = false;
             Bukkit.getConsoleSender().sendMessage(LanguageFile.DirectFormatter("The Update Checker has an error! Please contact the Support, if you want to fix this.", "Beim checken nach einem Update ist ein Fehler aufgetreten! Bitte kontaktiere den Support, wenn du das Problem lösen willst!"));
+            new ConsoleLog("Database Connection ✕");
             new ConsoleLog(exception.getMessage());
         }
     }

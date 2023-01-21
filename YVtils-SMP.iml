@@ -25,9 +25,6 @@
         </compilerArguments>
       </configuration>
     </facet>
-    <facet type="Python" name="Python">
-      <configuration sdkName="" />
-    </facet>
   </component>
   <component name="McpModuleSettings">
     <option name="srgType" value="SRG" />
@@ -126,5 +123,7 @@
     <orderEntry type="library" name="Maven: com.neovisionaries:nv-websocket-client:2.14" level="project" />
     <orderEntry type="library" name="Maven: net.sf.trove4j:trove4j:3.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.mariadb.jdbc:mariadb-java-client:3.0.6" level="project" />
+    <orderEntry type="library" name="Maven: org.bstats:bstats-bukkit:2.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.bstats:bstats-base:2.2.1" level="project" />
   </component>
 </module>

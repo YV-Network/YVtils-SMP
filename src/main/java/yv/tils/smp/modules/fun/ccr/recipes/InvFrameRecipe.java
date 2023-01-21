@@ -82,7 +82,7 @@ public class InvFrameRecipe {
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
             lore.add("Invisibility I");
         }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
-            meta.setDisplayName("§Unsichtbarer Rahmen");
+            meta.setDisplayName("§eUnsichtbarerw Rahmen");
             meta.addEnchant(Enchantment.MENDING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
             lore.add("Unsichtbarkeit I");

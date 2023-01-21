@@ -5,5 +5,5 @@ package yv.tils.smp;
  * @version 4.6.7
  */
 public class Variables {
-    public String PluginVersion = "4.6.7";
+    public String PluginVersion = "4.6.7.1";
 }

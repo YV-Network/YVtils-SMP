@@ -28,10 +28,11 @@ public class VersionChecker {
     }
 
     public String VersionChecker_FullRelease(String ServerPluginVersion) {
+        ConnectionManager.openConnection();
+
         if (!SMPPlugin.getInstance().database_connection) {
             return "ERROR";
         }
-        ConnectionManager.openConnection();
 
         ResultSet resultSet;
 
@@ -56,6 +57,10 @@ public class VersionChecker {
     /*
     public String VersionChecker_BetaRelease(String ServerPluginVersion) throws SQLException {
         ConnectionManager.openConnection();
+
+        if (!SMPPlugin.getInstance().database_connection) {
+            return "ERROR";
+        }
 
         ResultSet resultSet;
 

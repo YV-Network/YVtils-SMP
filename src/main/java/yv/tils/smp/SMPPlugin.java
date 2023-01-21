@@ -1,6 +1,8 @@
 package yv.tils.smp;
 
 import net.dv8tion.jda.api.JDA;
+import org.bstats.bukkit.Metrics;
+import org.bstats.charts.SimplePie;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import yv.tils.smp.modules.fun.sit.SitManager;
@@ -42,6 +44,10 @@ public final class SMPPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         new ConsoleLog(LanguageFile.DirectFormatter("YVtils-SMP begun loading!", "YVtils-SMP beginnt zu laden!"));
+
+        Metrics metrics = new Metrics(this, 14257);
+        metrics.addCustomChart(new SimplePie("language", () -> getConfig().getString("Language")));
+
         new ServerStart_StopEvent().RegisterAll();
 
         List<String> list1 = new ArrayList();

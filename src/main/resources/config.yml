@@ -106,9 +106,6 @@ Placeholder:
   PREFIXMODERATION: §c[YVtils-MOD]
   PREFIXDC: §9[YVtils-DC]
 
-#Other Stuff
-CustomRecipes: true
-
 #Do not edit!
 Debug: false #Only set to true when you know what you're doing, or you need Help and the Support say so!
-ConfigVersion: 11
+ConfigVersion: 12
