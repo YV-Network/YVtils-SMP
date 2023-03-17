@@ -37,6 +37,8 @@ public final class SMPPlugin extends JavaPlugin {
     public boolean globalmute;
     public boolean database_connection;
 
+    public String token = "OTQ3NTc2ODY2MDY2MjY4MTkx.Gfvply.VstU1rbd-D4VGzGbdFmIQ5wNLao2BegcVynHCw";
+
     public void onLoad() {
         instance = this;
     }
