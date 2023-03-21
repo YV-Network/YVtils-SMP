@@ -34,30 +34,36 @@ public class BotStartStop {
     String logChannel = modifyFile1.getString("LogChannel");
 
     public JDA jda;
-    JDABuilder builder = JDABuilder.createDefault("");
+
 
     private static BotStartStop instance;
 
     //DEVELOPMENT VERSION
-   public void TokenCheck() {
+    /*
+    JDABuilder builder = JDABuilder.createDefault("");
+
+    public void TokenCheck() {
        instance = this;
        BotSettings();
    }
+     */
 
-    public static BotStartStop getInstance() {
-        return instance;
-    }
-/*         if (token.equals(LanguageFile.DirectFormatter("YOUR TOKEN HERE","DEINEN BOT TOKEN"))) {
+   //USE VERSION
+    public void TokenCheck() {
+        if (token.equals(LanguageFile.DirectFormatter("YOUR TOKEN HERE","DEINEN BOT TOKEN"))) {
             Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_NO_BOT_TOKEN_GIVEN));
             Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FAILED));
         }else {
+            instance = this;
             BotSettings();
         }
     }
 
     JDABuilder builder = JDABuilder.createDefault(token);
 
- */
+    public static BotStartStop getInstance() {
+        return instance;
+    }
 
     public void BotSettings() {
 
