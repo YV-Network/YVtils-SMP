@@ -6,7 +6,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import yv.tils.smp.Variables;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.updateutils.database.VersionChecker;
-import yv.tils.smp.utils.language.LanguageFile;
+import yv.tils.smp.utils.configs.language.LanguageFile;
 
 /**
  * @since 4.6.7

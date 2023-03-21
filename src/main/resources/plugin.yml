@@ -65,6 +65,20 @@ commands:
     aliases:
       - sitdown
       - chill
+  invsee:
+    permission: yvtils.smp.command.invsee
+    aliases:
+      - inv
+      - openinv
+      - inventory
+      - inventorysee
+  ecsee:
+    permission: yvtils.smp.command.ecsee
+    aliases:
+      - esee
+      - enderchest
+      - enderchestsee
+      - ec
 permissions:
   yvtils.smp.play:
     description: Let Player Plays
@@ -104,3 +118,5 @@ permissions:
     description: Players with this Permission can use the VeineMiner Module when it is activated!
   yvtils.smp.update.getannounced:
     description: Announcement (on Join) in Chat when a Plugin Update is available!
+  yvtils.smp.invsee.edit:
+    description: Let the Player edit the Inventory which he opened.

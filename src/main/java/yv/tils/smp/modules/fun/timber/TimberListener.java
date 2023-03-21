@@ -3,16 +3,13 @@ package yv.tils.smp.modules.fun.timber;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
-import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.logger.ConsoleLog;
 
 import static org.bukkit.Bukkit.getServer;
-import static org.bukkit.Bukkit.getUnsafe;
 
 /**
  * Copyright 2020 © Cheep-YT All rights reserved.

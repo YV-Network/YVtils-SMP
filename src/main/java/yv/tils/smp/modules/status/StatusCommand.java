@@ -7,11 +7,11 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import yv.tils.smp.utils.language.LanguageFile;
-import yv.tils.smp.utils.language.LanguageMessage;
+import yv.tils.smp.utils.configs.language.LanguageFile;
+import yv.tils.smp.utils.configs.language.LanguageMessage;
 import yv.tils.smp.placeholder.ColorCode;
 import yv.tils.smp.placeholder.StringReplacer;
-import yv.tils.smp.utils.ConfigModeration;
+import yv.tils.smp.utils.configs.ConfigModeration;
 
 import java.util.ArrayList;
 import java.util.List;

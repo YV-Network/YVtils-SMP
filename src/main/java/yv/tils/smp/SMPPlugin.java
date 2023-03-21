@@ -5,13 +5,15 @@ import org.bstats.bukkit.Metrics;
 import org.bstats.charts.SimplePie;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import yv.tils.smp.manager.register.Summarizer;
+import yv.tils.smp.manager.unregister.Other;
 import yv.tils.smp.modules.fun.sit.SitManager;
-import yv.tils.smp.utils.language.LanguageFile;
-import yv.tils.smp.utils.language.LanguageMessage;
+import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
+import yv.tils.smp.utils.configs.language.LanguageFile;
+import yv.tils.smp.utils.configs.language.LanguageMessage;
 import yv.tils.smp.logger.ConsoleLog;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.placeholder.StringReplacer;
-import yv.tils.smp.utils.ServerStart_StopEvent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +27,7 @@ import java.util.UUID;
 public final class SMPPlugin extends JavaPlugin {
 
     private static SMPPlugin instance;
+    public static final SitManager sitManager = new SitManager();
     public final List<UUID> fly = new ArrayList<>();
     public final List<UUID> fly1 = new ArrayList<>();
     public List<UUID> vanished = new ArrayList();
@@ -32,7 +35,7 @@ public final class SMPPlugin extends JavaPlugin {
     public List<UUID> godmode1 = new ArrayList();
     public List<UUID> InvClose = new ArrayList<>();
     private HashMap<UUID, UUID> recentMessages;
-    public JDA jda;
+    //public JDA jda;
     public boolean maintenances;
     public boolean globalmute;
     public boolean database_connection;
@@ -48,7 +51,7 @@ public final class SMPPlugin extends JavaPlugin {
         Metrics metrics = new Metrics(this, 14257);
         metrics.addCustomChart(new SimplePie("language", () -> getConfig().getString("Language")));
 
-        new ServerStart_StopEvent().RegisterAll();
+        new Summarizer().RegisterAll();
 
         List<String> list1 = new ArrayList();
         List<String> list2 = new ArrayList();
@@ -70,7 +73,10 @@ public final class SMPPlugin extends JavaPlugin {
         list2.add(MessagePlaceholder.PREFIXDISABLE);
 
         Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.STOP_MESSAGE), list1, list2));
-        new ServerStart_StopEvent().UnregisterAll();
+        new Other().unregisterOther();
+        if (new DiscordConfigManager().ConfigRequest().getBoolean("Active")) {
+            new Other().unregisterDiscord();
+        }
         Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.STOP_COMPLETED_MESSAGE), list1, list2));
     }
 

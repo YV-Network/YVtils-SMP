@@ -8,10 +8,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
-import yv.tils.smp.utils.ServerStart_StopEvent;
+import yv.tils.smp.SMPPlugin;
 
+/**
+ * @since 4.6.7
+ * @version 4.6.8
+ */
 public class StairClickListener implements Listener {
-    public static final SitManager sitManager = ServerStart_StopEvent.sitManager;
+    public static final SitManager sitManager = SMPPlugin.sitManager;
     @EventHandler
     public void onClick(PlayerInteractEvent e) {
         Player player = e.getPlayer();

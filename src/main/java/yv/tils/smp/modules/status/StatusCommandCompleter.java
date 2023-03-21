@@ -5,7 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import yv.tils.smp.utils.ConfigModeration;
+import yv.tils.smp.utils.configs.ConfigModeration;
 
 import java.util.ArrayList;
 import java.util.List;

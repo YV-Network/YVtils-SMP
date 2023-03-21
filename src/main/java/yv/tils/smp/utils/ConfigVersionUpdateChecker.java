@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.Variables;
 import yv.tils.smp.placeholder.AnnouncementPlaceholder;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 
@@ -19,7 +20,7 @@ import java.io.File;
  */
 public class ConfigVersionUpdateChecker implements Listener {
 
-    int i = Integer.parseInt(AnnouncementPlaceholder.CONFIGVERSION);
+    int i = Integer.parseInt(Variables.CONFIGVERSION);
     File file2 = new File(SMPPlugin.getInstance().getDataFolder(), "DoNotEdit.yml");
     YamlConfiguration modifyFile2 = YamlConfiguration.loadConfiguration(file2);
 

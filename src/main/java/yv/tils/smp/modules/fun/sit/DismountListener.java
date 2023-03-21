@@ -5,10 +5,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.spigotmc.event.entity.EntityDismountEvent;
-import yv.tils.smp.utils.ServerStart_StopEvent;
+import yv.tils.smp.SMPPlugin;
 
+/**
+ * @since 4.6.7
+ * @version 4.6.8
+ */
 public class DismountListener implements Listener {
-    private static final SitManager sitManager = ServerStart_StopEvent.sitManager;
+    private static final SitManager sitManager = SMPPlugin.sitManager;
     @EventHandler
     public void onDismount(EntityDismountEvent e) {
         if (!(e.getEntity() instanceof Player player)) {

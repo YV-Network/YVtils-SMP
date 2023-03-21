@@ -7,8 +7,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import yv.tils.smp.utils.language.LanguageFile;
-import yv.tils.smp.utils.language.LanguageMessage;
+import yv.tils.smp.utils.configs.language.LanguageFile;
+import yv.tils.smp.utils.configs.language.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 

@@ -11,8 +11,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.modules.fun.ccr.recipes.InvFrameRecipe;
 import yv.tils.smp.modules.fun.ccr.recipes.LightBlockRecipe;
-import yv.tils.smp.modules.fun.ccr.recipes.TestRecipe;
-import yv.tils.smp.utils.ConfigModeration;
+import yv.tils.smp.utils.configs.ConfigModeration;
 
 /**
  * @since 4.6.7

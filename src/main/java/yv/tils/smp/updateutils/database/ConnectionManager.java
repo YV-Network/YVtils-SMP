@@ -3,8 +3,7 @@ package yv.tils.smp.updateutils.database;
 import org.bukkit.Bukkit;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.logger.ConsoleLog;
-import yv.tils.smp.utils.language.LanguageFile;
-import yv.tils.smp.utils.language.LanguageMessage;
+import yv.tils.smp.utils.configs.language.LanguageFile;
 
 import java.sql.*;
 

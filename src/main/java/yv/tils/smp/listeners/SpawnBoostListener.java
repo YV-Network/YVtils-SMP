@@ -16,8 +16,8 @@ import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.plugin.Plugin;
-import yv.tils.smp.utils.language.LanguageFile;
-import yv.tils.smp.utils.language.LanguageMessage;
+import yv.tils.smp.utils.configs.language.LanguageFile;
+import yv.tils.smp.utils.configs.language.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ import java.util.List;
  * This Code is inspired by this Tutorial '<a href="https://www.youtube.com/watch?v=S9f_mFiYT50">https://www.youtube.com/watch?v=S9f_mFiYT50</a>' from Coole Pizza
  *
  * @since 4.6.6
- * @version 4.6.6
+ * @version 4.6.7
  *
  */
 
@@ -39,9 +39,6 @@ public class SpawnBoostListener implements Listener {
     private final List<Player> boosted = new ArrayList<>();
 
     public SpawnBoostListener(Plugin plugin) {
-
-        System.out.println(9);
-
         this.spawnRadius = plugin.getConfig().getInt("spawnradius");
         this.multiplyValue = plugin.getConfig().getInt("multiplyValue");
 

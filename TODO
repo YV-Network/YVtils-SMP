@@ -20,9 +20,12 @@ Vanish Rework (4.6.9):
     Add to Administration Module
     (Bug) Visible after Gamemode Switch
     Mobs should ignore vanished Players
+    Vanish Layers (Each Layer can see same layer and smaller (L3 > L2 > L1 > 0))
 
 Discord Module Rework (4.6.8):
-    Discord Minecraft Chat Sync
+x    MC Server Info (Show an in config set IP, linked MC Account from cmd sender, etc)
+x    Discord Minecraft Chat Sync
+x        Set side bar Color in DC to the Status Color if set
     Discord Linked Accounts Ban - When Account xyz get banned in Minecraft all Accounts linked with xyz#0000 should be banned in Minecraft
     Tutorial Command for Features (Adding maybe with Help Command & GUI)
     Maybe fix a Bug (https://pastebin.com/F98CLrGZ)
@@ -30,13 +33,27 @@ Discord Module Rework (4.6.8):
 Help Command & GUI (Latest 4.7):
 
 Add bStats:
-    Udemy Tutorial, how to add it
+x    Udemy Tutorial, how to add it
 
 Status Module:
-    Send Message wich Status is set, when a Player joins - Sollte added sein
+    Send Message which Status is set, when a Player joins - Sollte added sein
     Send a Message to the Player and the Console when a Status got successfully set - Sollte added sein
+    Allow Status with space
 
 Older Version Module:
     Piglin Trades (1.16.1):
         Old Ender Pearl Chances
     Old Combat System (1.8.9):
+
+InvSee:
+    Access Inventory's of Offline Players
+
+Language System:
+    Add Custom Language Value
+
+MOTD System:
+    Add more player Variables
+    (Add Design Options)
+
+Configs:
+    Rework config.yml - Remove unnecessary Options or move them into other configs.

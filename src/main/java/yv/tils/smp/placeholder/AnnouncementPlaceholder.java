@@ -5,7 +5,6 @@ package yv.tils.smp.placeholder;
  * @version 4.6.6
  */
 public class AnnouncementPlaceholder {
-    public static String CONFIGVERSION = "11";
     public static String STARTUPANNOUNCE() {
 
         //String Announcement = LanguageFile.DirectFormatter("", "");

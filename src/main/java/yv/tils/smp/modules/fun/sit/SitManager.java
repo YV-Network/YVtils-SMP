@@ -11,6 +11,10 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+ * @since 4.6.7
+ * @version 4.6.8
+ */
 public class SitManager {
     private static final Set<UUID> sittingPlayers = new HashSet<>();
     public void sit(Player player) {

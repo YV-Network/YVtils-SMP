@@ -9,8 +9,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import yv.tils.smp.utils.language.LanguageFile;
-import yv.tils.smp.utils.language.LanguageMessage;
+import yv.tils.smp.utils.configs.language.LanguageFile;
+import yv.tils.smp.utils.configs.language.LanguageMessage;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.placeholder.ColorCode;
 import yv.tils.smp.placeholder.MessagePlaceholder;
@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @since 4.6.6
@@ -60,7 +61,7 @@ public class StartCommand implements CommandExecutor {
                     worldBorder.setDamageBuffer(5);
                     player.setGameMode(GameMode.SURVIVAL);
                     player.sendTitle(SMPPlugin.getInstance().getConfig().getString("StartTitle.Tob"), SMPPlugin.getInstance().getConfig().getString("StartTitle.Bottom"), 20, 50, 20);
-                    worldBorder.setSize(SMPPlugin.getInstance().getConfig().getInt("worldborderafterstart"), SMPPlugin.getInstance().getConfig().getInt("worldbordergrowtime"));
+                    worldBorder.setSize(SMPPlugin.getInstance().getConfig().getInt("worldborderafterstart"), TimeUnit.SECONDS , SMPPlugin.getInstance().getConfig().getInt("worldbordergrowtime"));
 
                     List<String> list1 = new ArrayList();
                     List<String> list2 = new ArrayList();
