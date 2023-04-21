@@ -1,0 +1,26 @@
+« Version 4.6.8.B1 Changelog »
+
+WARNING: THIS IS ONLY AN BETA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO REAL SUPPORT FOR THIS VERSION!
+
+Download:
+
+» 1.19.4 Support
+The Server Version 1.19.4 is now official Supported with this Version.
+
+» Added InvSee/EcSee Feature
+    - Open Inventorys of other players with /invsee <playername>
+    - Open Enderchests from players with /ecsee <playername>
+    - Inventory edit ability will be added in the next time
+
+» Discord Module Rework
+	- Added in Discord the /mcinfo which shows Infos about the Minecraft Server
+	- Added Synchronized Chat function: Sync your Minecraft Chat with Discord and in the opposite direction
+	- Added /whitelist <foreceadd; remove; check> in Discord
+
+«================================»
+
+Looking forward for first Release Version. Still searching for some missing features or bugs.
+
+«================================»
+
+Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204.

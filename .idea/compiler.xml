@@ -9,13 +9,10 @@
         <module name="YVtils-SMP" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="YVtils-SMP" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="YVtils-SMP" options="" />
+      <module name="YVtils-SMP" options="--add-exports jdk.internal.le/jdk.internal.org.jline.utils=ALL-UNNAMED" />
     </option>
   </component>
 </project>

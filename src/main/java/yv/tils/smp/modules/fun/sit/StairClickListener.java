@@ -11,6 +11,7 @@ import org.bukkit.inventory.EquipmentSlot;
 import yv.tils.smp.SMPPlugin;
 
 /**
+ * @BecomingRework ?
  * @since 4.6.7
  * @version 4.6.8
  */

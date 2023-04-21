@@ -2,10 +2,13 @@ package yv.tils.smp.modules.discord.sync;
 
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
+import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -16,6 +19,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.modules.discord.BotManager.BotStartStop;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
+import yv.tils.smp.utils.configs.language.LanguageFile;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -29,7 +33,6 @@ import java.net.URL;
 public class ChatSync extends ListenerAdapter implements Listener {
 
     YamlConfiguration yml = new DiscordConfigManager().ConfigRequest();
-    //YamlConfiguration yml = new DiscordConfigManager().LinkedRequest();
 
     @EventHandler
     public void onEvent(AsyncPlayerChatEvent e) {
@@ -47,7 +50,13 @@ public class ChatSync extends ListenerAdapter implements Listener {
     public void onMessageReceived(MessageReceivedEvent e) {
         if (!yml.getBoolean("ChatSync.Enabled")) return;
         if (!e.getChannel().getId().equals(yml.getString("ChatSync.Channel"))) return;
-        if (!e.getMember().hasPermission(Permission.ADMINISTRATOR)) return;
+
+        try {
+            if (!e.getMember().hasPermission(Permission.valueOf(new DiscordConfigManager().ConfigRequest().getString("ChatSync.Permission")))) return;
+        } catch (IllegalArgumentException ignored) {
+            if (!e.getMember().hasPermission(Permission.ADMINISTRATOR)) return;
+        }
+
         if (e.getMember().getUser().isBot()) return;
 
         String message = e.getMessage().getContentRaw();

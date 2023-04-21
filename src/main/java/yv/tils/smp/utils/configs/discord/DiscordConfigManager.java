@@ -32,4 +32,15 @@ public class DiscordConfigManager {
         }
         return configuration;
     }
+
+    public void LinkedWriter(String path,String value) {
+        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), "Discord/linkedAccounts.yml");
+        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
+        try {
+            configuration.set(path, value);
+            configuration.save(configfile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

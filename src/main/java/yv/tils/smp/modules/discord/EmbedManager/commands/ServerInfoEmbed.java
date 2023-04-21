@@ -28,8 +28,7 @@ public class ServerInfoEmbed {
         String MC_Name = "-";
 
         if (yml.get(userAsTag) != null) {
-            String configname_get = (String) yml.get(userAsTag);
-            String[] liststring = configname_get.split(" ");
+            String[] liststring = yml.get(userAsTag).toString().split(" ");
             OfflinePlayer playerwhitelistget = Bukkit.getOfflinePlayer(liststring[0]);
 
             MC_Name = playerwhitelistget.getName();

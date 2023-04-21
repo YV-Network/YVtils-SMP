@@ -18,18 +18,16 @@ public class ChatSyncEmbed {
 
     YamlConfiguration yml = new ConfigModeration().ConfigRequest("StatusSave");
 
-    private Color test(Player sender) {
+    private Color color(Player sender) {
 
         if (!new ConfigModeration().ConfigRequest("StatusSave").contains(sender.getUniqueId().toString())) return new Color(0xABFF99);
 
-        String test1 = (String) yml.get(sender.getUniqueId().toString());
+        String statuscolor = (String) yml.get(sender.getUniqueId().toString());
 
-        if (!test1.contains("&")) return new Color(0xABFF99);
-        test1 = ChatColor.translateAlternateColorCodes('&', test1);
+        if (!statuscolor.contains("&")) return new Color(0xABFF99);
+        statuscolor = ChatColor.translateAlternateColorCodes('&', statuscolor);
 
-        System.out.println(ChatColor.getLastColors(test1));
-
-        switch (ChatColor.getLastColors(test1)) {
+        switch (ChatColor.getLastColors(statuscolor)) {
             case "§0" -> {
                 return new Color(0x000000);
             }
@@ -86,13 +84,10 @@ public class ChatSyncEmbed {
     }
 
     public EmbedBuilder Embed(Player sender, String message) {
-
-        System.out.println(test(sender) + " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
         return builder
                 .setAuthor(sender.getName(), null, "https://cravatar.eu/head/" + sender.getName() + "/600")
                 .setDescription(message)
-                .setColor(test(sender));
+                .setColor(color(sender));
                 //.setFooter("YVtils • https://yvnetwork.de/yvtils/", "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png")
     }
 }

@@ -36,7 +36,7 @@
       <option name="myAdditionalJavadocTags" value="Use:,Removed" />
     </inspection_tool>
     <inspection_tool class="JavadocDeclaration" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="ADDITIONAL_TAGS" value="Use:,Outdated,BecomingRework,When_to_use?" />
+      <option name="ADDITIONAL_TAGS" value="Use:,Outdated,BecomingRework,When_to_use?,inWork" />
     </inspection_tool>
     <inspection_tool class="MissingJavadoc" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="PACKAGE_SETTINGS">

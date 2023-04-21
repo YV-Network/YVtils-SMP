@@ -13,6 +13,7 @@ import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 
 /**
+ * @inWork
  * @since 4.6.7
  * @version 4.6.7
  */

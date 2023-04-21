@@ -6,11 +6,16 @@ import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.modules.discord.CommandManager.CommandHandler;
 import yv.tils.smp.modules.discord.CommandManager.CommandRegister;
+import yv.tils.smp.modules.discord.ConsoleSync.GetConsole;
+import yv.tils.smp.modules.discord.ConsoleSync.SendCMD;
+import yv.tils.smp.modules.discord.EmbedManager.whitelist.ForceRemove;
 import yv.tils.smp.modules.discord.EventListener.WhitelistMessageGetter;
 import yv.tils.smp.modules.discord.sync.ChatSync;
 import yv.tils.smp.utils.configs.language.LanguageFile;
@@ -23,6 +28,7 @@ import java.io.File;
  * @version 4.6.8
  */
 public class BotStartStop {
+
     File file1 = new File(SMPPlugin.getInstance().getDataFolder(), "Discord/config.yml");
     YamlConfiguration modifyFile1 = YamlConfiguration.loadConfiguration(file1);
 
@@ -34,19 +40,10 @@ public class BotStartStop {
     String logChannel = modifyFile1.getString("LogChannel");
 
     public JDA jda;
-
-
     private static BotStartStop instance;
 
-    //DEVELOPMENT VERSION
-    /*
-    JDABuilder builder = JDABuilder.createDefault("");
-
-    public void TokenCheck() {
-       instance = this;
-       BotSettings();
-   }
-     */
+    private GetConsole appender;
+    private Logger logger;
 
    //USE VERSION
     public void TokenCheck() {
@@ -98,10 +95,25 @@ public class BotStartStop {
         builder.addEventListeners(new CommandHandler());
         builder.addEventListeners(new WhitelistMessageGetter());
         builder.addEventListeners(new ChatSync());
+        builder.addEventListeners(new ForceRemove());
+        builder.addEventListeners(new SendCMD());
 
         jda = builder.build();
 
         Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FINISHED));
+
+        //
+        this.appender = new GetConsole(SMPPlugin.getInstance(), this.jda);
+
+        try {
+            this.logger = (Logger) LogManager.getRootLogger();
+            this.logger.addAppender(this.appender);
+        } catch (Exception exce) {
+            exce.printStackTrace();
+        }
+
+        this.appender.sendMessages();
+        //
     }
 
     public void onStop() {

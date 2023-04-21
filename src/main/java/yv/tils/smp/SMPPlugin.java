@@ -1,12 +1,12 @@
 package yv.tils.smp;
 
-import net.dv8tion.jda.api.JDA;
 import org.bstats.bukkit.Metrics;
 import org.bstats.charts.SimplePie;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import yv.tils.smp.manager.register.Summarizer;
 import yv.tils.smp.manager.unregister.Other;
+import yv.tils.smp.modules.discord.EmbedManager.whitelist.ImportWhitelist;
 import yv.tils.smp.modules.fun.sit.SitManager;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
@@ -22,7 +22,7 @@ import java.util.UUID;
 
 /**
  * @since 1.0
- * @version 4.6.7
+ * @version 4.6.8
  */
 public final class SMPPlugin extends JavaPlugin {
 
@@ -34,8 +34,8 @@ public final class SMPPlugin extends JavaPlugin {
     public List<UUID> godmode = new ArrayList();
     public List<UUID> godmode1 = new ArrayList();
     public List<UUID> InvClose = new ArrayList<>();
+    public final List<String> WhitelistManager = new ArrayList<>();
     private HashMap<UUID, UUID> recentMessages;
-    //public JDA jda;
     public boolean maintenances;
     public boolean globalmute;
     public boolean database_connection;
@@ -52,6 +52,8 @@ public final class SMPPlugin extends JavaPlugin {
         metrics.addCustomChart(new SimplePie("language", () -> getConfig().getString("Language")));
 
         new Summarizer().RegisterAll();
+
+        new ImportWhitelist().Importer();
 
         List<String> list1 = new ArrayList();
         List<String> list2 = new ArrayList();

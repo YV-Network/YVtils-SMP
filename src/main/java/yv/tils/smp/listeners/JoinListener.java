@@ -30,6 +30,7 @@ public class JoinListener implements Listener {
         File file2 = new File(SMPPlugin.getInstance().getDataFolder(), "DoNotEdit.yml");
         YamlConfiguration dontedit = YamlConfiguration.loadConfiguration(file2);
 
+
         list.replaceAll(s -> s.replace("player", playerName));
 
         Collections.shuffle(list);
