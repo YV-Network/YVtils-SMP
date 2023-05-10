@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.Variables;
-import yv.tils.smp.logger.logger.*;
 import yv.tils.smp.placeholder.AnnouncementPlaceholder;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.placeholder.StringReplacer;

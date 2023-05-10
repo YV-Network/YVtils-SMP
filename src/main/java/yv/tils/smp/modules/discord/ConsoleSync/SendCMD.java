@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.bukkit.Bukkit;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 
 /**
  * @version 4.6.8
@@ -19,7 +20,7 @@ public class SendCMD extends ListenerAdapter {
 
         TextChannel channel = e.getChannel().asTextChannel();
 
-        if (!channel.getId().equals("1097159318387838986")) return;
+        if (!channel.getId().equals(new DiscordConfigManager().ConfigRequest().getString("ConsoleSync.Channel"))) return;
         if(e.getAuthor().isBot()) return;
 
         Message msg = e.getMessage();

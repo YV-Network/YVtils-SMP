@@ -7,10 +7,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.modules.discord.sync.stats.StatsDescription;
+import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
-import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.placeholder.MessagePlaceholder;
 
 import java.io.File;
 import java.util.Collections;
@@ -52,4 +53,5 @@ public class JoinListener implements Listener {
             }else {
                 event.setJoinMessage(null);
                 Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXCONNECT + ChatColor.GREEN + " » " + ChatColor.GRAY + player.getName());
-            }}}}
+            }}
+    }}

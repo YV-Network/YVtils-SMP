@@ -9,7 +9,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.Variables;
-import yv.tils.smp.placeholder.AnnouncementPlaceholder;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 
 import java.io.File;

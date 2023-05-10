@@ -43,4 +43,26 @@ public class DiscordConfigManager {
             throw new RuntimeException(e);
         }
     }
+
+    public YamlConfiguration StatsRequest() {
+        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), "Discord/stats.yml");
+        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
+        try {
+            configuration.save(configfile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return configuration;
+    }
+
+    public void StatsWritter(String path,String value) {
+        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), "Discord/stats.yml");
+        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
+        try {
+            configuration.set(path, value);
+            configuration.save(configfile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

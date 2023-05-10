@@ -7,6 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.modules.discord.sync.stats.StatsDescription;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 
 import java.util.Collections;
@@ -44,5 +45,6 @@ public class QuitListener implements Listener {
             }}
         SMPPlugin.getInstance().godmode.remove(player.getUniqueId());
         SMPPlugin.getInstance().getRecentMessages().remove(event.getPlayer().getUniqueId());
+        //new StatsDescription().editDesc();
     }
 }

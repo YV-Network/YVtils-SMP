@@ -2,16 +2,13 @@ package yv.tils.smp.modules.discord.CommandManager;
 
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.session.ReadyEvent;
-import net.dv8tion.jda.api.exceptions.PermissionException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.commands.Command;
 import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
-import org.bukkit.Bukkit;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 

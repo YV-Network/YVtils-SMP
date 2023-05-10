@@ -1,14 +1,9 @@
 package yv.tils.smp.modules.discord.sync;
 
 import net.dv8tion.jda.api.Permission;
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
-import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -16,15 +11,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.modules.discord.BotManager.BotStartStop;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
-import yv.tils.smp.utils.configs.language.LanguageFile;
-
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 /**
  * @version 4.6.8
@@ -37,6 +25,7 @@ public class ChatSync extends ListenerAdapter implements Listener {
     @EventHandler
     public void onEvent(AsyncPlayerChatEvent e) {
         if (!yml.getBoolean("ChatSync.Enabled")) return;
+        if (!e.getPlayer().hasPermission("yvtils.smp.chatsync")) return;
 
         String message = e.getMessage();
         Player sender = e.getPlayer();

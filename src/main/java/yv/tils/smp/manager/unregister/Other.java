@@ -43,6 +43,7 @@ public class Other {
     }
 
     public void unregisterDiscord() {
+        //new StatsChannel().deleteChannel();
         botStartStop.onStop();
     }
 }

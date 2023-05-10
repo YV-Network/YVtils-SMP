@@ -9,6 +9,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.scheduler.BukkitRunnable;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
+import yv.tils.smp.utils.configs.language.LanguageFile;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -30,23 +32,10 @@ public class GetConsole extends AbstractAppender {
     }
 
     public void append(LogEvent e) {
-
-
-        System.out.println(e.getMessage().toString() + " 1");
-        System.out.println(e.getMessage().getFormattedMessage().toString() + " 2");
-        System.out.println(e.getMessage().getFormat().toString() + " 3");
-
-        String message = e.getMessage().toString();
-
-        System.out.println(message.contains("&"));
-        System.out.println(message.contains("§"));
+        String message = e.getMessage().getFormattedMessage().toString();
 
         message = ChatColor.translateAlternateColorCodes('&', message);
         message = ChatColor.stripColor(message);
-
-
-        System.out.println(message.toString()+ " -1");
-
 
         SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
@@ -61,25 +50,26 @@ public class GetConsole extends AbstractAppender {
                     if (GetConsole.this.messages.length() != 0) {
                         GetConsole.this.messages = GetConsole.this.messages.replaceAll("\u001b\\[[;\\d]*m", "");
                         if (GetConsole.this.messages.length() > 2000) {
-                            String messageTooLong = "\n\nThis message has exceeded the discord message limit (2000 characters) so the rest has been cut out. To see it completely please check the console itself!";
+                            String messageTooLong = "\n\n" +
+                                    LanguageFile.DirectFormatter("This message has exceeded the discord message limit (2000 characters) so the rest has been cut out. To see it completely please check the console itself!",
+                                            "Dieser Log hat das Zeichenlimit von Discord überschritten (2000 Zeichen), weswegen der Rest abgeschnitten wurde. Um den kompletten Log zu sehen, schaue bitte in die Konsole!");
                             GetConsole.this.messages = GetConsole.this.messages.substring(0, 1999 - messageTooLong.length() - 6);
                             GetConsole console = GetConsole.this;
                             console.messages = console.messages + messageTooLong;
                         }
 
-                        //String channel = new DiscordConfigManager().ConfigRequest().getString("");
-
-                        String channel = "1097159318387838986";
+                        String channel = new DiscordConfigManager().ConfigRequest().getString("ConsoleSync.Channel");
 
                         try {
                             GetConsole.this.jda.getTextChannelById(channel).sendMessage("```" + GetConsole.this.messages + "```").queue();
                         } catch (NumberFormatException exce) {
-                            Bukkit.getLogger().severe("[DiscordServerConsole] Invalid channel ID '" + channel + "'! Make sure to put a valid channel ID in the config file! Without this the plugin won't work properly! If you're sure you've done this correctly, please contact plugin support on the Discord server: https://discord.gg/d3ac2tJ . Disabling plugin...");
+                            Bukkit.getLogger().severe("[YVtils-SMP -> ConsoleSync] " +
+                                    LanguageFile.DirectFormatter("Invalid channel ID: '" + channel + "'! Make sure to put a valid channel ID in the config file!",
+                                            "Ungültige Kanal ID: '" + channel + "'! Kontrolliere/Korrigiere noch mal die Kanal ID in der Config!"));
                             this.cancel();
                         }
                     }
-                } catch (NullPointerException ignored) {
-                }
+                } catch (NullPointerException ignored) {}
 
                 GetConsole.this.messages = "";
             }

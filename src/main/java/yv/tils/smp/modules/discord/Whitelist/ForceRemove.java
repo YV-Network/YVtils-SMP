@@ -1,4 +1,4 @@
-package yv.tils.smp.modules.discord.EmbedManager.whitelist;
+package yv.tils.smp.modules.discord.Whitelist;
 
 import net.dv8tion.jda.api.events.interaction.component.StringSelectInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -24,8 +24,6 @@ public class ForceRemove extends ListenerAdapter {
     public StringSelectMenu.Builder createMenu() {
 
         List<String> list = SMPPlugin.getInstance().WhitelistManager;
-
-        //System.out.println(list);
 
         if (list.size() <= 1) {
             return StringSelectMenu.create("players").setPlaceholder(LanguageFile.getMessage(LanguageMessage.WHITELIST_EMPTY)).setDisabled(true).addOption("test", "test");
@@ -72,7 +70,7 @@ public class ForceRemove extends ListenerAdapter {
             list2.add(args[0]);
 
             Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_REMOVE), list1, list2));
-            e.editMessageEmbeds(new yv.tils.smp.modules.discord.EmbedManager.whitelist.Embed.discord.ForceRemove().EmbedRemoved((list.size()-1), Bukkit.hasWhitelist(), args).build()).setActionRow(createMenu().build()).queue();
+            e.editMessageEmbeds(new yv.tils.smp.modules.discord.EmbedManager.whitelist.discord.ForceRemove().EmbedRemoved((list.size()-1), Bukkit.hasWhitelist(), args).build()).setActionRow(createMenu().build()).queue();
         }
     }
 }

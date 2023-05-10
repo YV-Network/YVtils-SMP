@@ -45,6 +45,9 @@ public class DiscordModuleConfig {
         ymlfile.addDefault("ChatSync.Permission", LanguageFile.DirectFormatter("PERMISSION","BERECHTIGUNG"));
         ymlfile.addDefault("ChatSync.Channel", LanguageFile.DirectFormatter("CHANNEL ID","KANAL ID"));
 
+        ymlfile.addDefault("ConsoleSync.Enabled", true);
+        ymlfile.addDefault("ConsoleSync.Channel", LanguageFile.DirectFormatter("CHANNEL ID","KANAL ID"));
+
         ymlfile.addDefault("LogChannel", LanguageFile.DirectFormatter("CHANNEL ID","KANAL ID"));
 
         ymlfile.options().copyDefaults(true);
