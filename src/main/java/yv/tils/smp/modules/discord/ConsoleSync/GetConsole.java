@@ -33,10 +33,6 @@ public class GetConsole extends AbstractAppender {
 
     public void append(LogEvent e) {
         String message = e.getMessage().getFormattedMessage().toString();
-
-        message = ChatColor.translateAlternateColorCodes('&', message);
-        message = ChatColor.stripColor(message);
-
         SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         message = "[" + sdf1.format(timestamp) + " " + e.getLevel().toString() + "]: " + message + "\n";
@@ -49,6 +45,9 @@ public class GetConsole extends AbstractAppender {
                 try {
                     if (GetConsole.this.messages.length() != 0) {
                         GetConsole.this.messages = GetConsole.this.messages.replaceAll("\u001b\\[[;\\d]*m", "");
+                        GetConsole.this.messages = GetConsole.this.messages.replaceAll("\u007F", "&");
+                        GetConsole.this.messages = ChatColor.translateAlternateColorCodes('&', GetConsole.this.messages);
+                        GetConsole.this.messages = ChatColor.stripColor(GetConsole.this.messages);
                         if (GetConsole.this.messages.length() > 2000) {
                             String messageTooLong = "\n\n" +
                                     LanguageFile.DirectFormatter("This message has exceeded the discord message limit (2000 characters) so the rest has been cut out. To see it completely please check the console itself!",
@@ -62,7 +61,7 @@ public class GetConsole extends AbstractAppender {
 
                         try {
                             GetConsole.this.jda.getTextChannelById(channel).sendMessage("```" + GetConsole.this.messages + "```").queue();
-                        } catch (NumberFormatException exce) {
+                        } catch (NumberFormatException ignored) {
                             Bukkit.getLogger().severe("[YVtils-SMP -> ConsoleSync] " +
                                     LanguageFile.DirectFormatter("Invalid channel ID: '" + channel + "'! Make sure to put a valid channel ID in the config file!",
                                             "Ungültige Kanal ID: '" + channel + "'! Kontrolliere/Korrigiere noch mal die Kanal ID in der Config!"));
@@ -73,6 +72,6 @@ public class GetConsole extends AbstractAppender {
 
                 GetConsole.this.messages = "";
             }
-        }).runTaskTimer(this.plugin, 0L, 20L);
+        }).runTaskTimer(this.plugin, 0L, 200L);
     }
 }
