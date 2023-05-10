@@ -27,8 +27,9 @@ x    Whitelist Commands (Add; Remove; Check)
 x    MC Server Info (Show an in config set IP, linked MC Account from cmd sender, etc)
 x    Discord Minecraft Chat Sync
 x        Set side bar Color in DC to the Status Color if set
-    Fix Color Code Characters in Discord
-    Server Status Channels/Channel Topic (Player count, Version, etc)
+x   Fix Color Code Characters in Discord
+x   Channel Topic (Player count, Version, etc)
+    Server Status Channels (Player count, Version, etc)
     Sync Discord Roles with MC Permissions
 
 Help Command & GUI (Latest 4.7):
