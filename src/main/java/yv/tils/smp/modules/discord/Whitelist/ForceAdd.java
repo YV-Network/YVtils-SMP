@@ -1,12 +1,15 @@
-package yv.tils.smp.modules.discord.EmbedManager.whitelist;
+package yv.tils.smp.modules.discord.Whitelist;
 
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.configuration.file.YamlConfiguration;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.modules.discord.EmbedManager.whitelist.Embed.*;
+import yv.tils.smp.modules.discord.EmbedManager.whitelist.AccountAlreadyListed;
+import yv.tils.smp.modules.discord.EmbedManager.whitelist.AccountCantExist;
+import yv.tils.smp.modules.discord.EmbedManager.whitelist.AccountCheckError;
+import yv.tils.smp.modules.discord.EmbedManager.whitelist.AccountNotFound;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.placeholder.StringReplacer;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
@@ -25,9 +28,7 @@ import java.util.List;
  */
 public class ForceAdd {
 
-    YamlConfiguration linkedRequest = new DiscordConfigManager().LinkedRequest();
-
-    public EmbedBuilder onMessageReceived(String mc, Member dc, Member exec) {
+    public EmbedBuilder onMessageReceived(String mc, Member dc, Member exec, Guild guild) {
         OfflinePlayer player = Bukkit.getOfflinePlayer(mc);
         String dc_tag = mc + "#0000";
 
@@ -55,12 +56,13 @@ public class ForceAdd {
             HttpURLConnection http = (HttpURLConnection)url.openConnection();
             int statusCode = http.getResponseCode();
             if (statusCode == 200) {
-                if (linkedRequest.get(dc_tag) != null) {
-                    String configname_remove = (String) linkedRequest.get(dc_tag);
-                    String[] liststring = configname_remove.split(" ");
-                    OfflinePlayer playerwhitelistremove = Bukkit.getOfflinePlayer(liststring[0]);
+                if (new ImportWhitelist().reader(dc_tag, null, null).contains(dc_tag)) {
+
+                    List<String> whitelist = new ImportWhitelist().reader(dc_tag, null, null);
+
+                    OfflinePlayer playerwhitelistremove = Bukkit.getOfflinePlayer(whitelist.get(1));
                     playerwhitelistremove.setWhitelisted(false);
-                    SMPPlugin.getInstance().WhitelistManager.remove(dc_tag + "," + playerwhitelistremove.getName() + "," + playerwhitelistremove.getUniqueId());
+                    whitelistRemove(dc_tag, playerwhitelistremove.getName(), playerwhitelistremove.getUniqueId().toString());
 
                     List<String> list1 = new ArrayList();
                     List<String> list2 = new ArrayList();
@@ -69,7 +71,7 @@ public class ForceAdd {
                     list1.add("DCNAME");
                     list2.add(dc_tag);
                     list1.add("OLDNAME");
-                    list2.add(liststring[0]);
+                    list2.add(whitelist.get(1));
                     list1.add("NEWNAME");
                     list2.add(mc);
 
@@ -77,8 +79,11 @@ public class ForceAdd {
                     player.setWhitelisted(true);
                     SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
                     new DiscordConfigManager().LinkedWriter(dc_tag, mc+ " " + player.getUniqueId());
+                    try {
+                        guild.addRoleToMember(dc, guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+                    }catch (IllegalArgumentException ignored) {}
                     Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_CHANGE), list1, list2));
-                    return new yv.tils.smp.modules.discord.EmbedManager.whitelist.Embed.discord.ForceAdd().Replace(dc_tag, liststring[0], mc);
+                    return new yv.tils.smp.modules.discord.EmbedManager.whitelist.discord.ForceAdd().Replace(dc_tag, whitelist.get(1), mc);
                 }else {
 
                     List<String> list1 = new ArrayList();
@@ -94,8 +99,11 @@ public class ForceAdd {
                     player.setWhitelisted(true);
                     SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
                     new DiscordConfigManager().LinkedWriter(dc_tag, mc+ " " + player.getUniqueId());
+                    try {
+                        guild.addRoleToMember(dc, guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+                    }catch (IllegalArgumentException ignored) {}
                     Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_ADD), list1, list2));
-                    return new yv.tils.smp.modules.discord.EmbedManager.whitelist.Embed.discord.ForceAdd().Embed(mc, dc_tag);
+                    return new yv.tils.smp.modules.discord.EmbedManager.whitelist.discord.ForceAdd().Embed(mc, dc_tag);
                 }
             }else if (statusCode == 400) {
 
@@ -121,4 +129,12 @@ public class ForceAdd {
                 return new AccountCheckError().Embed(mc);
             }} catch (IOException ignored) {}
         return null;
+    }
+
+    private void whitelistAdd(String dc, String mc, String uuid) {
+        SMPPlugin.getInstance().WhitelistManager.add(dc + "," + mc + "," + uuid);
+    }
+
+    private void whitelistRemove(String dc, String mc, String uuid) {
+        SMPPlugin.getInstance().WhitelistManager.remove(dc + "," + mc + "," + uuid);
     }}

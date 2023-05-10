@@ -1,6 +1,6 @@
 « Version 4.6.8.B1 Changelog »
 
-WARNING: THIS IS ONLY AN BETA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO REAL SUPPORT FOR THIS VERSION!
+WARNING: THIS IS ONLY AN BETA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT FOR THIS VERSION!
 
 Download:
 
@@ -8,14 +8,18 @@ Download:
 The Server Version 1.19.4 is now official Supported with this Version.
 
 » Added InvSee/EcSee Feature
-    - Open Inventorys of other players with /invsee <playername>
-    - Open Enderchests from players with /ecsee <playername>
-    - Inventory edit ability will be added in the next time
+    - Open Inventory's of other players with /invsee <playername>
+    - Open Enderchest's from players with /ecsee <playername>
 
-» Discord Module Rework
-	- Added in Discord the /mcinfo which shows Infos about the Minecraft Server
-	- Added Synchronized Chat function: Sync your Minecraft Chat with Discord and in the opposite direction
-	- Added /whitelist <foreceadd; remove; check> in Discord
+» Discord Module
+	/mcinfo Command -> Shows information's about the MC Server
+	/whitelist <foreceadd; remove; check> -> Add Users to the whitelist over Discord while using the Linking Feature of the plugin
+	Minecraft - Discord Chat Bridge -> Synchronize the global Minecraft Chat with a selected Discord Channel
+	Let Players whitelist themself, when they write their MC Ingame Name in a selected Channel
+	Console Channel - Execute Commands and see what is written to the console from one Discord Channel
+	In the Chat Sync Channel there will be Server Information Description
+
+» Bug Fixes
 
 «================================»
 

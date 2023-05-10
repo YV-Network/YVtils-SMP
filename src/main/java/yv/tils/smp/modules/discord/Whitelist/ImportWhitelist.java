@@ -1,12 +1,12 @@
-package yv.tils.smp.modules.discord.EmbedManager.whitelist;
+package yv.tils.smp.modules.discord.Whitelist;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.logger.ConsoleLog;
-import yv.tils.smp.logger.Logger;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @version 4.6.8

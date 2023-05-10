@@ -10,7 +10,7 @@ CCR:
 
 Fly:
     General:
-        Reconnect deaktiviert Fly = Falldamage (= Tot)
+        Reconnect deaktiviert Fly = Fall-damage (= Tot)
     SpeedChange:
         Selber Speed setzen = Leere Zeile im Chat (Liegt am senden einer Nachricht welche 'null' ist (sender.sendMessage(changeother)))
         Speed reset = Falsche Nachricht
@@ -28,6 +28,8 @@ x    MC Server Info (Show an in config set IP, linked MC Account from cmd sender
 x    Discord Minecraft Chat Sync
 x        Set side bar Color in DC to the Status Color if set
     Fix Color Code Characters in Discord
+    Server Status Channels/Channel Topic (Player count, Version, etc)
+    Sync Discord Roles with MC Permissions
 
 Help Command & GUI (Latest 4.7):
     Tutorial Command for Features in Discord (Maybe with Buttons)

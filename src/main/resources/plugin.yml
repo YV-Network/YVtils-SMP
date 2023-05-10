@@ -121,3 +121,5 @@ permissions:
     description: Announcement (on Join) in Chat when a Plugin Update is available!
   yvtils.smp.invsee.edit:
     description: Let the Player edit the Inventory which he opened.
+  yvtils.smp.chatsync:
+    description: Sync Messages from Players with this permission to discord

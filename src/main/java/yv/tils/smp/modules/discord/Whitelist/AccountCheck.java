@@ -1,10 +1,10 @@
-package yv.tils.smp.modules.discord.EmbedManager.whitelist;
+package yv.tils.smp.modules.discord.Whitelist;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
-import yv.tils.smp.modules.discord.EmbedManager.whitelist.Embed.AccountCantExist;
-import yv.tils.smp.modules.discord.EmbedManager.whitelist.Embed.discord.Check;
+import yv.tils.smp.modules.discord.EmbedManager.whitelist.AccountCantExist;
+import yv.tils.smp.modules.discord.EmbedManager.whitelist.discord.Check;
 
 /**
  * @version 4.6.8

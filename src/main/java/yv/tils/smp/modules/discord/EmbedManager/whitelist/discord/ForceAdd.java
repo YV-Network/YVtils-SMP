@@ -1,4 +1,4 @@
-package yv.tils.smp.modules.discord.EmbedManager.whitelist.Embed.discord;
+package yv.tils.smp.modules.discord.EmbedManager.whitelist.discord;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import yv.tils.smp.placeholder.StringReplacer;

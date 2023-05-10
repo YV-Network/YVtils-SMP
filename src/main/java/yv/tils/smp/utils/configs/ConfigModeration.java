@@ -2,8 +2,8 @@ package yv.tils.smp.utils.configs;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
-import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.utils.configs.language.LanguageFile;
 
 import java.io.File;
 import java.io.IOException;

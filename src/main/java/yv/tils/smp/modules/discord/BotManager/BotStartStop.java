@@ -15,9 +15,11 @@ import yv.tils.smp.modules.discord.CommandManager.CommandHandler;
 import yv.tils.smp.modules.discord.CommandManager.CommandRegister;
 import yv.tils.smp.modules.discord.ConsoleSync.GetConsole;
 import yv.tils.smp.modules.discord.ConsoleSync.SendCMD;
-import yv.tils.smp.modules.discord.EmbedManager.whitelist.ForceRemove;
-import yv.tils.smp.modules.discord.EventListener.WhitelistMessageGetter;
+import yv.tils.smp.modules.discord.Whitelist.ForceRemove;
+import yv.tils.smp.modules.discord.Whitelist.WhitelistMessageGetter;
 import yv.tils.smp.modules.discord.sync.ChatSync;
+import yv.tils.smp.modules.discord.sync.stats.StatsDescription;
+import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
@@ -94,26 +96,34 @@ public class BotStartStop {
         builder.addEventListeners(new CommandRegister());
         builder.addEventListeners(new CommandHandler());
         builder.addEventListeners(new WhitelistMessageGetter());
-        builder.addEventListeners(new ChatSync());
+        if (new DiscordConfigManager().ConfigRequest().getBoolean("ChatSync.Enabled")) {
+            builder.addEventListeners(new ChatSync());
+        }
         builder.addEventListeners(new ForceRemove());
         builder.addEventListeners(new SendCMD());
 
         jda = builder.build();
 
-        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FINISHED));
-
-        //
-        this.appender = new GetConsole(SMPPlugin.getInstance(), this.jda);
-
         try {
-            this.logger = (Logger) LogManager.getRootLogger();
-            this.logger.addAppender(this.appender);
-        } catch (Exception exce) {
-            exce.printStackTrace();
+            jda.awaitReady();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
 
-        this.appender.sendMessages();
-        //
+        Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FINISHED));
+
+        //new StatsChannel().createChannel();
+        new StatsDescription().editDesc();
+
+        if (new DiscordConfigManager().ConfigRequest().getBoolean("ConsoleSync.Enabled")) {
+            this.appender = new GetConsole(SMPPlugin.getInstance(), this.jda);
+            try {
+                this.logger = (Logger) LogManager.getRootLogger();
+                this.logger.addAppender(this.appender);
+            } catch (Exception ignored) {
+            }
+            this.appender.sendMessages();
+        }
     }
 
     public void onStop() {

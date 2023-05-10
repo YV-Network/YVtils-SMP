@@ -4,16 +4,16 @@ import org.bstats.bukkit.Metrics;
 import org.bstats.charts.SimplePie;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import yv.tils.smp.logger.ConsoleLog;
 import yv.tils.smp.manager.register.Summarizer;
 import yv.tils.smp.manager.unregister.Other;
-import yv.tils.smp.modules.discord.EmbedManager.whitelist.ImportWhitelist;
+import yv.tils.smp.modules.discord.Whitelist.ImportWhitelist;
 import yv.tils.smp.modules.fun.sit.SitManager;
+import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.StringReplacer;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
-import yv.tils.smp.logger.ConsoleLog;
-import yv.tils.smp.placeholder.MessagePlaceholder;
-import yv.tils.smp.placeholder.StringReplacer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,6 +34,11 @@ public final class SMPPlugin extends JavaPlugin {
     public List<UUID> godmode = new ArrayList();
     public List<UUID> godmode1 = new ArrayList();
     public List<UUID> InvClose = new ArrayList<>();
+
+    public List<String> serveripID = new ArrayList<>();
+    public List<String> serverversionID = new ArrayList<>();
+    public List<String> playercountID = new ArrayList<>();
+
     public final List<String> WhitelistManager = new ArrayList<>();
     private HashMap<UUID, UUID> recentMessages;
     public boolean maintenances;

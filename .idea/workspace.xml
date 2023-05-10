@@ -9,139 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="« Version 4.6.8.A1 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module Rework&#10;Added in Discord the /mcinfo which shows Infos about the Minecraft Server&#10;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204.">
-      <change afterPath="$PROJECT_DIR$/Changelog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/ConsoleSync/GetConsole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/ConsoleSync/SendCMD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/AccountCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/Embed/AccountAdded.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/Embed/AccountAlreadyListed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/Embed/AccountCantExist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/Embed/AccountChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/Embed/AccountCheckError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/Embed/AccountNotFound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/Embed/discord/Check.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/Embed/discord/ForceAdd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/Embed/discord/ForceRemove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/ForceAdd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/ForceRemove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/ImportWhitelist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/temp/discord.config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_14_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_14_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_14_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_oshi_oshi_core_5_8_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_7_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_31_0_1_jre.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_19_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_authlib_3_11_49.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_brigadier_1_0_18.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_datafixerupper_5_0_28.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_javabridge_1_2_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mojang_logging_1_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_neovisionaries_nv_websocket_client_2_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_4_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_jvm_3_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_11_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_77_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_77_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_77_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_77_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_77_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_77_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_classes_epoll_4_1_77_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_aarch_64_4_1_77_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_77_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_77_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__it_unimi_dsi_fastutil_8_5_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jline_jline_2_12_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_29.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_dv8tion_JDA_5_0_0_beta_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_5_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_platform_5_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_16_R0_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_jopt_simple_jopt_simple_5_0_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_trove4j_trove4j_3_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_17_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_17_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_iostreams_2_17_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_slf4j18_impl_2_17_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_artifact_3_8_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_builder_support_3_8_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_3_8_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_builder_3_8_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_repository_metadata_3_8_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_resolver_provider_3_8_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_api_1_6_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_connector_basic_1_7_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_impl_1_6_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_spi_1_6_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_transport_http_1_7_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_resolver_maven_resolver_util_1_6_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bstats_bstats_base_2_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bstats_bstats_bukkit_2_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_interpolation_1_26.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_utils_3_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_sisu_org_eclipse_sisu_inject_0_3_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_6_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_5_31.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_32.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_8_0_beta4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_1_19_2_R0_1_SNAPSHOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_19_2_R0_1_SNAPSHOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_sqlite_jdbc_3_36_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_33.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="« Version 4.6.8.A3 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;&#9;/mcinfo Command -&gt; Shows information about the MC Server&#10;&#9;/whitelist &lt;foreceadd; remove; check&gt; -&gt; Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;&#9;Minecraft - Discord Chat Bridge -&gt; Synchronize the global Minecraft Chat with a selected Discord Channel&#10;&#9;Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;&#9;Console Channel - Execute Commands and see what is written to the console from one Discord Channel&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YVtils-SMP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/YVtils-SMP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/StringReplacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/StringReplacer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/SMPPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/SMPPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Variables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Variables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/VanishCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/VanishCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/JoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/JoinListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BotManager/BotStartStop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BotManager/BotStartStop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/CommandManager/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/CommandManager/CommandHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/CommandManager/CommandRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/CommandManager/CommandRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/BuildEmbeds.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/EmbedDesign.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/commands/ServerInfoEmbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/commands/ServerInfoEmbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/AccountAdded.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EventListener/WhitelistMessageGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EventListener/WhitelistMessageGetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/ChatSync.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/ChatSync.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/ChatSyncEmbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/ChatSyncEmbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/VeineMiner/OreListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/VeineMiner/OreListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/OldCCR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/OldRecipes_BACKUP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/sit/StairClickListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/sit/StairClickListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/timber/TimberListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/timber/TimberListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordConfigManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordModuleConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordModuleConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/ConsoleSync/GetConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/ConsoleSync/GetConsole.java" afterDir="false" />
     </list>
     <list id="1a4b194b-1eb3-4e46-a348-8f821c6a9b7a" name="Changes by j" comment="Changes by j">
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/InvFrameRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/InvFrameRecipe.java" afterDir="false" />
@@ -174,6 +46,11 @@
         <option name="argument" value="--follow-tags" />
         <option name="title" value="Current Branch" />
       </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -233,8 +110,8 @@
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "B:/Downloads/DiscordServerConsole",
+    "git-widget-placeholder": "dev",
+    "last_opened_file_path": "B:/Coding/DiscordWhitelister",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -244,7 +121,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "configurable.group.other",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -275,7 +152,7 @@
       <recent name="yv.tils.smp.otherfiles" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.YVtils-SMP [clean,package]">
+  <component name="RunManager" selected="JAR Application.CompileWithServer_1.19">
     <configuration name="CompileWithServer_1.19" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/../Minecraft_Server/ver/paper-1.19.3.jar" />
       <option name="VM_PARAMETERS" value="-Xmx4G -DIReallyKnowWhatIAmDoingISwear" />
@@ -554,7 +431,10 @@
       <workItem from="1680717580895" duration="8349000" />
       <workItem from="1680891165427" duration="31653000" />
       <workItem from="1681652561261" duration="9007000" />
-      <workItem from="1682108350575" duration="6562000" />
+      <workItem from="1682108350575" duration="28128000" />
+      <workItem from="1682611065628" duration="6091000" />
+      <workItem from="1682863637022" duration="3630000" />
+      <workItem from="1683568963600" duration="29958000" />
     </task>
     <task id="LOCAL-00007" summary="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version.">
       <created>1637869169288</created>
@@ -794,7 +674,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679428287300</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="« Version 4.6.8.A2 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;&#9;/mcinfo Command -&gt; Shows informations about the MC Server&#10;&#9;/whitelist &lt;foreceadd; remove; check&gt; -&gt; Add Users to the whitelist over Discord while using the Linkink Feature of the plugin&#10;&#9;Minecraft - Discord Chat Bridge -&gt; Syncronyze the globa Minecraft Chat with a selected Discord Channel&#10;&#9;Let Players whitelist themself, when they write their MC Ingame Name in a selected Channel&#10;&#9;Console Channel - Execute Commands and see what is written to the console from one Discord Channel&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204.">
+      <created>1682120600042</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1682120600042</updated>
+    </task>
+    <task id="LOCAL-00042" summary="« Version 4.6.8.A3 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;&#9;/mcinfo Command -&gt; Shows information about the MC Server&#10;&#9;/whitelist &lt;foreceadd; remove; check&gt; -&gt; Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;&#9;Minecraft - Discord Chat Bridge -&gt; Synchronize the global Minecraft Chat with a selected Discord Channel&#10;&#9;Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;&#9;Console Channel - Execute Commands and see what is written to the console from one Discord Channel&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204.">
+      <created>1683750643027</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1683750643027</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -816,7 +710,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="..." />
     <MESSAGE value="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version." />
     <MESSAGE value="With this Update the /seed Command got Blocked for all Players without a Permission give them an Error Message. Players with the Permission must add an Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version." />
     <MESSAGE value="Deutsch:&#10;Kleine Änderung für den Config Versions Update Announcer&#10;Server Start Announce Nachricht für wichtige Infos vom Coder&#10;&#10;Neue Config Version&#10;&#10;English:&#10;Little Changes for the Config Version Update Announcer&#10;Server Start Announce Message for important Message from the Coder&#10;&#10;New Config Version" />
@@ -840,7 +733,9 @@
     <MESSAGE value="« Version 4.6.7.1 Changelog »&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/JlQaqXFH&#10;&#10;» Fixed Update Checker&#10;Checking for Updates always failed.&#10;&#10;» Added bStats&#10;Find Stats about the Plugin on &#10;https://bstats.org/plugin/bukkit/YVtils-SMP/14257&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or per Private Message to @WolfiiYV#3204." />
     <MESSAGE value="« Version 4.6.7.1 Changelog »&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/FlePTV9V&#10;&#10;» Fixed Update Checker&#10;Checking for Updates always failed.&#10;&#10;» Added bStats&#10;Find Stats about the Plugin on &#10;https://bstats.org/plugin/bukkit/YVtils-SMP/14257&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or per Private Message to @WolfiiYV#3204." />
     <MESSAGE value="« Version 4.6.8.A1 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module Rework&#10;Added in Discord the /mcinfo which shows Infos about the Minecraft Server&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
-    <option name="LAST_COMMIT_MESSAGE" value="« Version 4.6.8.A1 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module Rework&#10;Added in Discord the /mcinfo which shows Infos about the Minecraft Server&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
+    <MESSAGE value="« Version 4.6.8.A2 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;&#9;/mcinfo Command -&gt; Shows informations about the MC Server&#10;&#9;/whitelist &lt;foreceadd; remove; check&gt; -&gt; Add Users to the whitelist over Discord while using the Linkink Feature of the plugin&#10;&#9;Minecraft - Discord Chat Bridge -&gt; Syncronyze the globa Minecraft Chat with a selected Discord Channel&#10;&#9;Let Players whitelist themself, when they write their MC Ingame Name in a selected Channel&#10;&#9;Console Channel - Execute Commands and see what is written to the console from one Discord Channel&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
+    <MESSAGE value="« Version 4.6.8.A3 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;&#9;/mcinfo Command -&gt; Shows information about the MC Server&#10;&#9;/whitelist &lt;foreceadd; remove; check&gt; -&gt; Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;&#9;Minecraft - Discord Chat Bridge -&gt; Synchronize the global Minecraft Chat with a selected Discord Channel&#10;&#9;Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;&#9;Console Channel - Execute Commands and see what is written to the console from one Discord Channel&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
+    <option name="LAST_COMMIT_MESSAGE" value="« Version 4.6.8.A3 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;&#9;/mcinfo Command -&gt; Shows information about the MC Server&#10;&#9;/whitelist &lt;foreceadd; remove; check&gt; -&gt; Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;&#9;Minecraft - Discord Chat Bridge -&gt; Synchronize the global Minecraft Chat with a selected Discord Channel&#10;&#9;Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;&#9;Console Channel - Execute Commands and see what is written to the console from one Discord Channel&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -869,11 +764,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
           <line>82</line>
           <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/ChatSync.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
@@ -1099,43 +989,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
           <line>30</line>
           <option name="timeStamp" value="202" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/ConsoleSync/SendCMD.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="203" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BotManager/BotStartStop.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="209" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BotManager/BotStartStop.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="210" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/ConsoleSync/GetConsole.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="211" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/ConsoleSync/GetConsole.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="212" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BotManager/BotStartStop.java</url>
-          <line>44</line>
-          <properties field="appender" class="yv.tils.smp.modules.discord.BotManager.BotStartStop" />
-          <option name="timeStamp" value="207" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BotManager/BotStartStop.java</url>
-          <line>45</line>
-          <properties field="logger" class="yv.tils.smp.modules.discord.BotManager.BotStartStop" />
-          <option name="timeStamp" value="208" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
