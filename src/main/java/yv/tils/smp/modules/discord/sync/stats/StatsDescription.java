@@ -5,6 +5,7 @@ import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitRunnable;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.logger.ConsoleLog;
 import yv.tils.smp.modules.discord.BotManager.BotStartStop;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 
@@ -35,7 +36,7 @@ public class StatsDescription {
                 SimpleDateFormat dateformat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-                System.out.println("Task running!");
+                new ConsoleLog("Task running!");
 
                 for (int i = 0; i < guilds.size(); i++) {
                     TextChannel channel;
@@ -48,8 +49,10 @@ public class StatsDescription {
                     if (channel == null) return;
 
                     try {
-                        if (serverip.equals(null)) {
-                            channel.getManager().setTopic("Server IP:" + serverip + " Version: " + version + " Online Players: " + onlineplayers + " \nLast Updated: " + dateformat.format(timestamp)).queue();
+                        if (serverip.equals("null")) {
+                            channel.getManager().setTopic("Server IP: " + serverip + " Version: " + version + " Online Players: " + onlineplayers + " \nLast Updated: " + dateformat.format(timestamp)).queue();
+                        }else {
+                            channel.getManager().setTopic("Version: " + version + " Online Players: " + onlineplayers + " \nLast Updated: " + dateformat.format(timestamp)).queue();
                         }
                     }catch (NullPointerException ignored) {
                         channel.getManager().setTopic("Version: " + version + " Online Players: " + onlineplayers + " \nLast Updated: " + dateformat.format(timestamp)).queue();

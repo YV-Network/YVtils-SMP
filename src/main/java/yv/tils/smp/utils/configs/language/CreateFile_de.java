@@ -146,6 +146,9 @@ public class CreateFile_de {
         ymlfile.addDefault("MODULE_DISCORD_CMD_REGISTERED_CHANGE","Discord User 'DISCORDUSER' hat den gewhitelisteten Account von 'DCNAME' von 'OLDNAME' zu 'NEWNAME' geändert");
         ymlfile.addDefault("MODULE_DISCORD_CMD_REGISTERED_REMOVE","Discord User 'DISCORDUSER' hat den Minecraft Account 'MCNAME' (verbunden mit 'DCNAME') von der whitelist entfernt");
 
+        ymlfile.addDefault("EMBED_CMD_ROLE_ADD_ERROR_TITLE","Es ist ein Fehler beim hinzufügen aufgetreten!");
+        ymlfile.addDefault("EMBED_CMD_ROLE_ADD_ERROR_DESC","Die Rolle, welche dem User gegeben werden sollte (ROLE), konnte vom Bot wegen falscher Hierarchie der Rollen nicht hinzugefügt werden! \nBitte setze die Rolle vom Bot über die Rolle welche vergeben werden soll.");
+
         ymlfile.addDefault("MODULE_STATUS_OTHER_PLAYER_HAS_NO_STATUS","Dieser Spieler hat keinen Status!");
         ymlfile.addDefault("MODULE_STATUS_CLEAR_OTHER_UNALLOWED","§cDu kannst nicht den Status von anderen Spieler löschen!");
         ymlfile.addDefault("MODULE_STATUS_CLEAR_OTHER_CLEARED","§7Du hast erfolgreich den Status von §ePLAYER §7gelöscht!");

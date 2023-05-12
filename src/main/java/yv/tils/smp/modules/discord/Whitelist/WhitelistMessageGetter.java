@@ -3,6 +3,7 @@ package yv.tils.smp.modules.discord.Whitelist;
 import net.dv8tion.jda.api.entities.channel.ChannelType;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.exceptions.HierarchyException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -84,8 +85,19 @@ public class WhitelistMessageGetter extends ListenerAdapter {
                         list1.add("NEWNAME");
                         list2.add(e.getMessage().getContentRaw());
 
-                        Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_CHANGE), list1, list2));
-                        channel.sendMessageEmbeds(new AccountChange().Embed(whitelist.get(1), e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
+                        try {
+                            try {
+                                channel.deleteMessageById(MessageId).queue();
+                                e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+                                Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_CHANGE), list1, list2));
+                                channel.sendMessageEmbeds(new AccountChange().Embed(whitelist.get(1), e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
+                                player.setWhitelisted(true);
+                                SMPPlugin.getInstance().WhitelistManager.add(member + "," + player.getName() + "," + player.getUniqueId());
+                                new DiscordConfigManager().LinkedWriter(member, player.getName() + " " + player.getUniqueId());
+                            }catch (HierarchyException ignored) {
+                                channel.sendMessageEmbeds(new RoleHierarchyError().Embed(e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
+                            }
+                        }catch (IllegalArgumentException ignored) {}
                     }else {
                         List<String> list1 = new ArrayList<>();
                         List<String> list2 = new ArrayList<>();
@@ -94,16 +106,20 @@ public class WhitelistMessageGetter extends ListenerAdapter {
                         list1.add("NAME");
                         list2.add(e.getMessage().getContentRaw());
 
-                        Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_ADD), list1, list2));
-                        channel.sendMessageEmbeds(new AccountAdded().Embed(e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
+                        try {
+                            try {
+                                channel.deleteMessageById(MessageId).queue();
+                                e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+                                Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_ADD), list1, list2));
+                                channel.sendMessageEmbeds(new AccountAdded().Embed(e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
+                                player.setWhitelisted(true);
+                                SMPPlugin.getInstance().WhitelistManager.add(member + "," + player.getName() + "," + player.getUniqueId());
+                                new DiscordConfigManager().LinkedWriter(member, player.getName() + " " + player.getUniqueId());
+                            }catch (HierarchyException ignored) {
+                                channel.sendMessageEmbeds(new RoleHierarchyError().Embed(e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
+                            }
+                        }catch (IllegalArgumentException ignored) {}
                     }
-                    channel.deleteMessageById(MessageId).queue();
-                    player.setWhitelisted(true);
-                    SMPPlugin.getInstance().WhitelistManager.add(member + "," + player.getName() + "," + player.getUniqueId());
-                    new DiscordConfigManager().LinkedWriter(member, player.getName() + " " + player.getUniqueId());
-                    try {
-                        e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
-                    }catch (IllegalArgumentException ignored) {}
                 }else if (statusCode == 400) {
                     List<String> list1 = new ArrayList<>();
                     List<String> list2 = new ArrayList<>();

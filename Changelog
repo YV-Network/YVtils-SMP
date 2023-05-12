@@ -1,29 +1,26 @@
 « Version 4.6.8.B1 Changelog »
 
-WARNING: THIS IS ONLY AN BETA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT FOR THIS VERSION!
+WARNING: THIS IS ONLY AN BETA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!
 
-Download:
+Download: https://modrinth.com/plugin/yvtils_smp/version/g61yt9cl
 
 » 1.19.4 Support
-The Server Version 1.19.4 is now official Supported with this Version.
-
-» Added InvSee/EcSee Feature
-    - Open Inventory's of other players with /invsee <playername>
-    - Open Enderchest's from players with /ecsee <playername>
+   The Server Version 1.19.4 is now official Supported with this Version.
 
 » Discord Module
-	/mcinfo Command -> Shows information's about the MC Server
-	/whitelist <foreceadd; remove; check> -> Add Users to the whitelist over Discord while using the Linking Feature of the plugin
-	Minecraft - Discord Chat Bridge -> Synchronize the global Minecraft Chat with a selected Discord Channel
-	Let Players whitelist themself, when they write their MC Ingame Name in a selected Channel
-	Console Channel - Execute Commands and see what is written to the console from one Discord Channel
-	In the Chat Sync Channel there will be Server Information Description
+   /mcinfo Command → Shows information's about the MC Server
+   /whitelist <foreceadd; remove; check> → Add Users to the whitelist over Discord while using the Linking Feature of the plugin
+   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel
+   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel
+   Console Channel → Execute Commands and see what is written to the console from one Discord Channel
+   Server Info → Shown in the chat sync channel description
+
 
 » Bug Fixes
 
 «================================»
 
-Looking forward for first Release Version. Still searching for some missing features or bugs.
+Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd <MC Name>
 
 «================================»
 

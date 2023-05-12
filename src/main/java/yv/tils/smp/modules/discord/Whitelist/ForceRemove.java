@@ -1,12 +1,20 @@
 package yv.tils.smp.modules.discord.Whitelist;
 
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.interaction.component.StringSelectInteractionEvent;
+import net.dv8tion.jda.api.exceptions.HierarchyException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.components.selections.SelectOption;
 import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.logger.ConsoleLog;
+import yv.tils.smp.modules.discord.BotManager.BotStartStop;
+import yv.tils.smp.modules.discord.EmbedManager.whitelist.RoleHierarchyError;
+import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.placeholder.StringReplacer;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
@@ -47,6 +55,8 @@ public class ForceRemove extends ListenerAdapter {
         if (e.getInteraction().getValues().isEmpty()) return;
         else {
 
+            Guild guild = e.getGuild();
+
             String values = e.getValues().toString();
 
             values = values.replace("[", "");
@@ -60,6 +70,19 @@ public class ForceRemove extends ListenerAdapter {
             player.setWhitelisted(false);
             new DiscordConfigManager().LinkedWriter(args[0], null);
 
+            User user = BotStartStop.getInstance().jda.getUserByTag(args[0]);
+
+            new ConsoleLog(user + " " + args[0]);
+
+            try {
+                try {
+                    guild.removeRoleFromMember(user, guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+                }catch (HierarchyException ignored) {
+                    e.reply("").setEmbeds(new RoleHierarchyError().Embed(guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).build()).setEphemeral(true).queue();
+                }
+            }catch (IllegalArgumentException ignored) {}
+
+
             List<String> list1 = new ArrayList();
             List<String> list2 = new ArrayList();
             list1.add("DISCORDUSER");
@@ -69,7 +92,7 @@ public class ForceRemove extends ListenerAdapter {
             list1.add("DCNAME");
             list2.add(args[0]);
 
-            Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_REMOVE), list1, list2));
+            Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_REMOVE), list1, list2));
             e.editMessageEmbeds(new yv.tils.smp.modules.discord.EmbedManager.whitelist.discord.ForceRemove().EmbedRemoved((list.size()-1), Bukkit.hasWhitelist(), args).build()).setActionRow(createMenu().build()).queue();
         }
     }
