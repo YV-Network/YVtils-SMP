@@ -39,27 +39,31 @@ Moderation Module:
     Rework of Moderation CMD
     Discord Linked Accounts Ban - When Account xyz get banned in Minecraft all Accounts linked with xyz#0000 should be banned in Minecraft
 
-Add bStats:
-x    Udemy Tutorial, how to add it
+bStats:
+x   Udemy Tutorial, how to add it
+    Show which modules are used in pie diagramms
 
 Status Module:
-x    Send Message which Status is set, when a Player joins - Sollte added sein
-x    Send a Message to the Player and the Console when a Status got successfully set - Sollte added sein
+x   Send Message which Status is set, when a Player joins - Sollte added sein
+x   Send a Message to the Player and the Console when a Status got successfully set - Sollte added sein
     Allow Status with spaces
+    Add Hex Code support
 
 Older Version Module:
     Piglin Trades (1.16.1):
-        Old Ender Pearl Chances
+        Old Ender Pearl Chances, etc (Old Trading Chances)
     Old Combat System (1.8.9):
+        No hit cooldown
 
 InvSee:
-    Access Inventory's of Offline Players
-    Edit Inventory's
+    Access Inventory's of Offline players
+    Edit Inventory's of other players
 
 Language System:
     Add Custom Language Value
+    Rework language strings
 
-MOTD System:
+MOTD System (Rework needed):
     Add more player Variables
     (Add Design Options)
 
@@ -69,10 +73,15 @@ Configs:
     Import Whitelist Config
 
 Waypoints:
-    General waypoints (Server side) and own waypoints (Client side)
+    General waypoints (Server side) and own waypoints ("Client" side)
 
 Scoreboard Builder:
     Many design options (i.e. Death count, Visible name, Player count, Server name)
-    (Ingame GUI)
+    (Ingame GUI to build the scoreboard )
 
-Bedrock Support (Geyser Support)
+Bedrock Support (GeyserMC Support)
+    Whitelist Feature for bedrock accounts
+    Check all other features for bugs through bedrock
+
+Older version support:
+    Try to add support down to 1.16(.1/.5)

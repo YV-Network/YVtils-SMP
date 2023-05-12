@@ -3,13 +3,11 @@ package yv.tils.smp.modules.discord.Whitelist;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.exceptions.HierarchyException;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.modules.discord.EmbedManager.whitelist.AccountAlreadyListed;
-import yv.tils.smp.modules.discord.EmbedManager.whitelist.AccountCantExist;
-import yv.tils.smp.modules.discord.EmbedManager.whitelist.AccountCheckError;
-import yv.tils.smp.modules.discord.EmbedManager.whitelist.AccountNotFound;
+import yv.tils.smp.modules.discord.EmbedManager.whitelist.*;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.placeholder.StringReplacer;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
@@ -76,12 +74,23 @@ public class ForceAdd {
                     list2.add(mc);
 
                     //Account Changed
-                    player.setWhitelisted(true);
-                    SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
-                    new DiscordConfigManager().LinkedWriter(dc_tag, mc+ " " + player.getUniqueId());
-                    try {
-                        guild.addRoleToMember(dc, guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
-                    }catch (IllegalArgumentException ignored) {}
+                    if (dc == null) {
+                        player.setWhitelisted(true);
+                        SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
+                        new DiscordConfigManager().LinkedWriter(dc_tag, mc+ " " + player.getUniqueId());
+                    }else {
+                        try {
+                            try {
+                                guild.addRoleToMember(dc, guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+                                player.setWhitelisted(true);
+                                SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
+                                new DiscordConfigManager().LinkedWriter(dc_tag, mc + " " + player.getUniqueId());
+                            } catch (HierarchyException ignored) {
+                                return new RoleHierarchyError().Embed(guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role")));
+                            }
+                        } catch (IllegalArgumentException ignored) {
+                        }
+                    }
                     Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_CHANGE), list1, list2));
                     return new yv.tils.smp.modules.discord.EmbedManager.whitelist.discord.ForceAdd().Replace(dc_tag, whitelist.get(1), mc);
                 }else {
@@ -96,12 +105,23 @@ public class ForceAdd {
                     list2.add(mc);
 
                     //Account Added
-                    player.setWhitelisted(true);
-                    SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
-                    new DiscordConfigManager().LinkedWriter(dc_tag, mc+ " " + player.getUniqueId());
-                    try {
-                        guild.addRoleToMember(dc, guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
-                    }catch (IllegalArgumentException ignored) {}
+                    if (dc == null) {
+                        player.setWhitelisted(true);
+                        SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
+                        new DiscordConfigManager().LinkedWriter(dc_tag, mc+ " " + player.getUniqueId());
+                    }else {
+                        try {
+                            try {
+                                guild.addRoleToMember(dc, guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+                                player.setWhitelisted(true);
+                                SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
+                                new DiscordConfigManager().LinkedWriter(dc_tag, mc + " " + player.getUniqueId());
+                            } catch (HierarchyException ignored) {
+                                return new RoleHierarchyError().Embed(guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role")));
+                            }
+                        } catch (IllegalArgumentException ignored) {
+                        }
+                    }
                     Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_ADD), list1, list2));
                     return new yv.tils.smp.modules.discord.EmbedManager.whitelist.discord.ForceAdd().Embed(mc, dc_tag);
                 }
