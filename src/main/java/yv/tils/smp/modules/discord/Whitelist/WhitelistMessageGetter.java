@@ -88,14 +88,21 @@ public class WhitelistMessageGetter extends ListenerAdapter {
                         try {
                             try {
                                 channel.deleteMessageById(MessageId).queue();
-                                e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+
+                                String role = new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role");
+                                role = role.replace(" ", "");
+                                String[] roles = role.split(",");
+                                for (int i = 0; i < roles.length; i++) {
+                                    e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(roles[i])).queue();
+                                }
+
                                 Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_CHANGE), list1, list2));
                                 channel.sendMessageEmbeds(new AccountChange().Embed(whitelist.get(1), e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
                                 player.setWhitelisted(true);
                                 SMPPlugin.getInstance().WhitelistManager.add(member + "," + player.getName() + "," + player.getUniqueId());
                                 new DiscordConfigManager().LinkedWriter(member, player.getName() + " " + player.getUniqueId());
                             }catch (HierarchyException ignored) {
-                                channel.sendMessageEmbeds(new RoleHierarchyError().Embed(e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
+                                channel.sendMessageEmbeds(new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), e.getGuild()).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
                             }
                         }catch (IllegalArgumentException ignored) {}
                     }else {
@@ -109,14 +116,21 @@ public class WhitelistMessageGetter extends ListenerAdapter {
                         try {
                             try {
                                 channel.deleteMessageById(MessageId).queue();
-                                e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+
+                                String role = new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role");
+                                role = role.replace(" ", "");
+                                String[] roles = role.split(",");
+                                for (int i = 0; i < roles.length; i++) {
+                                    e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(roles[i])).queue();
+                                }
+
                                 Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_ADD), list1, list2));
                                 channel.sendMessageEmbeds(new AccountAdded().Embed(e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
                                 player.setWhitelisted(true);
                                 SMPPlugin.getInstance().WhitelistManager.add(member + "," + player.getName() + "," + player.getUniqueId());
                                 new DiscordConfigManager().LinkedWriter(member, player.getName() + " " + player.getUniqueId());
                             }catch (HierarchyException ignored) {
-                                channel.sendMessageEmbeds(new RoleHierarchyError().Embed(e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
+                                channel.sendMessageEmbeds(new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), e.getGuild()).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
                             }
                         }catch (IllegalArgumentException ignored) {}
                     }

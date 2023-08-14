@@ -12,7 +12,7 @@ import java.io.IOException;
  * @since 4.6.8
  */
 public class StatsConfig {
-    File file = new File(SMPPlugin.getInstance().getDataFolder() + "/discord", "stats.yml");
+    File file = new File(SMPPlugin.getInstance().getDataFolder() + "/Discord", "stats.yml");
     YamlConfiguration ymlfile = YamlConfiguration.loadConfiguration(file);
 
     public void StringInput() {

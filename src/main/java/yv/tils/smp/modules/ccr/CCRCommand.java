@@ -1,4 +1,4 @@
-package yv.tils.smp.modules.fun.ccr;
+package yv.tils.smp.modules.ccr;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

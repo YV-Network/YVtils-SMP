@@ -1,26 +1,13 @@
-« Version 4.6.8.B1 Changelog »
+« Version 4.6.8.1.A1 Changelog »
 
-WARNING: THIS IS ONLY AN BETA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!
+WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!
 
-Download: https://modrinth.com/plugin/yvtils_smp/version/g61yt9cl
-
-» 1.19.4 Support
-   The Server Version 1.19.4 is now official Supported with this Version.
+Download: BUILD YOURSELF ONLY
 
 » Discord Module
-   /mcinfo Command → Shows information's about the MC Server
-   /whitelist <foreceadd; remove; check> → Add Users to the whitelist over Discord while using the Linking Feature of the plugin
-   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel
-   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel
-   Console Channel → Execute Commands and see what is written to the console from one Discord Channel
-   Server Info → Shown in the chat sync channel description
-
+    Added support for adding multiple roles
 
 » Bug Fixes
-
-«================================»
-
-Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd <MC Name>
 
 «================================»
 

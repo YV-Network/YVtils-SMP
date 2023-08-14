@@ -1,12 +1,40 @@
 TODO
+
+---------- IMPORTANT ----------
+
+- Recode everything in the Plugin!
+- Change Version Tag to something like CH2 1.0.0
+    - CH2 = Chapter 2
+    - 1 - Big Update .0 - Small Updates .0 - Bug Fixes/Little Changes
+- Change Version Checking System to something like in YVtils-AC the Mod Blacklist is using
+- Maybe switch to Paper as API?
+- Retranslate the Plugin
+- Work this list up!
+    - Following Points are important:
+        - Fly
+        - Discord Module
+        - Documentation & Help Commands (maybe even GUIs?)
+        - Readd Commands like /ban, /kick, /msg, /pardon
+        - Add Hex Support
+        - Rework MOTDs (Own Module?)
+        - Add Console Support for more Commands
+- Move things like Vanish and Inv See to an other Plugin (Maybe) (YVtils-Admin?)
+
+-------------------------------
+
+
 General:
     Some Commands with Player Arguments doesn't check if player is online
     Make Update Checker work on PloudOS, etc
 
+Sit:
+x    Switch from non-Sneak to Sneak or remove completely
+
 CCR:
     Items bei Server Stop nicht löschen
     Eigene Rezepte unterstützen und speichern
-    Allow to craft multiple items
+x   Allow to craft multiple items
+x   Fix glass drop when accepting without items
 
 Fly:
     General:
@@ -15,14 +43,16 @@ Fly:
         Selber Speed setzen = Leere Zeile im Chat (Liegt am senden einer Nachricht welche 'null' ist (sender.sendMessage(changeother)))
         Speed reset = Falsche Nachricht
 
+Heal:
+    Heal player to full life, and not only to 20 health
 
-Vanish Rework (4.6.9):
+Vanish:
     Add to Administration Module
     (Bug) Visible after Gamemode Switch
     Mobs should ignore vanished Players
     Vanish Layers (Each Layer can see same layer and smaller (L3 > L2 > L1 > 0))
 
-Discord Module Rework (4.6.8):
+Discord Module:
 x    Whitelist Commands (Add; Remove; Check)
 x    MC Server Info (Show an in config set IP, linked MC Account from cmd sender, etc)
 x    Discord Minecraft Chat Sync
@@ -31,6 +61,12 @@ x   Fix Color Code Characters in Discord
 x   Channel Topic (Player count, Version, etc)
     Server Status Channels (Player count, Version, etc)
     Sync Discord Roles with MC Permissions
+    Fix Discord names with .
+    Linux creating double discord folder, of wich only one works
+    Linux Server Icon getter does not work
+    Whitelist Force Remove does not work with 25+ whitelisted players
+    Update to pomelo system
+    Bot is hanging up, for failed usernames
 
 Help Command & GUI (Latest 4.7):
     Tutorial Command for Features in Discord (Maybe with Buttons)
@@ -48,12 +84,16 @@ x   Send Message which Status is set, when a Player joins - Sollte added sein
 x   Send a Message to the Player and the Console when a Status got successfully set - Sollte added sein
     Allow Status with spaces
     Add Hex Code support
+    Make maximum length ignore color codes
 
 Older Version Module:
     Piglin Trades (1.16.1):
         Old Ender Pearl Chances, etc (Old Trading Chances)
     Old Combat System (1.8.9):
         No hit cooldown
+
+Mainteance Mode:
+    Discord Chat Sync
 
 InvSee:
     Access Inventory's of Offline players

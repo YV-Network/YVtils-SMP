@@ -20,8 +20,8 @@ public class StatsChannel {
 
     public void createChannel() {
 
-        //new DiscordConfigManager().StatsWritter(ChannelID, Guild);
-        new DiscordConfigManager().StatsWritter("", "");
+        //new DiscordConfigManager().StatsWriter(ChannelID, Guild);
+        new DiscordConfigManager().StatsWriter("", "");
 
         List<Guild> guilds = BotStartStop.getInstance().jda.getGuilds();
 

@@ -9,23 +9,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="« Version 4.6.8.B1 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN BETA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/GF7hNI3o&#10;&#10;» 1.19.4 Support&#10;   The Server Version 1.19.4 is now official Supported with this Version.&#10;   &#10;» Discord Module&#10;   /mcinfo Command → Shows information's about the MC Server&#10;   /whitelist &lt;foreceadd; remove; check&gt; → Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel&#10;   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;   Console Channel → Execute Commands and see what is written to the console from one Discord Channel&#10;   Server Info → Shown in the chat sync channel description&#10;&#9;&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd &lt;MC Name&gt;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/RoleHierarchyError.java" afterDir="false" />
+    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="« Version 4.6.8 Changelog »&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/g61yt9cl&#10;&#10;» 1.19.4 Support&#10;   The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;   /mcinfo Command → Shows information's about the MC Server&#10;   /whitelist &lt;foreceadd; remove; check&gt; → Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel&#10;   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;   Console Channel → Execute Commands and see what is written to the console from one Discord Channel&#10;   Server Info → Shown in the chat sync channel description&#10;&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd &lt;MC Name&gt;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/recipes/GlowingNetheriteElytra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/recipes/TestRecipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CODE_OF_CONDUCT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Changelog" beforeDir="false" afterPath="$PROJECT_DIR$/Changelog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ModerationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ModerationCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/autocompleter/ModerationAutoCompleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/autocompleter/ModerationAutoCompleter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/register/Modules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/register/Modules.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/RoleHierarchyError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/RoleHierarchyError.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/Whitelist/ForceAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/Whitelist/ForceAdd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/Whitelist/ForceRemove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/Whitelist/ForceRemove.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/Whitelist/WhitelistMessageGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/Whitelist/WhitelistMessageGetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/stats/StatsDescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/stats/StatsDescription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/stats/StatsChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/stats/StatsChannel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/CCRCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/CCRCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/InvListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/InvListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/InvFrameRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/recipes/InvFrameRecipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/LightBlockRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/recipes/LightBlockRecipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/OldRecipes_BACKUP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/recipes/OldRecipes_BACKUP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/TestRecipe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/sit/StairClickListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/ConfigModeration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/ConfigModeration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordModuleConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordModuleConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/LinkedAccountsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/LinkedAccountsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/StatsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/StatsConfig.java" afterDir="false" />
     </list>
-    <list id="1a4b194b-1eb3-4e46-a348-8f821c6a9b7a" name="Changes by j" comment="Changes by j">
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/InvFrameRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/InvFrameRecipe.java" afterDir="false" />
-    </list>
+    <list id="1a4b194b-1eb3-4e46-a348-8f821c6a9b7a" name="Changes by j" comment="Changes by j" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,16 +109,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;92ce74ff&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="21DnUGA8C2DhSbIFn2yTkEl4LZY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -111,33 +125,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "B:/Coding/DiscordWhitelister",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.group.other",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;B:/Coding/_YVtils-SMP/.idea/runConfigurations&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\YVtils-SMP\src\main\java\yv\tils\smp\utils" />
@@ -161,45 +175,10 @@
     </key>
   </component>
   <component name="RunManager" selected="Maven.YVtils-SMP [clean,package]">
-    <configuration name="CompileWithServer_1.19" type="JarApplication">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/../Minecraft_Server/ver/paper-1.19.3.jar" />
-      <option name="VM_PARAMETERS" value="-Xmx4G -DIReallyKnowWhatIAmDoingISwear" />
-      <option name="PROGRAM_PARAMETERS" value="nogui" />
-      <option name="WORKING_DIRECTORY" value="B:\Coding\Minecraft_Server" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2">
-        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean package" />
-      </method>
-    </configuration>
-    <configuration name="YVtils-SMP [clean,package]" type="MavenRunConfiguration" factoryName="Maven">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-                <option value="package" />
-              </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="JAR Application.CompileWithServer_1.19" />
       <item itemvalue="Maven.YVtils-SMP [clean,package]" />
+      <item itemvalue="Maven.YVtils-SMP JAR" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -442,7 +421,25 @@
       <workItem from="1682108350575" duration="28128000" />
       <workItem from="1682611065628" duration="6091000" />
       <workItem from="1682863637022" duration="3630000" />
-      <workItem from="1683568963600" duration="43828000" />
+      <workItem from="1683568963600" duration="49536000" />
+      <workItem from="1684526668101" duration="345000" />
+      <workItem from="1685098216828" duration="4503000" />
+      <workItem from="1685199113720" duration="1146000" />
+      <workItem from="1685202985498" duration="22000" />
+      <workItem from="1685276114905" duration="61000" />
+      <workItem from="1685276398164" duration="8576000" />
+      <workItem from="1686220221275" duration="37000" />
+      <workItem from="1686575150042" duration="1902000" />
+      <workItem from="1686594242660" duration="878000" />
+      <workItem from="1686769208562" duration="1031000" />
+      <workItem from="1688412446514" duration="643000" />
+      <workItem from="1688420988860" duration="6346000" />
+      <workItem from="1689434244735" duration="1273000" />
+      <workItem from="1690459225906" duration="13069000" />
+      <workItem from="1690475266096" duration="184000" />
+      <workItem from="1690475476500" duration="2719000" />
+      <workItem from="1690478273903" duration="4860000" />
+      <workItem from="1691418325061" duration="614000" />
     </task>
     <task id="LOCAL-00007" summary="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version.">
       <created>1637869169288</created>
@@ -710,7 +707,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683753775379</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="« Version 4.6.8 Changelog »&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/g61yt9cl&#10;&#10;» 1.19.4 Support&#10;   The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;   /mcinfo Command → Shows information's about the MC Server&#10;   /whitelist &lt;foreceadd; remove; check&gt; → Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel&#10;   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;   Console Channel → Execute Commands and see what is written to the console from one Discord Channel&#10;   Server Info → Shown in the chat sync channel description&#10;&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd &lt;MC Name&gt;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204.">
+      <created>1683924416066</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1683924416066</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -732,7 +736,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="With this Update the /seed Command got Blocked for all Players without a Permission give them an Error Message. Players with the Permission must add an Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version." />
     <MESSAGE value="Deutsch:&#10;Kleine Änderung für den Config Versions Update Announcer&#10;Server Start Announce Nachricht für wichtige Infos vom Coder&#10;&#10;Neue Config Version&#10;&#10;English:&#10;Little Changes for the Config Version Update Announcer&#10;Server Start Announce Message for important Message from the Coder&#10;&#10;New Config Version" />
     <MESSAGE value="Deutsch:&#10;Plugin Update auf die Minecraft Version 1.18&#10;&#10;English:&#10;Updated the Plugin for the Minecraft Version 1.18" />
     <MESSAGE value="At this Time this Version is available, you all can have the EVENT-PREMIUM-KEY&#10;without me giving it to you.&#10;&#10;At the Moment no Premium Features are available, but soon there will come some.&#10;&#10;The Download for this Version is available until 01.01.2022 or I forgot to upload a new version then it's no longer aviable." />
@@ -757,7 +760,8 @@
     <MESSAGE value="« Version 4.6.8.A2 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;&#9;/mcinfo Command -&gt; Shows informations about the MC Server&#10;&#9;/whitelist &lt;foreceadd; remove; check&gt; -&gt; Add Users to the whitelist over Discord while using the Linkink Feature of the plugin&#10;&#9;Minecraft - Discord Chat Bridge -&gt; Syncronyze the globa Minecraft Chat with a selected Discord Channel&#10;&#9;Let Players whitelist themself, when they write their MC Ingame Name in a selected Channel&#10;&#9;Console Channel - Execute Commands and see what is written to the console from one Discord Channel&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
     <MESSAGE value="« Version 4.6.8.A3 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;&#9;/mcinfo Command -&gt; Shows information about the MC Server&#10;&#9;/whitelist &lt;foreceadd; remove; check&gt; -&gt; Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;&#9;Minecraft - Discord Chat Bridge -&gt; Synchronize the global Minecraft Chat with a selected Discord Channel&#10;&#9;Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;&#9;Console Channel - Execute Commands and see what is written to the console from one Discord Channel&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
     <MESSAGE value="« Version 4.6.8.B1 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN BETA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/GF7hNI3o&#10;&#10;» 1.19.4 Support&#10;   The Server Version 1.19.4 is now official Supported with this Version.&#10;   &#10;» Discord Module&#10;   /mcinfo Command → Shows information's about the MC Server&#10;   /whitelist &lt;foreceadd; remove; check&gt; → Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel&#10;   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;   Console Channel → Execute Commands and see what is written to the console from one Discord Channel&#10;   Server Info → Shown in the chat sync channel description&#10;&#9;&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd &lt;MC Name&gt;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
-    <option name="LAST_COMMIT_MESSAGE" value="« Version 4.6.8.B1 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN BETA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/GF7hNI3o&#10;&#10;» 1.19.4 Support&#10;   The Server Version 1.19.4 is now official Supported with this Version.&#10;   &#10;» Discord Module&#10;   /mcinfo Command → Shows information's about the MC Server&#10;   /whitelist &lt;foreceadd; remove; check&gt; → Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel&#10;   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;   Console Channel → Execute Commands and see what is written to the console from one Discord Channel&#10;   Server Info → Shown in the chat sync channel description&#10;&#9;&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd &lt;MC Name&gt;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
+    <MESSAGE value="« Version 4.6.8 Changelog »&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/g61yt9cl&#10;&#10;» 1.19.4 Support&#10;   The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;   /mcinfo Command → Shows information's about the MC Server&#10;   /whitelist &lt;foreceadd; remove; check&gt; → Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel&#10;   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;   Console Channel → Execute Commands and see what is written to the console from one Discord Channel&#10;   Server Info → Shown in the chat sync channel description&#10;&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd &lt;MC Name&gt;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
+    <option name="LAST_COMMIT_MESSAGE" value="« Version 4.6.8 Changelog »&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/g61yt9cl&#10;&#10;» 1.19.4 Support&#10;   The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;   /mcinfo Command → Shows information's about the MC Server&#10;   /whitelist &lt;foreceadd; remove; check&gt; → Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel&#10;   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;   Console Channel → Execute Commands and see what is written to the console from one Discord Channel&#10;   Server Info → Shown in the chat sync channel description&#10;&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd &lt;MC Name&gt;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1036,6 +1040,26 @@
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java</url>
           <line>124</line>
           <option name="timeStamp" value="221" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/InvListener.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="222" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/InvListener.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="223" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/InvListener.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/InvListener.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="225" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

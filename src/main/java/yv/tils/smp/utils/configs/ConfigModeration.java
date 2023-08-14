@@ -114,6 +114,7 @@ public class ConfigModeration {
         funmodule.addDefault("CCR.General", true);
         funmodule.addDefault("CCR.InvisibleItemFrame", true);
         funmodule.addDefault("CCR.LightBlock", true);
+        funmodule.addDefault("CCR.GlowingNetheriteElytra", true);
         funmodule.addDefault("Sit.General", true);
         funmodule.options().copyDefaults(true);
 

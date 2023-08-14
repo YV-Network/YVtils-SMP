@@ -4,11 +4,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.modules.discord.BotManager.BotStartStop;
-import yv.tils.smp.modules.fun.ccr.CCRCommand;
-import yv.tils.smp.modules.fun.ccr.InvListener;
+import yv.tils.smp.modules.ccr.CCRCommand;
+import yv.tils.smp.modules.ccr.InvListener;
 import yv.tils.smp.modules.fun.sit.DismountListener;
 import yv.tils.smp.modules.fun.sit.SitCommand;
-import yv.tils.smp.modules.fun.sit.StairClickListener;
 import yv.tils.smp.modules.status.JoinQuitStatus;
 import yv.tils.smp.modules.status.StatusCommand;
 import yv.tils.smp.modules.status.StatusCommandCompleter;
@@ -48,7 +47,6 @@ public class Modules {
         if (new ConfigModeration().ConfigRequest("FunModule").getBoolean("Sit.General")) {
             main.getCommand("sit").setExecutor(new SitCommand());
             manager.registerEvents(new DismountListener(), main);
-            manager.registerEvents(new StairClickListener(), main);
         }
 
         //Timber

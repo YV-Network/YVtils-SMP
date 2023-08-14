@@ -76,9 +76,15 @@ public class ForceRemove extends ListenerAdapter {
 
             try {
                 try {
-                    guild.removeRoleFromMember(user, guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+                    String role = new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role");
+                    role = role.replace(" ", "");
+                    String[] roles = role.split(",");
+                    for (int i = 0; i < roles.length; i++) {
+                        guild.removeRoleFromMember(user, guild.getRoleById(roles[i])).queue();
+                    }
+
                 }catch (HierarchyException ignored) {
-                    e.reply("").setEmbeds(new RoleHierarchyError().Embed(guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).build()).setEphemeral(true).queue();
+                    e.reply("").setEmbeds(new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), guild).build()).setEphemeral(true).queue();
                 }
             }catch (IllegalArgumentException ignored) {}
 

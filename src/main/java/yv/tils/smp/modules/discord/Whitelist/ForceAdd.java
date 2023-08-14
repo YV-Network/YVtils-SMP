@@ -4,6 +4,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.exceptions.HierarchyException;
+import net.dv8tion.jda.api.interactions.components.selections.SelectOption;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import yv.tils.smp.SMPPlugin;
@@ -81,12 +82,18 @@ public class ForceAdd {
                     }else {
                         try {
                             try {
-                                guild.addRoleToMember(dc, guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+                                String role = new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role");
+                                role = role.replace(" ", "");
+                                String[] roles = role.split(",");
+                                for (int i = 0; i < roles.length; i++) {
+                                    guild.addRoleToMember(dc, guild.getRoleById(roles[i])).queue();
+                                }
+
                                 player.setWhitelisted(true);
                                 SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
                                 new DiscordConfigManager().LinkedWriter(dc_tag, mc + " " + player.getUniqueId());
                             } catch (HierarchyException ignored) {
-                                return new RoleHierarchyError().Embed(guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role")));
+                                return new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), guild);
                             }
                         } catch (IllegalArgumentException ignored) {
                         }
@@ -112,14 +119,21 @@ public class ForceAdd {
                     }else {
                         try {
                             try {
-                                guild.addRoleToMember(dc, guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+                                String role = new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role");
+                                role = role.replace(" ", "");
+                                String[] roles = role.split(",");
+                                for (int i = 0; i < roles.length; i++) {
+                                    guild.addRoleToMember(dc, guild.getRoleById(roles[i])).queue();
+                                }
+
                                 player.setWhitelisted(true);
                                 SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
                                 new DiscordConfigManager().LinkedWriter(dc_tag, mc + " " + player.getUniqueId());
                             } catch (HierarchyException ignored) {
-                                return new RoleHierarchyError().Embed(guild.getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role")));
+                                return new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), guild);
                             }
                         } catch (IllegalArgumentException ignored) {
+                            System.out.println(ignored);
                         }
                     }
                     Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_ADD), list1, list2));
