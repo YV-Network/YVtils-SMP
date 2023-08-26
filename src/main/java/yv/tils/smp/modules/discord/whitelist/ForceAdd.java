@@ -1,10 +1,9 @@
-package yv.tils.smp.modules.discord.Whitelist;
+package yv.tils.smp.modules.discord.whitelist;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.exceptions.HierarchyException;
-import net.dv8tion.jda.api.interactions.components.selections.SelectOption;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import yv.tils.smp.SMPPlugin;
@@ -23,21 +22,19 @@ import java.util.List;
 
 /**
  * @version 4.6.8
- * @since 4.6.8
+ * @since 4.6.8.1
  */
 public class ForceAdd {
 
     public EmbedBuilder onMessageReceived(String mc, Member dc, Member exec, Guild guild) {
         OfflinePlayer player = Bukkit.getOfflinePlayer(mc);
-        String dc_tag = mc + "#0000";
+        String UserID = "~"  + mc;
+        String UserName = "~" + mc;
 
         try {
-            dc_tag = dc.getUser().getAsTag();
+            UserID = dc.getUser().getId();
+            UserName = dc.getUser().getGlobalName();
         }catch (NullPointerException ignored) {}
-
-        dc_tag = dc_tag.replace(",", "");
-        dc_tag = dc_tag.replace("[", "");
-        dc_tag = dc_tag.replace("]", "");
 
         if (!mc.matches("[a-zA-Z0-9_]+")) {
             //Account can't exist
@@ -54,21 +51,21 @@ public class ForceAdd {
             URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + mc);
             HttpURLConnection http = (HttpURLConnection)url.openConnection();
             int statusCode = http.getResponseCode();
-            if (statusCode == 200) {
-                if (new ImportWhitelist().reader(dc_tag, null, null).contains(dc_tag)) {
+            if (statusCode == HttpURLConnection.HTTP_OK) {
+                if (new ImportWhitelist().reader(UserID, null, null).contains(UserID)) {
 
-                    List<String> whitelist = new ImportWhitelist().reader(dc_tag, null, null);
+                    List<String> whitelist = new ImportWhitelist().reader(UserID, null, null);
 
                     OfflinePlayer playerwhitelistremove = Bukkit.getOfflinePlayer(whitelist.get(1));
                     playerwhitelistremove.setWhitelisted(false);
-                    whitelistRemove(dc_tag, playerwhitelistremove.getName(), playerwhitelistremove.getUniqueId().toString());
+                    whitelistRemove(UserID, playerwhitelistremove.getName(), playerwhitelistremove.getUniqueId().toString());
 
                     List<String> list1 = new ArrayList();
                     List<String> list2 = new ArrayList();
                     list1.add("DISCORDUSER");
-                    list2.add(exec.getUser().getAsTag());
+                    list2.add(exec.getUser().getGlobalName());
                     list1.add("DCNAME");
-                    list2.add(dc_tag);
+                    list2.add(dc.getUser().getGlobalName());
                     list1.add("OLDNAME");
                     list2.add(whitelist.get(1));
                     list1.add("NEWNAME");
@@ -77,74 +74,77 @@ public class ForceAdd {
                     //Account Changed
                     if (dc == null) {
                         player.setWhitelisted(true);
-                        SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
-                        new DiscordConfigManager().LinkedWriter(dc_tag, mc+ " " + player.getUniqueId());
+                        SMPPlugin.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
+                        new DiscordConfigManager().LinkedWriter(UserID, mc+ " " + player.getUniqueId());
                     }else {
                         try {
                             try {
                                 String role = new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role");
                                 role = role.replace(" ", "");
                                 String[] roles = role.split(",");
-                                for (int i = 0; i < roles.length; i++) {
-                                    guild.addRoleToMember(dc, guild.getRoleById(roles[i])).queue();
-                                }
+
+                                try {
+                                    for (int i = 0; i < roles.length; i++) {
+                                        guild.addRoleToMember(dc, guild.getRoleById(roles[i])).queue();
+                                    }
+                                }catch (NumberFormatException ignored) {}
 
                                 player.setWhitelisted(true);
-                                SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
-                                new DiscordConfigManager().LinkedWriter(dc_tag, mc + " " + player.getUniqueId());
+                                SMPPlugin.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
+                                new DiscordConfigManager().LinkedWriter(UserID, mc + " " + player.getUniqueId());
                             } catch (HierarchyException ignored) {
                                 return new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), guild);
                             }
-                        } catch (IllegalArgumentException ignored) {
-                        }
+                        } catch (IllegalArgumentException ignored) {}
                     }
                     Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_CHANGE), list1, list2));
-                    return new yv.tils.smp.modules.discord.EmbedManager.whitelist.discord.ForceAdd().Replace(dc_tag, whitelist.get(1), mc);
+                    return new yv.tils.smp.modules.discord.EmbedManager.whitelist.discord.ForceAdd().Replace(UserName, whitelist.get(1), mc);
                 }else {
 
                     List<String> list1 = new ArrayList();
                     List<String> list2 = new ArrayList();
                     list1.add("DISCORDUSER");
-                    list2.add(exec.getUser().getAsTag());
+                    list2.add(exec.getUser().getGlobalName());
                     list1.add("DCNAME");
-                    list2.add(dc_tag);
+                    list2.add(UserName);
                     list1.add("MCNAME");
                     list2.add(mc);
 
                     //Account Added
                     if (dc == null) {
                         player.setWhitelisted(true);
-                        SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
-                        new DiscordConfigManager().LinkedWriter(dc_tag, mc+ " " + player.getUniqueId());
+                        SMPPlugin.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
+                        new DiscordConfigManager().LinkedWriter(UserID, mc+ " " + player.getUniqueId());
                     }else {
                         try {
                             try {
                                 String role = new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role");
                                 role = role.replace(" ", "");
                                 String[] roles = role.split(",");
-                                for (int i = 0; i < roles.length; i++) {
-                                    guild.addRoleToMember(dc, guild.getRoleById(roles[i])).queue();
-                                }
+
+                                try {
+                                    for (int i = 0; i < roles.length; i++) {
+                                        guild.addRoleToMember(dc, guild.getRoleById(roles[i])).queue();
+                                    }
+                                }catch (NumberFormatException ignored) {}
 
                                 player.setWhitelisted(true);
-                                SMPPlugin.getInstance().WhitelistManager.add(dc_tag + "," + player.getName() + "," + player.getUniqueId());
-                                new DiscordConfigManager().LinkedWriter(dc_tag, mc + " " + player.getUniqueId());
+                                SMPPlugin.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
+                                new DiscordConfigManager().LinkedWriter(UserID, mc + " " + player.getUniqueId());
                             } catch (HierarchyException ignored) {
                                 return new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), guild);
                             }
-                        } catch (IllegalArgumentException ignored) {
-                            System.out.println(ignored);
-                        }
+                        } catch (IllegalArgumentException ignored) {}
                     }
                     Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_ADD), list1, list2));
-                    return new yv.tils.smp.modules.discord.EmbedManager.whitelist.discord.ForceAdd().Embed(mc, dc_tag);
+                    return new yv.tils.smp.modules.discord.EmbedManager.whitelist.discord.ForceAdd().Embed(mc, UserName);
                 }
-            }else if (statusCode == 400) {
+            }else if (statusCode == HttpURLConnection.HTTP_BAD_REQUEST) {
 
                 List<String> list1 = new ArrayList();
                 List<String> list2 = new ArrayList();
                 list1.add("DISCORDUSER");
-                list2.add(dc_tag);
+                list2.add(UserName);
                 list1.add("NAME");
                 list2.add(mc);
 
@@ -155,7 +155,7 @@ public class ForceAdd {
                 List<String> list1 = new ArrayList();
                 List<String> list2 = new ArrayList();
                 list1.add("DISCORDUSER");
-                list2.add(dc_tag);
+                list2.add(UserName);
                 list1.add("NAME");
                 list2.add(mc);
 

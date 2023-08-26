@@ -7,7 +7,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.modules.discord.sync.stats.StatsDescription;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package yv.tils.smp.modules.discord.Whitelist;
+package yv.tils.smp.modules.discord.whitelist;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import org.bukkit.Bukkit;

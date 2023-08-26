@@ -19,6 +19,7 @@ TODO
         - Rework MOTDs (Own Module?)
         - Add Console Support for more Commands
 - Move things like Vanish and Inv See to an other Plugin (Maybe) (YVtils-Admin?)
+- Switch from MC Names to UUIDs
 
 -------------------------------
 
@@ -59,14 +60,16 @@ x    Discord Minecraft Chat Sync
 x        Set side bar Color in DC to the Status Color if set
 x   Fix Color Code Characters in Discord
 x   Channel Topic (Player count, Version, etc)
+x   Fix Discord names with .
+x   Linux creating double discord folder, of wich only one works
+x   Linux Server Icon getter does not work
+x   Whitelist Force Remove does not work with 25+ whitelisted players
+x   Update to pomelo system
+x   Bot is hanging up, for failed usernames
     Server Status Channels (Player count, Version, etc)
     Sync Discord Roles with MC Permissions
-    Fix Discord names with .
-    Linux creating double discord folder, of wich only one works
-    Linux Server Icon getter does not work
-    Whitelist Force Remove does not work with 25+ whitelisted players
-    Update to pomelo system
-    Bot is hanging up, for failed usernames
+    Buttons to navigate through Force Remove List
+
 
 Help Command & GUI (Latest 4.7):
     Tutorial Command for Features in Discord (Maybe with Buttons)
@@ -98,6 +101,7 @@ Mainteance Mode:
 InvSee:
     Access Inventory's of Offline players
     Edit Inventory's of other players
+    Offhand of players not shown
 
 Language System:
     Add Custom Language Value

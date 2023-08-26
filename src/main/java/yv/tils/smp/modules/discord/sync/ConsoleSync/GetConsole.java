@@ -1,8 +1,6 @@
-package yv.tils.smp.modules.discord.ConsoleSync;
+package yv.tils.smp.modules.discord.sync.ConsoleSync;
 
 import net.dv8tion.jda.api.JDA;
-import org.apache.logging.log4j.core.Filter;
-import org.apache.logging.log4j.core.Layout;
 import org.apache.logging.log4j.core.LogEvent;
 import org.apache.logging.log4j.core.appender.AbstractAppender;
 import org.bukkit.Bukkit;
@@ -25,7 +23,7 @@ public class GetConsole extends AbstractAppender {
     private final JDA jda;
 
     public GetConsole(SMPPlugin plugin, JDA jda) {
-        super("MyLogAppender" + System.currentTimeMillis(), (Filter)null, (Layout)null);
+        super("MyLogAppender" + System.currentTimeMillis(), null, null);
         this.plugin = plugin;
         this.jda = jda;
         this.start();
@@ -63,8 +61,8 @@ public class GetConsole extends AbstractAppender {
                             GetConsole.this.jda.getTextChannelById(channel).sendMessage("```" + GetConsole.this.messages + "```").queue();
                         } catch (NumberFormatException ignored) {
                             Bukkit.getLogger().severe("[YVtils-SMP -> ConsoleSync] " +
-                                    LanguageFile.DirectFormatter("Invalid channel ID: '" + channel + "'! Make sure to put a valid channel ID in the config file!",
-                                            "Ungültige Kanal ID: '" + channel + "'! Kontrolliere/Korrigiere noch mal die Kanal ID in der Config!"));
+                                    LanguageFile.DirectFormatter("Invalid channel ID: '" + channel + "'! Make sure to put a valid channel ID in the config file or disable this feature! (plugins/YVtils-SMP/Discord/config.yml/ConsoleSync)",
+                                            "Ungültige Kanal ID: '" + channel + "'! Kontrolliere/Korrigiere noch mal die Kanal ID in der Config oder deaktiviere diese Funktion! (plugins/YVtils-SMP/Discord/config.yml/ConsoleSync)"));
                             this.cancel();
                         }
                     }

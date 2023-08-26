@@ -7,7 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import yv.tils.smp.logger.ConsoleLog;
 import yv.tils.smp.manager.register.Summarizer;
 import yv.tils.smp.manager.unregister.Other;
-import yv.tils.smp.modules.discord.Whitelist.ImportWhitelist;
+import yv.tils.smp.modules.discord.whitelist.ImportWhitelist;
 import yv.tils.smp.modules.fun.sit.SitManager;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.placeholder.StringReplacer;
@@ -44,6 +44,7 @@ public final class SMPPlugin extends JavaPlugin {
     public boolean maintenances;
     public boolean globalmute;
     public boolean database_connection;
+    public boolean chatSyncID = true;
 
     public void onLoad() {
         instance = this;

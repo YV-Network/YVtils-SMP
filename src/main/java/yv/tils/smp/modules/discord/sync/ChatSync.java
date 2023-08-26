@@ -11,12 +11,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.modules.discord.BotManager.BotStartStop;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
+import yv.tils.smp.utils.configs.language.LanguageFile;
 
 /**
  * @version 4.6.8
- * @since 4.6.8
+ * @since 4.6.8.1
  */
 public class ChatSync extends ListenerAdapter implements Listener {
 
@@ -26,6 +28,7 @@ public class ChatSync extends ListenerAdapter implements Listener {
     public void onEvent(AsyncPlayerChatEvent e) {
         if (!yml.getBoolean("ChatSync.Enabled")) return;
         if (!e.getPlayer().hasPermission("yvtils.smp.chatsync")) return;
+        if (!SMPPlugin.getInstance().chatSyncID) return;
 
         String message = e.getMessage();
         Player sender = e.getPlayer();
@@ -49,7 +52,7 @@ public class ChatSync extends ListenerAdapter implements Listener {
         if (e.getMember().getUser().isBot()) return;
 
         String message = e.getMessage().getContentRaw();
-        String sender = e.getMember().getUser().getAsTag();
+        String sender = e.getMember().getUser().getName();
 
         sendMCMessage(sender, message);
     }
@@ -59,7 +62,15 @@ public class ChatSync extends ListenerAdapter implements Listener {
     }
 
     public void sendDCMessage(Player sender, String message) {
-        TextChannel textChannel = BotStartStop.getInstance().jda.getTextChannelById(yml.getString("ChatSync.Channel"));
-        textChannel.sendMessageEmbeds(new ChatSyncEmbed().Embed(sender, message).build()).queue();
+        try {
+            TextChannel textChannel = BotStartStop.getInstance().jda.getTextChannelById(yml.getString("ChatSync.Channel"));
+            textChannel.sendMessageEmbeds(new ChatSyncEmbed().Embed(sender, message).build()).queue();
+        }catch (NumberFormatException ignored) {
+            Bukkit.getLogger().severe("[YVtils-SMP -> ChatSync] " +
+                    LanguageFile.DirectFormatter("Invalid channel ID: '" + yml.getString("ChatSync.Channel") + "'! Make sure to put a valid channel ID in the config file or disable this feature! (plugins/YVtils-SMP/Discord/config.yml/ChatSync)",
+                            "Ungültige Kanal ID: '" + yml.getString("ChatSync.Channel") + "'! Kontrolliere/Korrigiere noch mal die Kanal ID in der Config oder deaktiviere diese Funktion! (plugins/YVtils-SMP/Discord/config.yml/ChatSync)"));
+
+            SMPPlugin.getInstance().chatSyncID = false;
+        }
     }
 }

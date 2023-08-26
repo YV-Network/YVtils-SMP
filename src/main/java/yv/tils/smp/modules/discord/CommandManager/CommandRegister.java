@@ -44,33 +44,12 @@ public class CommandRegister extends ListenerAdapter {
         }
     }
 
-    /*
-    private void HelpCommand(List<CommandData> commandData) {
-        //Ingame
-        List<Command.Choice> ingamehelplist = new ArrayList<>();
-        ingamehelplist.add(new Command.Choice("CCR", "CCR"));
-        ingamehelplist.add(new Command.Choice("Sit", "SIT"));
-        OptionData ingamehelp = new OptionData(OptionType.STRING, "ingame", "Send an helpful overview about Ingame Functions", true).addChoices(ingamehelplist);
-
-        //Discord
-        List<Command.Choice> discordhelplist = new ArrayList<>();
-        discordhelplist.add(new Command.Choice("whitelist", "WHITELIST"));
-        discordhelplist.add(new Command.Choice("commands", "COMMANDS"));
-        OptionData discordhelp = new OptionData(OptionType.STRING, "discord", "Send an helpful overview about Discord Bot Functions", true).addChoices(discordhelplist);
-
-        commandData.add(Commands.slash("help", "Sends a helpful overview about Features")
-                .addOptions(ingamehelp, discordhelp)
-                .setGuildOnly(true)
-                .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.ADMINISTRATOR)));
-    }
-     */
-
     private void WhitelistCommand(List<CommandData> commandData) {
         SubcommandData subCommandData1 = new SubcommandData("forceadd",
                 LanguageFile.DirectFormatter("Let you add Minecraft Accounts to the Whitelist. You can link an Discord Account too, if you want to",
                         "Lässt dich einen Minecraft Account zur whitelist hinzufügen. Du kannst freiwillig einen Discord Account verlinken"));
         SubcommandData subCommandData2 = new SubcommandData("forceremove",
-                LanguageFile.DirectFormatter("Gives you an menu, where you can select one account, which will be removed from the whitelist",
+                LanguageFile.DirectFormatter("Gives you a menu, where you can select one account, which will be removed from the whitelist",
                         "Gibt ein Menu zurück, in dem du einen Account auswählen kannst, welcher von der whitelist entfernt wird"));
         SubcommandData subCommandData3 = new SubcommandData("check",
                 LanguageFile.DirectFormatter("Let you check if a Minecraft Account is whitelisted, when yes with wich discord account it is linked",
@@ -91,6 +70,9 @@ public class CommandRegister extends ListenerAdapter {
         subCommandData1.addOptions(options1);
 
         //ForceRemove
+        options2.add(new OptionData(OptionType.INTEGER, "site",
+                LanguageFile.DirectFormatter("Enter the site you want to see from the whitelist (25 players per site), leave blank for site one",
+                        "Bitte wähle die gewünschte Seite hier aus (Pro Seite 25 Einträge). Leer lassen für Seite Eins"), false));
         subCommandData2.addOptions(options2);
 
         //Check

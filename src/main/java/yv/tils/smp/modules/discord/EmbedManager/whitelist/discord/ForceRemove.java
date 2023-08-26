@@ -11,17 +11,19 @@ import java.util.List;
 
 /**
  * @version 4.6.8
- * @since 4.6.8
+ * @since 4.6.8.1
  */
 public class ForceRemove {
     EmbedBuilder builder = new EmbedBuilder();
     String url = "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png";
 
-    public EmbedBuilder Embed(Integer playercount, boolean whitelist) {
+    public EmbedBuilder Embed(Integer playercount, boolean whitelist, int site) {
 
         String status;
         if (whitelist) status = "on";
         else status = "off";
+
+        int maxsite = (playercount - 1)/25+1;
 
         return builder
                 .setTitle(LanguageFile.getMessage(LanguageMessage.EMBED_CMD_WHITELIST_REMOVE_TITLE))
@@ -29,15 +31,17 @@ public class ForceRemove {
                 .addField("Whitelisted Players:", String.valueOf(playercount), true)
                 .addField("Whitelist Status", status, true)
                 .setColor(new Color(0xBA4C59))
-                .setFooter("YVtils-SMP • https://yvnetwork.de/yvtils-smp/spigot", "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png")
-                .setAuthor("Whitelist Administration", null, url);
+                .setFooter("YVtils-SMP • Site " + site + "/" + maxsite, "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png")
+                .setAuthor("Whitelist Administration", "https://yvnetwork.de/yvtils-smp/spigot", url);
     }
 
-    public EmbedBuilder EmbedRemoved(Integer playercount, boolean whitelist, String[] acc) {
+    public EmbedBuilder EmbedRemoved(Integer playercount, boolean whitelist, String[] acc, int site) {
 
         String status;
         if (whitelist) status = "on";
         else status = "off";
+
+        int maxsite = (playercount - 1)/25+1;
 
         List<String> list1 = new ArrayList();
         List<String> list2 = new ArrayList();
@@ -52,8 +56,8 @@ public class ForceRemove {
                 .addField("Whitelisted Players:", String.valueOf(playercount), true)
                 .addField("Whitelist Status", status, true)
                 .setColor(new Color(0xBA4C59))
-                .setFooter("YVtils-SMP • https://yvnetwork.de/yvtils-smp/spigot", "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png")
-                .setAuthor("Whitelist Administration", null, url);
+                .setFooter("YVtils-SMP • Site " + site + "/" + maxsite, "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png")
+                .setAuthor("Whitelist Administration", "https://yvnetwork.de/yvtils-smp/spigot", url);
     }
 
 }

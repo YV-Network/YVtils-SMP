@@ -1,4 +1,4 @@
-package yv.tils.smp.modules.discord.ConsoleSync;
+package yv.tils.smp.modules.discord.sync.ConsoleSync;
 
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.channel.ChannelType;

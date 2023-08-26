@@ -13,10 +13,10 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.modules.discord.CommandManager.CommandHandler;
 import yv.tils.smp.modules.discord.CommandManager.CommandRegister;
-import yv.tils.smp.modules.discord.ConsoleSync.GetConsole;
-import yv.tils.smp.modules.discord.ConsoleSync.SendCMD;
-import yv.tils.smp.modules.discord.Whitelist.ForceRemove;
-import yv.tils.smp.modules.discord.Whitelist.WhitelistMessageGetter;
+import yv.tils.smp.modules.discord.sync.ConsoleSync.GetConsole;
+import yv.tils.smp.modules.discord.sync.ConsoleSync.SendCMD;
+import yv.tils.smp.modules.discord.whitelist.ForceRemove;
+import yv.tils.smp.modules.discord.whitelist.SelfAdd;
 import yv.tils.smp.modules.discord.sync.ChatSync;
 import yv.tils.smp.modules.discord.sync.stats.StatsDescription;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
@@ -27,7 +27,7 @@ import java.io.File;
 
 /**
  * @since 4.6.6
- * @version 4.6.8
+ * @version 4.6.8.1
  */
 public class BotStartStop {
 
@@ -73,11 +73,11 @@ public class BotStartStop {
         //Activity -> Streaming; Watching; Playing; Competing; None;
 
         switch (activity.toLowerCase()) {
-            case "watching" -> builder.setActivity(Activity.watching(activitymessage));
             case "playing" -> builder.setActivity(Activity.playing(activitymessage));
+            case "watching" -> builder.setActivity(Activity.watching(activitymessage));
             case "competing" -> builder.setActivity(Activity.competing(activitymessage));
             case "none" -> builder.setActivity(null);
-            default -> builder.setActivity(Activity.playing("Minecraft"));
+            default -> builder.setActivity(null);
         }
 
         //Status -> Online; Idle; DND; Offline; Invisible; Unknown
@@ -86,8 +86,8 @@ public class BotStartStop {
             case "online" -> builder.setStatus(OnlineStatus.ONLINE);
             case "idle" -> builder.setStatus(OnlineStatus.IDLE);
             case "dnd" -> builder.setStatus(OnlineStatus.DO_NOT_DISTURB);
-            case "offline" -> builder.setStatus(OnlineStatus.OFFLINE);
             case "invisible" -> builder.setStatus(OnlineStatus.INVISIBLE);
+            case "offline" -> builder.setStatus(OnlineStatus.OFFLINE);
             default -> builder.setStatus(OnlineStatus.ONLINE);
         }
 
@@ -95,7 +95,7 @@ public class BotStartStop {
 
         builder.addEventListeners(new CommandRegister());
         builder.addEventListeners(new CommandHandler());
-        builder.addEventListeners(new WhitelistMessageGetter());
+        builder.addEventListeners(new SelfAdd());
         if (new DiscordConfigManager().ConfigRequest().getBoolean("ChatSync.Enabled")) {
             builder.addEventListeners(new ChatSync());
         }
@@ -112,16 +112,16 @@ public class BotStartStop {
 
         Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FINISHED));
 
-        //new StatsChannel().createChannel();
-        new StatsDescription().editDesc();
+        if (new DiscordConfigManager().ConfigRequest().getBoolean("ChatSync.Enabled")) {
+            new StatsDescription().editDesc();
+        }
 
         if (new DiscordConfigManager().ConfigRequest().getBoolean("ConsoleSync.Enabled")) {
             this.appender = new GetConsole(SMPPlugin.getInstance(), this.jda);
             try {
                 this.logger = (Logger) LogManager.getRootLogger();
                 this.logger.addAppender(this.appender);
-            } catch (Exception ignored) {
-            }
+            } catch (Exception ignored) {}
             this.appender.sendMessages();
         }
     }
