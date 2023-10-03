@@ -13,7 +13,7 @@ import java.io.IOException;
  * @version 4.6.8
  */
 public class DiscordModuleConfig {
-    File file = new File(SMPPlugin.getInstance().getDataFolder() + "/discord", "config.yml");
+    File file = new File(SMPPlugin.getInstance().getDataFolder() + "/Discord", "config.yml");
     YamlConfiguration ymlfile = YamlConfiguration.loadConfiguration(file);
 
     public void StringInput() {
@@ -31,12 +31,12 @@ public class DiscordModuleConfig {
         ymlfile.addDefault("EmbedSettings.AuthorIconURL", "URL");
 
         ymlfile.addDefault("WhitelistFeature.Channel", LanguageFile.DirectFormatter("CHANNEL ID","KANAL ID"));
-        ymlfile.addDefault("WhitelistFeature.Role", LanguageFile.DirectFormatter("ROLE ID","ROLLEN ID"));
+        ymlfile.addDefault("WhitelistFeature.Role", LanguageFile.DirectFormatter("ROLE ID 1, ROLE ID 2, ROLE ID ...","ROLLEN ID 1, ROLLEN ID 2, ROLLEN ID ..."));
 
         //ymlfile.addDefault("HelpCommand.Permission.DiscordHelpCMD", LanguageFile.DirectFormatter("PERMISSION","BERECHTIGUNG"));
         //ymlfile.addDefault("HelpCommand.Permission.IngameHelpCMD", LanguageFile.DirectFormatter("PERMISSION","BERECHTIGUNG"));
 
-        ymlfile.addDefault("#3", LanguageFile.DirectFormatter("See here for Permission Names: https://ci.dv8tion.net/job/JDA5/javadoc/net/dv8tion/jda/api/Permission.html", "Siehe hier für die Namen der Berechtigungen: https://ci.dv8tion.net/job/JDA5/javadoc/net/dv8tion/jda/api/Permission.html"));
+        ymlfile.addDefault("3#", LanguageFile.DirectFormatter("See here for Permission Names: https://ci.dv8tion.net/job/JDA5/javadoc/net/dv8tion/jda/api/Permission.html", "Siehe hier für die Namen der Berechtigungen: https://ci.dv8tion.net/job/JDA5/javadoc/net/dv8tion/jda/api/Permission.html"));
         ymlfile.addDefault("ServerInfoCommand.Permission", LanguageFile.DirectFormatter("PERMISSION","BERECHTIGUNG"));
 
         ymlfile.addDefault("WhitelistCommand.Permission", LanguageFile.DirectFormatter("PERMISSION","BERECHTIGUNG"));

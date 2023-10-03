@@ -9,7 +9,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * @version 4.6.8
+ * @version 4.6.8.1
  * @since 4.6.8
  */
 public class ForceAdd {
@@ -23,6 +23,7 @@ public class ForceAdd {
         list2.add(mc);
         list1.add("DCNAME");
         list2.add(dc);
+
         return builder
                 .setTitle(LanguageFile.getMessage(LanguageMessage.EMBED_CMD_WHITELIST_ADD_TITLE))
                 .setDescription(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.EMBED_CMD_WHITELIST_ADD_DESC), list1, list2))
@@ -40,6 +41,7 @@ public class ForceAdd {
         list2.add(mc_old);
         list1.add("NEWNAME");
         list2.add(mc_new);
+
         return builder
                 .setTitle(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.EMBED_CMD_WHITELIST_REPLACE_TITLE), list1, list2))
                 .setDescription(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.EMBED_CMD_WHITELIST_REPLACE_DESC), list1, list2))

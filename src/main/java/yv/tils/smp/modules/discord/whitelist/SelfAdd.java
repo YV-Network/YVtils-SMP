@@ -1,4 +1,4 @@
-package yv.tils.smp.modules.discord.Whitelist;
+package yv.tils.smp.modules.discord.whitelist;
 
 import net.dv8tion.jda.api.entities.channel.ChannelType;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
@@ -8,6 +8,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.scheduler.BukkitRunnable;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.modules.discord.EmbedManager.whitelist.*;
 import yv.tils.smp.placeholder.MessagePlaceholder;
@@ -25,11 +26,11 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @since 4.6.6
- * @version 4.6.8
+ * @version 4.6.8.1
  */
-public class WhitelistMessageGetter extends ListenerAdapter {
+public class SelfAdd extends ListenerAdapter {
 
-    //DiscordName#Tag: Minecraft Username + UUID -> Example: WolfiiYV#3204: WolfiiYV aab8f297-b6f0-4ebb-a064-9968e1a1cc45
+    //DiscordID: Minecraft Username + UUID -> Example: 682309366883680269: WolfiiYV aab8f297-b6f0-4ebb-a064-9968e1a1cc45
 
     YamlConfiguration config = new DiscordConfigManager().ConfigRequest();
     YamlConfiguration linkedRequest = new DiscordConfigManager().LinkedRequest();
@@ -42,11 +43,7 @@ public class WhitelistMessageGetter extends ListenerAdapter {
 
         TextChannel channel = e.getChannel().asTextChannel();
 
-        String member = e.getMember().getUser().getAsTag();
-
-        member = member.replace(",", "");
-        member = member.replace("[", "");
-        member = member.replace("]", "");
+        String UserID = e.getMember().getUser().getId();
 
         if (e.getChannel().getId().equals(config.getString("WhitelistFeature.Channel"))) {
             String name = e.getMessage().getContentRaw();
@@ -69,17 +66,21 @@ public class WhitelistMessageGetter extends ListenerAdapter {
                 URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + name);
                 HttpURLConnection http = (HttpURLConnection)url.openConnection();
                 int statusCode = http.getResponseCode();
-                if (statusCode == 200) {
-                    if (new ImportWhitelist().reader(member, null, null).contains(member)) {
-                        List<String> whitelist = new ImportWhitelist().reader(member, null, null);
-                        OfflinePlayer playerwhitelistremove = Bukkit.getOfflinePlayer(whitelist.get(1));
-                        playerwhitelistremove.setWhitelisted(false);
-                        whitelistRemove(member, playerwhitelistremove.getName(), playerwhitelistremove.getUniqueId().toString());
+                if (statusCode == HttpURLConnection.HTTP_OK) {
+                    if (new ImportWhitelist().reader(UserID, null, null).contains(UserID)) {
+                        List<String> whitelist = new ImportWhitelist().reader(UserID, null, null);
+                        OfflinePlayer oldPlayer = Bukkit.getOfflinePlayer(whitelist.get(1));
+                        new BukkitRunnable() {
+                            public void run() {
+                                oldPlayer.setWhitelisted(false);
+                            }
+                        }.runTask(SMPPlugin.getInstance());
+                        whitelistRemove(UserID, oldPlayer.getName(), oldPlayer.getUniqueId().toString());
 
                         List<String> list1 = new ArrayList<>();
                         List<String> list2 = new ArrayList<>();
                         list1.add("DISCORDUSER");
-                        list2.add(member);
+                        list2.add(e.getMember().getUser().getGlobalName());
                         list1.add("OLDNAME");
                         list2.add(whitelist.get(1));
                         list1.add("NEWNAME");
@@ -88,43 +89,73 @@ public class WhitelistMessageGetter extends ListenerAdapter {
                         try {
                             try {
                                 channel.deleteMessageById(MessageId).queue();
-                                e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+
+                                String role = new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role");
+                                role = role.replace(" ", "");
+                                String[] roles = role.split(",");
+
+                                try {
+                                    for (String s : roles) {
+                                        e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(s)).queue();
+                                    }
+                                }catch (NumberFormatException ignored) {}
+
                                 Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_CHANGE), list1, list2));
                                 channel.sendMessageEmbeds(new AccountChange().Embed(whitelist.get(1), e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
-                                player.setWhitelisted(true);
-                                SMPPlugin.getInstance().WhitelistManager.add(member + "," + player.getName() + "," + player.getUniqueId());
-                                new DiscordConfigManager().LinkedWriter(member, player.getName() + " " + player.getUniqueId());
+                                new BukkitRunnable() {
+                                    public void run() {
+                                        player.setWhitelisted(true);
+                                    }
+                                }.runTask(SMPPlugin.getInstance());
+                                SMPPlugin.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
+                                new DiscordConfigManager().LinkedWriter(UserID, player.getName() + " " + player.getUniqueId());
                             }catch (HierarchyException ignored) {
-                                channel.sendMessageEmbeds(new RoleHierarchyError().Embed(e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
+                                channel.sendMessageEmbeds(new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), e.getGuild()).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
                             }
                         }catch (IllegalArgumentException ignored) {}
                     }else {
                         List<String> list1 = new ArrayList<>();
                         List<String> list2 = new ArrayList<>();
                         list1.add("DISCORDUSER");
-                        list2.add(member);
+                        list2.add(e.getMember().getUser().getGlobalName());
                         list1.add("NAME");
                         list2.add(e.getMessage().getContentRaw());
 
                         try {
                             try {
                                 channel.deleteMessageById(MessageId).queue();
-                                e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).queue();
+
+                                String role = new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role");
+                                role = role.replace(" ", "");
+                                String[] roles = role.split(",");
+
+                                try {
+                                    for (String s : roles) {
+                                        e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(s)).queue();
+                                    }
+                                }catch (NumberFormatException ignored) {}
+
                                 Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_ADD), list1, list2));
                                 channel.sendMessageEmbeds(new AccountAdded().Embed(e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
-                                player.setWhitelisted(true);
-                                SMPPlugin.getInstance().WhitelistManager.add(member + "," + player.getName() + "," + player.getUniqueId());
-                                new DiscordConfigManager().LinkedWriter(member, player.getName() + " " + player.getUniqueId());
+
+                                new BukkitRunnable() {
+                                    public void run() {
+                                        player.setWhitelisted(true);
+                                    }
+                                }.runTask(SMPPlugin.getInstance());
+
+                                SMPPlugin.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
+                                new DiscordConfigManager().LinkedWriter(UserID, player.getName() + " " + player.getUniqueId());
                             }catch (HierarchyException ignored) {
-                                channel.sendMessageEmbeds(new RoleHierarchyError().Embed(e.getGuild().getRoleById(new DiscordConfigManager().ConfigRequest().getLong("WhitelistFeature.Role"))).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
+                                channel.sendMessageEmbeds(new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), e.getGuild()).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
                             }
                         }catch (IllegalArgumentException ignored) {}
                     }
-                }else if (statusCode == 400) {
+                }else if (statusCode == HttpURLConnection.HTTP_BAD_REQUEST) {
                     List<String> list1 = new ArrayList<>();
                     List<String> list2 = new ArrayList<>();
                     list1.add("DISCORDUSER");
-                    list2.add(member);
+                    list2.add(e.getMember().getUser().getGlobalName());
                     list1.add("NAME");
                     list2.add(e.getMessage().getContentRaw());
 
@@ -135,7 +166,7 @@ public class WhitelistMessageGetter extends ListenerAdapter {
                     List<String> list1 = new ArrayList<>();
                     List<String> list2 = new ArrayList<>();
                     list1.add("DISCORDUSER");
-                    list2.add(member);
+                    list2.add(e.getMember().getUser().getGlobalName());
                     list1.add("NAME");
                     list2.add(e.getMessage().getContentRaw());
 

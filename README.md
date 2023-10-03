@@ -32,3 +32,6 @@ Custom Crafting Recipes (CCR)
 **Light Block**:
 ![Lantern_normal](https://user-images.githubusercontent.com/84860916/213732400-78ef5e02-ca4a-4ea3-bfb5-4281ed11e723.png)
 ![Lantern_soul](https://user-images.githubusercontent.com/84860916/213732404-1948ffda-a6d1-4e51-b0af-78e0eba7886f.png)
+
+**GLowing Netherite Elytra** (4.6.8.1)
+![glowing_netherite_elytra](https://github.com/YV-Network/YVtils-SMP/assets/84860916/d87de346-cd8c-462d-b84b-0db1597ad68f)

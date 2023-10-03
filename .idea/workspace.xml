@@ -9,23 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="« Version 4.6.8.B1 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN BETA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/GF7hNI3o&#10;&#10;» 1.19.4 Support&#10;   The Server Version 1.19.4 is now official Supported with this Version.&#10;   &#10;» Discord Module&#10;   /mcinfo Command → Shows information's about the MC Server&#10;   /whitelist &lt;foreceadd; remove; check&gt; → Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel&#10;   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;   Console Channel → Execute Commands and see what is written to the console from one Discord Channel&#10;   Server Info → Shown in the chat sync channel description&#10;&#9;&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd &lt;MC Name&gt;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/RoleHierarchyError.java" afterDir="false" />
+    <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="Version 4.6.8.1 BETA Changelog&#10;&#10;» Sit&#10;    Removed the ability to sit down when clicking on a stair.&#10;&#10;» CCR&#10;    Added support to craft multiple items at once.&#10;    Added a new recipe; more information will follow.&#10;&#10;» Discord Module&#10;    Switched to pomelo system&#10;    Fixed bugs&#10;        Force Remove with more than 25 Users&#10;        Entering none Channel ID's while active has given big errors&#10;        And much more&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;» REWORK ANNOUNCEMENT&#10;Today, I will announce something big for this plugin! I will release Version 4.6.8.1 in full, and after that, I will start to rework the entire plugin from the beginning. I've noticed that I've lost sight of everything here, so I want to restructure, fix bugs, add long-planned features, and more.&#10;&#10;It will probably take a while until I am finished, as I have a lot to do. But when I am finished, everything will be better—more customizability, and probably more of everything! (We will see.)&#10;&#10;To see what is finished, it would probably be best to look on GitHub in the TODO file. I will mark everything I am done with an &quot;x&quot; in front of it.&#10;&#10;Bug fixes will still be released, I think. Also, if a new minecraft version needs an update, I will try to work on it with the old code or the partially reworked code.&#10;&#10;See you!&#10;&#10;«================================»&#10;&#10;» YVtils Adventures&#10;This plugin (mentioned in an older changelog) is now in the testing phase. There are still missing translations and features, but I will pause the coding progress for now and work on this plugin.&#10;&#10;«================================»&#10;&#10;Please report any bugs on Discord (https://yvnetwork.de/yvtils-smp/support) or through a private message to @WolfiiYV#3204.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/Whitelist/ForceAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/Whitelist/ForceAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/Whitelist/ForceRemove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/Whitelist/ForceRemove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/Whitelist/WhitelistMessageGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/Whitelist/WhitelistMessageGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/commands/ServerInfoEmbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/commands/ServerInfoEmbed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/RoleHierarchyError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/RoleHierarchyError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/discord/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/discord/Check.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/discord/ForceAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/discord/ForceAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/discord/ForceRemove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/discord/ForceRemove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/ChatSyncEmbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/ChatSyncEmbed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/stats/StatsDescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/stats/StatsDescription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/whitelist/ForceAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/whitelist/ForceAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/whitelist/ForceRemove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/whitelist/ForceRemove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/whitelist/SelfAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/whitelist/SelfAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordModuleConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordModuleConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/LinkedAccountsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/LinkedAccountsConfig.java" afterDir="false" />
     </list>
-    <list id="1a4b194b-1eb3-4e46-a348-8f821c6a9b7a" name="Changes by j" comment="Changes by j">
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/InvFrameRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/ccr/recipes/InvFrameRecipe.java" afterDir="false" />
-    </list>
+    <list id="1a4b194b-1eb3-4e46-a348-8f821c6a9b7a" name="Changes by j" comment="Changes by j" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,16 +94,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;92ce74ff&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="21DnUGA8C2DhSbIFn2yTkEl4LZY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -115,6 +114,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "dart.analysis.tool.window.visible": "false",
@@ -129,7 +129,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.group.other",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -140,6 +140,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="B:\Coding\_YVtils-SMP\src\main\java\yv\tils\smp\modules" />
       <recent name="F:\YVtils-SMP\src\main\java\yv\tils\smp\utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -160,47 +161,21 @@
       <recent name="yv.tils.smp.otherfiles" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.YVtils-SMP [clean,package]">
-    <configuration name="CompileWithServer_1.19" type="JarApplication">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/../Minecraft_Server/ver/paper-1.19.3.jar" />
-      <option name="VM_PARAMETERS" value="-Xmx4G -DIReallyKnowWhatIAmDoingISwear" />
-      <option name="PROGRAM_PARAMETERS" value="nogui" />
-      <option name="WORKING_DIRECTORY" value="B:\Coding\Minecraft_Server" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method v="2">
-        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean package" />
-      </method>
-    </configuration>
-    <configuration name="YVtils-SMP [clean,package]" type="MavenRunConfiguration" factoryName="Maven">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-                <option value="package" />
-              </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
+  <component name="RunManager" selected="JAR Application.CompileWithServer_1.20.1">
+    <configuration name="rest-api | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JAR Application.CompileWithServer_1.19" />
+      <item itemvalue="HTTP Request.rest-api | #1" />
+      <item itemvalue="JAR Application.CompileWithServer_1.20.1" />
       <item itemvalue="Maven.YVtils-SMP [clean,package]" />
+      <item itemvalue="Maven.YVtils-SMP JAR" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.rest-api | #1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SshConsoleOptionsProvider">
@@ -442,7 +417,34 @@
       <workItem from="1682108350575" duration="28128000" />
       <workItem from="1682611065628" duration="6091000" />
       <workItem from="1682863637022" duration="3630000" />
-      <workItem from="1683568963600" duration="43828000" />
+      <workItem from="1683568963600" duration="49536000" />
+      <workItem from="1684526668101" duration="345000" />
+      <workItem from="1685098216828" duration="4503000" />
+      <workItem from="1685199113720" duration="1146000" />
+      <workItem from="1685202985498" duration="22000" />
+      <workItem from="1685276114905" duration="61000" />
+      <workItem from="1685276398164" duration="8576000" />
+      <workItem from="1686220221275" duration="37000" />
+      <workItem from="1686575150042" duration="1902000" />
+      <workItem from="1686594242660" duration="878000" />
+      <workItem from="1686769208562" duration="1031000" />
+      <workItem from="1688412446514" duration="643000" />
+      <workItem from="1688420988860" duration="6346000" />
+      <workItem from="1689434244735" duration="1273000" />
+      <workItem from="1690459225906" duration="13069000" />
+      <workItem from="1690475266096" duration="184000" />
+      <workItem from="1690475476500" duration="2719000" />
+      <workItem from="1690478273903" duration="4860000" />
+      <workItem from="1691418325061" duration="614000" />
+      <workItem from="1691980246236" duration="12853000" />
+      <workItem from="1692810775790" duration="8199000" />
+      <workItem from="1693060705918" duration="17974000" />
+      <workItem from="1694187398046" duration="1864000" />
+      <workItem from="1695024234644" duration="1068000" />
+      <workItem from="1695025324196" duration="925000" />
+      <workItem from="1695026269115" duration="143000" />
+      <workItem from="1695746189340" duration="675000" />
+      <workItem from="1696336434573" duration="9432000" />
     </task>
     <task id="LOCAL-00007" summary="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version.">
       <created>1637869169288</created>
@@ -710,7 +712,30 @@
       <option name="project" value="LOCAL" />
       <updated>1683753775379</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="« Version 4.6.8 Changelog »&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/g61yt9cl&#10;&#10;» 1.19.4 Support&#10;   The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;   /mcinfo Command → Shows information's about the MC Server&#10;   /whitelist &lt;foreceadd; remove; check&gt; → Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel&#10;   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;   Console Channel → Execute Commands and see what is written to the console from one Discord Channel&#10;   Server Info → Shown in the chat sync channel description&#10;&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd &lt;MC Name&gt;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204.">
+      <created>1683924416066</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1683924416066</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Version 4.6.8.1 ALPHA Changelog&#10;&#10;» Sit&#10;    Removed the ability to sit down when clicking on a stair.&#10;&#10;» CCR&#10;    Added support to craft multiple items at once.&#10;    Added a new recipe; more information will follow.&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;» REWORK ANNOUNCEMENT&#10;Today, I will announce something big for this plugin! I will release Version 4.6.8.1 in full, and after that, I will start to rework the entire plugin from the beginning. I've noticed that I've lost sight of everything here, so I want to restructure, fix bugs, add long-planned features, and more.&#10;&#10;It will probably take a while until I am finished, as I have a lot to do. But when I am finished, everything will be better—more customizability, and probably more of everything! (We will see.)&#10;&#10;To see what is finished, it would probably be best to look on GitHub in the TODO file. I will mark everything I am done with an &quot;x&quot; in front of it.&#10;&#10;Bug fixes will still be released, I think. Also, if a new minecraft version needs an update, I will try to work on it with the old code or the partially reworked code.&#10;&#10;See you!&#10;&#10;«================================»&#10;&#10;» YVtils Adventures&#10;This plugin (mentioned in an older changelog) is now in the testing phase. There are still missing translations and features, but I will pause the coding progress for now and work on this plugin.&#10;&#10;«================================»&#10;&#10;Please report any bugs on Discord (https://yvnetwork.de/yvtils-smp/support) or through a private message to @WolfiiYV#3204.">
+      <option name="closed" value="true" />
+      <created>1691984515402</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1691984515402</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Version 4.6.8.1 BETA Changelog&#10;&#10;» Sit&#10;    Removed the ability to sit down when clicking on a stair.&#10;&#10;» CCR&#10;    Added support to craft multiple items at once.&#10;    Added a new recipe; more information will follow.&#10;&#10;» Discord Module&#10;    Switched to pomelo system&#10;    Fixed bugs&#10;        Force Remove with more than 25 Users&#10;        Entering none Channel ID's while active has given big errors&#10;        And much more&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;» REWORK ANNOUNCEMENT&#10;Today, I will announce something big for this plugin! I will release Version 4.6.8.1 in full, and after that, I will start to rework the entire plugin from the beginning. I've noticed that I've lost sight of everything here, so I want to restructure, fix bugs, add long-planned features, and more.&#10;&#10;It will probably take a while until I am finished, as I have a lot to do. But when I am finished, everything will be better—more customizability, and probably more of everything! (We will see.)&#10;&#10;To see what is finished, it would probably be best to look on GitHub in the TODO file. I will mark everything I am done with an &quot;x&quot; in front of it.&#10;&#10;Bug fixes will still be released, I think. Also, if a new minecraft version needs an update, I will try to work on it with the old code or the partially reworked code.&#10;&#10;See you!&#10;&#10;«================================»&#10;&#10;» YVtils Adventures&#10;This plugin (mentioned in an older changelog) is now in the testing phase. There are still missing translations and features, but I will pause the coding progress for now and work on this plugin.&#10;&#10;«================================»&#10;&#10;Please report any bugs on Discord (https://yvnetwork.de/yvtils-smp/support) or through a private message to @WolfiiYV#3204.">
+      <option name="closed" value="true" />
+      <created>1693088709671</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1693088709671</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -732,9 +757,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="With this Update the /seed Command got Blocked for all Players without a Permission give them an Error Message. Players with the Permission must add an Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version." />
-    <MESSAGE value="Deutsch:&#10;Kleine Änderung für den Config Versions Update Announcer&#10;Server Start Announce Nachricht für wichtige Infos vom Coder&#10;&#10;Neue Config Version&#10;&#10;English:&#10;Little Changes for the Config Version Update Announcer&#10;Server Start Announce Message for important Message from the Coder&#10;&#10;New Config Version" />
-    <MESSAGE value="Deutsch:&#10;Plugin Update auf die Minecraft Version 1.18&#10;&#10;English:&#10;Updated the Plugin for the Minecraft Version 1.18" />
     <MESSAGE value="At this Time this Version is available, you all can have the EVENT-PREMIUM-KEY&#10;without me giving it to you.&#10;&#10;At the Moment no Premium Features are available, but soon there will come some.&#10;&#10;The Download for this Version is available until 01.01.2022 or I forgot to upload a new version then it's no longer aviable." />
     <MESSAGE value="New Features:&#10;&#10;GlobalMute -&gt; With /globalmute; /chatmute or /mutechat you can disable the chat for everyone that don't have the Permission &quot;yvtils.ba.bypass.mutechat&quot;.&#10;&#10;AFKDamageKick -&gt; With /afkdamage you can toggle the automatic kick when you get Damage, but you don't allowed to move to much otherwise you will get kicked and the Setting will disabled. When you get Damage you will get kicked and the Setting get disabled. -&gt; Required Permission: &quot;yvtils.ba.command.afkdamage&quot;&#10;&#10;Config has new Options. -&gt; Version 8" />
     <MESSAGE value="Plugin got renamed. All files got edited, when you find somewhere in the Plugin the &quot;YVtils-BA&quot; name, please report this to me." />
@@ -757,7 +779,10 @@
     <MESSAGE value="« Version 4.6.8.A2 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;&#9;/mcinfo Command -&gt; Shows informations about the MC Server&#10;&#9;/whitelist &lt;foreceadd; remove; check&gt; -&gt; Add Users to the whitelist over Discord while using the Linkink Feature of the plugin&#10;&#9;Minecraft - Discord Chat Bridge -&gt; Syncronyze the globa Minecraft Chat with a selected Discord Channel&#10;&#9;Let Players whitelist themself, when they write their MC Ingame Name in a selected Channel&#10;&#9;Console Channel - Execute Commands and see what is written to the console from one Discord Channel&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
     <MESSAGE value="« Version 4.6.8.A3 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN ALPHA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: NO DOWNLOAD AVAILABLE - BUILD YOURSELF VERSION&#10;&#10;» 1.19.4 Support&#10;The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;&#9;/mcinfo Command -&gt; Shows information about the MC Server&#10;&#9;/whitelist &lt;foreceadd; remove; check&gt; -&gt; Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;&#9;Minecraft - Discord Chat Bridge -&gt; Synchronize the global Minecraft Chat with a selected Discord Channel&#10;&#9;Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;&#9;Console Channel - Execute Commands and see what is written to the console from one Discord Channel&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
     <MESSAGE value="« Version 4.6.8.B1 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN BETA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/GF7hNI3o&#10;&#10;» 1.19.4 Support&#10;   The Server Version 1.19.4 is now official Supported with this Version.&#10;   &#10;» Discord Module&#10;   /mcinfo Command → Shows information's about the MC Server&#10;   /whitelist &lt;foreceadd; remove; check&gt; → Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel&#10;   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;   Console Channel → Execute Commands and see what is written to the console from one Discord Channel&#10;   Server Info → Shown in the chat sync channel description&#10;&#9;&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd &lt;MC Name&gt;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
-    <option name="LAST_COMMIT_MESSAGE" value="« Version 4.6.8.B1 Changelog »&#10;&#10;WARNING: THIS IS ONLY AN BETA VERSION. USE THIS ONLY FOR TESTING. THERE IS NO SUPPORT!&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/GF7hNI3o&#10;&#10;» 1.19.4 Support&#10;   The Server Version 1.19.4 is now official Supported with this Version.&#10;   &#10;» Discord Module&#10;   /mcinfo Command → Shows information's about the MC Server&#10;   /whitelist &lt;foreceadd; remove; check&gt; → Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel&#10;   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;   Console Channel → Execute Commands and see what is written to the console from one Discord Channel&#10;   Server Info → Shown in the chat sync channel description&#10;&#9;&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd &lt;MC Name&gt;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
+    <MESSAGE value="« Version 4.6.8 Changelog »&#10;&#10;Download: https://modrinth.com/plugin/yvtils_smp/version/g61yt9cl&#10;&#10;» 1.19.4 Support&#10;   The Server Version 1.19.4 is now official Supported with this Version.&#10;&#10;» Discord Module&#10;   /mcinfo Command → Shows information's about the MC Server&#10;   /whitelist &lt;foreceadd; remove; check&gt; → Add Users to the whitelist over Discord while using the Linking Feature of the plugin&#10;   Minecraft - Discord Chat Bridge → Synchronize the global Minecraft Chat with a selected Discord Channel&#10;   Let Players whitelist themselves, when they write their MC Ingame Name in a selected Channel&#10;   Console Channel → Execute Commands and see what is written to the console from one Discord Channel&#10;   Server Info → Shown in the chat sync channel description&#10;&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;Discord will probably change the usernames, so this plugin will be updated as soon as possible to support this feature. If you already need this Feature, please whitelist players with /whitelist forceadd &lt;MC Name&gt;&#10;&#10;«================================»&#10;&#10;Please report any bugs on the Discord (https://yvnetwork.de/yvtils-smp/support) or with Private Message to @WolfiiYV#3204." />
+    <MESSAGE value="Version 4.6.8.1 ALPHA Changelog&#10;&#10;» Sit&#10;    Removed the ability to sit down when clicking on a stair.&#10;&#10;» CCR&#10;    Added support to craft multiple items at once.&#10;    Added a new recipe; more information will follow.&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;» REWORK ANNOUNCEMENT&#10;Today, I will announce something big for this plugin! I will release Version 4.6.8.1 in full, and after that, I will start to rework the entire plugin from the beginning. I've noticed that I've lost sight of everything here, so I want to restructure, fix bugs, add long-planned features, and more.&#10;&#10;It will probably take a while until I am finished, as I have a lot to do. But when I am finished, everything will be better—more customizability, and probably more of everything! (We will see.)&#10;&#10;To see what is finished, it would probably be best to look on GitHub in the TODO file. I will mark everything I am done with an &quot;x&quot; in front of it.&#10;&#10;Bug fixes will still be released, I think. Also, if a new minecraft version needs an update, I will try to work on it with the old code or the partially reworked code.&#10;&#10;See you!&#10;&#10;«================================»&#10;&#10;» YVtils Adventures&#10;This plugin (mentioned in an older changelog) is now in the testing phase. There are still missing translations and features, but I will pause the coding progress for now and work on this plugin.&#10;&#10;«================================»&#10;&#10;Please report any bugs on Discord (https://yvnetwork.de/yvtils-smp/support) or through a private message to @WolfiiYV#3204." />
+    <MESSAGE value="Version 4.6.8.1 BETA Changelog&#10;&#10;» Sit&#10;    Removed the ability to sit down when clicking on a stair.&#10;&#10;» CCR&#10;    Added support to craft multiple items at once.&#10;    Added a new recipe; more information will follow.&#10;&#10;» Discord Module&#10;    Switched to pomelo system&#10;    Fixed bugs&#10;        Force Remove with more than 25 Users&#10;        Entering none Channel ID's while active has given big errors&#10;        And much more&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;» REWORK ANNOUNCEMENT&#10;Today, I will announce something big for this plugin! I will release Version 4.6.8.1 in full, and after that, I will start to rework the entire plugin from the beginning. I've noticed that I've lost sight of everything here, so I want to restructure, fix bugs, add long-planned features, and more.&#10;&#10;It will probably take a while until I am finished, as I have a lot to do. But when I am finished, everything will be better—more customizability, and probably more of everything! (We will see.)&#10;&#10;To see what is finished, it would probably be best to look on GitHub in the TODO file. I will mark everything I am done with an &quot;x&quot; in front of it.&#10;&#10;Bug fixes will still be released, I think. Also, if a new minecraft version needs an update, I will try to work on it with the old code or the partially reworked code.&#10;&#10;See you!&#10;&#10;«================================»&#10;&#10;» YVtils Adventures&#10;This plugin (mentioned in an older changelog) is now in the testing phase. There are still missing translations and features, but I will pause the coding progress for now and work on this plugin.&#10;&#10;«================================»&#10;&#10;Please report any bugs on Discord (https://yvnetwork.de/yvtils-smp/support) or through a private message to @WolfiiYV#3204." />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 4.6.8.1 BETA Changelog&#10;&#10;» Sit&#10;    Removed the ability to sit down when clicking on a stair.&#10;&#10;» CCR&#10;    Added support to craft multiple items at once.&#10;    Added a new recipe; more information will follow.&#10;&#10;» Discord Module&#10;    Switched to pomelo system&#10;    Fixed bugs&#10;        Force Remove with more than 25 Users&#10;        Entering none Channel ID's while active has given big errors&#10;        And much more&#10;&#10;» Bug Fixes&#10;&#10;«================================»&#10;&#10;» REWORK ANNOUNCEMENT&#10;Today, I will announce something big for this plugin! I will release Version 4.6.8.1 in full, and after that, I will start to rework the entire plugin from the beginning. I've noticed that I've lost sight of everything here, so I want to restructure, fix bugs, add long-planned features, and more.&#10;&#10;It will probably take a while until I am finished, as I have a lot to do. But when I am finished, everything will be better—more customizability, and probably more of everything! (We will see.)&#10;&#10;To see what is finished, it would probably be best to look on GitHub in the TODO file. I will mark everything I am done with an &quot;x&quot; in front of it.&#10;&#10;Bug fixes will still be released, I think. Also, if a new minecraft version needs an update, I will try to work on it with the old code or the partially reworked code.&#10;&#10;See you!&#10;&#10;«================================»&#10;&#10;» YVtils Adventures&#10;This plugin (mentioned in an older changelog) is now in the testing phase. There are still missing translations and features, but I will pause the coding progress for now and work on this plugin.&#10;&#10;«================================»&#10;&#10;Please report any bugs on Discord (https://yvnetwork.de/yvtils-smp/support) or through a private message to @WolfiiYV#3204." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -998,11 +1023,6 @@
           <option name="timeStamp" value="199" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="200" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java</url>
           <line>17</line>
           <option name="timeStamp" value="201" />
@@ -1036,6 +1056,26 @@
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java</url>
           <line>124</line>
           <option name="timeStamp" value="221" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/InvListener.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="222" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/InvListener.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="223" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/InvListener.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/InvListener.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="225" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

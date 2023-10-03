@@ -55,7 +55,7 @@ public class DiscordConfigManager {
         return configuration;
     }
 
-    public void StatsWritter(String path,String value) {
+    public void StatsWriter(String path, String value) {
         File configfile = new File(SMPPlugin.getInstance().getDataFolder(), "Discord/stats.yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         try {

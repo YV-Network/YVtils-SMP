@@ -18,15 +18,15 @@ import java.util.List;
 
 /**
  * @since 4.6.6
- * @version 4.6.6
+ * @version 4.6.8.1
  */
 
 public class StatusCommand implements CommandExecutor {
 
-    List<String> defaultstatus = new ConfigModeration().ConfigRequest("StatusModule").getStringList("Default-Status");
+    List<String> defaultStatus = new ConfigModeration().ConfigRequest("StatusModule").getStringList("Default-Status");
+
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String labels, String[] args) {
-
         if (args.length < 1) {
             sendUsage(sender);
             return true;
@@ -71,16 +71,23 @@ public class StatusCommand implements CommandExecutor {
                             sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_PLAYER_HAS_NO_STATUS));
                         }}}
             case "set" -> {
-                if (args.length == 2) {
-                    if (args[1].length() > new ConfigModeration().ConfigRequest("StatusModule").getInt("MaxStatusLength")) {
+                if (args.length >= 2) {
+
+                    StringBuilder builder = new StringBuilder();
+                    for (int x = 1; x < args.length; x++) {
+                        builder.append(args[x]).append(" ");
+                    }
+                    String status = builder.toString();
+
+                    if (ChatColor.stripColor(ChatColor.translateAlternateColorCodes('&', status)).length() > new ConfigModeration().ConfigRequest("StatusModule").getInt("MaxStatusLength")) {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_CUSTOM_STATUS_TOO_LONG));
                         return true;
                     }
                     if (sender.hasPermission("yvtils.smp.command.status.set")) {
-                        player.setDisplayName(new ColorCode().ColorCodes(args[1]) + " " + player.getName());
-                        player.setPlayerListName(new ColorCode().ColorCodes(args[1]) + " " + player.getName());
-                        new NametagManager().addPlayer(player, new ColorCode().ColorCodes(args[1]) + " " );
-                        saveStatus(player, args[1]);
+                        player.setDisplayName(new ColorCode().ColorCodes(status) + " " + player.getName());
+                        player.setPlayerListName(new ColorCode().ColorCodes(status) + " " + player.getName());
+                        new NametagManager().addPlayer(player, new ColorCode().ColorCodes(status) + " " );
+                        saveStatus(player, status);
                     }else {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_NOT_ALLOWED_TO_SET_CUSTOM_STATUS));
                     }
@@ -88,12 +95,21 @@ public class StatusCommand implements CommandExecutor {
                     sendUsage(sender);
                 }}
             case "default" -> {
-                for (String s : defaultstatus) {
-                    if (!defaultstatus.contains(args[1])) {
+                for (String s : defaultStatus) {
+
+                    StringBuilder builder = new StringBuilder();
+
+                    for (int x = 1; x < args.length; x++) {
+                        builder.append(args[x]).append(" ");
+                    }
+
+                    String status = builder.toString().substring(0, builder.toString().length() -1);
+
+                    if (!defaultStatus.contains(status)) {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_NO_DEFAULT_STATUS));
                         break;
                     }
-                    if (args[1].equals(s)) {
+                    if (status.equals(s)) {
                         player.setDisplayName(new ColorCode().ColorCodes(s) + " " + player.getName());
                         player.setPlayerListName(new ColorCode().ColorCodes(s) + " " + player.getName());
                         new NametagManager().addPlayer(player, new ColorCode().ColorCodes(s) + " ");

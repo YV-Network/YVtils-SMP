@@ -1,4 +1,4 @@
-package yv.tils.smp.modules.discord.Whitelist;
+package yv.tils.smp.modules.discord.whitelist;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import yv.tils.smp.SMPPlugin;
@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * @version 4.6.8
- * @since 4.6.8
+ * @since 4.6.8.1
  */
 public class ImportWhitelist {
 
@@ -18,7 +18,7 @@ public class ImportWhitelist {
     List<String> WhitelistManager = SMPPlugin.getInstance().WhitelistManager;
 
     public void Importer() {
-        //DC TAG,MC NAME,UUID
+        //DC ID, MC NAME, UUID
         String WhitelistKeys = linkedRequest.getKeys(false).toString();
         String[] WhitelistKey = WhitelistKeys.split(", ");
 
@@ -44,10 +44,10 @@ public class ImportWhitelist {
 
 
     /**
-     * @since 4.6.8
-     * request[0] = DC TAG;
-     * request[1] = MC NAME;
-     * request[2] = UUID
+     * @since 4.6.8.1
+     * request[0] = Discord ID;
+     * request[1] = Minecraft NAME;
+     * request[2] = Minecraft UUID
      */
     public List<String> reader(String dc, String mc, String uuid) {
         List<String> request = new ArrayList<>();

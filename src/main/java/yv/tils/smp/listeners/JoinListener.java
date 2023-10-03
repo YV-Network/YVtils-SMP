@@ -8,7 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.modules.discord.sync.stats.StatsDescription;
 import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
@@ -19,7 +18,7 @@ import java.util.List;
 
 /**
  * @since 4.6.6
- * @version 4.6.6
+ * @version 4.6.8.1
  */
 public class JoinListener implements Listener {
 
@@ -40,6 +39,7 @@ public class JoinListener implements Listener {
             if (event.getPlayer().hasPermission("yvtils.smp.maintenance.join")) {
                 return;
             }else {
+                event.setJoinMessage(null);
                 event.getPlayer().kickPlayer(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_PLAYER_NOT_ALLOWED_TO_JOIN_KICK_MESSAGE));
             }}
 

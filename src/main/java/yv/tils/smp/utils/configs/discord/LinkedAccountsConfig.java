@@ -12,11 +12,11 @@ import java.io.IOException;
  * @version 4.6.8
  */
 public class LinkedAccountsConfig {
-    File file = new File(SMPPlugin.getInstance().getDataFolder() + "/discord", "linkedAccounts.yml");
+    File file = new File(SMPPlugin.getInstance().getDataFolder() + "/Discord", "linkedAccounts.yml");
     YamlConfiguration ymlfile = YamlConfiguration.loadConfiguration(file);
 
     public void StringInput() {
-        ymlfile.addDefault("DiscordName#Tag", "Minecraft Username + UUID");
+        ymlfile.addDefault("DiscordID", "Minecraft Username + UUID");
         ymlfile.options().copyDefaults(true);
         fileSave();
     }

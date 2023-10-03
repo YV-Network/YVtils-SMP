@@ -26,8 +26,8 @@ public class ModerationAutoCompleter implements TabCompleter {
             results.add("ban");
             results.add("unban");
         }else if (args.length == 2) {
-                for (Player player : Bukkit.getOnlinePlayers()) {
-                    results.add(player.getName());
+            for (Player player : Bukkit.getOnlinePlayers()) {
+                results.add(player.getName());
             }
         }else if (args.length == 3) {
             if (args[0].equals("tempban")) {
