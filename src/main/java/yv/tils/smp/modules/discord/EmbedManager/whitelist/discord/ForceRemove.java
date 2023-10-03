@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @version 4.6.8
- * @since 4.6.8.1
+ * @version 4.6.8.1
+ * @since 4.6.8
  */
 public class ForceRemove {
     EmbedBuilder builder = new EmbedBuilder();
@@ -48,7 +48,12 @@ public class ForceRemove {
         list1.add("MCNAME");
         list2.add(acc[1]);
         list1.add("DCNAME");
-        list2.add(acc[0]);
+
+        if (acc[0].matches("\\d+")) {
+            list2.add("<@" + acc[0] + ">");
+        }else {
+            list2.add(acc[0]);
+        }
 
         return builder
                 .setTitle(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.EMBED_CMD_WHITELIST_REMOVED_TITLE), list1, list2))

@@ -47,14 +47,18 @@ public class StatsDescription {
                     } catch (NumberFormatException ignored) {
                         if (!(guilds.size() > i + 1)) {
                             Bukkit.getLogger().severe("[YVtils-SMP -> StatsDescription] " +
-                                    LanguageFile.DirectFormatter("Invalid channel ID: '" + channel + "'! Make sure to put a valid channel ID in the config file or disable this feature! (plugins/YVtils-SMP/Discord/config.yml/ChatSync)",
-                                            "Ungültige Kanal ID: '" + channel + "'! Kontrolliere/Korrigiere noch mal die Kanal ID in der Config oder deaktiviere diese Funktion! (plugins/YVtils-SMP/Discord/config.yml/ChatSync)"));
-                            break;
+                                    LanguageFile.DirectFormatter("Invalid channel ID: '" + ChannelID + "'! Make sure to put a valid channel ID in the config file or disable this feature! (plugins/YVtils-SMP/Discord/config.yml/ChatSync)",
+                                            "Ungültige Kanal ID: '" + ChannelID + "'! Kontrolliere/Korrigiere noch mal die Kanal ID in der Config oder deaktiviere diese Funktion! (plugins/YVtils-SMP/Discord/config.yml/ChatSync)"));
+                            this.cancel();
+                            return;
                         }
                     }
                 }
 
-                if (channel == null) return;
+                if (channel == null) {
+                    this.cancel();
+                    return;
+                }
 
                 try {
                     if (serverip.equals("null")) {

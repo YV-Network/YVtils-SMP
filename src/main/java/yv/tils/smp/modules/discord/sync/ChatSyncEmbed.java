@@ -88,6 +88,5 @@ public class ChatSyncEmbed {
                 .setAuthor(sender.getName(), null, "https://cravatar.eu/head/" + sender.getName() + "/600")
                 .setDescription(message)
                 .setColor(color(sender));
-                //.setFooter("YVtils • https://yvnetwork.de/yvtils/", "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png")
     }
 }

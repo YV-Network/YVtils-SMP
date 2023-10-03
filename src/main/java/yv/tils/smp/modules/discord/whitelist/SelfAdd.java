@@ -8,6 +8,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.scheduler.BukkitRunnable;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.modules.discord.EmbedManager.whitelist.*;
 import yv.tils.smp.placeholder.MessagePlaceholder;
@@ -69,7 +70,11 @@ public class SelfAdd extends ListenerAdapter {
                     if (new ImportWhitelist().reader(UserID, null, null).contains(UserID)) {
                         List<String> whitelist = new ImportWhitelist().reader(UserID, null, null);
                         OfflinePlayer oldPlayer = Bukkit.getOfflinePlayer(whitelist.get(1));
-                        oldPlayer.setWhitelisted(false);
+                        new BukkitRunnable() {
+                            public void run() {
+                                oldPlayer.setWhitelisted(false);
+                            }
+                        }.runTask(SMPPlugin.getInstance());
                         whitelistRemove(UserID, oldPlayer.getName(), oldPlayer.getUniqueId().toString());
 
                         List<String> list1 = new ArrayList<>();
@@ -97,7 +102,11 @@ public class SelfAdd extends ListenerAdapter {
 
                                 Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_CHANGE), list1, list2));
                                 channel.sendMessageEmbeds(new AccountChange().Embed(whitelist.get(1), e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
-                                player.setWhitelisted(true);
+                                new BukkitRunnable() {
+                                    public void run() {
+                                        player.setWhitelisted(true);
+                                    }
+                                }.runTask(SMPPlugin.getInstance());
                                 SMPPlugin.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
                                 new DiscordConfigManager().LinkedWriter(UserID, player.getName() + " " + player.getUniqueId());
                             }catch (HierarchyException ignored) {
@@ -128,7 +137,13 @@ public class SelfAdd extends ListenerAdapter {
 
                                 Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_ADD), list1, list2));
                                 channel.sendMessageEmbeds(new AccountAdded().Embed(e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
-                                player.setWhitelisted(true);
+
+                                new BukkitRunnable() {
+                                    public void run() {
+                                        player.setWhitelisted(true);
+                                    }
+                                }.runTask(SMPPlugin.getInstance());
+
                                 SMPPlugin.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
                                 new DiscordConfigManager().LinkedWriter(UserID, player.getName() + " " + player.getUniqueId());
                             }catch (HierarchyException ignored) {

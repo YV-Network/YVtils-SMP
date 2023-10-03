@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.exceptions.HierarchyException;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.scheduler.BukkitRunnable;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.modules.discord.EmbedManager.whitelist.*;
 import yv.tils.smp.placeholder.MessagePlaceholder;
@@ -57,7 +58,13 @@ public class ForceAdd {
                     List<String> whitelist = new ImportWhitelist().reader(UserID, null, null);
 
                     OfflinePlayer playerwhitelistremove = Bukkit.getOfflinePlayer(whitelist.get(1));
-                    playerwhitelistremove.setWhitelisted(false);
+
+                    new BukkitRunnable() {
+                        public void run() {
+                            playerwhitelistremove.setWhitelisted(false);
+                        }
+                    }.runTask(SMPPlugin.getInstance());
+
                     whitelistRemove(UserID, playerwhitelistremove.getName(), playerwhitelistremove.getUniqueId().toString());
 
                     List<String> list1 = new ArrayList();
@@ -73,7 +80,11 @@ public class ForceAdd {
 
                     //Account Changed
                     if (dc == null) {
-                        player.setWhitelisted(true);
+                        new BukkitRunnable() {
+                            public void run() {
+                                player.setWhitelisted(true);
+                            }
+                        }.runTask(SMPPlugin.getInstance());
                         SMPPlugin.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
                         new DiscordConfigManager().LinkedWriter(UserID, mc+ " " + player.getUniqueId());
                     }else {
@@ -89,7 +100,11 @@ public class ForceAdd {
                                     }
                                 }catch (NumberFormatException ignored) {}
 
-                                player.setWhitelisted(true);
+                                new BukkitRunnable() {
+                                    public void run() {
+                                        player.setWhitelisted(true);
+                                    }
+                                }.runTask(SMPPlugin.getInstance());
                                 SMPPlugin.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
                                 new DiscordConfigManager().LinkedWriter(UserID, mc + " " + player.getUniqueId());
                             } catch (HierarchyException ignored) {
@@ -112,7 +127,11 @@ public class ForceAdd {
 
                     //Account Added
                     if (dc == null) {
-                        player.setWhitelisted(true);
+                        new BukkitRunnable() {
+                            public void run() {
+                                player.setWhitelisted(true);
+                            }
+                        }.runTask(SMPPlugin.getInstance());
                         SMPPlugin.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
                         new DiscordConfigManager().LinkedWriter(UserID, mc+ " " + player.getUniqueId());
                     }else {
@@ -128,7 +147,11 @@ public class ForceAdd {
                                     }
                                 }catch (NumberFormatException ignored) {}
 
-                                player.setWhitelisted(true);
+                                new BukkitRunnable() {
+                                    public void run() {
+                                        player.setWhitelisted(true);
+                                    }
+                                }.runTask(SMPPlugin.getInstance());
                                 SMPPlugin.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
                                 new DiscordConfigManager().LinkedWriter(UserID, mc + " " + player.getUniqueId());
                             } catch (HierarchyException ignored) {

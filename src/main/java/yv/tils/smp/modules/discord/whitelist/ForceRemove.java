@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.interactions.components.selections.SelectOption;
 import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.scheduler.BukkitRunnable;
 import yv.tils.smp.SMPPlugin;
 import yv.tils.smp.logger.ConsoleLog;
 import yv.tils.smp.modules.discord.BotManager.BotStartStop;
@@ -66,7 +67,11 @@ public class ForceRemove extends ListenerAdapter {
             OfflinePlayer player = Bukkit.getOfflinePlayer(args[1]);
 
             list.remove(args[0] + "," + args[1] + "," + args[2]);
-            player.setWhitelisted(false);
+            new BukkitRunnable() {
+                public void run() {
+                    player.setWhitelisted(false);
+                }
+            }.runTask(SMPPlugin.getInstance());
             new DiscordConfigManager().LinkedWriter(args[0], null);
 
             User user = null;
@@ -92,8 +97,10 @@ public class ForceRemove extends ListenerAdapter {
                 }
             }catch (IllegalArgumentException ignored) {}
 
-            reply(e.getMember().getUser().getGlobalName(), args[1], args[0], list.size(), args, e);
-            }
+            try {
+                reply(e.getMember().getUser().getGlobalName(), args[1], args[0], list.size(), args, e);
+            }catch (IllegalStateException ignored) {}
+        }
     }
 
     private void reply(String exec, String mc, String dc, int listSize, String[] args, StringSelectInteractionEvent e) {

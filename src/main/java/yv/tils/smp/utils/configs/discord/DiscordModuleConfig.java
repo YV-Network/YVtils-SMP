@@ -36,7 +36,7 @@ public class DiscordModuleConfig {
         //ymlfile.addDefault("HelpCommand.Permission.DiscordHelpCMD", LanguageFile.DirectFormatter("PERMISSION","BERECHTIGUNG"));
         //ymlfile.addDefault("HelpCommand.Permission.IngameHelpCMD", LanguageFile.DirectFormatter("PERMISSION","BERECHTIGUNG"));
 
-        ymlfile.addDefault("#3", LanguageFile.DirectFormatter("See here for Permission Names: https://ci.dv8tion.net/job/JDA5/javadoc/net/dv8tion/jda/api/Permission.html", "Siehe hier für die Namen der Berechtigungen: https://ci.dv8tion.net/job/JDA5/javadoc/net/dv8tion/jda/api/Permission.html"));
+        ymlfile.addDefault("3#", LanguageFile.DirectFormatter("See here for Permission Names: https://ci.dv8tion.net/job/JDA5/javadoc/net/dv8tion/jda/api/Permission.html", "Siehe hier für die Namen der Berechtigungen: https://ci.dv8tion.net/job/JDA5/javadoc/net/dv8tion/jda/api/Permission.html"));
         ymlfile.addDefault("ServerInfoCommand.Permission", LanguageFile.DirectFormatter("PERMISSION","BERECHTIGUNG"));
 
         ymlfile.addDefault("WhitelistCommand.Permission", LanguageFile.DirectFormatter("PERMISSION","BERECHTIGUNG"));

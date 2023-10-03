@@ -16,7 +16,7 @@ public class ServerInfoEmbed {
     String url = "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png";
 
     public EmbedBuilder Embed(User user) {
-        String userAsTag = user.getAsTag();
+        String userID = user.getId();
         YamlConfiguration yml = new DiscordConfigManager().LinkedRequest();
 
         String IP = SMPPlugin.getInstance().getConfig().getString("ServerIP");
@@ -27,8 +27,8 @@ public class ServerInfoEmbed {
 
         String MC_Name = "-";
 
-        if (yml.get(userAsTag) != null) {
-            String[] liststring = yml.get(userAsTag).toString().split(" ");
+        if (yml.get(userID) != null) {
+            String[] liststring = yml.get(userID).toString().split(" ");
             OfflinePlayer playerwhitelistget = Bukkit.getOfflinePlayer(liststring[0]);
 
             MC_Name = playerwhitelistget.getName();
