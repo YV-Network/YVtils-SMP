@@ -10,8 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
-import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.placeholder.StringReplacer;
+import yv.tils.smp.YVtils;
+import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
@@ -33,19 +33,19 @@ public class FlyCommand implements CommandExecutor, Listener {
                 Player player = (Player) sender;
                 UUID uuid = player.getUniqueId();
                 if (sender.hasPermission("yvtils.smp.command.fly")) {
-                    if (!SMPPlugin.getInstance().fly.contains(uuid)) {
-                        SMPPlugin.getInstance().fly.add(uuid);
+                    if (!YVtils.getInstance().fly.contains(uuid)) {
+                        YVtils.getInstance().fly.add(uuid);
                         player.setAllowFlight(true);
                         player.setFlying(true);
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.FLY_COMMAND_ENABLE));
                     } else {
                         if (player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
-                            SMPPlugin.getInstance().fly1.add(uuid);
-                            SMPPlugin.getInstance().fly.remove(uuid);
+                            YVtils.getInstance().fly1.add(uuid);
+                            YVtils.getInstance().fly.remove(uuid);
                             player.setAllowFlight(false);
                             sender.sendMessage(LanguageFile.getMessage(LanguageMessage.FLY_COMMAND_DISABLE));
                         }else {
-                            SMPPlugin.getInstance().fly.remove(uuid);
+                            YVtils.getInstance().fly.remove(uuid);
                             player.setAllowFlight(false);
                             sender.sendMessage(LanguageFile.getMessage(LanguageMessage.FLY_COMMAND_DISABLE));
                         }}}
@@ -60,21 +60,21 @@ public class FlyCommand implements CommandExecutor, Listener {
                 list2.add(player.getName());
 
                 if (sender.hasPermission("yvtils.smp.command.fly")) {
-                    if (!SMPPlugin.getInstance().fly.contains(uuid)) {
-                        SMPPlugin.getInstance().fly.add(uuid);
+                    if (!YVtils.getInstance().fly.contains(uuid)) {
+                        YVtils.getInstance().fly.add(uuid);
                         player.setAllowFlight(true);
                         player.setFlying(true);
                         sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.FLY_COMMAND_ENABLE_OTHER), list1, list2));
                         player.sendMessage(LanguageFile.getMessage(LanguageMessage.FLY_COMMAND_ENABLE));
                     } else {
                         if (player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
-                            SMPPlugin.getInstance().fly1.add(uuid);
-                            SMPPlugin.getInstance().fly.remove(uuid);
+                            YVtils.getInstance().fly1.add(uuid);
+                            YVtils.getInstance().fly.remove(uuid);
                             player.setAllowFlight(false);
                             sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.FLY_COMMAND_DISABLE_OTHER), list1, list2));
                             player.sendMessage(LanguageFile.getMessage(LanguageMessage.FLY_COMMAND_DISABLE));
                         }else {
-                            SMPPlugin.getInstance().fly.remove(uuid);
+                            YVtils.getInstance().fly.remove(uuid);
                             player.setAllowFlight(false);
                             sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.FLY_COMMAND_DISABLE_OTHER), list1, list2));
                             player.sendMessage(LanguageFile.getMessage(LanguageMessage.FLY_COMMAND_DISABLE));
@@ -90,8 +90,8 @@ public class FlyCommand implements CommandExecutor, Listener {
     public void onLandDamage(EntityDamageEvent event) {
         if (event.getEntityType() == EntityType.PLAYER
                 && (event.getCause() == EntityDamageEvent.DamageCause.FALL)
-                && SMPPlugin.getInstance().fly1.contains(event.getEntity().getUniqueId())) {
+                && YVtils.getInstance().fly1.contains(event.getEntity().getUniqueId())) {
             event.setCancelled(true);
             UUID uuid = event.getEntity().getUniqueId();
-            SMPPlugin.getInstance().fly1.remove(uuid);
+            YVtils.getInstance().fly1.remove(uuid);
         }}}

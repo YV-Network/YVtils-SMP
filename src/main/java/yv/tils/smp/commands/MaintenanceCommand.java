@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.YVtils;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
@@ -20,7 +20,7 @@ import java.io.IOException;
  */
 public class MaintenanceCommand implements CommandExecutor {
 
-    File file2 = new File(SMPPlugin.getInstance().getDataFolder(), "DoNotEdit.yml");
+    File file2 = new File(YVtils.getInstance().getDataFolder(), "DoNotEdit.yml");
     YamlConfiguration dontedit = YamlConfiguration.loadConfiguration(file2);
 
     @Override
@@ -37,7 +37,7 @@ public class MaintenanceCommand implements CommandExecutor {
                 if (dontedit.getString("MaintenanceMode").equals("true")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
-                    SMPPlugin.getInstance().maintenances = false;
+                    YVtils.getInstance().maintenances = false;
                     dontedit.set("MaintenanceMode", "false");
                     try {
                         dontedit.save(file2);
@@ -55,7 +55,7 @@ public class MaintenanceCommand implements CommandExecutor {
                 }else if (dontedit.getString("MaintenanceMode").equals("false")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
-                    SMPPlugin.getInstance().maintenances = true;
+                    YVtils.getInstance().maintenances = true;
                     dontedit.set("MaintenanceMode", "true");
                     try {
                         dontedit.save(file2);
@@ -74,7 +74,7 @@ public class MaintenanceCommand implements CommandExecutor {
                 if (dontedit.getString("MaintenanceMode").equals("true")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
-                    SMPPlugin.getInstance().maintenances = false;
+                    YVtils.getInstance().maintenances = false;
                     dontedit.set("MaintenanceMode", "false");
                     try {
                         dontedit.save(file2);
@@ -84,7 +84,7 @@ public class MaintenanceCommand implements CommandExecutor {
                 }else if (dontedit.getString("MaintenanceMode").equals("false")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
-                    SMPPlugin.getInstance().maintenances = true;
+                    YVtils.getInstance().maintenances = true;
                     dontedit.set("MaintenanceMode", "true");
                     try {
                         dontedit.save(file2);

@@ -1,6 +1,6 @@
 name: YVtils-SMP
 version: ${project.version}
-main: yv.tils.smp.SMPPlugin
+main: yv.tils.smp.YVtils
 api-version: 1.18
 authors: [ WolfiiYV ]
 contributor: [ SlWed, black_Kittys, SilverZer0 ]

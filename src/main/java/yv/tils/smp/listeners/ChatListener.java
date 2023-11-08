@@ -6,9 +6,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.logger.ConsoleLog;
-import yv.tils.smp.placeholder.ColorCode;
+import yv.tils.smp.YVtils;
+import yv.tils.smp.internalapi.Log;
 import yv.tils.smp.utils.configs.ConfigModeration;
 
 import java.io.File;
@@ -19,7 +18,7 @@ import java.io.File;
  */
 public class ChatListener implements Listener {
 
-    File statussavefile = new File(SMPPlugin.getInstance().getDataFolder(), "StatusSave.yml");
+    File statussavefile = new File(YVtils.getInstance().getDataFolder(), "StatusSave.yml");
 
     @EventHandler
     public void onChatEvent(AsyncPlayerChatEvent e) {
@@ -31,18 +30,23 @@ public class ChatListener implements Listener {
                 message = ChatColor.translateAlternateColorCodes('&', message);
         }
 
-        new ConsoleLog(String.valueOf(e.getPlayer().getUniqueId()));
+        new Log(String.valueOf(e.getPlayer().getUniqueId()));
 
-        if (!SMPPlugin.getInstance().globalmute) {
+        if (!YVtils.getInstance().globalmute) {
             YamlConfiguration statussave = YamlConfiguration.loadConfiguration(statussavefile);
             if (statussave.get(String.valueOf(e.getPlayer().getUniqueId())) != null) {
-                new ConsoleLog("StatusModuleDebug - OnChat - With Check - With Prefix");
-                String prefix = new ColorCode().ColorCodes(new ColorCode().ColorCodes(new ConfigModeration().ConfigRequest("StatusSave").getString(String.valueOf(e.getPlayer().getUniqueId())))) + " ";
+                new Log("StatusModuleDebug - OnChat - With Check - With Prefix");
+                String args = new ConfigModeration().ConfigRequest("StatusSave").getString(String.valueOf(e.getPlayer().getUniqueId()));
+                String args1 = ChatColor.translateAlternateColorCodes('&', args);
+                String prefix = ChatColor.translateAlternateColorCodes('&', args1) + " ";
 
                 e.setCancelled(true);
                 Bukkit.broadcastMessage(prefix + name + "§8: §f" + message);
             }else {
-                new ConsoleLog("StatusModuleDebug - OnChat - With Check - No Prefix");
+                new Log("StatusModuleDebug - OnChat - With Check - No Prefix");
                 e.setCancelled(true);
                 Bukkit.broadcastMessage(name + "§8: §f" + message);
-            }}}}
+            }
+        }
+    }
+}

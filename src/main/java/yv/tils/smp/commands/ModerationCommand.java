@@ -8,9 +8,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import yv.tils.smp.placeholder.ColorCode;
 import yv.tils.smp.placeholder.MessagePlaceholder;
-import yv.tils.smp.placeholder.StringReplacer;
+import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
@@ -49,8 +48,8 @@ public class ModerationCommand implements CommandExecutor {
                     String reasonreplaceplsarg2 = builder.toString();
                     String reasonreplaceplsarg4 = builder1.toString();
 
-                    String reason = new ColorCode().ColorCodes(reasonreplaceplsarg2);
-                    String reason1 = new ColorCode().ColorCodes(reasonreplaceplsarg4);
+                    String reason = ChatColor.translateAlternateColorCodes('&', reasonreplaceplsarg2);
+                    String reason1 = ChatColor.translateAlternateColorCodes('&', reasonreplaceplsarg4);
 
                     if (reason1.length() == 0) {
                         reason1 = LanguageFile.getMessage(LanguageMessage.MOD_NO_REASON);

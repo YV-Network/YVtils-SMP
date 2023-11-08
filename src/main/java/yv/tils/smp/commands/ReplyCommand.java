@@ -6,10 +6,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.placeholder.ColorCode;
+import yv.tils.smp.YVtils;
 import yv.tils.smp.placeholder.MessagePlaceholder;
-import yv.tils.smp.placeholder.StringReplacer;
+import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
@@ -28,17 +27,17 @@ public class ReplyCommand implements CommandExecutor {
         if (sender instanceof Player player) {
             if (args.length >= 1) {
 
-                    if (SMPPlugin.getInstance().getRecentMessages().containsKey(player.getUniqueId())) {
-                        UUID uuid = SMPPlugin.getInstance().getRecentMessages().get(player.getUniqueId());
+                    if (YVtils.getInstance().getRecentMessages().containsKey(player.getUniqueId())) {
+                        UUID uuid = YVtils.getInstance().getRecentMessages().get(player.getUniqueId());
                         if (Bukkit.getPlayer(uuid) != null) {
                             Player target = Bukkit.getPlayer(uuid);
                             StringBuilder builder = new StringBuilder();
                             for (String arg : args) {
                                 builder.append(arg).append(" ");
                             }
-                            String colorcodereplace = new ColorCode().ColorCodes(builder.toString());
+                            String colorcodereplace = ChatColor.translateAlternateColorCodes('&', builder.toString());
 
-                            List<String> list2 = SMPPlugin.getInstance().getConfig().getStringList("DirectMessage.Design");
+                            List<String> list2 = YVtils.getInstance().getConfig().getStringList("DirectMessage.Design");
 
                             for (int i = 0; i < list2.size(); i++) {
                                 list2.set(i, list2.get(i).replace("receiver", target.getName()));
@@ -60,7 +59,7 @@ public class ReplyCommand implements CommandExecutor {
                                 player.sendMessage(senderreciverdesign + " " + colorcodereplace);
                                 target.sendMessage(senderreciverdesign + " " + colorcodereplace);
 
-                                SMPPlugin.getInstance().getRecentMessages().put(player.getUniqueId(), target.getUniqueId());
+                                YVtils.getInstance().getRecentMessages().put(player.getUniqueId(), target.getUniqueId());
                             }
                         }else {
                             List<String> list3 = new ArrayList();

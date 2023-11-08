@@ -7,9 +7,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.YVtils;
 import yv.tils.smp.placeholder.MessagePlaceholder;
-import yv.tils.smp.placeholder.StringReplacer;
+import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
@@ -36,16 +36,16 @@ public class GlobalMuteCommand implements CommandExecutor, Listener {
         list4.add(MessagePlaceholder.PREFIXGLOBALMUTE);
 
         if (sender.hasPermission("yvtils.smp.command.mutechat")) {
-            if (!SMPPlugin.getInstance().globalmute) {
-                SMPPlugin.getInstance().globalmute = true;
+            if (!YVtils.getInstance().globalmute) {
+                YVtils.getInstance().globalmute = true;
                 sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.CHATMUTE_ENABLE_FEEDBACK), list1, list2));
                 Bukkit.broadcastMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.CHATMUTE_ENABLE_ANNOUNCEMENT), list3, list4));
             }else {
-                SMPPlugin.getInstance().globalmute = false;
+                YVtils.getInstance().globalmute = false;
                 sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.CHATMUTE_DISABLE_FEEDBACK), list1, list2));
                 Bukkit.broadcastMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.CHATMUTE_DISABLE_ANNOUNCEMENT), list3, list4));
             }}
-        return SMPPlugin.getInstance().globalmute;
+        return YVtils.getInstance().globalmute;
     }
 
     @EventHandler
@@ -56,7 +56,7 @@ public class GlobalMuteCommand implements CommandExecutor, Listener {
         list1.add("PREFIXGLOBALMUTE");
         list2.add(MessagePlaceholder.PREFIXGLOBALMUTE);
 
-        if (SMPPlugin.getInstance().globalmute) {
+        if (YVtils.getInstance().globalmute) {
             if (!e.getPlayer().hasPermission("yvtils.smp.bypass.mutechat")) {
                 e.setCancelled(true);
                 e.getPlayer().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.CHATMUTE_TRY_TO_WRITE), list1, list2));

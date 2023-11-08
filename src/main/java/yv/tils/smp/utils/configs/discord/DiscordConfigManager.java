@@ -1,7 +1,7 @@
 package yv.tils.smp.utils.configs.discord;
 
 import org.bukkit.configuration.file.YamlConfiguration;
-import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.YVtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class DiscordConfigManager {
     public YamlConfiguration ConfigRequest() {
-        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), "Discord/config.yml");
+        File configfile = new File(YVtils.getInstance().getDataFolder(), "Discord/config.yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         try {
             configuration.save(configfile);
@@ -23,7 +23,7 @@ public class DiscordConfigManager {
     }
 
     public YamlConfiguration LinkedRequest() {
-        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), "Discord/linkedAccounts.yml");
+        File configfile = new File(YVtils.getInstance().getDataFolder(), "Discord/linkedAccounts.yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         try {
             configuration.save(configfile);
@@ -34,7 +34,7 @@ public class DiscordConfigManager {
     }
 
     public void LinkedWriter(String path,String value) {
-        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), "Discord/linkedAccounts.yml");
+        File configfile = new File(YVtils.getInstance().getDataFolder(), "Discord/linkedAccounts.yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         try {
             configuration.set(path, value);
@@ -45,7 +45,7 @@ public class DiscordConfigManager {
     }
 
     public YamlConfiguration StatsRequest() {
-        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), "Discord/stats.yml");
+        File configfile = new File(YVtils.getInstance().getDataFolder(), "Discord/stats.yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         try {
             configuration.save(configfile);
@@ -56,7 +56,7 @@ public class DiscordConfigManager {
     }
 
     public void StatsWriter(String path, String value) {
-        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), "Discord/stats.yml");
+        File configfile = new File(YVtils.getInstance().getDataFolder(), "Discord/stats.yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         try {
             configuration.set(path, value);

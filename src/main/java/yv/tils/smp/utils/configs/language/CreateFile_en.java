@@ -2,7 +2,7 @@ package yv.tils.smp.utils.configs.language;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
-import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.YVtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.io.IOException;
  * @version 4.6.8
  */
 public class CreateFile_en {
-    File file = new File(SMPPlugin.getInstance().getDataFolder() + "/Language", "en.yml");
+    File file = new File(YVtils.getInstance().getDataFolder() + "/Language", "en.yml");
     YamlConfiguration ymlfile = YamlConfiguration.loadConfiguration(file);
 
     public void StringInput() {

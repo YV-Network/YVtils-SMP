@@ -109,3 +109,16 @@ Placeholder:
 #Do not edit!
 Debug: false #Only set to true when you know what you're doing, or you need Help and the Support say so!
 ConfigVersion: 12
+
+
+#-------------CH2-1.0.0 Testing Area-------------#
+
+Modules:
+  Discord: true
+  Status: true
+  Sit: true
+  MultiMine: true
+  CCR: true
+  OldVersion: true
+  Server: true
+  Admin: true

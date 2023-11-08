@@ -10,8 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
-import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.placeholder.StringReplacer;
+import yv.tils.smp.YVtils;
+import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
@@ -32,19 +32,19 @@ public class GodCommand implements CommandExecutor, Listener {
                 Player player = (Player) sender;
                 UUID uuid = player.getUniqueId();
                 if (sender.hasPermission("yvtils.smp.command.god")) {
-                    if (!SMPPlugin.getInstance().godmode.contains(uuid)) {
-                        SMPPlugin.getInstance().godmode.add(uuid);
+                    if (!YVtils.getInstance().godmode.contains(uuid)) {
+                        YVtils.getInstance().godmode.add(uuid);
                         player.setAllowFlight(true);
                         player.setFlying(true);
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_ENABLE));
                     } else {
                         if (player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
-                            SMPPlugin.getInstance().godmode1.add(uuid);
-                            SMPPlugin.getInstance().godmode.remove(uuid);
+                            YVtils.getInstance().godmode1.add(uuid);
+                            YVtils.getInstance().godmode.remove(uuid);
                             player.setAllowFlight(false);
                             sender.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE));
                         }else {
-                            SMPPlugin.getInstance().godmode.remove(uuid);
+                            YVtils.getInstance().godmode.remove(uuid);
                             player.setAllowFlight(false);
                             sender.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE));
                         }
@@ -60,21 +60,21 @@ public class GodCommand implements CommandExecutor, Listener {
                 list2.add(player.getName());
 
                 if (sender.hasPermission("yvtils.smp.command.god")) {
-                    if (!SMPPlugin.getInstance().godmode.contains(uuid)) {
-                        SMPPlugin.getInstance().godmode.add(uuid);
+                    if (!YVtils.getInstance().godmode.contains(uuid)) {
+                        YVtils.getInstance().godmode.add(uuid);
                         player.setAllowFlight(true);
                         player.setFlying(true);
                         sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_ENABLE_OTHER), list1, list2));
                         player.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_ENABLE));
                     } else {
                         if (player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
-                            SMPPlugin.getInstance().godmode1.add(uuid);
-                            SMPPlugin.getInstance().godmode.remove(uuid);
+                            YVtils.getInstance().godmode1.add(uuid);
+                            YVtils.getInstance().godmode.remove(uuid);
                             player.setAllowFlight(false);
                             sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE_OTHER), list1, list2));
                             player.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE));
                         }else {
-                            SMPPlugin.getInstance().godmode.remove(uuid);
+                            YVtils.getInstance().godmode.remove(uuid);
                             player.setAllowFlight(false);
                             sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE_OTHER), list1, list2));
                             player.sendMessage(LanguageFile.getMessage(LanguageMessage.GODMODE_COMMAND_DISABLE));
@@ -88,13 +88,13 @@ public class GodCommand implements CommandExecutor, Listener {
     @EventHandler
     public void onDamage(EntityDamageEvent event) {
         if (event.getEntity() instanceof Player player) {
-            if (SMPPlugin.getInstance().godmode.contains(player.getUniqueId())){
+            if (YVtils.getInstance().godmode.contains(player.getUniqueId())){
             event.setCancelled(true);
         }
         if (event.getEntityType() == EntityType.PLAYER
                 && (event.getCause() == EntityDamageEvent.DamageCause.FALL)
-                && SMPPlugin.getInstance().godmode1.contains(event.getEntity().getUniqueId())) {
+                && YVtils.getInstance().godmode1.contains(event.getEntity().getUniqueId())) {
             event.setCancelled(true);
             UUID uuid = event.getEntity().getUniqueId();
-            SMPPlugin.getInstance().godmode1.remove(uuid);
+            YVtils.getInstance().godmode1.remove(uuid);
         }}}}

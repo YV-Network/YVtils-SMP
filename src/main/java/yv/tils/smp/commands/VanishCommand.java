@@ -9,9 +9,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
-import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.YVtils;
 import yv.tils.smp.placeholder.MessagePlaceholder;
-import yv.tils.smp.placeholder.StringReplacer;
+import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
@@ -34,8 +34,8 @@ public class VanishCommand implements CommandExecutor, Listener {
             Player player = (Player) sender;
             UUID uuid = player.getUniqueId();
             String playerName = player.getName();
-            List<String> list1 = SMPPlugin.getInstance().getConfig().getStringList("JoinMessage");
-            List<String> list2 = SMPPlugin.getInstance().getConfig().getStringList("QuitMessage");
+            List<String> list1 = YVtils.getInstance().getConfig().getStringList("JoinMessage");
+            List<String> list2 = YVtils.getInstance().getConfig().getStringList("QuitMessage");
 
             list1.replaceAll(s -> s.replace("player", playerName));
             Collections.shuffle(list1);
@@ -52,8 +52,8 @@ public class VanishCommand implements CommandExecutor, Listener {
 
 
             if (args.length == 0) {
-                if (SMPPlugin.getInstance().vanished.contains(uuid)) {
-                    SMPPlugin.getInstance().vanished.remove(uuid);
+                if (YVtils.getInstance().vanished.contains(uuid)) {
+                    YVtils.getInstance().vanished.remove(uuid);
                     for (Player target : Bukkit.getOnlinePlayers()) {
                         target.showPlayer(player);
                     }
@@ -62,7 +62,7 @@ public class VanishCommand implements CommandExecutor, Listener {
                     sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_DEACTIVATE), list3, list4));
                     Bukkit.broadcastMessage(joinm);
                 } else {
-                    SMPPlugin.getInstance().vanished.add(uuid);
+                    YVtils.getInstance().vanished.add(uuid);
                     for (Player target : Bukkit.getOnlinePlayers()) {
                         target.hidePlayer(player);
                     }
@@ -73,7 +73,7 @@ public class VanishCommand implements CommandExecutor, Listener {
                 }} else {
                 switch (args[0].toLowerCase()) {
                     case "itempickup":
-                        if (!SMPPlugin.getInstance().vanished.contains(uuid)) {
+                        if (!YVtils.getInstance().vanished.contains(uuid)) {
                             sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_ITEM_PICKUP_NOT_IN_VANISH), list3, list4));
                             return true;
                         }
@@ -88,12 +88,12 @@ public class VanishCommand implements CommandExecutor, Listener {
                         }
                         break;
                     case "on":
-                        if (SMPPlugin.getInstance().vanished.contains(uuid)) {
+                        if (YVtils.getInstance().vanished.contains(uuid)) {
                             sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_ALREADY_ACTIVATED), list3, list4));
                             return true;
                         }
 
-                        SMPPlugin.getInstance().vanished.add(uuid);
+                        YVtils.getInstance().vanished.add(uuid);
                         for (Player target : Bukkit.getOnlinePlayers()) {
                             target.hidePlayer(player);
                         }
@@ -103,12 +103,12 @@ public class VanishCommand implements CommandExecutor, Listener {
                         Bukkit.broadcastMessage(Quitm);
                         break;
                     case "off":
-                        if (!SMPPlugin.getInstance().vanished.contains(uuid)) {
+                        if (!YVtils.getInstance().vanished.contains(uuid)) {
                             sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_ALREADY_DEACTIVATED), list3, list4));
                             return false;
                         }
 
-                        SMPPlugin.getInstance().vanished.remove(uuid);
+                        YVtils.getInstance().vanished.remove(uuid);
                         for (Player target : Bukkit.getOnlinePlayers()) {
                             target.showPlayer(player);
                         }
@@ -130,6 +130,6 @@ public class VanishCommand implements CommandExecutor, Listener {
     @EventHandler
     public void onDamage(EntityDamageEvent event) {
             if (event.getEntity() instanceof Player player) {
-                if (SMPPlugin.getInstance().vanished.contains(player.getUniqueId())) {
+                if (YVtils.getInstance().vanished.contains(player.getUniqueId())) {
                     event.setCancelled(true);
             }}}}

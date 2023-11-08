@@ -18,7 +18,7 @@ import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.plugin.Plugin;
-import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.YVtils;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
@@ -45,7 +45,7 @@ public class SpawnBoostListener implements Listener {
         this.multiplyValue = plugin.getConfig().getInt("multiplyValue");
 
         Bukkit.getScheduler().runTaskTimer(plugin, () -> Bukkit.getWorld("world").getPlayers().forEach(player -> {
-            if (SMPPlugin.getInstance().fly.contains(player.getUniqueId()) || SMPPlugin.getInstance().godmode.contains(player.getUniqueId())) return;
+            if (YVtils.getInstance().fly.contains(player.getUniqueId()) || YVtils.getInstance().godmode.contains(player.getUniqueId())) return;
             if (player.getGameMode() != GameMode.SURVIVAL) return;
             player.setAllowFlight(isInSpawnRadius(player));
             if (flying.contains(player) && !player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
@@ -64,7 +64,7 @@ public class SpawnBoostListener implements Listener {
     public void onTest(PlayerChangedWorldEvent event) {
         Player player = event.getPlayer();
 
-        if (SMPPlugin.getInstance().fly.contains(event.getPlayer().getUniqueId()) || SMPPlugin.getInstance().godmode.contains(event.getPlayer().getUniqueId())) return;
+        if (YVtils.getInstance().fly.contains(event.getPlayer().getUniqueId()) || YVtils.getInstance().godmode.contains(event.getPlayer().getUniqueId())) return;
         player.setAllowFlight(false);
         player.setFlying(false);
         player.setGliding(false);
@@ -74,7 +74,7 @@ public class SpawnBoostListener implements Listener {
 
     @EventHandler
     public void onDoubleJump(PlayerToggleFlightEvent event) {
-        if (SMPPlugin.getInstance().fly.contains(event.getPlayer().getUniqueId()) || SMPPlugin.getInstance().godmode.contains(event.getPlayer().getUniqueId())) return;
+        if (YVtils.getInstance().fly.contains(event.getPlayer().getUniqueId()) || YVtils.getInstance().godmode.contains(event.getPlayer().getUniqueId())) return;
         if (event.getPlayer().getGameMode() != GameMode.SURVIVAL) return;
         if (!isInSpawnRadius(event.getPlayer())) {
             if (!event.getPlayer().getWorld().equals("world")) {

@@ -1,0 +1,14 @@
+# You can find a documentation for this file here: https://yvnetwork.de/yvtils/smp
+Language: en
+
+Modules:
+  Discord: true
+  Status: true
+  Sit: true
+  MultiMine: true
+  CCR: true
+  OldVersion: true
+  Server: true
+  Admin: true
+
+Debug: false

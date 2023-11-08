@@ -2,8 +2,8 @@ package yv.tils.smp.utils.configs.language;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
-import yv.tils.smp.SMPPlugin;
-import yv.tils.smp.logger.ConsoleLog;
+import yv.tils.smp.YVtils;
+import yv.tils.smp.internalapi.Log;
 
 import java.io.File;
 
@@ -16,11 +16,11 @@ public class LanguageFile {
     private static YamlConfiguration yamlConfiguration;
 
     public static void LanguageFileGet() {
-        File file = new File(SMPPlugin.getInstance().getDataFolder() + "/Language",SMPPlugin.getInstance().getConfig().getString("Language") + ".yml");
+        File file = new File(YVtils.getInstance().getDataFolder() + "/Language", YVtils.getInstance().getConfig().getString("Language") + ".yml");
         if (file.exists()) {
             yamlConfiguration = YamlConfiguration.loadConfiguration(file);
         }else {
-            new ConsoleLog(file.getPath());
+            new Log(file.getPath());
             Bukkit.getConsoleSender().sendMessage(DirectFormatter("In the config is an unavailable language file given!", "In der Config wurde ein nicht verfügbares Sprachen File angegeben."));
         }
     }
@@ -42,9 +42,9 @@ public class LanguageFile {
      */
     public static String DirectFormatter(String en, String de) {
         String s;
-        if (SMPPlugin.getInstance().getConfig().getString("Language").equals("en")) {
+        if (YVtils.getInstance().getConfig().getString("Language").equals("en")) {
             s = en;
-        }else if (SMPPlugin.getInstance().getConfig().getString("Language").equals("de")) {
+        }else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
             s = de;
         }else {
             s = en;

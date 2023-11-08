@@ -21,12 +21,47 @@ TODO
 - Move things like Vanish and Inv See to an other Plugin (Maybe) (YVtils-Admin?)
 - Switch from MC Names to UUIDs
 
--------------------------------
+---------------------------------
+
+1. Restructure ✔️
+
+2. Plugin Version Checker ✔️
+
+3. Server Manager ✔️
+ - MOTD
+ - Join/Leave Messages
+ - Tablist?
+ - Scoreboard?
+
+4. Utils
+ - Startup Message from webserver
+ - Config System
+
+5. Admin Things
+ - Player Moderation
+  - Ban
+  - TempBan
+  - Mute
+  - Kick
+  - etc
+ - Vanish
+ - InvSee
+ - Gamemode
+
+5. Discord Module
+ - Discord Stats Channels
+ - Whitelist Import
+ - Buttons for Whitelist Remove
+
+x. Documentation on yvnetwork.de/yvtils/smp
+
+---------------------------------
 
 
 General:
     Some Commands with Player Arguments doesn't check if player is online
     Make Update Checker work on PloudOS, etc
+    Update Checker Toggle
 
 Sit:
 x    Switch from non-Sneak to Sneak or remove completely

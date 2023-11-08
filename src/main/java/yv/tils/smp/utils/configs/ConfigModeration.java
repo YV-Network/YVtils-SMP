@@ -2,7 +2,7 @@ package yv.tils.smp.utils.configs;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
-import yv.tils.smp.SMPPlugin;
+import yv.tils.smp.YVtils;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 
 import java.io.File;
@@ -13,6 +13,7 @@ import java.util.List;
  Creates the Config Files for the Plugin, and give them Input with Config Options
  * @since 4.6.6
  * @version 4.6.8
+ * @deprecated
  */
 public class ConfigModeration {
 
@@ -22,7 +23,7 @@ public class ConfigModeration {
      @since  4.6.6
      */
     public YamlConfiguration ConfigRequest(String config) {
-        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), config + ".yml");
+        File configfile = new File(YVtils.getInstance().getDataFolder(), config + ".yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         try {
             configuration.save(configfile);
@@ -38,7 +39,7 @@ public class ConfigModeration {
      @since  4.6.6
      */
     public YamlConfiguration ConfigContentAdd(String config, String path, String value) {
-        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), config + ".yml");
+        File configfile = new File(YVtils.getInstance().getDataFolder(), config + ".yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         configuration.set(path, value);
         try {
@@ -55,7 +56,7 @@ public class ConfigModeration {
      @since  4.6.6
      */
     public Object ConfigContentGet(String config, String path) {
-        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), config + ".yml");
+        File configfile = new File(YVtils.getInstance().getDataFolder(), config + ".yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
 
         return configuration.get(path);
@@ -67,7 +68,7 @@ public class ConfigModeration {
      @since  4.6.6
      */
     public YamlConfiguration ConfigContentRemove(String config, String path) {
-        File configfile = new File(SMPPlugin.getInstance().getDataFolder(), config + ".yml");
+        File configfile = new File(YVtils.getInstance().getDataFolder(), config + ".yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         configuration.set(path, null);
         try {
@@ -78,17 +79,9 @@ public class ConfigModeration {
         return configuration;
     }
 
-    File mcdcbridgefile = new File(SMPPlugin.getInstance().getDataFolder(), "MinecraftDiscordBridge.yml");
-    YamlConfiguration mcdcbridge = YamlConfiguration.loadConfiguration(mcdcbridgefile);
-    File donoteditfile = new File(SMPPlugin.getInstance().getDataFolder(), "DoNotEdit.yml");
+    File donoteditfile = new File(YVtils.getInstance().getDataFolder(), "DoNotEdit.yml");
     YamlConfiguration donotedit = YamlConfiguration.loadConfiguration(donoteditfile);
-    File whitelisteddcplayersfile = new File(SMPPlugin.getInstance().getDataFolder(), "WhitelistedDiscordPlayers.yml");
-    YamlConfiguration whitelisteddcplayers = YamlConfiguration.loadConfiguration(whitelisteddcplayersfile);
-    File statusmodulefile = new File(SMPPlugin.getInstance().getDataFolder(), "StatusModule.yml");
-    YamlConfiguration statusmodule = YamlConfiguration.loadConfiguration(statusmodulefile);
-    File statussavefile = new File(SMPPlugin.getInstance().getDataFolder(), "StatusSave.yml");
-    YamlConfiguration statussave = YamlConfiguration.loadConfiguration(statussavefile);
-    File funmodulefile = new File(SMPPlugin.getInstance().getDataFolder(), "FunModule.yml");
+    File funmodulefile = new File(YVtils.getInstance().getDataFolder(), "FunModule.yml");
     YamlConfiguration funmodule = YamlConfiguration.loadConfiguration(funmodulefile);
 
     public void onEntranceGeneration() {
@@ -97,17 +90,6 @@ public class ConfigModeration {
         donotedit.addDefault("MissingLanguage", false);
         donotedit.addDefault("MaintenanceMode", "false");
         donotedit.options().copyDefaults(true);
-
-        //StatusModule.yml
-        statusmodule.addDefault("Active", true);
-        statusmodule.addDefault("MaxStatusLength", 20);
-        statusmodule.addDefault("0#",  LanguageFile.DirectFormatter("Here you can set the Default Status, which the Players can select with '/status default <status>'! Please use for Color Codes \"&\" and not \"§\"", "Hier kannst du die Voreingestellten Status einstellen, welche die Spieler mit '/status default <status>' auswählen können! Bitte benutze \"&\" und nicht \"§\" für Color Codes!"));
-        statusmodule.addDefault("Default-Status", defaultstatuslist());
-        statusmodule.options().copyDefaults(true);
-
-        //StatusSave.yml
-        statussave.addDefault("UUID", "STATUS");
-        statussave.options().copyDefaults(true);
 
         //FunModule
         funmodule.addDefault("Active", true);
@@ -124,8 +106,6 @@ public class ConfigModeration {
     public void onSave() {
         try {
             donotedit.save(donoteditfile);
-            statusmodule.save(statusmodulefile);
-            statussave.save(statussavefile);
             funmodule.save(funmodulefile);
         } catch (IOException e) {
             System.out.println("-------");
@@ -155,7 +135,7 @@ public class ConfigModeration {
     }
 
     public void onFolderGenerate(String folder) {
-        File dataFolder = new File(SMPPlugin.getInstance().getDataFolder() + "/" + folder);
+        File dataFolder = new File(YVtils.getInstance().getDataFolder() + "/" + folder);
         if(!dataFolder.exists())
         {
             dataFolder.mkdir();
@@ -163,17 +143,10 @@ public class ConfigModeration {
     }
 
     public void onGenerate(String name, boolean editable) throws Exception {
-        File file = new File(SMPPlugin.getInstance().getDataFolder(), name);
+        File file = new File(YVtils.getInstance().getDataFolder(), name);
         if (!file.exists()) {
             file.createNewFile();
         }}
 
-    public List<String> defaultstatuslist() {
-        List<String> list = new ArrayList<>();
 
-        list.add("&7Status&e");
-        list.add("&eStatus1&b");
-        list.add("&5Status2&8");
-        return list;
-    }
 }
