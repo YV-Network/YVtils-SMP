@@ -2,7 +2,7 @@ name: YVtils-SMP
 version: ${project.version}
 main: yv.tils.smp.YVtils
 api-version: 1.18
-authors: [ WolfiiYV ]
+author: WolfiiYV
 contributor: [ SlWed, black_Kittys, SilverZer0 ]
 description: Plugin for SMP Server
 website: yvnetwork.de

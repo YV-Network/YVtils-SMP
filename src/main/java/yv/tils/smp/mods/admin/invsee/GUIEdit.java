@@ -18,8 +18,8 @@ public class GUIEdit implements Listener {
     @EventHandler
     public void onInvClick(InventoryClickEvent e) {
 
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("PLAYER");
         list2.add("");
 

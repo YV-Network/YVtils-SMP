@@ -14,7 +14,7 @@ import yv.tils.smp.YVtils;
 import yv.tils.smp.internalapi.Log;
 import yv.tils.smp.mods.discord.BotManager.BotStartStop;
 import yv.tils.smp.mods.discord.EmbedManager.whitelist.RoleHierarchyError;
-import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
@@ -104,8 +104,8 @@ public class ForceRemove extends ListenerAdapter {
     }
 
     private void reply(String exec, String mc, String dc, int listSize, String[] args, StringSelectInteractionEvent e) {
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("DISCORDUSER");
         list2.add(exec);
         list1.add("MCNAME");
@@ -113,7 +113,7 @@ public class ForceRemove extends ListenerAdapter {
         list1.add("DCNAME");
         list2.add(dc);
 
-        Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_REMOVE), list1, list2));
+        Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(Prefix.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_REMOVE), list1, list2));
         e.editMessageEmbeds(new yv.tils.smp.mods.discord.EmbedManager.whitelist.discord.ForceRemove().EmbedRemoved((listSize-1), Bukkit.hasWhitelist(), args, 1).build()).setActionRow(createMenu(1).build()).queue();
     }
 }

@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 import yv.tils.smp.internalapi.Log;
 import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.internalapi.Variables;
-import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
@@ -29,10 +29,10 @@ public class VersionGetter {
     public void onPlayerJoin(Player player) {
         if ((player.isOp() || player.hasPermission("yvtils.smp.update")) && !Objects.equals(plVersion, version)) {
             player.sendMessage(LanguageFile.DirectFormatter(
-                    MessagePlaceholder.PREFIXUPDATE + " §fUpdate Available:\n" +
+                    Prefix.PREFIXUPDATE + " §fUpdate Available:\n" +
                             "§eRunning Version: " + plVersion + "\n" +
                             "§aAvailable Version: " + version,
-                    MessagePlaceholder.PREFIXUPDATE + " §fUpdate Verfügbar:\n" +
+                    Prefix.PREFIXUPDATE + " §fUpdate Verfügbar:\n" +
                             "§eMomentane Version: " + plVersion + "\n" +
                             "§aNeueste Version: " + version));
         }
@@ -47,7 +47,7 @@ public class VersionGetter {
             List<String> list1 = new ArrayList();
             List<String> list2 = new ArrayList();
             list1.add("PREFIXUPDATE");
-            list2.add(MessagePlaceholder.PREFIXUPDATE);
+            list2.add(Prefix.PREFIXUPDATE);
             list1.add("NEWVERSION");
             list2.add(webRequest());
             list1.add("OLDVERSION");
@@ -60,7 +60,7 @@ public class VersionGetter {
             List<String> list1 = new ArrayList();
             List<String> list2 = new ArrayList();
             list1.add("PREFIXNOUPDATE");
-            list2.add(MessagePlaceholder.PREFIXNOUPDATE);
+            list2.add(Prefix.PREFIXNOUPDATE);
 
             Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.PLUGIN_UP_TO_DATE), list1, list2));
         }

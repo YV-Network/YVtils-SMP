@@ -9,7 +9,7 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.scheduler.BukkitRunnable;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.mods.discord.EmbedManager.whitelist.*;
-import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
@@ -112,7 +112,7 @@ public class ForceAdd {
                             }
                         } catch (IllegalArgumentException ignored) {}
                     }
-                    Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_CHANGE), list1, list2));
+                    Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(Prefix.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_CHANGE), list1, list2));
                     return new yv.tils.smp.mods.discord.EmbedManager.whitelist.discord.ForceAdd().Replace(UserName, whitelist.get(1), mc);
                 }else {
 
@@ -159,7 +159,7 @@ public class ForceAdd {
                             }
                         } catch (IllegalArgumentException ignored) {}
                     }
-                    Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(MessagePlaceholder.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_ADD), list1, list2));
+                    Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(Prefix.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_ADD), list1, list2));
                     return new yv.tils.smp.mods.discord.EmbedManager.whitelist.discord.ForceAdd().Embed(mc, UserName);
                 }
             }else if (statusCode == HttpURLConnection.HTTP_BAD_REQUEST) {

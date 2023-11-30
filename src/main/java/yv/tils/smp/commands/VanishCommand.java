@@ -10,7 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
@@ -48,7 +48,7 @@ public class VanishCommand implements CommandExecutor, Listener {
             List<String> list3 = new ArrayList<>();
             List<String> list4 = new ArrayList<>();
             list1.add("PREFIX");
-            list2.add(MessagePlaceholder.PREFIX);
+            list2.add(Prefix.PREFIX);
 
 
             if (args.length == 0) {

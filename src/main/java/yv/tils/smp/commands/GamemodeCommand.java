@@ -67,6 +67,7 @@ public class GamemodeCommand implements CommandExecutor {
                         player.sendMessage(LanguageFile.getMessage(LanguageMessage.GAMEMODE_SWITCH_SPECTATOR));
                     }
                 }
+                default -> sendUsage(sender);
             }
         }else if (args.length == 2) {
             player = Bukkit.getPlayer(args[1]);
@@ -121,6 +122,7 @@ public class GamemodeCommand implements CommandExecutor {
                         player.sendMessage(LanguageFile.getMessage(LanguageMessage.GAMEMODE_SWITCH_SPECTATOR));
                     }
                 }
+                default -> sendUsage(sender);
             }
         }
 

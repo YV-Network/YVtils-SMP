@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
@@ -30,8 +30,8 @@ public class pardonCommand implements Listener {
 
         String cmdlowercase = cmd.toLowerCase();
 
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("COMMAND");
         list2.add("§e/mod unban");
 
@@ -43,5 +43,5 @@ public class pardonCommand implements Listener {
                     c.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText(LanguageFile.getMessage(LanguageMessage.COMMAND_REPLACE_COPY_COMMAND_TO_CLIPBOARD))));
                     player.spigot().sendMessage(c);
                 } else {
-                    player.sendMessage(MessagePlaceholder.PERMISSIONERROR + " yvtils.smp.command.moderation.unban");
+                    player.sendMessage(Prefix.PERMISSIONERROR + " yvtils.smp.command.moderation.unban");
                 }}}}

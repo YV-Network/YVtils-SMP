@@ -6,6 +6,7 @@ import yv.tils.smp.YVtils;
 import yv.tils.smp.mods.discord.BotManager.BotStartStop;
 import yv.tils.smp.mods.ccr.CCRCommand;
 import yv.tils.smp.mods.ccr.InvListener;
+import yv.tils.smp.mods.discord.whitelist.ImportWhitelist;
 import yv.tils.smp.mods.sit.DismountListener;
 import yv.tils.smp.mods.sit.SitCommand;
 import yv.tils.smp.mods.status.JoinQuitStatus;
@@ -24,6 +25,7 @@ public class Modules {
 
     public void registerDiscordModule() {
         botStartStop.TokenCheck();
+        new ImportWhitelist().Importer();
     }
 
     public void registerStatusModule() {
@@ -34,25 +36,17 @@ public class Modules {
         main.getCommand("status").setExecutor(new StatusCommand());
     }
 
-    public void registerFunModule() {
+    public void registerSitModule() {
         PluginManager manager = Bukkit.getPluginManager();
 
-        //CustomCraftingRecipes (CCR)
-        if (new ConfigModeration().ConfigRequest("FunModule").getBoolean("CCR.General")) {
-            main.getCommand("ccr").setExecutor(new CCRCommand());
-            manager.registerEvents(new InvListener(), main);
-        }
-
-        //Sit
-        if (new ConfigModeration().ConfigRequest("FunModule").getBoolean("Sit.General")) {
-            main.getCommand("sit").setExecutor(new SitCommand());
-            manager.registerEvents(new DismountListener(), main);
-        }
-
-        //Timber
-        //manager.registerEvents(new TimberListener(), main); - Durability Bug
-        //VeinMiner
-        //manager.registerEvents(new OreListener(), main); - Durability Bug
+        main.getCommand("sit").setExecutor(new SitCommand());
+        manager.registerEvents(new DismountListener(), main);
     }
 
+    public void registerCCRModule() {
+        PluginManager manager = Bukkit.getPluginManager();
+
+        main.getCommand("ccr").setExecutor(new CCRCommand());
+        manager.registerEvents(new InvListener(), main);
+    }
 }

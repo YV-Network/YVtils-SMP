@@ -5,7 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerJoinEvent;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.Prefix;
 
 import java.util.Collections;
 import java.util.List;
@@ -26,10 +26,10 @@ public class PlayerJoin {
         String joinMessage = list.get(0);
 
         if (YVtils.getInstance().getConfig().getBoolean("SendJoinMessage")) {
-            Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXCONNECT + ChatColor.GREEN + " » " + ChatColor.GRAY + player.getName());
+            Bukkit.getConsoleSender().sendMessage(Prefix.PREFIXCONNECT + ChatColor.GREEN + " » " + ChatColor.GRAY + player.getName());
             e.setJoinMessage(joinMessage);
         }else {
-            Bukkit.getConsoleSender().sendMessage(MessagePlaceholder.PREFIXCONNECT + ChatColor.GREEN + " » " + ChatColor.GRAY + player.getName());
+            Bukkit.getConsoleSender().sendMessage(Prefix.PREFIXCONNECT + ChatColor.GREEN + " » " + ChatColor.GRAY + player.getName());
             e.setJoinMessage(null);
         }
     }

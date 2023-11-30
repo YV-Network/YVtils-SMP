@@ -45,8 +45,8 @@ public class EcSee implements CommandExecutor {
 
     public Inventory getInventory(Player player){
 
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("PLAYER");
         list2.add(player.getName());
 

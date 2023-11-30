@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
@@ -29,8 +29,8 @@ public class BanCommand implements Listener {
 
         String cmdlowercase = args[0].toLowerCase();
 
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("COMMAND");
         list2.add("§e/mod ban");
 
@@ -44,5 +44,5 @@ public class BanCommand implements Listener {
                     player.spigot().sendMessage(c);
 
                 } else {
-                    player.sendMessage(MessagePlaceholder.PERMISSIONERROR + " yvtils.smp.command.moderation.ban");
+                    player.sendMessage(Prefix.PERMISSIONERROR + " yvtils.smp.command.moderation.ban");
                 }}}}

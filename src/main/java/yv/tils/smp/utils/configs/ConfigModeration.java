@@ -81,72 +81,15 @@ public class ConfigModeration {
 
     File donoteditfile = new File(YVtils.getInstance().getDataFolder(), "DoNotEdit.yml");
     YamlConfiguration donotedit = YamlConfiguration.loadConfiguration(donoteditfile);
-    File funmodulefile = new File(YVtils.getInstance().getDataFolder(), "FunModule.yml");
-    YamlConfiguration funmodule = YamlConfiguration.loadConfiguration(funmodulefile);
-
-    public void onEntranceGeneration() {
-        //DoNotEdit.yml
-        donotedit.addDefault("Started", false);
-        donotedit.addDefault("MissingLanguage", false);
-        donotedit.addDefault("MaintenanceMode", "false");
-        donotedit.options().copyDefaults(true);
-
-        //FunModule
-        funmodule.addDefault("Active", true);
-        funmodule.addDefault("CCR.General", true);
-        funmodule.addDefault("CCR.InvisibleItemFrame", true);
-        funmodule.addDefault("CCR.LightBlock", true);
-        funmodule.addDefault("CCR.GlowingNetheriteElytra", true);
-        funmodule.addDefault("Sit.General", true);
-        funmodule.options().copyDefaults(true);
-
-        onSave();
-    }
 
     public void onSave() {
         try {
             donotedit.save(donoteditfile);
-            funmodule.save(funmodulefile);
         } catch (IOException e) {
             System.out.println("-------");
             Bukkit.getConsoleSender().sendMessage("File creation Error! Please get Support on the YVtils Support Discord");
             System.out.println("-------");
         }
     }
-
-    public void onNameGenerate() {
-        try {
-            onFolderGenerate("Language");
-            onFolderGenerate("Discord");
-
-            onGenerate("DoNotEdit.yml", false);
-            onGenerate("StatusModule.yml", true);
-            onGenerate("StatusSave.yml", true);
-            onGenerate("FunModule.yml", true);
-
-            onGenerate("Discord/config.yml", true);
-            onGenerate("Discord/linkedAccounts.yml", true);
-
-            onGenerate("Language/de.yml", true);
-            onGenerate("Language/en.yml", true);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void onFolderGenerate(String folder) {
-        File dataFolder = new File(YVtils.getInstance().getDataFolder() + "/" + folder);
-        if(!dataFolder.exists())
-        {
-            dataFolder.mkdir();
-        }
-    }
-
-    public void onGenerate(String name, boolean editable) throws Exception {
-        File file = new File(YVtils.getInstance().getDataFolder(), name);
-        if (!file.exists()) {
-            file.createNewFile();
-        }}
-
 
 }

@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
@@ -65,20 +65,20 @@ public class ReplyCommand implements CommandExecutor {
                             List<String> list3 = new ArrayList();
                             List<String> list4 = new ArrayList();
                             list3.add("PREFIX");
-                            list4.add(MessagePlaceholder.PREFIX);
+                            list4.add(Prefix.PREFIX);
                             player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MSG_PLAYER_WENT_OFFLINE), list3, list4));
                         }
                     }else {
                         List<String> list3 = new ArrayList();
                         List<String> list4 = new ArrayList();
                         list3.add("PREFIX");
-                        list4.add(MessagePlaceholder.PREFIX);
+                        list4.add(Prefix.PREFIX);
                         player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MSG_HAVENT_MESSAGED_A_PLAYER), list3, list4));
                     }}else {
                     List<String> list3 = new ArrayList();
                     List<String> list4 = new ArrayList();
                     list3.add("PREFIX");
-                    list4.add(MessagePlaceholder.PREFIX);
+                    list4.add(Prefix.PREFIX);
                     player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.PLAYER_UNKNOWN), list3, list4));
                 }}else {
                 sendUsage(sender);

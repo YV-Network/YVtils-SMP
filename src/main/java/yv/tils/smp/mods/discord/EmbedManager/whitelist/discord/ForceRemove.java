@@ -43,8 +43,8 @@ public class ForceRemove {
 
         int maxsite = (playercount - 1)/25+1;
 
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("MCNAME");
         list2.add(acc[1]);
         list1.add("DCNAME");

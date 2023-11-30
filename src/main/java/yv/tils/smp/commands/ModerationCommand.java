@@ -8,7 +8,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
@@ -68,7 +68,7 @@ public class ModerationCommand implements CommandExecutor {
                                     List<String> list1 = new ArrayList();
                                     List<String> list2 = new ArrayList();
                                     list1.add("PREFIXMODERATION");
-                                    list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                    list2.add(Prefix.PREFIXMODERATION);
                                     list1.add("MODERATOR");
                                     list2.add(sender.getName());
                                     list1.add("PLAYER");
@@ -81,7 +81,7 @@ public class ModerationCommand implements CommandExecutor {
                                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_NOT_ONLINE));
                                 }
                             } else {
-                                player.sendMessage(MessagePlaceholder.PERMISSIONERROR + parentpermission + ".kick");
+                                player.sendMessage(Prefix.PERMISSIONERROR + parentpermission + ".kick");
                             }
                             break;
                         case "ban":
@@ -98,7 +98,7 @@ public class ModerationCommand implements CommandExecutor {
                                 List<String> list1 = new ArrayList();
                                 List<String> list2 = new ArrayList();
                                 list1.add("PREFIXMODERATION");
-                                list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                list2.add(Prefix.PREFIXMODERATION);
                                 list1.add("MODERATOR");
                                 list2.add(sender.getName());
                                 list1.add("PLAYER");
@@ -108,7 +108,7 @@ public class ModerationCommand implements CommandExecutor {
 
                                 Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_BAN), list1, list2), "yvtils.smp.command.moderation.ban.getannounced");
                             } else {
-                                player.sendMessage(MessagePlaceholder.PERMISSIONERROR + parentpermission + ".ban");
+                                player.sendMessage(Prefix.PERMISSIONERROR + parentpermission + ".ban");
                             }
                             break;
                         case "tempban":
@@ -136,7 +136,7 @@ public class ModerationCommand implements CommandExecutor {
                                 List<String> list1 = new ArrayList();
                                 List<String> list2 = new ArrayList();
                                 list1.add("PREFIXMODERATION");
-                                list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                list2.add(Prefix.PREFIXMODERATION);
                                 list1.add("MODERATOR");
                                 list2.add(sender.getName());
                                 list1.add("PLAYER");
@@ -148,7 +148,7 @@ public class ModerationCommand implements CommandExecutor {
 
                                 Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_TEMPBAN), list1, list2), "yvtils.smp.command.moderation.temp.ban.getannounced");
                             } else{
-                                player.sendMessage(MessagePlaceholder.PERMISSIONERROR + parentpermission + ".temp.ban");
+                                player.sendMessage(Prefix.PERMISSIONERROR + parentpermission + ".temp.ban");
                             }
                             break;
                         case "unban":
@@ -159,7 +159,7 @@ public class ModerationCommand implements CommandExecutor {
                                     List<String> list1 = new ArrayList();
                                     List<String> list2 = new ArrayList();
                                     list1.add("PREFIXMODERATION");
-                                    list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                    list2.add(Prefix.PREFIXMODERATION);
                                     list1.add("MODERATOR");
                                     list2.add(sender.getName());
                                     list1.add("PLAYER");
@@ -171,13 +171,13 @@ public class ModerationCommand implements CommandExecutor {
                                     List<String> list1 = new ArrayList();
                                     List<String> list2 = new ArrayList();
                                     list1.add("PREFIXMODERATION");
-                                    list2.add(MessagePlaceholder.PREFIXMODERATION);
+                                    list2.add(Prefix.PREFIXMODERATION);
                                     list1.add("PLAYER");
                                     list2.add(target.getName());
 
                                     sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_PLAYER_NOT_BANNED), list1, list2));
                                 }} else {
-                                    player.sendMessage(MessagePlaceholder.PERMISSIONERROR + parentpermission + ".unban");
+                                    player.sendMessage(Prefix.PERMISSIONERROR + parentpermission + ".unban");
                             }
                             break;
                         default:

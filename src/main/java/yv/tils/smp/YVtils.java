@@ -1,22 +1,17 @@
 package yv.tils.smp;
 
-import org.bstats.bukkit.Metrics;
-import org.bstats.charts.SimplePie;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import yv.tils.smp.internalapi.Log;
-import yv.tils.smp.internalapi.Runtime;
-import yv.tils.smp.internalapi.Variables;
-import yv.tils.smp.manager.startup.Summarizer;
-import yv.tils.smp.manager.shutdown.Other;
-import yv.tils.smp.mods.discord.whitelist.ImportWhitelist;
-import yv.tils.smp.mods.sit.SitManager;
-import yv.tils.smp.placeholder.MessagePlaceholder;
 import yv.tils.smp.internalapi.StringReplacer;
+import yv.tils.smp.manager.shutdown.Other;
+import yv.tils.smp.manager.startup.LanguageFiles;
+import yv.tils.smp.manager.startup.Summarizer;
+import yv.tils.smp.mods.sit.SitManager;
+import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
-import yv.tils.smp.utils.updater.VersionGetter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,7 +42,6 @@ public final class YVtils extends JavaPlugin {
     private HashMap<UUID, UUID> recentMessages;
     public boolean maintenances;
     public boolean globalmute;
-    public boolean database_connection;
     public boolean chatSyncID = true;
 
     public HashMap<UUID, UUID> getRecentMessages() {
@@ -58,27 +52,20 @@ public final class YVtils extends JavaPlugin {
     @Override
     public void onEnable() {
         new Log(LanguageFile.DirectFormatter("YVtils-SMP begun loading!", "YVtils-SMP beginnt zu laden!"));
+        new LanguageFiles().onEnable();
 
-        Metrics metrics = new Metrics(this, 14257);
-        metrics.addCustomChart(new SimplePie("language", () -> getConfig().getString("Language")));
-
-        new Summarizer().RegisterAll();
-
-        //Temporary loader
-
-
-
-        //
-
-        new ImportWhitelist().Importer();
-
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("PREFIXENABLE");
-        list2.add(MessagePlaceholder.PREFIXENABLE);
+        list2.add(Prefix.PREFIXENABLE);
 
         new Log("ServerStartStopEvent - Loaded -- (Recent)Messages - Loading");
         Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.START_MESSAGE), list1, list2));
+
+        try {
+            new Summarizer().onEnable();
+        } catch (Exception ignored) {}
+
         recentMessages = new HashMap<>();
         Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.START_COMPLETED_MESSAGE), list1, list2));
         new Log("Everything- Loaded");
@@ -86,10 +73,10 @@ public final class YVtils extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("PREFIXDISABLE");
-        list2.add(MessagePlaceholder.PREFIXDISABLE);
+        list2.add(Prefix.PREFIXDISABLE);
 
         Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.STOP_MESSAGE), list1, list2));
         new Other().unregisterOther();

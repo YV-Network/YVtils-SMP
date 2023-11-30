@@ -8,7 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.placeholder.MessagePlaceholder;
+import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
@@ -25,15 +25,15 @@ public class GlobalMuteCommand implements CommandExecutor, Listener {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("PREFIXFEEDBACK");
-        list2.add(MessagePlaceholder.PREFIXFEEDBACK);
+        list2.add(Prefix.PREFIXFEEDBACK);
 
-        List<String> list3 = new ArrayList();
-        List<String> list4 = new ArrayList();
+        List<String> list3 = new ArrayList<>();
+        List<String> list4 = new ArrayList<>();
         list3.add("PREFIXGLOBALMUTE");
-        list4.add(MessagePlaceholder.PREFIXGLOBALMUTE);
+        list4.add(Prefix.PREFIXGLOBALMUTE);
 
         if (sender.hasPermission("yvtils.smp.command.mutechat")) {
             if (!YVtils.getInstance().globalmute) {
@@ -51,10 +51,10 @@ public class GlobalMuteCommand implements CommandExecutor, Listener {
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e) {
 
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("PREFIXGLOBALMUTE");
-        list2.add(MessagePlaceholder.PREFIXGLOBALMUTE);
+        list2.add(Prefix.PREFIXGLOBALMUTE);
 
         if (YVtils.getInstance().globalmute) {
             if (!e.getPlayer().hasPermission("yvtils.smp.bypass.mutechat")) {

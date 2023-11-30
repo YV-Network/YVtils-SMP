@@ -19,8 +19,9 @@ public class config_yml {
     YamlConfiguration ymlfile = YamlConfiguration.loadConfiguration(file);
 
     public void StringInput() {
-        ymlfile.addDefault("", "You can find a documentation for this file here: https://yvnetwork.de/yvtils/smp");
+        ymlfile.addDefault("", "You can find a full documentation for this file here: https://yvnetwork.de/yvtils/smp");
         ymlfile.addDefault("Language", "en");
+        ymlfile.addDefault("UpdateCheck", true);
         ymlfile.addDefault("Modules.Discord", true);
         ymlfile.addDefault("Modules.Status", true);
         ymlfile.addDefault("Modules.Sit", true);

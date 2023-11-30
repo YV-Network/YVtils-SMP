@@ -10,42 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca3c1473-343a-47dc-af47-e87a60f3c5de" name="Changes" comment="New Branch, first changes&#10;&#10;Optimized first classes, also restructured almost everything.&#10;&#10;Next steps are the configs and other things. For a more structured overview look into the TODO file.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/internalapi/Runtime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/internalapi/StringReplacer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/listener/ChatListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/listener/JoinListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/listener/LoginListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/listener/ServerListPingListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/server/connect/PlayerJoin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/server/connect/PlayerQuit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/server/mainteance/PlayerJoin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/server/motd/MOTDGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/ccr/CCRConfigManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/ccr/config_yml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/ccr/save_yml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/global/config_yml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/status/StatusConfigManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/status/config_yml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/status/save_yml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/updater/VersionGetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config_new.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/startup/LanguageFiles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/color/HexSupport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/other/FileGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/AnnouncementPlaceholder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/ColorCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/StringReplacer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/SMPPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/YVtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Variables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/internalapi/Variables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyWalkSpeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/FlyWalkSpeed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/Placeholder/MessagePlaceholder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/YVtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/YVtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GamemodeCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GlobalMuteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GlobalMuteCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GodCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/GodCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/HealCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/HealCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MaintenanceCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MessageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/MessageCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ModerationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ModerationCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ReplyCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/ReplyCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/StartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/StartCommand.java" afterDir="false" />
@@ -55,83 +29,26 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/msgCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/msgCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/pardonCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/pardonCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/ChatListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/ChatListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/JoinListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/MotdListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/QuitListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/listener/QuitListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/SpawnBoostListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/listeners/SpawnBoostListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/logger/ConsoleLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/internalapi/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/logger/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/logger/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/logger/logger/BlockInteract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/logger/logger/BlockInteract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/logger/logger/ChatEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/logger/logger/ChatEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/logger/logger/ChestInteract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/logger/logger/ChestInteract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/logger/logger/EntityKillEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/logger/logger/EntityKillEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/logger/logger/ItemInteract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/logger/logger/ItemInteract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/logger/logger/PlayerServerEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/logger/logger/PlayerServerEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/logger/logger/PluginLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/logger/logger/PluginLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/register/DefaultCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/startup/DefaultCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/register/DefaultListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/startup/DefaultListeners.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/register/Modules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/startup/Modules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/register/Other.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/startup/Other.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/register/Summarizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/startup/Summarizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/unregister/Other.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/shutdown/Other.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/adminstration/invsee/EcSee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/invsee/EcSee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/adminstration/invsee/GUIEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/invsee/GUIEdit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/adminstration/invsee/InvSee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/invsee/InvSee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/CCRCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/ccr/CCRCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/InvListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/ccr/InvListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/recipes/GlowingNetheriteElytra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/ccr/recipes/GlowingNetheriteElytra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/recipes/InvFrameRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/ccr/recipes/InvFrameRecipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/recipes/LightBlockRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/ccr/recipes/LightBlockRecipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/recipes/OldRecipes_BACKUP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/ccr/recipes/OldRecipes_BACKUP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/ccr/recipes/TestRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/ccr/recipes/TestRecipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/BotManager/BotStartStop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/BotManager/BotStartStop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/CommandManager/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/CommandManager/CommandHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/CommandManager/CommandRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/CommandManager/CommandRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/LogEmbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/LogEmbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/commands/ServerInfoEmbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/commands/ServerInfoEmbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/AccountAdded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/whitelist/AccountAdded.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/AccountAlreadyListed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/whitelist/AccountAlreadyListed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/AccountCantExist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/whitelist/AccountCantExist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/AccountChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/whitelist/AccountChange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/AccountCheckError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/whitelist/AccountCheckError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/AccountNotFound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/whitelist/AccountNotFound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/RoleHierarchyError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/whitelist/RoleHierarchyError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/discord/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/whitelist/discord/Check.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/discord/ForceAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/whitelist/discord/ForceAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/EmbedManager/whitelist/discord/ForceRemove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/whitelist/discord/ForceRemove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/ChatSync.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/sync/ChatSync.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/ChatSyncEmbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/sync/ChatSyncEmbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/ConsoleSync/GetConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/sync/ConsoleSync/GetConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/ConsoleSync/SendCMD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/sync/ConsoleSync/SendCMD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/sync/stats/StatsDescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/sync/stats/StatsDescription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/whitelist/AccountCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/whitelist/AccountCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/whitelist/ForceAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/whitelist/ForceAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/whitelist/ForceRemove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/whitelist/ForceRemove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/whitelist/ImportWhitelist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/whitelist/ImportWhitelist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/discord/whitelist/SelfAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/whitelist/SelfAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/VeineMiner/OreListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/sit/DismountListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/sit/DismountListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/sit/SitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/sit/SitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/sit/SitManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/sit/SitManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/fun/timber/TimberListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/status/JoinQuitStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/status/JoinQuitStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/status/NametagManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/status/NametagManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/status/StatusCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/status/StatusCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/modules/status/StatusCommandCompleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/status/StatusCommandCompleter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/updateutils/JoinAnnouncer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/updateutils/database/ConnectionManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/updateutils/database/VersionChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/ConfigVersionUpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/ConfigVersionUpdateChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/startup/Modules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/startup/Modules.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/startup/Other.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/startup/Other.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/startup/Summarizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/manager/startup/Summarizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/invsee/EcSee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/invsee/EcSee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/invsee/GUIEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/invsee/GUIEdit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/invsee/InvSee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/admin/invsee/InvSee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/whitelist/discord/ForceRemove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/EmbedManager/whitelist/discord/ForceRemove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/whitelist/ForceAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/whitelist/ForceAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/whitelist/ForceRemove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/whitelist/ForceRemove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/whitelist/SelfAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/discord/whitelist/SelfAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/server/connect/PlayerJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/server/connect/PlayerJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/server/connect/PlayerQuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/server/connect/PlayerQuit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/status/StatusCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/mods/status/StatusCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/placeholder/MessagePlaceholder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/placeholder/Prefix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/ConfigModeration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/ConfigModeration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordConfigManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/DiscordModuleConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/config_yml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/LinkedAccountsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/save_yml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/StatsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/discord/stats_yml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/ConfigVersionUpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/ConfigVersionUpdateChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/global/config_yml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/global/config_yml.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/updater/VersionGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/updater/VersionGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config_new.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config_new.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <list id="1a4b194b-1eb3-4e46-a348-8f821c6a9b7a" name="Changes by j" comment="Changes by j" />
@@ -217,35 +134,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ShowUsagesActions.previewPropertyKey": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "dev-Chapter2",
-    "last_opened_file_path": "B:/Coding/DiscordWhitelister",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "fileTemplates",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-Chapter2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;B:/Coding/DiscordWhitelister&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="B:\Coding\_YVtils-SMP\src\main\java\yv\tils\smp\modules" />
@@ -269,31 +186,37 @@
       <recent name="yv.tils.smp.otherfiles" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.CompileWithServer_1.20.1">
-    <configuration name="MOTDGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="yv.tils.smp.mods.server.motd.MOTDGenerator" />
-      <module name="YVtils-SMP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="yv.tils.smp.mods.server.motd.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager">
+    <configuration name="YVtils-SMP [clean,package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Application.MOTDGenerator" />
-      <item itemvalue="JAR Application.CompileWithServer_1.20.1" />
-      <item itemvalue="Maven.YVtils-SMP [clean,package]" />
-      <item itemvalue="Maven.YVtils-SMP JAR" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.MOTDGenerator" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SshConsoleOptionsProvider">
@@ -575,6 +498,13 @@
       <workItem from="1699260494140" duration="12000" />
       <workItem from="1699465203076" duration="1945000" />
       <workItem from="1699472872526" duration="3293000" />
+      <workItem from="1701068265675" duration="5332000" />
+      <workItem from="1701155354944" duration="3873000" />
+      <workItem from="1701175455415" duration="7000" />
+      <workItem from="1701176165094" duration="597000" />
+      <workItem from="1701246788518" duration="1197000" />
+      <workItem from="1701252799398" duration="5072000" />
+      <workItem from="1701327526885" duration="7556000" />
     </task>
     <task id="LOCAL-00007" summary="With this Update the /seed Command got Blocked for all Players without a Permission nad give them a Error Message. Players with the Permission must add a Argument which they can get when they use /seed! You can disable this Function in the config.yml. That means it has a new Version.">
       <created>1637869169288</created>
@@ -926,81 +856,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/commands/replacecommands/seedcommand.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>134</line>
-          <option name="timeStamp" value="152" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>135</line>
-          <option name="timeStamp" value="153" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="154" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>134</line>
-          <option name="timeStamp" value="155" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="156" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="157" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>137</line>
-          <option name="timeStamp" value="159" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>136</line>
-          <option name="timeStamp" value="160" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>135</line>
-          <option name="timeStamp" value="161" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>136</line>
-          <option name="timeStamp" value="162" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java</url>
           <line>109</line>
           <option name="timeStamp" value="163" />
@@ -1026,26 +881,6 @@
           <option name="timeStamp" value="168" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>138</line>
-          <option name="timeStamp" value="169" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>139</line>
-          <option name="timeStamp" value="170" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>137</line>
-          <option name="timeStamp" value="171" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>138</line>
-          <option name="timeStamp" value="172" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java</url>
           <line>111</line>
           <option name="timeStamp" value="173" />
@@ -1054,36 +889,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java</url>
           <line>112</line>
           <option name="timeStamp" value="174" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>144</line>
-          <option name="timeStamp" value="176" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>146</line>
-          <option name="timeStamp" value="177" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>145</line>
-          <option name="timeStamp" value="178" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>143</line>
-          <option name="timeStamp" value="179" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>144</line>
-          <option name="timeStamp" value="180" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>145</line>
-          <option name="timeStamp" value="181" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java</url>
@@ -1099,46 +904,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java</url>
           <line>122</line>
           <option name="timeStamp" value="184" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="187" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>143</line>
-          <option name="timeStamp" value="188" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>140</line>
-          <option name="timeStamp" value="189" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>141</line>
-          <option name="timeStamp" value="190" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>139</line>
-          <option name="timeStamp" value="192" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>140</line>
-          <option name="timeStamp" value="193" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>141</line>
-          <option name="timeStamp" value="194" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="195" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java</url>
@@ -1164,26 +929,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java</url>
           <line>17</line>
           <option name="timeStamp" value="201" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>148</line>
-          <option name="timeStamp" value="215" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_de.java</url>
-          <line>149</line>
-          <option name="timeStamp" value="216" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>148</line>
-          <option name="timeStamp" value="218" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/CreateFile_en.java</url>
-          <line>147</line>
-          <option name="timeStamp" value="219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/yv/tils/smp/utils/configs/language/LanguageMessage.java</url>

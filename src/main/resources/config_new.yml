@@ -1,6 +1,8 @@
 # You can find a documentation for this file here: https://yvnetwork.de/yvtils/smp
 Language: en
 
+UpdateCheck: true
+
 Modules:
   Discord: true
   Status: true

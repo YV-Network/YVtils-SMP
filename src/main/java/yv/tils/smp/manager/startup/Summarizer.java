@@ -1,5 +1,6 @@
 package yv.tils.smp.manager.startup;
 
+import yv.tils.smp.YVtils;
 import yv.tils.smp.internalapi.Log;
 import yv.tils.smp.utils.configs.ConfigModeration;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
@@ -9,31 +10,33 @@ import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
  * @version 4.6.8
  */
 public class Summarizer {
-
-    public void RegisterAll() {
+    public void onEnable() throws Exception {
         new Log("Configs - Loading");
         new Other().registerConfigs();
-        new Log("Configs - Loaded -- OtherThings - Loading");
+        new Log("OtherThings - Loading");
         new Other().RegisterOther();
-        new Log("OtherThings - Loaded -- Commands - Loading");
+        new Log("Commands - Loading");
         new DefaultCommands().registerCommands();
-        new Log("Commands - Loaded -- TabCompleter - Loading");
+        new Log("TabCompleter - Loading");
         new DefaultCommands().registerTabCompleter();
-        new Log("TabCompleter - Loaded -- CommandReplace - Loading");
+        new Log("CommandReplace - Loading");
         new DefaultCommands().registerCommandReplace();
-        new Log("CommandReplace - Loaded -- Listener - Loading");
+        new Log("Listener - Loading");
         new DefaultListeners().registerListener();
-        new Log("Listener - Loaded -- DiscordModule - Loading");
-        if (new DiscordConfigManager().ConfigRequest().getBoolean("Active")) new Modules().registerDiscordModule();
-        new Log("DiscordModule - Loaded -- StatusModule - Loading");
-        if (new ConfigModeration().ConfigRequest("StatusModule").getBoolean("Active")) new Modules().registerStatusModule();
-        new Log("StatusModule - Loaded -- FunModule - Loading");
-        if (new ConfigModeration().ConfigRequest("FunModule").getBoolean("Active")) new Modules().registerFunModule();
-        new Log("FunModule - Loaded -- UpdateChecker - Loading");
+        new Log("Mods - Loading");
+        new Log("DiscordModule - Loading");
+        if (YVtils.getInstance().getConfig().getBoolean("Modules.Discord")) new Modules().registerDiscordModule();
+        new Log("StatusModule - Loading");
+        if (YVtils.getInstance().getConfig().getBoolean("Modules.Status")) new Modules().registerStatusModule();
+        new Log("SitModule - Loading");
+        if (YVtils.getInstance().getConfig().getBoolean("Modules.Sit")) new Modules().registerSitModule();
+        new Log("CCRModule - Loading");
+        if (YVtils.getInstance().getConfig().getBoolean("Modules.CCR")) new Modules().registerCCRModule();
+        new Log("UpdateChecker - Loading");
         new Other().registerUpdateChecker();
-        new Log("UpdateChecker - Loaded -- / Logger - Loading");
+        new Log("Logger - Loading");
         new DefaultListeners().registerLogger();
-        new Log("Logger - Loaded -- / x - Loading");
+        new Log("bStats - Loading");
+        new Other().registerbStats();
     }
-
 }
