@@ -41,9 +41,7 @@ public class GlowingNetheriteElytra {
         if (inv.getItem(31) != null) G3 = inv.getItem(31);
 
         if (Objects.equals(G1.getType(), InPut.getType()) && Objects.equals(G2.getType(), Upgrade1.getType()) && Objects.equals(G3.getType(), Upgrade2.getType())) {
-            if (inv.getItem(20).getAmount() >= InPut.getAmount() && inv.getItem(13).getAmount() >= Upgrade1.getAmount() && inv.getItem(31).getAmount() >= Upgrade2.getAmount()) {
-                return true;
-            }
+            return inv.getItem(20).getAmount() >= InPut.getAmount() && inv.getItem(13).getAmount() >= Upgrade1.getAmount() && inv.getItem(31).getAmount() >= Upgrade2.getAmount();
         }
         return false;
     }
@@ -62,19 +60,19 @@ public class GlowingNetheriteElytra {
         int multiplier = (int) smallest;
 
         ItemStack item = new ItemStack(Material.ELYTRA);
-        item.setAmount(1*multiplier);
+        item.setAmount(multiplier);
         List<String> lore = new ArrayList<>();
         ItemMeta meta = item.getItemMeta();
 
         if (YVtils.getInstance().getConfig().getString("Language").equals("en")) {
-            meta.setDisplayName("§cPreview §8(§e" + 1*multiplier + "x§8)");
+            meta.setDisplayName("§cPreview §8(§e" + multiplier + "x§8)");
             meta.setUnbreakable(true);
             meta.addEnchant(Enchantment.MENDING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
             lore.add("§eGlowing Netherite Elytra");
             lore.add("Unbreaking ထ");
         }else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
-            meta.setDisplayName("§cVorschau §8(§e" + 1*multiplier + "x§8)");
+            meta.setDisplayName("§cVorschau §8(§e" + multiplier + "x§8)");
             meta.setUnbreakable(true);
             meta.addEnchant(Enchantment.MENDING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
@@ -116,7 +114,7 @@ public class GlowingNetheriteElytra {
         GUpgrade2.setAmount((int) (GUpgrade2.getAmount()-(smallest*3)));
 
         ItemStack item = new ItemStack(Material.ELYTRA);
-        item.setAmount(1*multiplier);
+        item.setAmount(multiplier);
         List<String> lore = new ArrayList<>();
         ItemMeta meta = item.getItemMeta();
 

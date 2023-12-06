@@ -13,12 +13,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.mods.discord.BotManager.BotStartStop;
+import yv.tils.smp.utils.color.HexSupport;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 
 /**
- * @version 4.6.8
- * @since 4.6.8.1
+ * @since 4.6.8
+ * @version CH2-1.0.0
  */
 public class ChatSync extends ListenerAdapter implements Listener {
 
@@ -33,7 +34,7 @@ public class ChatSync extends ListenerAdapter implements Listener {
         String message = e.getMessage();
         Player sender = e.getPlayer();
 
-        message = ChatColor.translateAlternateColorCodes('&', message);
+        message = HexSupport.hex(message);
         message = ChatColor.stripColor(message);
 
         sendDCMessage(sender, message);
@@ -58,7 +59,7 @@ public class ChatSync extends ListenerAdapter implements Listener {
     }
 
     public void sendMCMessage(String sender, String message) {
-        Bukkit.broadcastMessage("§8[§9Discord§8] §f" + sender + "§8: §f" + message);
+        Bukkit.broadcastMessage("§8[§9Discord§8] §f" + sender + "§8: §f" + HexSupport.hex(message));
     }
 
     public void sendDCMessage(Player sender, String message) {

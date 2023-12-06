@@ -2,6 +2,7 @@ package yv.tils.smp.mods.admin.logger.logger;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -32,12 +33,12 @@ public class BlockInteract implements Listener {
 
     @EventHandler
     public void onExplosion(BlockExplodeEvent e) {
-        List blocklist = e.blockList();
+        List<Block> blocklist = e.blockList();
         Location location = e.getBlock().getLocation();
         Material block = e.getBlock().getType();
 
         try {
-            new Logger().writer("BlockExplodeEvent: " + blocklist + " exploded at X: " + location.getBlockX() + " Y: " + location.getBlockY() + " Z: " + location.getBlockZ(), "BlockInteractEvent");
+            new Logger().writer("BlockExplodeEvent: " + block + " exploded at X: " + location.getBlockX() + " Y: " + location.getBlockY() + " Z: " + location.getBlockZ() + " dropping following items " + blocklist, "BlockInteractEvent");
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }

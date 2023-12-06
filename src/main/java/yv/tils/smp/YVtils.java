@@ -59,12 +59,13 @@ public final class YVtils extends JavaPlugin {
         list1.add("PREFIXENABLE");
         list2.add(Prefix.PREFIXENABLE);
 
-        new Log("ServerStartStopEvent - Loaded -- (Recent)Messages - Loading");
         Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.START_MESSAGE), list1, list2));
 
         try {
             new Summarizer().onEnable();
-        } catch (Exception ignored) {}
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
         recentMessages = new HashMap<>();
         Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.START_COMPLETED_MESSAGE), list1, list2));

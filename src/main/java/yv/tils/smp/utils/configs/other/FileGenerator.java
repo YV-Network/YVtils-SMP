@@ -19,6 +19,12 @@ public class FileGenerator {
         yamlConfig.addDefault("MissingLanguage", false);
         yamlConfig.addDefault("MaintenanceMode", "false");
         yamlConfig.options().copyDefaults(true);
+
+        try {
+            yamlConfig.save(file);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void generateFiles() throws Exception {

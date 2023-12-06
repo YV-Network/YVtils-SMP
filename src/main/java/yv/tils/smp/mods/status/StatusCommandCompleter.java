@@ -5,7 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import yv.tils.smp.utils.configs.ConfigModeration;
+import yv.tils.smp.utils.configs.status.StatusConfigManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +13,10 @@ import java.util.Objects;
 
 /**
  * @since 4.6.6
- * @version 4.6.6
+ * @version CH2-1.0.0
  */
 public class StatusCommandCompleter implements TabCompleter {
-    List<String> defaultstatus = new ConfigModeration().ConfigRequest("StatusModule").getStringList("Default-Status");
+    List<String> defaults = new StatusConfigManager().ConfigRequest().getStringList("Default-Status");
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
         List<String> results = new ArrayList<>();
 
@@ -29,7 +29,7 @@ public class StatusCommandCompleter implements TabCompleter {
             results.add("[Prefix]");
         }
         if (Objects.equals(args[0], "default")) {
-            results.addAll(defaultstatus);
+            results.addAll(defaults);
         }
         if (Objects.equals(args[0], "clear")) {
             for (Player player : Bukkit.getOnlinePlayers()) {

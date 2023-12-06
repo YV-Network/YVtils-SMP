@@ -30,7 +30,7 @@ public class GetConsole extends AbstractAppender {
     }
 
     public void append(LogEvent e) {
-        String message = e.getMessage().getFormattedMessage().toString();
+        String message = e.getMessage().getFormattedMessage();
         SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         message = "[" + sdf1.format(timestamp) + " " + e.getLevel().toString() + "]: " + message + "\n";

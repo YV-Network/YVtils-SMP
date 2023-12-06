@@ -53,6 +53,18 @@ TODO
  - Whitelist Import
  - Buttons for Whitelist Remove
 
+6. Restrucrure command classes
+ - TabComplete for all commands
+ - TabComplete in same class as command
+ - Unblock blocked commands
+ - Command Help
+
+7. Permissions
+ - Similar prefix for all permissions
+ - Add permissions for all commands
+ - Add permissions for all features
+
+
 x. Documentation on yvnetwork.de/yvtils/smp
 
 ---------------------------------

@@ -22,8 +22,7 @@ public class CCRCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        if (commandSender instanceof Player) {
-            Player player = (Player) commandSender;
+        if (commandSender instanceof Player player) {
             Inventory inv = Bukkit.createInventory(player, 45, "§9CCR - Custom Crafting Recipes");
 
             //GUI Filler

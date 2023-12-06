@@ -30,8 +30,7 @@ public class VanishCommand implements CommandExecutor, Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player) {
-            Player player = (Player) sender;
+        if (sender instanceof Player player) {
             UUID uuid = player.getUniqueId();
             String playerName = player.getName();
             List<String> list1 = YVtils.getInstance().getConfig().getStringList("JoinMessage");

@@ -48,6 +48,7 @@
                 <version>3.2.0</version>
                 <configuration>
                     <finalName>YVtils-SMP-v${project.version}</finalName>
+                    <outputDirectory>B:\Coding\Minecraft_Server\plugins</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -134,11 +135,6 @@
             <groupId>net.sf.trove4j</groupId>
             <artifactId>trove4j</artifactId>
             <version>3.0.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
-            <artifactId>mariadb-java-client</artifactId>
-            <version>3.2.0</version>
         </dependency>
         <dependency>
             <groupId>org.bstats</groupId>

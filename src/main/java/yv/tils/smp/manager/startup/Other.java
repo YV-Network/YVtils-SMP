@@ -3,6 +3,7 @@ package yv.tils.smp.manager.startup;
 import org.bstats.bukkit.Metrics;
 import org.bstats.charts.SimplePie;
 import yv.tils.smp.YVtils;
+import yv.tils.smp.internalapi.Log;
 import yv.tils.smp.internalapi.Runtime;
 import yv.tils.smp.internalapi.Variables;
 import yv.tils.smp.utils.configs.ConfigModeration;
@@ -28,18 +29,21 @@ public class Other {
         fileGenerator.generateFiles();
 
         //Discord Module
+        new Log("DiscordModule Config");
         yv.tils.smp.utils.configs.discord.config_yml discordModuleConfig = new yv.tils.smp.utils.configs.discord.config_yml();
         discordModuleConfig.StringInput();
         yv.tils.smp.utils.configs.discord.save_yml linkedAccountsConfig = new yv.tils.smp.utils.configs.discord.save_yml();
         linkedAccountsConfig.StringInput();
 
         //Status Module
+        new Log("StatusModule Config");
         yv.tils.smp.utils.configs.status.config_yml statusModuleConfig = new yv.tils.smp.utils.configs.status.config_yml();
         statusModuleConfig.StringInput();
         yv.tils.smp.utils.configs.status.save_yml statusConfig = new yv.tils.smp.utils.configs.status.save_yml();
         statusConfig.StringInput();
 
         //CCR Module
+        new Log("CCRModule Config");
         yv.tils.smp.utils.configs.ccr.config_yml ccrModuleConfig = new yv.tils.smp.utils.configs.ccr.config_yml();
         ccrModuleConfig.StringInput();
         yv.tils.smp.utils.configs.ccr.save_yml ccrConfig = new yv.tils.smp.utils.configs.ccr.save_yml();
@@ -48,6 +52,8 @@ public class Other {
         if (new ConfigModeration().ConfigRequest("DoNotEdit").getString("MaintenanceMode").equals("true")) {
             main.maintenances = true;
         }
+
+        new Log("Configs loaded");
     }
 
     public void RegisterOther() {

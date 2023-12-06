@@ -4,6 +4,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.exceptions.InvalidTokenException;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import org.apache.logging.log4j.LogManager;
@@ -102,7 +103,11 @@ public class BotStartStop {
         builder.addEventListeners(new ForceRemove());
         builder.addEventListeners(new SendCMD());
 
-        jda = builder.build();
+        try {
+            jda = builder.build();
+        }catch (InvalidTokenException e) {
+            Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FAILED));
+        }
 
         try {
             jda.awaitReady();

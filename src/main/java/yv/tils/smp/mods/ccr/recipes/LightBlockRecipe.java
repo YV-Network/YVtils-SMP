@@ -41,9 +41,7 @@ public class LightBlockRecipe {
         if (inv.getItem(31) != null) G3 = inv.getItem(31);
 
         if ((Objects.equals(G1.getType(), InPut.getType()) || Objects.equals(G1.getType(), InPut2.getType())) && Objects.equals(G2.getType(), Upgrade1.getType()) && Objects.equals(G3.getType(), Upgrade2.getType())) {
-            if (inv.getItem(20).getAmount() >= InPut.getAmount() || inv.getItem(20).getAmount() >= InPut2.getAmount() && inv.getItem(13).getAmount() >= Upgrade1.getAmount() && inv.getItem(31).getAmount() >= Upgrade2.getAmount()) {
-                return true;
-            }
+            return inv.getItem(20).getAmount() >= InPut.getAmount() || inv.getItem(20).getAmount() >= InPut2.getAmount() && inv.getItem(13).getAmount() >= Upgrade1.getAmount() && inv.getItem(31).getAmount() >= Upgrade2.getAmount();
         }
         return false;
     }
@@ -63,9 +61,7 @@ public class LightBlockRecipe {
         if (inv.getItem(31) != null) G3 = inv.getItem(31);
 
         if ((Objects.equals(G1.getType(), InPut.getType()) || Objects.equals(G1.getType(), InPut2.getType())) && Objects.equals(G2.getType(), Upgrade1.getType()) && Objects.equals(G3.getType(), Upgrade2.getType())) {
-            if (inv.getItem(20).getAmount() >= InPut.getAmount() || inv.getItem(20).getAmount() >= InPut2.getAmount() && inv.getItem(13).getAmount() >= Upgrade1.getAmount() && inv.getItem(31).getAmount() >= Upgrade2.getAmount()) {
-                return true;
-            }
+            return inv.getItem(20).getAmount() >= InPut.getAmount() || inv.getItem(20).getAmount() >= InPut2.getAmount() && inv.getItem(13).getAmount() >= Upgrade1.getAmount() && inv.getItem(31).getAmount() >= Upgrade2.getAmount();
         }
         return false;
     }

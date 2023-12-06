@@ -1,6 +1,5 @@
 package yv.tils.smp.mods.status;
 
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -9,16 +8,17 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.scoreboard.Team;
 import yv.tils.smp.internalapi.Log;
 import yv.tils.smp.internalapi.StringReplacer;
-import yv.tils.smp.utils.configs.ConfigModeration;
+import yv.tils.smp.utils.color.HexSupport;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
+import yv.tils.smp.utils.configs.status.StatusConfigManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @since 4.6.6
- * @version 4.6.7
+ * @version CH2-1.0.0
  */
 public class JoinQuitStatus implements Listener {
 
@@ -28,16 +28,16 @@ public class JoinQuitStatus implements Listener {
         Player player = e.getPlayer();
 
         new Log("StatusModuleDebug - OnJoin - No Check");
-        if (new ConfigModeration().ConfigRequest("StatusSave").contains(String.valueOf(e.getPlayer().getUniqueId()))) {
-            String args = new ConfigModeration().ConfigRequest("StatusSave").getString(String.valueOf(e.getPlayer().getUniqueId()));
-            String status = ChatColor.translateAlternateColorCodes('&', args);
+        if (new StatusConfigManager().SavedRequest().contains(String.valueOf(e.getPlayer().getUniqueId()))) {
+            String args = new StatusConfigManager().SavedRequest().getString(String.valueOf(e.getPlayer().getUniqueId()));
+            String status = HexSupport.hex(args);
 
             new NametagManager().addPlayer(player, status + " ");
 
             new Log("StatusModuleDebug - OnJoin - With Check");
 
-            List<String> list1 = new ArrayList();
-            List<String> list2 = new ArrayList();
+            List<String> list1 = new ArrayList<>();
+            List<String> list2 = new ArrayList<>();
             list1.add("STATUS");
             list2.add(status);
 

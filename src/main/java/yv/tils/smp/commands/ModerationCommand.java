@@ -26,9 +26,8 @@ public class ModerationCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
 
-        if (sender instanceof Player) {
+        if (sender instanceof Player player) {
 
-            Player player = (Player) sender;
             String parentpermission = "yvtils.smp.command.moderation";
 
 

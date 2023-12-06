@@ -7,19 +7,14 @@ import yv.tils.smp.commands.FlyCommand;
 import yv.tils.smp.commands.GlobalMuteCommand;
 import yv.tils.smp.commands.GodCommand;
 import yv.tils.smp.commands.VanishCommand;
-import yv.tils.smp.listeners.*;
-import yv.tils.smp.manager.listener.JoinListener;
-import yv.tils.smp.manager.listener.LoginListener;
-import yv.tils.smp.manager.listener.QuitListener;
-import yv.tils.smp.manager.listener.ServerListPingListener;
+import yv.tils.smp.manager.listener.*;
 import yv.tils.smp.mods.admin.logger.logger.*;
 import yv.tils.smp.mods.admin.invsee.GUIEdit;
-import yv.tils.smp.mods.discord.sync.ChatSync;
-import yv.tils.smp.utils.configs.ConfigVersionUpdateChecker;
+import yv.tils.smp.mods.other.SpawnElytra;
 
 /**
  * @since 4.6.8
- * @version 4.6.8
+ * @version CH2-1.0.0
  */
 public class DefaultListeners {
     YVtils main = YVtils.getInstance();
@@ -37,16 +32,22 @@ public class DefaultListeners {
         manager.registerEvents(godCommand, main);
         manager.registerEvents(new JoinListener(), main);
         manager.registerEvents(new QuitListener(), main);
-        manager.registerEvents(new SpawnBoostListener(main), main);
-        manager.registerEvents(new ConfigVersionUpdateChecker(), main);
-        manager.registerEvents(new ChatListener(), main);
         manager.registerEvents(new GUIEdit(), main);
 
-        manager.registerEvents(new ChatSync(), main);
+/*
+                    |           |
+                    | Chapter 2 |
+                    v           v
+*/
 
-
+        manager.registerEvents(new ChatListener(), main);
         manager.registerEvents(new LoginListener(), main);
         manager.registerEvents(new ServerListPingListener(), main);
+        manager.registerEvents(new AirTimeListener(), main);
+        manager.registerEvents(new DamageListener(), main);
+        manager.registerEvents(new WorldChangeListener(), main);
+        manager.registerEvents(new InventoryListener(), main);
+        manager.registerEvents(new SpawnElytra(), main);
     }
 
     public void registerLogger() {

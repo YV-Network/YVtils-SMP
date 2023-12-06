@@ -53,8 +53,7 @@ public class ForceRemove extends ListenerAdapter {
     public void onStringSelectInteraction(StringSelectInteractionEvent e) {
         List<String> list = YVtils.getInstance().WhitelistManager;
 
-        if (e.getInteraction().getValues().isEmpty()) return;
-        else {
+        if (!e.getInteraction().getValues().isEmpty()) {
             Guild guild = e.getGuild();
 
             String values = e.getValues().toString();
