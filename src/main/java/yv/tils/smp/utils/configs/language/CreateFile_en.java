@@ -33,11 +33,6 @@ public class CreateFile_en {
         ymlfile.addDefault("SPAWN_ELYTRA_BOOST", "§fTo boost yourself press");
         ymlfile.addDefault("SMP_START_MESSAGE", "§dHave fun at project name!");
         ymlfile.addDefault("SMP_ALREADY_STARTED", "§dThis SMP has already started!");
-        ymlfile.addDefault("CHATMUTE_ENABLE_ANNOUNCEMENT", "PREFIXGLOBALMUTE §7The global mute got activated!");
-        ymlfile.addDefault("CHATMUTE_DISABLE_ANNOUNCEMENT", "PREFIXGLOBALMUTE §7The global mute got deactivated!");
-        ymlfile.addDefault("CHATMUTE_ENABLE_FEEDBACK", "PREFIXFEEDBACK §7You deactivated the chat!");
-        ymlfile.addDefault("CHATMUTE_DISABLE_FEEDBACK", "PREFIXFEEDBACK §7You activated the chat!");
-        ymlfile.addDefault("CHATMUTE_TRY_TO_WRITE", "PREFIXGLOBALMUTE §7The global mute is activated!");
         ymlfile.addDefault("FLY_COMMAND_ENABLE", "§7You can fly now!");
         ymlfile.addDefault("FLY_COMMAND_DISABLE", "§7You can't fly anymore!");
         ymlfile.addDefault("FLY_COMMAND_ENABLE_OTHER", "§7PLAYER can now fly!");
@@ -139,6 +134,24 @@ public class CreateFile_en {
         ymlfile.addDefault("MODULE_CCR_ACCEPT_RECIPE", "§aAccept crafting recipe");
         ymlfile.addDefault("MODULE_INVSEE_INVENTORY", "§eInventory of PLAYER");
         ymlfile.addDefault("MODULE_INVSEE_ENDERCHEST", "§5Enderchest of PLAYER");
+
+/*
+                    |           |
+                    | Chapter 2 |
+                    v           v
+*/
+
+        ymlfile.addDefault("PLAYER_ARGUMENT_MISSING", "§cTo use this command here, a player is required!");
+
+        ymlfile.addDefault("GLOBALMUTE_ENABLE_ANNOUNCEMENT", "PREFIXGLOBALMUTE §7The global mute got §aactivated§7!");
+        ymlfile.addDefault("GLOBALMUTE_DISABLE_ANNOUNCEMENT", "PREFIXGLOBALMUTE §7The global mute got §adeactivated§7!");
+        ymlfile.addDefault("GLOBALMUTE_ENABLE_FEEDBACK", "PREFIXFEEDBACK §7You §adeactivated §7the chat!");
+        ymlfile.addDefault("GLOBALMUTE_DISABLE_FEEDBACK", "PREFIXFEEDBACK §7You §aactivated §7the chat!");
+        ymlfile.addDefault("GLOBALMUTE_TRY_TO_WRITE", "PREFIXGLOBALMUTE §7The global mute is activated!");
+        ymlfile.addDefault("GLOBALMUTE_STATUS_ENABLED", "PREFIXFEEDBACK §7The global mute is §aactivated§7!");
+        ymlfile.addDefault("GLOBALMUTE_STATUS_DISABLED", "PREFIXFEEDBACK §7The global mute is §adisabled§7!");
+        ymlfile.addDefault("GLOBALMUTE_ALREADY_ENABLED", "PREFIXFEEDBACK §7The global mute is already §aactivated§7!");
+        ymlfile.addDefault("GLOBALMUTE_ALREADY_DISABLED", "PREFIXFEEDBACK §7The global mute is already §adisabled§7!");
 
         ymlfile.options().copyDefaults(true);
         fileSave();

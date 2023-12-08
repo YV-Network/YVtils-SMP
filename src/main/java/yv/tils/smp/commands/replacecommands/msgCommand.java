@@ -18,6 +18,7 @@ import java.util.List;
 /**
  * @since 4.6.6
  * @version 4.6.6
+ * @deprecated
  */
 public class msgCommand implements Listener {
 

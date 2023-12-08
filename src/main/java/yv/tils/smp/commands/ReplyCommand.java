@@ -20,6 +20,7 @@ import java.util.UUID;
 /**
  * @since 4.6.6
  * @version 4.6.6
+ * @deprecated
  */
 public class ReplyCommand implements CommandExecutor {
     @Override

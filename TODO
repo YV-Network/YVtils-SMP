@@ -69,6 +69,8 @@ x. Documentation on yvnetwork.de/yvtils/smp
 
 ---------------------------------
 
+Start Command:
+    Rework completely
 
 General:
     Some Commands with Player Arguments doesn't check if player is online
@@ -162,6 +164,8 @@ Configs:
     Rework config.yml - Remove unnecessary Options or move them into other configs.
     Config Reload Command
     Import Whitelist Config
+    Default World Option
+    InGame Config Editor
 
 Waypoints:
     General waypoints (Server side) and own waypoints ("Client" side)

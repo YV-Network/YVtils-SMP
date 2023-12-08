@@ -11,11 +11,11 @@ prefix: YVtils-SMP
 commands:
   start:
     permission: yvtils.smp.command.start
-  mutechat:
+  globalmute:
     aliases:
-      - globalmute
+      - mutechat
       - chatmute
-    permission: yvtils.smp.command.mutechat
+    permission: yvtils.smp.command.globalmute
   fly:
     permission: yvtils.smp.command.fly
   flywalkspeed:
@@ -30,15 +30,20 @@ commands:
       - mod
       - admin
   gm:
-    permission: yvtils.smp.command.gm
+    permission: yvtils.smp.command.gamemode
+    aliases:
+      - gamemode
   vanish:
     permission: yvtils.smp.command.vanish
     aliases:
       - v
-  directmessage:
+  dm:
     permission: yvtils.smp.command.directmessage
     aliases:
-      - dm
+      - msg
+      - whisper
+      - tell
+      - w
   reply:
     permission: yvtils.smp.command.reply
     aliases:
@@ -80,6 +85,8 @@ commands:
       - enderchest
       - enderchestsee
       - ec
+  seed:
+    permission: yvtils.smp.command.seed
 permissions:
   yvtils.smp.play:
     description: Let Player Plays

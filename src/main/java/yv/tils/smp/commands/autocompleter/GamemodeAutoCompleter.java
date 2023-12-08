@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * @since 4.6.6
  * @version 4.6.7
+ * @deprecated
  */
 public class GamemodeAutoCompleter implements TabCompleter {
     List<String> arguments = new ArrayList<>();

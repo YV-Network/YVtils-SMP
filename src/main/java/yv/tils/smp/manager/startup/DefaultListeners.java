@@ -48,6 +48,7 @@ public class DefaultListeners {
         manager.registerEvents(new WorldChangeListener(), main);
         manager.registerEvents(new InventoryListener(), main);
         manager.registerEvents(new SpawnElytra(), main);
+        manager.registerEvents(new PlayerCommandPreprocess(), main);
     }
 
     public void registerLogger() {

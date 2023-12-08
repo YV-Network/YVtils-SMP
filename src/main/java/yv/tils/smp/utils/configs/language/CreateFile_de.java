@@ -40,12 +40,6 @@ public class CreateFile_de {
         ymlfile.addDefault("SMP_START_MESSAGE", "§dViel Spaß bei Projektname!");
         ymlfile.addDefault("SMP_ALREADY_STARTED", "§dDieses SMP wurde bereits gestartet!");
 
-        ymlfile.addDefault("CHATMUTE_ENABLE_ANNOUNCEMENT","PREFIXGLOBALMUTE §7Der Globalmute wurde aktiviert!");
-        ymlfile.addDefault("CHATMUTE_DISABLE_ANNOUNCEMENT","PREFIXGLOBALMUTE §7Der Globalmute wurde deaktiviert!");
-        ymlfile.addDefault("CHATMUTE_ENABLE_FEEDBACK","PREFIXFEEDBACK §7Du hast den Chat deaktiviert!");
-        ymlfile.addDefault("CHATMUTE_DISABLE_FEEDBACK","PREFIXFEEDBACK §7Du hast den Chat aktiviert!");
-        ymlfile.addDefault("CHATMUTE_TRY_TO_WRITE","PREFIXGLOBALMUTE §7Der Globalmute ist aktiviert!");
-
         ymlfile.addDefault("FLY_COMMAND_ENABLE","§7Du kannst nun fliegen!");
         ymlfile.addDefault("FLY_COMMAND_DISABLE","§7Du kannst nun nicht mehr fliegen!");
         ymlfile.addDefault("FLY_COMMAND_ENABLE_OTHER","§7PLAYER kann nun fliegen!");
@@ -164,6 +158,25 @@ public class CreateFile_de {
 
         ymlfile.addDefault("MODULE_INVSEE_INVENTORY","§eInventar von PLAYER");
         ymlfile.addDefault("MODULE_INVSEE_ENDERCHEST","§5Enderchest von PLAYER");
+
+/*
+                    |           |
+                    | Chapter 2 |
+                    v           v
+*/
+
+        ymlfile.addDefault("PLAYER_ARGUMENT_MISSING", "§cUm diesen Command hier auszuführen, musst du einen Spieler angeben!");
+
+        ymlfile.addDefault("GLOBALMUTE_ENABLE_ANNOUNCEMENT","PREFIXGLOBALMUTE §7Der Globalmute wurde §aaktiviert§7!");
+        ymlfile.addDefault("GLOBALMUTE_DISABLE_ANNOUNCEMENT","PREFIXGLOBALMUTE §7Der Globalmute wurde §adeaktiviert§7!");
+        ymlfile.addDefault("GLOBALMUTE_ENABLE_FEEDBACK","PREFIXFEEDBACK §7Du hast den Chat §adeaktiviert§7!");
+        ymlfile.addDefault("GLOBALMUTE_DISABLE_FEEDBACK","PREFIXFEEDBACK §7Du hast den Chat §aaktiviert§7!");
+        ymlfile.addDefault("GLOBALMUTE_TRY_TO_WRITE","PREFIXGLOBALMUTE §7Der Globalmute ist aktiviert!");
+        ymlfile.addDefault("GLOBALMUTE_STATUS_ENABLED", "PREFIXFEEDBACK §7Der Globalmute ist §aaktiviert§7!");
+        ymlfile.addDefault("GLOBALMUTE_STATUS_DISABLED", "PREFIXFEEDBACK §7Der Globalmute ist §adeaktiviert§7!");
+        ymlfile.addDefault("GLOBALMUTE_ALREADY_ENABLED", "PREFIXFEEDBACK §7Der Globalmute ist bereits §aaktiviert§7!");
+        ymlfile.addDefault("GLOBALMUTE_ALREADY_DISABLED", "PREFIXFEEDBACK §7Der Globalmute ist bereits §adeaktiviert§7!");
+
         ymlfile.options().copyDefaults(true);
         fileSave();
     }

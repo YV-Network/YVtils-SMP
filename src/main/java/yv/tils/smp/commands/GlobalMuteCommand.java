@@ -19,12 +19,14 @@ import java.util.List;
 /**
  * @since 4.6.6
  * @version 4.6.6
+ * @deprecated
  */
 public class GlobalMuteCommand implements CommandExecutor, Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        /*
         List<String> list1 = new ArrayList<>();
         List<String> list2 = new ArrayList<>();
         list1.add("PREFIXFEEDBACK");
@@ -46,11 +48,13 @@ public class GlobalMuteCommand implements CommandExecutor, Listener {
                 Bukkit.broadcastMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.CHATMUTE_DISABLE_ANNOUNCEMENT), list3, list4));
             }}
         return YVtils.getInstance().globalmute;
+         */
+        return false;
     }
 
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e) {
-
+        /*
         List<String> list1 = new ArrayList<>();
         List<String> list2 = new ArrayList<>();
         list1.add("PREFIXGLOBALMUTE");
@@ -60,4 +64,8 @@ public class GlobalMuteCommand implements CommandExecutor, Listener {
             if (!e.getPlayer().hasPermission("yvtils.smp.bypass.mutechat")) {
                 e.setCancelled(true);
                 e.getPlayer().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.CHATMUTE_TRY_TO_WRITE), list1, list2));
-            }}}}
+            }}
+
+         */
+    }
+}

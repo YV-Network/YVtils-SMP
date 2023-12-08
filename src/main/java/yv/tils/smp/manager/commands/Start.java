@@ -1,4 +1,4 @@
-package yv.tils.smp.commands;
+package yv.tils.smp.manager.commands;
 
 import org.bukkit.*;
 import org.bukkit.command.Command;
@@ -7,8 +7,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.internalapi.StringReplacer;
+import yv.tils.smp.placeholder.Prefix;
+import yv.tils.smp.utils.color.HexSupport;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
@@ -19,29 +20,26 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @since 4.6.6
- * @version 4.6.6
- * @deprecated
+ * @version CH2-1.0.0
+ * @since CH2-1.0.0
  */
-public class StartCommand implements CommandExecutor {
-
+public class Start implements CommandExecutor {
     File file = new File(YVtils.getInstance().getDataFolder(), "DoNotEdit.yml");
-    YamlConfiguration modifyFile = YamlConfiguration.loadConfiguration(file);
+    YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(file);
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if (modifyFile.getBoolean("Started")) {
-            String args1 = LanguageFile.getMessage(LanguageMessage.SMP_ALREADY_STARTED);
-            String s = ChatColor.translateAlternateColorCodes('&', args1);
-            sender.sendMessage(s);
+        if (ymlFile.getBoolean("Started")) {
+            sender.sendMessage(HexSupport.hex(LanguageFile.getMessage(LanguageMessage.SMP_ALREADY_STARTED)));
         }else {
-            modifyFile.set("Started", true);
+            ymlFile.set("Started", true);
             try {
-                modifyFile.save(file);
+                ymlFile.save(file);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             for (Player player : Bukkit.getOnlinePlayers()) {
                 if (player.hasPermission("yvtils.smp.play")) {
                     World world = Bukkit.getWorld("world");
@@ -54,11 +52,12 @@ public class StartCommand implements CommandExecutor {
                     player.setFoodLevel(20);
                     player.setLevel(0);
                     player.setExp(0);
+                    world.setTime(0);
                     worldBorder.setWarningDistance(0);
                     worldBorder.setDamageAmount(2);
                     worldBorder.setDamageBuffer(5);
                     player.setGameMode(GameMode.SURVIVAL);
-                    player.sendTitle(YVtils.getInstance().getConfig().getString("StartTitle.Tob"), YVtils.getInstance().getConfig().getString("StartTitle.Bottom"), 20, 50, 20);
+                    player.sendTitle(YVtils.getInstance().getConfig().getString("StartTitle.Top"), YVtils.getInstance().getConfig().getString("StartTitle.Bottom"), 20, 50, 20);
                     worldBorder.setSize(YVtils.getInstance().getConfig().getInt("worldborderafterstart"), TimeUnit.SECONDS , YVtils.getInstance().getConfig().getInt("worldbordergrowtime"));
 
                     List<String> list1 = new ArrayList();

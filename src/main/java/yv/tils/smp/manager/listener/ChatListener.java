@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.internalapi.Log;
+import yv.tils.smp.manager.commands.GlobalMute;
 import yv.tils.smp.utils.color.HexSupport;
 import yv.tils.smp.utils.configs.status.StatusConfigManager;
 
@@ -17,6 +18,7 @@ public class ChatListener implements Listener {
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e) {
         coloredChat(e);
+        new GlobalMute().onChat(e);
     }
 
     private void coloredChat(AsyncPlayerChatEvent e) {
@@ -29,7 +31,7 @@ public class ChatListener implements Listener {
 
         new Log(String.valueOf(e.getPlayer().getUniqueId()));
 
-        if (!YVtils.getInstance().globalmute) {
+        if (!GlobalMute.globalmute) {
             if (new StatusConfigManager().SavedRequest().get(String.valueOf(e.getPlayer().getUniqueId())) != null) {
                 new Log("StatusModuleDebug - OnChat - With Check - With Prefix");
                 String args = new StatusConfigManager().SavedRequest().getString(String.valueOf(e.getPlayer().getUniqueId()));

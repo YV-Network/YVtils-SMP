@@ -1,10 +1,11 @@
-package yv.tils.smp.commands;
+package yv.tils.smp.manager.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import yv.tils.smp.YVtils;
@@ -13,87 +14,90 @@ import yv.tils.smp.utils.configs.language.LanguageMessage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * @since 4.6.6
- * @version 4.6.6
- * @deprecated
+ * @version CH2-1.0.0
+ * @since CH2-1.0.0
  */
-public class MaintenanceCommand implements CommandExecutor {
+public class Maintenance implements CommandExecutor, TabCompleter {
 
-    File file2 = new File(YVtils.getInstance().getDataFolder(), "DoNotEdit.yml");
-    YamlConfiguration dontedit = YamlConfiguration.loadConfiguration(file2);
+    File file = new File(YVtils.getInstance().getDataFolder(), "DoNotEdit.yml");
+    YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(file);
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        Player player = (Player) sender;
-        if(args.length == 0) {
-            sendUsage(sender);
-            return true;
+        String arg = "toggle";
+
+        if (args.length != 0) {
+            arg = args[0].toLowerCase();
         }
 
-        switch (args[0].toLowerCase()) {
+        switch (arg.toLowerCase()) {
             case "false", "off" -> {
-                if (dontedit.getString("MaintenanceMode").equals("true")) {
+                if (ymlFile.getString("MaintenanceMode").equals("true")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
                     YVtils.getInstance().maintenances = false;
-                    dontedit.set("MaintenanceMode", "false");
+                    ymlFile.set("MaintenanceMode", "false");
                     try {
-                        dontedit.save(file2);
+                        ymlFile.save(file);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                }else if (dontedit.getString("MaintenanceMode").equals("false")) {
+                }else if (ymlFile.getString("MaintenanceMode").equals("false")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ALREADY_DEACTIVATED));
                 }else {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
-                }}
+                }
+            }
             case "true", "on" -> {
-                if (dontedit.getString("MaintenanceMode").equals("true")) {
+                if (ymlFile.getString("MaintenanceMode").equals("true")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ALREADY_ACTIVATED));
-                }else if (dontedit.getString("MaintenanceMode").equals("false")) {
+                }else if (ymlFile.getString("MaintenanceMode").equals("false")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     YVtils.getInstance().maintenances = true;
-                    dontedit.set("MaintenanceMode", "true");
+                    ymlFile.set("MaintenanceMode", "true");
                     try {
-                        dontedit.save(file2);
+                        ymlFile.save(file);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                     for (Player player1 : Bukkit.getOnlinePlayers()) {
-                        if (player.hasPermission("yvtils.smp.maintenance.join")) {}else {
+                        if (!player1.hasPermission("yvtils.smp.maintenance.join")) {
                             player1.kickPlayer(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_PLAYER_NOT_ALLOWED_TO_JOIN_KICK_MESSAGE));
                         }
                     }
                 }else {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
-                }}
+                }
+            }
             case "toggle" -> {
-                if (dontedit.getString("MaintenanceMode").equals("true")) {
+                if (ymlFile.getString("MaintenanceMode").equals("true")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
                     YVtils.getInstance().maintenances = false;
-                    dontedit.set("MaintenanceMode", "false");
+                    ymlFile.set("MaintenanceMode", "false");
                     try {
-                        dontedit.save(file2);
+                        ymlFile.save(file);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                }else if (dontedit.getString("MaintenanceMode").equals("false")) {
+                }else if (ymlFile.getString("MaintenanceMode").equals("false")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     YVtils.getInstance().maintenances = true;
-                    dontedit.set("MaintenanceMode", "true");
+                    ymlFile.set("MaintenanceMode", "true");
                     try {
-                        dontedit.save(file2);
+                        ymlFile.save(file);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                     for (Player player1 : Bukkit.getOnlinePlayers()) {
-                        if (player.hasPermission("yvtils.smp.maintenance.join")) {}else {
+                        if (!player1.hasPermission("yvtils.smp.maintenance.join")) {
                             player1.kickPlayer(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_PLAYER_NOT_ALLOWED_TO_JOIN_KICK_MESSAGE));
                         }
                     }
@@ -101,10 +105,10 @@ public class MaintenanceCommand implements CommandExecutor {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
                 }}
             case "status" -> {
-                if (dontedit.get("MaintenanceMode") != null) {
-                    if (dontedit.getString("MaintenanceMode").equals("true")) {
+                if (ymlFile.get("MaintenanceMode") != null) {
+                    if (ymlFile.getString("MaintenanceMode").equals("true")) {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_STATUS_ENABLED));
-                    }else if (dontedit.getString("MaintenanceMode").equals("false")) {
+                    }else if (ymlFile.getString("MaintenanceMode").equals("false")) {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_STATUS_DISABLED));
                     }else {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
@@ -117,5 +121,19 @@ public class MaintenanceCommand implements CommandExecutor {
     private void sendUsage(CommandSender sender) {
         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE +
                 "/mainteance [true, false, toggle, status]");
+    }
+
+    public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
+        List<String> results = new ArrayList<>();
+
+        if (args.length == 1) {
+            results.add("on");
+            results.add("off");
+            results.add("true");
+            results.add("false");
+            results.add("toggle");
+            results.add("status");
+        }
+        return results;
     }
 }

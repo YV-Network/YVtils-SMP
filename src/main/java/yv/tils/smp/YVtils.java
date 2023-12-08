@@ -1,6 +1,7 @@
 package yv.tils.smp;
 
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import yv.tils.smp.internalapi.Log;
 import yv.tils.smp.internalapi.StringReplacer;
@@ -41,7 +42,6 @@ public final class YVtils extends JavaPlugin {
     public final List<String> WhitelistManager = new ArrayList<>();
     private HashMap<UUID, UUID> recentMessages;
     public boolean maintenances;
-    public boolean globalmute;
     public boolean chatSyncID = true;
 
     public HashMap<UUID, UUID> getRecentMessages() {
@@ -65,6 +65,8 @@ public final class YVtils extends JavaPlugin {
             new Summarizer().onEnable();
         } catch (Exception ex) {
             ex.printStackTrace();
+            //getPluginLoader().disablePlugin(this);
+            Bukkit.getPluginManager().disablePlugin(this);
         }
 
         recentMessages = new HashMap<>();
