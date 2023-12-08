@@ -70,7 +70,6 @@ public class DefaultCommands {
         main.getCommand("moderation").setTabCompleter(new ModerationAutoCompleter());
         main.getCommand("flywalkspeed").setTabCompleter(new FlyWalkSpeedAutoCompleter());
         main.getCommand("vanish").setTabCompleter(new VanishAutoCompleter());
-        main.getCommand("maintenance").setTabCompleter(new MainteanceAutoCompleter());
 
 /*
                     |           |
