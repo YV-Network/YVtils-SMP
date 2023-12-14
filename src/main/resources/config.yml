@@ -113,6 +113,8 @@ ConfigVersion: 12
 
 #-------------CH2-1.0.0 Testing Area-------------#
 
+UpdateCheck: true
+
 Modules:
   Discord: true
   Status: true

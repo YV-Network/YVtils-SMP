@@ -33,7 +33,7 @@ public class Summarizer {
         new Log("CCRModule - Loading");
         if (YVtils.getInstance().getConfig().getBoolean("Modules.CCR")) new Modules().registerCCRModule();
         new Log("UpdateChecker - Loading");
-        new Other().registerUpdateChecker();
+        if (YVtils.getInstance().getConfig().getBoolean("UpdateCheck")) new Other().registerUpdateChecker();
         new Log("Logger - Loading");
         new DefaultListeners().registerLogger();
         new Log("bStats - Loading");

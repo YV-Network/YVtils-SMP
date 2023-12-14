@@ -49,7 +49,7 @@ public class VersionGetter {
             list1.add("PREFIXUPDATE");
             list2.add(Prefix.PREFIXUPDATE);
             list1.add("NEWVERSION");
-            list2.add(webRequest());
+            list2.add(version);
             list1.add("OLDVERSION");
             list2.add(new Variables().PluginVersion);
             list1.add("LINK");

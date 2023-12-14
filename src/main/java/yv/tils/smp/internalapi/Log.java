@@ -24,13 +24,10 @@ public class Log {
                 i++;
             }
 
-
             Bukkit.getConsoleSender().sendMessage("----- DEBUG START -----");
             Bukkit.getConsoleSender().sendMessage("YVtils-SMP Plugin");
             Bukkit.getConsoleSender().sendMessage(WhatLog);
             Bukkit.getConsoleSender().sendMessage("----- DEBUG END -----");
-
-
         }
     }
 }

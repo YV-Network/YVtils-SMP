@@ -1,5 +1,7 @@
 TODO
 
+WILL MOVE TO https://yvtils.atlassian.net/jira/software/projects/SMP/boards/1
+
 ---------- IMPORTANT ----------
 
 - Recode everything in the Plugin!
@@ -8,13 +10,14 @@ TODO
     - 1 - Big Update .0 - Small Updates .0 - Bug Fixes/Little Changes
 - Change Version Checking System to something like in YVtils-AC the Mod Blacklist is using
 - Maybe switch to Paper as API?
-- Retranslate the Plugin
+- Switch to Kotlin?
+- Re-translate the Plugin
 - Work this list up!
     - Following Points are important:
         - Fly
         - Discord Module
         - Documentation & Help Commands (maybe even GUIs?)
-        - Readd Commands like /ban, /kick, /msg, /pardon
+        - Re-add Commands like /ban, /kick, /msg, /pardon
         - Add Hex Support
         - Rework MOTDs (Own Module?)
         - Add Console Support for more Commands
@@ -69,74 +72,15 @@ x. Documentation on yvnetwork.de/yvtils/smp
 
 ---------------------------------
 
-Start Command:
+Start Command: (Maybe even remove?)
     Rework completely
-
-General:
-    Some Commands with Player Arguments doesn't check if player is online
-    Make Update Checker work on PloudOS, etc
-    Update Checker Toggle
-
-Sit:
-x    Switch from non-Sneak to Sneak or remove completely
-
-CCR:
-    Items bei Server Stop nicht löschen
-    Eigene Rezepte unterstützen und speichern
-x   Allow to craft multiple items
-x   Fix glass drop when accepting without items
-
-Fly:
-    General:
-        Reconnect deaktiviert Fly = Fall-damage (= Tot)
-    SpeedChange:
-        Selber Speed setzen = Leere Zeile im Chat (Liegt am senden einer Nachricht welche 'null' ist (sender.sendMessage(changeother)))
-        Speed reset = Falsche Nachricht
-
-Heal:
-    Heal player to full life, and not only to 20 health
-
-Vanish:
-    Add to Administration Module
-    (Bug) Visible after Gamemode Switch
-    Mobs should ignore vanished Players
-    Vanish Layers (Each Layer can see same layer and smaller (L3 > L2 > L1 > 0))
-
-Discord Module:
-x    Whitelist Commands (Add; Remove; Check)
-x    MC Server Info (Show an in config set IP, linked MC Account from cmd sender, etc)
-x    Discord Minecraft Chat Sync
-x        Set side bar Color in DC to the Status Color if set
-x   Fix Color Code Characters in Discord
-x   Channel Topic (Player count, Version, etc)
-x   Fix Discord names with .
-x   Linux creating double discord folder, of wich only one works
-x   Linux Server Icon getter does not work
-x   Whitelist Force Remove does not work with 25+ whitelisted players
-x   Update to pomelo system
-x   Bot is hanging up, for failed usernames
-    Server Status Channels (Player count, Version, etc)
-    Sync Discord Roles with MC Permissions
-    Buttons to navigate through Force Remove List
-
-
-Help Command & GUI (Latest 4.7):
-    Tutorial Command for Features in Discord (Maybe with Buttons)
 
 Moderation Module:
     Rework of Moderation CMD
     Discord Linked Accounts Ban - When Account xyz get banned in Minecraft all Accounts linked with xyz#0000 should be banned in Minecraft
 
 bStats:
-x   Udemy Tutorial, how to add it
     Show which modules are used in pie diagramms
-
-Status Module:
-x   Send Message which Status is set, when a Player joins - Sollte added sein
-x   Send a Message to the Player and the Console when a Status got successfully set - Sollte added sein
-    Allow Status with spaces
-    Add Hex Code support
-    Make maximum length ignore color codes
 
 Older Version Module:
     Piglin Trades (1.16.1):
@@ -154,7 +98,6 @@ InvSee:
 
 Language System:
     Add Custom Language Value
-    Rework language strings
 
 MOTD System (Rework needed):
     Add more player Variables
@@ -174,9 +117,5 @@ Scoreboard Builder:
     Many design options (i.e. Death count, Visible name, Player count, Server name)
     (Ingame GUI to build the scoreboard )
 
-Bedrock Support (GeyserMC Support)
-    Whitelist Feature for bedrock accounts
-    Check all other features for bugs through bedrock
-
-Older version support:
+Older version support: (Probably not really of use, from time to invest)
     Try to add support down to 1.16(.1/.5)
