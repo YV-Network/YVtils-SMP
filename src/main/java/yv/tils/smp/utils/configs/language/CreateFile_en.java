@@ -37,10 +37,6 @@ public class CreateFile_en {
         ymlfile.addDefault("FLY_COMMAND_DISABLE", "§7You can't fly anymore!");
         ymlfile.addDefault("FLY_COMMAND_ENABLE_OTHER", "§7PLAYER can now fly!");
         ymlfile.addDefault("FLY_COMMAND_DISABLE_OTHER", "§7PLAYER can't fly anymore!");
-        ymlfile.addDefault("FLYSPEED_CHANGE", "§7You changed your fly speed to §8SPEED§7!");
-        ymlfile.addDefault("WALKSPEED_CHANGE", "§7You changed your walk speed to §8SPEED§7!");
-        ymlfile.addDefault("FLYSPEED_CHANGE_OTHER", "§7You change the fly speed from §ePLAYER §7to §8SPEED§7!");
-        ymlfile.addDefault("WALKSPEED_CHANGE_OTHER", "§7You have changed the walking speed from §ePLAYER §7to §8SPEED§7!");
         ymlfile.addDefault("HEAL_PLAYER_HEALED", "§7You got §8§lhealed!");
         ymlfile.addDefault("HEAL_OTHER_PLAYER_HEALED", "§7PLAYER got §8§lhealed!");
         ymlfile.addDefault("GODMODE_COMMAND_ENABLE", "§7God Mode is now §8activated§7!");
@@ -152,6 +148,11 @@ public class CreateFile_en {
         ymlfile.addDefault("GLOBALMUTE_STATUS_DISABLED", "PREFIXFEEDBACK §7The global mute is §adisabled§7!");
         ymlfile.addDefault("GLOBALMUTE_ALREADY_ENABLED", "PREFIXFEEDBACK §7The global mute is already §aactivated§7!");
         ymlfile.addDefault("GLOBALMUTE_ALREADY_DISABLED", "PREFIXFEEDBACK §7The global mute is already §adisabled§7!");
+
+        ymlfile.addDefault("SPEED_CHANGE_SELF", "§7Your speed got changed to §aSPEED§7!");
+        ymlfile.addDefault("SPEED_CHANGE_OTHER", "§7The speed of §ePLAYER §7got changed to §aSPEED§7!");
+        ymlfile.addDefault("SPEED_RESET_SELF", "§7Your speed got reset!");
+        ymlfile.addDefault("SPEED_RESET_OTHER", "§7The speed of §ePLAYER §7got reset!");
 
         ymlfile.options().copyDefaults(true);
         fileSave();

@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.commands.FlyCommand;
-import yv.tils.smp.commands.GlobalMuteCommand;
 import yv.tils.smp.commands.GodCommand;
 import yv.tils.smp.commands.VanishCommand;
 import yv.tils.smp.manager.listener.*;
@@ -19,14 +18,12 @@ import yv.tils.smp.mods.other.SpawnElytra;
 public class DefaultListeners {
     YVtils main = YVtils.getInstance();
 
-    GlobalMuteCommand globalMuteCommand = new GlobalMuteCommand();
     FlyCommand flyCommand = new FlyCommand();
     VanishCommand vanishCommand = new VanishCommand();
     GodCommand godCommand = new GodCommand();
 
     public void registerListener() {
         PluginManager manager = Bukkit.getPluginManager();
-        manager.registerEvents(globalMuteCommand, main);
         manager.registerEvents(flyCommand, main);
         manager.registerEvents(vanishCommand, main);
         manager.registerEvents(godCommand, main);
@@ -49,6 +46,7 @@ public class DefaultListeners {
         manager.registerEvents(new InventoryListener(), main);
         manager.registerEvents(new SpawnElytra(), main);
         manager.registerEvents(new PlayerCommandPreprocess(), main);
+        manager.registerEvents(new EntityTargetListener(), main);
     }
 
     public void registerLogger() {

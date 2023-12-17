@@ -17,6 +17,7 @@ import java.util.List;
 /**
 * @since 4.6.6
 * @version 4.6.6
+ * @deprecated
 */
 public class FlyWalkSpeed implements CommandExecutor, Listener {
     @Override
@@ -38,8 +39,8 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
                 list3.add("SPEED");
                 list4.add(args[0]);
 
-                flyspeedchangeother = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.FLYSPEED_CHANGE_OTHER), list3, list4);
-                walkspeedchangeother = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.WALKSPEED_CHANGE_OTHER), list3, list4);
+                flyspeedchangeother = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.SPEED_RESET_SELF), list3, list4);
+                walkspeedchangeother = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.SPEED_CHANGE_SELF), list3, list4);
             }
 
             List<String> list1 = new ArrayList();
@@ -48,8 +49,8 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
             list2.add(args[0]);
 
 
-            String flyspeedchange = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.FLYSPEED_CHANGE), list1, list2);
-            String walkspeedchange = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.WALKSPEED_CHANGE), list1, list2);
+            String flyspeedchange = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.START_MESSAGE), list1, list2);
+            String walkspeedchange = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.SMP_START_MESSAGE), list1, list2);
 
             Player player = null;
 
@@ -64,8 +65,8 @@ public class FlyWalkSpeed implements CommandExecutor, Listener {
             if (args[0].equalsIgnoreCase("reset")) {
                 player.setWalkSpeed(0.2f);
                 player.setFlySpeed(0.1f);
-                sender.sendMessage(flyspeedchangeother);
-                player.sendMessage(flyspeedchange);
+                sender.sendMessage();
+                player.sendMessage();
             } else {
                 switch (args[0]) {
                     case "-10" -> {

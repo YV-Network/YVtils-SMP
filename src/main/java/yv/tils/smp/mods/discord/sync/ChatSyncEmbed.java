@@ -4,28 +4,28 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import yv.tils.smp.utils.color.HexSupport;
 import yv.tils.smp.utils.configs.ConfigModeration;
+import yv.tils.smp.utils.configs.status.StatusConfigManager;
 
 import java.awt.*;
 
 /**
  * @version 4.6.8
- * @since 4.6.8
+ * @since CH2-1.0.0
  */
 public class ChatSyncEmbed {
     EmbedBuilder builder = new EmbedBuilder();
-    String url = "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png";
 
-    YamlConfiguration yml = new ConfigModeration().ConfigRequest("StatusSave");
+    YamlConfiguration yml = new StatusConfigManager().SavedRequest();
 
     private Color color(Player sender) {
 
-        if (!new ConfigModeration().ConfigRequest("StatusSave").contains(sender.getUniqueId().toString())) return new Color(0xABFF99);
+        if (!yml.contains(sender.getUniqueId().toString())) return new Color(0xABFF99);
 
         String statuscolor = (String) yml.get(sender.getUniqueId().toString());
 
-        if (!statuscolor.contains("&")) return new Color(0xABFF99);
-        statuscolor = ChatColor.translateAlternateColorCodes('&', statuscolor);
+        statuscolor = HexSupport.hex(statuscolor);
 
         switch (ChatColor.getLastColors(statuscolor)) {
             case "§0" -> {

@@ -2,11 +2,13 @@ package yv.tils.smp.mods.ccr;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import yv.tils.smp.YVtils;
@@ -18,23 +20,43 @@ import yv.tils.smp.utils.configs.ConfigModeration;
 
 /**
  * @since 4.6.7
- * @version 4.6.7
+ * @version CH2-1.0.0
  */
 public class InvListener implements Listener {
-    @EventHandler
-    public void onInvClose(InventoryCloseEvent e) {
-        if (e.getView().getTitle().equals("§9CCR - Custom Crafting Recipes")) {
-            if (!YVtils.getInstance().InvClose.contains(e.getPlayer().getUniqueId())) {
-                if (e.getInventory().getItem(20) != null) e.getPlayer().getWorld().dropItem(e.getPlayer().getLocation().add(0, 1, -0.25), e.getInventory().getItem(20));
-                if (e.getInventory().getItem(13) != null) e.getPlayer().getWorld().dropItem(e.getPlayer().getLocation().add(0, 1, -0.25), e.getInventory().getItem(13));
-                if (e.getInventory().getItem(31) != null) e.getPlayer().getWorld().dropItem(e.getPlayer().getLocation().add(0, 1, -0.25), e.getInventory().getItem(31));
-            }
-            YVtils.getInstance().InvClose.remove(e.getPlayer().getUniqueId());
-        }}
+    public void onInvClose(Inventory inventory, HumanEntity player) {
+        if (player.getOpenInventory().getTitle().equals("§9CCR - Custom Crafting Recipes") && inventory.getSize() == 45) {
+            if (!YVtils.getInstance().InvClose.contains(player.getUniqueId())) {
+                    int i = 0;
+                while (player.getInventory().firstEmpty() != -1) {
+                    if (i == 0) {
+                        if (inventory.getItem(20) != null) player.getInventory().addItem(inventory.getItem(20));
+                    } else if (i == 1) {
+                        if (inventory.getItem(13) != null) player.getInventory().addItem(inventory.getItem(13));
+                    } else if (i == 2) {
+                        if (inventory.getItem(31) != null) player.getInventory().addItem(inventory.getItem(31));
+                    } else {
+                        break;
+                    }
+                    i++;
+                }
 
-    @EventHandler
+                if (i == 0) {
+                    if (inventory.getItem(20) != null) player.getWorld().dropItem(player.getLocation().add(0, 1, -0.25), inventory.getItem(20));
+                    if (inventory.getItem(13) != null) player.getWorld().dropItem(player.getLocation().add(0, 1, -0.25), inventory.getItem(13));
+                    if (inventory.getItem(31) != null) player.getWorld().dropItem(player.getLocation().add(0, 1, -0.25), inventory.getItem(31));
+                } else if (i == 1) {
+                    if (inventory.getItem(13) != null) player.getWorld().dropItem(player.getLocation().add(0, 1, -0.25), inventory.getItem(13));
+                    if (inventory.getItem(31) != null) player.getWorld().dropItem(player.getLocation().add(0, 1, -0.25), inventory.getItem(31));
+                } else if (i == 2) {
+                    if (inventory.getItem(31) != null) player.getWorld().dropItem(player.getLocation().add(0, 1, -0.25), inventory.getItem(31));
+                }
+            }
+            YVtils.getInstance().InvClose.remove(player.getUniqueId());
+        }
+    }
+
     public void onInvClick(InventoryClickEvent e) {
-        if (e.getView().getTitle().equals("§9CCR - Custom Crafting Recipes")) {
+        if (e.getView().getTitle().equals("§9CCR - Custom Crafting Recipes") && e.getInventory().getSize() == 45) {
             Player player = (Player) e.getWhoClicked();
             switch (e.getRawSlot()) {
                 case 36,37,38,39,40,41,42,43,44 -> {
@@ -85,4 +107,7 @@ public class InvListener implements Listener {
                 case 45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80 -> {
                 }
                 default -> e.setCancelled(true);
-            }}}}
+            }
+        }
+    }
+}

@@ -4,11 +4,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.commands.FlyCommand;
-import yv.tils.smp.commands.GlobalMuteCommand;
 import yv.tils.smp.commands.GodCommand;
 import yv.tils.smp.commands.VanishCommand;
-import yv.tils.smp.commands.FlyWalkSpeed;
 import yv.tils.smp.commands.ModerationCommand;
+import yv.tils.smp.mods.admin.vanish.Vanish;
 import yv.tils.smp.mods.other.message.*;
 import yv.tils.smp.commands.autocompleter.*;
 import yv.tils.smp.commands.replacecommands.*;
@@ -23,9 +22,7 @@ import yv.tils.smp.mods.admin.invsee.InvSee;
 public class DefaultCommands {
     YVtils main = YVtils.getInstance();
 
-
     FlyCommand flyCommand = new FlyCommand();
-    VanishCommand vanishCommand = new VanishCommand();
     GodCommand godCommand = new GodCommand();
 
 /*
@@ -41,11 +38,11 @@ public class DefaultCommands {
     Heal heal = new Heal();
     Maintenance maintenance = new Maintenance();
     GlobalMute globalMute = new GlobalMute();
+    Vanish vanish = new Vanish();
+    Speed speed = new Speed();
 
     public void registerCommands() {
         main.getCommand("fly").setExecutor(flyCommand);
-        main.getCommand("vanish").setExecutor(vanishCommand);
-        main.getCommand("flywalkspeed").setExecutor(new FlyWalkSpeed());
         main.getCommand("moderation").setExecutor(new ModerationCommand());
         main.getCommand("god").setExecutor(godCommand);
         main.getCommand("invsee").setExecutor(new InvSee());
@@ -64,11 +61,12 @@ public class DefaultCommands {
         main.getCommand("heal").setExecutor(heal);
         main.getCommand("maintenance").setExecutor(maintenance);
         main.getCommand("globalmute").setExecutor(globalMute);
+        main.getCommand("vanish").setExecutor(vanish);
+        main.getCommand("speed").setExecutor(speed);
     }
 
     public void registerTabCompleter() {
         main.getCommand("moderation").setTabCompleter(new ModerationAutoCompleter());
-        main.getCommand("flywalkspeed").setTabCompleter(new FlyWalkSpeedAutoCompleter());
         main.getCommand("vanish").setTabCompleter(new VanishAutoCompleter());
 
 /*
@@ -81,18 +79,13 @@ public class DefaultCommands {
         main.getCommand("dm").setTabCompleter(message);
         main.getCommand("maintenance").setTabCompleter(maintenance);
         main.getCommand("globalmute").setTabCompleter(globalMute);
+        main.getCommand("speed").setTabCompleter(speed);
     }
 
     public void registerCommandReplace() {
         PluginManager manager = Bukkit.getPluginManager();
-        if (main.getConfig().getBoolean("CommandBlock./seed")) {
-            manager.registerEvents(new seedcommand(), main);
-        }
         if (main.getConfig().getBoolean("CommandBlock./pardon")) {
             manager.registerEvents(new pardonCommand(), main);
-        }
-        if (main.getConfig().getBoolean("CommandBlock./msg")) {
-            //manager.registerEvents(new msgCommand(), main);
         }
         if (main.getConfig().getBoolean("CommandBlock./kick")) {
             manager.registerEvents(new KickCommand(), main);

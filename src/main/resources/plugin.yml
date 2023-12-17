@@ -18,12 +18,11 @@ commands:
     permission: yvtils.smp.command.globalmute
   fly:
     permission: yvtils.smp.command.fly
-  flywalkspeed:
-    permission: yvtils.smp.command.flyspeed
+  speed:
+    permission: yvtils.smp.command.speed
     aliases:
       - flyspeed
       - walkspeed
-      - speed
   moderation:
     permission: yvtils.smp.command.moderation
     aliases:

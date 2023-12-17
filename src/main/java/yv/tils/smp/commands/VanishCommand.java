@@ -118,7 +118,9 @@ public class VanishCommand implements CommandExecutor, Listener {
                         break;
                     default:
                         sendUsage(sender);
-                }}}
+                }
+            }
+        }
         return false;
     }
 

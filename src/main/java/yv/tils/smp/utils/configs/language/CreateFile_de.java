@@ -45,11 +45,6 @@ public class CreateFile_de {
         ymlfile.addDefault("FLY_COMMAND_ENABLE_OTHER","§7PLAYER kann nun fliegen!");
         ymlfile.addDefault("FLY_COMMAND_DISABLE_OTHER","§7PLAYER kann nun nicht mehr fliegen!");
 
-        ymlfile.addDefault("FLYSPEED_CHANGE","§7Du hast deine Flug Geschwindigkeit zu §8SPEED §7geändert!");
-        ymlfile.addDefault("WALKSPEED_CHANGE","§7Du hast deine Lauf Geschwindigkeit zu §8SPEED §7geändert!");
-        ymlfile.addDefault("FLYSPEED_CHANGE_OTHER","§7Du hast die Flug Geschwindigkeit von §ePLAYER §7zu §8SPEED§7!");
-        ymlfile.addDefault("WALKSPEED_CHANGE_OTHER","§7Du hast die Lauf Geschwindigkeit von §ePLAYER §7zu §8SPEED§7!");
-
         ymlfile.addDefault("HEAL_PLAYER_HEALED","§7Du wurdest §8§lgeheilt!");
         ymlfile.addDefault("HEAL_OTHER_PLAYER_HEALED","§7PLAYER wurde §8§lgeheilt!");
 
@@ -176,6 +171,10 @@ public class CreateFile_de {
         ymlfile.addDefault("GLOBALMUTE_STATUS_DISABLED", "PREFIXFEEDBACK §7Der Globalmute ist §adeaktiviert§7!");
         ymlfile.addDefault("GLOBALMUTE_ALREADY_ENABLED", "PREFIXFEEDBACK §7Der Globalmute ist bereits §aaktiviert§7!");
         ymlfile.addDefault("GLOBALMUTE_ALREADY_DISABLED", "PREFIXFEEDBACK §7Der Globalmute ist bereits §adeaktiviert§7!");
+        ymlfile.addDefault("SPEED_CHANGE_SELF", "§7Deine Geschwindigkeit wurde zu §aSPEED§7 geändert!");
+        ymlfile.addDefault("SPEED_CHANGE_OTHER", "§7Die Geschwindigkeit von §ePLAYER §7wurde zu §aSPEED§7 geändert!");
+        ymlfile.addDefault("SPEED_RESET_SELF", "§7Deine Geschwindigkeit wurde zurückgesetzt!");
+        ymlfile.addDefault("SPEED_RESET_OTHER", "§7Die Geschwindigkeit von §ePLAYER §7wurde zurückgesetzt!");
 
         ymlfile.options().copyDefaults(true);
         fileSave();

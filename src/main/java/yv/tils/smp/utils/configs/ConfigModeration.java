@@ -33,52 +33,6 @@ public class ConfigModeration {
         return configuration;
     }
 
-    /**
-     Add values to the Config!
-     You can use as Config 'Language; MinecraftDiscordBridge; DoNotEdit; WhitelistedDiscordPlayers; StatusModule; StatusSave
-     @since  4.6.6
-     */
-    public YamlConfiguration ConfigContentAdd(String config, String path, String value) {
-        File configfile = new File(YVtils.getInstance().getDataFolder(), config + ".yml");
-        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
-        configuration.set(path, value);
-        try {
-            configuration.save(configfile);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return configuration;
-    }
-
-    /**
-     Get values out of the Config!
-     You can use as Config 'Langauge; MinecraftDiscordBridge; DoNotEdit; WhitelistedDiscordPlayers; StatusModule; StatusSave
-     @since  4.6.6
-     */
-    public Object ConfigContentGet(String config, String path) {
-        File configfile = new File(YVtils.getInstance().getDataFolder(), config + ".yml");
-        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
-
-        return configuration.get(path);
-    }
-
-    /**
-     Remove values from the Config!
-     You can use as Config 'Langauge; MinecraftDiscordBridge; DoNotEdit; WhitelistedDiscordPlayers; StatusModule; StatusSave
-     @since  4.6.6
-     */
-    public YamlConfiguration ConfigContentRemove(String config, String path) {
-        File configfile = new File(YVtils.getInstance().getDataFolder(), config + ".yml");
-        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
-        configuration.set(path, null);
-        try {
-            configuration.save(configfile);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return configuration;
-    }
-
     File donoteditfile = new File(YVtils.getInstance().getDataFolder(), "DoNotEdit.yml");
     YamlConfiguration donotedit = YamlConfiguration.loadConfiguration(donoteditfile);
 
