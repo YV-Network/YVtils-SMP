@@ -434,6 +434,8 @@ public class Vanish implements CommandExecutor {
 
         player.setSleepingIgnored(true);
 
+        //TODO: Mute Quit Message when disconnecting from server
+
         Bukkit.broadcastMessage(quitMessage);
         player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_ACTIVATE), List.of("PREFIX"), List.of(Prefix.PREFIX)));
     }
@@ -446,6 +448,9 @@ public class Vanish implements CommandExecutor {
         }
 
         player.setSleepingIgnored(false);
+
+        //TODO: Mute Join Message when connecting to server
+        //TODO: Enable Vanish when player is in vanish mode and rejoins the server
 
         Bukkit.broadcastMessage(joinMessage);
         player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_DEACTIVATE), List.of("PREFIX"), List.of(Prefix.PREFIX)));
