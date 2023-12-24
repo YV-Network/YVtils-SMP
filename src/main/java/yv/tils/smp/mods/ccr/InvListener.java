@@ -26,7 +26,7 @@ public class InvListener implements Listener {
     public void onInvClose(Inventory inventory, HumanEntity player) {
         if (player.getOpenInventory().getTitle().equals("§9CCR - Custom Crafting Recipes") && inventory.getSize() == 45) {
             if (!YVtils.getInstance().InvClose.contains(player.getUniqueId())) {
-                    int i = 0;
+                int i = 0;
                 while (player.getInventory().firstEmpty() != -1) {
                     if (i == 0) {
                         if (inventory.getItem(20) != null) player.getInventory().addItem(inventory.getItem(20));
@@ -78,7 +78,8 @@ public class InvListener implements Listener {
                         e.getWhoClicked().closeInventory();
                     }else {
                         e.setCancelled(true);
-                    }}
+                    }
+                }
                 case 20,13,31 -> Bukkit.getScheduler().runTaskLater(YVtils.getInstance(), () -> {
                     if (new LightBlockRecipe().on_Input_NL(e.getInventory()) || new LightBlockRecipe().on_Input_SL(e.getInventory()) && new ConfigModeration().ConfigRequest("FunModule").getBoolean("CCR.LightBlock")) {
                         e.getInventory().setItem(24, new LightBlockRecipe().on_Output_create(e.getInventory()));

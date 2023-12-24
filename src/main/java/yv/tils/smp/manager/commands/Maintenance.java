@@ -26,6 +26,8 @@ public class Maintenance implements CommandExecutor, TabCompleter {
     File file = new File(YVtils.getInstance().getDataFolder(), "DoNotEdit.yml");
     YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(file);
 
+    public static boolean maintenance = false;
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
@@ -40,7 +42,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                 if (ymlFile.getString("MaintenanceMode").equals("true")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
-                    YVtils.getInstance().maintenances = false;
+                    maintenance = false;
                     ymlFile.set("MaintenanceMode", "false");
                     try {
                         ymlFile.save(file);
@@ -59,7 +61,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                 }else if (ymlFile.getString("MaintenanceMode").equals("false")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
-                    YVtils.getInstance().maintenances = true;
+                    maintenance = true;
                     ymlFile.set("MaintenanceMode", "true");
                     try {
                         ymlFile.save(file);
@@ -79,7 +81,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                 if (ymlFile.getString("MaintenanceMode").equals("true")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_DEACTIVATE));
-                    YVtils.getInstance().maintenances = false;
+                    maintenance = false;
                     ymlFile.set("MaintenanceMode", "false");
                     try {
                         ymlFile.save(file);
@@ -89,7 +91,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                 }else if (ymlFile.getString("MaintenanceMode").equals("false")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
-                    YVtils.getInstance().maintenances = true;
+                    maintenance = true;
                     ymlFile.set("MaintenanceMode", "true");
                     try {
                         ymlFile.save(file);
@@ -103,7 +105,8 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                     }
                 }else {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
-                }}
+                }
+            }
             case "status" -> {
                 if (ymlFile.get("MaintenanceMode") != null) {
                     if (ymlFile.getString("MaintenanceMode").equals("true")) {
@@ -112,7 +115,9 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_STATUS_DISABLED));
                     }else {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
-                    }}}
+                    }
+                }
+            }
             default -> sendUsage(sender);
         }
         return false;
@@ -120,7 +125,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
 
     private void sendUsage(CommandSender sender) {
         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE +
-                "/mainteance [true, false, toggle, status]");
+                "/mainteance <true, false, toggle, status>");
     }
 
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {

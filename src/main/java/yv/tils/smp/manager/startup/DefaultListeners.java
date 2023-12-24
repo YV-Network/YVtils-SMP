@@ -3,12 +3,10 @@ package yv.tils.smp.manager.startup;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.commands.FlyCommand;
-import yv.tils.smp.commands.GodCommand;
 import yv.tils.smp.commands.VanishCommand;
 import yv.tils.smp.manager.listener.*;
-import yv.tils.smp.mods.admin.logger.logger.*;
 import yv.tils.smp.mods.admin.invsee.GUIEdit;
+import yv.tils.smp.mods.admin.logger.logger.*;
 import yv.tils.smp.mods.other.SpawnElytra;
 
 /**
@@ -18,17 +16,12 @@ import yv.tils.smp.mods.other.SpawnElytra;
 public class DefaultListeners {
     YVtils main = YVtils.getInstance();
 
-    FlyCommand flyCommand = new FlyCommand();
     VanishCommand vanishCommand = new VanishCommand();
-    GodCommand godCommand = new GodCommand();
 
     public void registerListener() {
         PluginManager manager = Bukkit.getPluginManager();
-        manager.registerEvents(flyCommand, main);
+
         manager.registerEvents(vanishCommand, main);
-        manager.registerEvents(godCommand, main);
-        manager.registerEvents(new JoinListener(), main);
-        manager.registerEvents(new QuitListener(), main);
         manager.registerEvents(new GUIEdit(), main);
 
 /*
@@ -37,6 +30,8 @@ public class DefaultListeners {
                     v           v
 */
 
+        manager.registerEvents(new JoinListener(), main);
+        manager.registerEvents(new QuitListener(), main);
         manager.registerEvents(new ChatListener(), main);
         manager.registerEvents(new LoginListener(), main);
         manager.registerEvents(new ServerListPingListener(), main);
@@ -47,6 +42,7 @@ public class DefaultListeners {
         manager.registerEvents(new SpawnElytra(), main);
         manager.registerEvents(new PlayerCommandPreprocess(), main);
         manager.registerEvents(new EntityTargetListener(), main);
+        manager.registerEvents(new GamemodeSwitch(), main);
     }
 
     public void registerLogger() {

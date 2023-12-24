@@ -17,13 +17,8 @@ import java.util.List;
 public class PlayerQuit {
     public void onPlayerQuit(PlayerQuitEvent e) {
         Player player = e.getPlayer();
-        String playerName = player.getName();
-        List<String> list = YVtils.getInstance().getConfig().getStringList("QuitMessage");
 
-        list.replaceAll(s -> s.replace("player", playerName));
-
-        Collections.shuffle(list);
-        String quitMessage = list.get(0);
+        String quitMessage = generateQuitMessage(player);
 
         if (YVtils.getInstance().getConfig().getBoolean("SendQuitMessage")) {
             Bukkit.getConsoleSender().sendMessage(Prefix.PREFIXDISCONNECT + ChatColor.RED + " « " + ChatColor.GRAY + player.getName());
@@ -35,5 +30,17 @@ public class PlayerQuit {
 
         YVtils.getInstance().godmode.remove(player.getUniqueId());
         YVtils.getInstance().getRecentMessages().remove(e.getPlayer().getUniqueId());
+    }
+
+    public String generateQuitMessage(Player player) {
+        String playerName = player.getName();
+        List<String> list = YVtils.getInstance().getConfig().getStringList("QuitMessage");
+
+        list.replaceAll(s -> s.replace("player", playerName));
+
+        Collections.shuffle(list);
+        String quitMessage = list.get(0);
+
+        return quitMessage;
     }
 }

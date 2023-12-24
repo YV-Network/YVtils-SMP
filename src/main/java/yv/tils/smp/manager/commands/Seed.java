@@ -42,7 +42,7 @@ public class Seed implements CommandExecutor {
                     player.sendMessage(LanguageFile.getMessage(LanguageMessage.MISSING_PERMISSION) + " yvtils.smp.command.bypass.seed");
                 }
             } else if (args.length == 2) {
-                if (args[1].toLowerCase().equals("show")) {
+                if (args[1].equalsIgnoreCase("show")) {
                     if (player.hasPermission("yvtils.smp.command.bypass.seed")) {
                         TextComponent c = new TextComponent(Prefix.PREFIXSEED);
                         TextComponent click = new TextComponent(" §7[" + "§a" + Bukkit.getWorld("world").getSeed() + "§7]");

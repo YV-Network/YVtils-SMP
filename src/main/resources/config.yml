@@ -76,7 +76,7 @@ MOTD'sText:
   - §aStarted at the ??.??.????
   - §dServer is online
   - §4Can't connect to Server
-  Mainteance: §cServer is in Mainteance Mode
+  Maintenance: §cServer is in Maintenance Mode
 
 # How the Direct Message System should be configured
 DirectMessage:

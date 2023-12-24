@@ -41,7 +41,6 @@ public final class YVtils extends JavaPlugin {
     public List<UUID> InvClose = new ArrayList<>();
     public final List<String> WhitelistManager = new ArrayList<>();
     private HashMap<UUID, UUID> recentMessages;
-    public boolean maintenances;
     public boolean chatSyncID = true;
 
     public HashMap<UUID, UUID> getRecentMessages() {

@@ -3,17 +3,16 @@ package yv.tils.smp.manager.startup;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.commands.FlyCommand;
-import yv.tils.smp.commands.GodCommand;
-import yv.tils.smp.commands.VanishCommand;
-import yv.tils.smp.commands.ModerationCommand;
-import yv.tils.smp.mods.admin.vanish.Vanish;
-import yv.tils.smp.mods.other.message.*;
-import yv.tils.smp.commands.autocompleter.*;
-import yv.tils.smp.commands.replacecommands.*;
+import yv.tils.smp.commands.autocompleter.VanishAutoCompleter;
 import yv.tils.smp.manager.commands.*;
+import yv.tils.smp.manager.listener.CommandPreprocess;
 import yv.tils.smp.mods.admin.invsee.EcSee;
 import yv.tils.smp.mods.admin.invsee.InvSee;
+import yv.tils.smp.mods.admin.moderation.Moderation;
+import yv.tils.smp.mods.admin.moderation.TempBan;
+import yv.tils.smp.mods.admin.vanish.Vanish;
+import yv.tils.smp.mods.other.message.MessageCommand;
+import yv.tils.smp.mods.other.message.ReplyCommand;
 
 /**
  * @since 4.6.8
@@ -21,9 +20,6 @@ import yv.tils.smp.mods.admin.invsee.InvSee;
  */
 public class DefaultCommands {
     YVtils main = YVtils.getInstance();
-
-    FlyCommand flyCommand = new FlyCommand();
-    GodCommand godCommand = new GodCommand();
 
 /*
                     |           |
@@ -40,11 +36,12 @@ public class DefaultCommands {
     GlobalMute globalMute = new GlobalMute();
     Vanish vanish = new Vanish();
     Speed speed = new Speed();
+    Moderation moderation = new Moderation();
+    TempBan tempBan = new TempBan();
+    Fly fly = new Fly();
+    God god = new God();
 
     public void registerCommands() {
-        main.getCommand("fly").setExecutor(flyCommand);
-        main.getCommand("moderation").setExecutor(new ModerationCommand());
-        main.getCommand("god").setExecutor(godCommand);
         main.getCommand("invsee").setExecutor(new InvSee());
         main.getCommand("ecsee").setExecutor(new EcSee());
 
@@ -63,10 +60,13 @@ public class DefaultCommands {
         main.getCommand("globalmute").setExecutor(globalMute);
         main.getCommand("vanish").setExecutor(vanish);
         main.getCommand("speed").setExecutor(speed);
+        main.getCommand("moderation").setExecutor(moderation);
+        main.getCommand("tempban").setExecutor(tempBan);
+        main.getCommand("fly").setExecutor(fly);
+        main.getCommand("god").setExecutor(god);
     }
 
     public void registerTabCompleter() {
-        main.getCommand("moderation").setTabCompleter(new ModerationAutoCompleter());
         main.getCommand("vanish").setTabCompleter(new VanishAutoCompleter());
 
 /*
@@ -80,18 +80,12 @@ public class DefaultCommands {
         main.getCommand("maintenance").setTabCompleter(maintenance);
         main.getCommand("globalmute").setTabCompleter(globalMute);
         main.getCommand("speed").setTabCompleter(speed);
+        main.getCommand("moderation").setTabCompleter(moderation);
+        main.getCommand("tempban").setTabCompleter(tempBan);
     }
 
     public void registerCommandReplace() {
         PluginManager manager = Bukkit.getPluginManager();
-        if (main.getConfig().getBoolean("CommandBlock./pardon")) {
-            manager.registerEvents(new pardonCommand(), main);
-        }
-        if (main.getConfig().getBoolean("CommandBlock./kick")) {
-            manager.registerEvents(new KickCommand(), main);
-        }
-        if (main.getConfig().getBoolean("CommandBlock./ban")) {
-            manager.registerEvents(new BanCommand(), main);
-        }
+        manager.registerEvents(new CommandPreprocess(), main);
     }
 }

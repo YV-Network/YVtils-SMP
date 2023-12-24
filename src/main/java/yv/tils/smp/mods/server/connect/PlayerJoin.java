@@ -17,13 +17,8 @@ import java.util.List;
 public class PlayerJoin {
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
-        String playerName = player.getName();
-        List<String> list = YVtils.getInstance().getConfig().getStringList("JoinMessage");
 
-        list.replaceAll(s -> s.replace("player", playerName));
-
-        Collections.shuffle(list);
-        String joinMessage = list.get(0);
+        String joinMessage = generateJoinMessage(player);
 
         if (YVtils.getInstance().getConfig().getBoolean("SendJoinMessage")) {
             Bukkit.getConsoleSender().sendMessage(Prefix.PREFIXCONNECT + ChatColor.GREEN + " » " + ChatColor.GRAY + player.getName());
@@ -32,5 +27,17 @@ public class PlayerJoin {
             Bukkit.getConsoleSender().sendMessage(Prefix.PREFIXCONNECT + ChatColor.GREEN + " » " + ChatColor.GRAY + player.getName());
             e.setJoinMessage(null);
         }
+    }
+
+    public String generateJoinMessage(Player player) {
+        String playerName = player.getName();
+        List<String> list = YVtils.getInstance().getConfig().getStringList("JoinMessage");
+
+        list.replaceAll(s -> s.replace("player", playerName));
+
+        Collections.shuffle(list);
+        String joinMessage = list.get(0);
+
+        return joinMessage;
     }
 }

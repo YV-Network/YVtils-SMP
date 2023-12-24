@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.server.ServerListPingEvent;
 import yv.tils.smp.YVtils;
+import yv.tils.smp.manager.commands.Maintenance;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +16,8 @@ import java.util.Random;
  */
 public class MOTDGenerator {
     public void ServerListPingEvent(ServerListPingEvent e) {
-        if (YVtils.getInstance().maintenances) {
-            e.setMotd(YVtils.getInstance().getConfig().getString("MOTD'sText.Mainteance"));
+        if (Maintenance.maintenance) {
+            e.setMotd(YVtils.getInstance().getConfig().getString("MOTD'sText.Maintenance"));
             e.setMaxPlayers(0);
         }else {
 

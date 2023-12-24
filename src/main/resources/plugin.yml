@@ -1,7 +1,7 @@
 name: YVtils-SMP
-version: ${project.version}
+version: '${project.version}'
 main: yv.tils.smp.YVtils
-api-version: 1.18
+api-version: '1.20'
 author: WolfiiYV
 contributor: [ SlWed, black_Kittys, SilverZer0 ]
 description: Plugin for SMP Server
@@ -86,6 +86,10 @@ commands:
       - ec
   seed:
     permission: yvtils.smp.command.seed
+
+  tempban:
+    permission: yvtils.smp.command.moderation.tempban
+
 permissions:
   yvtils.smp.play:
     description: Let Player Plays
@@ -95,17 +99,11 @@ permissions:
     description: Let you write while Chat is muted
   yvtils.smp.command.bypass.seed:
     description: Do not replace the /seed Command
-  yvtils.smp.command.moderation.ban.getannounced:
-    description: Announcement in Chat when someone get banned
-  yvtils.smp.command.moderation.temp.ban.getannounced:
-    description: Announcement in Chat when someone get temp banned
-  yvtils.smp.command.moderation.kick.getannounced:
-    description: Announcement in Chat when someone get kicked
-  yvtils.smp.command.moderation.unban.getannounced:
-    description: Announcement in Chat when someone get unbanned
+  yvtils.smp.command.moderation.announcement:
+    description: Announcement in Chat when a moderator (temp-)bans/kicks/unban a Player
   yvtils.smp.command.moderation.ban:
     description: Allow users to ban other Players
-  yvtils.smp.command.moderation.temp.ban:
+  yvtils.smp.command.moderation.tempban:
     description: Allow users to tempban other Players
   yvtils.smp.command.moderation.kick:
     description: Allow users to kick other Players

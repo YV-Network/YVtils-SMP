@@ -3,6 +3,7 @@ package yv.tils.smp.manager.listener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
+import yv.tils.smp.manager.commands.Fly;
 import yv.tils.smp.mods.other.SpawnElytra;
 
 /**
@@ -13,5 +14,6 @@ public class WorldChangeListener implements Listener {
     @EventHandler
     public void onWorldChangeEvent(PlayerChangedWorldEvent e) {
         SpawnElytra.getInstance().onWorldChange(e);
+        new Fly().onWorldChange(e);
     }
 }

@@ -4,6 +4,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import yv.tils.smp.manager.commands.Fly;
 import yv.tils.smp.mods.server.connect.PlayerJoin;
 import yv.tils.smp.utils.updater.VersionGetter;
 
@@ -16,5 +17,6 @@ public class JoinListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         new VersionGetter().onPlayerJoin(e.getPlayer());
         new PlayerJoin().onPlayerJoin(e);
+        new Fly().onRejoin(e);
     }
 }

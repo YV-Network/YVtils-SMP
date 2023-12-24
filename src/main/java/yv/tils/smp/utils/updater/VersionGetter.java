@@ -51,7 +51,7 @@ public class VersionGetter {
             list1.add("NEWVERSION");
             list2.add(version);
             list1.add("OLDVERSION");
-            list2.add(new Variables().PluginVersion);
+            list2.add(Variables.PluginVersion);
             list1.add("LINK");
             list2.add("https://modrinth.com/plugin/yvtils_smp");
 

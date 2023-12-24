@@ -17,6 +17,7 @@ import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import yv.tils.smp.YVtils;
+import yv.tils.smp.manager.commands.Fly;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
@@ -49,7 +50,7 @@ public class SpawnElytra implements Listener {
         multiplyValue = main.getConfig().getInt("multiplyValue");
 
         Bukkit.getScheduler().runTaskTimer(main, () -> Bukkit.getWorld("world").getPlayers().forEach(player -> {
-            if (main.fly.contains(player.getUniqueId()) || main.godmode.contains(player.getUniqueId())) return;
+            if (Fly.fly.containsKey(player.getUniqueId())) return;
             if (player.getGameMode() != GameMode.SURVIVAL) return;
             player.setAllowFlight(isInSpawnRadius(player));
             if (flying.contains(player) && !player.getLocation().getBlock().getRelative(BlockFace.DOWN).getType().isAir()) {
@@ -67,7 +68,7 @@ public class SpawnElytra implements Listener {
     public void onWorldChange(PlayerChangedWorldEvent e) {
         Player player = e.getPlayer();
 
-        if (main.fly.contains(e.getPlayer().getUniqueId()) || main.godmode.contains(e.getPlayer().getUniqueId())) return;
+        if (Fly.fly.containsKey(e.getPlayer().getUniqueId())) return;
         player.setAllowFlight(false);
         player.setFlying(false);
         player.setGliding(false);
@@ -76,7 +77,7 @@ public class SpawnElytra implements Listener {
     }
 
     public void onDoubleJump(PlayerToggleFlightEvent e) {
-        if (main.fly.contains(e.getPlayer().getUniqueId()) || main.godmode.contains(e.getPlayer().getUniqueId())) return;
+        if (Fly.fly.containsKey(e.getPlayer().getUniqueId())) return;
         if (e.getPlayer().getGameMode() != GameMode.SURVIVAL) return;
         if (!isInSpawnRadius(e.getPlayer())) {
             if (!e.getPlayer().getWorld().equals("world")) {

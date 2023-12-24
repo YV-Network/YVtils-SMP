@@ -93,7 +93,7 @@ public class GlobalMute implements CommandExecutor, TabCompleter {
     }
 
     private void sendUsage(CommandSender sender) {
-        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE + "/globalmute [true, false, toggle, status]");
+        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE + "/globalmute <true, false, toggle, status>");
     }
 
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {

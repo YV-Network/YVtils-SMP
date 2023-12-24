@@ -6,6 +6,7 @@ import yv.tils.smp.YVtils;
 import yv.tils.smp.internalapi.Log;
 import yv.tils.smp.internalapi.Runtime;
 import yv.tils.smp.internalapi.Variables;
+import yv.tils.smp.manager.commands.Maintenance;
 import yv.tils.smp.utils.configs.ConfigModeration;
 import yv.tils.smp.utils.configs.other.FileGenerator;
 import yv.tils.smp.utils.updater.VersionGetter;
@@ -50,7 +51,7 @@ public class Other {
         ccrConfig.StringInput();
 
         if (new ConfigModeration().ConfigRequest("DoNotEdit").getString("MaintenanceMode").equals("true")) {
-            main.maintenances = true;
+            Maintenance.maintenance = true;
         }
 
         new Log("Configs loaded");

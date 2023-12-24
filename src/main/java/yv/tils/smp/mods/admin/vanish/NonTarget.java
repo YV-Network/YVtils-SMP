@@ -9,7 +9,7 @@ import org.bukkit.event.entity.EntityTargetEvent;
 public class NonTarget {
     public void onMobTarget(EntityTargetEvent e) {
         if (e.getTarget() == null) return;
-        if (Vanish.vanish.containsKey(e.getTarget().getUniqueId())) {
+        if (Vanish.mobTarget.containsKey(e.getTarget().getUniqueId()) && Vanish.mobTarget.get(e.getTarget().getUniqueId())) {
             e.setCancelled(true);
         }
     }
