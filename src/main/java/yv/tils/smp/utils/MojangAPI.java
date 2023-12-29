@@ -27,6 +27,7 @@ public class MojangAPI {
                     content.append(line);
                 }
                 reader.close();
+                connection.disconnect();
 
                 String websiteContent = content.toString();
                 List<String> list = new ArrayList<>(List.of(websiteContent.split(",")));
@@ -69,6 +70,7 @@ public class MojangAPI {
                     content.append(line);
                 }
                 reader.close();
+                connection.disconnect();
 
                 String websiteContent = content.toString();
                 List<String> list = new ArrayList<>(List.of(websiteContent.split(",")));

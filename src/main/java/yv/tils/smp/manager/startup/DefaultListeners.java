@@ -5,7 +5,6 @@ import org.bukkit.plugin.PluginManager;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.commands.VanishCommand;
 import yv.tils.smp.manager.listener.*;
-import yv.tils.smp.mods.admin.invsee.GUIEdit;
 import yv.tils.smp.mods.admin.logger.logger.*;
 import yv.tils.smp.mods.other.SpawnElytra;
 
@@ -22,7 +21,6 @@ public class DefaultListeners {
         PluginManager manager = Bukkit.getPluginManager();
 
         manager.registerEvents(vanishCommand, main);
-        manager.registerEvents(new GUIEdit(), main);
 
 /*
                     |           |

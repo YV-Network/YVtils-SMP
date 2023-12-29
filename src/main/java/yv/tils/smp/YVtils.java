@@ -33,11 +33,7 @@ public final class YVtils extends JavaPlugin {
     }
 
     public static final SitManager sitManager = new SitManager();
-    public final List<UUID> fly = new ArrayList<>();
-    public final List<UUID> fly1 = new ArrayList<>();
     public List<UUID> vanished = new ArrayList<>();
-    public List<UUID> godmode = new ArrayList<>();
-    public List<UUID> godmode1 = new ArrayList<>();
     public List<UUID> InvClose = new ArrayList<>();
     public final List<String> WhitelistManager = new ArrayList<>();
     private HashMap<UUID, UUID> recentMessages;

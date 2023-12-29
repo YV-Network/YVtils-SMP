@@ -5,6 +5,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerQuitEvent;
 import yv.tils.smp.YVtils;
+import yv.tils.smp.mods.admin.vanish.Vanish;
 import yv.tils.smp.placeholder.Prefix;
 
 import java.util.Collections;
@@ -20,6 +21,10 @@ public class PlayerQuit {
 
         String quitMessage = generateQuitMessage(player);
 
+        if (Vanish.vanish.containsKey(player.getUniqueId()) && Vanish.vanish.get(player.getUniqueId())) {
+            e.setQuitMessage(null);
+        }
+
         if (YVtils.getInstance().getConfig().getBoolean("SendQuitMessage")) {
             Bukkit.getConsoleSender().sendMessage(Prefix.PREFIXDISCONNECT + ChatColor.RED + " « " + ChatColor.GRAY + player.getName());
             e.setQuitMessage(quitMessage);
@@ -28,7 +33,6 @@ public class PlayerQuit {
             e.setQuitMessage(null);
         }
 
-        YVtils.getInstance().godmode.remove(player.getUniqueId());
         YVtils.getInstance().getRecentMessages().remove(e.getPlayer().getUniqueId());
     }
 

@@ -56,7 +56,7 @@ public class InvListener implements Listener {
     }
 
     public void onInvClick(InventoryClickEvent e) {
-        if (e.getView().getTitle().equals("§9CCR - Custom Crafting Recipes") && e.getInventory().getSize() == 45) {
+        if (e.getView().getTitle().equals("§9CCR - Custom Crafting Recipes") && e.getInventory().getSize() == 45 && e.getInventory().getLocation() == null) {
             Player player = (Player) e.getWhoClicked();
             switch (e.getRawSlot()) {
                 case 36,37,38,39,40,41,42,43,44 -> {

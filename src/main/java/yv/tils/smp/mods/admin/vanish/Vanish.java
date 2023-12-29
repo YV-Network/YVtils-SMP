@@ -1,16 +1,16 @@
 package yv.tils.smp.mods.admin.vanish;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Color;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.event.player.PlayerChangedWorldEvent;
+import org.bukkit.event.player.PlayerGameModeChangeEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -41,6 +41,7 @@ public class Vanish implements CommandExecutor {
     public static Vanish getInstance() {return instance;}
 
     public static Map<UUID, Boolean> vanish = new HashMap<>(); //Default: false
+    private static Map<UUID, Boolean> alreadyVanished = new HashMap<>(); //Default: false
     public static Map<UUID, Integer> layer = new HashMap<>(); //Default: 1
     public static Map<UUID, Boolean> itemPickup = new HashMap<>(); //Default: false
     public static Map<UUID, Boolean> invInteraction = new HashMap<>(); //Default: true
@@ -74,12 +75,6 @@ public class Vanish implements CommandExecutor {
     }
 
     private void vanishGUI(Player player) {
-
-        //36 Slots
-        //1. Row = Empty
-        //2. Row = Slot 1, 3, 5, 9 EMPTY; Slot 2 = Vanish, Slot 4 = Layer, Slot 6 = ItemPickup, Slot 7 = InvInteraction, Slot 8 = MobTarget
-        //3. Row = Slot 1, 3, 5, 9 EMPTY; Slot 2, 4, 6, 7. 8 = Toggle Item
-        //4. Row = Empty
 
         Inventory inv = Bukkit.createInventory(player, 36, hex("#6D8896" + "Vanish"));
 
@@ -284,11 +279,10 @@ public class Vanish implements CommandExecutor {
     }
 
     public void invInteraction(InventoryClickEvent e) {
-        e.setCancelled(true);
-
         Player player = (Player) e.getWhoClicked();
 
-        if (player.getOpenInventory().getTitle().equals("§x§6§d§8§8§9§6Vanish") && e.getInventory().getSize() == 36) {
+        if (player.getOpenInventory().getTitle().equals("§x§6§d§8§8§9§6Vanish") && e.getInventory().getSize() == 36 && e.getInventory().getLocation() == null) {
+            e.setCancelled(true);
             switch (e.getSlot()) {
                 case 19 -> {
                     if (vanish.containsKey(player.getUniqueId())) {
@@ -362,12 +356,17 @@ public class Vanish implements CommandExecutor {
                     }
                 }
             }
-            vanishGUI(player);
+            guiToggles(e.getInventory(), player);
         }
     }
 
     private void vanishRegister(Player player, boolean vanish_bool) {
         UUID uuid = player.getUniqueId();
+
+        if (vanish.containsKey(uuid) && vanish.get(uuid) == vanish_bool) {
+            alreadyVanished.put(uuid, true);
+        }
+
         vanish.put(uuid, vanish_bool);
     }
 
@@ -396,10 +395,8 @@ public class Vanish implements CommandExecutor {
 
         if (e.getView().getTitle().equals("§x§6§d§8§8§9§6Vanish") && e.getInventory().getSize() == 36) {
             if (vanish.get(player.getUniqueId())) {
-                //Enable Vanish + Additions
                 enableVanish(player);
             }else {
-                //Disable Vanish + Additions
                 disableVanish(player);
             }
         }
@@ -412,20 +409,20 @@ public class Vanish implements CommandExecutor {
             target.hidePlayer(YVtils.getInstance(), player);
         }
 
-
         if (!layer.get(player.getUniqueId()).equals(4)) {
             for (var entry : layer.entrySet()) {
                 if (entry.getValue() >= layer.get(player.getUniqueId())) {
-                    for (Player target : Bukkit.getOnlinePlayers()) {
-                        target.showPlayer(YVtils.getInstance(), player);
+                    for (Player viewer : Bukkit.getOnlinePlayers()) {
+                        if (viewer.getUniqueId().equals(entry.getKey()) && entry.getValue() != 4) {
+                            player.showPlayer(YVtils.getInstance(), viewer);
+                            viewer.showPlayer(YVtils.getInstance(), player);
+                        }
                     }
                 }
             }
         }
 
-        if (!itemPickup.get(player.getUniqueId())) {
-            player.setCanPickupItems(false);
-        }
+        player.setCanPickupItems(itemPickup.get(player.getUniqueId()));
 
         if (!invInteraction.get(player.getUniqueId())) {
             // Silent Inventory Interaction
@@ -433,8 +430,13 @@ public class Vanish implements CommandExecutor {
         }
 
         player.setSleepingIgnored(true);
+        player.setSilent(true);
 
-        //TODO: Mute Quit Message when disconnecting from server
+        if (alreadyVanished.containsKey(player.getUniqueId()) && alreadyVanished.get(player.getUniqueId())) {
+            //TODO: Send Message to player that vanish got refreshed
+            alreadyVanished.put(player.getUniqueId(), false);
+            return;
+        }
 
         Bukkit.broadcastMessage(quitMessage);
         player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_ACTIVATE), List.of("PREFIX"), List.of(Prefix.PREFIX)));
@@ -448,12 +450,73 @@ public class Vanish implements CommandExecutor {
         }
 
         player.setSleepingIgnored(false);
+        player.setCanPickupItems(true);
+        player.setSilent(false);
 
-        //TODO: Mute Join Message when connecting to server
-        //TODO: Enable Vanish when player is in vanish mode and rejoins the server
+        //Disable Silent Inventory Interaction
+
+        if (!(alreadyVanished.containsKey(player.getUniqueId()) && alreadyVanished.get(player.getUniqueId()))) {
+            //TODO: Send Message to player that vanish got refreshed
+            alreadyVanished.put(player.getUniqueId(), false);
+            return;
+        }
 
         Bukkit.broadcastMessage(joinMessage);
         player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.VANISH_DEACTIVATE), List.of("PREFIX"), List.of(Prefix.PREFIX)));
+    }
+
+    public void onRejoin(PlayerJoinEvent e) {
+        Player player = e.getPlayer();
+        if (!vanish.containsKey(player.getUniqueId())) return;
+        if (vanish.get(player.getUniqueId())) {
+            enableVanish(player);
+        }else {
+            disableVanish(player);
+        }
+    }
+
+    public void onGamemodeSwitch(PlayerGameModeChangeEvent e) {
+        Player player = e.getPlayer();
+        if (!vanish.containsKey(player.getUniqueId())) return;
+        if (vanish.get(player.getUniqueId())) {
+            enableVanish(player);
+        }else {
+            disableVanish(player);
+        }
+    }
+
+    public void onWorldChange(PlayerChangedWorldEvent e) {
+        Player player = e.getPlayer();
+        if (!vanish.containsKey(player.getUniqueId())) return;
+        if (vanish.get(player.getUniqueId())) {
+            enableVanish(player);
+        }else {
+            disableVanish(player);
+        }
+    }
+
+    public void chestOpen(InventoryOpenEvent e) {
+        Player player = (Player) e.getPlayer();
+        if (!vanish.containsKey(player.getUniqueId())) return;
+        if (vanish.get(player.getUniqueId())) {
+            for (Player nearPlayer : player.getWorld().getPlayers()) {
+                if (nearPlayer.getLocation().distance(player.getLocation()) <= 20) {
+                    nearPlayer.stopSound("block.chest.open", SoundCategory.BLOCKS);
+                }
+            }
+        }
+    }
+
+    public void chestClose(InventoryCloseEvent e) {
+        Player player = (Player) e.getPlayer();
+        if (!vanish.containsKey(player.getUniqueId())) return;
+        if (vanish.get(player.getUniqueId())) {
+            for (Player nearPlayer : player.getWorld().getPlayers()) {
+                if (nearPlayer.getLocation().distance(player.getLocation()) <= 20) {
+                    nearPlayer.stopSound("block.chest.close", SoundCategory.BLOCKS);
+                }
+            }
+        }
     }
 
     private void sendUsage(CommandSender sender) {

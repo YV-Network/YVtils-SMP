@@ -11,15 +11,16 @@ import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * @since 4.6.8
  * @version 4.6.8
  */
 public class EcSee implements CommandExecutor {
+
+    public static Map<UUID, UUID> ecSee = new HashMap<>();
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
@@ -39,6 +40,7 @@ public class EcSee implements CommandExecutor {
         Player target = Bukkit.getPlayer(args[0]);
 
         player.openInventory(getInventory(target));
+        ecSee.put(player.getUniqueId(), target.getUniqueId());
         return false;
     }
 
