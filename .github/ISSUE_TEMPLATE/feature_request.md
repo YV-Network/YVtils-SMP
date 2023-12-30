@@ -13,4 +13,4 @@ assignees: ''
 **Describe your Idea**
 A clear and concise description of what you want.
 
-**Extra Informations**
+**Extra Information**

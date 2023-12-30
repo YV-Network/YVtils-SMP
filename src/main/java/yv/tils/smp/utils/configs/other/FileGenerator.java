@@ -23,7 +23,7 @@ public class FileGenerator {
         try {
             yamlConfig.save(file);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 

@@ -42,10 +42,10 @@ public class PlayerServerEvent implements Listener {
     @EventHandler
     public void onDeath(PlayerDeathEvent e) {
         Player p = e.getEntity().getPlayer();
-        String deathmessage = e.getDeathMessage();
+        String deathMessage = e.getDeathMessage();
 
         try {
-            new Logger().writer("PlayerDeath: " + p.getName() + " has died - DeathMessage: " + deathmessage, "PlayerServer");
+            new Logger().writer("PlayerDeath: " + p.getName() + " has died - DeathMessage: " + deathMessage, "PlayerServer");
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }

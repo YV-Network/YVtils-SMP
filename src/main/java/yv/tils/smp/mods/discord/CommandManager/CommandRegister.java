@@ -61,7 +61,7 @@ public class CommandRegister extends ListenerAdapter {
 
         //ForceAdd
         options1.add(new OptionData(OptionType.STRING, "mc_name",
-                LanguageFile.DirectFormatter("Enter a Minecraft Ingame Name to whitelist this Name.",
+                LanguageFile.DirectFormatter("Enter a Minecraft InGame Name to whitelist this Name.",
                         "Schreibe hier, welcher Minecraft Account zur whitelist hinzugefügt werden soll"), true));
         options1.add(new OptionData(OptionType.USER, "dc_name",
                 LanguageFile.DirectFormatter("When you want to link an Discord Account to an MC Account, select here the Account of the User",

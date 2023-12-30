@@ -19,14 +19,14 @@ public class altCommands implements Listener {
         final String cmd = e.getMessage();
         final String[] args = cmd.split(" ");
 
-        String cmdlowercase = args[0].toLowerCase();
+        String cmdLowercase = args[0].toLowerCase();
 
-        if (!cmdlowercase.equals("/ban") && !cmdlowercase.equals("/kick") && !cmdlowercase.equals("/pardon")) return;
+        if (!cmdLowercase.equals("/ban") && !cmdLowercase.equals("/kick") && !cmdLowercase.equals("/pardon")) return;
 
         Player target = Bukkit.getServer().getPlayer(args[1]);
         OfflinePlayer offlineTarget = Bukkit.getOfflinePlayer(MojangAPI.Name2UUID(args[1]));
 
-        switch (cmdlowercase) {
+        switch (cmdLowercase) {
             case "/kick" -> {
                 String reason;
 
@@ -54,9 +54,7 @@ public class altCommands implements Listener {
 
                 new Moderation().playerBan(player, target, reason);
             }
-            case "/pardon" -> {
-                new Moderation().playerUnban(player, offlineTarget);
-            }
+            case "/pardon" -> new Moderation().playerUnban(player, offlineTarget);
         }
         e.setCancelled(true);
     }

@@ -56,7 +56,7 @@ WILL MOVE TO https://yvtils.atlassian.net/jira/software/projects/SMP/boards/1
  - Whitelist Import
  - Buttons for Whitelist Remove
 
-6. Restrucrure command classes
+6. Restructure command classes
  - TabComplete for all commands
  - TabComplete in same class as command
  - Unblock blocked commands
@@ -88,7 +88,7 @@ Older Version Module:
     Old Combat System (1.8.9):
         No hit cooldown
 
-Mainteance Mode:
+Maintenance Mode:
     Discord Chat Sync
 
 InvSee:
@@ -115,7 +115,7 @@ Waypoints:
 
 Scoreboard Builder:
     Many design options (i.e. Death count, Visible name, Player count, Server name)
-    (Ingame GUI to build the scoreboard )
+    ( InGame GUI to build the scoreboard )
 
 Older version support: (Probably not really of use, from time to invest)
     Try to add support down to 1.16(.1/.5)

@@ -41,7 +41,7 @@ public class GetConsole extends AbstractAppender {
         (new BukkitRunnable() {
             public void run() {
                 try {
-                    if (GetConsole.this.messages.length() != 0) {
+                    if (!GetConsole.this.messages.isEmpty()) {
                         GetConsole.this.messages = GetConsole.this.messages.replaceAll("\u001b\\[[;\\d]*m", "");
                         GetConsole.this.messages = GetConsole.this.messages.replaceAll("\u007F", "&");
                         GetConsole.this.messages = ChatColor.translateAlternateColorCodes('&', GetConsole.this.messages);

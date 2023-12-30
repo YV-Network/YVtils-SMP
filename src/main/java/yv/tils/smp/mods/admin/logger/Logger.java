@@ -36,7 +36,7 @@ public class Logger {
             try {
                 saveTo.createNewFile();
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
         }
 

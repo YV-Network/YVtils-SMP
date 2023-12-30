@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 import yv.tils.smp.utils.internalapi.StringReplacer;
@@ -19,7 +20,7 @@ import java.util.List;
  */
 public class Heal implements CommandExecutor {
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (sender instanceof Player) {
             if (args.length == 0) {
                 Player player = (Player) sender;
@@ -32,8 +33,8 @@ public class Heal implements CommandExecutor {
                 player.setFoodLevel(20);
                 player.sendMessage(LanguageFile.getMessage(LanguageMessage.HEAL_PLAYER_HEALED));
 
-                List<String> list1 = new ArrayList();
-                List<String> list2 = new ArrayList();
+                List<String> list1 = new ArrayList<>();
+                List<String> list2 = new ArrayList<>();
                 list1.add("PLAYER");
                 list2.add(player.getName());
 
@@ -49,8 +50,8 @@ public class Heal implements CommandExecutor {
             player.setFoodLevel(20);
             player.sendMessage(LanguageFile.getMessage(LanguageMessage.HEAL_PLAYER_HEALED));
 
-            List<String> list1 = new ArrayList();
-            List<String> list2 = new ArrayList();
+            List<String> list1 = new ArrayList<>();
+            List<String> list2 = new ArrayList<>();
             list1.add("PLAYER");
             list2.add(player.getName());
 

@@ -7,6 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.utils.color.HexSupport;
 import yv.tils.smp.utils.configs.language.LanguageFile;
@@ -26,7 +27,7 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
     List<String> arguments = new ArrayList<>();
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (sender instanceof Player player) {
             if (args.length >= 2) {
                 if (Bukkit.getPlayerExact(args[0]) != null) {
@@ -126,7 +127,7 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
                 "/msg <player> <message>");
     }
 
-    public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String alias, @NotNull String[] args) {
 
         for (Player player : Bukkit.getOnlinePlayers()) {
             arguments.add(player.getName());

@@ -43,7 +43,7 @@ public class SpawnElytra implements Listener {
 
         instance = this;
 
-        spawnRadius = main.getConfig().getInt("spawnradius");
+        spawnRadius = main.getConfig().getInt("spawnRadius");
         multiplyValue = main.getConfig().getInt("multiplyValue");
 
         Bukkit.getScheduler().runTaskTimer(main, () -> Bukkit.getWorld("world").getPlayers().forEach(player -> {
@@ -55,9 +55,7 @@ public class SpawnElytra implements Listener {
                 player.setFlying(false);
                 player.setGliding(false);
                 boosted.remove(player);
-                Bukkit.getScheduler().runTaskLater(main, () -> {
-                    flying.remove(player);
-                }, 5);
+                Bukkit.getScheduler().runTaskLater(main, () -> flying.remove(player), 5);
             }
         }), 0, 3);
     }

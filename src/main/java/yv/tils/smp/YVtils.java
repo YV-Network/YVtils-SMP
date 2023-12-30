@@ -58,7 +58,7 @@ public final class YVtils extends JavaPlugin {
         try {
             new Summarizer().onEnable();
         } catch (Exception ex) {
-            ex.printStackTrace();
+            System.out.println(ex.getMessage());
             //getPluginLoader().disablePlugin(this);
             Bukkit.getPluginManager().disablePlugin(this);
         }

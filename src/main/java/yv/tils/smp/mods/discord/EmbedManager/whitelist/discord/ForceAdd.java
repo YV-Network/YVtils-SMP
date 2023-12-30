@@ -18,8 +18,8 @@ public class ForceAdd {
     String url = "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png";
 
     public EmbedBuilder Embed(String mc, String dc) {
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("MCNAME");
         list2.add(mc);
         list1.add("DCNAME");
@@ -34,8 +34,8 @@ public class ForceAdd {
     }
 
     public EmbedBuilder Replace(String dc, String mc_old, String mc_new) {
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("DCNAME");
         list2.add(dc);
         list1.add("OLDNAME");

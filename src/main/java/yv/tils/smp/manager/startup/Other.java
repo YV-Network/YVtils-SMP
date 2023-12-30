@@ -63,7 +63,7 @@ public class Other {
         Bukkit.getServer().getWorlds().forEach(world -> world.setGameRule(GameRule.ANNOUNCE_ADVANCEMENTS, false));
     }
 
-    public void registerbStats() {
+    public void registerBStats() {
         Metrics metrics = new Metrics(YVtils.getInstance(), 14257);
         metrics.addCustomChart(new SimplePie("language", () -> YVtils.getInstance().getConfig().getString("Language")));
         metrics.addCustomChart(new SimplePie("discord", () -> YVtils.getInstance().getConfig().getString("Modules.Discord")));

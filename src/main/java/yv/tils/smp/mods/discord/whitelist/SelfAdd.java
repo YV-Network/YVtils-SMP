@@ -32,7 +32,6 @@ public class SelfAdd extends ListenerAdapter {
     //DiscordID: Minecraft Username + UUID -> Example: 682309366883680269: WolfiiYV aab8f297-b6f0-4ebb-a064-9968e1a1cc45
 
     YamlConfiguration config = new DiscordConfigManager().ConfigRequest();
-    YamlConfiguration linkedRequest = new DiscordConfigManager().LinkedRequest();
 
     @Override
     public void onMessageReceived(MessageReceivedEvent e) {

@@ -13,32 +13,32 @@ import java.io.IOException;
  */
 public class config_yml {
 
-    //# You can find a documentation for this file here: https://yvnetwork.de/yvtils/smp
+    //# You can find a full documentation for this file here: https://yvnetwork.de/yvtils/smp
 
     File file = new File(YVtils.getInstance().getDataFolder(), "config.yml");
-    YamlConfiguration ymlfile = YamlConfiguration.loadConfiguration(file);
+    YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(file);
 
     public void StringInput() {
-        ymlfile.addDefault("", "You can find a full documentation for this file here: https://yvnetwork.de/yvtils/smp");
-        ymlfile.addDefault("Language", "en");
-        ymlfile.addDefault("UpdateCheck", true);
-        ymlfile.addDefault("Modules.Discord", true);
-        ymlfile.addDefault("Modules.Status", true);
-        ymlfile.addDefault("Modules.Sit", true);
-        ymlfile.addDefault("Modules.MultiMine", true);
-        ymlfile.addDefault("Modules.CCR", true);
-        ymlfile.addDefault("Modules.OldVersion", true);
-        ymlfile.addDefault("Modules.Server", true);
-        ymlfile.addDefault("Modules.Admin", true);
-        ymlfile.addDefault("Debug", false);
+        ymlFile.addDefault("", "You can find a full documentation for this file here: https://yvnetwork.de/yvtils/smp");
+        ymlFile.addDefault("Language", "en");
+        ymlFile.addDefault("UpdateCheck", true);
+        ymlFile.addDefault("Modules.Discord", true);
+        ymlFile.addDefault("Modules.Status", true);
+        ymlFile.addDefault("Modules.Sit", true);
+        ymlFile.addDefault("Modules.MultiMine", true);
+        ymlFile.addDefault("Modules.CCR", true);
+        ymlFile.addDefault("Modules.OldVersion", true);
+        ymlFile.addDefault("Modules.Server", true);
+        ymlFile.addDefault("Modules.Admin", true);
+        ymlFile.addDefault("Debug", false);
 
-        ymlfile.options().copyDefaults(true);
+        ymlFile.options().copyDefaults(true);
         fileSave();
     }
 
     public void fileSave() {
         try {
-            ymlfile.save(file);
+            ymlFile.save(file);
         } catch (IOException e) {
             System.out.println("-------");
             Bukkit.getConsoleSender().sendMessage("File creation Error! Please get Support on the YVtils Support Discord");

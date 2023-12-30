@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.utils.configs.status.StatusConfigManager;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import java.util.Objects;
 public class StatusCommandCompleter implements TabCompleter {
     List<String> defaults = new StatusConfigManager().ConfigRequest().getStringList("Default-Status");
 
-    public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String alias, String[] args) {
         List<String> results = new ArrayList<>();
 
         if (args.length == 1) {

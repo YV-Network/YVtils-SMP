@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
@@ -28,7 +29,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
     YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(file);
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 
         String arg = "toggle";
 
@@ -46,7 +47,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                     try {
                         ymlFile.save(file);
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        System.out.println(e.getMessage());
                     }
                 } else if (ymlFile.getString("MaintenanceMode").equals("false")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ALREADY_DEACTIVATED));
@@ -65,7 +66,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                     try {
                         ymlFile.save(file);
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        System.out.println(e.getMessage());
                     }
                     for (Player player1 : Bukkit.getOnlinePlayers()) {
                         if (!player1.hasPermission("yvtils.smp.maintenance.join")) {
@@ -85,7 +86,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                     try {
                         ymlFile.save(file);
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        System.out.println(e.getMessage());
                     }
                 } else if (ymlFile.getString("MaintenanceMode").equals("false")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
@@ -95,7 +96,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                     try {
                         ymlFile.save(file);
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        System.out.println(e.getMessage());
                     }
                     for (Player player1 : Bukkit.getOnlinePlayers()) {
                         if (!player1.hasPermission("yvtils.smp.maintenance.join")) {
@@ -124,10 +125,10 @@ public class Maintenance implements CommandExecutor, TabCompleter {
 
     private void sendUsage(CommandSender sender) {
         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE +
-                "/mainteance <true, false, toggle, status>");
+                "/maintenance <true, false, toggle, status>");
     }
 
-    public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String alias, String[] args) {
         List<String> results = new ArrayList<>();
 
         if (args.length == 1) {

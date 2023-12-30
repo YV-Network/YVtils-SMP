@@ -17,14 +17,14 @@ public class AccountChange {
     EmbedBuilder builder = new EmbedBuilder();
     String url = "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png";
 
-    public EmbedBuilder Embed(String oldname, String newname) {
+    public EmbedBuilder Embed(String oldName, String newName) {
 
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("OLDNAME");
-        list2.add(oldname);
+        list2.add(oldName);
         list1.add("NEWNAME");
-        list2.add(newname);
+        list2.add(newName);
         return builder
                 .setTitle(LanguageFile.getMessage(LanguageMessage.EMBED_BUILDER_TITLE_NAME_CHANGE))
                 .setDescription(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.EMBED_BUILDER_DESCRIPTION_NAME_CHANGE), list1, list2))

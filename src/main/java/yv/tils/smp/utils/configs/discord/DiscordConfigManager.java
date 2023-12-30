@@ -23,7 +23,7 @@ public class DiscordConfigManager {
     }
 
     public YamlConfiguration LinkedRequest() {
-        File configfile = new File(YVtils.getInstance().getDataFolder(), "Discord/linkedAccounts.yml");
+        File configfile = new File(YVtils.getInstance().getDataFolder(), "Discord/save.yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         try {
             configuration.save(configfile);
@@ -34,29 +34,7 @@ public class DiscordConfigManager {
     }
 
     public void LinkedWriter(String path, String value) {
-        File configfile = new File(YVtils.getInstance().getDataFolder(), "Discord/linkedAccounts.yml");
-        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
-        try {
-            configuration.set(path, value);
-            configuration.save(configfile);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public YamlConfiguration StatsRequest() {
-        File configfile = new File(YVtils.getInstance().getDataFolder(), "Discord/stats.yml");
-        YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
-        try {
-            configuration.save(configfile);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return configuration;
-    }
-
-    public void StatsWriter(String path, String value) {
-        File configfile = new File(YVtils.getInstance().getDataFolder(), "Discord/stats.yml");
+        File configfile = new File(YVtils.getInstance().getDataFolder(), "Discord/save.yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         try {
             configuration.set(path, value);

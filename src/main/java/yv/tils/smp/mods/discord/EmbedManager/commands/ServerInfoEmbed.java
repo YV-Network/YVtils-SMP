@@ -29,9 +29,9 @@ public class ServerInfoEmbed {
 
         if (yml.get(userID) != null) {
             String[] liststring = yml.get(userID).toString().split(" ");
-            OfflinePlayer playerwhitelistget = Bukkit.getOfflinePlayer(liststring[0]);
+            OfflinePlayer playerWhitelistGet = Bukkit.getOfflinePlayer(liststring[0]);
 
-            MC_Name = playerwhitelistget.getName();
+            MC_Name = playerWhitelistGet.getName();
         }
 
         boolean viaVersion = Bukkit.getServer().getPluginManager().getPlugin("ViaVersion") != null;

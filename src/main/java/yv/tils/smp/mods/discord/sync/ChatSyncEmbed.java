@@ -22,11 +22,11 @@ public class ChatSyncEmbed {
 
         if (!yml.contains(sender.getUniqueId().toString())) return new Color(0xABFF99);
 
-        String statuscolor = (String) yml.get(sender.getUniqueId().toString());
+        String statusColor = (String) yml.get(sender.getUniqueId().toString());
 
-        statuscolor = HexSupport.hex(statuscolor);
+        statusColor = HexSupport.hex(statusColor);
 
-        switch (ChatColor.getLastColors(statuscolor)) {
+        switch (ChatColor.getLastColors(statusColor)) {
             case "§0" -> {
                 return new Color(0x000000);
             }

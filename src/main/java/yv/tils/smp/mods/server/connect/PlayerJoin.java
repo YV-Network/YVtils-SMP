@@ -41,8 +41,7 @@ public class PlayerJoin {
         list.replaceAll(s -> s.replace("player", playerName));
 
         Collections.shuffle(list);
-        String joinMessage = list.get(0);
 
-        return joinMessage;
+        return list.get(0);
     }
 }

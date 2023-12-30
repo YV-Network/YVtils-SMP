@@ -35,6 +35,6 @@ public class Summarizer {
         new Log("Logger - Loading");
         new DefaultListeners().registerLogger();
         new Log("bStats - Loading");
-        new Other().registerbStats();
+        new Other().registerBStats();
     }
 }

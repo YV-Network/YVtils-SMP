@@ -16,21 +16,21 @@ import java.util.List;
  */
 public class config_yml {
     File file = new File(YVtils.getInstance().getDataFolder() + "/Status", "config.yml");
-    YamlConfiguration ymlfile = YamlConfiguration.loadConfiguration(file);
+    YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(file);
 
     public void StringInput() {
 
-        ymlfile.addDefault("Active", true);
-        ymlfile.addDefault("MaxStatusLength", 20);
-        ymlfile.addDefault("0#", LanguageFile.DirectFormatter("Here you can set the Default Status, which the Players can select with '/status default <status>'! Please use for Color Codes \"&\" and not \"§\"", "Hier kannst du die Voreingestellten Status einstellen, welche die Spieler mit '/status default <status>' auswählen können! Bitte benutze \"&\" und nicht \"§\" für Color Codes!"));
-        ymlfile.addDefault("Default-Status", defaultstatuslist());
-        ymlfile.options().copyDefaults(true);
+        ymlFile.addDefault("Active", true);
+        ymlFile.addDefault("MaxStatusLength", 20);
+        ymlFile.addDefault("0#", LanguageFile.DirectFormatter("Here you can set the Default Status, which the Players can select with '/status default <status>'! Please use for Color Codes \"&\" and not \"§\"", "Hier kannst du die Voreingestellten Status einstellen, welche die Spieler mit '/status default <status>' auswählen können! Bitte benutze \"&\" und nicht \"§\" für Color Codes!"));
+        ymlFile.addDefault("Default-Status", defaultstatuslist());
+        ymlFile.options().copyDefaults(true);
         fileSave();
     }
 
     public void fileSave() {
         try {
-            ymlfile.save(file);
+            ymlFile.save(file);
         } catch (IOException e) {
             System.out.println("-------");
             Bukkit.getConsoleSender().sendMessage("File creation Error! Please get Support on the YVtils Support Discord");

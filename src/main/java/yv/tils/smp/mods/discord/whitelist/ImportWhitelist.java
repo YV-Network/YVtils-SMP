@@ -54,8 +54,8 @@ public class ImportWhitelist {
         for (String manager : WhitelistManager) {
             String[] split = manager.split(",");
 
-            for (int o = 0; o < split.length; o++) {
-                if (split[o].equals(dc) || split[o].equals(mc) || split[o].equals(uuid)) {
+            for (String s : split) {
+                if (s.equals(dc) || s.equals(mc) || s.equals(uuid)) {
 
                     request.add(split[0]);
                     request.add(split[1]);

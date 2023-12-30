@@ -24,8 +24,8 @@ public class RoleHierarchyError {
         String[] roles = role.split(",");
         Role role1;
 
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("ROLE");
 
         for (String s : roles) {

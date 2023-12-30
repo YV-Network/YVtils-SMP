@@ -35,7 +35,7 @@ CommandBlock: #All Commands have a new Command! A Message with the new Command c
   /ban: true
 
 #Spawn Elytra
-spawnradius: 50
+spawnRadius: 50
 multiplyValue: 5
 
 #Start Command Actions

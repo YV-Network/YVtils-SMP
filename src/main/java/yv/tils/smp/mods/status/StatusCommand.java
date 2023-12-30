@@ -7,6 +7,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.utils.color.HexSupport;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
@@ -26,7 +27,7 @@ public class StatusCommand implements CommandExecutor {
     List<String> defaultStatus = new StatusConfigManager().ConfigRequest().getStringList("Default-Status");
 
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String labels, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String labels, String[] args) {
         if (args.length < 1) {
             sendUsage(sender);
             return true;

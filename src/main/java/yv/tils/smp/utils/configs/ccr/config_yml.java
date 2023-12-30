@@ -13,19 +13,19 @@ import java.io.IOException;
  */
 public class config_yml {
     File file = new File(YVtils.getInstance().getDataFolder() + "/CCR", "config.yml");
-    YamlConfiguration ymlfile = YamlConfiguration.loadConfiguration(file);
+    YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(file);
 
     public void StringInput() {
-        ymlfile.addDefault("Crafting.LightBlock", "true");
-        ymlfile.addDefault("Crafting.InvisItemFrame", "true");
-        ymlfile.addDefault("Crafting.GlowingNetheriteElytra", "true");
-        ymlfile.options().copyDefaults(true);
+        ymlFile.addDefault("Crafting.LightBlock", "true");
+        ymlFile.addDefault("Crafting.InvisItemFrame", "true");
+        ymlFile.addDefault("Crafting.GlowingNetheriteElytra", "true");
+        ymlFile.options().copyDefaults(true);
         fileSave();
     }
 
     public void fileSave() {
         try {
-            ymlfile.save(file);
+            ymlFile.save(file);
         } catch (IOException e) {
             System.out.println("-------");
             Bukkit.getConsoleSender().sendMessage("File creation Error! Please get Support on the YVtils Support Discord");

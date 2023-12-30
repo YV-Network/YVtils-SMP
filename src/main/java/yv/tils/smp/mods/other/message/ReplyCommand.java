@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.utils.color.HexSupport;
@@ -24,7 +25,7 @@ import java.util.UUID;
  */
 public class ReplyCommand implements CommandExecutor {
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (sender instanceof Player player) {
             if (args.length >= 1) {
                 if (YVtils.getInstance().getRecentMessages().containsKey(player.getUniqueId())) {

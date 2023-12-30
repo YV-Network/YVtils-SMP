@@ -14,49 +14,45 @@ import java.io.IOException;
  */
 public class config_yml {
     File file = new File(YVtils.getInstance().getDataFolder() + "/Discord", "config.yml");
-    YamlConfiguration ymlfile = YamlConfiguration.loadConfiguration(file);
+    YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(file);
 
     public void StringInput() {
-        ymlfile.addDefault("Active", true);
-        ymlfile.addDefault("BotToken", LanguageFile.DirectFormatter("YOUR TOKEN HERE", "DEINEN BOT TOKEN"));
-        ymlfile.addDefault("MainGuild", "Guild ID");
+        ymlFile.addDefault("Active", true);
+        ymlFile.addDefault("BotToken", LanguageFile.DirectFormatter("YOUR TOKEN HERE", "DEINEN BOT TOKEN"));
+        ymlFile.addDefault("MainGuild", "Guild ID");
 
-        ymlfile.addDefault("1#", LanguageFile.DirectFormatter("You can use Online; Idle; DND; Offline; Invisible", "Du kannst Online; Idle; DND; Offline; Invisible benutzen"));
-        ymlfile.addDefault("2#", LanguageFile.DirectFormatter("You can use Watching; Playing; Competing; None", "Du kannst Watching; Playing; Competing; None benutzen"));
-        ymlfile.addDefault("BotSettings.OnlineStatus", "online");
-        ymlfile.addDefault("BotSettings.Activity", "none");
-        ymlfile.addDefault("BotSettings.ActivityMessage", "Minecraft");
+        ymlFile.addDefault("1#", LanguageFile.DirectFormatter("You can use Online; Idle; DND; Offline; Invisible", "Du kannst Online; Idle; DND; Offline; Invisible benutzen"));
+        ymlFile.addDefault("2#", LanguageFile.DirectFormatter("You can use Watching; Playing; Competing; None", "Du kannst Watching; Playing; Competing; None benutzen"));
+        ymlFile.addDefault("BotSettings.OnlineStatus", "online");
+        ymlFile.addDefault("BotSettings.Activity", "none");
+        ymlFile.addDefault("BotSettings.ActivityMessage", "Minecraft");
 
-        ymlfile.addDefault("EmbedSettings.Author", "YVtils SMP");
-        ymlfile.addDefault("EmbedSettings.AuthorIconURL", "URL");
+        ymlFile.addDefault("EmbedSettings.Author", "YVtils SMP");
+        ymlFile.addDefault("EmbedSettings.AuthorIconURL", "URL");
 
-        ymlfile.addDefault("WhitelistFeature.Channel", LanguageFile.DirectFormatter("CHANNEL ID", "KANAL ID"));
-        ymlfile.addDefault("WhitelistFeature.Role", LanguageFile.DirectFormatter("ROLE ID 1, ROLE ID 2, ROLE ID ...", "ROLLEN ID 1, ROLLEN ID 2, ROLLEN ID ..."));
+        ymlFile.addDefault("WhitelistFeature.Channel", LanguageFile.DirectFormatter("CHANNEL ID", "KANAL ID"));
+        ymlFile.addDefault("WhitelistFeature.Role", LanguageFile.DirectFormatter("ROLE ID 1, ROLE ID 2, ROLE ID ...", "ROLLEN ID 1, ROLLEN ID 2, ROLLEN ID ..."));
+        ymlFile.addDefault("3#", LanguageFile.DirectFormatter("See here for Permission Names: https://ci.dv8tion.net/job/JDA5/javadoc/net/dv8tion/jda/api/Permission.html", "Siehe hier für die Namen der Berechtigungen: https://ci.dv8tion.net/job/JDA5/javadoc/net/dv8tion/jda/api/Permission.html"));
+        ymlFile.addDefault("ServerInfoCommand.Permission", LanguageFile.DirectFormatter("PERMISSION", "BERECHTIGUNG"));
 
-        //ymlfile.addDefault("HelpCommand.Permission.DiscordHelpCMD", LanguageFile.DirectFormatter("PERMISSION","BERECHTIGUNG"));
-        //ymlfile.addDefault("HelpCommand.Permission.IngameHelpCMD", LanguageFile.DirectFormatter("PERMISSION","BERECHTIGUNG"));
+        ymlFile.addDefault("WhitelistCommand.Permission", LanguageFile.DirectFormatter("PERMISSION", "BERECHTIGUNG"));
 
-        ymlfile.addDefault("3#", LanguageFile.DirectFormatter("See here for Permission Names: https://ci.dv8tion.net/job/JDA5/javadoc/net/dv8tion/jda/api/Permission.html", "Siehe hier für die Namen der Berechtigungen: https://ci.dv8tion.net/job/JDA5/javadoc/net/dv8tion/jda/api/Permission.html"));
-        ymlfile.addDefault("ServerInfoCommand.Permission", LanguageFile.DirectFormatter("PERMISSION", "BERECHTIGUNG"));
+        ymlFile.addDefault("ChatSync.Enabled", true);
+        ymlFile.addDefault("ChatSync.Permission", LanguageFile.DirectFormatter("PERMISSION", "BERECHTIGUNG"));
+        ymlFile.addDefault("ChatSync.Channel", LanguageFile.DirectFormatter("CHANNEL ID", "KANAL ID"));
 
-        ymlfile.addDefault("WhitelistCommand.Permission", LanguageFile.DirectFormatter("PERMISSION", "BERECHTIGUNG"));
+        ymlFile.addDefault("ConsoleSync.Enabled", true);
+        ymlFile.addDefault("ConsoleSync.Channel", LanguageFile.DirectFormatter("CHANNEL ID", "KANAL ID"));
 
-        ymlfile.addDefault("ChatSync.Enabled", true);
-        ymlfile.addDefault("ChatSync.Permission", LanguageFile.DirectFormatter("PERMISSION", "BERECHTIGUNG"));
-        ymlfile.addDefault("ChatSync.Channel", LanguageFile.DirectFormatter("CHANNEL ID", "KANAL ID"));
+        ymlFile.addDefault("LogChannel", LanguageFile.DirectFormatter("CHANNEL ID", "KANAL ID"));
 
-        ymlfile.addDefault("ConsoleSync.Enabled", true);
-        ymlfile.addDefault("ConsoleSync.Channel", LanguageFile.DirectFormatter("CHANNEL ID", "KANAL ID"));
-
-        ymlfile.addDefault("LogChannel", LanguageFile.DirectFormatter("CHANNEL ID", "KANAL ID"));
-
-        ymlfile.options().copyDefaults(true);
+        ymlFile.options().copyDefaults(true);
         fileSave();
     }
 
     public void fileSave() {
         try {
-            ymlfile.save(file);
+            ymlFile.save(file);
         } catch (IOException e) {
             System.out.println("-------");
             Bukkit.getConsoleSender().sendMessage("File creation Error! Please get Support on the YVtils Support Discord");

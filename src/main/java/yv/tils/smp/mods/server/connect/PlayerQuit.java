@@ -43,8 +43,7 @@ public class PlayerQuit {
         list.replaceAll(s -> s.replace("player", playerName));
 
         Collections.shuffle(list);
-        String quitMessage = list.get(0);
 
-        return quitMessage;
+        return list.get(0);
     }
 }

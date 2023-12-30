@@ -19,8 +19,8 @@ public class Check {
 
     public EmbedBuilder Embed(String mc, String dc, boolean b) {
 
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("MCNAME");
         list2.add(mc);
         list1.add("DCNAME");

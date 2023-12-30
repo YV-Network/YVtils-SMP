@@ -9,6 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 import yv.tils.smp.utils.internalapi.StringReplacer;
@@ -24,7 +25,7 @@ public class Gamemode implements CommandExecutor, TabCompleter {
     List<String> arguments = new ArrayList<>();
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (!sender.hasPermission("yvtils.command.gamemode")) return false;
         if (!(sender instanceof Player) && args.length != 2) {
             sender.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_ARGUMENT_MISSING));
@@ -78,8 +79,8 @@ public class Gamemode implements CommandExecutor, TabCompleter {
             case 2 -> {
                 Player player = Bukkit.getPlayer(args[1]);
 
-                List<String> list1 = new ArrayList();
-                List<String> list2 = new ArrayList();
+                List<String> list1 = new ArrayList<>();
+                List<String> list2 = new ArrayList<>();
                 list1.add("PLAYER");
                 list2.add(player.getName());
 
@@ -142,7 +143,7 @@ public class Gamemode implements CommandExecutor, TabCompleter {
                 "/gm <survival,creative,adventure,spectator> [player]");
     }
 
-    public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String alias, String[] args) {
         arguments.add("0");
         arguments.add("1");
         arguments.add("2");

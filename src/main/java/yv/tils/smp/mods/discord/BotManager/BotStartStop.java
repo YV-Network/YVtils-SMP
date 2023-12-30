@@ -41,10 +41,8 @@ public class BotStartStop {
     String mainGuild = modifyFile1.getString("MainGuild");
     String status = modifyFile1.getString("BotSettings.OnlineStatus");
     String activity = modifyFile1.getString("BotSettings.Activity");
-    String activitymessage = modifyFile1.getString("BotSettings.ActivityMessage");
+    String activityMessage = modifyFile1.getString("BotSettings.ActivityMessage");
     String logChannel = modifyFile1.getString("LogChannel");
-    private GetConsole appender;
-    private Logger logger;
 
     public static BotStartStop getInstance() {
         return instance;
@@ -70,17 +68,15 @@ public class BotStartStop {
         //Activity -> Streaming; Watching; Playing; Competing; None;
 
         switch (activity.toLowerCase()) {
-            case "playing" -> builder.setActivity(Activity.playing(activitymessage));
-            case "watching" -> builder.setActivity(Activity.watching(activitymessage));
-            case "competing" -> builder.setActivity(Activity.competing(activitymessage));
-            case "none" -> builder.setActivity(null);
+            case "playing" -> builder.setActivity(Activity.playing(activityMessage));
+            case "watching" -> builder.setActivity(Activity.watching(activityMessage));
+            case "competing" -> builder.setActivity(Activity.competing(activityMessage));
             default -> builder.setActivity(null);
         }
 
         //Status -> Online; Idle; DND; Offline; Invisible; Unknown
 
         switch (status.toLowerCase()) {
-            case "online" -> builder.setStatus(OnlineStatus.ONLINE);
             case "idle" -> builder.setStatus(OnlineStatus.IDLE);
             case "dnd" -> builder.setStatus(OnlineStatus.DO_NOT_DISTURB);
             case "invisible" -> builder.setStatus(OnlineStatus.INVISIBLE);
@@ -118,13 +114,13 @@ public class BotStartStop {
         }
 
         if (new DiscordConfigManager().ConfigRequest().getBoolean("ConsoleSync.Enabled")) {
-            this.appender = new GetConsole(YVtils.getInstance(), this.jda);
+            GetConsole appender = new GetConsole(YVtils.getInstance(), this.jda);
             try {
-                this.logger = (Logger) LogManager.getRootLogger();
-                this.logger.addAppender(this.appender);
+                Logger logger = (Logger) LogManager.getRootLogger();
+                logger.addAppender(appender);
             } catch (Exception ignored) {
             }
-            this.appender.sendMessages();
+            appender.sendMessages();
         }
     }
 
@@ -134,7 +130,7 @@ public class BotStartStop {
                 builder.setStatus(OnlineStatus.OFFLINE);
                 jda.shutdown();
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
                 System.out.println("------------------------");
                 e.getCause();
                 System.out.println("------------------------");

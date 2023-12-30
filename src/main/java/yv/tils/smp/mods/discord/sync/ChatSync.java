@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.mods.discord.BotManager.BotStartStop;
 import yv.tils.smp.utils.color.HexSupport;
@@ -40,7 +41,7 @@ public class ChatSync extends ListenerAdapter implements Listener {
         sendDCMessage(sender, message);
     }
 
-    public void onMessageReceived(MessageReceivedEvent e) {
+    public void onMessageReceived(@NotNull MessageReceivedEvent e) {
         if (!yml.getBoolean("ChatSync.Enabled")) return;
         if (!e.getChannel().getId().equals(yml.getString("ChatSync.Channel"))) return;
 

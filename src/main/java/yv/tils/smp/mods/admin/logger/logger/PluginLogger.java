@@ -9,9 +9,9 @@ import java.io.IOException;
  * @since 4.6.7
  */
 public class PluginLogger {
-    public void PluginEvent(String logclass, String logtext) {
+    public void PluginEvent(String logClass, String logText) {
         try {
-            new Logger().writer(logclass + ": " + logtext, "PluginEvent");
+            new Logger().writer(logClass + ": " + logText, "PluginEvent");
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }

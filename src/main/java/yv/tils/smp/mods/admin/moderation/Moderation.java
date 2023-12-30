@@ -8,6 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.utils.MojangAPI;
 import yv.tils.smp.utils.configs.language.LanguageFile;
@@ -28,7 +29,7 @@ public class Moderation implements CommandExecutor, TabCompleter {
     private final String parentPermission = "yvtils.smp.command.moderation";
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 
         String subCMD = args[0];
 
@@ -140,8 +141,8 @@ public class Moderation implements CommandExecutor, TabCompleter {
             if (target != null) {
                 target.kickPlayer(reason);
 
-                List<String> list1 = new ArrayList();
-                List<String> list2 = new ArrayList();
+                List<String> list1 = new ArrayList<>();
+                List<String> list2 = new ArrayList<>();
                 list1.add("PREFIXMODERATION");
                 list2.add(Prefix.PREFIXMODERATION);
                 list1.add("MODERATOR");
@@ -169,8 +170,8 @@ public class Moderation implements CommandExecutor, TabCompleter {
             }
             target.ban(reason, (Date) null, mod.getName(), true);
 
-            List<String> list1 = new ArrayList();
-            List<String> list2 = new ArrayList();
+            List<String> list1 = new ArrayList<>();
+            List<String> list2 = new ArrayList<>();
             list1.add("PREFIXMODERATION");
             list2.add(Prefix.PREFIXMODERATION);
             list1.add("MODERATOR");
@@ -222,8 +223,8 @@ public class Moderation implements CommandExecutor, TabCompleter {
 
             target.ban(reason, duration.getTime(), mod.getName(), true);
 
-            List<String> list1 = new ArrayList();
-            List<String> list2 = new ArrayList();
+            List<String> list1 = new ArrayList<>();
+            List<String> list2 = new ArrayList<>();
             list1.add("PREFIXMODERATION");
             list2.add(Prefix.PREFIXMODERATION);
             list1.add("MODERATOR");
@@ -251,8 +252,8 @@ public class Moderation implements CommandExecutor, TabCompleter {
 
             target.ban(reason, duration.getTime(), mod.getName());
 
-            List<String> list1 = new ArrayList();
-            List<String> list2 = new ArrayList();
+            List<String> list1 = new ArrayList<>();
+            List<String> list2 = new ArrayList<>();
             list1.add("PREFIXMODERATION");
             list2.add(Prefix.PREFIXMODERATION);
             list1.add("MODERATOR");
@@ -279,8 +280,8 @@ public class Moderation implements CommandExecutor, TabCompleter {
 
                 target.ban("", date, "");
 
-                List<String> list1 = new ArrayList();
-                List<String> list2 = new ArrayList();
+                List<String> list1 = new ArrayList<>();
+                List<String> list2 = new ArrayList<>();
                 list1.add("PREFIXMODERATION");
                 list2.add(Prefix.PREFIXMODERATION);
                 list1.add("MODERATOR");
@@ -289,10 +290,10 @@ public class Moderation implements CommandExecutor, TabCompleter {
                 list2.add(MojangAPI.UUID2Name(target.getUniqueId()));
 
                 Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_UNBAN), list1, list2),
-                        "yvtils.smp.command.moderation.anouncement");
+                        "yvtils.smp.command.moderation.announcement");
             } else {
-                List<String> list1 = new ArrayList();
-                List<String> list2 = new ArrayList();
+                List<String> list1 = new ArrayList<>();
+                List<String> list2 = new ArrayList<>();
                 list1.add("PREFIXMODERATION");
                 list2.add(Prefix.PREFIXMODERATION);
                 list1.add("PLAYER");
@@ -332,7 +333,7 @@ public class Moderation implements CommandExecutor, TabCompleter {
                 "/moderation unban <Player Name>");
     }
 
-    public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String alias, String[] args) {
         List<String> results = new ArrayList<>();
 
         if (args.length == 1) {

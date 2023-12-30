@@ -27,7 +27,6 @@ public class LanguageFile {
 
     /**
      * @Use: getMessage(LangaugeMessage.message);
-     * @version 4.6.6
      * @since 4.6.6
      */
     public static String getMessage(LanguageMessage message) {
@@ -38,7 +37,6 @@ public class LanguageFile {
      * Set Messages in German/English without the Language Config File
      *
      * @Use: This Method can be used, when a Message shouldn't be configurable over the language File!
-     * @version 4.6.6
      * @since 4.6.6
      */
     public static String DirectFormatter(String en, String de) {

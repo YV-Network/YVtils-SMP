@@ -68,8 +68,8 @@ public class ForceAdd {
 
                     whitelistRemove(userID, playerWhitelistRemove.getName(), playerWhitelistRemove.getUniqueId().toString());
 
-                    List<String> list1 = new ArrayList();
-                    List<String> list2 = new ArrayList();
+                    List<String> list1 = new ArrayList<>();
+                    List<String> list2 = new ArrayList<>();
                     list1.add("DISCORDUSER");
                     list2.add(exec.getUser().getGlobalName());
                     list1.add("DCNAME");
@@ -96,8 +96,8 @@ public class ForceAdd {
                                 String[] roles = role.split(",");
 
                                 try {
-                                    for (int i = 0; i < roles.length; i++) {
-                                        guild.addRoleToMember(dc, guild.getRoleById(roles[i])).queue();
+                                    for (String s : roles) {
+                                        guild.addRoleToMember(dc, guild.getRoleById(s)).queue();
                                     }
                                 } catch (NumberFormatException ignored) {
                                 }
@@ -144,8 +144,8 @@ public class ForceAdd {
                                 String[] roles = role.split(",");
 
                                 try {
-                                    for (int i = 0; i < roles.length; i++) {
-                                        guild.addRoleToMember(dc, guild.getRoleById(roles[i])).queue();
+                                    for (String s : roles) {
+                                        guild.addRoleToMember(dc, guild.getRoleById(s)).queue();
                                     }
                                 } catch (NumberFormatException ignored) {
                                 }
@@ -167,25 +167,9 @@ public class ForceAdd {
                     return new yv.tils.smp.mods.discord.EmbedManager.whitelist.discord.ForceAdd().Embed(mc, userName);
                 }
             } else if (statusCode == HttpURLConnection.HTTP_BAD_REQUEST) {
-
-                List<String> list1 = new ArrayList();
-                List<String> list2 = new ArrayList();
-                list1.add("DISCORDUSER");
-                list2.add(userName);
-                list1.add("NAME");
-                list2.add(mc);
-
                 //Account not found
                 return new AccountNotFound().Embed(mc);
             } else {
-
-                List<String> list1 = new ArrayList();
-                List<String> list2 = new ArrayList();
-                list1.add("DISCORDUSER");
-                list2.add(userName);
-                list1.add("NAME");
-                list2.add(mc);
-
                 //Server Error
                 return new AccountCheckError().Embed(mc);
             }

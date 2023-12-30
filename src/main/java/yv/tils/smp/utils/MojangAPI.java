@@ -49,7 +49,7 @@ public class MojangAPI {
                 return null;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return null;
     }
@@ -92,7 +92,7 @@ public class MojangAPI {
                 return null;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return null;
     }

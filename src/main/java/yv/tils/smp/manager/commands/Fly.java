@@ -13,6 +13,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerGameModeChangeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
@@ -30,16 +31,9 @@ import java.util.UUID;
 public class Fly implements CommandExecutor, Listener {
     public static Map<UUID, Boolean> fly = new HashMap<>();
     public static Map<UUID, Boolean> airAfter = new HashMap<>();
-    private static Fly instance;
-
-    public static Fly getInstance() {
-        return instance;
-    }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        instance = this;
-
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (sender instanceof Player player) {
             if (args.length == 0) {
                 selfFly(player);

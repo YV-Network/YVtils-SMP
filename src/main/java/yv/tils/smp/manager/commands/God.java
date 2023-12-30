@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 import yv.tils.smp.utils.internalapi.StringReplacer;
@@ -22,18 +23,10 @@ import java.util.UUID;
  * @since CH2-1.0.0
  */
 public class God implements CommandExecutor {
-
     public static Map<UUID, Boolean> god = new HashMap<>();
-    private static God instance;
-
-    public static God getInstance() {
-        return instance;
-    }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        instance = this;
-
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (sender instanceof Player player) {
             if (args.length == 0) {
                 selfGod(player);

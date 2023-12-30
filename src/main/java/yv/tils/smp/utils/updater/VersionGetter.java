@@ -44,8 +44,8 @@ public class VersionGetter {
         webRequest();
 
         if (!Objects.equals(plVersion, version)) {
-            List<String> list1 = new ArrayList();
-            List<String> list2 = new ArrayList();
+            List<String> list1 = new ArrayList<>();
+            List<String> list2 = new ArrayList<>();
             list1.add("PREFIXUPDATE");
             list2.add(Prefix.PREFIXUPDATE);
             list1.add("NEWVERSION");
@@ -57,8 +57,8 @@ public class VersionGetter {
 
             Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.PLUGIN_UPDATE_AVAILABLE), list1, list2));
         } else {
-            List<String> list1 = new ArrayList();
-            List<String> list2 = new ArrayList();
+            List<String> list1 = new ArrayList<>();
+            List<String> list2 = new ArrayList<>();
             list1.add("PREFIXNOUPDATE");
             list2.add(Prefix.PREFIXNOUPDATE);
 
@@ -90,7 +90,7 @@ public class VersionGetter {
                 new Log("Response Code:" + responseCode);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         return version;

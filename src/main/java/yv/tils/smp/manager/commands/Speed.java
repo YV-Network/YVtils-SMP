@@ -7,6 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 import yv.tils.smp.utils.internalapi.StringReplacer;
@@ -28,7 +29,7 @@ public class Speed implements CommandExecutor, TabCompleter {
     );
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 
         if (args.length == 0) {
             sendUsage(sender);
@@ -36,8 +37,8 @@ public class Speed implements CommandExecutor, TabCompleter {
         }
 
 
-        List<String> list1 = new ArrayList();
-        List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
         list1.add("SPEED");
         list2.add(args[0]);
 
@@ -108,8 +109,8 @@ public class Speed implements CommandExecutor, TabCompleter {
         String speedResetOther = null;
 
         if (args.length == 2) {
-            List<String> list1 = new ArrayList();
-            List<String> list2 = new ArrayList();
+            List<String> list1 = new ArrayList<>();
+            List<String> list2 = new ArrayList<>();
             list1.add("PLAYER");
             list2.add(args[1]);
 
@@ -152,7 +153,7 @@ public class Speed implements CommandExecutor, TabCompleter {
     }
 
 
-    public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String alias, String[] args) {
         List<String> result = new ArrayList<>();
         if (args.length == 1) {
             result.add("reset");

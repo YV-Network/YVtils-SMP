@@ -23,7 +23,7 @@ import java.util.List;
 public class TempBan implements CommandExecutor, TabCompleter {
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
 
         if (args.length < 3) {
             sendUsage(sender);
@@ -67,7 +67,7 @@ public class TempBan implements CommandExecutor, TabCompleter {
         sender.sendMessage("§cUsage: /tempban <Player Name> <duration> <Time Format (Seconds, Minutes, Hours, Days)> [Reason]");
     }
 
-    public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String alias, String[] args) {
         List<String> results = new ArrayList<>();
 
         if (args.length == 1) {

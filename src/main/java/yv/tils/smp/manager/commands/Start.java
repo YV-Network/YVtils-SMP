@@ -9,6 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.utils.color.HexSupport;
@@ -31,7 +32,7 @@ public class Start implements CommandExecutor {
     YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(file);
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
         if (ymlFile.getBoolean("Started")) {
             sender.sendMessage(HexSupport.hex(LanguageFile.getMessage(LanguageMessage.SMP_ALREADY_STARTED)));
@@ -40,7 +41,7 @@ public class Start implements CommandExecutor {
             try {
                 ymlFile.save(file);
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
 
             for (Player player : Bukkit.getOnlinePlayers()) {
@@ -63,8 +64,8 @@ public class Start implements CommandExecutor {
                     player.sendTitle(YVtils.getInstance().getConfig().getString("StartTitle.Top"), YVtils.getInstance().getConfig().getString("StartTitle.Bottom"), 20, 50, 20);
                     worldBorder.setSize(YVtils.getInstance().getConfig().getInt("worldborderafterstart"), TimeUnit.SECONDS, YVtils.getInstance().getConfig().getInt("worldbordergrowtime"));
 
-                    List<String> list1 = new ArrayList();
-                    List<String> list2 = new ArrayList();
+                    List<String> list1 = new ArrayList<>();
+                    List<String> list2 = new ArrayList<>();
                     list1.add("PREFIXSTART");
                     list2.add(Prefix.PREFIXSTART);
 

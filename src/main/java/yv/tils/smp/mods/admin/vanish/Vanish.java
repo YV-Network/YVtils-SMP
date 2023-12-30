@@ -12,6 +12,7 @@ import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerGameModeChangeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.mods.server.connect.PlayerJoin;
 import yv.tils.smp.mods.server.connect.PlayerQuit;
@@ -38,16 +39,9 @@ public class Vanish implements CommandExecutor {
     public static Map<UUID, Boolean> itemPickup = new HashMap<>(); //Default: false
     public static Map<UUID, Boolean> invInteraction = new HashMap<>(); //Default: true
     public static Map<UUID, Boolean> mobTarget = new HashMap<>(); //Default: true
-    private static Vanish instance;
-
-    public static Vanish getInstance() {
-        return instance;
-    }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        instance = this;
-
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         Player player = (Player) sender;
 
         if (args.length > 2) {
@@ -148,11 +142,6 @@ public class Vanish implements CommandExecutor {
 
         player.setCanPickupItems(itemPickup.get(player.getUniqueId()));
 
-        if (!invInteraction.get(player.getUniqueId())) {
-            // Silent Inventory Interaction
-            // https://pastebin.com/LF7u1HvH <- Use as reference
-        }
-
         player.setSleepingIgnored(true);
         player.setSilent(true);
 
@@ -176,8 +165,6 @@ public class Vanish implements CommandExecutor {
         player.setSleepingIgnored(false);
         player.setCanPickupItems(true);
         player.setSilent(false);
-
-        //Disable Silent Inventory Interaction
 
         if (!(alreadyVanished.containsKey(player.getUniqueId()) && alreadyVanished.get(player.getUniqueId()))) {
             //TODO: Send Message to player that vanish got refreshed

@@ -2,7 +2,6 @@ package yv.tils.smp.mods.sit;
 
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.block.Block;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -29,20 +28,6 @@ public class SitManager {
     public void sitGetter(Player player) {
         if (player.getVehicle() instanceof final ArmorStand sit) {
             standUp(player, sit, 0, 1.7, 0);
-        }
-    }
-
-    public void stairSit(Player player, Block block) {
-        if (isSitting(player)) {
-            return;
-        }
-        sittingPlayers.add(player.getUniqueId());
-        sitDown(block.getLocation(), 0, 1.2, 0).addPassenger(player);
-    }
-
-    public void stairSitGetter(Player player, Block block) {
-        if (player.getVehicle() instanceof final ArmorStand sit) {
-            standUp(player, sit, 0, 1.2, 0);
         }
     }
 

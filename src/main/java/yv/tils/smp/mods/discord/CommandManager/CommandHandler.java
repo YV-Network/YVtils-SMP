@@ -42,23 +42,22 @@ public class CommandHandler extends ListenerAdapter {
                     }
                     case "forceremove" -> {
                         int site;
-                        int maxsite;
+                        int maxSite;
                         try {
                             site = e.getOption("site").getAsInt();
-                            maxsite = (YVtils.getInstance().whitelistManager.size() - 1) / 25 + 1;
-                            if (site > maxsite) {
+                            maxSite = (YVtils.getInstance().whitelistManager.size() - 1) / 25 + 1;
+                            if (site > maxSite) {
                                 site = 1;
                             }
                         } catch (NullPointerException ignored) {
                             site = 1;
-                            maxsite = 1;
+                            maxSite = 1;
                         }
 
                         e.reply("").setEmbeds(new ForceRemove().Embed((YVtils.getInstance().whitelistManager.size() - 1), Bukkit.hasWhitelist(), site).build()).addActionRow(new yv.tils.smp.mods.discord.whitelist.ForceRemove().createMenu(site).build()).setEphemeral(true).queue();
                     }
-                    case "check" -> {
-                        e.reply("").setEmbeds(new AccountCheck().WhitelistCheck(e.getOption("name").getAsString()).build()).setEphemeral(true).queue();
-                    }
+                    case "check" ->
+                            e.reply("").setEmbeds(new AccountCheck().WhitelistCheck(e.getOption("name").getAsString()).build()).setEphemeral(true).queue();
                 }
             }
         }

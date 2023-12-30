@@ -7,6 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.jetbrains.annotations.NotNull;
 import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
@@ -21,17 +22,9 @@ import java.util.List;
  */
 public class GlobalMute implements CommandExecutor, TabCompleter {
     public static boolean globalmute = false;
-    private static GlobalMute instance;
-
-    public static GlobalMute getInstance() {
-        return instance;
-    }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
-        instance = this;
-
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         String arg = "toggle";
 
         if (args.length != 0) {
@@ -94,7 +87,7 @@ public class GlobalMute implements CommandExecutor, TabCompleter {
         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE + "/globalmute <true, false, toggle, status>");
     }
 
-    public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String alias, String[] args) {
         List<String> results = new ArrayList<>();
 
         if (args.length == 1) {

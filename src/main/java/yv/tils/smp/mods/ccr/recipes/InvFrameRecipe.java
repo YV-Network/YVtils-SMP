@@ -8,6 +8,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.io.BukkitObjectInputStream;
+import org.jetbrains.annotations.NotNull;
 import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.utils.internalapi.Log;
@@ -72,6 +73,14 @@ public class InvFrameRecipe {
         return false;
     }
 
+    @NotNull
+    private static BukkitObjectInputStream getDataInput() throws IOException {
+        String invisMeta = "rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABHQAAj09dAABdnQABHR5cGV0AARtZXRhdXEAfgAGAAAABHQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAwwdAAKSVRFTV9GUkFNRXNxAH4AAHNxAH4AA3VxAH4ABgAAAANxAH4ACHQACW1ldGEtdHlwZXQACGludGVybmFsdXEAfgAGAAAAA3QACEl0ZW1NZXRhdAAKRU5USVRZX1RBR3QAREg0c0lBQUFBQUFBQS8rTmlZT0JpNEhUTks4a3NxUXhKVEdkazRQVE1LOHNzemt6S1NXVmtZQUFBd3RIM3BoNEFBQUE9";
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(invisMeta));
+        BukkitObjectInputStream dataInput = new BukkitObjectInputStream(inputStream);
+        return dataInput;
+    }
+
     public ItemStack on_Output_create(Inventory inv) {
         ItemStack GInPut = inv.getItem(20);
         ItemStack GUpgrade1 = inv.getItem(13);
@@ -92,14 +101,12 @@ public class InvFrameRecipe {
         ItemStack invis = null;
         try {
             //Gives Item Meta for the Invisible Item Frame
-            String invismeta = "rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABHQAAj09dAABdnQABHR5cGV0AARtZXRhdXEAfgAGAAAABHQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAwwdAAKSVRFTV9GUkFNRXNxAH4AAHNxAH4AA3VxAH4ABgAAAANxAH4ACHQACW1ldGEtdHlwZXQACGludGVybmFsdXEAfgAGAAAAA3QACEl0ZW1NZXRhdAAKRU5USVRZX1RBR3QAREg0c0lBQUFBQUFBQS8rTmlZT0JpNEhUTks4a3NxUXhKVEdkazRQVE1LOHNzemt6S1NXVmtZQUFBd3RIM3BoNEFBQUE9";
-            ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(invismeta));
-            BukkitObjectInputStream dataInput = new BukkitObjectInputStream(inputStream);
+            BukkitObjectInputStream dataInput = getDataInput();
 
             invis = (ItemStack) dataInput.readObject();
             dataInput.close();
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         ItemMeta meta = invis.getItemMeta();
@@ -158,14 +165,12 @@ public class InvFrameRecipe {
         ItemStack invis = null;
         try {
             //Gives Item Meta for the Invisible Item Frame
-            String invismeta = "rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABHQAAj09dAABdnQABHR5cGV0AARtZXRhdXEAfgAGAAAABHQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAwwdAAKSVRFTV9GUkFNRXNxAH4AAHNxAH4AA3VxAH4ABgAAAANxAH4ACHQACW1ldGEtdHlwZXQACGludGVybmFsdXEAfgAGAAAAA3QACEl0ZW1NZXRhdAAKRU5USVRZX1RBR3QAREg0c0lBQUFBQUFBQS8rTmlZT0JpNEhUTks4a3NxUXhKVEdkazRQVE1LOHNzemt6S1NXVmtZQUFBd3RIM3BoNEFBQUE9";
-            ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(invismeta));
-            BukkitObjectInputStream dataInput = new BukkitObjectInputStream(inputStream);
+            BukkitObjectInputStream dataInput = getDataInput();
 
             invis = (ItemStack) dataInput.readObject();
             dataInput.close();
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         ItemMeta meta = invis.getItemMeta();
