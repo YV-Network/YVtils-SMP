@@ -23,7 +23,6 @@ import java.util.List;
 public class Seed implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
         Player player = (Player) sender;
 
         List<String> list1 = new ArrayList<>();
@@ -31,7 +30,7 @@ public class Seed implements CommandExecutor {
         list1.add("COMMAND");
         list2.add("§e/seed show");
 
-        if (args.length == 1) {
+        if (args.length == 0) {
             if (player.hasPermission("yvtils.smp.command.bypass.seed")) {
                 TextComponent c = new TextComponent(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.COMMAND_REPLACE_NEW_COMMAND_INFO), list1, list2));
                 c.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "/seed show"));
@@ -40,8 +39,8 @@ public class Seed implements CommandExecutor {
             } else {
                 player.sendMessage(LanguageFile.getMessage(LanguageMessage.MISSING_PERMISSION) + " yvtils.smp.command.bypass.seed");
             }
-        } else if (args.length == 2) {
-            if (args[1].equalsIgnoreCase("show")) {
+        } else if (args.length == 1) {
+            if (args[0].equalsIgnoreCase("show")) {
                 if (player.hasPermission("yvtils.smp.command.bypass.seed")) {
                     TextComponent c = new TextComponent(Prefix.PREFIXSEED);
                     TextComponent click = new TextComponent(" §7[" + "§a" + Bukkit.getWorld("world").getSeed() + "§7]");

@@ -20,12 +20,6 @@ import yv.tils.smp.mods.other.message.ReplyCommand;
 public class DefaultCommands {
     YVtils main = YVtils.getInstance();
 
-/*
-                    |           |
-                    | Chapter 2 |
-                    v           v
-*/
-
     Gamemode gamemode = new Gamemode();
     MessageCommand message = new MessageCommand();
     ReplyCommand reply = new ReplyCommand();
@@ -39,17 +33,11 @@ public class DefaultCommands {
     TempBan tempBan = new TempBan();
     Fly fly = new Fly();
     God god = new God();
+    InvSee invSee = new InvSee();
+    EcSee ecSee = new EcSee();
+    Seed seed = new Seed();
 
     public void registerCommands() {
-        main.getCommand("invsee").setExecutor(new InvSee());
-        main.getCommand("ecsee").setExecutor(new EcSee());
-
-/*
-                    |           |
-                    | Chapter 2 |
-                    v           v
-*/
-
         main.getCommand("gm").setExecutor(gamemode);
         main.getCommand("dm").setExecutor(message);
         main.getCommand("reply").setExecutor(reply);
@@ -63,6 +51,9 @@ public class DefaultCommands {
         main.getCommand("tempban").setExecutor(tempBan);
         main.getCommand("fly").setExecutor(fly);
         main.getCommand("god").setExecutor(god);
+        main.getCommand("invsee").setExecutor(invSee);
+        main.getCommand("ecsee").setExecutor(ecSee);
+        main.getCommand("seed").setExecutor(seed);
     }
 
     public void registerTabCompleter() {

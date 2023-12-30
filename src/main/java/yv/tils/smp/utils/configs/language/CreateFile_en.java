@@ -79,7 +79,7 @@ public class CreateFile_en {
         ymlfile.addDefault("MAINTENANCE_STATUS_DISABLED", "§7The maintenance mode is §adactivated§7!");
         ymlfile.addDefault("COMMAND_USAGE", "§7Use:");
         ymlfile.addDefault("COMMAND_REPLACE_COPY_COMMAND_TO_CLIPBOARD", "§7Click to copy!");
-        ymlfile.addDefault("COMMAND_REPLACE_NEW_COMMAND_INFO", "§7Please use \\nCOMMAND");
+        ymlfile.addDefault("COMMAND_REPLACE_NEW_COMMAND_INFO", "§7Please use: COMMAND");
         ymlfile.addDefault("TAB_COMPLETER_MOD_COMMAND_DURATION", "Duration");
         ymlfile.addDefault("TAB_COMPLETER_MOD_COMMAND_REASON", "[Reason]");
         ymlfile.addDefault("MODULE_DISCORD_NO_BOT_TOKEN_GIVEN", "No bot token was found. Please enter one or disable this module!");

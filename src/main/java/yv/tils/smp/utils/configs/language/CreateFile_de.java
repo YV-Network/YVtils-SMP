@@ -94,7 +94,7 @@ public class CreateFile_de {
 
         ymlfile.addDefault("COMMAND_USAGE", "§7Benutze:");
         ymlfile.addDefault("COMMAND_REPLACE_COPY_COMMAND_TO_CLIPBOARD", "§7Klicke um es zu kopieren!");
-        ymlfile.addDefault("COMMAND_REPLACE_NEW_COMMAND_INFO", "§7Bitte benutze \nCOMMAND");
+        ymlfile.addDefault("COMMAND_REPLACE_NEW_COMMAND_INFO", "§7Bitte benutze: COMMAND");
 
         ymlfile.addDefault("TAB_COMPLETER_MOD_COMMAND_DURATION", "Dauer");
         ymlfile.addDefault("TAB_COMPLETER_MOD_COMMAND_REASON", "[Grund]");
