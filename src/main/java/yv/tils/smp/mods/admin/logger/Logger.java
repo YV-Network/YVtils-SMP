@@ -10,8 +10,8 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
 /**
- * @since 4.6.7
  * @version 4.6.7
+ * @since 4.6.7
  */
 public class Logger {
 
@@ -20,21 +20,19 @@ public class Logger {
 
     public void writer(String log, String event) throws IOException {
 
-        File dataFolder1 = new File( YVtils.getInstance().getDataFolder() + "/Logs/");
-        if(!dataFolder1.exists())
-        {
+        File dataFolder1 = new File(YVtils.getInstance().getDataFolder() + "/Logs/");
+        if (!dataFolder1.exists()) {
             dataFolder1.mkdir();
         }
 
-        File dataFolder2 = new File( YVtils.getInstance().getDataFolder() + "/Logs/" + event);
-        if(!dataFolder2.exists())
-        {
+        File dataFolder2 = new File(YVtils.getInstance().getDataFolder() + "/Logs/" + event);
+        if (!dataFolder2.exists()) {
             dataFolder2.mkdir();
         }
 
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         File saveTo = new File(YVtils.getInstance().getDataFolder() + "/Logs/" + event, sdf2.format(timestamp) + ".EventLog.log");
-        if(!saveTo.exists()) {
+        if (!saveTo.exists()) {
             try {
                 saveTo.createNewFile();
             } catch (IOException e) {

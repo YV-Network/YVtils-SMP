@@ -20,10 +20,12 @@ import java.util.List;
  * @since CH2-1.0.0
  */
 public class GlobalMute implements CommandExecutor, TabCompleter {
-    private static GlobalMute instance;
-    public static GlobalMute getInstance() {return instance;}
-
     public static boolean globalmute = false;
+    private static GlobalMute instance;
+
+    public static GlobalMute getInstance() {
+        return instance;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -52,7 +54,7 @@ public class GlobalMute implements CommandExecutor, TabCompleter {
                     globalmute = false;
                     sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GLOBALMUTE_DISABLE_FEEDBACK), list1, list2));
                     Bukkit.broadcastMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GLOBALMUTE_DISABLE_ANNOUNCEMENT), list3, list4));
-                }else {
+                } else {
                     sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GLOBALMUTE_ALREADY_DISABLED), list1, list2));
                 }
             }
@@ -61,7 +63,7 @@ public class GlobalMute implements CommandExecutor, TabCompleter {
                     globalmute = true;
                     sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GLOBALMUTE_ENABLE_FEEDBACK), list1, list2));
                     Bukkit.broadcastMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GLOBALMUTE_ENABLE_ANNOUNCEMENT), list3, list4));
-                }else {
+                } else {
                     sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GLOBALMUTE_ALREADY_ENABLED), list1, list2));
                 }
             }
@@ -70,7 +72,7 @@ public class GlobalMute implements CommandExecutor, TabCompleter {
                     globalmute = false;
                     sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GLOBALMUTE_DISABLE_FEEDBACK), list1, list2));
                     Bukkit.broadcastMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GLOBALMUTE_DISABLE_ANNOUNCEMENT), list3, list4));
-                }else {
+                } else {
                     globalmute = true;
                     sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GLOBALMUTE_ENABLE_FEEDBACK), list1, list2));
                     Bukkit.broadcastMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GLOBALMUTE_ENABLE_ANNOUNCEMENT), list3, list4));
@@ -79,7 +81,7 @@ public class GlobalMute implements CommandExecutor, TabCompleter {
             case "status" -> {
                 if (globalmute) {
                     sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GLOBALMUTE_STATUS_ENABLED), list1, list2));
-                }else {
+                } else {
                     sender.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.GLOBALMUTE_STATUS_DISABLED), list1, list2));
                 }
             }

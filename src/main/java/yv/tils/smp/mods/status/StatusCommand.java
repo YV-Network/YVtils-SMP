@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @since 4.6.6
  * @version CH2-1.0.0
+ * @since 4.6.6
  */
 
 public class StatusCommand implements CommandExecutor {
@@ -60,19 +60,19 @@ public class StatusCommand implements CommandExecutor {
                         } else {
                             sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_OTHER_PLAYER_HAS_NO_STATUS));
                         }
-                    }else {
+                    } else {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_CLEAR_OTHER_UNALLOWED));
                     }
-                }else if (args.length == 1){
+                } else if (args.length == 1) {
                     if (new StatusConfigManager().SavedRequest().get(String.valueOf(player.getUniqueId())) != null) {
                         player.setDisplayName(player.getName());
                         player.setPlayerListName(player.getName());
                         new NametagManager().removePlayer(player);
                         clearStatus(player, null);
-                    }else {
+                    } else {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_PLAYER_HAS_NO_STATUS));
                     }
-                }else {
+                } else {
                     sendUsage(sender);
                 }
             }
@@ -85,7 +85,7 @@ public class StatusCommand implements CommandExecutor {
                     }
                     String status = builder.toString();
 
-                    status = status.substring(0, status.length() -1);
+                    status = status.substring(0, status.length() - 1);
 
                     if (ChatColor.stripColor(HexSupport.hex(status)).length() > new StatusConfigManager().ConfigRequest().getInt("MaxStatusLength")) {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_CUSTOM_STATUS_TOO_LONG));
@@ -96,10 +96,10 @@ public class StatusCommand implements CommandExecutor {
                         player.setPlayerListName(HexSupport.hex(status) + " " + player.getName());
                         new NametagManager().addPlayer(player, HexSupport.hex(status) + " ");
                         saveStatus(player, status);
-                    }else {
+                    } else {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_NOT_ALLOWED_TO_SET_CUSTOM_STATUS));
                     }
-                }else {
+                } else {
                     sendUsage(sender);
                 }
             }
@@ -111,7 +111,7 @@ public class StatusCommand implements CommandExecutor {
                         builder.append(args[x]).append(" ");
                     }
 
-                    String status = builder.substring(0, builder.toString().length() -1);
+                    String status = builder.substring(0, builder.toString().length() - 1);
 
                     if (!defaultStatus.contains(status)) {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_STATUS_NO_DEFAULT_STATUS));
@@ -131,7 +131,7 @@ public class StatusCommand implements CommandExecutor {
         return false;
     }
 
-    private void sendUsage(CommandSender sender){
+    private void sendUsage(CommandSender sender) {
         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE +
                 "/status <set> <Prefix> (Hex & Color Codes are supported!)\n" +
                 "/status <default> <Prefix>\n" +

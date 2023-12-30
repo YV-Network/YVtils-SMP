@@ -7,6 +7,7 @@ import yv.tils.smp.utils.internalapi.StringReplacer;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @version 4.6.8.1
@@ -17,8 +18,8 @@ public class ForceAdd {
     String url = "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png";
 
     public EmbedBuilder Embed(String mc, String dc) {
-        java.util.List<String> list1 = new ArrayList();
-        java.util.List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList();
+        List<String> list2 = new ArrayList();
         list1.add("MCNAME");
         list2.add(mc);
         list1.add("DCNAME");
@@ -33,8 +34,8 @@ public class ForceAdd {
     }
 
     public EmbedBuilder Replace(String dc, String mc_old, String mc_new) {
-        java.util.List<String> list1 = new ArrayList();
-        java.util.List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList();
+        List<String> list2 = new ArrayList();
         list1.add("DCNAME");
         list2.add(dc);
         list1.add("OLDNAME");

@@ -6,8 +6,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @since CH2-1.0.0
  * @version CH2-1.0.0
+ * @since CH2-1.0.0
  */
 public class HexSupport {
     public static String hex(String message) {

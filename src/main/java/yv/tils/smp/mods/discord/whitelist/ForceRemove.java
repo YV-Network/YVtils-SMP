@@ -24,26 +24,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @version 4.6.8
- * @since 4.6.8.1
+ * @version 4.6.8.1
+ * @since 4.6.8
  */
 public class ForceRemove extends ListenerAdapter {
 
     public StringSelectMenu.Builder createMenu(int site) {
 
-        List<String> list = YVtils.getInstance().WhitelistManager;
+        List<String> list = YVtils.getInstance().whitelistManager;
 
-        if (list.size()-1 <= 0) {
+        if (list.size() - 1 <= 0) {
             return StringSelectMenu.create("players").setPlaceholder(LanguageFile.getMessage(LanguageMessage.WHITELIST_EMPTY)).setDisabled(true).addOption("null", "null");
         }
 
         List<SelectOption> options = new ArrayList<>();
 
-        int a = ((site-1)*25)+1;
+        int a = ((site - 1) * 25) + 1;
 
         for (int i = a; i < list.size(); i++) {
             options.add(SelectOption.of(list.get(i), list.get(i)));
-            if (i >= a+24) break;
+            if (i >= a + 24) break;
         }
 
         return StringSelectMenu.create("players").setPlaceholder("Discord Tag,Minecraft Name, UUID")
@@ -51,7 +51,7 @@ public class ForceRemove extends ListenerAdapter {
     }
 
     public void onStringSelectInteraction(StringSelectInteractionEvent e) {
-        List<String> list = YVtils.getInstance().WhitelistManager;
+        List<String> list = YVtils.getInstance().whitelistManager;
 
         if (!e.getInteraction().getValues().isEmpty()) {
             Guild guild = e.getGuild();
@@ -76,7 +76,7 @@ public class ForceRemove extends ListenerAdapter {
             User user = null;
             try {
                 user = BotStartStop.getInstance().jda.getUserById(args[0]);
-            }catch (NumberFormatException ignored) {
+            } catch (NumberFormatException ignored) {
                 reply(e.getMember().getUser().getGlobalName(), args[1], args[0], list.size(), args, e);
                 return;
             }
@@ -91,14 +91,16 @@ public class ForceRemove extends ListenerAdapter {
                     for (String s : roles) {
                         guild.removeRoleFromMember(user, guild.getRoleById(s)).queue();
                     }
-                }catch (HierarchyException ignored) {
+                } catch (HierarchyException ignored) {
                     e.reply("").setEmbeds(new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), guild).build()).setEphemeral(true).queue();
                 }
-            }catch (IllegalArgumentException ignored) {}
+            } catch (IllegalArgumentException ignored) {
+            }
 
             try {
                 reply(e.getMember().getUser().getGlobalName(), args[1], args[0], list.size(), args, e);
-            }catch (IllegalStateException ignored) {}
+            } catch (IllegalStateException ignored) {
+            }
         }
     }
 
@@ -113,6 +115,6 @@ public class ForceRemove extends ListenerAdapter {
         list2.add(dc);
 
         Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(Prefix.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_REMOVE), list1, list2));
-        e.editMessageEmbeds(new yv.tils.smp.mods.discord.EmbedManager.whitelist.discord.ForceRemove().EmbedRemoved((listSize-1), Bukkit.hasWhitelist(), args, 1).build()).setActionRow(createMenu(1).build()).queue();
+        e.editMessageEmbeds(new yv.tils.smp.mods.discord.EmbedManager.whitelist.discord.ForceRemove().EmbedRemoved((listSize - 1), Bukkit.hasWhitelist(), args, 1).build()).setActionRow(createMenu(1).build()).queue();
     }
 }

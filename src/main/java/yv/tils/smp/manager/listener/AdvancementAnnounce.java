@@ -25,7 +25,8 @@ public class AdvancementAnnounce implements Listener {
 
         if (e.getAdvancement().getKey().getKey().contains("recipes")) return;
 
-        if (Vanish.vanish.containsKey(e.getPlayer().getUniqueId()) && Vanish.vanish.get(e.getPlayer().getUniqueId())) return;
+        if (Vanish.vanish.containsKey(e.getPlayer().getUniqueId()) && Vanish.vanish.get(e.getPlayer().getUniqueId()))
+            return;
 
         String message = new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.ADVANCEMENT_ANNOUNCEMENT), List.of("PLAYER"), List.of(e.getPlayer().getName()));
 
@@ -42,7 +43,7 @@ public class AdvancementAnnounce implements Listener {
                                 e.getAdvancement().getDisplay().getType().getColor() +
                                         e.getAdvancement().getDisplay().getTitle() + "\n" +
                                         e.getAdvancement().getDisplay().getDescription())));
-            }else {
+            } else {
                 c = new TextComponent(s + " ");
             }
             components.add(c);

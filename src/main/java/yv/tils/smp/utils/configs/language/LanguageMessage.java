@@ -1,8 +1,8 @@
 package yv.tils.smp.utils.configs.language;
 
 /**
- * @since 4.6.6
  * @version 4.6.8
+ * @since 4.6.6
  */
 public enum LanguageMessage {
     //LanguageFile.getMessage(LanguageMessage.START_MESSAGE)

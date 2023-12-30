@@ -5,8 +5,8 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import java.awt.*;
 
 /**
- * @since 4.6.8
  * @version 4.6.8
+ * @since 4.6.8
  */
 public class LogEmbed {
     EmbedBuilder builder = new EmbedBuilder();

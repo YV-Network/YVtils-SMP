@@ -63,10 +63,10 @@ public class StatsDescription {
                 try {
                     if (serverip.equals("null")) {
                         channel.getManager().setTopic("Server IP: " + serverip + " Version: " + version + " Online Players: " + onlineplayers + " \nLast Updated: " + dateformat.format(timestamp)).queue();
-                    }else {
+                    } else {
                         channel.getManager().setTopic("Version: " + version + " Online Players: " + onlineplayers + " \nLast Updated: " + dateformat.format(timestamp)).queue();
                     }
-                }catch (NullPointerException ignored) {
+                } catch (NullPointerException ignored) {
                     channel.getManager().setTopic("Version: " + version + " Online Players: " + onlineplayers + " \nLast Updated: " + dateformat.format(timestamp)).queue();
                 }
             }

@@ -19,7 +19,7 @@ public class MOTDGenerator {
         if (Maintenance.maintenance) {
             e.setMotd(YVtils.getInstance().getConfig().getString("MOTD'sText.Maintenance"));
             e.setMaxPlayers(0);
-        }else {
+        } else {
 
             List<String> players = new ArrayList<>();
             for (OfflinePlayer player : Bukkit.getWhitelistedPlayers()) {

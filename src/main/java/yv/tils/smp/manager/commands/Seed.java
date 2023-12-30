@@ -31,42 +31,42 @@ public class Seed implements CommandExecutor {
         list1.add("COMMAND");
         list2.add("§e/seed show");
 
-            if (args.length == 1) {
+        if (args.length == 1) {
+            if (player.hasPermission("yvtils.smp.command.bypass.seed")) {
+                TextComponent c = new TextComponent(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.COMMAND_REPLACE_NEW_COMMAND_INFO), list1, list2));
+                c.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "/seed show"));
+                c.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText(LanguageFile.getMessage(LanguageMessage.COMMAND_REPLACE_COPY_COMMAND_TO_CLIPBOARD))));
+                player.spigot().sendMessage(c);
+            } else {
+                player.sendMessage(LanguageFile.getMessage(LanguageMessage.MISSING_PERMISSION) + " yvtils.smp.command.bypass.seed");
+            }
+        } else if (args.length == 2) {
+            if (args[1].equalsIgnoreCase("show")) {
                 if (player.hasPermission("yvtils.smp.command.bypass.seed")) {
-                    TextComponent c = new TextComponent(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.COMMAND_REPLACE_NEW_COMMAND_INFO), list1, list2));
-                    c.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "/seed show"));
-                    c.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText(LanguageFile.getMessage(LanguageMessage.COMMAND_REPLACE_COPY_COMMAND_TO_CLIPBOARD))));
+                    TextComponent c = new TextComponent(Prefix.PREFIXSEED);
+                    TextComponent click = new TextComponent(" §7[" + "§a" + Bukkit.getWorld("world").getSeed() + "§7]");
+                    click.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, String.valueOf(Bukkit.getWorld("world").getSeed())));
+                    click.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText(LanguageFile.getMessage(LanguageMessage.COMMAND_REPLACE_COPY_COMMAND_TO_CLIPBOARD))));
+                    c.addExtra(click);
                     player.spigot().sendMessage(c);
                 } else {
                     player.sendMessage(LanguageFile.getMessage(LanguageMessage.MISSING_PERMISSION) + " yvtils.smp.command.bypass.seed");
                 }
-            } else if (args.length == 2) {
-                if (args[1].equalsIgnoreCase("show")) {
-                    if (player.hasPermission("yvtils.smp.command.bypass.seed")) {
-                        TextComponent c = new TextComponent(Prefix.PREFIXSEED);
-                        TextComponent click = new TextComponent(" §7[" + "§a" + Bukkit.getWorld("world").getSeed() + "§7]");
-                        click.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, String.valueOf(Bukkit.getWorld("world").getSeed())));
-                        click.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText(LanguageFile.getMessage(LanguageMessage.COMMAND_REPLACE_COPY_COMMAND_TO_CLIPBOARD))));
-                        c.addExtra(click);
-                        player.spigot().sendMessage(c);
-                    } else {
-                        player.sendMessage(LanguageFile.getMessage(LanguageMessage.MISSING_PERMISSION) + " yvtils.smp.command.bypass.seed");
-                    }
+            } else {
+                if (player.hasPermission("yvtils.smp.command.bypass.seed")) {
+                    TextComponent c = new TextComponent(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE));
+                    TextComponent click = new TextComponent(" §e/seed show");
+
+                    click.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "/seed show"));
+                    click.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Click to copy to Clipboard")));
+
+                    c.addExtra(click);
+                    player.spigot().sendMessage(c);
                 } else {
-                    if (player.hasPermission("yvtils.smp.command.bypass.seed")) {
-                        TextComponent c = new TextComponent(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE));
-                        TextComponent click = new TextComponent(" §e/seed show");
-
-                        click.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "/seed show"));
-                        click.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Click to copy to Clipboard")));
-
-                        c.addExtra(click);
-                        player.spigot().sendMessage(c);
-                    } else {
-                        player.sendMessage(LanguageFile.getMessage(LanguageMessage.MISSING_PERMISSION) + " yvtils.smp.command.bypass.seed");
-                    }
+                    player.sendMessage(LanguageFile.getMessage(LanguageMessage.MISSING_PERMISSION) + " yvtils.smp.command.bypass.seed");
                 }
             }
+        }
         return false;
     }
 }

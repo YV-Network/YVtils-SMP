@@ -15,8 +15,8 @@ import yv.tils.smp.mods.status.StatusCommand;
 import yv.tils.smp.mods.status.StatusCommandCompleter;
 
 /**
- * @since 4.6.8
  * @version 4.6.8
+ * @since 4.6.8
  */
 public class Modules {
     YVtils main = YVtils.getInstance();

@@ -8,8 +8,8 @@ import yv.tils.smp.utils.internalapi.Log;
 import java.io.File;
 
 /**
- * @since 4.6.6
  * @version 4.6.7
+ * @since 4.6.6
  */
 public class LanguageFile {
 
@@ -19,7 +19,7 @@ public class LanguageFile {
         File file = new File(YVtils.getInstance().getDataFolder() + "/Language", YVtils.getInstance().getConfig().getString("Language") + ".yml");
         if (file.exists()) {
             yamlConfiguration = YamlConfiguration.loadConfiguration(file);
-        }else {
+        } else {
             new Log(file.getPath());
             Bukkit.getConsoleSender().sendMessage(DirectFormatter("In the config is an unavailable language file given!", "In der Config wurde ein nicht verfügbares Sprachen File angegeben."));
         }
@@ -27,8 +27,8 @@ public class LanguageFile {
 
     /**
      * @Use: getMessage(LangaugeMessage.message);
-     * @since 4.6.6
      * @version 4.6.6
+     * @since 4.6.6
      */
     public static String getMessage(LanguageMessage message) {
         return yamlConfiguration.getString(message.name().toUpperCase());
@@ -36,17 +36,18 @@ public class LanguageFile {
 
     /**
      * Set Messages in German/English without the Language Config File
-     * @When_to_use? This Method can be used, when a Message shouldn't be configurable over the language File!
-     * @since 4.6.6
+     *
+     * @Use: This Method can be used, when a Message shouldn't be configurable over the language File!
      * @version 4.6.6
+     * @since 4.6.6
      */
     public static String DirectFormatter(String en, String de) {
         String s;
         if (YVtils.getInstance().getConfig().getString("Language").equals("en")) {
             s = en;
-        }else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
+        } else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
             s = de;
-        }else {
+        } else {
             s = en;
         }
         return s;

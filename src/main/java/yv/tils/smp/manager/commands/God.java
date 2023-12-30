@@ -23,10 +23,12 @@ import java.util.UUID;
  */
 public class God implements CommandExecutor {
 
-    private static God instance;
-    public static God getInstance() {return instance;}
-
     public static Map<UUID, Boolean> god = new HashMap<>();
+    private static God instance;
+
+    public static God getInstance() {
+        return instance;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -40,7 +42,7 @@ public class God implements CommandExecutor {
             } else {
                 sendUsage(sender);
             }
-        }else if (args.length != 1) {
+        } else if (args.length != 1) {
             sender.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_ARGUMENT_MISSING));
         } else {
             otherGod(Bukkit.getPlayer(args[0]), sender);

@@ -5,14 +5,13 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import yv.tils.smp.utils.color.HexSupport;
-import yv.tils.smp.utils.configs.ConfigModeration;
 import yv.tils.smp.utils.configs.status.StatusConfigManager;
 
 import java.awt.*;
 
 /**
- * @version 4.6.8
- * @since CH2-1.0.0
+ * @version CH2-1.0.0
+ * @since 4.6.8
  */
 public class ChatSyncEmbed {
     EmbedBuilder builder = new EmbedBuilder();

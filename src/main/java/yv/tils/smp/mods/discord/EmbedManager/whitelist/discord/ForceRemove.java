@@ -18,12 +18,11 @@ public class ForceRemove {
     String url = "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png";
 
     public EmbedBuilder Embed(Integer playercount, boolean whitelist, int site) {
-
         String status;
         if (whitelist) status = "on";
         else status = "off";
 
-        int maxsite = (playercount - 1)/25+1;
+        int maxSite = (playercount - 1) / 25 + 1;
 
         return builder
                 .setTitle(LanguageFile.getMessage(LanguageMessage.EMBED_CMD_WHITELIST_REMOVE_TITLE))
@@ -31,17 +30,16 @@ public class ForceRemove {
                 .addField("Whitelisted Players:", String.valueOf(playercount), true)
                 .addField("Whitelist Status", status, true)
                 .setColor(new Color(0xBA4C59))
-                .setFooter("YVtils-SMP • Site " + site + "/" + maxsite, "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png")
+                .setFooter("YVtils-SMP • Site " + site + "/" + maxSite, "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png")
                 .setAuthor("Whitelist Administration", "https://yvnetwork.de/yvtils-smp/spigot", url);
     }
 
-    public EmbedBuilder EmbedRemoved(Integer playercount, boolean whitelist, String[] acc, int site) {
-
+    public EmbedBuilder EmbedRemoved(Integer playerCount, boolean whitelist, String[] acc, int site) {
         String status;
         if (whitelist) status = "on";
         else status = "off";
 
-        int maxsite = (playercount - 1)/25+1;
+        int maxSite = (playerCount - 1) / 25 + 1;
 
         List<String> list1 = new ArrayList<>();
         List<String> list2 = new ArrayList<>();
@@ -51,17 +49,17 @@ public class ForceRemove {
 
         if (acc[0].matches("\\d+")) {
             list2.add("<@" + acc[0] + ">");
-        }else {
+        } else {
             list2.add(acc[0]);
         }
 
         return builder
                 .setTitle(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.EMBED_CMD_WHITELIST_REMOVED_TITLE), list1, list2))
                 .setDescription(LanguageFile.getMessage(LanguageMessage.EMBED_CMD_WHITELIST_REMOVED_DESC))
-                .addField("Whitelisted Players:", String.valueOf(playercount), true)
+                .addField("Whitelisted Players:", String.valueOf(playerCount), true)
                 .addField("Whitelist Status", status, true)
                 .setColor(new Color(0xBA4C59))
-                .setFooter("YVtils-SMP • Site " + site + "/" + maxsite, "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png")
+                .setFooter("YVtils-SMP • Site " + site + "/" + maxSite, "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png")
                 .setAuthor("Whitelist Administration", "https://yvnetwork.de/yvtils-smp/spigot", url);
     }
 

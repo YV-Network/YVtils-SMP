@@ -8,8 +8,8 @@ import yv.tils.smp.mods.admin.logger.logger.*;
 import yv.tils.smp.mods.other.SpawnElytra;
 
 /**
- * @since 4.6.8
  * @version CH2-1.0.0
+ * @since 4.6.8
  */
 public class DefaultListeners {
     YVtils main = YVtils.getInstance();

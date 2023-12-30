@@ -33,7 +33,7 @@ public class StatusConfigManager {
         return configuration;
     }
 
-    public void SavedWriter(String path,String value) {
+    public void SavedWriter(String path, String value) {
         File configfile = new File(YVtils.getInstance().getDataFolder(), "Status/save.yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         try {

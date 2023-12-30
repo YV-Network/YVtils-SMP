@@ -22,7 +22,7 @@ public class config_yml {
 
         ymlfile.addDefault("Active", true);
         ymlfile.addDefault("MaxStatusLength", 20);
-        ymlfile.addDefault("0#",  LanguageFile.DirectFormatter("Here you can set the Default Status, which the Players can select with '/status default <status>'! Please use for Color Codes \"&\" and not \"§\"", "Hier kannst du die Voreingestellten Status einstellen, welche die Spieler mit '/status default <status>' auswählen können! Bitte benutze \"&\" und nicht \"§\" für Color Codes!"));
+        ymlfile.addDefault("0#", LanguageFile.DirectFormatter("Here you can set the Default Status, which the Players can select with '/status default <status>'! Please use for Color Codes \"&\" and not \"§\"", "Hier kannst du die Voreingestellten Status einstellen, welche die Spieler mit '/status default <status>' auswählen können! Bitte benutze \"&\" und nicht \"§\" für Color Codes!"));
         ymlfile.addDefault("Default-Status", defaultstatuslist());
         ymlfile.options().copyDefaults(true);
         fileSave();

@@ -17,14 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @since 4.6.6
  * @version CH2-1.0.0
+ * @since 4.6.6
  */
 public class JoinQuitStatus implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
-
         Player player = e.getPlayer();
 
         new Log("StatusModuleDebug - OnJoin - No Check");
@@ -59,4 +58,5 @@ public class JoinQuitStatus implements Listener {
         if (team != null) {
             new NametagManager().removePlayer(player);
         }
-    }}
+    }
+}

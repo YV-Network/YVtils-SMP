@@ -28,7 +28,7 @@ public class PlayerJoin {
         if (YVtils.getInstance().getConfig().getBoolean("SendJoinMessage")) {
             Bukkit.getConsoleSender().sendMessage(Prefix.PREFIXCONNECT + ChatColor.GREEN + " » " + ChatColor.GRAY + player.getName());
             e.setJoinMessage(joinMessage);
-        }else {
+        } else {
             Bukkit.getConsoleSender().sendMessage(Prefix.PREFIXCONNECT + ChatColor.GREEN + " » " + ChatColor.GRAY + player.getName());
             e.setJoinMessage(null);
         }

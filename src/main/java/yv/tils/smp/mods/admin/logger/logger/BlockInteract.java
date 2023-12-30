@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @since 4.6.7
  * @version 4.6.7
+ * @since 4.6.7
  */
 public class BlockInteract implements Listener {
     @EventHandler

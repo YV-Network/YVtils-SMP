@@ -7,19 +7,19 @@ import yv.tils.smp.utils.internalapi.StringReplacer;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * @since 4.6.8
  * @version 4.6.8
+ * @since 4.6.8
  */
 public class AccountAdded {
-
     EmbedBuilder builder = new EmbedBuilder();
     String url = "https://yvnetwork.de/wp-content/uploads/2022/03/YVtils-SMP.png";
 
     public EmbedBuilder Embed(String accname) {
-        java.util.List<String> list1 = new ArrayList();
-        java.util.List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList();
+        List<String> list2 = new ArrayList();
         list1.add("ACCOUNTNAME");
         list2.add(accname);
         return builder

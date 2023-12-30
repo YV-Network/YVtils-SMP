@@ -14,8 +14,8 @@ import yv.tils.smp.utils.internalapi.Variables;
 import yv.tils.smp.utils.updater.VersionGetter;
 
 /**
- * @since 4.6.8
  * @version CH2-1.0.0
+ * @since 4.6.8
  */
 public class Other {
     YVtils main = YVtils.getInstance();

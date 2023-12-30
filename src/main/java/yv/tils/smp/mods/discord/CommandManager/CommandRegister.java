@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @since 4.6.8
  * @version 4.6.8
+ * @since 4.6.8
  */
 public class CommandRegister extends ListenerAdapter {
 

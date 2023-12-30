@@ -26,7 +26,7 @@ public class Heal implements CommandExecutor {
                 player.setHealth(player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue());
                 player.setFoodLevel(20);
                 player.sendMessage(LanguageFile.getMessage(LanguageMessage.HEAL_PLAYER_HEALED));
-            }else if (args.length == 1) {
+            } else if (args.length == 1) {
                 Player player = Bukkit.getPlayer(args[0]);
                 player.setHealth(player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue());
                 player.setFoodLevel(20);
@@ -41,7 +41,7 @@ public class Heal implements CommandExecutor {
             } else {
                 sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " /heal [player]");
             }
-        }else if (args.length != 1) {
+        } else if (args.length != 1) {
             sender.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_ARGUMENT_MISSING));
         } else {
             Player player = Bukkit.getPlayer(args[0]);

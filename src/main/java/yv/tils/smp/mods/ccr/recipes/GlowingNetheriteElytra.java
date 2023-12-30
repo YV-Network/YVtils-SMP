@@ -16,8 +16,8 @@ import java.util.Objects;
 
 /**
  * @version 4.6.8.1
- * @since 4.6.8.1
  * @Use: Create an unbreakable Elytra, costs you four Netherite Ingot and three Beacon
+ * @since 4.6.8.1
  */
 public class GlowingNetheriteElytra {
 
@@ -71,7 +71,7 @@ public class GlowingNetheriteElytra {
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
             lore.add("§eGlowing Netherite Elytra");
             lore.add("Unbreaking ထ");
-        }else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
+        } else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
             meta.setDisplayName("§cVorschau §8(§e" + multiplier + "x§8)");
             meta.setUnbreakable(true);
             meta.addEnchant(Enchantment.MENDING, 1, true);
@@ -89,7 +89,7 @@ public class GlowingNetheriteElytra {
         meta_recipe_check.setDisplayName(" ");
         recipe_check.setItemMeta(meta_recipe_check);
 
-        for (int i : new int[]{10,19,28,16,25,34}) {
+        for (int i : new int[]{10, 19, 28, 16, 25, 34}) {
             inv.setItem(i, recipe_check);
         }
 
@@ -109,9 +109,9 @@ public class GlowingNetheriteElytra {
         if (smallest > U2N) smallest = U2N;
         int multiplier = (int) smallest;
 
-        GInPut.setAmount((int) (GInPut.getAmount()-smallest));
-        GUpgrade1.setAmount((int) (GUpgrade1.getAmount()-(smallest*4)));
-        GUpgrade2.setAmount((int) (GUpgrade2.getAmount()-(smallest*3)));
+        GInPut.setAmount((int) (GInPut.getAmount() - smallest));
+        GUpgrade1.setAmount((int) (GUpgrade1.getAmount() - (smallest * 4)));
+        GUpgrade2.setAmount((int) (GUpgrade2.getAmount() - (smallest * 3)));
 
         ItemStack item = new ItemStack(Material.ELYTRA);
         item.setAmount(multiplier);
@@ -124,7 +124,7 @@ public class GlowingNetheriteElytra {
             meta.addEnchant(Enchantment.MENDING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
             lore.add("Unbreaking ထ");
-        }else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
+        } else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
             meta.setDisplayName("§eLeuchtende Netherite Elytra");
             meta.setUnbreakable(true);
             meta.addEnchant(Enchantment.MENDING, 1, true);

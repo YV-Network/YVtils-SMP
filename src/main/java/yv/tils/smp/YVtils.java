@@ -19,24 +19,24 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * @since 1.0
  * @version CH2-1.0.0
+ * @since 1.0
  */
 public final class YVtils extends JavaPlugin {
+    public static final SitManager sitManager = new SitManager();
     private static YVtils instance;
-    public void onLoad() {
-        instance = this;
-    }
+    public final List<String> whitelistManager = new ArrayList<>();
+    public List<UUID> invClose = new ArrayList<>();
+    public boolean chatSyncID = true;
+    private HashMap<UUID, UUID> recentMessages;
+
     public static YVtils getInstance() {
         return instance;
     }
 
-    public static final SitManager sitManager = new SitManager();
-    public List<UUID> vanished = new ArrayList<>();
-    public List<UUID> InvClose = new ArrayList<>();
-    public final List<String> WhitelistManager = new ArrayList<>();
-    private HashMap<UUID, UUID> recentMessages;
-    public boolean chatSyncID = true;
+    public void onLoad() {
+        instance = this;
+    }
 
     public HashMap<UUID, UUID> getRecentMessages() {
         return recentMessages;
@@ -45,7 +45,7 @@ public final class YVtils extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        new Log(LanguageFile.DirectFormatter("YVtils-SMP begun loading!", "YVtils-SMP beginnt zu laden!"));
+        new Log(LanguageFile.DirectFormatter("YVtils-SMP is now loading!", "YVtils-SMP beginnt zu laden!"));
         new LanguageFiles().onEnable();
 
         List<String> list1 = new ArrayList<>();

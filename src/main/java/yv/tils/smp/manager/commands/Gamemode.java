@@ -21,6 +21,8 @@ import java.util.List;
  * @since CH2-1.0.0
  */
 public class Gamemode implements CommandExecutor, TabCompleter {
+    List<String> arguments = new ArrayList<>();
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!sender.hasPermission("yvtils.command.gamemode")) return false;
@@ -129,8 +131,7 @@ public class Gamemode implements CommandExecutor, TabCompleter {
                     default -> sendUsage(sender);
                 }
             }
-            default ->
-                    sendUsage(sender);
+            default -> sendUsage(sender);
         }
         return false;
     }
@@ -140,8 +141,6 @@ public class Gamemode implements CommandExecutor, TabCompleter {
                 "/gm <0,1,2,3> [player]\n" +
                 "/gm <survival,creative,adventure,spectator> [player]");
     }
-
-    List<String> arguments = new ArrayList<>();
 
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
         arguments.add("0");
@@ -165,7 +164,7 @@ public class Gamemode implements CommandExecutor, TabCompleter {
                 }
             }
             return result;
-        }else if (args.length == 2) {
+        } else if (args.length == 2) {
             return null;
         }
         return arguments;

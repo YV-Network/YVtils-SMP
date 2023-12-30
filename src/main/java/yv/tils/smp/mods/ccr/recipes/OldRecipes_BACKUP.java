@@ -2,8 +2,9 @@ package yv.tils.smp.mods.ccr.recipes;
 
 /**
  * Need to get Updated soon as possible! (Maybe remove in next Version and add again after changes)
- * @deprecated
+ *
  * @Outdated
+ * @deprecated
  */
 public class OldRecipes_BACKUP {
     /*

@@ -5,8 +5,8 @@ import yv.tils.smp.utils.configs.language.CreateFile_en;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 
 /**
- * @since Ch2-1.0.0
  * @version CH2-1.0.0
+ * @since Ch2-1.0.0
  */
 public class LanguageFiles {
     public void onEnable() {

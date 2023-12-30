@@ -55,39 +55,41 @@ public class ReplyCommand implements CommandExecutor {
                             list4.add(coloredMessage);
 
                             player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MSG_NOTE), list3, list4));
-                        }else {
+                        } else {
                             player.sendMessage(senderReceiverDesign + " " + coloredMessage);
                             target.sendMessage(senderReceiverDesign + " " + coloredMessage);
 
                             YVtils.getInstance().getRecentMessages().put(player.getUniqueId(), target.getUniqueId());
                             YVtils.getInstance().getRecentMessages().put(target.getUniqueId(), player.getUniqueId());
                         }
-                    }else {
+                    } else {
                         List<String> list3 = new ArrayList<>();
                         List<String> list4 = new ArrayList<>();
                         list3.add("PREFIX");
                         list4.add(Prefix.PREFIX);
                         player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MSG_PLAYER_WENT_OFFLINE), list3, list4));
                     }
-                }else {
+                } else {
                     List<String> list3 = new ArrayList<>();
                     List<String> list4 = new ArrayList<>();
                     list3.add("PREFIX");
                     list4.add(Prefix.PREFIX);
                     player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MSG_HAVENT_MESSAGED_A_PLAYER), list3, list4));
-                }}else {
+                }
+            } else {
                 List<String> list3 = new ArrayList<>();
                 List<String> list4 = new ArrayList<>();
                 list3.add("PREFIX");
                 list4.add(Prefix.PREFIX);
                 player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.PLAYER_UNKNOWN), list3, list4));
-            }}else {
+            }
+        } else {
             sendUsage(sender);
         }
         return false;
     }
 
-    private void sendUsage(CommandSender sender){
+    private void sendUsage(CommandSender sender) {
         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE +
                 "/r <message>");
     }

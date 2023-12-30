@@ -4,8 +4,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Team;
 
 /**
- * @since 4.6.6
  * @version 4.6.6
+ * @since 4.6.6
  */
 public class NametagManager {
 
@@ -16,7 +16,7 @@ public class NametagManager {
         }
         return player.getScoreboard().registerNewTeam(name);
     }
-    
+
     public void addPlayer(Player player, String prefix) {
         Team team = GetorCreateTeam(player.getUniqueId() + "UUID", player);
         team.setPrefix(prefix);

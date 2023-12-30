@@ -14,8 +14,8 @@ import yv.tils.smp.utils.internalapi.StringReplacer;
 import java.util.*;
 
 /**
- * @since 4.6.8
  * @version 4.6.8
+ * @since 4.6.8
  */
 public class EcSee implements CommandExecutor {
 
@@ -32,7 +32,7 @@ public class EcSee implements CommandExecutor {
             return false;
         }
 
-        if (Bukkit.getPlayer(args[0]) == null){
+        if (Bukkit.getPlayer(args[0]) == null) {
             player.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_NOT_ONLINE));
             return false;
         }
@@ -45,14 +45,14 @@ public class EcSee implements CommandExecutor {
     }
 
 
-    public Inventory getInventory(Player player){
+    public Inventory getInventory(Player player) {
 
         List<String> list1 = new ArrayList<>();
         List<String> list2 = new ArrayList<>();
         list1.add("PLAYER");
         list2.add(player.getName());
 
-        Inventory ec = Bukkit.createInventory(null, 27, new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_INVSEE_ENDERCHEST),list1 ,list2));
+        Inventory ec = Bukkit.createInventory(null, 27, new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_INVSEE_ENDERCHEST), list1, list2));
 
         ItemStack[] ecContent = player.getEnderChest().getStorageContents();
 

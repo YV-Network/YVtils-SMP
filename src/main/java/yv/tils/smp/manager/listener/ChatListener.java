@@ -39,7 +39,7 @@ public class ChatListener implements Listener {
 
                 e.setCancelled(true);
                 Bukkit.broadcastMessage(prefix + name + "§8: §f" + message);
-            }else {
+            } else {
                 new Log("StatusModuleDebug - OnChat - With Check - No Prefix");
                 e.setCancelled(true);
                 Bukkit.broadcastMessage(name + "§8: §f" + message);

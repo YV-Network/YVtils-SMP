@@ -9,13 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @version 4.6.8
- * @since 4.6.8.1
+ * @version 4.6.8.1
+ * @since 4.6.8
  */
 public class ImportWhitelist {
-
     YamlConfiguration linkedRequest = new DiscordConfigManager().LinkedRequest();
-    List<String> WhitelistManager = YVtils.getInstance().WhitelistManager;
+    List<String> WhitelistManager = YVtils.getInstance().whitelistManager;
 
     public void Importer() {
         //DC ID, MC NAME, UUID
@@ -31,7 +30,7 @@ public class ImportWhitelist {
 
             if (linkedRequest.getString(WhitelistKey[i]) != null) {
                 content = linkedRequest.getString(WhitelistKey[i]);
-            }else {
+            } else {
                 content = "null n-u-l-l";
             }
 
@@ -52,22 +51,20 @@ public class ImportWhitelist {
     public List<String> reader(String dc, String mc, String uuid) {
         List<String> request = new ArrayList<>();
         loop:
-            for (int i = 0; i < WhitelistManager.size(); i++) {
-                String manager = WhitelistManager.get(i);
+        for (String manager : WhitelistManager) {
+            String[] split = manager.split(",");
 
-                String[] split = manager.split(",");
+            for (int o = 0; o < split.length; o++) {
+                if (split[o].equals(dc) || split[o].equals(mc) || split[o].equals(uuid)) {
 
-                for (int o = 0; o < split.length; o++) {
-                    if (split[o].equals(dc) || split[o].equals(mc) || split[o].equals(uuid)) {
+                    request.add(split[0]);
+                    request.add(split[1]);
+                    request.add(split[2]);
 
-                        request.add(split[0]);
-                        request.add(split[1]);
-                        request.add(split[2]);
-
-                        break loop;
-                    }
+                    break loop;
                 }
             }
+        }
 
         request.add("null");
         request.add("null");

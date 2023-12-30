@@ -12,11 +12,12 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @since 4.6.6
  * @version CH2-1.0.0
+ * @since 4.6.6
  */
 public class StatusCommandCompleter implements TabCompleter {
     List<String> defaults = new StatusConfigManager().ConfigRequest().getStringList("Default-Status");
+
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
         List<String> results = new ArrayList<>();
 

@@ -13,8 +13,8 @@ import yv.tils.smp.mods.admin.logger.Logger;
 import java.io.IOException;
 
 /**
- * @since 4.6.7
  * @version 4.6.8
+ * @since 4.6.7
  */
 public class PlayerServerEvent implements Listener {
     @EventHandler

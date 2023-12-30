@@ -104,7 +104,7 @@ public class VanishGUI {
             vanishToggle.setItemMeta(meta_vanishToggle);
 
             inv.setItem(19, vanishToggle);
-        }else if (vanish.get(player.getUniqueId())) {
+        } else if (vanish.get(player.getUniqueId())) {
             ItemStack vanishToggle = new ItemStack(Material.LIME_DYE);
             ItemMeta meta_vanishToggle = vanishToggle.getItemMeta();
             meta_vanishToggle.setDisplayName(hex("#96C8FF" + "[ENABLED]"));
@@ -128,7 +128,7 @@ public class VanishGUI {
             layerToggle.setItemMeta(meta_layerToggle);
 
             inv.setItem(21, layerToggle);
-        }else if (layer.get(player.getUniqueId()) == 1) {
+        } else if (layer.get(player.getUniqueId()) == 1) {
             ItemStack layerToggle = new ItemStack(Material.LIME_DYE);
             ItemMeta meta_layerToggle = layerToggle.getItemMeta();
             meta_layerToggle.setDisplayName(hex("#96C8FF" + "[ENABLED]"));
@@ -169,7 +169,7 @@ public class VanishGUI {
             itemPickupToggle.setItemMeta(meta_itemPickupToggle);
 
             inv.setItem(23, itemPickupToggle);
-        }else if (itemPickup.get(player.getUniqueId())) {
+        } else if (itemPickup.get(player.getUniqueId())) {
             ItemStack itemPickupToggle = new ItemStack(Material.LIME_DYE);
             ItemMeta meta_itemPickupToggle = itemPickupToggle.getItemMeta();
             meta_itemPickupToggle.setDisplayName(hex("#96C8FF" + "[ENABLED]"));
@@ -193,7 +193,7 @@ public class VanishGUI {
             invInteractionToggle.setItemMeta(meta_invInteractionToggle);
 
             inv.setItem(24, invInteractionToggle);
-        }else if (invInteraction.get(player.getUniqueId())) {
+        } else if (invInteraction.get(player.getUniqueId())) {
             ItemStack invInteractionToggle = new ItemStack(Material.LIME_DYE);
             ItemMeta meta_invInteractionToggle = invInteractionToggle.getItemMeta();
             meta_invInteractionToggle.setDisplayName(hex("#96C8FF" + "[ENABLED]"));
@@ -217,7 +217,7 @@ public class VanishGUI {
             mobTargetToggle.setItemMeta(meta_mobTargetToggle);
 
             inv.setItem(25, mobTargetToggle);
-        }else if (mobTarget.get(player.getUniqueId())) {
+        } else if (mobTarget.get(player.getUniqueId())) {
             ItemStack mobTargetToggle = new ItemStack(Material.LIME_DYE);
             ItemMeta meta_mobTargetToggle = mobTargetToggle.getItemMeta();
             meta_mobTargetToggle.setDisplayName(hex("#96C8FF" + "[ENABLED]"));
@@ -273,7 +273,7 @@ public class VanishGUI {
                                 vanishLayer(target, 2);
                             }
                         }
-                    }else {
+                    } else {
                         vanishLayer(target, 1);
                     }
                 }
@@ -354,7 +354,7 @@ public class VanishGUI {
         if (e.getView().getTitle().equals("§x§6§d§8§8§9§6Vanish") && e.getInventory().getSize() == 36) {
             if (vanish.get(player.getUniqueId())) {
                 new Vanish().enableVanish(player);
-            }else {
+            } else {
                 new Vanish().disableVanish(player);
             }
         }

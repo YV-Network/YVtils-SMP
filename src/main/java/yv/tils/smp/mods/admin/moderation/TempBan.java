@@ -34,7 +34,7 @@ public class TempBan implements CommandExecutor, TabCompleter {
 
         if (args.length == 4) {
             reason = LanguageFile.getMessage(LanguageMessage.MOD_NO_REASON);
-        }else {
+        } else {
             reason = new Moderation().getReason(args, 3);
         }
 
@@ -74,9 +74,9 @@ public class TempBan implements CommandExecutor, TabCompleter {
             for (Player player : Bukkit.getOnlinePlayers()) {
                 results.add(player.getName());
             }
-        }else if (args.length == 2) {
+        } else if (args.length == 2) {
             results.add(LanguageFile.getMessage(LanguageMessage.TAB_COMPLETER_MOD_COMMAND_DURATION));
-        }else if (args.length == 3) {
+        } else if (args.length == 3) {
             results.add("Seconds");
             results.add("Minutes");
             results.add("Hours");
@@ -85,7 +85,7 @@ public class TempBan implements CommandExecutor, TabCompleter {
             results.add("m");
             results.add("h");
             results.add("d");
-        }else if (args.length == 4) {
+        } else if (args.length == 4) {
             results.add(LanguageFile.getMessage(LanguageMessage.TAB_COMPLETER_MOD_COMMAND_REASON));
         }
         return results;

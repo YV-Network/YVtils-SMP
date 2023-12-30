@@ -28,7 +28,7 @@ public class PlayerQuit {
         if (YVtils.getInstance().getConfig().getBoolean("SendQuitMessage")) {
             Bukkit.getConsoleSender().sendMessage(Prefix.PREFIXDISCONNECT + ChatColor.RED + " « " + ChatColor.GRAY + player.getName());
             e.setQuitMessage(quitMessage);
-        }else {
+        } else {
             Bukkit.getConsoleSender().sendMessage(Prefix.PREFIXDISCONNECT + ChatColor.RED + " « " + ChatColor.GRAY + player.getName());
             e.setQuitMessage(null);
         }

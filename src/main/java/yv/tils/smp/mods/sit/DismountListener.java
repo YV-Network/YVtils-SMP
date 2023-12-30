@@ -8,11 +8,12 @@ import org.spigotmc.event.entity.EntityDismountEvent;
 import yv.tils.smp.YVtils;
 
 /**
- * @since 4.6.7
  * @version 4.6.8
+ * @since 4.6.7
  */
 public class DismountListener implements Listener {
     private static final SitManager sitManager = YVtils.sitManager;
+
     @EventHandler
     public void onDismount(EntityDismountEvent e) {
         if (!(e.getEntity() instanceof Player player)) {

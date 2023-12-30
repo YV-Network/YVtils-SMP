@@ -13,13 +13,10 @@ import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
 /**
- * @since 4.6.7
  * @version 4.6.7
+ * @since 4.6.7
  */
 public class CCRCommand implements CommandExecutor {
-
-    //yvtils.smp.command.ccr
-
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if (commandSender instanceof Player player) {
@@ -31,7 +28,7 @@ public class CCRCommand implements CommandExecutor {
             meta_pane.setDisplayName(" ");
             pane.setItemMeta(meta_pane);
 
-            for (int i : new int[]{0,1,2,3,4,5,6,7,8,9,11,12,14,15,17,18,21,22,23,24,26,27,29,30,32,33,35}) {
+            for (int i : new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 14, 15, 17, 18, 21, 22, 23, 24, 26, 27, 29, 30, 32, 33, 35}) {
                 inv.setItem(i, pane);
             }
 
@@ -41,7 +38,7 @@ public class CCRCommand implements CommandExecutor {
             meta_crafting_accept.setDisplayName(LanguageFile.getMessage(LanguageMessage.MODULE_CCR_ACCEPT_RECIPE));
             crafting_accept.setItemMeta(meta_crafting_accept);
 
-            for (int i : new int[]{36,37,38,39,40,41,42,43,44}) {
+            for (int i : new int[]{36, 37, 38, 39, 40, 41, 42, 43, 44}) {
                 inv.setItem(i, crafting_accept);
             }
 
@@ -51,10 +48,9 @@ public class CCRCommand implements CommandExecutor {
             meta_recipe_check.setDisplayName(" ");
             recipe_check.setItemMeta(meta_recipe_check);
 
-            for (int i : new int[]{10,19,28,16,25,34}) {
+            for (int i : new int[]{10, 19, 28, 16, 25, 34}) {
                 inv.setItem(i, recipe_check);
             }
-
 
 
             player.openInventory(inv);

@@ -7,8 +7,8 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @since 4.6.8
  * @version 4.6.8
+ * @since 4.6.8
  */
 public class DiscordConfigManager {
     public YamlConfiguration ConfigRequest() {
@@ -33,7 +33,7 @@ public class DiscordConfigManager {
         return configuration;
     }
 
-    public void LinkedWriter(String path,String value) {
+    public void LinkedWriter(String path, String value) {
         File configfile = new File(YVtils.getInstance().getDataFolder(), "Discord/linkedAccounts.yml");
         YamlConfiguration configuration = YamlConfiguration.loadConfiguration(configfile);
         try {

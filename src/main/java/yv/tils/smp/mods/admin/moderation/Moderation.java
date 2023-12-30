@@ -47,7 +47,7 @@ public class Moderation implements CommandExecutor, TabCompleter {
 
                 if (args.length == 2) {
                     reason = LanguageFile.getMessage(LanguageMessage.MOD_NO_REASON);
-                }else {
+                } else {
                     reason = getReason(args, 2);
                 }
 
@@ -65,7 +65,7 @@ public class Moderation implements CommandExecutor, TabCompleter {
 
                 if (args.length == 2) {
                     reason = LanguageFile.getMessage(LanguageMessage.MOD_NO_REASON);
-                }else {
+                } else {
                     reason = getReason(args, 2);
                 }
 
@@ -88,7 +88,7 @@ public class Moderation implements CommandExecutor, TabCompleter {
 
                 if (args.length == 5) {
                     reason = LanguageFile.getMessage(LanguageMessage.MOD_NO_REASON);
-                }else {
+                } else {
                     reason = getReason(args, 5);
                 }
 
@@ -153,7 +153,7 @@ public class Moderation implements CommandExecutor, TabCompleter {
 
                 Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_KICK), list1, list2),
                         "yvtils.smp.command.moderation.announcement");
-            }else {
+            } else {
                 mod.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_NOT_ONLINE));
             }
         } else {
@@ -237,7 +237,7 @@ public class Moderation implements CommandExecutor, TabCompleter {
 
             Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_TEMPBAN), list1, list2),
                     "yvtils.smp.command.moderation.announcement");
-        } else{
+        } else {
             mod.sendMessage(Prefix.PERMISSIONERROR + parentPermission + ".tempban");
         }
     }
@@ -266,7 +266,7 @@ public class Moderation implements CommandExecutor, TabCompleter {
 
             Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_TEMPBAN), list1, list2),
                     "yvtils.smp.command.moderation.announcement");
-        } else{
+        } else {
             mod.sendMessage(Prefix.PERMISSIONERROR + parentPermission + ".tempban");
         }
     }
@@ -290,7 +290,7 @@ public class Moderation implements CommandExecutor, TabCompleter {
 
                 Bukkit.broadcast(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_ANNOUNCEMENT_UNBAN), list1, list2),
                         "yvtils.smp.command.moderation.anouncement");
-            }else {
+            } else {
                 List<String> list1 = new ArrayList();
                 List<String> list2 = new ArrayList();
                 list1.add("PREFIXMODERATION");
@@ -300,7 +300,7 @@ public class Moderation implements CommandExecutor, TabCompleter {
 
                 mod.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MOD_PLAYER_NOT_BANNED), list1, list2));
             }
-        }else {
+        } else {
             mod.sendMessage(Prefix.PERMISSIONERROR + parentPermission + ".unban");
         }
     }
@@ -325,8 +325,8 @@ public class Moderation implements CommandExecutor, TabCompleter {
         return reason.toString();
     }
 
-    private void sendUsage(CommandSender sender){
-        sender.sendMessage( LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE)+ " " + ChatColor.BLUE +
+    private void sendUsage(CommandSender sender) {
+        sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE +
                 "/moderation <kick, ban> <Player Name> [Reason] \n" +
                 "/moderation tempban <Player Name> <duration> <Time Format (Seconds, Minutes, Hours, Days)> [Reason] \n" +
                 "/moderation unban <Player Name>");
@@ -340,17 +340,17 @@ public class Moderation implements CommandExecutor, TabCompleter {
             results.add("tempban");
             results.add("ban");
             results.add("unban");
-        }else if (args.length == 2) {
+        } else if (args.length == 2) {
             for (Player player : Bukkit.getOnlinePlayers()) {
                 results.add(player.getName());
             }
-        }else if (args.length == 3) {
+        } else if (args.length == 3) {
             if (args[0].equals("tempban")) {
                 results.add(LanguageFile.getMessage(LanguageMessage.TAB_COMPLETER_MOD_COMMAND_DURATION));
-            }else {
+            } else {
                 results.add(LanguageFile.getMessage(LanguageMessage.TAB_COMPLETER_MOD_COMMAND_REASON));
             }
-        }else if (args.length == 4) {
+        } else if (args.length == 4) {
             if (args[0].equals("tempban")) {
                 results.add("Seconds");
                 results.add("Minutes");
@@ -361,7 +361,7 @@ public class Moderation implements CommandExecutor, TabCompleter {
                 results.add("h");
                 results.add("d");
             }
-        }else if (args.length == 5) {
+        } else if (args.length == 5) {
             if (args[0].equals("tempban")) {
                 results.add(LanguageFile.getMessage(LanguageMessage.TAB_COMPLETER_MOD_COMMAND_REASON));
             }

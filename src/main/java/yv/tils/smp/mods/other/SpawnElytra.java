@@ -33,14 +33,11 @@ import java.util.List;
 public class SpawnElytra implements Listener {
 
     private static SpawnElytra instance;
-    public static SpawnElytra getInstance() {return instance;}
-
-    YVtils main = YVtils.getInstance();
-
     private static int multiplyValue;
     private static int spawnRadius;
     private final List<Player> flying = new ArrayList<>();
     private final List<Player> boosted = new ArrayList<>();
+    YVtils main = YVtils.getInstance();
 
     public SpawnElytra() {
 
@@ -63,6 +60,10 @@ public class SpawnElytra implements Listener {
                 }, 5);
             }
         }), 0, 3);
+    }
+
+    public static SpawnElytra getInstance() {
+        return instance;
     }
 
     public void onWorldChange(PlayerChangedWorldEvent e) {

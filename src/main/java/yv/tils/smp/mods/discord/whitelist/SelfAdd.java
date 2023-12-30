@@ -25,11 +25,10 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @since 4.6.6
  * @version 4.6.8.1
+ * @since 4.6.6
  */
 public class SelfAdd extends ListenerAdapter {
-
     //DiscordID: Minecraft Username + UUID -> Example: 682309366883680269: WolfiiYV aab8f297-b6f0-4ebb-a064-9968e1a1cc45
 
     YamlConfiguration config = new DiscordConfigManager().ConfigRequest();
@@ -64,7 +63,7 @@ public class SelfAdd extends ListenerAdapter {
 
             try {
                 URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + name);
-                HttpURLConnection http = (HttpURLConnection)url.openConnection();
+                HttpURLConnection http = (HttpURLConnection) url.openConnection();
                 int statusCode = http.getResponseCode();
                 if (statusCode == HttpURLConnection.HTTP_OK) {
                     if (new ImportWhitelist().reader(UserID, null, null).contains(UserID)) {
@@ -98,7 +97,8 @@ public class SelfAdd extends ListenerAdapter {
                                     for (String s : roles) {
                                         e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(s)).queue();
                                     }
-                                }catch (NumberFormatException ignored) {}
+                                } catch (NumberFormatException ignored) {
+                                }
 
                                 Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(Prefix.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_CHANGE), list1, list2));
                                 channel.sendMessageEmbeds(new AccountChange().Embed(whitelist.get(1), e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
@@ -107,13 +107,14 @@ public class SelfAdd extends ListenerAdapter {
                                         player.setWhitelisted(true);
                                     }
                                 }.runTask(YVtils.getInstance());
-                                YVtils.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
+                                YVtils.getInstance().whitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
                                 new DiscordConfigManager().LinkedWriter(UserID, player.getName() + " " + player.getUniqueId());
-                            }catch (HierarchyException ignored) {
+                            } catch (HierarchyException ignored) {
                                 channel.sendMessageEmbeds(new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), e.getGuild()).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
                             }
-                        }catch (IllegalArgumentException ignored) {}
-                    }else {
+                        } catch (IllegalArgumentException ignored) {
+                        }
+                    } else {
                         List<String> list1 = new ArrayList<>();
                         List<String> list2 = new ArrayList<>();
                         list1.add("DISCORDUSER");
@@ -133,7 +134,8 @@ public class SelfAdd extends ListenerAdapter {
                                     for (String s : roles) {
                                         e.getGuild().addRoleToMember(e.getMember(), e.getGuild().getRoleById(s)).queue();
                                     }
-                                }catch (NumberFormatException ignored) {}
+                                } catch (NumberFormatException ignored) {
+                                }
 
                                 Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(Prefix.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_ADD), list1, list2));
                                 channel.sendMessageEmbeds(new AccountAdded().Embed(e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(5, TimeUnit.SECONDS);
@@ -144,14 +146,15 @@ public class SelfAdd extends ListenerAdapter {
                                     }
                                 }.runTask(YVtils.getInstance());
 
-                                YVtils.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
+                                YVtils.getInstance().whitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
                                 new DiscordConfigManager().LinkedWriter(UserID, player.getName() + " " + player.getUniqueId());
-                            }catch (HierarchyException ignored) {
+                            } catch (HierarchyException ignored) {
                                 channel.sendMessageEmbeds(new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), e.getGuild()).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
                             }
-                        }catch (IllegalArgumentException ignored) {}
+                        } catch (IllegalArgumentException ignored) {
+                        }
                     }
-                }else if (statusCode == HttpURLConnection.HTTP_BAD_REQUEST) {
+                } else if (statusCode == HttpURLConnection.HTTP_BAD_REQUEST) {
                     List<String> list1 = new ArrayList<>();
                     List<String> list2 = new ArrayList<>();
                     list1.add("DISCORDUSER");
@@ -162,7 +165,7 @@ public class SelfAdd extends ListenerAdapter {
                     channel.deleteMessageById(MessageId).queue();
                     Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_WRONG), list1, list2));
                     channel.sendMessageEmbeds(new AccountNotFound().Embed(e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
-                }else {
+                } else {
                     List<String> list1 = new ArrayList<>();
                     List<String> list2 = new ArrayList<>();
                     list1.add("DISCORDUSER");
@@ -173,15 +176,19 @@ public class SelfAdd extends ListenerAdapter {
                     channel.deleteMessageById(MessageId).queue();
                     Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_REGISTERED_NAME_SERVERERROR_CHECK_INPUT), list1, list2));
                     channel.sendMessageEmbeds(new AccountCheckError().Embed(e.getMessage().getContentRaw()).build()).complete().delete().queueAfter(15, TimeUnit.SECONDS);
-                }} catch (IOException ignored) {}}}
+                }
+            } catch (IOException ignored) {
+            }
+        }
+    }
 
 
     private void whitelistAdd(String dc, String mc, String uuid) {
-        YVtils.getInstance().WhitelistManager.add(dc + "," + mc + "," + uuid);
+        YVtils.getInstance().whitelistManager.add(dc + "," + mc + "," + uuid);
     }
 
     private void whitelistRemove(String dc, String mc, String uuid) {
-        YVtils.getInstance().WhitelistManager.remove(dc + "," + mc + "," + uuid);
+        YVtils.getInstance().whitelistManager.remove(dc + "," + mc + "," + uuid);
     }
 
 }

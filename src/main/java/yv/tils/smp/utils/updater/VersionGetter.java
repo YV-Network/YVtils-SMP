@@ -56,7 +56,7 @@ public class VersionGetter {
             list2.add("https://modrinth.com/plugin/yvtils_smp");
 
             Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.PLUGIN_UPDATE_AVAILABLE), list1, list2));
-        }else {
+        } else {
             List<String> list1 = new ArrayList();
             List<String> list2 = new ArrayList();
             list1.add("PREFIXNOUPDATE");
@@ -82,6 +82,7 @@ public class VersionGetter {
                     content.append(line);
                 }
                 reader.close();
+                connection.disconnect();
 
                 version = content.toString();
             } else {

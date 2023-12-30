@@ -23,8 +23,8 @@ public class Speed implements CommandExecutor, TabCompleter {
     List<Float> speedList = List.of(
             -1.0f, -0.9f, -0.8f, -0.7f, -0.6f,
             -0.5f, -0.4f, -0.3f, -0.2f, -0.1f,
-            0.0f,  0.1f,  0.2f,  0.3f,  0.4f,
-            0.5f,  0.6f,  0.7f,  0.8f,  0.9f,  1.0f
+            0.0f, 0.1f, 0.2f, 0.3f, 0.4f,
+            0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f
     );
 
     @Override
@@ -56,19 +56,19 @@ public class Speed implements CommandExecutor, TabCompleter {
         if (args[0].equalsIgnoreCase("reset")) {
             resetSpeed(sender, args);
             return false;
-        }else {
+        } else {
             try {
                 speed = Float.parseFloat(args[0]);
 
                 if (speed > 10.0f || speed < -10.0f) {
                     sendUsage(sender);
                     return false;
-                }else if (!speedList.contains(speed)) {
-                    speed = speed/10;
+                } else if (!speedList.contains(speed)) {
+                    speed = speed / 10;
                 }
             } catch (NumberFormatException ignored) {
-               sendUsage(sender);
-               return false;
+                sendUsage(sender);
+                return false;
             }
         }
 
@@ -83,7 +83,7 @@ public class Speed implements CommandExecutor, TabCompleter {
                 Player player = (Player) sender;
                 changeSpeed(player, speed);
                 player.sendMessage(speedChangeSelf);
-            }else if (args.length == 2) {
+            } else if (args.length == 2) {
                 Player player = Bukkit.getPlayer(args[1]);
                 changeSpeed(player, speed);
                 sender.sendMessage(speedChangeOther);
@@ -91,7 +91,7 @@ public class Speed implements CommandExecutor, TabCompleter {
             } else {
                 sendUsage(sender);
             }
-        }else if (args.length != 2) {
+        } else if (args.length != 2) {
             sender.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_ARGUMENT_MISSING));
             sendUsage(sender);
         } else {
@@ -121,7 +121,7 @@ public class Speed implements CommandExecutor, TabCompleter {
                 Player player = (Player) sender;
                 changeSpeed(player, 0.2f);
                 player.sendMessage(speedResetSelf);
-            }else if (args.length == 2) {
+            } else if (args.length == 2) {
                 Player player = Bukkit.getPlayer(args[1]);
                 changeSpeed(player, 0.2f);
                 sender.sendMessage(speedResetOther);
@@ -129,7 +129,7 @@ public class Speed implements CommandExecutor, TabCompleter {
             } else {
                 sendUsage(sender);
             }
-        }else if (args.length != 2) {
+        } else if (args.length != 2) {
             sender.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_ARGUMENT_MISSING));
             sendUsage(sender);
         } else {
@@ -158,7 +158,7 @@ public class Speed implements CommandExecutor, TabCompleter {
             result.add("reset");
             result.add("<-10 - 10>");
             return result;
-        }else {
+        } else {
             return null;
         }
     }

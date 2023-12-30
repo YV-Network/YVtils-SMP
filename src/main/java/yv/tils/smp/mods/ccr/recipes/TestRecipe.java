@@ -14,8 +14,8 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @since 4.6.7
  * @version 4.6.7
+ * @since 4.6.7
  * @deprecated
  */
 public class TestRecipe {
@@ -68,7 +68,7 @@ public class TestRecipe {
         int multiplier = (int) smallest;
 
         ItemStack item = new ItemStack(Material.DIRT);
-        item.setAmount(2*multiplier);
+        item.setAmount(2 * multiplier);
         ItemMeta meta = item.getItemMeta();
         List<String> lore = new ArrayList<>();
         final String Enchants = String.valueOf(InPut.getEnchantments());
@@ -101,7 +101,7 @@ public class TestRecipe {
             meta.addEnchant(Enchantment.getByName(InPutEnchantment), InPutEnchantmentLevel, true);
         }
 
-        meta.setDisplayName("§cPreview §8(§e" + 2*multiplier + "x§8)");
+        meta.setDisplayName("§cPreview §8(§e" + 2 * multiplier + "x§8)");
         meta.setUnbreakable(true);
         meta.addEnchant(Enchantment.DIG_SPEED, 15, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
@@ -139,13 +139,13 @@ public class TestRecipe {
         if (smallest > U2N) smallest = U2N;
         int multiplier = (int) smallest;
 
-        InPut.setAmount((int) (InPut.getAmount()-smallest));
-        Upgrade1.setAmount((int) (Upgrade1.getAmount()-smallest));
-        Upgrade2.setAmount((int) (Upgrade2.getAmount()-smallest));
+        InPut.setAmount((int) (InPut.getAmount() - smallest));
+        Upgrade1.setAmount((int) (Upgrade1.getAmount() - smallest));
+        Upgrade2.setAmount((int) (Upgrade2.getAmount() - smallest));
 
 
         ItemStack item = new ItemStack(Material.DIRT);
-        item.setAmount(2*multiplier);
+        item.setAmount(2 * multiplier);
         ItemMeta meta = item.getItemMeta();
         List<String> lore = new ArrayList<>();
         final String Enchants = String.valueOf(InPut.getEnchantments());

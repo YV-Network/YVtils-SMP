@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @since 4.6.7
  * @version 4.6.7
+ * @since 4.6.7
  */
 public class LightBlockRecipe {
 
@@ -45,6 +45,7 @@ public class LightBlockRecipe {
         }
         return false;
     }
+
     public boolean on_Input_SL(Inventory inv) {
         if (inv.getItem(20) != null) {
             InPut2.setItemMeta(inv.getItem(20).getItemMeta());
@@ -65,7 +66,7 @@ public class LightBlockRecipe {
         }
         return false;
     }
-    
+
     public ItemStack on_Output_create(Inventory inv) {
         ItemStack GInPut = inv.getItem(20);
         ItemStack GUpgrade1 = inv.getItem(13);
@@ -80,18 +81,18 @@ public class LightBlockRecipe {
         int multiplier = (int) smallest;
 
         ItemStack item = new ItemStack(Material.LIGHT);
-        item.setAmount(8*multiplier);
+        item.setAmount(8 * multiplier);
         ItemMeta meta = item.getItemMeta();
         List<String> lore = new ArrayList<>();
 
         if (YVtils.getInstance().getConfig().getString("Language").equals("en")) {
-            meta.setDisplayName("§cPreview §8(§e" + 4*multiplier + "x§8)");
+            meta.setDisplayName("§cPreview §8(§e" + 4 * multiplier + "x§8)");
             meta.addEnchant(Enchantment.MENDING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
             lore.add("§eLight Block");
             lore.add("Invisibility I");
-        }else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
-            meta.setDisplayName("§cVorschau §8(§e" + 4*multiplier + "x§8)");
+        } else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
+            meta.setDisplayName("§cVorschau §8(§e" + 4 * multiplier + "x§8)");
             meta.addEnchant(Enchantment.MENDING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
             lore.add("§eLicht Block");
@@ -99,7 +100,7 @@ public class LightBlockRecipe {
         }
 
         meta.setLore(lore);
-        
+
         item.setItemMeta(meta);
 
         //Recipe Checker
@@ -108,7 +109,7 @@ public class LightBlockRecipe {
         meta_recipe_check.setDisplayName(" ");
         recipe_check.setItemMeta(meta_recipe_check);
 
-        for (int i : new int[]{10,19,28,16,25,34}) {
+        for (int i : new int[]{10, 19, 28, 16, 25, 34}) {
             inv.setItem(i, recipe_check);
         }
 
@@ -128,12 +129,12 @@ public class LightBlockRecipe {
         if (smallest > U2N) smallest = U2N;
         int multiplier = (int) smallest;
 
-        GInPut.setAmount((int) (GInPut.getAmount()-smallest));
-        GUpgrade1.setAmount((int) (GUpgrade1.getAmount()-smallest));
-        GUpgrade2.setAmount((int) (GUpgrade2.getAmount()-smallest));
+        GInPut.setAmount((int) (GInPut.getAmount() - smallest));
+        GUpgrade1.setAmount((int) (GUpgrade1.getAmount() - smallest));
+        GUpgrade2.setAmount((int) (GUpgrade2.getAmount() - smallest));
 
         ItemStack item = new ItemStack(Material.LIGHT);
-        item.setAmount(8*multiplier);
+        item.setAmount(8 * multiplier);
         ItemMeta meta = item.getItemMeta();
         List<String> lore = new ArrayList<>();
 
@@ -142,7 +143,7 @@ public class LightBlockRecipe {
             meta.addEnchant(Enchantment.MENDING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
             lore.add("Invisibility I");
-        }else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
+        } else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
             meta.setDisplayName("§eLicht Block");
             meta.addEnchant(Enchantment.MENDING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);

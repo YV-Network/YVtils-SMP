@@ -9,10 +9,11 @@ import yv.tils.smp.utils.internalapi.StringReplacer;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * @since 4.6.8
  * @version 4.6.8.1
+ * @since 4.6.8
  */
 public class RoleHierarchyError {
     EmbedBuilder builder = new EmbedBuilder();
@@ -23,8 +24,8 @@ public class RoleHierarchyError {
         String[] roles = role.split(",");
         Role role1;
 
-        java.util.List<String> list1 = new ArrayList();
-        java.util.List<String> list2 = new ArrayList();
+        List<String> list1 = new ArrayList();
+        List<String> list2 = new ArrayList();
         list1.add("ROLE");
 
         for (String s : roles) {

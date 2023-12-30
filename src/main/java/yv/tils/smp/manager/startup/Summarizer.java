@@ -4,8 +4,8 @@ import yv.tils.smp.YVtils;
 import yv.tils.smp.utils.internalapi.Log;
 
 /**
- * @since 4.6.8
  * @version 4.6.8
+ * @since 4.6.8
  */
 public class Summarizer {
     public void onEnable() throws Exception {

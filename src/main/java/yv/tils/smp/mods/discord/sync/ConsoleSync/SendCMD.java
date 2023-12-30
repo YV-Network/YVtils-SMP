@@ -20,8 +20,9 @@ public class SendCMD extends ListenerAdapter {
 
         TextChannel channel = e.getChannel().asTextChannel();
 
-        if (!channel.getId().equals(new DiscordConfigManager().ConfigRequest().getString("ConsoleSync.Channel"))) return;
-        if(e.getAuthor().isBot()) return;
+        if (!channel.getId().equals(new DiscordConfigManager().ConfigRequest().getString("ConsoleSync.Channel")))
+            return;
+        if (e.getAuthor().isBot()) return;
 
         Message msg = e.getMessage();
         String contentDisplay = msg.getContentDisplay();

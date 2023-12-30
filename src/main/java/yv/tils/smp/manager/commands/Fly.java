@@ -28,11 +28,13 @@ import java.util.UUID;
  * @since CH2-1.0.0
  */
 public class Fly implements CommandExecutor, Listener {
-    private static Fly instance;
-    public static Fly getInstance() {return instance;}
-
     public static Map<UUID, Boolean> fly = new HashMap<>();
     public static Map<UUID, Boolean> airAfter = new HashMap<>();
+    private static Fly instance;
+
+    public static Fly getInstance() {
+        return instance;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -46,7 +48,7 @@ public class Fly implements CommandExecutor, Listener {
             } else {
                 sendUsage(sender);
             }
-        }else if (args.length != 1) {
+        } else if (args.length != 1) {
             sender.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_ARGUMENT_MISSING));
         } else {
             otherFly(Bukkit.getPlayer(args[0]), sender);

@@ -12,12 +12,12 @@ import org.apache.logging.log4j.core.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.mods.discord.sync.ChatSync;
-import yv.tils.smp.mods.discord.sync.stats.StatsDescription;
 import yv.tils.smp.mods.discord.CommandManager.CommandHandler;
 import yv.tils.smp.mods.discord.CommandManager.CommandRegister;
+import yv.tils.smp.mods.discord.sync.ChatSync;
 import yv.tils.smp.mods.discord.sync.ConsoleSync.GetConsole;
 import yv.tils.smp.mods.discord.sync.ConsoleSync.SendCMD;
+import yv.tils.smp.mods.discord.sync.stats.StatsDescription;
 import yv.tils.smp.mods.discord.whitelist.ForceRemove;
 import yv.tils.smp.mods.discord.whitelist.SelfAdd;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
@@ -27,42 +27,38 @@ import yv.tils.smp.utils.configs.language.LanguageMessage;
 import java.io.File;
 
 /**
- * @since 4.6.6
  * @version 4.6.8.1
+ * @since 4.6.6
  */
 public class BotStartStop {
 
+    private static BotStartStop instance;
+    public JDA jda;
     File file1 = new File(YVtils.getInstance().getDataFolder(), "Discord/config.yml");
     YamlConfiguration modifyFile1 = YamlConfiguration.loadConfiguration(file1);
-
     String token = modifyFile1.getString("BotToken");
+    JDABuilder builder = JDABuilder.createDefault(token);
     String mainGuild = modifyFile1.getString("MainGuild");
     String status = modifyFile1.getString("BotSettings.OnlineStatus");
     String activity = modifyFile1.getString("BotSettings.Activity");
     String activitymessage = modifyFile1.getString("BotSettings.ActivityMessage");
     String logChannel = modifyFile1.getString("LogChannel");
-
-    public JDA jda;
-    private static BotStartStop instance;
-
     private GetConsole appender;
     private Logger logger;
 
-   //USE VERSION
+    public static BotStartStop getInstance() {
+        return instance;
+    }
+
+    //USE VERSION
     public void TokenCheck() {
-        if (token.equals(LanguageFile.DirectFormatter("YOUR TOKEN HERE","DEINEN BOT TOKEN"))) {
+        if (token.equals(LanguageFile.DirectFormatter("YOUR TOKEN HERE", "DEINEN BOT TOKEN"))) {
             Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_NO_BOT_TOKEN_GIVEN));
             Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FAILED));
-        }else {
+        } else {
             instance = this;
             BotSettings();
         }
-    }
-
-    JDABuilder builder = JDABuilder.createDefault(token);
-
-    public static BotStartStop getInstance() {
-        return instance;
     }
 
     public void BotSettings() {
@@ -105,7 +101,7 @@ public class BotStartStop {
 
         try {
             jda = builder.build();
-        }catch (InvalidTokenException e) {
+        } catch (InvalidTokenException e) {
             Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_STARTUP_FAILED));
         }
 
@@ -126,7 +122,8 @@ public class BotStartStop {
             try {
                 this.logger = (Logger) LogManager.getRootLogger();
                 this.logger.addAppender(this.appender);
-            } catch (Exception ignored) {}
+            } catch (Exception ignored) {
+            }
             this.appender.sendMessages();
         }
     }
@@ -141,4 +138,7 @@ public class BotStartStop {
                 System.out.println("------------------------");
                 e.getCause();
                 System.out.println("------------------------");
-            }}}}
+            }
+        }
+    }
+}

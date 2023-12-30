@@ -19,8 +19,8 @@ import java.text.SimpleDateFormat;
  */
 public class GetConsole extends AbstractAppender {
     private final YVtils plugin;
-    private String messages = "";
     private final JDA jda;
+    private String messages = "";
 
     public GetConsole(YVtils plugin, JDA jda) {
         super("MyLogAppender" + System.currentTimeMillis(), null, null);
@@ -66,7 +66,8 @@ public class GetConsole extends AbstractAppender {
                             this.cancel();
                         }
                     }
-                } catch (NullPointerException ignored) {}
+                } catch (NullPointerException ignored) {
+                }
 
                 GetConsole.this.messages = "";
             }

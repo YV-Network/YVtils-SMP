@@ -20,8 +20,8 @@ import java.util.Objects;
 
 
 /**
- * @since 4.6.7
  * @version 4.6.7
+ * @since 4.6.7
  */
 public class InvFrameRecipe {
 
@@ -50,6 +50,7 @@ public class InvFrameRecipe {
         }
         return false;
     }
+
     public boolean on_Input_GF(Inventory inv) {
         if (inv.getItem(20) != null) {
             InPut2.setItemMeta(inv.getItem(20).getItemMeta());
@@ -70,7 +71,7 @@ public class InvFrameRecipe {
         }
         return false;
     }
-    
+
     public ItemStack on_Output_create(Inventory inv) {
         ItemStack GInPut = inv.getItem(20);
         ItemStack GUpgrade1 = inv.getItem(13);
@@ -85,13 +86,13 @@ public class InvFrameRecipe {
         int multiplier = (int) smallest;
 
         ItemStack item = new ItemStack(Material.ITEM_FRAME);
-        item.setAmount(4*multiplier);
+        item.setAmount(4 * multiplier);
         List<String> lore = new ArrayList<>();
 
         ItemStack invis = null;
         try {
             //Gives Item Meta for the Invisible Item Frame
-            String invismeta ="rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABHQAAj09dAABdnQABHR5cGV0AARtZXRhdXEAfgAGAAAABHQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAwwdAAKSVRFTV9GUkFNRXNxAH4AAHNxAH4AA3VxAH4ABgAAAANxAH4ACHQACW1ldGEtdHlwZXQACGludGVybmFsdXEAfgAGAAAAA3QACEl0ZW1NZXRhdAAKRU5USVRZX1RBR3QAREg0c0lBQUFBQUFBQS8rTmlZT0JpNEhUTks4a3NxUXhKVEdkazRQVE1LOHNzemt6S1NXVmtZQUFBd3RIM3BoNEFBQUE9";
+            String invismeta = "rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABHQAAj09dAABdnQABHR5cGV0AARtZXRhdXEAfgAGAAAABHQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAwwdAAKSVRFTV9GUkFNRXNxAH4AAHNxAH4AA3VxAH4ABgAAAANxAH4ACHQACW1ldGEtdHlwZXQACGludGVybmFsdXEAfgAGAAAAA3QACEl0ZW1NZXRhdAAKRU5USVRZX1RBR3QAREg0c0lBQUFBQUFBQS8rTmlZT0JpNEhUTks4a3NxUXhKVEdkazRQVE1LOHNzemt6S1NXVmtZQUFBd3RIM3BoNEFBQUE9";
             ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(invismeta));
             BukkitObjectInputStream dataInput = new BukkitObjectInputStream(inputStream);
 
@@ -104,13 +105,13 @@ public class InvFrameRecipe {
         ItemMeta meta = invis.getItemMeta();
 
         if (YVtils.getInstance().getConfig().getString("Language").equals("en")) {
-            meta.setDisplayName("§cPreview §8(§e" + 4*multiplier + "x§8)");
+            meta.setDisplayName("§cPreview §8(§e" + 4 * multiplier + "x§8)");
             meta.addEnchant(Enchantment.MENDING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
             lore.add("§eInvisible Item Frame");
             lore.add("Invisibility I");
-        }else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
-            meta.setDisplayName("§cVorschau §8(§e" + 4*multiplier + "x§8)");
+        } else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
+            meta.setDisplayName("§cVorschau §8(§e" + 4 * multiplier + "x§8)");
             meta.addEnchant(Enchantment.MENDING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
             lore.add("§eUnsichtbarer Rahmen");
@@ -126,7 +127,7 @@ public class InvFrameRecipe {
         meta_recipe_check.setDisplayName(" ");
         recipe_check.setItemMeta(meta_recipe_check);
 
-        for (int i : new int[]{10,19,28,16,25,34}) {
+        for (int i : new int[]{10, 19, 28, 16, 25, 34}) {
             inv.setItem(i, recipe_check);
         }
 
@@ -146,18 +147,18 @@ public class InvFrameRecipe {
         if (smallest > U2N) smallest = U2N;
         int multiplier = (int) smallest;
 
-        GInPut.setAmount((int) (GInPut.getAmount()-smallest));
-        GUpgrade1.setAmount((int) (GUpgrade1.getAmount()-smallest));
-        GUpgrade2.setAmount((int) (GUpgrade2.getAmount()-smallest));
+        GInPut.setAmount((int) (GInPut.getAmount() - smallest));
+        GUpgrade1.setAmount((int) (GUpgrade1.getAmount() - smallest));
+        GUpgrade2.setAmount((int) (GUpgrade2.getAmount() - smallest));
 
         ItemStack item = new ItemStack(Material.ITEM_FRAME);
-        item.setAmount(4*multiplier);
+        item.setAmount(4 * multiplier);
         List<String> lore = new ArrayList<>();
 
         ItemStack invis = null;
         try {
             //Gives Item Meta for the Invisible Item Frame
-            String invismeta ="rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABHQAAj09dAABdnQABHR5cGV0AARtZXRhdXEAfgAGAAAABHQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAwwdAAKSVRFTV9GUkFNRXNxAH4AAHNxAH4AA3VxAH4ABgAAAANxAH4ACHQACW1ldGEtdHlwZXQACGludGVybmFsdXEAfgAGAAAAA3QACEl0ZW1NZXRhdAAKRU5USVRZX1RBR3QAREg0c0lBQUFBQUFBQS8rTmlZT0JpNEhUTks4a3NxUXhKVEdkazRQVE1LOHNzemt6S1NXVmtZQUFBd3RIM3BoNEFBQUE9";
+            String invismeta = "rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABHQAAj09dAABdnQABHR5cGV0AARtZXRhdXEAfgAGAAAABHQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAwwdAAKSVRFTV9GUkFNRXNxAH4AAHNxAH4AA3VxAH4ABgAAAANxAH4ACHQACW1ldGEtdHlwZXQACGludGVybmFsdXEAfgAGAAAAA3QACEl0ZW1NZXRhdAAKRU5USVRZX1RBR3QAREg0c0lBQUFBQUFBQS8rTmlZT0JpNEhUTks4a3NxUXhKVEdkazRQVE1LOHNzemt6S1NXVmtZQUFBd3RIM3BoNEFBQUE9";
             ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(invismeta));
             BukkitObjectInputStream dataInput = new BukkitObjectInputStream(inputStream);
 
@@ -174,7 +175,7 @@ public class InvFrameRecipe {
             meta.addEnchant(Enchantment.MENDING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);
             lore.add("Invisibility I");
-        }else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
+        } else if (YVtils.getInstance().getConfig().getString("Language").equals("de")) {
             meta.setDisplayName("§eUnsichtbarer Rahmen");
             meta.addEnchant(Enchantment.MENDING, 1, true);
             meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE);

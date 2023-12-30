@@ -6,8 +6,8 @@ import yv.tils.smp.YVtils;
 import java.io.File;
 
 /**
- * @since CH2-1.0.0
  * @version CH2-1.0.0
+ * @since CH2-1.0.0
  */
 public class FileGenerator {
     private void doNotEdit() {
@@ -52,7 +52,7 @@ public class FileGenerator {
 
     private void generateFolders(String folder) {
         File dataFolder = new File(YVtils.getInstance().getDataFolder() + "/" + folder);
-        if(!dataFolder.exists()) {
+        if (!dataFolder.exists()) {
             dataFolder.mkdir();
         }
     }

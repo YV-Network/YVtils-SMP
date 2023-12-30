@@ -34,7 +34,7 @@ public class ServerInfoEmbed {
             MC_Name = playerwhitelistget.getName();
         }
 
-        boolean viaVersion = Bukkit.getServer().getPluginManager().getPlugin("ViaVersion")!=null;
+        boolean viaVersion = Bukkit.getServer().getPluginManager().getPlugin("ViaVersion") != null;
 
         String ServerVersionLong = Bukkit.getServer().getVersion();
         String[] Version = ServerVersionLong.split(": ");

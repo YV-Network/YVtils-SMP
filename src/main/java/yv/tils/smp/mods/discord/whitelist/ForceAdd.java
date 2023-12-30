@@ -22,20 +22,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @version 4.6.8
- * @since 4.6.8.1
+ * @version 4.6.8.1
+ * @since 4.6.8
  */
 public class ForceAdd {
 
     public EmbedBuilder onMessageReceived(String mc, Member dc, Member exec, Guild guild) {
         OfflinePlayer player = Bukkit.getOfflinePlayer(mc);
-        String UserID = "~"  + mc;
-        String UserName = "~" + mc;
+        String userID = "~" + mc;
+        String userName = "~" + mc;
 
         try {
-            UserID = dc.getUser().getId();
-            UserName = dc.getUser().getGlobalName();
-        }catch (NullPointerException ignored) {}
+            userID = dc.getUser().getId();
+            userName = dc.getUser().getGlobalName();
+        } catch (NullPointerException ignored) {
+        }
 
         if (!mc.matches("[a-zA-Z0-9_]+")) {
             //Account can't exist
@@ -50,22 +51,22 @@ public class ForceAdd {
         try {
             //Searching for Minecraft Account
             URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + mc);
-            HttpURLConnection http = (HttpURLConnection)url.openConnection();
+            HttpURLConnection http = (HttpURLConnection) url.openConnection();
             int statusCode = http.getResponseCode();
             if (statusCode == HttpURLConnection.HTTP_OK) {
-                if (new ImportWhitelist().reader(UserID, null, null).contains(UserID)) {
+                if (new ImportWhitelist().reader(userID, null, null).contains(userID)) {
 
-                    List<String> whitelist = new ImportWhitelist().reader(UserID, null, null);
+                    List<String> whitelist = new ImportWhitelist().reader(userID, null, null);
 
-                    OfflinePlayer playerwhitelistremove = Bukkit.getOfflinePlayer(whitelist.get(1));
+                    OfflinePlayer playerWhitelistRemove = Bukkit.getOfflinePlayer(whitelist.get(1));
 
                     new BukkitRunnable() {
                         public void run() {
-                            playerwhitelistremove.setWhitelisted(false);
+                            playerWhitelistRemove.setWhitelisted(false);
                         }
                     }.runTask(YVtils.getInstance());
 
-                    whitelistRemove(UserID, playerwhitelistremove.getName(), playerwhitelistremove.getUniqueId().toString());
+                    whitelistRemove(userID, playerWhitelistRemove.getName(), playerWhitelistRemove.getUniqueId().toString());
 
                     List<String> list1 = new ArrayList();
                     List<String> list2 = new ArrayList();
@@ -85,9 +86,9 @@ public class ForceAdd {
                                 player.setWhitelisted(true);
                             }
                         }.runTask(YVtils.getInstance());
-                        YVtils.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
-                        new DiscordConfigManager().LinkedWriter(UserID, mc+ " " + player.getUniqueId());
-                    }else {
+                        YVtils.getInstance().whitelistManager.add(userID + "," + player.getName() + "," + player.getUniqueId());
+                        new DiscordConfigManager().LinkedWriter(userID, mc + " " + player.getUniqueId());
+                    } else {
                         try {
                             try {
                                 String role = new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role");
@@ -98,30 +99,31 @@ public class ForceAdd {
                                     for (int i = 0; i < roles.length; i++) {
                                         guild.addRoleToMember(dc, guild.getRoleById(roles[i])).queue();
                                     }
-                                }catch (NumberFormatException ignored) {}
+                                } catch (NumberFormatException ignored) {
+                                }
 
                                 new BukkitRunnable() {
                                     public void run() {
                                         player.setWhitelisted(true);
                                     }
                                 }.runTask(YVtils.getInstance());
-                                YVtils.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
-                                new DiscordConfigManager().LinkedWriter(UserID, mc + " " + player.getUniqueId());
+                                YVtils.getInstance().whitelistManager.add(userID + "," + player.getName() + "," + player.getUniqueId());
+                                new DiscordConfigManager().LinkedWriter(userID, mc + " " + player.getUniqueId());
                             } catch (HierarchyException ignored) {
                                 return new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), guild);
                             }
-                        } catch (IllegalArgumentException ignored) {}
+                        } catch (IllegalArgumentException ignored) {
+                        }
                     }
                     Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(Prefix.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_CHANGE), list1, list2));
-                    return new yv.tils.smp.mods.discord.EmbedManager.whitelist.discord.ForceAdd().Replace(UserName, whitelist.get(1), mc);
-                }else {
-
-                    List<String> list1 = new ArrayList();
-                    List<String> list2 = new ArrayList();
+                    return new yv.tils.smp.mods.discord.EmbedManager.whitelist.discord.ForceAdd().Replace(userName, whitelist.get(1), mc);
+                } else {
+                    List<String> list1 = new ArrayList<>();
+                    List<String> list2 = new ArrayList<>();
                     list1.add("DISCORDUSER");
                     list2.add(exec.getUser().getGlobalName());
                     list1.add("DCNAME");
-                    list2.add(UserName);
+                    list2.add(userName);
                     list1.add("MCNAME");
                     list2.add(mc);
 
@@ -132,9 +134,9 @@ public class ForceAdd {
                                 player.setWhitelisted(true);
                             }
                         }.runTask(YVtils.getInstance());
-                        YVtils.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
-                        new DiscordConfigManager().LinkedWriter(UserID, mc+ " " + player.getUniqueId());
-                    }else {
+                        YVtils.getInstance().whitelistManager.add(userID + "," + player.getName() + "," + player.getUniqueId());
+                        new DiscordConfigManager().LinkedWriter(userID, mc + " " + player.getUniqueId());
+                    } else {
                         try {
                             try {
                                 String role = new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role");
@@ -145,53 +147,58 @@ public class ForceAdd {
                                     for (int i = 0; i < roles.length; i++) {
                                         guild.addRoleToMember(dc, guild.getRoleById(roles[i])).queue();
                                     }
-                                }catch (NumberFormatException ignored) {}
+                                } catch (NumberFormatException ignored) {
+                                }
 
                                 new BukkitRunnable() {
                                     public void run() {
                                         player.setWhitelisted(true);
                                     }
                                 }.runTask(YVtils.getInstance());
-                                YVtils.getInstance().WhitelistManager.add(UserID + "," + player.getName() + "," + player.getUniqueId());
-                                new DiscordConfigManager().LinkedWriter(UserID, mc + " " + player.getUniqueId());
+                                YVtils.getInstance().whitelistManager.add(userID + "," + player.getName() + "," + player.getUniqueId());
+                                new DiscordConfigManager().LinkedWriter(userID, mc + " " + player.getUniqueId());
                             } catch (HierarchyException ignored) {
                                 return new RoleHierarchyError().Embed(new DiscordConfigManager().ConfigRequest().getString("WhitelistFeature.Role"), guild);
                             }
-                        } catch (IllegalArgumentException ignored) {}
+                        } catch (IllegalArgumentException ignored) {
+                        }
                     }
                     Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(Prefix.PREFIXDC + " §f" + LanguageFile.getMessage(LanguageMessage.MODULE_DISCORD_CMD_REGISTERED_ADD), list1, list2));
-                    return new yv.tils.smp.mods.discord.EmbedManager.whitelist.discord.ForceAdd().Embed(mc, UserName);
+                    return new yv.tils.smp.mods.discord.EmbedManager.whitelist.discord.ForceAdd().Embed(mc, userName);
                 }
-            }else if (statusCode == HttpURLConnection.HTTP_BAD_REQUEST) {
+            } else if (statusCode == HttpURLConnection.HTTP_BAD_REQUEST) {
 
                 List<String> list1 = new ArrayList();
                 List<String> list2 = new ArrayList();
                 list1.add("DISCORDUSER");
-                list2.add(UserName);
+                list2.add(userName);
                 list1.add("NAME");
                 list2.add(mc);
 
                 //Account not found
                 return new AccountNotFound().Embed(mc);
-            }else {
+            } else {
 
                 List<String> list1 = new ArrayList();
                 List<String> list2 = new ArrayList();
                 list1.add("DISCORDUSER");
-                list2.add(UserName);
+                list2.add(userName);
                 list1.add("NAME");
                 list2.add(mc);
 
                 //Server Error
                 return new AccountCheckError().Embed(mc);
-            }} catch (IOException ignored) {}
+            }
+        } catch (IOException ignored) {
+        }
         return null;
     }
 
     private void whitelistAdd(String dc, String mc, String uuid) {
-        YVtils.getInstance().WhitelistManager.add(dc + "," + mc + "," + uuid);
+        YVtils.getInstance().whitelistManager.add(dc + "," + mc + "," + uuid);
     }
 
     private void whitelistRemove(String dc, String mc, String uuid) {
-        YVtils.getInstance().WhitelistManager.remove(dc + "," + mc + "," + uuid);
-    }}
+        YVtils.getInstance().whitelistManager.remove(dc + "," + mc + "," + uuid);
+    }
+}

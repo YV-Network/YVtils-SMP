@@ -23,10 +23,9 @@ import java.util.List;
  */
 public class Maintenance implements CommandExecutor, TabCompleter {
 
+    public static boolean maintenance = false;
     File file = new File(YVtils.getInstance().getDataFolder(), "DoNotEdit.yml");
     YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(file);
-
-    public static boolean maintenance = false;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -49,16 +48,16 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                }else if (ymlFile.getString("MaintenanceMode").equals("false")) {
+                } else if (ymlFile.getString("MaintenanceMode").equals("false")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ALREADY_DEACTIVATED));
-                }else {
+                } else {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
                 }
             }
             case "true", "on" -> {
                 if (ymlFile.getString("MaintenanceMode").equals("true")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ALREADY_ACTIVATED));
-                }else if (ymlFile.getString("MaintenanceMode").equals("false")) {
+                } else if (ymlFile.getString("MaintenanceMode").equals("false")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     maintenance = true;
@@ -73,7 +72,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                             player1.kickPlayer(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_PLAYER_NOT_ALLOWED_TO_JOIN_KICK_MESSAGE));
                         }
                     }
-                }else {
+                } else {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
                 }
             }
@@ -88,7 +87,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                }else if (ymlFile.getString("MaintenanceMode").equals("false")) {
+                } else if (ymlFile.getString("MaintenanceMode").equals("false")) {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     Bukkit.getConsoleSender().sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_COMMAND_ACTIVATE));
                     maintenance = true;
@@ -103,7 +102,7 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                             player1.kickPlayer(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_PLAYER_NOT_ALLOWED_TO_JOIN_KICK_MESSAGE));
                         }
                     }
-                }else {
+                } else {
                     sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
                 }
             }
@@ -111,9 +110,9 @@ public class Maintenance implements CommandExecutor, TabCompleter {
                 if (ymlFile.get("MaintenanceMode") != null) {
                     if (ymlFile.getString("MaintenanceMode").equals("true")) {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_STATUS_ENABLED));
-                    }else if (ymlFile.getString("MaintenanceMode").equals("false")) {
+                    } else if (ymlFile.getString("MaintenanceMode").equals("false")) {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_STATUS_DISABLED));
-                    }else {
+                    } else {
                         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.MAINTENANCE_ILLEGAL_CONFIG_VALUE));
                     }
                 }

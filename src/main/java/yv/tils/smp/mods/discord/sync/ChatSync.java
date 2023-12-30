@@ -18,8 +18,8 @@ import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 
 /**
- * @since 4.6.8
  * @version CH2-1.0.0
+ * @since 4.6.8
  */
 public class ChatSync extends ListenerAdapter implements Listener {
 
@@ -45,7 +45,8 @@ public class ChatSync extends ListenerAdapter implements Listener {
         if (!e.getChannel().getId().equals(yml.getString("ChatSync.Channel"))) return;
 
         try {
-            if (!e.getMember().hasPermission(Permission.valueOf(new DiscordConfigManager().ConfigRequest().getString("ChatSync.Permission")))) return;
+            if (!e.getMember().hasPermission(Permission.valueOf(new DiscordConfigManager().ConfigRequest().getString("ChatSync.Permission"))))
+                return;
         } catch (IllegalArgumentException ignored) {
             if (!e.getMember().hasPermission(Permission.ADMINISTRATOR)) return;
         }
@@ -66,7 +67,7 @@ public class ChatSync extends ListenerAdapter implements Listener {
         try {
             TextChannel textChannel = BotStartStop.getInstance().jda.getTextChannelById(yml.getString("ChatSync.Channel"));
             textChannel.sendMessageEmbeds(new ChatSyncEmbed().Embed(sender, message).build()).queue();
-        }catch (NumberFormatException ignored) {
+        } catch (NumberFormatException ignored) {
             Bukkit.getLogger().severe("[YVtils-SMP -> ChatSync] " +
                     LanguageFile.DirectFormatter("Invalid channel ID: '" + yml.getString("ChatSync.Channel") + "'! Make sure to put a valid channel ID in the config file or disable this feature! (plugins/YVtils-SMP/Discord/config.yml/ChatSync)",
                             "Ungültige Kanal ID: '" + yml.getString("ChatSync.Channel") + "'! Kontrolliere/Korrigiere noch mal die Kanal ID in der Config oder deaktiviere diese Funktion! (plugins/YVtils-SMP/Discord/config.yml/ChatSync)"));

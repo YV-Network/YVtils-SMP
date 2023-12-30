@@ -4,11 +4,10 @@ import org.bukkit.Bukkit;
 import yv.tils.smp.YVtils;
 
 /**
- * @since 4.6.6
  * @version CH2-1.0.0
+ * @since 4.6.6
  */
 public class Log {
-
     private static int i = 1;
 
     public Log(String WhatLog) {

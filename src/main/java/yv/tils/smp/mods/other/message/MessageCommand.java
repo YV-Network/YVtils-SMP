@@ -23,6 +23,8 @@ import java.util.List;
  */
 public class MessageCommand implements CommandExecutor, TabCompleter {
 
+    List<String> arguments = new ArrayList<>();
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player player) {
@@ -112,7 +114,6 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
                 String senderReceiverDesign = list2.get(0);
 
 
-
                 Bukkit.getConsoleSender().sendMessage(senderReceiverDesign + " " + coloredMessage);
                 target.sendMessage(senderReceiverDesign + " " + coloredMessage);
             }
@@ -124,8 +125,6 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
         sender.sendMessage(LanguageFile.getMessage(LanguageMessage.COMMAND_USAGE) + " " + ChatColor.BLUE +
                 "/msg <player> <message>");
     }
-
-    List<String> arguments = new ArrayList<>();
 
     public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
 
@@ -139,7 +138,8 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
             for (String a : arguments) {
                 if (a.toLowerCase().startsWith(args[0].toLowerCase())) {
                     result.add(a);
-                }}
+                }
+            }
             return result;
         }
         return arguments;

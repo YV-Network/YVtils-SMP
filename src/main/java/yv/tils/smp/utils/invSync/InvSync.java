@@ -47,13 +47,13 @@ public class InvSync {
             Player target = Bukkit.getPlayer(MojangAPI.UUID2Name(InvSee.invSee.get(player.getUniqueId())));
 
             playerInvEdit(inv, target);
-        };
+        }
 
         if (player.getOpenInventory().getTitle().startsWith(invsee_ec)) {
             Player target = Bukkit.getPlayer(MojangAPI.UUID2Name(EcSee.ecSee.get(player.getUniqueId())));
 
             target.getEnderChest().setContents(inv.getContents());
-        };
+        }
 
         if (!player.getOpenInventory().getTitle().equals("Container Clone")) return;
 
@@ -63,10 +63,10 @@ public class InvSync {
         if (_containerLocation.getBlock().getType().equals(Material.CHEST)) {
             Chest container = (Chest) _containerLocation.getBlock().getState();
             container.getInventory().setContents(inv.getContents());
-        }else if (_containerLocation.getBlock().getType().equals(Material.BARREL)) {
+        } else if (_containerLocation.getBlock().getType().equals(Material.BARREL)) {
             Barrel container = (Barrel) _containerLocation.getBlock().getState();
             container.getInventory().setContents(inv.getContents());
-        }else if (_containerLocation.getBlock().getType().equals(Material.SHULKER_BOX)) {
+        } else if (_containerLocation.getBlock().getType().equals(Material.SHULKER_BOX)) {
             ShulkerBox container = (ShulkerBox) _containerLocation.getBlock().getState();
             container.getInventory().setContents(inv.getContents());
         }
@@ -75,7 +75,7 @@ public class InvSync {
     private void originalChange(Player player, Location location, Inventory inv) {
         if (location == null) return;
 
-        if (inv.getType().equals(InventoryType.CRAFTING) ) {
+        if (inv.getType().equals(InventoryType.CRAFTING)) {
             for (var entry : InvSee.invSee.entrySet()) {
                 if (entry.getValue().equals(player.getUniqueId())) {
                     Player containerSpy = Bukkit.getPlayer(MojangAPI.UUID2Name(entry.getKey()));
@@ -84,7 +84,7 @@ public class InvSync {
             }
         }
 
-        if (inv.getType().equals(InventoryType.ENDER_CHEST) ) {
+        if (inv.getType().equals(InventoryType.ENDER_CHEST)) {
             for (var entry : EcSee.ecSee.entrySet()) {
                 if (entry.getValue().equals(player.getUniqueId())) {
                     Player containerSpy = Bukkit.getPlayer(MojangAPI.UUID2Name(entry.getKey()));
@@ -109,8 +109,8 @@ public class InvSync {
         ItemStack offHand;
 
         offHand = inv.getItem(53);
-        armour = new ItemStack[] {inv.getItem(48), inv.getItem(47), inv.getItem(46), inv.getItem(45)};
-        invContent = new ItemStack[] {
+        armour = new ItemStack[]{inv.getItem(48), inv.getItem(47), inv.getItem(46), inv.getItem(45)};
+        invContent = new ItemStack[]{
                 inv.getItem(0), inv.getItem(1), inv.getItem(2),
                 inv.getItem(3), inv.getItem(4), inv.getItem(5),
                 inv.getItem(6), inv.getItem(7), inv.getItem(8),

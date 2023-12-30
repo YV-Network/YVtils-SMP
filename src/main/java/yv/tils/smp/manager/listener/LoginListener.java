@@ -6,8 +6,8 @@ import org.bukkit.event.player.PlayerLoginEvent;
 import yv.tils.smp.mods.server.mainteance.PlayerJoin;
 
 /**
- * @since CH2-1.0.0
  * @version CH2-1.0.0
+ * @since CH2-1.0.0
  */
 public class LoginListener implements Listener {
     @EventHandler

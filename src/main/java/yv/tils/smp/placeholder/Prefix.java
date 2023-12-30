@@ -5,8 +5,8 @@ import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 
 /**
- * @since 4.6.6
  * @version 4.6.6
+ * @since 4.6.6
  */
 public class Prefix {
     public static String PREFIX = YVtils.getInstance().getConfig().getString("Placeholder.PREFIX");

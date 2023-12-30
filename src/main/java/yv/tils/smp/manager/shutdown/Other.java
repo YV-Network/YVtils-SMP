@@ -10,8 +10,8 @@ import yv.tils.smp.utils.configs.language.CreateFile_de;
 import yv.tils.smp.utils.configs.language.CreateFile_en;
 
 /**
- * @since 4.6.8
  * @version CH2-1.0.0
+ * @since 4.6.8
  */
 public class Other {
 

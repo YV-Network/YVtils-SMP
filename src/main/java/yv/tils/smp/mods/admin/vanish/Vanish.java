@@ -31,17 +31,18 @@ import java.util.UUID;
  */
 public class Vanish implements CommandExecutor {
 
-    private static Vanish instance;
-    public static Vanish getInstance() {return instance;}
-
     public static Map<UUID, UUID> exec_target = new HashMap<>();
-
     public static Map<UUID, Boolean> vanish = new HashMap<>(); //Default: false
     public static Map<UUID, Boolean> alreadyVanished = new HashMap<>(); //Default: false
     public static Map<UUID, Integer> layer = new HashMap<>(); //Default: 1
     public static Map<UUID, Boolean> itemPickup = new HashMap<>(); //Default: false
     public static Map<UUID, Boolean> invInteraction = new HashMap<>(); //Default: true
     public static Map<UUID, Boolean> mobTarget = new HashMap<>(); //Default: true
+    private static Vanish instance;
+
+    public static Vanish getInstance() {
+        return instance;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -63,7 +64,7 @@ public class Vanish implements CommandExecutor {
 
             new VanishGUI().vanishGUI(player);
             return true;
-        }else {
+        } else {
             if (args[0].equals("quick") || args[0].equals("q")) {
                 if (!vanish.containsKey(player.getUniqueId())) vanish.put(player.getUniqueId(), false);
                 if (!layer.containsKey(player.getUniqueId())) layer.put(player.getUniqueId(), 1);
@@ -74,12 +75,12 @@ public class Vanish implements CommandExecutor {
                 if (vanish.get(player.getUniqueId())) {
                     new VanishGUI().vanishRegister(player, false);
                     disableVanish(player);
-                }else {
+                } else {
                     new VanishGUI().vanishRegister(player, true);
                     enableVanish(player);
                 }
                 return true;
-            }else {
+            } else {
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target == null) {
                     player.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_NOT_ONLINE));
@@ -91,13 +92,14 @@ public class Vanish implements CommandExecutor {
                         if (!vanish.containsKey(target.getUniqueId())) vanish.put(target.getUniqueId(), false);
                         if (!layer.containsKey(target.getUniqueId())) layer.put(target.getUniqueId(), 1);
                         if (!itemPickup.containsKey(target.getUniqueId())) itemPickup.put(target.getUniqueId(), false);
-                        if (!invInteraction.containsKey(target.getUniqueId())) invInteraction.put(target.getUniqueId(), true);
+                        if (!invInteraction.containsKey(target.getUniqueId()))
+                            invInteraction.put(target.getUniqueId(), true);
                         if (!mobTarget.containsKey(target.getUniqueId())) mobTarget.put(target.getUniqueId(), true);
 
                         if (vanish.get(target.getUniqueId())) {
                             new VanishGUI().vanishRegister(target, false);
                             disableVanish(target);
-                        }else {
+                        } else {
                             new VanishGUI().vanishRegister(target, true);
                             enableVanish(target);
                         }
@@ -107,7 +109,8 @@ public class Vanish implements CommandExecutor {
                     if (!vanish.containsKey(target.getUniqueId())) vanish.put(target.getUniqueId(), false);
                     if (!layer.containsKey(target.getUniqueId())) layer.put(target.getUniqueId(), 1);
                     if (!itemPickup.containsKey(target.getUniqueId())) itemPickup.put(target.getUniqueId(), false);
-                    if (!invInteraction.containsKey(target.getUniqueId())) invInteraction.put(target.getUniqueId(), true);
+                    if (!invInteraction.containsKey(target.getUniqueId()))
+                        invInteraction.put(target.getUniqueId(), true);
                     if (!mobTarget.containsKey(target.getUniqueId())) mobTarget.put(target.getUniqueId(), true);
 
                     exec_target.put(player.getUniqueId(), target.getUniqueId());
@@ -123,9 +126,8 @@ public class Vanish implements CommandExecutor {
     }
 
 
-
     public void enableVanish(Player player) {
-        String quitMessage= new PlayerQuit().generateQuitMessage(player);
+        String quitMessage = new PlayerQuit().generateQuitMessage(player);
 
         for (Player target : Bukkit.getOnlinePlayers()) {
             target.hidePlayer(YVtils.getInstance(), player);
@@ -192,7 +194,7 @@ public class Vanish implements CommandExecutor {
         if (!vanish.containsKey(player.getUniqueId())) return;
         if (vanish.get(player.getUniqueId())) {
             enableVanish(player);
-        }else {
+        } else {
             disableVanish(player);
         }
     }
@@ -202,7 +204,7 @@ public class Vanish implements CommandExecutor {
         if (!vanish.containsKey(player.getUniqueId())) return;
         if (vanish.get(player.getUniqueId())) {
             enableVanish(player);
-        }else {
+        } else {
             disableVanish(player);
         }
     }
@@ -212,7 +214,7 @@ public class Vanish implements CommandExecutor {
         if (!vanish.containsKey(player.getUniqueId())) return;
         if (vanish.get(player.getUniqueId())) {
             enableVanish(player);
-        }else {
+        } else {
             disableVanish(player);
         }
     }

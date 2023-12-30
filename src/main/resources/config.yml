@@ -61,21 +61,21 @@ MOTD'sText:
     - MOTD Text 1
     - §aMinecraft §eSMP §cProject
   Bottom:
-  - §bplayer1 says hello to player2
-  - §eplayer1 goes to MC Donalds
-  - §6player1 goes to Burger King
-  - §3player1 like player2
-  - §5player1 plays on Hypixel
-  - §dplayer1 like trains
-  - §aplayer1 get killed from player2
-  - §7player1 asks for the Map Seed
-  - §8player1 wants to get Fame
-  - §bSponsored by ...
-  - §9Whitelist activated!
-  - §csince ...
-  - §aStarted at the ??.??.????
-  - §dServer is online
-  - §4Can't connect to Server
+    - §bplayer1 says hello to player2
+    - §eplayer1 goes to MC Donalds
+    - §6player1 goes to Burger King
+    - §3player1 like player2
+    - §5player1 plays on Hypixel
+    - §dplayer1 like trains
+    - §aplayer1 get killed from player2
+    - §7player1 asks for the Map Seed
+    - §8player1 wants to get Fame
+    - §bSponsored by ...
+    - §9Whitelist activated!
+    - §csince ...
+    - §aStarted at the ??.??.????
+    - §dServer is online
+    - §4Can't connect to Server
   Maintenance: §cServer is in Maintenance Mode
 
 # How the Direct Message System should be configured

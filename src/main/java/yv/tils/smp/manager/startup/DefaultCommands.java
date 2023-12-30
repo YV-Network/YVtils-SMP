@@ -3,7 +3,6 @@ package yv.tils.smp.manager.startup;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.commands.autocompleter.VanishAutoCompleter;
 import yv.tils.smp.manager.commands.*;
 import yv.tils.smp.manager.listener.CommandPreprocess;
 import yv.tils.smp.mods.admin.invsee.EcSee;
@@ -15,8 +14,8 @@ import yv.tils.smp.mods.other.message.MessageCommand;
 import yv.tils.smp.mods.other.message.ReplyCommand;
 
 /**
- * @since 4.6.8
  * @version CH2-1.0.0
+ * @since 4.6.8
  */
 public class DefaultCommands {
     YVtils main = YVtils.getInstance();
@@ -67,14 +66,6 @@ public class DefaultCommands {
     }
 
     public void registerTabCompleter() {
-        main.getCommand("vanish").setTabCompleter(new VanishAutoCompleter());
-
-/*
-                    |           |
-                    | Chapter 2 |
-                    v           v
-*/
-
         main.getCommand("gm").setTabCompleter(gamemode);
         main.getCommand("dm").setTabCompleter(message);
         main.getCommand("maintenance").setTabCompleter(maintenance);

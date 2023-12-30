@@ -35,7 +35,7 @@ public class Start implements CommandExecutor {
 
         if (ymlFile.getBoolean("Started")) {
             sender.sendMessage(HexSupport.hex(LanguageFile.getMessage(LanguageMessage.SMP_ALREADY_STARTED)));
-        }else {
+        } else {
             ymlFile.set("Started", true);
             try {
                 ymlFile.save(file);
@@ -61,7 +61,7 @@ public class Start implements CommandExecutor {
                     worldBorder.setDamageBuffer(5);
                     player.setGameMode(GameMode.SURVIVAL);
                     player.sendTitle(YVtils.getInstance().getConfig().getString("StartTitle.Top"), YVtils.getInstance().getConfig().getString("StartTitle.Bottom"), 20, 50, 20);
-                    worldBorder.setSize(YVtils.getInstance().getConfig().getInt("worldborderafterstart"), TimeUnit.SECONDS , YVtils.getInstance().getConfig().getInt("worldbordergrowtime"));
+                    worldBorder.setSize(YVtils.getInstance().getConfig().getInt("worldborderafterstart"), TimeUnit.SECONDS, YVtils.getInstance().getConfig().getInt("worldbordergrowtime"));
 
                     List<String> list1 = new ArrayList();
                     List<String> list2 = new ArrayList();
@@ -70,7 +70,7 @@ public class Start implements CommandExecutor {
 
                     player.sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.SMP_START_MESSAGE), list1, list2));
                     Bukkit.getConsoleSender().sendMessage(new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.SMP_START_MESSAGE), list1, list2));
-                }else {
+                } else {
                     player.kickPlayer("");
                 }
             }

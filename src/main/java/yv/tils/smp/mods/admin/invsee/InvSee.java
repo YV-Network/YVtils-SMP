@@ -15,8 +15,8 @@ import yv.tils.smp.utils.internalapi.StringReplacer;
 import java.util.*;
 
 /**
- * @since 4.6.8
  * @version 4.6.8
+ * @since 4.6.8
  */
 public class InvSee implements CommandExecutor {
 
@@ -33,7 +33,7 @@ public class InvSee implements CommandExecutor {
             return false;
         }
 
-        if (Bukkit.getPlayer(args[0]) == null){
+        if (Bukkit.getPlayer(args[0]) == null) {
             player.sendMessage(LanguageFile.getMessage(LanguageMessage.PLAYER_NOT_ONLINE));
             return false;
         }
@@ -46,14 +46,14 @@ public class InvSee implements CommandExecutor {
     }
 
 
-    public Inventory getInventory(Player player){
+    public Inventory getInventory(Player player) {
 
         List<String> list1 = new ArrayList<>();
         List<String> list2 = new ArrayList<>();
         list1.add("PLAYER");
         list2.add(player.getName());
 
-        Inventory inv = Bukkit.createInventory(null, 54, new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_INVSEE_INVENTORY),list1 ,list2));
+        Inventory inv = Bukkit.createInventory(null, 54, new StringReplacer().ListReplacer(LanguageFile.getMessage(LanguageMessage.MODULE_INVSEE_INVENTORY), list1, list2));
 
         ItemStack[] armour = player.getInventory().getArmorContents();
         ItemStack[] invContent = player.getInventory().getStorageContents();
@@ -62,14 +62,14 @@ public class InvSee implements CommandExecutor {
         List<ItemStack> armourList = new ArrayList<>(Arrays.asList(armour));
         List<ItemStack> contents = new ArrayList<>(Arrays.asList(invContent));
 
-        for (int i = 0; i < 9; i++){
+        for (int i = 0; i < 9; i++) {
             contents.add(new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
         }
 
         Collections.reverse(armourList);
 
         Collections.addAll(contents, armourList.toArray(new ItemStack[0]));
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < 4; i++) {
             contents.add(new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
         }
         contents.add(offHand);

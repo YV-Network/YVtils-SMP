@@ -13,7 +13,6 @@ import yv.tils.smp.mods.discord.EmbedManager.whitelist.discord.Check;
 public class AccountCheck {
 
     public EmbedBuilder WhitelistCheck(String mc) {
-
         OfflinePlayer player = Bukkit.getOfflinePlayer(mc);
 
         if (!mc.matches("[a-zA-Z0-9_]+")) {
