@@ -6,7 +6,6 @@ import org.bukkit.Material;
 import org.bukkit.block.Barrel;
 import org.bukkit.block.Chest;
 import org.bukkit.block.ShulkerBox;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
@@ -18,8 +17,6 @@ import yv.tils.smp.mods.admin.invsee.InvSee;
 import yv.tils.smp.utils.MojangAPI;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
-
-import java.util.Arrays;
 
 import static yv.tils.smp.utils.invSync.InvOpen.containerLocation;
 
@@ -127,8 +124,6 @@ public class InvSync {
                 inv.getItem(30), inv.getItem(31), inv.getItem(32),
                 inv.getItem(33), inv.getItem(34), inv.getItem(35)
         };
-
-        System.out.println(Arrays.toString(armour));
 
         player.getInventory().setContents(invContent);
         player.getInventory().setItemInOffHand(offHand);

@@ -2,12 +2,12 @@ package yv.tils.smp.utils.updater;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import yv.tils.smp.internalapi.Log;
-import yv.tils.smp.internalapi.StringReplacer;
-import yv.tils.smp.internalapi.Variables;
 import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
+import yv.tils.smp.utils.internalapi.Log;
+import yv.tils.smp.utils.internalapi.StringReplacer;
+import yv.tils.smp.utils.internalapi.Variables;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

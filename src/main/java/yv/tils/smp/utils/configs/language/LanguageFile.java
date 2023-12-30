@@ -3,7 +3,7 @@ package yv.tils.smp.utils.configs.language;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.internalapi.Log;
+import yv.tils.smp.utils.internalapi.Log;
 
 import java.io.File;
 

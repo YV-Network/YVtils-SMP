@@ -1,9 +1,7 @@
 package yv.tils.smp.manager.startup;
 
 import yv.tils.smp.YVtils;
-import yv.tils.smp.internalapi.Log;
-import yv.tils.smp.utils.configs.ConfigModeration;
-import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
+import yv.tils.smp.utils.internalapi.Log;
 
 /**
  * @since 4.6.8

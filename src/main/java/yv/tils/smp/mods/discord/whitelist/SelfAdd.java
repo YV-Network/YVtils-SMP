@@ -12,10 +12,10 @@ import org.bukkit.scheduler.BukkitRunnable;
 import yv.tils.smp.YVtils;
 import yv.tils.smp.mods.discord.EmbedManager.whitelist.*;
 import yv.tils.smp.placeholder.Prefix;
-import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
+import yv.tils.smp.utils.internalapi.StringReplacer;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;

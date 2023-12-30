@@ -176,6 +176,8 @@ public class CreateFile_de {
         ymlfile.addDefault("SPEED_RESET_SELF", "§7Deine Geschwindigkeit wurde zurückgesetzt!");
         ymlfile.addDefault("SPEED_RESET_OTHER", "§7Die Geschwindigkeit von §ePLAYER §7wurde zurückgesetzt!");
 
+        ymlfile.addDefault("ADVANCEMENT_ANNOUNCEMENT", "§fPLAYER hat den Fortschritt ADVANCEMENT §ferzielt");
+
         ymlfile.options().copyDefaults(true);
         fileSave();
     }

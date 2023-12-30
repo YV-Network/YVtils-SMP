@@ -1,4 +1,4 @@
-package yv.tils.smp.internalapi;
+package yv.tils.smp.utils.internalapi;
 
 /**
  * @since 4.6.7

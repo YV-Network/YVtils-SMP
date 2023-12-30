@@ -2,8 +2,8 @@ package yv.tils.smp.mods.discord.whitelist;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.internalapi.Log;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
+import yv.tils.smp.utils.internalapi.Log;
 
 import java.util.ArrayList;
 import java.util.List;

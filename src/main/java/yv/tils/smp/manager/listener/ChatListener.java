@@ -4,11 +4,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import yv.tils.smp.YVtils;
-import yv.tils.smp.internalapi.Log;
 import yv.tils.smp.manager.commands.GlobalMute;
 import yv.tils.smp.utils.color.HexSupport;
 import yv.tils.smp.utils.configs.status.StatusConfigManager;
+import yv.tils.smp.utils.internalapi.Log;
 
 /**
  * @version CH2-1.0.0

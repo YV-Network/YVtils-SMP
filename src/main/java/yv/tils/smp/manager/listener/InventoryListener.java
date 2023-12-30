@@ -7,6 +7,7 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import yv.tils.smp.mods.admin.vanish.Vanish;
+import yv.tils.smp.mods.admin.vanish.VanishGUI;
 import yv.tils.smp.mods.ccr.InvListener;
 import yv.tils.smp.mods.other.SpawnElytra;
 import yv.tils.smp.utils.invSync.InvClose;
@@ -26,7 +27,7 @@ public class InventoryListener implements Listener {
     @EventHandler
     public void onInvCloseEvent(InventoryCloseEvent e) {
         new InvListener().onInvClose(e.getInventory(), e.getPlayer());
-        new Vanish().guiClose(e);
+        new VanishGUI().guiClose(e);
         new Vanish().chestClose(e);
         new InvClose().invClose(e);
     }
@@ -34,7 +35,7 @@ public class InventoryListener implements Listener {
     @EventHandler
     public void onInvClickEvent(InventoryClickEvent e) {
         new InvListener().onInvClick(e);
-        new Vanish().invInteraction(e);
+        new VanishGUI().invInteraction(e);
         new InvSync().invChange(e);
     }
 

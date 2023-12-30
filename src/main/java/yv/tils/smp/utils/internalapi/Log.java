@@ -1,4 +1,4 @@
-package yv.tils.smp.internalapi;
+package yv.tils.smp.utils.internalapi;
 
 import org.bukkit.Bukkit;
 import yv.tils.smp.YVtils;

@@ -1,9 +1,9 @@
 package yv.tils.smp.mods.discord.EmbedManager.whitelist;
 
 import net.dv8tion.jda.api.EmbedBuilder;
-import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
+import yv.tils.smp.utils.internalapi.StringReplacer;
 
 import java.awt.*;
 import java.util.ArrayList;

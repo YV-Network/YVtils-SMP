@@ -5,10 +5,10 @@ import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitRunnable;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.internalapi.Log;
 import yv.tils.smp.mods.discord.BotManager.BotStartStop;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
+import yv.tils.smp.utils.internalapi.Log;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;

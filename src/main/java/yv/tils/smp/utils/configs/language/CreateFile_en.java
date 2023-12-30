@@ -154,6 +154,8 @@ public class CreateFile_en {
         ymlfile.addDefault("SPEED_RESET_SELF", "§7Your speed got reset!");
         ymlfile.addDefault("SPEED_RESET_OTHER", "§7The speed of §ePLAYER §7got reset!");
 
+        ymlfile.addDefault("ADVANCEMENT_ANNOUNCEMENT", "§fPLAYER has made the advancement ADVANCEMENT");
+
         ymlfile.options().copyDefaults(true);
         fileSave();
     }

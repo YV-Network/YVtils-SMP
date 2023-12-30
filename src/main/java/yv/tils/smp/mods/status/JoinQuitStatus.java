@@ -6,12 +6,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.scoreboard.Team;
-import yv.tils.smp.internalapi.Log;
-import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.utils.color.HexSupport;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
 import yv.tils.smp.utils.configs.status.StatusConfigManager;
+import yv.tils.smp.utils.internalapi.Log;
+import yv.tils.smp.utils.internalapi.StringReplacer;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -8,11 +8,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.utils.MojangAPI;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
+import yv.tils.smp.utils.internalapi.StringReplacer;
 
 import java.util.ArrayList;
 import java.util.Calendar;

@@ -8,7 +8,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.internalapi.Log;
+import yv.tils.smp.utils.internalapi.Log;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,10 +1,7 @@
 package yv.tils.smp;
 
 import org.bukkit.Bukkit;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import yv.tils.smp.internalapi.Log;
-import yv.tils.smp.internalapi.StringReplacer;
 import yv.tils.smp.manager.shutdown.Other;
 import yv.tils.smp.manager.startup.LanguageFiles;
 import yv.tils.smp.manager.startup.Summarizer;
@@ -13,6 +10,8 @@ import yv.tils.smp.placeholder.Prefix;
 import yv.tils.smp.utils.configs.discord.DiscordConfigManager;
 import yv.tils.smp.utils.configs.language.LanguageFile;
 import yv.tils.smp.utils.configs.language.LanguageMessage;
+import yv.tils.smp.utils.internalapi.Log;
+import yv.tils.smp.utils.internalapi.StringReplacer;
 
 import java.util.ArrayList;
 import java.util.HashMap;

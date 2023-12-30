@@ -2,13 +2,15 @@ package yv.tils.smp.manager.startup;
 
 import org.bstats.bukkit.Metrics;
 import org.bstats.charts.SimplePie;
+import org.bukkit.Bukkit;
+import org.bukkit.GameRule;
 import yv.tils.smp.YVtils;
-import yv.tils.smp.internalapi.Log;
-import yv.tils.smp.internalapi.Runtime;
-import yv.tils.smp.internalapi.Variables;
 import yv.tils.smp.manager.commands.Maintenance;
 import yv.tils.smp.utils.configs.ConfigModeration;
 import yv.tils.smp.utils.configs.other.FileGenerator;
+import yv.tils.smp.utils.internalapi.Log;
+import yv.tils.smp.utils.internalapi.Runtime;
+import yv.tils.smp.utils.internalapi.Variables;
 import yv.tils.smp.utils.updater.VersionGetter;
 
 /**
@@ -58,7 +60,7 @@ public class Other {
     }
 
     public void RegisterOther() {
-
+        Bukkit.getServer().getWorlds().forEach(world -> world.setGameRule(GameRule.ANNOUNCE_ADVANCEMENTS, false));
     }
 
     public void registerbStats() {

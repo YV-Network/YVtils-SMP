@@ -152,4 +152,6 @@ public enum LanguageMessage {
     SPEED_CHANGE_OTHER,
     SPEED_RESET_SELF,
     SPEED_RESET_OTHER,
+
+    ADVANCEMENT_ANNOUNCEMENT,
 }
